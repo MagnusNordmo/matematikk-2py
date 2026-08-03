@@ -1,0 +1,1783 @@
+{
+  "versjon": "2026.5",
+  "temaer": [
+    {
+      "id": "grunnleggende",
+      "navn": "Grunnleggende regning",
+      "kortnavn": "Grunnleggende regning",
+      "beskrivelse": "Regnerekkefølge, brøk, enheter og enkle algoritmer",
+      "symbol": "3 + 4"
+    },
+    {
+      "id": "prosent",
+      "navn": "Prosentregning",
+      "kortnavn": "Prosent",
+      "beskrivelse": "Prosent av, prosentvis endring og å finne det hele",
+      "symbol": "%"
+    },
+    {
+      "id": "vekstfaktor",
+      "navn": "Vekstfaktor og prosentpoeng",
+      "kortnavn": "Vekstfaktor",
+      "beskrivelse": "Vekstfaktor, flere endringer og prosentpoeng",
+      "symbol": "1,2"
+    },
+    {
+      "id": "statistikk",
+      "navn": "Statistikk",
+      "kortnavn": "Statistikk",
+      "beskrivelse": "Gjennomsnitt, median, typetall og frekvens",
+      "symbol": "x̄"
+    },
+    {
+      "id": "potenser",
+      "navn": "Potenser, røtter og standardform",
+      "kortnavn": "Potenser og røtter",
+      "beskrivelse": "Regn med potenser, røtter og svært store eller små tall",
+      "symbol": "10³"
+    },
+    {
+      "id": "proporsjonalitet",
+      "navn": "Proporsjonalitet",
+      "kortnavn": "Proporsjonalitet",
+      "beskrivelse": "Pris, mengde og omvendt proporsjonale størrelser",
+      "symbol": "y/x"
+    },
+    {
+      "id": "funksjoner",
+      "navn": "Funksjoner og modeller",
+      "kortnavn": "Funksjoner",
+      "beskrivelse": "Funksjonsuttrykk, tabeller og praktisk tolkning",
+      "symbol": "f(x)"
+    },
+    {
+      "id": "monstre",
+      "navn": "Figurtall og mønstre",
+      "kortnavn": "Figurtall",
+      "beskrivelse": "Finn neste figur og lag formler for figur n",
+      "symbol": "● ●●"
+    }
+  ],
+  "oppgaver": [
+    {
+      "id": "g-01",
+      "tema": "grunnleggende",
+      "gruppe": "regnerekkefolge",
+      "ferdighet": "Bruke riktig regnerekkefølge",
+      "sporsmal": "Regn ut uten hjelpemidler:\n$$3 + 4 \\cdot 5$$",
+      "hints": [
+        "I dette regnestykket står det både pluss og gange. Regnerekkefølgen sier at vi skal regne gange før pluss.",
+        "Se derfor først bare på $$4\\cdot5$$. Dette betyr fire grupper med fem i hver.",
+        "Fire femmere er $$5+5+5+5=20$$. Altså er $$4\\cdot5=20$$.",
+        "Bytt ut $$4\\cdot5$$ med 20. Da blir hele regnestykket $$3+20$$.",
+        "Regn ut til slutt: $$3+20=23$$. Svaret er 23."
+      ],
+      "svar": "23",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-02",
+      "tema": "grunnleggende",
+      "gruppe": "regnerekkefolge",
+      "ferdighet": "Bruke riktig regnerekkefølge",
+      "sporsmal": "Regn ut uten hjelpemidler:\n$$\\frac{18-6}{3}$$",
+      "hints": [
+        "Brøkstreken betyr deling, men den virker også som en parentes. Derfor regner vi først ut alt som står over brøkstreken.",
+        "Over brøkstreken står $$18-6$$. Trekk 6 fra 18: $$18-6=12$$.",
+        "Nå kan vi erstatte telleren $$18-6$$ med 12. Brøken blir da $$\\frac{12}{3}$$.",
+        "Brøkstreken betyr deling, så $$\\frac{12}{3}$$ betyr $$12:3$$.",
+        "Tenk: Hvilket tall ganger 3 blir 12? Siden $$4\\cdot3=12$$, er $$12:3=4$$.",
+        "Svaret er 4."
+      ],
+      "svar": "4",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-03",
+      "tema": "grunnleggende",
+      "gruppe": "brok-av",
+      "ferdighet": "Finne en brøkdel av et tall",
+      "sporsmal": "Hvor mye er $$\\frac{3}{4}$$ av 20?",
+      "hints": [
+        "I brøken $$\\frac{3}{4}$$ er 4 nevneren. Den forteller at 20 skal deles i fire like store deler.",
+        "Finn først størrelsen på én del: $$20:4=5$$. Én firedel av 20 er altså 5.",
+        "Tallet 3 øverst i brøken er telleren. Det forteller at vi skal ha tre slike deler.",
+        "Tre deler på 5 hver blir $$5+5+5=15$$. Det samme kan skrives $$3\\cdot5=15$$.",
+        "Dermed er $$\\frac{3}{4}$$ av 20 lik 15."
+      ],
+      "svar": "15",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-04",
+      "tema": "grunnleggende",
+      "gruppe": "brok-av",
+      "ferdighet": "Finne en brøkdel av et tall",
+      "sporsmal": "Hvor mye er $$\\frac{2}{5}$$ av 30?",
+      "hints": [
+        "I brøken $$\\frac{2}{5}$$ forteller nevneren 5 at 30 skal deles i fem like store deler.",
+        "Finn først én femdel: $$30:5=6$$. Hver del er altså 6.",
+        "Telleren 2 forteller at vi skal ha to av disse delene.",
+        "To deler på 6 hver blir $$6+6=12$$. Det samme kan skrives $$2\\cdot6=12$$.",
+        "Dermed er $$\\frac{2}{5}$$ av 30 lik 12."
+      ],
+      "svar": "12",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-05",
+      "tema": "grunnleggende",
+      "gruppe": "enheter",
+      "ferdighet": "Gjøre om mellom kilogram og gram",
+      "sporsmal": "Gjør om 1,4 kg til gram.",
+      "hints": [
+        "Kilogram og gram er to enheter for masse. Sammenhengen er $$1\\text{ kg}=1000\\text{ g}$$.",
+        "Det betyr at hvert kilogram inneholder 1000 gram. Derfor ganger vi antall kilogram med 1000 når vi går fra kg til g.",
+        "Skriv regnestykket: $$1,4\\cdot1000$$.",
+        "Tallet 1,4 består av 1 kg og 0,4 kg. Det gir $$1\\cdot1000=1000$$ gram og $$0,4\\cdot1000=400$$ gram.",
+        "Legg sammen delene: $$1000+400=1400$$.",
+        "Dermed er $$1,4\\text{ kg}=1400\\text{ g}$$. Svaret er 1400 gram."
+      ],
+      "svar": "1400",
+      "svarType": "tall",
+      "enhet": "g",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-06",
+      "tema": "grunnleggende",
+      "gruppe": "enheter",
+      "ferdighet": "Gjøre om mellom kilogram og gram",
+      "sporsmal": "Gjør om 2500 g til kilogram.",
+      "hints": [
+        "Sammenhengen mellom gram og kilogram er $$1000\\text{ g}=1\\text{ kg}$$.",
+        "Vi skal finne hvor mange grupper på 1000 gram det er i 2500 gram. Derfor deler vi på 1000.",
+        "Skriv regnestykket: $$2500:1000$$.",
+        "2000 gram er 2 kilogram, fordi $$2000:1000=2$$.",
+        "De siste 500 grammene er et halvt kilogram, fordi $$500:1000=0,5$$.",
+        "Legg sammen: $$2+0,5=2,5$$. Dermed er $$2500\\text{ g}=2,5\\text{ kg}$$."
+      ],
+      "svar": "2,5",
+      "svarType": "tall",
+      "enhet": "kg",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-07",
+      "tema": "grunnleggende",
+      "gruppe": "avrunding",
+      "ferdighet": "Avrunde hele tall",
+      "sporsmal": "Rund 348 av til nærmeste tier.",
+      "hints": [
+        "Å runde av til nærmeste tier betyr å velge det nærmeste tallet som slutter på 0.",
+        "Tierne på hver side av 348 er 340 og 350.",
+        "348 ligger 8 over 340, fordi $$348-340=8$$.",
+        "348 ligger bare 2 under 350, fordi $$350-348=2$$.",
+        "Siden avstanden 2 er mindre enn avstanden 8, ligger 348 nærmest 350.",
+        "348 rundet av til nærmeste tier er derfor 350."
+      ],
+      "svar": "350",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-08",
+      "tema": "grunnleggende",
+      "gruppe": "avrunding",
+      "ferdighet": "Avrunde hele tall",
+      "sporsmal": "Rund 872 av til nærmeste hundrer.",
+      "hints": [
+        "Å runde av til nærmeste hundrer betyr å velge det nærmeste tallet som slutter på to nuller.",
+        "Hundretallene på hver side av 872 er 800 og 900.",
+        "872 ligger 72 over 800, fordi $$872-800=72$$.",
+        "872 ligger 28 under 900, fordi $$900-872=28$$.",
+        "Siden 28 er mindre enn 72, ligger 872 nærmest 900.",
+        "872 rundet av til nærmeste hundrer er derfor 900."
+      ],
+      "svar": "900",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "g-09",
+      "tema": "grunnleggende",
+      "gruppe": "algoritme-gjennomsnitt",
+      "ferdighet": "Forstå en enkel beregning i kode",
+      "sporsmal": "Et program summerer tallene 2, 4, 8, 16 og 20 og deler summen på antall tall.\nHvilken verdi skriver programmet ut?",
+      "hints": [
+        "Programmet legger først sammen alle tallene og deler deretter på hvor mange tall det er. Dette er oppskriften på å finne gjennomsnittet.",
+        "Legg sammen de to første tallene: $$2+4=6$$.",
+        "Legg til 8: $$6+8=14$$.",
+        "Legg til 16: $$14+16=30$$.",
+        "Legg til det siste tallet 20: $$30+20=50$$. Summen er altså 50.",
+        "Tell tallene: 2, 4, 8, 16 og 20. Det er 5 tall.",
+        "Del summen på antallet: $$50:5=10$$, fordi $$5\\cdot10=50$$.",
+        "Programmet skriver ut 10."
+      ],
+      "svar": "10",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "g-10",
+      "tema": "grunnleggende",
+      "gruppe": "algoritme-gjennomsnitt",
+      "ferdighet": "Forstå en enkel beregning i kode",
+      "sporsmal": "Et program summerer tallene 3, 5, 7 og 9 og deler summen på antall tall.\nHvilken verdi skriver programmet ut?",
+      "hints": [
+        "Programmet finner gjennomsnittet: først summen av tallene, og så summen delt på antall tall.",
+        "Legg sammen de to første tallene: $$3+5=8$$.",
+        "Legg til 7: $$8+7=15$$.",
+        "Legg til 9: $$15+9=24$$. Summen er 24.",
+        "Det er fire tall: 3, 5, 7 og 9.",
+        "Del summen på antallet: $$24:4=6$$, fordi $$4\\cdot6=24$$.",
+        "Programmet skriver ut 6."
+      ],
+      "svar": "6",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "p-01",
+      "tema": "prosent",
+      "gruppe": "brok-til-prosent",
+      "ferdighet": "Skrive brøk som prosent",
+      "sporsmal": "Skriv som prosent:\n$$\\frac{34}{100}$$",
+      "hints": [
+        "Ordet prosent betyr «per hundre», altså «av 100». Symbolet for prosent er %.",
+        "Brøken $$\\frac{34}{100}$$ betyr 34 av 100.",
+        "Når nevneren allerede er 100, er tallet i telleren prosenttallet.",
+        "Telleren er 34. Derfor er $$\\frac{34}{100}=34\\%$$.",
+        "Svaret er 34 %."
+      ],
+      "svar": "34 %",
+      "aksepterteSvar": [
+        "0,34",
+        "34 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "p-02",
+      "tema": "prosent",
+      "gruppe": "brok-til-prosent",
+      "ferdighet": "Skrive brøk som prosent",
+      "sporsmal": "Skriv som prosent:\n$$\\frac{7}{20}$$",
+      "hints": [
+        "Prosent betyr «av 100». Derfor vil vi skrive brøken slik at nevneren blir 100.",
+        "Nevneren er nå 20. Spør: Hva må 20 ganges med for å bli 100?",
+        "Siden $$20\\cdot5=100$$, må nevneren ganges med 5.",
+        "For at brøken skal beholde samme verdi, må vi gange både teller og nevner med det samme tallet.",
+        "Gang telleren: $$7\\cdot5=35$$. Gang nevneren: $$20\\cdot5=100$$.",
+        "Dermed er $$\\frac{7}{20}=\\frac{35}{100}$$.",
+        "Brøken $$\\frac{35}{100}$$ betyr 35 av 100, altså 35 %. Svaret er 35 %."
+      ],
+      "svar": "35 %",
+      "aksepterteSvar": [
+        "0,35",
+        "35 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "p-03",
+      "tema": "prosent",
+      "gruppe": "prosent-av",
+      "ferdighet": "Finne prosent av et tall",
+      "sporsmal": "Hvor mye er 3 % av 1200 kr?",
+      "hints": [
+        "3 % betyr 3 av 100. Vi kan først finne 1 % og deretter gange med 3.",
+        "1 % er det samme som én hundredel. Derfor finner vi 1 % av 1200 ved å dele 1200 på 100.",
+        "Regn ut $$1200:100$$. Å dele på 100 flytter kommaet to plasser mot venstre: $$1200\\rightarrow12$$.",
+        "Dermed er 1 % av 1200 kr lik 12 kr.",
+        "3 % er tre ganger så mye som 1 %. Regnestykket blir $$3\\cdot12$$.",
+        "Tre tolvere er $$12+12+12=36$$. Altså er $$3\\cdot12=36$$.",
+        "3 % av 1200 kr er 36 kr."
+      ],
+      "svar": "36",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "p-04",
+      "tema": "prosent",
+      "gruppe": "prosent-av",
+      "ferdighet": "Finne prosent av et tall",
+      "sporsmal": "En bonde leverer 5200 egg. 20 % av eggene er brune.\nHvor mange egg er brune?",
+      "hints": [
+        "20 % betyr 20 av 100. Som brøk er dette $$\\frac{20}{100}$$.",
+        "Forkort brøken ved å dele både 20 og 100 på 20: $$\\frac{20}{100}=\\frac{1}{5}$$.",
+        "Vi skal altså finne én femdel av 5200 egg.",
+        "Én femdel finner vi ved å dele på 5: $$5200:5$$.",
+        "Del opp 5200 i 5000 og 200. Da kan vi regne $$5000:5=1000$$ og $$200:5=40$$.",
+        "Legg sammen svarene: $$1000+40=1040$$.",
+        "20 % av 5200 egg er derfor 1040 egg."
+      ],
+      "svar": "1040",
+      "svarType": "tall",
+      "enhet": "egg",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "p-05",
+      "tema": "prosent",
+      "gruppe": "delen-i-prosent",
+      "ferdighet": "Finne hvor mange prosent en del er",
+      "sporsmal": "Hvor mange prosent er 80 kr av 400 kr?",
+      "hints": [
+        "Spørsmålet er hvor stor del 80 er av 400. Her er 80 delen og 400 det hele.",
+        "Skriv delen over det hele: $$\\frac{80}{400}$$.",
+        "For å gjøre brøken enklere kan vi dele både teller og nevner på 80.",
+        "Regn ut: $$80:80=1$$ og $$400:80=5$$. Dermed er $$\\frac{80}{400}=\\frac{1}{5}$$.",
+        "Prosent betyr «av 100», så vi ønsker 100 i nevneren. Siden $$5\\cdot20=100$$, ganger vi både teller og nevner med 20.",
+        "Da får vi $$\\frac{1}{5}=\\frac{1\\cdot20}{5\\cdot20}=\\frac{20}{100}$$.",
+        "$$\\frac{20}{100}$$ betyr 20 av 100, altså 20 %. 80 kr er derfor 20 % av 400 kr."
+      ],
+      "svar": "20 %",
+      "aksepterteSvar": [
+        "0,2",
+        "20 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "p-06",
+      "tema": "prosent",
+      "gruppe": "delen-i-prosent",
+      "ferdighet": "Finne hvor mange prosent en del er",
+      "sporsmal": "På et tog har 6 av 20 vogner en bestemt type.\nHvor mange prosent av vognene er dette?",
+      "hints": [
+        "Vi skal finne hvor stor del 6 vogner er av totalt 20 vogner.",
+        "Skriv delen over det hele: $$\\frac{6}{20}$$.",
+        "Prosent betyr «av 100». Derfor vil vi få 100 i nevneren.",
+        "Siden $$20\\cdot5=100$$, ganger vi både teller og nevner med 5.",
+        "Regn ut telleren: $$6\\cdot5=30$$. Nevneren blir $$20\\cdot5=100$$.",
+        "Dermed er $$\\frac{6}{20}=\\frac{30}{100}$$.",
+        "30 av 100 er 30 %. Svaret er 30 %."
+      ],
+      "svar": "30 %",
+      "aksepterteSvar": [
+        "0,3",
+        "30 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "p-07",
+      "tema": "prosent",
+      "gruppe": "finne-hele",
+      "ferdighet": "Finne det hele når en prosentdel er kjent",
+      "sporsmal": "I en klasse er det 12 gutter. Det er 40 % av elevene.\nHvor mange elever er det i klassen?",
+      "hints": [
+        "Hele klassen er 100 %. Oppgaven forteller at 40 % av klassen er 12 elever.",
+        "Vi går først fra 40 % til 10 %. Det er nyttig fordi det er lett å gå videre fra 10 % til 100 %.",
+        "40 % består av fire grupper på 10 %, fordi $$40:10=4$$.",
+        "Når 40 % er 12 elever, finner vi 10 % ved å dele elevtallet på 4: $$12:4=3$$.",
+        "Dermed tilsvarer 10 % av klassen 3 elever.",
+        "100 % består av ti grupper på 10 %, fordi $$100:10=10$$.",
+        "Gang derfor 3 elever med 10: $$3\\cdot10=30$$.",
+        "100 % er hele klassen. Det er derfor 30 elever i klassen."
+      ],
+      "svar": "30",
+      "svarType": "tall",
+      "enhet": "elever",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "p-08",
+      "tema": "prosent",
+      "gruppe": "finne-hele",
+      "ferdighet": "Finne det hele når en prosentdel er kjent",
+      "sporsmal": "88 % av elevene i en klasse deltar i en undersøkelse. Tre elever deltar ikke.\nHvor mange elever er det i klassen?",
+      "hints": [
+        "Hele klassen er 100 %. Når 88 % deltar, er resten av prosentene elevene som ikke deltar.",
+        "Finn resten: $$100\\%-88\\%=12\\%$$. Altså deltar 12 % ikke.",
+        "Oppgaven sier at 3 elever ikke deltar. Dermed tilsvarer 12 % akkurat 3 elever.",
+        "Vi ønsker å finne hvor mange elever 4 % tilsvarer. 4 % er en tredel av 12 %, fordi $$12:3=4$$.",
+        "Del også elevtallet på 3: $$3:3=1$$. Dermed tilsvarer 4 % én elev.",
+        "Nå går vi fra 4 % til 100 %. Spør: Hvor mange grupper på 4 % er det i 100 %?",
+        "Regn ut $$100:4=25$$. Det er altså 25 slike grupper.",
+        "Hver gruppe på 4 % er én elev. Da er 25 grupper $$25\\cdot1=25$$ elever.",
+        "Det er 25 elever i klassen."
+      ],
+      "svar": "25",
+      "svarType": "tall",
+      "enhet": "elever",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "p-09",
+      "tema": "prosent",
+      "gruppe": "prosentvis-endring",
+      "ferdighet": "Regne prosentvis endring",
+      "sporsmal": "Prisen på en vare øker fra 200 kr til 250 kr.\nHvor mange prosent øker prisen?",
+      "hints": [
+        "Ved prosentvis økning sammenligner vi økningen med den gamle verdien. Den gamle prisen er 200 kr.",
+        "Finn først hvor mange kroner prisen øker: $$250-200=50$$.",
+        "Skriv økningen som en del av den gamle prisen: $$\\frac{50}{200}$$.",
+        "Prosent betyr «av 100». Derfor vil vi skrive brøken med 100 i nevneren.",
+        "Del både teller og nevner på 2: $$50:2=25$$ og $$200:2=100$$.",
+        "Dermed er $$\\frac{50}{200}=\\frac{25}{100}$$.",
+        "Brøken $$\\frac{25}{100}$$ betyr 25 av 100. Det er det samme som 25 %.",
+        "Prisen øker derfor med 25 %."
+      ],
+      "svar": "25 %",
+      "aksepterteSvar": [
+        "0,25",
+        "25 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "p-10",
+      "tema": "prosent",
+      "gruppe": "prosentvis-endring",
+      "ferdighet": "Regne prosentvis endring",
+      "sporsmal": "Et par ski settes ned med 1200 kr. Før salget kostet skiene 4800 kr.\nHvor mange prosent er prisen satt ned?",
+      "hints": [
+        "Ved prosentvis nedgang sammenligner vi avslaget med den gamle prisen. Den gamle prisen er 4800 kr.",
+        "Avslaget er 1200 kr. Skriv avslaget som en del av den gamle prisen: $$\\frac{1200}{4800}$$.",
+        "Vi kan forkorte brøken ved å dele både teller og nevner på 1200.",
+        "Regn ut: $$1200:1200=1$$ og $$4800:1200=4$$. Dermed er brøken $$\\frac{1}{4}$$.",
+        "Prosent betyr «av 100». For å få 100 i nevneren ganger vi 4 med 25, fordi $$4\\cdot25=100$$.",
+        "Gang også telleren med 25: $$1\\cdot25=25$$. Da får vi $$\\frac{1}{4}=\\frac{25}{100}$$.",
+        "25 av 100 er 25 %. Prisen er derfor satt ned med 25 %."
+      ],
+      "svar": "25 %",
+      "aksepterteSvar": [
+        "0,25",
+        "25 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "v-01",
+      "tema": "vekstfaktor",
+      "gruppe": "faktor-til-prosent",
+      "ferdighet": "Gå fra vekstfaktor til prosentvis endring",
+      "sporsmal": "En størrelse har vekstfaktor 1,4.\nHvor stor er den prosentvise økningen?",
+      "hints": [
+        "En vekstfaktor forteller hvor stor den nye verdien er sammenlignet med den gamle. Vekstfaktor 1 betyr at 100 % er igjen og at ingenting har endret seg.",
+        "Vekstfaktoren er 1,4. Finn hvor mye større den er enn 1: $$1,4-1=0,4$$.",
+        "Tallet 0,4 er selve økningen skrevet som desimaltall.",
+        "For å gjøre et desimaltall om til prosent ganger vi med 100. Regnestykket er $$0,4\\cdot100=40$$.",
+        "Dette virker fordi $$0,4=\\frac{40}{100}$$, og $$\\frac{40}{100}=40\\%$$.",
+        "Den prosentvise økningen er derfor 40 %."
+      ],
+      "svar": "40 %",
+      "aksepterteSvar": [
+        "0,4",
+        "40 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "v-02",
+      "tema": "vekstfaktor",
+      "gruppe": "faktor-til-prosent",
+      "ferdighet": "Gå fra vekstfaktor til prosentvis endring",
+      "sporsmal": "En størrelse har vekstfaktor 0,67.\nHvor stor er den prosentvise nedgangen?",
+      "hints": [
+        "Vekstfaktor 1 betyr at 100 % av den gamle verdien er igjen.",
+        "Vekstfaktor 0,67 betyr at den nye verdien er 0,67 av den gamle.",
+        "Gjør 0,67 om til prosent: $$0,67\\cdot100=67$$. Det betyr at 67 % er igjen.",
+        "Nedgangen er det som mangler opp til 100 %. Regn ut $$100\\%-67\\%=33\\%$$.",
+        "Vi kan kontrollere med desimaltall: $$1-0,67=0,33$$, og $$0,33=33\\%$$.",
+        "Den prosentvise nedgangen er 33 %."
+      ],
+      "svar": "33 %",
+      "aksepterteSvar": [
+        "0,33",
+        "33 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "v-03",
+      "tema": "vekstfaktor",
+      "gruppe": "prosent-til-faktor",
+      "ferdighet": "Gå fra prosentvis endring til vekstfaktor",
+      "sporsmal": "Hva er vekstfaktoren ved 8 % økning?",
+      "hints": [
+        "En vekstfaktor forteller hvor mye vi skal gange den gamle verdien med. Uten endring er vekstfaktoren 1.",
+        "Ved 8 % økning skal hele den gamle verdien, altså 100 %, fortsatt være med. I tillegg kommer 8 %.",
+        "Den nye verdien er derfor $$100\\%+8\\%=108\\%$$ av den gamle.",
+        "For å gjøre prosent om til desimaltall deler vi på 100: $$108\\%=\\frac{108}{100}=1,08$$.",
+        "Vi skal altså gange med 1,08. Vekstfaktoren er 1,08."
+      ],
+      "svar": "1,08",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "v-04",
+      "tema": "vekstfaktor",
+      "gruppe": "prosent-til-faktor",
+      "ferdighet": "Gå fra prosentvis endring til vekstfaktor",
+      "sporsmal": "Hva er vekstfaktoren ved 35 % nedgang?",
+      "hints": [
+        "Uten endring er 100 % av den gamle verdien igjen, og vekstfaktoren er 1.",
+        "Ved 35 % nedgang forsvinner 35 % fra de opprinnelige 100 %.",
+        "Finn hvor mange prosent som er igjen: $$100\\%-35\\%=65\\%$$.",
+        "Gjør 65 % om til desimaltall ved å dele på 100: $$65\\%=\\frac{65}{100}=0,65$$.",
+        "Vi skal altså gange med 0,65. Vekstfaktoren er 0,65."
+      ],
+      "svar": "0,65",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "v-05",
+      "tema": "vekstfaktor",
+      "gruppe": "bruke-faktor",
+      "ferdighet": "Bruke vekstfaktor til å finne ny verdi",
+      "sporsmal": "En vare koster 500 kr og øker med 20 %.\nHva blir den nye prisen?",
+      "hints": [
+        "Prisen øker med 20 %. Det betyr at den nye prisen består av den gamle prisen på 100 % pluss 20 %.",
+        "Den nye prisen er derfor $$100\\%+20\\%=120\\%$$ av den gamle prisen.",
+        "120 % skrevet som desimaltall er $$\\frac{120}{100}=1,20$$. Vekstfaktoren er altså 1,2.",
+        "Ny pris finner vi ved å gange gammel pris med vekstfaktoren: $$500\\cdot1,2$$.",
+        "Tallet 1,2 kan deles i 1 og 0,2. Derfor er $$500\\cdot1,2=500\\cdot1+500\\cdot0,2$$.",
+        "$$500\\cdot1=500$$. Dessuten er 0,2 det samme som en femdel, så $$500\\cdot0,2=500:5=100$$.",
+        "Legg sammen: $$500+100=600$$.",
+        "Den nye prisen er 600 kr."
+      ],
+      "svar": "600",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "v-06",
+      "tema": "vekstfaktor",
+      "gruppe": "bruke-faktor",
+      "ferdighet": "Bruke vekstfaktor til å finne gammel verdi",
+      "sporsmal": "Etter et prisavslag på 20 % koster en vare 400 kr.\nHva kostet varen før avslaget?",
+      "hints": [
+        "Et avslag på 20 % betyr at 20 % forsvinner fra de opprinnelige 100 %.",
+        "Finn hvor mye som er igjen: $$100\\%-20\\%=80\\%$$.",
+        "80 % skrevet som desimaltall er $$\\frac{80}{100}=0,8$$. Derfor er vekstfaktoren 0,8.",
+        "Den nye prisen er den gamle prisen ganget med 0,8. Vi kan skrive $$\\text{gammel pris}\\cdot0,8=400$$.",
+        "For å finne den gamle prisen gjør vi motsatt regneoperasjon: Vi deler 400 på 0,8.",
+        "Regnestykket er $$400:0,8$$. Gjør det enklere ved å gange begge tall med 10: $$400:0,8=4000:8$$.",
+        "Regn ut $$4000:8=500$$, fordi $$8\\cdot500=4000$$.",
+        "Kontroll: 20 % av 500 er 100, og $$500-100=400$$. Varen kostet 500 kr før avslaget."
+      ],
+      "svar": "500",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "v-07",
+      "tema": "vekstfaktor",
+      "gruppe": "flere-endringer",
+      "ferdighet": "Kombinere flere prosentvise endringer",
+      "sporsmal": "En pris settes først ned med 20 % og deretter opp med 20 %.\nVaren kostet opprinnelig 100 kr. Hva koster den til slutt?",
+      "hints": [
+        "Vi må regne endringene i riktig rekkefølge. Startprisen er 100 kr.",
+        "Først settes prisen ned med 20 %. Da er $$100\\%-20\\%=80\\%$$ igjen.",
+        "80 % av 100 kr er 80 kr. Etter avslaget koster varen altså 80 kr.",
+        "Deretter øker den nye prisen på 80 kr med 20 %. De 20 prosentene skal nå regnes av 80, ikke av 100.",
+        "10 % av 80 er $$80:10=8$$. Derfor er 20 % to slike deler: $$2\\cdot8=16$$.",
+        "Økningen er 16 kr. Legg den til prisen 80 kr: $$80+16=96$$.",
+        "Varen koster til slutt 96 kr."
+      ],
+      "svar": "96",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "v-08",
+      "tema": "vekstfaktor",
+      "gruppe": "flere-endringer",
+      "ferdighet": "Kombinere flere prosentvise endringer",
+      "sporsmal": "En verdi øker med 10 % og synker deretter med 10 %.\nHvor stor er den samlede prosentvise nedgangen?",
+      "hints": [
+        "Når ingen startverdi er oppgitt, kan vi velge 100. Da blir prosentregningen enkel.",
+        "En økning på 10 % av 100 er 10, fordi $$100:10=10$$.",
+        "Etter økningen er verdien $$100+10=110$$.",
+        "Nå skal verdien synke med 10 %. Denne gangen regnes 10 % av den nye verdien 110.",
+        "10 % av 110 er $$110:10=11$$.",
+        "Trekk nedgangen fra 110: $$110-11=99$$.",
+        "Verdien startet på 100 og endte på 99. Den har derfor gått ned med $$100-99=1$$.",
+        "Når startverdien er 100, er en nedgang på 1 det samme som 1 av 100, altså 1 %.",
+        "Den samlede prosentvise nedgangen er 1 %."
+      ],
+      "svar": "1 %",
+      "aksepterteSvar": [
+        "0,01",
+        "1 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "v-09",
+      "tema": "vekstfaktor",
+      "gruppe": "prosentpoeng",
+      "ferdighet": "Skille prosent fra prosentpoeng",
+      "sporsmal": "En rente synker fra 6 % til 5,4 %.\nHvor mange prosentpoeng synker renten?",
+      "hints": [
+        "Prosentpoeng er forskjellen mellom to prosenttall. Vi skal bare trekke det nye prosenttallet fra det gamle.",
+        "Renten går fra 6 % til 5,4 %, så regnestykket er $$6-5,4$$.",
+        "Skriv gjerne 6 som 6,0 slik at desimalkommaene står under hverandre: $$6,0-5,4$$.",
+        "Fra 5,4 til 6,0 er det 0,6. Derfor er $$6,0-5,4=0,6$$.",
+        "Renten synker med 0,6 prosentpoeng."
+      ],
+      "svar": "0,6",
+      "aksepterteSvar": [
+        "0,6 prosentpoeng"
+      ],
+      "svarType": "tall",
+      "enhet": "prosentpoeng",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "v-10",
+      "tema": "vekstfaktor",
+      "gruppe": "prosentpoeng",
+      "ferdighet": "Skille prosent fra prosentpoeng",
+      "sporsmal": "Et parti går fra 16 % til 20 % oppslutning.\nHvor mange prosentpoeng er økningen?",
+      "hints": [
+        "Prosentpoeng er den direkte forskjellen mellom to prosenttall.",
+        "Oppslutningen går fra 16 % til 20 %. Siden den øker, trekker vi den gamle verdien fra den nye.",
+        "Skriv regnestykket: $$20-16$$.",
+        "Regn ut: $$20-16=4$$.",
+        "Økningen er 4 prosentpoeng."
+      ],
+      "svar": "4",
+      "aksepterteSvar": [
+        "4 prosentpoeng"
+      ],
+      "svarType": "tall",
+      "enhet": "prosentpoeng",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-01",
+      "tema": "statistikk",
+      "gruppe": "gjennomsnitt",
+      "ferdighet": "Regne ut gjennomsnitt",
+      "sporsmal": "Finn gjennomsnittet av tallene:\n$$2,\\ 4,\\ 8,\\ 16,\\ 20$$",
+      "hints": [
+        "Gjennomsnitt er summen av alle tallene delt på hvor mange tall det er.",
+        "Legg sammen litt etter litt: $$2+4=6$$.",
+        "Fortsett med 8: $$6+8=14$$.",
+        "Legg til 16: $$14+16=30$$.",
+        "Legg til 20: $$30+20=50$$. Summen er 50.",
+        "Tell tallene: Det er 5 tall.",
+        "Del summen på antallet: $$50:5=10$$, fordi $$5\\cdot10=50$$.",
+        "Gjennomsnittet er 10."
+      ],
+      "svar": "10",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-02",
+      "tema": "statistikk",
+      "gruppe": "gjennomsnitt",
+      "ferdighet": "Regne ut gjennomsnitt",
+      "sporsmal": "Finn gjennomsnittet av tallene:\n$$6,\\ 3,\\ 5,\\ 4,\\ 7$$",
+      "hints": [
+        "Gjennomsnitt finner vi ved å legge sammen alle tallene og dele summen på antall tall.",
+        "Legg sammen litt etter litt: $$6+3=9$$.",
+        "Legg til 5: $$9+5=14$$.",
+        "Legg til 4: $$14+4=18$$.",
+        "Legg til 7: $$18+7=25$$. Summen er 25.",
+        "Det er 5 tall i listen.",
+        "Del summen på antallet: $$25:5=5$$.",
+        "Gjennomsnittet er 5."
+      ],
+      "svar": "5",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-03",
+      "tema": "statistikk",
+      "gruppe": "median",
+      "ferdighet": "Finne median",
+      "sporsmal": "Finn medianen:\n$$4,\\ 8,\\ 9,\\ 11,\\ 12,\\ 20$$",
+      "hints": [
+        "Medianen er tallet i midten når tallene står i stigende rekkefølge, altså fra minst til størst.",
+        "Tallene står allerede i stigende rekkefølge: 4, 8, 9, 11, 12, 20.",
+        "Det er 6 tall. Når antallet er partall, finnes det ikke ett enkelt tall i midten; det finnes to.",
+        "Tell inn fra begge sider. De to midterste tallene er 9 og 11.",
+        "Medianen er gjennomsnittet av disse to tallene. Legg dem sammen: $$9+11=20$$.",
+        "Del summen på 2: $$20:2=10$$.",
+        "Medianen er 10."
+      ],
+      "svar": "10",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "s-04",
+      "tema": "statistikk",
+      "gruppe": "median",
+      "ferdighet": "Finne median",
+      "sporsmal": "Finn medianen:\n$$7,\\ 2,\\ 5,\\ 9,\\ 3$$",
+      "hints": [
+        "Medianen er tallet i midten når tallene står fra minst til størst.",
+        "Tallene står ikke i riktig rekkefølge ennå. Sorter dem: $$2,\\ 3,\\ 5,\\ 7,\\ 9$$.",
+        "Det er 5 tall. Med et oddetall antall verdier finnes det ett tall akkurat i midten.",
+        "Det står to tall på hver side av 5: 2 og 3 til venstre, 7 og 9 til høyre.",
+        "Dermed er 5 det midterste tallet. Medianen er 5."
+      ],
+      "svar": "5",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-05",
+      "tema": "statistikk",
+      "gruppe": "typetall-variasjon",
+      "ferdighet": "Finne typetall",
+      "sporsmal": "Finn typetallet:\n$$2,\\ 3,\\ 3,\\ 4,\\ 5,\\ 5,\\ 5,\\ 6$$",
+      "hints": [
+        "Typetallet er tallet som forekommer flest ganger i datasettet.",
+        "Tallet 2 forekommer én gang. Tallet 3 forekommer to ganger.",
+        "Tallet 4 forekommer én gang. Tallet 5 forekommer tre ganger.",
+        "Tallet 6 forekommer én gang.",
+        "Tre forekomster er flest. Derfor er 5 typetallet."
+      ],
+      "svar": "5",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-06",
+      "tema": "statistikk",
+      "gruppe": "typetall-variasjon",
+      "ferdighet": "Finne variasjonsbredde",
+      "sporsmal": "Finn variasjonsbredden:\n$$12,\\ 17,\\ 21,\\ 9,\\ 15$$",
+      "hints": [
+        "Variasjonsbredden forteller hvor langt det er fra den minste til den største verdien.",
+        "Finn først den minste verdien i listen. Den er 9.",
+        "Finn deretter den største verdien. Den er 21.",
+        "Variasjonsbredden er største verdi minus minste verdi: $$21-9$$.",
+        "Regn ut $$21-9=12$$.",
+        "Variasjonsbredden er 12."
+      ],
+      "svar": "12",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-07",
+      "tema": "statistikk",
+      "gruppe": "relativ-frekvens",
+      "ferdighet": "Finne relativ frekvens",
+      "sporsmal": "Tallet 6 forekommer 3 ganger i et datasett med 10 observasjoner.\nHva er den relative frekvensen i prosent?",
+      "hints": [
+        "Relativ frekvens betyr hvor stor del en bestemt verdi utgjør av alle observasjonene.",
+        "Tallet 6 forekommer 3 ganger, og det er 10 observasjoner totalt. Skriv derfor $$\\frac{3}{10}$$.",
+        "Prosent betyr «av 100». Vi vil derfor få 100 i nevneren.",
+        "Siden $$10\\cdot10=100$$, ganger vi både teller og nevner med 10.",
+        "Telleren blir $$3\\cdot10=30$$, og nevneren blir 100. Dermed er $$\\frac{3}{10}=\\frac{30}{100}$$.",
+        "30 av 100 er 30 %. Den relative frekvensen er 30 %."
+      ],
+      "svar": "30 %",
+      "aksepterteSvar": [
+        "0,3",
+        "30 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "s-08",
+      "tema": "statistikk",
+      "gruppe": "relativ-frekvens",
+      "ferdighet": "Finne relativ frekvens",
+      "sporsmal": "Åtte av 40 elever sykler til skolen.\nHva er den relative frekvensen i prosent?",
+      "hints": [
+        "Relativ frekvens sammenligner antallet som sykler med antallet elever totalt.",
+        "8 elever sykler, og det er 40 elever. Skriv delen over det hele: $$\\frac{8}{40}$$.",
+        "Forkort ved å dele både teller og nevner på 8: $$8:8=1$$ og $$40:8=5$$.",
+        "Da får vi $$\\frac{8}{40}=\\frac{1}{5}$$.",
+        "Prosent betyr «av 100». Siden $$5\\cdot20=100$$, ganger vi teller og nevner med 20.",
+        "Da blir $$\\frac{1}{5}=\\frac{20}{100}$$.",
+        "20 av 100 er 20 %. Den relative frekvensen er 20 %."
+      ],
+      "svar": "20 %",
+      "aksepterteSvar": [
+        "0,2",
+        "20 prosent"
+      ],
+      "svarType": "prosent",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "s-09",
+      "tema": "statistikk",
+      "gruppe": "grupperte-data",
+      "ferdighet": "Bruke klassemidtpunkt",
+      "sporsmal": "En klasse går fra og med 20 til 40.\nHva er klassemidtpunktet?",
+      "hints": [
+        "Klassemidtpunktet er tallet som ligger nøyaktig midt mellom den nedre og den øvre grensen.",
+        "Den nedre grensen er 20, og den øvre grensen er 40.",
+        "Legg sammen grensene: $$20+40=60$$.",
+        "For å finne tallet midt mellom dem deler vi summen på 2: $$60:2=30$$.",
+        "Kontroll: Det er 10 fra 20 til 30 og 10 fra 30 til 40.",
+        "Klassemidtpunktet er 30."
+      ],
+      "svar": "30",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "s-10",
+      "tema": "statistikk",
+      "gruppe": "grupperte-data",
+      "ferdighet": "Finne kumulativ frekvens",
+      "sporsmal": "Frekvensene i de tre første klassene er 4, 6 og 10.\nHva er den kumulative frekvensen etter den tredje klassen?",
+      "hints": [
+        "Kumulativ frekvens betyr antallet som er samlet opp til og med en bestemt klasse.",
+        "Etter den tredje klassen skal frekvensen fra klasse 1, klasse 2 og klasse 3 være med.",
+        "Frekvensene er 4, 6 og 10. Legg først sammen de to første: $$4+6=10$$.",
+        "Legg så til frekvensen i den tredje klassen: $$10+10=20$$.",
+        "Den kumulative frekvensen etter den tredje klassen er 20."
+      ],
+      "svar": "20",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-01",
+      "tema": "potenser",
+      "gruppe": "potensverdi",
+      "ferdighet": "Regne ut en potens",
+      "sporsmal": "Regn ut:\n$$2^5$$",
+      "hints": [
+        "I potensen $$2^5$$ er 2 grunntallet og 5 eksponenten.",
+        "Eksponenten 5 forteller at grunntallet 2 skal brukes som faktor fem ganger.",
+        "Skriv derfor $$2^5=2\\cdot2\\cdot2\\cdot2\\cdot2$$.",
+        "Gang de to første: $$2\\cdot2=4$$.",
+        "Gang videre med 2: $$4\\cdot2=8$$.",
+        "Gang videre: $$8\\cdot2=16$$.",
+        "Gang med den siste 2-eren: $$16\\cdot2=32$$.",
+        "Dermed er $$2^5=32$$."
+      ],
+      "svar": "32",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-02",
+      "tema": "potenser",
+      "gruppe": "potensverdi",
+      "ferdighet": "Regne ut en potens",
+      "sporsmal": "Regn ut:\n$$10^{-2}$$",
+      "hints": [
+        "En negativ eksponent betyr at vi får den omvendte brøken av den samme potensen med positiv eksponent.",
+        "Derfor er $$10^{-2}=\\frac{1}{10^2}$$.",
+        "Eksponenten 2 betyr at 10 skal ganges med seg selv to ganger: $$10^2=10\\cdot10$$.",
+        "Regn ut: $$10\\cdot10=100$$. Da blir uttrykket $$\\frac{1}{100}$$.",
+        "Brøken $$\\frac{1}{100}$$ betyr én hundredel.",
+        "Én hundredel skrevet som desimaltall er 0,01, fordi 1 står på hundredelsplassen.",
+        "Dermed er $$10^{-2}=0,01$$."
+      ],
+      "svar": "0,01",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-03",
+      "tema": "potenser",
+      "gruppe": "kvadratrot",
+      "ferdighet": "Regne ut kvadratrot",
+      "sporsmal": "Regn ut:\n$$\\sqrt{64}$$",
+      "hints": [
+        "Kvadratroten av 64 er det positive tallet som blir 64 når det ganges med seg selv.",
+        "Vi leter altså etter et tall som passer i $$\\square\\cdot\\square=64$$.",
+        "Prøv 8: $$8\\cdot8=64$$.",
+        "Siden 8 ganget med seg selv blir 64, er $$\\sqrt{64}=8$$."
+      ],
+      "svar": "8",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-04",
+      "tema": "potenser",
+      "gruppe": "kvadratrot",
+      "ferdighet": "Regne ut kvadratrot",
+      "sporsmal": "Regn ut:\n$$\\sqrt{10\\,000}$$",
+      "hints": [
+        "Kvadratroten av 10 000 er det positive tallet som blir 10 000 når det ganges med seg selv.",
+        "Tenk på 100: Det kan skrives som $$10\\cdot10$$.",
+        "Da er $$100\\cdot100=(10\\cdot10)(10\\cdot10)$$.",
+        "Fire tiere ganget sammen gir 10 000: $$10\\cdot10\\cdot10\\cdot10=10\\,000$$.",
+        "Dermed er $$100\\cdot100=10\\,000$$, og derfor er $$\\sqrt{10\\,000}=100$$."
+      ],
+      "svar": "100",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-05",
+      "tema": "potenser",
+      "gruppe": "fra-standardform",
+      "ferdighet": "Skrive standardform som vanlig tall",
+      "sporsmal": "Skriv som vanlig tall:\n$$3 \\cdot 10^5$$",
+      "hints": [
+        "Uttrykket $$3\\cdot10^5$$ betyr 3 ganget med en tierpotens.",
+        "Eksponenten 5 betyr at 10 skal ganges med seg selv fem ganger.",
+        "Skriv ut potensen: $$10^5=10\\cdot10\\cdot10\\cdot10\\cdot10=100\\,000$$.",
+        "Sett dette inn i uttrykket: $$3\\cdot10^5=3\\cdot100\\,000$$.",
+        "Tre grupper på 100 000 blir $$100\\,000+100\\,000+100\\,000=300\\,000$$.",
+        "Som vanlig tall er svaret 300 000."
+      ],
+      "svar": "300000",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "po-06",
+      "tema": "potenser",
+      "gruppe": "fra-standardform",
+      "ferdighet": "Skrive standardform som vanlig tall",
+      "sporsmal": "Skriv som vanlig tall:\n$$4,2 \\cdot 10^{-3}$$",
+      "hints": [
+        "Tallet er skrevet på standardform. Faktoren $$10^{-3}$$ betyr at 4,2 skal deles på 1000.",
+        "Å dele på 1000 gjør tallet tusen ganger mindre. Det tilsvarer å flytte desimalkommaet tre plasser mot venstre.",
+        "Start med 4,2. Første flytt gir $$4,2\\rightarrow0,42$$.",
+        "Andre flytt gir $$0,42\\rightarrow0,042$$.",
+        "Tredje flytt gir $$0,042\\rightarrow0,0042$$.",
+        "Dermed er $$4,2\\cdot10^{-3}=0,0042$$."
+      ],
+      "svar": "0,0042",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "po-07",
+      "tema": "potenser",
+      "gruppe": "til-standardform",
+      "ferdighet": "Skrive tall på standardform",
+      "sporsmal": "Skriv 900 000 på standardform.",
+      "hints": [
+        "På standardform skriver vi et tall som $$a\\cdot10^n$$, der tallet a er minst 1 og mindre enn 10.",
+        "I 900 000 flytter vi kommaet til vi får et tall mellom 1 og 10. Da får vi 9.",
+        "Tenk at kommaet står bakerst: $$900\\,000,0$$.",
+        "For å komme fra 900 000 til 9 flytter vi kommaet fem plasser mot venstre.",
+        "Fem plasser gir tierpotensen $$10^5$$.",
+        "Kontroll: $$10^5=100\\,000$$ og $$9\\cdot100\\,000=900\\,000$$.",
+        "Standardformen er $$9\\cdot10^5$$."
+      ],
+      "svar": "9 · 10^5",
+      "aksepterteSvar": [
+        "9*10^5",
+        "9x10^5",
+        "9 · 10⁵",
+        "9*10⁵"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "po-08",
+      "tema": "potenser",
+      "gruppe": "til-standardform",
+      "ferdighet": "Skrive tall på standardform",
+      "sporsmal": "Skriv 0,00025 på standardform.",
+      "hints": [
+        "På standardform skriver vi tallet som $$a\\cdot10^n$$, der a er minst 1 og mindre enn 10.",
+        "Flytt kommaet i 0,00025 mot høyre til du får et tall mellom 1 og 10.",
+        "Tell flyttene: $$0,00025\\rightarrow0,0025\\rightarrow0,025\\rightarrow0,25\\rightarrow2,5$$. Det er fire plasser.",
+        "Det opprinnelige tallet er mindre enn 1. Derfor skal eksponenten være negativ.",
+        "Fire flytt mot høyre gir eksponenten −4.",
+        "Kontroll: $$10^{-4}=0,0001$$, og $$2,5\\cdot0,0001=0,00025$$.",
+        "Standardformen er $$2,5\\cdot10^{-4}$$."
+      ],
+      "svar": "2,5 · 10^-4",
+      "aksepterteSvar": [
+        "2.5*10^-4",
+        "2,5*10^-4",
+        "2,5x10^-4",
+        "2,5 · 10⁻⁴"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "po-09",
+      "tema": "potenser",
+      "gruppe": "standardform-regning",
+      "ferdighet": "Regne med store og små tall",
+      "sporsmal": "Regn ut uten hjelpemidler:\n$$3\\,000\\,000 \\cdot 0,000\\,025$$",
+      "hints": [
+        "Vi kan gjøre multiplikasjonen enklere ved å skrive begge tall på standardform.",
+        "Tallet 3 000 000 er $$3\\cdot10^6$$, fordi $$10^6=1\\,000\\,000$$.",
+        "Tallet 0,000 025 er $$2,5\\cdot10^{-5}$$. Kommaet må flyttes fem plasser mot høyre for å få 2,5.",
+        "Sett inn standardformene: $$(3\\cdot10^6)(2,5\\cdot10^{-5})$$.",
+        "Gang først tallene foran tierpotensene: $$3\\cdot2,5=7,5$$.",
+        "Når vi ganger tierpotenser, legger vi sammen eksponentene: $$6+(-5)=1$$.",
+        "Tierpotensdelen blir derfor $$10^1=10$$.",
+        "Hele uttrykket er nå $$7,5\\cdot10$$.",
+        "Å gange med 10 flytter kommaet én plass mot høyre: $$7,5\\rightarrow75$$. Svaret er 75."
+      ],
+      "svar": "75",
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "po-10",
+      "tema": "potenser",
+      "gruppe": "standardform-regning",
+      "ferdighet": "Regne med standardform",
+      "sporsmal": "Regn ut:\n$$\\frac{6 \\cdot 10^5}{2 \\cdot 10^2}$$",
+      "hints": [
+        "I brøken deler vi både tallene foran tierpotensene og selve tierpotensene.",
+        "Del tallene foran: $$6:2=3$$.",
+        "Når vi deler potenser med samme grunntall, trekker vi eksponenten i nevneren fra eksponenten i telleren.",
+        "Her blir eksponenten $$5-2=3$$.",
+        "Dermed er $$\\frac{10^5}{10^2}=10^3$$.",
+        "Sett delene sammen: $$\\frac{6\\cdot10^5}{2\\cdot10^2}=3\\cdot10^3$$.",
+        "$$10^3=10\\cdot10\\cdot10=1000$$.",
+        "Regn ut $$3\\cdot1000=3000$$. Svaret er 3000."
+      ],
+      "svar": "3000",
+      "aksepterteSvar": [
+        "3 · 10^3",
+        "3*10^3",
+        "3x10^3"
+      ],
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "pr-01",
+      "tema": "proporsjonalitet",
+      "gruppe": "pris-vekt",
+      "ferdighet": "Regne med proporsjonale størrelser",
+      "sporsmal": "1 kg kyllingfilet koster 120 kr.\nHva koster 1,4 kg dersom pris og vekt er proporsjonale?",
+      "hints": [
+        "Når pris og vekt er proporsjonale, koster hvert kilogram like mye. Derfor finner vi totalprisen ved å gange kiloprisen med antall kilogram.",
+        "Kiloprisen er 120 kr, og vekten er 1,4 kg. Regnestykket blir $$120\\cdot1,4$$.",
+        "Tallet 1,4 betyr 1 hel og 0,4 ekstra. Derfor kan vi dele regningen i $$120\\cdot1+120\\cdot0,4$$.",
+        "Den hele kiloen koster $$120\\cdot1=120$$ kr.",
+        "Desimaltallet 0,4 er det samme som brøken $$\\frac{4}{10}$$. Det er fire tideler.",
+        "Fire tideler er også 40 hundredeler: $$\\frac{4}{10}=\\frac{40}{100}=40\\%$$. Derfor er $$0,4=40\\%$$.",
+        "Finn først 10 % av 120 kr ved å dele på 10: $$120:10=12$$ kr.",
+        "40 % er fire ganger 10 %. Derfor er 40 % av 120 kr $$4\\cdot12=48$$ kr.",
+        "Legg sammen prisen for 1 kg og 0,4 kg: $$120+48=168$$.",
+        "1,4 kg kyllingfilet koster 168 kr."
+      ],
+      "svar": "168",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "pr-02",
+      "tema": "proporsjonalitet",
+      "gruppe": "pris-vekt",
+      "ferdighet": "Regne med proporsjonale størrelser",
+      "sporsmal": "1 kg kyllingfilet koster 120 kr.\nHva koster 250 g dersom pris og vekt er proporsjonale?",
+      "hints": [
+        "Kiloprisen er prisen for 1 kg. Først gjør vi kilogram om til gram: $$1\\text{ kg}=1000\\text{ g}$$.",
+        "Vi skal finne hvilken del 250 g er av 1000 g.",
+        "Fire grupper på 250 g blir 1000 g, fordi $$250+250+250+250=1000$$.",
+        "Dermed er 250 g en firedel av 1 kg.",
+        "Når vekten er en firedel av 1 kg, er prisen også en firedel av kiloprisen.",
+        "Finn en firedel av 120 kr ved å dele på 4: $$120:4=30$$, fordi $$4\\cdot30=120$$.",
+        "250 g koster 30 kr."
+      ],
+      "svar": "30",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "pr-03",
+      "tema": "proporsjonalitet",
+      "gruppe": "proporsjonal-identifisere",
+      "ferdighet": "Kjenne igjen proporsjonale størrelser",
+      "sporsmal": "En kino tar 120 kr per billett uten andre gebyrer.\nEr antall billetter og totalpris proporsjonale størrelser?",
+      "hints": [
+        "To størrelser er proporsjonale når den ene alltid er et fast tall ganger den andre.",
+        "Her koster hver billett 120 kr, og det finnes ingen startpris eller andre gebyrer.",
+        "Totalprisen kan derfor skrives $$\\text{totalpris}=120\\cdot\\text{antall billetter}$$.",
+        "Kontroller med noen verdier: 1 billett koster 120 kr, og 2 billetter koster $$2\\cdot120=240$$ kr.",
+        "Når antall billetter dobles fra 1 til 2, dobles også prisen fra 120 til 240 kr.",
+        "Det faste forholdstallet er 120 kr per billett. Størrelsene er derfor proporsjonale.",
+        "Svaret er ja."
+      ],
+      "svar": "ja",
+      "aksepterteSvar": [
+        "ja, proporsjonale",
+        "proporsjonale",
+        "ja de er proporsjonale"
+      ],
+      "svarType": "tekst",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "pr-04",
+      "tema": "proporsjonalitet",
+      "gruppe": "proporsjonal-identifisere",
+      "ferdighet": "Kjenne igjen ikke-proporsjonale størrelser",
+      "sporsmal": "En drosjetur koster 80 kr i startpris og 20 kr per kilometer.\nEr antall kilometer og totalpris proporsjonale størrelser?",
+      "hints": [
+        "Ved proporsjonalitet må totalprisen være et fast tall ganger antall kilometer. Da må prisen også være 0 kr når antall kilometer er 0.",
+        "Drosjen har en startpris på 80 kr. Den må betales selv om turen er 0 km.",
+        "Prisregelen er $$\\text{totalpris}=80+20\\cdot\\text{antall kilometer}$$.",
+        "Ved 0 km er prisen $$80+20\\cdot0=80$$ kr, ikke 0 kr.",
+        "Startprisen gjør at prisen ikke er et fast tall ganger antall kilometer.",
+        "Størrelsene er derfor ikke proporsjonale. Svaret er nei."
+      ],
+      "svar": "nei",
+      "aksepterteSvar": [
+        "ikke proporsjonale",
+        "nei, ikke proporsjonale",
+        "nei de er ikke proporsjonale"
+      ],
+      "svarType": "tekst",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "pr-05",
+      "tema": "proporsjonalitet",
+      "gruppe": "omvendt-identifisere",
+      "ferdighet": "Kjenne igjen omvendt proporsjonalitet",
+      "sporsmal": "En hytte koster 15 000 kr å leie. Utgiften deles likt mellom elevene.\nEr antall elever og leiepris per elev omvendt proporsjonale størrelser?",
+      "hints": [
+        "Ved omvendt proporsjonalitet blir den ene størrelsen mindre når den andre blir større, slik at produktet av dem er konstant.",
+        "Den totale leieprisen er alltid 15 000 kr. Den endres ikke når antall elever endres.",
+        "Pris per elev er derfor $$\\frac{15\\,000}{\\text{antall elever}}$$.",
+        "Hvis 10 elever deltar, blir prisen per elev $$15\\,000:10=1500$$ kr.",
+        "Hvis antallet dobles til 20 elever, blir prisen $$15\\,000:20=750$$ kr. Prisen per elev er da halvert.",
+        "Produktet er i begge tilfeller 15 000: $$10\\cdot1500=15\\,000$$ og $$20\\cdot750=15\\,000$$.",
+        "Størrelsene er derfor omvendt proporsjonale. Svaret er ja."
+      ],
+      "svar": "ja",
+      "aksepterteSvar": [
+        "ja, omvendt proporsjonale",
+        "omvendt proporsjonale"
+      ],
+      "svarType": "tekst",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "pr-06",
+      "tema": "proporsjonalitet",
+      "gruppe": "omvendt-identifisere",
+      "ferdighet": "Kjenne igjen omvendt proporsjonalitet",
+      "sporsmal": "En tur består av en fast leiepris per elev og 250 kr til mat per elev.\nEr antall elever og samlet pris per elev omvendt proporsjonale når matprisen tas med?",
+      "hints": [
+        "Ved omvendt proporsjonalitet skal en dobling av antall elever halvere hele prisen per elev.",
+        "Leiedelen per elev blir mindre når flere deltar, fordi den faste leiesummen deles på flere.",
+        "Men hver elev betaler alltid 250 kr for mat. Denne delen blir ikke mindre når flere deltar.",
+        "Samlet pris per elev er $$\\frac{\\text{fast leiesum}}{\\text{antall elever}}+250$$.",
+        "Når elevtallet dobles, halveres bare brøkdelen. Tillegget på 250 kr halveres ikke.",
+        "Dermed blir ikke hele prisen per elev halvert.",
+        "Størrelsene er derfor ikke omvendt proporsjonale. Svaret er nei."
+      ],
+      "svar": "nei",
+      "aksepterteSvar": [
+        "ikke omvendt proporsjonale",
+        "nei, ikke omvendt proporsjonale"
+      ],
+      "svarType": "tekst",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "pr-07",
+      "tema": "proporsjonalitet",
+      "gruppe": "dele-fast-sum",
+      "ferdighet": "Dele en fast sum likt",
+      "sporsmal": "En hytte koster 15 000 kr. Ti elever deler leieprisen likt.\nHvor mye betaler hver elev i leie?",
+      "hints": [
+        "Ti elever skal dele den faste summen 15 000 kr likt. Da bruker vi deling.",
+        "Skriv regnestykket: $$15\\,000:10$$.",
+        "Å dele på 10 betyr å gjøre tallet ti ganger mindre. Da flyttes kommaet én plass mot venstre.",
+        "Tenk at tallet er $$15\\,000,0$$. Én plass mot venstre gir $$1500,0$$.",
+        "Dermed er $$15\\,000:10=1500$$.",
+        "Hver elev betaler 1500 kr i leie."
+      ],
+      "svar": "1500",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "pr-08",
+      "tema": "proporsjonalitet",
+      "gruppe": "dele-fast-sum",
+      "ferdighet": "Dele en fast sum og legge til et fast beløp",
+      "sporsmal": "En hytte koster 15 000 kr. Ti elever deler leien likt. I tillegg betaler hver elev 250 kr for mat.\nHva blir samlet pris per elev?",
+      "hints": [
+        "Samlet pris per elev består av to deler: elevens del av leien og 250 kr til mat.",
+        "Finn først leien per elev. Ti elever deler 15 000 kr, så regnestykket er $$15\\,000:10$$.",
+        "Å dele på 10 gir $$15\\,000:10=1500$$. Leien er altså 1500 kr per elev.",
+        "Legg til matprisen på 250 kr: $$1500+250$$.",
+        "Legg først til 200: $$1500+200=1700$$. Legg så til 50: $$1700+50=1750$$.",
+        "Samlet pris per elev er 1750 kr."
+      ],
+      "svar": "1750",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "pr-09",
+      "tema": "proporsjonalitet",
+      "gruppe": "proporsjonalitetskonstant",
+      "ferdighet": "Finne proporsjonalitetskonstant",
+      "sporsmal": "Størrelsene x og y er proporsjonale. Når x = 4, er y = 28.\nHva er proporsjonalitetskonstanten?",
+      "hints": [
+        "Ved proporsjonalitet kan sammenhengen skrives $$y=kx$$. Bokstaven k er tallet vi ganger x med for å få y.",
+        "Vi vet at $$x=4$$ og $$y=28$$. Sett disse tallene inn: $$28=k\\cdot4$$.",
+        "Dette betyr at 4 ganger k er 28. For å finne k deler vi 28 på 4.",
+        "Skriv $$k=28:4$$.",
+        "Siden $$4\\cdot7=28$$, er $$28:4=7$$.",
+        "Kontroll: $$y=kx=7\\cdot4=28$$. Det stemmer med oppgaven.",
+        "Proporsjonalitetskonstanten er 7."
+      ],
+      "svar": "7",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "pr-10",
+      "tema": "proporsjonalitet",
+      "gruppe": "proporsjonalitetskonstant",
+      "ferdighet": "Bruke proporsjonalitetskonstant",
+      "sporsmal": "Størrelsene x og y er proporsjonale med proporsjonalitetskonstant 6.\nHva er y når x = 5?",
+      "hints": [
+        "Ved proporsjonalitet bruker vi formelen $$y=kx$$.",
+        "Her er proporsjonalitetskonstanten $$k=6$$, og $$x=5$$.",
+        "Sett inn verdiene i formelen: $$y=6\\cdot5$$.",
+        "Fem seksere er $$6+6+6+6+6=30$$. Derfor er $$6\\cdot5=30$$.",
+        "Dermed er $$y=30$$."
+      ],
+      "svar": "30",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "f-01",
+      "tema": "funksjoner",
+      "gruppe": "funksjonsverdi",
+      "ferdighet": "Regne ut en funksjonsverdi",
+      "sporsmal": "Funksjonen f er gitt ved $$f(x)=3x+5$$\nBestem $$f(4)$$",
+      "hints": [
+        "Uttrykket $$f(4)$$ betyr at vi skal bruke tallet 4 i stedet for x i funksjonen.",
+        "Funksjonen er $$f(x)=3x+5$$. Bytt ut x med 4: $$f(4)=3\\cdot4+5$$.",
+        "Regnerekkefølgen sier at vi skal regne gange før pluss.",
+        "Regn ut gangen: $$3\\cdot4=12$$.",
+        "Da står det igjen $$12+5$$.",
+        "Regn ut: $$12+5=17$$.",
+        "Dermed er $$f(4)=17$$."
+      ],
+      "svar": "17",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "f-02",
+      "tema": "funksjoner",
+      "gruppe": "funksjonsverdi",
+      "ferdighet": "Regne ut en funksjonsverdi",
+      "sporsmal": "Funksjonen g er gitt ved $$g(x)=\\frac{200}{x}$$\nBestem $$g(10)$$",
+      "hints": [
+        "Uttrykket $$g(10)$$ betyr at x skal erstattes med 10 i funksjonen.",
+        "Funksjonen er $$g(x)=\\frac{200}{x}$$. Sett inn 10: $$g(10)=\\frac{200}{10}$$.",
+        "Brøkstreken betyr deling. Derfor skal vi regne $$200:10$$.",
+        "Å dele på 10 flytter kommaet én plass mot venstre: $$200\\rightarrow20$$.",
+        "Dermed er $$200:10=20$$, og $$g(10)=20$$."
+      ],
+      "svar": "20",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "f-03",
+      "tema": "funksjoner",
+      "gruppe": "lineart-uttrykk",
+      "ferdighet": "Finne funksjonsuttrykk fra en tabell",
+      "sporsmal": "En lineær funksjon har verdiene:\n$$f(0)=5,\\quad f(1)=8,\\quad f(2)=11$$\nHva er funksjonsuttrykket?",
+      "hints": [
+        "En lineær funksjon kan skrives $$f(x)=ax+b$$. Tallet a forteller hvor mye f(x) endrer seg når x øker med 1.",
+        "Se på endringen fra $$f(0)=5$$ til $$f(1)=8$$: $$8-5=3$$.",
+        "Kontroller neste steg: Fra $$f(1)=8$$ til $$f(2)=11$$ er endringen $$11-8=3$$.",
+        "Funksjonsverdien øker altså med 3 hver gang x øker med 1. Derfor er $$a=3$$.",
+        "Funksjonen har nå formen $$f(x)=3x+b$$.",
+        "Tallet b er funksjonsverdien når $$x=0$$, fordi $$3\\cdot0=0$$.",
+        "Oppgaven sier at $$f(0)=5$$. Derfor er $$b=5$$.",
+        "Sett inn både a og b: $$f(x)=3x+5$$.",
+        "Kontroll med $$x=2$$: $$3\\cdot2+5=6+5=11$$. Det stemmer. Svaret er $$f(x)=3x+5$$."
+      ],
+      "svar": "f(x) = 3x + 5",
+      "aksepterteSvar": [
+        "3x+5",
+        "y=3x+5",
+        "f(x)=5+3x"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "f-04",
+      "tema": "funksjoner",
+      "gruppe": "lineart-uttrykk",
+      "ferdighet": "Finne funksjonsuttrykk fra startverdi og endring",
+      "sporsmal": "En taxi tar 80 kr i startpris og 20 kr per kilometer.\nSkriv et funksjonsuttrykk for prisen P(x) etter x kilometer.",
+      "hints": [
+        "Totalprisen består av en fast del og en del som avhenger av hvor mange kilometer taxien kjører.",
+        "Startprisen 80 kr er den faste delen. Den betales også når $$x=0$$.",
+        "Taxien koster 20 kr for hver kilometer. Etter x kilometer blir kilometerdelen $$20\\cdot x=20x$$.",
+        "Legg sammen startprisen og kilometerdelen: $$P(x)=80+20x$$.",
+        "Kontroll: Ved 1 km gir uttrykket $$80+20\\cdot1=100$$ kr, altså 80 kr i startpris og 20 kr for én kilometer.",
+        "Funksjonsuttrykket er $$P(x)=80+20x$$."
+      ],
+      "svar": "P(x) = 80 + 20x",
+      "aksepterteSvar": [
+        "80+20x",
+        "20x+80",
+        "p(x)=20x+80",
+        "y=20x+80"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "f-05",
+      "tema": "funksjoner",
+      "gruppe": "omvendt-funksjon",
+      "ferdighet": "Finne uttrykk for omvendt proporsjonalitet",
+      "sporsmal": "En fast utgift på 8000 kr deles likt mellom x personer.\nSkriv et uttrykk for prisen f(x) per person.",
+      "hints": [
+        "Prisen per person finner vi ved å dele totalprisen på antall personer.",
+        "Totalprisen er 8000 kr. Antall personer er skrevet med bokstaven x.",
+        "Regnestykket blir derfor $$8000:x$$.",
+        "Deling kan skrives som en brøk: $$8000:x=\\frac{8000}{x}$$.",
+        "Siden funksjonen heter f, skriver vi $$f(x)=\\frac{8000}{x}$$.",
+        "Uttrykket er altså $$f(x)=\\frac{8000}{x}$$."
+      ],
+      "svar": "f(x) = 8000/x",
+      "aksepterteSvar": [
+        "8000/x",
+        "f(x)=8000:x",
+        "8000:x"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "f-06",
+      "tema": "funksjoner",
+      "gruppe": "omvendt-funksjon",
+      "ferdighet": "Bruke en omvendt proporsjonal funksjon",
+      "sporsmal": "En funksjon er gitt ved $$f(x)=\\frac{8000}{x}$$\nHva blir prisen per person når 20 personer deltar?",
+      "hints": [
+        "I funksjonen står x for antall personer. Når 20 personer deltar, setter vi derfor $$x=20$$.",
+        "Bytt ut x med 20: $$f(20)=\\frac{8000}{20}$$.",
+        "Brøkstreken betyr deling, så vi skal regne $$8000:20$$.",
+        "Både 8000 og 20 kan deles på 10. Da blir regnestykket $$800:2$$.",
+        "Halvparten av 800 er 400, så $$800:2=400$$.",
+        "Kontroll: $$20\\cdot400=8000$$. Prisen blir 400 kr per person."
+      ],
+      "svar": "400",
+      "svarType": "tall",
+      "enhet": "kr",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "f-07",
+      "tema": "funksjoner",
+      "gruppe": "lose-likning",
+      "ferdighet": "Finne x fra en funksjonsverdi",
+      "sporsmal": "Funksjonen er $$f(x)=2x+4$$\nFor hvilken verdi av x er $$f(x)=14$$?",
+      "hints": [
+        "Oppgaven sier at funksjonsverdien skal være 14. Sett derfor funksjonsuttrykket lik 14: $$2x+4=14$$.",
+        "Målet er å få x alene. På venstre side er 4 lagt til. Vi gjør det motsatte og trekker fra 4.",
+        "Vi må gjøre det samme på begge sider for at likheten fortsatt skal stemme: $$2x+4-4=14-4$$.",
+        "På venstre side forsvinner $$+4-4$$. På høyre side er $$14-4=10$$. Da får vi $$2x=10$$.",
+        "Uttrykket $$2x$$ betyr $$2\\cdot x$$. For å få x alene deler vi begge sider på 2.",
+        "Da blir $$x=10:2$$.",
+        "Siden $$10:2=5$$, er $$x=5$$.",
+        "Kontroll: $$f(5)=2\\cdot5+4=10+4=14$$. Svaret er 5."
+      ],
+      "svar": "5",
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "f-08",
+      "tema": "funksjoner",
+      "gruppe": "lose-likning",
+      "ferdighet": "Finne x fra en funksjonsverdi",
+      "sporsmal": "Funksjonen er $$g(x)=5x-3$$\nFor hvilken verdi av x er $$g(x)=17$$?",
+      "hints": [
+        "Oppgaven sier at $$g(x)=17$$. Sett derfor funksjonsuttrykket lik 17: $$5x-3=17$$.",
+        "Målet er å få x alene. På venstre side er 3 trukket fra. Vi gjør det motsatte og legger til 3.",
+        "Legg til 3 på begge sider: $$5x-3+3=17+3$$.",
+        "På venstre side forsvinner $$-3+3$$. På høyre side er $$17+3=20$$. Da får vi $$5x=20$$.",
+        "Uttrykket $$5x$$ betyr $$5\\cdot x$$. Del begge sider på 5 for å få x alene.",
+        "Da blir $$x=20:5$$.",
+        "Siden $$20:5=4$$, er $$x=4$$.",
+        "Kontroll: $$g(4)=5\\cdot4-3=20-3=17$$. Svaret er 4."
+      ],
+      "svar": "4",
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "f-09",
+      "tema": "funksjoner",
+      "gruppe": "modell-tolkning",
+      "ferdighet": "Tolke konstantledd i en modell",
+      "sporsmal": "En kostnad er modellert med $$K(x)=500+80x$$\nHva forteller tallet 500 i denne modellen?",
+      "hints": [
+        "I uttrykket $$K(x)=500+80x$$ står tallet 500 alene. Det er ikke ganget med x.",
+        "For å se hva 500 betyr, kan vi undersøke kostnaden når $$x=0$$.",
+        "Sett inn 0: $$K(0)=500+80\\cdot0$$.",
+        "Siden $$80\\cdot0=0$$, blir $$K(0)=500+0=500$$.",
+        "Kostnaden er altså 500 kr selv når x er 0.",
+        "Tallet 500 er derfor den faste kostnaden."
+      ],
+      "svar": "fast kostnad",
+      "aksepterteSvar": [
+        "startkostnad",
+        "startpris",
+        "fast pris",
+        "kostnaden når x er 0",
+        "kostnaden ved x=0",
+        "500 kr i fast kostnad"
+      ],
+      "svarType": "tekst",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "f-10",
+      "tema": "funksjoner",
+      "gruppe": "modell-tolkning",
+      "ferdighet": "Tolke stigningstall i en modell",
+      "sporsmal": "En kostnad er modellert med $$K(x)=500+80x$$\nHva forteller tallet 80 i denne modellen?",
+      "hints": [
+        "I uttrykket $$K(x)=500+80x$$ står tallet 80 foran x. Det betyr at 80 ganges med verdien av x.",
+        "Se på $$x=1$$: Den variable delen er $$80\\cdot1=80$$ kr.",
+        "Se på $$x=2$$: Den variable delen er $$80\\cdot2=160$$ kr.",
+        "Når x øker fra 1 til 2, øker denne delen med $$160-80=80$$ kr.",
+        "Det samme skjer hver gang x øker med 1. Tallet 80 er derfor kostnaden per ekstra enhet.",
+        "80 betyr 80 kr per enhet."
+      ],
+      "svar": "80 kr per enhet",
+      "aksepterteSvar": [
+        "pris per enhet",
+        "kostnad per enhet",
+        "økning på 80 kr per enhet",
+        "kostnaden øker med 80 kr når x øker med 1"
+      ],
+      "svarType": "tekst",
+      "poeng": 1,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "m-01",
+      "tema": "monstre",
+      "gruppe": "neste-figur",
+      "ferdighet": "Fortsette et tallmønster",
+      "sporsmal": "Antall prikker i de første figurene er 4, 7, 10 og 13.\nHvor mange prikker er det i figur 5?",
+      "hints": [
+        "For å fortsette mønsteret må vi finne hvor mye antallet øker fra én figur til den neste.",
+        "Fra figur 1 til figur 2 går antallet fra 4 til 7. Forskjellen er $$7-4=3$$.",
+        "Kontroller neste steg: $$10-7=3$$.",
+        "Kontroller også det siste steget: $$13-10=3$$.",
+        "Antallet øker altså med 3 for hver ny figur.",
+        "Figur 4 har 13 prikker. Legg til 3 for å få figur 5: $$13+3=16$$.",
+        "Figur 5 har 16 prikker."
+      ],
+      "svar": "16",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "m-02",
+      "tema": "monstre",
+      "gruppe": "neste-figur",
+      "ferdighet": "Fortsette et tallmønster",
+      "sporsmal": "Antall ruter i de første figurene er 5, 9, 13 og 17.\nHvor mange ruter er det i figur 5?",
+      "hints": [
+        "Finn først hvor mye antallet ruter øker fra én figur til den neste.",
+        "Fra 5 til 9 er økningen $$9-5=4$$.",
+        "Fra 9 til 13 er økningen $$13-9=4$$.",
+        "Fra 13 til 17 er økningen $$17-13=4$$.",
+        "Mønsteret øker altså med 4 ruter for hver ny figur.",
+        "Figur 4 har 17 ruter. Legg til 4: $$17+4=21$$.",
+        "Figur 5 har 21 ruter."
+      ],
+      "svar": "21",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "m-03",
+      "tema": "monstre",
+      "gruppe": "lineart-monster-formel",
+      "ferdighet": "Lage formel for et lineært mønster",
+      "sporsmal": "Antall prikker i figurene er 4, 7, 10, 13, …\nLag en formel for antall prikker $$P(n)$$ i figur n.",
+      "hints": [
+        "Bokstaven n står for figurnummeret. Vi ønsker en formel som gir riktig antall prikker for alle figurer.",
+        "Antallet øker med 3 for hver ny figur: $$7-4=3$$, $$10-7=3$$ og $$13-10=3$$.",
+        "Når økningen er 3, begynner vi med uttrykket $$3n$$.",
+        "Prøv uttrykket i figur 1, altså $$n=1$$: $$3\\cdot1=3$$.",
+        "Figur 1 skal ha 4 prikker, men $$3n$$ gir bare 3. Vi mangler 1.",
+        "Legg derfor til 1: $$P(n)=3n+1$$.",
+        "Kontroll med figur 2: $$P(2)=3\\cdot2+1=6+1=7$$. Det stemmer med mønsteret.",
+        "Formelen er $$P(n)=3n+1$$."
+      ],
+      "svar": "P(n) = 3n + 1",
+      "aksepterteSvar": [
+        "3n+1",
+        "p(n)=1+3n",
+        "3*n+1"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "m-04",
+      "tema": "monstre",
+      "gruppe": "lineart-monster-formel",
+      "ferdighet": "Lage formel for et lineært mønster",
+      "sporsmal": "Antall ruter i figurene er 2, 6, 10, 14, …\nLag en formel for antall ruter $$R(n)$$ i figur n.",
+      "hints": [
+        "Bokstaven n står for figurnummeret. Vi vil finne en formel som gir antall ruter i figur n.",
+        "Antallet øker med 4 hver gang: $$6-2=4$$, $$10-6=4$$ og $$14-10=4$$.",
+        "Når økningen er 4, begynner vi med uttrykket $$4n$$.",
+        "Prøv i figur 1: $$4\\cdot1=4$$.",
+        "Figur 1 skal ha 2 ruter, men $$4n$$ gir 4. Uttrykket er altså 2 for stort.",
+        "Trekk derfor fra 2: $$R(n)=4n-2$$.",
+        "Kontroll med figur 2: $$R(2)=4\\cdot2-2=8-2=6$$. Det stemmer.",
+        "Formelen er $$R(n)=4n-2$$."
+      ],
+      "svar": "R(n) = 4n - 2",
+      "aksepterteSvar": [
+        "4n-2",
+        "r(n)=4*n-2"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "m-05",
+      "tema": "monstre",
+      "gruppe": "bruke-monster-formel",
+      "ferdighet": "Bruke en formel for figur n",
+      "sporsmal": "Antall prikker i figur n er gitt ved $$P(n)=3n+1$$\nHvor mange prikker er det i figur 10?",
+      "hints": [
+        "I formelen står n for figurnummeret. For figur 10 setter vi derfor $$n=10$$.",
+        "Bytt ut n med 10: $$P(10)=3\\cdot10+1$$.",
+        "Regnerekkefølgen sier at gange skal regnes før pluss.",
+        "Regn ut gangen: $$3\\cdot10=30$$.",
+        "Legg deretter til 1: $$30+1=31$$.",
+        "Dermed er $$P(10)=31$$. Figur 10 har 31 prikker."
+      ],
+      "svar": "31",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "m-06",
+      "tema": "monstre",
+      "gruppe": "bruke-monster-formel",
+      "ferdighet": "Bruke en formel for figur n",
+      "sporsmal": "Antall ruter i figur n er gitt ved $$R(n)=4n-2$$\nHvor mange ruter er det i figur 10?",
+      "hints": [
+        "I formelen står n for figurnummeret. For figur 10 bruker vi $$n=10$$.",
+        "Bytt ut n med 10: $$R(10)=4\\cdot10-2$$.",
+        "Regnerekkefølgen sier at gange skal regnes før minus.",
+        "Regn ut gangen: $$4\\cdot10=40$$.",
+        "Trekk deretter fra 2: $$40-2=38$$.",
+        "Dermed er $$R(10)=38$$. Figur 10 har 38 ruter."
+      ],
+      "svar": "38",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "m-07",
+      "tema": "monstre",
+      "gruppe": "kvadrattall",
+      "ferdighet": "Kjenne igjen kvadrattall",
+      "sporsmal": "Antall ruter i figurene er 1, 4, 9, 16, …\nHvor mange ruter er det i figur 5?",
+      "hints": [
+        "Se om tallene kan skrives som et tall ganget med seg selv.",
+        "$$1=1\\cdot1=1^2$$ og $$4=2\\cdot2=2^2$$.",
+        "$$9=3\\cdot3=3^2$$ og $$16=4\\cdot4=4^2$$.",
+        "Mønsteret viser at figurnummeret ganges med seg selv. Figur n har altså $$n^2$$ ruter.",
+        "For figur 5 setter vi $$n=5$$. Da får vi $$5^2$$.",
+        "$$5^2$$ betyr $$5\\cdot5$$, og $$5\\cdot5=25$$.",
+        "Figur 5 har 25 ruter."
+      ],
+      "svar": "25",
+      "svarType": "tall",
+      "poeng": 1,
+      "vanskelighetsgrad": "lett"
+    },
+    {
+      "id": "m-08",
+      "tema": "monstre",
+      "gruppe": "kvadrattall",
+      "ferdighet": "Lage formel for kvadrattall",
+      "sporsmal": "Antall ruter i figurene er 1, 4, 9, 16, …\nLag en formel for antall ruter $$R(n)$$ i figur n.",
+      "hints": [
+        "Bokstaven n står for figurnummeret. Vi ser etter sammenhengen mellom figurnummeret og antall ruter.",
+        "Figur 1 har 1 rute, og $$1=1\\cdot1=1^2$$.",
+        "Figur 2 har 4 ruter, og $$4=2\\cdot2=2^2$$.",
+        "Figur 3 har 9 ruter, og $$9=3\\cdot3=3^2$$.",
+        "Figur 4 har 16 ruter, og $$16=4\\cdot4=4^2$$.",
+        "Mønsteret er altså at figurnummeret ganges med seg selv.",
+        "For figur n blir antallet $$n\\cdot n=n^2$$.",
+        "Formelen er $$R(n)=n^2$$."
+      ],
+      "svar": "R(n) = n^2",
+      "aksepterteSvar": [
+        "n^2",
+        "r(n)=n*n",
+        "n*n",
+        "n²"
+      ],
+      "svarType": "uttrykk",
+      "poeng": 2,
+      "vanskelighetsgrad": "middels"
+    },
+    {
+      "id": "m-09",
+      "tema": "monstre",
+      "gruppe": "finne-figurnummer",
+      "ferdighet": "Finne figurnummer fra en formel",
+      "sporsmal": "Et mønster er gitt ved $$P(n)=3n+2$$\nHvilket figurnummer har 20 prikker?",
+      "hints": [
+        "Vi leter etter figurnummeret n som gir 20 prikker. Sett derfor formelen lik 20: $$3n+2=20$$.",
+        "Målet er å få n alene. På venstre side er 2 lagt til. Gjør det motsatte og trekk fra 2 på begge sider.",
+        "Skriv $$3n+2-2=20-2$$.",
+        "På venstre side forsvinner $$+2-2$$. På høyre side er $$20-2=18$$. Da får vi $$3n=18$$.",
+        "Uttrykket $$3n$$ betyr $$3\\cdot n$$. Del begge sider på 3.",
+        "Da blir $$n=18:3$$.",
+        "Siden $$18:3=6$$, er $$n=6$$.",
+        "Kontroll: $$P(6)=3\\cdot6+2=18+2=20$$. Det er figur nummer 6."
+      ],
+      "svar": "6",
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    },
+    {
+      "id": "m-10",
+      "tema": "monstre",
+      "gruppe": "finne-figurnummer",
+      "ferdighet": "Finne figurnummer fra en formel",
+      "sporsmal": "Et mønster er gitt ved $$R(n)=4n-1$$\nHvilket figurnummer har 27 ruter?",
+      "hints": [
+        "Vi leter etter figurnummeret n som gir 27 ruter. Sett derfor formelen lik 27: $$4n-1=27$$.",
+        "Målet er å få n alene. På venstre side er 1 trukket fra. Gjør det motsatte og legg til 1 på begge sider.",
+        "Skriv $$4n-1+1=27+1$$.",
+        "På venstre side forsvinner $$-1+1$$. På høyre side er $$27+1=28$$. Da får vi $$4n=28$$.",
+        "Uttrykket $$4n$$ betyr $$4\\cdot n$$. Del begge sider på 4.",
+        "Da blir $$n=28:4$$.",
+        "Siden $$28:4=7$$, er $$n=7$$.",
+        "Kontroll: $$R(7)=4\\cdot7-1=28-1=27$$. Det er figur nummer 7."
+      ],
+      "svar": "7",
+      "svarType": "tall",
+      "poeng": 2,
+      "vanskelighetsgrad": "vanskelig"
+    }
+  ]
+}
