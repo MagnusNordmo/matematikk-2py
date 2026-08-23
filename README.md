@@ -1,20 +1,22 @@
-# Matematikk 2PY – Del 1
+# Matematikk 2PY – eksamenstrening
 
-En norsk nettapp for elever som øver til Del 1 av matematikk 2PY uten hjelpemidler. Prosjektet inneholder både elevappen og en kontrollapp for å lese gjennom alle spørsmål, hint og fasiter.
+En norsk nettapp for elever som øver til både Del 1 og Del 2 av matematikk 2PY. Eleven velger eksamensdel og kan deretter trene på et bestemt tema eller gjennomføre en blandet eksamensøkt.
+
+Oppgavebanken inneholder 500 oppgaver: 262 uten hjelpemidler og 238 med hjelpemidler. Del 2 inneholder 50 sammenhengende case med fire deloppgaver, i tillegg til selvstendige digitale oppgaver. Alle svar kan kontrolleres direkte i nettleseren.
 
 ## Én felles oppgavebank
 
-`public/oppgaver.json` er den eneste autoritative kilden til oppgaveinnholdet. Elevappen leser filen direkte. Kontrollappen og den selvstendige HTML-filen genereres fra nøyaktig samme fil under bygging.
+`public/oppgaver-2027.json` er den autoritative kilden til det nye oppgaveinnholdet. Elevappen leser filen direkte. Kontrollappen og den selvstendige HTML-filen genereres fra nøyaktig samme fil under bygging. Den eldre `public/oppgaver.json` er beholdt som historikk, men brukes ikke av elevappen.
 
 ```text
-public/oppgaver.json          spørsmål, hint, fasiter og metadata
+public/oppgaver-2027.json     500 spørsmål, 50 case, hint, fasiter og metadata
 app/page.tsx                  elevappen
 app/kontroll/page.tsx         kontrollappen på /kontroll
 scripts/build-review-app.mjs  lager selvstendig kontrollapp
 tests/                        kontrollerer innhold og bygg
 ```
 
-Ikke rediger `public/oppgaver-og-hint.html` direkte. Den blir laget på nytt fra `public/oppgaver.json`.
+Ikke rediger `public/oppgaver-og-hint.html` direkte. Den blir laget på nytt fra `public/oppgaver-2027.json`.
 
 ## Kjør lokalt
 
@@ -37,9 +39,9 @@ Testene stopper dersom oppgavebanken er ugyldig, oppgave-ID-er er duplisert, ell
 
 ## Arbeidsflyt
 
-1. Endre bare `public/oppgaver.json` når en oppgave, et hint eller en fasit skal revideres.
+1. Endre `public/oppgaver-2027.json` når en oppgave, et hint eller en fasit skal revideres.
 2. Kjør `npm test`.
 3. Kontroller elevappen og `/kontroll` i nettleseren.
 4. Legg inn endringen i GitHub.
 
-Appen bruker lokal lagring i elevens nettleser. Den krever ingen innlogging og samler ikke inn personopplysninger.
+Appen lagrer framdrift separat for Del 1 og Del 2 i elevens nettleser. Den krever ingen innlogging og samler ikke inn personopplysninger.

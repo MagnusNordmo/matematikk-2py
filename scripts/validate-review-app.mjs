@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectDir = dirname(scriptDir);
-const source = JSON.parse(await readFile(join(projectDir, "public", "oppgaver.json"), "utf8"));
+const source = JSON.parse(await readFile(join(projectDir, "public", "oppgaver-2027.json"), "utf8"));
 const html = await readFile(join(projectDir, "public", "oppgaver-og-hint.html"), "utf8");
 const match = html.match(/<script id="question-data" type="application\/json">([\s\S]*?)<\/script>/);
 
@@ -15,10 +15,10 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-assert(embedded.oppgaver.length === 80, "HTML-filen må inneholde 80 oppgaver.");
-assert(embedded.oppgaver.reduce((sum, question) => sum + question.hints.length, 0) === 534, "HTML-filen må inneholde 534 hint.");
-assert(embedded.temaer.length === 8, "HTML-filen må inneholde 8 temaer.");
-assert(new Set(embedded.oppgaver.map((question) => question.id)).size === 80, "Oppgave-ID-ene må være unike.");
+assert(embedded.oppgaver.length === 500, "HTML-filen må inneholde 500 oppgaver.");
+assert(embedded.groups === 50, "HTML-filen må inneholde 50 Del 2-case.");
+assert(embedded.temaer.length === 11, "HTML-filen må inneholde 11 temaer.");
+assert(new Set(embedded.oppgaver.map((question) => question.id)).size === 500, "Oppgave-ID-ene må være unike.");
 assert(["lett", "middels", "vanskelig"].every((level) => embedded.oppgaver.some((question) => question.vanskelighetsgrad === level)), "Alle tre vanskelighetsgrader må være i bruk.");
 
 for (const original of source.oppgaver) {
@@ -26,14 +26,13 @@ for (const original of source.oppgaver) {
   assert(copy, `Mangler oppgave ${original.id}.`);
   assert(copy.sporsmal === original.sporsmal, `Spørsmålsteksten er endret i ${original.id}.`);
   assert(copy.svar === original.svar, `Fasiten er endret i ${original.id}.`);
-  assert(JSON.stringify(copy.hints) === JSON.stringify(original.hints), `Hintene er endret i ${original.id}.`);
-  assert(copy.vanskelighetsgrad === original.vanskelighetsgrad, `Vanskelighetsgraden er endret i ${original.id}.`);
+  assert(JSON.stringify(copy.hints) === JSON.stringify(original.hint), `Hintene er endret i ${original.id}.`);
+  assert(copy.del === original.del, `Eksamensdelen er endret i ${original.id}.`);
 }
 
-for (const theme of source.temaer) {
-  assert(embedded.oppgaver.filter((question) => question.tema === theme.id).length === 10, `Temaet ${theme.id} må ha 10 oppgaver.`);
-}
+assert(embedded.oppgaver.filter((question) => question.del === 1).length === 262, "Del 1 må ha 262 oppgaver.");
+assert(embedded.oppgaver.filter((question) => question.del === 2).length === 238, "Del 2 må ha 238 oppgaver.");
 
 assert(!html.includes("fetch("), "Filen skal ikke hente oppgavebanken eksternt.");
 assert(html.includes("data:font/woff2;base64,"), "Matematikkfontene må være innebygd for bruk uten nett.");
-console.log("Kontroll bestått: 80 oppgaver, 534 hint, 8 temaer og alle originale tekster er bevart.");
+console.log("Kontroll bestått: 500 oppgaver, 50 Del 2-case, 11 temaer og alle originale tekster er bevart.");

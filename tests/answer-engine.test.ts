@@ -1,44 +1,63 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { answersMatch, type AnswerQuestion } from "../app/answer-engine";
+import { evaluateAnswer, isAnswerComplete, parseNorwegianNumber } from "../app/answer-engine.ts";
+import type { AnswerKey } from "../app/question-bank.ts";
 
-const percentQuestion: AnswerQuestion = {
-  svar: "34 %",
-  aksepterteSvar: ["0,34", "34 prosent"],
-  svarType: "prosent",
-};
-
-test("godtar vanlige norske skrivemåter for prosent", () => {
-  for (const answer of ["34%", "34 %", "34 prosent", "0,34", "0.34"]) {
-    assert.equal(answersMatch(answer, percentQuestion), true, answer);
-  }
-  assert.equal(answersMatch("35 %", percentQuestion), false);
+test("tolker norske desimaltall, enheter og brøk", () => {
+  assert.equal(parseNorwegianNumber("2,5 kg"), 2.5);
+  assert.equal(parseNorwegianNumber(" 1 250,75 kr "), 1250.75);
+  assert.equal(parseNorwegianNumber("3/4"), 0.75);
+  assert.ok(Number.isNaN(parseNorwegianNumber("et tall")));
 });
 
-test("godtar desimalkomma, desimalpunkt og valgfri enhet for tall", () => {
-  const question: AnswerQuestion = { svar: "2,5", svarType: "tall" };
-  assert.equal(answersMatch("2,5", question), true);
-  assert.equal(answersMatch("2.5 kg", question), true);
-  assert.equal(answersMatch("2,6", question), false);
-});
-
-test("godtar oppgitte alternative matematiske uttrykk", () => {
-  const question: AnswerQuestion = {
-    svar: "9 · 10^5",
-    aksepterteSvar: ["9*10^5", "9x10^5"],
-    svarType: "uttrykk",
+test("gir delpoeng for flere numeriske svar", () => {
+  const key: AnswerKey = {
+    type: "flere_tall",
+    verdier: [
+      { verdi: 6, toleranse: 0, enhet: "prosentpoeng" },
+      { verdi: 33.3, toleranse: 0.1, enhet: "%" },
+    ],
   };
-  assert.equal(answersMatch("9 * 10^5", question), true);
-  assert.equal(answersMatch("9 × 10^5", question), true);
-  assert.equal(answersMatch("9 * 10^4", question), false);
+  assert.deepEqual(evaluateAnswer({ numbers: ["6", "33,35"], choices: [] }, key), {
+    correct: true,
+    correctParts: 2,
+    totalParts: 2,
+    fraction: 1,
+  });
+  const partial = evaluateAnswer({ numbers: ["6", "30"], choices: [] }, key);
+  assert.equal(partial.correct, false);
+  assert.equal(partial.correctParts, 1);
+  assert.equal(partial.fraction, 0.5);
 });
 
-test("tekstoppgaver krever en kjent faglig formulering", () => {
-  const question: AnswerQuestion = {
-    svar: "fast kostnad",
-    aksepterteSvar: ["startkostnad", "fast pris"],
-    svarType: "tekst",
+test("kontrollerer enkeltvalg og flervalg", () => {
+  const single: AnswerKey = {
+    type: "valg",
+    flervalg: false,
+    riktige: ["B"],
+    alternativer: ["A", "B", "C"],
   };
-  assert.equal(answersMatch("Startkostnad", question), true);
-  assert.equal(answersMatch("variabel kostnad", question), false);
+  assert.equal(evaluateAnswer({ numbers: [], choices: ["B"] }, single).correct, true);
+  assert.equal(evaluateAnswer({ numbers: [], choices: ["A"] }, single).correct, false);
+
+  const multiple: AnswerKey = {
+    type: "valg",
+    flervalg: true,
+    riktige: ["A", "C"],
+    alternativer: ["A", "B", "C", "D"],
+  };
+  assert.equal(evaluateAnswer({ numbers: [], choices: ["A", "C"] }, multiple).correct, true);
+  assert.equal(evaluateAnswer({ numbers: [], choices: ["A"] }, multiple).correctParts, 1);
+  assert.equal(evaluateAnswer({ numbers: [], choices: ["A", "B"] }, multiple).correctParts, 0);
+});
+
+test("krever både valg og tall i kombinasjonssvar", () => {
+  const key: AnswerKey = {
+    type: "valg_og_tall",
+    valg: { type: "valg", flervalg: false, riktige: ["4n-1"], alternativer: ["4n-1", "4n+3"] },
+    verdier: [{ verdi: 59, toleranse: 0, enhet: "ruter" }],
+  };
+  assert.equal(isAnswerComplete({ numbers: [""], choices: ["4n-1"] }, key), false);
+  assert.equal(isAnswerComplete({ numbers: ["59"], choices: ["4n-1"] }, key), true);
+  assert.equal(evaluateAnswer({ numbers: ["59"], choices: ["4n-1"] }, key).correct, true);
 });

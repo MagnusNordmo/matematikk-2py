@@ -1,67 +1,101 @@
-export type AnswerQuestion = {
-  svar: string;
-  aksepterteSvar?: string[];
-  svarType: "tall" | "prosent" | "tekst" | "uttrykk";
-  toleranse?: number;
+import type { AnswerKey, NumericAnswer } from "./question-bank";
+
+export type AnswerInput = {
+  numbers: string[];
+  choices: string[];
 };
 
-function normalizeExact(value: string) {
-  return value
-    .normalize("NFKC")
-    .toLowerCase()
-    .replace(/[−–—]/g, "-")
-    .replace(/,/g, ".")
-    .replace(/\b(kroner|kr\.?|prosent|grader|elever|jenter|gutter|år|kg|g)\b/g, "")
-    .replace(/\\cdot|\\times|×|·/g, "*")
-    .replace(/\s+/g, "")
-    .replace(/[.]$/g, "");
-}
+export type AnswerEvaluation = {
+  correct: boolean;
+  correctParts: number;
+  totalParts: number;
+  fraction: number;
+};
 
-function parseFlexibleNumber(value: string) {
+export const EMPTY_ANSWER: AnswerInput = { numbers: [], choices: [] };
+
+export function parseNorwegianNumber(value: string) {
   const normalized = value
     .normalize("NFKC")
     .toLowerCase()
     .replace(/[−–—]/g, "-")
+    .replace(/\s/g, "")
     .replace(/,/g, ".")
-    .replace(/[^0-9./-]/g, "");
+    .replace(
+      /(?:kr|kroner|prosentpoeng|prosent|elever|år|kg|g|km|m|cm|timer|minutter|%)+$/g,
+      "",
+    )
+    .replace(/[^0-9./+-]/g, "");
 
-  const fraction = normalized.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  const fraction = normalized.match(
+    /^([+-]?\d+(?:\.\d+)?)\/([+-]?\d+(?:\.\d+)?)$/,
+  );
   if (fraction) {
     const denominator = Number(fraction[2]);
     return denominator === 0 ? Number.NaN : Number(fraction[1]) / denominator;
   }
 
-  const match = normalized.match(/^-?\d+(?:\.\d+)?$/);
-  return match ? Number(normalized) : Number.NaN;
+  return /^[+-]?\d+(?:\.\d+)?$/.test(normalized)
+    ? Number(normalized)
+    : Number.NaN;
 }
 
-export function answersMatch(input: string, question: AnswerQuestion) {
-  const candidates = [question.svar, ...(question.aksepterteSvar ?? [])];
-  const normalizedInput = normalizeExact(input);
+function numericMatches(input: string, expected: NumericAnswer) {
+  const actual = parseNorwegianNumber(input);
+  if (!Number.isFinite(actual)) return false;
+  return Math.abs(actual - expected.verdi) <= (expected.toleranse ?? 0.0001);
+}
 
-  if (candidates.some((candidate) => normalizeExact(candidate) === normalizedInput)) {
-    return true;
+function evaluateNumbers(inputs: string[], expected: NumericAnswer[]) {
+  return expected.reduce(
+    (sum, answer, index) =>
+      sum + (numericMatches(inputs[index] ?? "", answer) ? 1 : 0),
+    0,
+  );
+}
+
+function evaluateChoices(inputs: string[], correct: string[], multiple: boolean) {
+  const selected = new Set(inputs);
+  const expected = new Set(correct);
+  const correctSelections = correct.filter((answer) => selected.has(answer)).length;
+  const incorrectSelections = inputs.filter((answer) => !expected.has(answer)).length;
+  const parts = multiple ? correct.length : 1;
+  return Math.max(0, Math.min(parts, correctSelections - incorrectSelections));
+}
+
+export function evaluateAnswer(input: AnswerInput, key: AnswerKey): AnswerEvaluation {
+  let correctParts = 0;
+  let totalParts = 1;
+
+  if (key.type === "tall" || key.type === "flere_tall") {
+    totalParts = key.verdier.length;
+    correctParts = evaluateNumbers(input.numbers, key.verdier);
+  } else if (key.type === "valg") {
+    totalParts = key.flervalg ? key.riktige.length : 1;
+    correctParts = evaluateChoices(input.choices, key.riktige, key.flervalg);
+  } else {
+    const choiceParts = key.valg.flervalg ? key.valg.riktige.length : 1;
+    totalParts = choiceParts + key.verdier.length;
+    correctParts =
+      evaluateChoices(input.choices, key.valg.riktige, key.valg.flervalg) +
+      evaluateNumbers(input.numbers, key.verdier);
   }
 
-  if (question.svarType === "tekst" || question.svarType === "uttrykk") {
-    return false;
+  return {
+    correct: correctParts === totalParts,
+    correctParts,
+    totalParts,
+    fraction: totalParts === 0 ? 0 : correctParts / totalParts,
+  };
+}
+
+export function isAnswerComplete(input: AnswerInput, key: AnswerKey) {
+  if (key.type === "tall" || key.type === "flere_tall") {
+    return key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()));
   }
-
-  const expected = parseFlexibleNumber(question.svar);
-  let actual = parseFlexibleNumber(input);
-
-  if (!Number.isFinite(expected) || !Number.isFinite(actual)) {
-    return false;
-  }
-
-  if (
-    question.svarType === "prosent" &&
-    !input.includes("%") &&
-    Math.abs(actual) <= 1 &&
-    Math.abs(expected) > 1
-  ) {
-    actual *= 100;
-  }
-
-  return Math.abs(actual - expected) <= (question.toleranse ?? 0.0001);
+  if (key.type === "valg") return input.choices.length > 0;
+  return (
+    input.choices.length > 0 &&
+    key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()))
+  );
 }

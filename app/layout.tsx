@@ -3,12 +3,9 @@ import "katex/dist/katex.min.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Matematikk 2PY – Del 1",
+  title: "Matematikk 2PY – eksamenstrening",
   description:
-    "Rolig og eksamensnær trening i matematikk 2PY uten hjelpemidler.",
-  other: {
-    "codex-preview": "development",
-  },
+    "Eksamensnær trening i matematikk 2PY for både Del 1 og Del 2.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
