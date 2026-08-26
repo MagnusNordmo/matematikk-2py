@@ -15,16 +15,34 @@ test("Del 1-eksamensøkter har ti blandede oppgaver uten hjelpemidler", () => {
   assert.ok(new Set(questions.map((question) => question.tema)).size >= 8);
 });
 
-test("Del 2-eksamensøkter beholder tre hele case samlet", () => {
+test("Del 2-eksamensøkter har ti oppgaver og beholder hele case samlet", () => {
   const questions = selectSessionQuestions(bank, 2, "exam");
-  assert.equal(questions.length, 12);
-  const ids = questions.map((question) => question.oppgavegruppe?.id);
-  assert.equal(new Set(ids).size, 3);
-  assert.equal(new Set(questions.map((question) => question.tema)).size, 3);
-  for (let index = 0; index < 12; index += 4) {
-    const group = questions.slice(index, index + 4);
-    assert.equal(new Set(group.map((question) => question.oppgavegruppe?.id)).size, 1);
+  assert.equal(questions.length, 10);
+  assert.equal(questions.filter((question) => !question.oppgavegruppe).length, 2);
+  const grouped = questions.filter((question) => question.oppgavegruppe);
+  const groupIds = new Set(grouped.map((question) => question.oppgavegruppe?.id));
+  assert.equal(groupIds.size, 2);
+  for (const groupId of groupIds) {
+    const group = grouped.filter((question) => question.oppgavegruppe?.id === groupId);
     assert.deepEqual(group.map((question) => question.oppgavegruppe?.rekkefolge), [1, 2, 3, 4]);
+  }
+});
+
+test("nye økter prioriterer andre oppgaver enn forrige økt", () => {
+  for (const part of [1, 2] as const) {
+    const first = selectSessionQuestions(bank, part, "exam");
+    const second = selectSessionQuestions(
+      bank,
+      part,
+      "exam",
+      undefined,
+      new Set(first.map((question) => question.id)),
+    );
+    assert.equal(second.length, 10);
+    assert.equal(
+      second.filter((question) => first.some((previous) => previous.id === question.id)).length,
+      0,
+    );
   }
 });
 

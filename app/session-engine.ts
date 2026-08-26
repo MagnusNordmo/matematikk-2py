@@ -2,6 +2,11 @@ import type { Part, Question, QuestionBank } from "./question-bank";
 
 export type SessionMode = "skill" | "exam";
 
+function withoutRecent<T extends { id: string }>(items: T[], recentIds: Set<string>) {
+  const fresh = items.filter((item) => !recentIds.has(item.id));
+  return fresh.length > 0 ? fresh : items;
+}
+
 export function shuffle<T>(items: T[]) {
   const result = [...items];
   for (let index = result.length - 1; index > 0; index -= 1) {
@@ -54,24 +59,26 @@ export function selectSessionQuestions(
   part: Part,
   mode: SessionMode,
   themeId?: string,
+  recentIds = new Set<string>(),
 ) {
   if (part === 1) {
     const candidates = bank.oppgaver.filter(
       (question) =>
         question.del === 1 && (!themeId || question.tema === themeId),
     );
-    if (mode === "skill") return shuffle(candidates).slice(0, 10);
+    const preferredCandidates = withoutRecent(candidates, recentIds);
+    if (mode === "skill") return shuffle(preferredCandidates).slice(0, 10);
 
-    const themes = [...new Set(candidates.map((question) => question.tema))];
+    const themes = [...new Set(preferredCandidates.map((question) => question.tema))];
     const spread = shuffle(themes)
       .map((theme) =>
-        shuffle(candidates.filter((question) => question.tema === theme))[0],
+        shuffle(preferredCandidates.filter((question) => question.tema === theme))[0],
       )
       .filter(Boolean);
     const used = new Set(spread.map((question) => question.id));
     return shuffle([
       ...spread,
-      ...shuffle(candidates.filter((question) => !used.has(question.id))).slice(
+      ...shuffle(preferredCandidates.filter((question) => !used.has(question.id))).slice(
         0,
         Math.max(0, 10 - spread.length),
       ),
@@ -80,20 +87,47 @@ export function selectSessionQuestions(
 
   const groups = completeGroups(bank, themeId);
   if (mode === "exam") {
-    return distinctGroupThemes(groups, 3).flat();
+    const freshGroups = groups.filter((group) =>
+      group.every((question) => !recentIds.has(question.id)),
+    );
+    const selectedGroups = distinctGroupThemes(
+      freshGroups.length >= 2 ? freshGroups : groups,
+      2,
+    );
+    const independentCandidates = bank.oppgaver.filter(
+      (question) => question.del === 2 && !question.oppgavegruppe,
+    );
+    const independent = shuffle(
+      withoutRecent(independentCandidates, recentIds),
+    ).slice(0, 2);
+    return shuffle([
+      ...selectedGroups,
+      ...independent.map((question) => [question]),
+    ]).flat();
   }
 
-  const grouped = shuffle(groups).slice(0, 2).flat();
+  const freshGroups = groups.filter((group) =>
+    group.every((question) => !recentIds.has(question.id)),
+  );
+  const selectedGroups = shuffle(
+    freshGroups.length >= 2 ? freshGroups : groups,
+  ).slice(0, 2);
   const independent = shuffle(
-    bank.oppgaver.filter(
-      (question) =>
-        question.del === 2 &&
-        !question.oppgavegruppe &&
-        (!themeId || question.tema === themeId),
+    withoutRecent(
+      bank.oppgaver.filter(
+        (question) =>
+          question.del === 2 &&
+          !question.oppgavegruppe &&
+          (!themeId || question.tema === themeId),
+      ),
+      recentIds,
     ),
   ).slice(0, 2);
-  if (grouped.length === 0) return independent;
-  return [...grouped, ...independent];
+  if (selectedGroups.length === 0) return independent;
+  return shuffle([
+    ...selectedGroups,
+    ...independent.map((question) => [question]),
+  ]).flat();
 }
 
 export function findRetryQuestion(bank: QuestionBank, question: Question) {

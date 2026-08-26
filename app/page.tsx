@@ -34,6 +34,14 @@ type SessionItem = {
   baseOrdinal: number | null;
 };
 
+type SessionOutcome = {
+  question: Question;
+  correct: boolean;
+  correctParts: number;
+  totalParts: number;
+  usedHint: boolean;
+};
+
 type SessionStats = {
   hints: number;
   baseSolved: number;
@@ -49,6 +57,7 @@ type SavedProgress = {
 };
 
 type ProgressByPart = Record<Part, SavedProgress>;
+type RecentSelections = Record<string, string[]>;
 
 const EMPTY_STATS: SessionStats = {
   hints: 0,
@@ -100,6 +109,11 @@ function gradeFromPercent(percent: number) {
   if (percent >= 40) return 3;
   if (percent >= 20) return 2;
   return 1;
+}
+
+function readableTaskType(question: Question) {
+  const detail = question.deltema.replaceAll("_", " ");
+  return detail.charAt(0).toLocaleUpperCase("nb-NO") + detail.slice(1);
 }
 
 function makeSessionItem(question: Question, baseOrdinal: number | null, isExtra = false): SessionItem {
@@ -229,8 +243,11 @@ export default function Home() {
   const [evaluation, setEvaluation] = useState<AnswerEvaluation | null>(null);
   const [stats, setStats] = useState<SessionStats>(EMPTY_STATS);
   const [resultStats, setResultStats] = useState<SessionStats | null>(null);
+  const [outcomes, setOutcomes] = useState<SessionOutcome[]>([]);
+  const [resultOutcomes, setResultOutcomes] = useState<SessionOutcome[]>([]);
   const [maxPoints, setMaxPoints] = useState(0);
   const [savedProgress, setSavedProgress] = useState<ProgressByPart>(EMPTY_PROGRESS_BY_PART);
+  const [recentSelections, setRecentSelections] = useState<RecentSelections>({});
   const answerRef = useRef<HTMLInputElement>(null);
   const continueRef = useRef<HTMLButtonElement>(null);
 
@@ -248,15 +265,22 @@ export default function Home() {
         const stored = window.localStorage.getItem("matematikk2py-progress-v2");
         if (stored) {
           setSavedProgress(JSON.parse(stored) as ProgressByPart);
-          return;
-        }
-        const legacy = window.localStorage.getItem("matematikk2py-progress");
-        if (legacy) {
-          const partOne = JSON.parse(legacy) as SavedProgress;
-          setSavedProgress({ 1: partOne, 2: { ...EMPTY_PROGRESS } });
+        } else {
+          const legacy = window.localStorage.getItem("matematikk2py-progress");
+          if (legacy) {
+            const partOne = JSON.parse(legacy) as SavedProgress;
+            setSavedProgress({ 1: partOne, 2: { ...EMPTY_PROGRESS } });
+          }
         }
       } catch {
         setSavedProgress(EMPTY_PROGRESS_BY_PART);
+      }
+
+      try {
+        const recent = window.localStorage.getItem("matematikk2py-recent-selections-v1");
+        if (recent) setRecentSelections(JSON.parse(recent) as RecentSelections);
+      } catch {
+        setRecentSelections({});
       }
     });
   }, []);
@@ -265,6 +289,16 @@ export default function Home() {
     if (screen === "session" && !resolved) answerRef.current?.focus();
     if (resolved) continueRef.current?.focus();
   }, [currentIndex, resolved, screen]);
+
+  useEffect(() => {
+    if (screen !== "session" || mode !== "exam") return;
+    const warnBeforeLeaving = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", warnBeforeLeaving);
+    return () => window.removeEventListener("beforeunload", warnBeforeLeaving);
+  }, [mode, screen]);
 
   const currentItem = queue[currentIndex];
   const currentQuestion = currentItem?.question;
@@ -282,6 +316,22 @@ export default function Home() {
     const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart).map((question) => question.tema));
     return THEMES.filter((theme) => ids.has(theme.id));
   }, [bank, selectedPart]);
+  const resultTypeSummary = useMemo(() => {
+    const summary = new Map<string, { label: string; theme: string; correct: number; wrong: number }>();
+    for (const outcome of resultOutcomes) {
+      const key = `${outcome.question.tema}:${outcome.question.deltema}`;
+      const current = summary.get(key) ?? {
+        label: readableTaskType(outcome.question),
+        theme: THEMES.find((theme) => theme.id === outcome.question.tema)?.kortnavn ?? outcome.question.tema,
+        correct: 0,
+        wrong: 0,
+      };
+      if (outcome.correct) current.correct += 1;
+      else current.wrong += 1;
+      summary.set(key, current);
+    }
+    return [...summary.values()].sort((a, b) => b.wrong - a.wrong || a.label.localeCompare(b.label, "nb-NO"));
+  }, [resultOutcomes]);
 
   function choosePart(part: Part) {
     setSelectedPart(part);
@@ -292,8 +342,28 @@ export default function Home() {
 
   function startSession(nextMode: SessionMode, themeId?: string) {
     if (!bank || !selectedPart) return;
-    const questions = selectSessionQuestions(bank, selectedPart, nextMode, themeId);
+    const selectionKey = `${selectedPart}:${nextMode}:${themeId ?? "blandet"}`;
+    const questions = selectSessionQuestions(
+      bank,
+      selectedPart,
+      nextMode,
+      themeId,
+      new Set(recentSelections[selectionKey] ?? []),
+    );
+    const nextRecentSelections = {
+      ...recentSelections,
+      [selectionKey]: questions.map((question) => question.id),
+    };
     const items = questions.map((question, index) => makeSessionItem(question, index + 1));
+    setRecentSelections(nextRecentSelections);
+    try {
+      window.localStorage.setItem(
+        "matematikk2py-recent-selections-v1",
+        JSON.stringify(nextRecentSelections),
+      );
+    } catch {
+      // Tilfeldig trekking virker fortsatt når lokal lagring er blokkert.
+    }
     setMode(nextMode);
     setSelectedTheme(themeId ?? null);
     setQueue(items);
@@ -307,6 +377,8 @@ export default function Home() {
     setEvaluation(null);
     setStats(EMPTY_STATS);
     setResultStats(null);
+    setOutcomes([]);
+    setResultOutcomes([]);
     setMaxPoints(questions.reduce((sum, question) => sum + answerPartCount(question), 0));
     setScreen("session");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -355,6 +427,18 @@ export default function Home() {
       score: value.score + (!currentItem.isExtra && mode === "exam" && !usedHint ? result.correctParts : 0),
       extraSolved: value.extraSolved + (currentItem.isExtra ? 1 : 0),
     }));
+    if (!currentItem.isExtra) {
+      setOutcomes((value) => [
+        ...value,
+        {
+          question: currentQuestion,
+          correct: result.correct,
+          correctParts: result.correctParts,
+          totalParts: result.totalParts,
+          usedHint,
+        },
+      ]);
+    }
 
     if (mode === "skill" && usedHint) insertRetryAfterGroup(currentQuestion);
   }
@@ -377,6 +461,7 @@ export default function Home() {
 
   function finishSession() {
     setResultStats(stats);
+    setResultOutcomes(outcomes);
     saveCompletedSession(stats);
     setScreen("result");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -397,18 +482,31 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function goHome(force = false) {
-    if (!force && screen === "session" && stats.baseSolved > 0 && !window.confirm("Vil du avslutte økten? Resultatet fra økten blir ikke lagret.")) return;
-    setScreen("home");
+  function leaveSession(target: "home" | "modes" | "topics", force = false) {
+    if (
+      !force &&
+      screen === "session" &&
+      mode === "exam" &&
+      !window.confirm("Forlater du eksamensøkten nå, mister du framdriften i denne økten. Vil du forlate økten?")
+    ) return;
+    setScreen(target);
     setQueue([]);
-    setSelectedPart(null);
-    setSelectedTheme(null);
+    setOutcomes([]);
+    setResultOutcomes([]);
+    setResultStats(null);
+    if (target !== "topics") setSelectedTheme(null);
+    if (target === "home") setSelectedPart(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function goHome(force = false) {
+    leaveSession("home", force);
   }
 
   const progressPercent = baseCount > 0 ? Math.min(100, (stats.baseSolved / baseCount) * 100) : 0;
   const resultPercent = resultStats && maxPoints > 0 ? Math.round((resultStats.score / maxPoints) * 100) : 0;
   const grade = gradeFromPercent(resultPercent);
+  const correctQuestionCount = resultOutcomes.filter((outcome) => outcome.correct).length;
   const currentProgress = selectedPart ? savedProgress[selectedPart] : null;
 
   return (
@@ -419,7 +517,9 @@ export default function Home() {
           <span><strong>Matematikk 2PY</strong><small>{selectedPart ? `Del ${selectedPart} · ${selectedPart === 1 ? "uten" : "med"} hjelpemidler` : "Eksamensnær øving"}</small></span>
         </button>
         {screen === "session" ? (
-          <button className="quiet-button" onClick={() => goHome()}>Avslutt økt</button>
+          <button className="quiet-button" onClick={() => leaveSession(mode === "exam" ? "modes" : "topics")}>
+            {mode === "exam" ? "Forlat eksamensøkt" : "Til temaer"}
+          </button>
         ) : currentProgress && currentProgress.sessions > 0 ? (
           <span className="local-progress">Del {selectedPart}: {currentProgress.sessions} {currentProgress.sessions === 1 ? "økt" : "økter"} på denne enheten</span>
         ) : null}
@@ -456,7 +556,7 @@ export default function Home() {
           <section className="section-heading">
             <p className="eyebrow">Del {selectedPart} · {selectedPart === 1 ? "uten hjelpemidler" : "med hjelpemidler"}</p>
             <h1>Hvordan vil du øve?</h1>
-            <p>{selectedPart === 1 ? "En økt består av 10 oppgaver." : "En økt består normalt av to eller tre hele case, slik at deloppgavene beholder sammenhengen."}</p>
+            <p>En eksamensøkt består alltid av 10 tilfeldig valgte oppgaver.</p>
           </section>
           <section className="choice-grid" aria-label="Velg øvingsmåte">
             <button className="choice-card choice-card-primary" onClick={() => setScreen("topics")}>
@@ -466,7 +566,7 @@ export default function Home() {
             </button>
             <button className="choice-card" onClick={() => startSession("exam")}>
               <span className="choice-icon"><IconExam /></span>
-              <span className="choice-content"><span className="choice-kicker">Blandet trening</span><strong>Øv som på eksamen</strong><span>{selectedPart === 1 ? "10 oppgaver fra flere temaer." : "Tre hele case fra forskjellige temaer."} Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint gir 0 poeng på oppgaven.</span></span>
+              <span className="choice-content"><span className="choice-kicker">Blandet trening</span><strong>Øv som på eksamen</strong><span>10 oppgaver fra flere temaer. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint gir 0 poeng på oppgaven.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
@@ -495,6 +595,11 @@ export default function Home() {
 
       {screen === "session" && currentQuestion && selectedPart && (
         <div className="session-page">
+          <div className="session-navigation">
+            <button className="back-link" onClick={() => leaveSession(mode === "exam" ? "modes" : "topics")}>
+              <IconArrow direction="left" />{mode === "exam" ? "Til øvingsmåter" : "Til temaer"}
+            </button>
+          </div>
           <section className="session-status" aria-label="Fremdrift i økten">
             <div className="progress-copy">
               <span>{currentItem.isExtra ? "Ekstra mestringsoppgave" : `Oppgave ${currentItem.baseOrdinal} av ${baseCount}`}</span>
@@ -557,11 +662,63 @@ export default function Home() {
             <span className="result-symbol" aria-hidden="true">✓</span>
             <p className="eyebrow">Del {selectedPart} · økten er fullført</p>
             {mode === "exam" ? (
-              <><h1>Veiledende karakter {grade}</h1><p className="result-lead">Du fikk {resultStats.score} av {maxPoints} poeng ({resultPercent} %).</p><div className="result-grid"><div><strong>{resultStats.baseWithoutHint}</strong><span>helt riktig uten hint</span></div><div><strong>{resultStats.hints}</strong><span>hint brukt</span></div><div><strong>{baseCount}</strong><span>oppgaver gjennomført</span></div></div><p className="grade-disclaimer">Karakteren er bare et øvingsanslag. På ekte eksamen vurderer sensor også framgangsmåte, begrunnelser og matematisk forståelse.</p></>
+              <>
+                <h1>Veiledende karakter {grade}</h1>
+                <p className="result-lead">Du fikk {correctQuestionCount} av {baseCount} oppgaver helt riktig og {resultStats.score} av {maxPoints} mulige poeng ({resultPercent} %).</p>
+                <div className="result-grid">
+                  <div><strong>{correctQuestionCount}</strong><span>helt riktige oppgaver</span></div>
+                  <div><strong>{baseCount - correctQuestionCount}</strong><span>oppgaver å øve mer på</span></div>
+                  <div><strong>{resultStats.hints}</strong><span>hint brukt</span></div>
+                </div>
+                <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. På ekte eksamen vurderer sensor også framgangsmåte, begrunnelser og matematisk forståelse.</p>
+
+                <section className="exam-report" aria-labelledby="type-report-heading">
+                  <div className="report-heading">
+                    <p className="eyebrow">Rapport</p>
+                    <h2 id="type-report-heading">Resultat etter oppgavetype</h2>
+                    <p>Her ser du hvilke typer du mestret, og hva du bør øve mer på.</p>
+                  </div>
+                  <div className="type-report-list">
+                    {resultTypeSummary.map((item) => (
+                      <div className="type-report-row" key={`${item.theme}-${item.label}`}>
+                        <span><small>{item.theme}</small><strong>{item.label}</strong></span>
+                        <span className="type-report-counts">
+                          <span className="report-correct">{item.correct} riktig</span>
+                          <span className="report-wrong">{item.wrong} feil</span>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="report-heading report-heading-details">
+                    <h2>Oppgave for oppgave</h2>
+                    <p>Oppgaver som ikke var helt riktige, er åpnet slik at du kan se løsningsforslaget.</p>
+                  </div>
+                  <div className="question-report-list">
+                    {resultOutcomes.map((outcome, index) => {
+                      const status = outcome.correct ? "Riktig" : outcome.correctParts > 0 ? "Delvis riktig" : "Feil";
+                      return (
+                        <details className={`question-report-item ${outcome.correct ? "question-report-correct" : "question-report-wrong"}`} key={outcome.question.id} open={!outcome.correct}>
+                          <summary>
+                            <span className="question-report-number">{index + 1}</span>
+                            <span><small>{themeById.get(outcome.question.tema)?.kortnavn}</small><strong>{readableTaskType(outcome.question)}</strong></span>
+                            <span className="question-report-status">{status}</span>
+                          </summary>
+                          <div className="question-report-content">
+                            <p><strong>Oppgaven:</strong> <MathText>{outcome.question.sporsmal}</MathText></p>
+                            <p><strong>Løsningsforslag:</strong> <MathText>{outcome.question.svar}</MathText></p>
+                            {outcome.usedHint && <p className="question-report-note">Du brukte hint på denne oppgaven.</p>}
+                          </div>
+                        </details>
+                      );
+                    })}
+                  </div>
+                </section>
+              </>
             ) : (
               <><h1>God økt!</h1><p className="result-lead">Du fullførte {baseCount} oppgaver i {activeTheme?.navn.toLowerCase() ?? "temaet"}.</p><div className="result-grid"><div><strong>{resultStats.baseWithoutHint}</strong><span>løst uten hint</span></div><div><strong>{resultStats.hints}</strong><span>hint brukt</span></div><div><strong>{resultStats.extraSolved}</strong><span>ekstraoppgaver</span></div></div></>
             )}
-            <div className="result-actions"><button className="primary-button" onClick={() => mode === "exam" ? startSession("exam") : startSession("skill", selectedTheme ?? undefined)}>Øv en gang til<IconArrow /></button><button className="secondary-button" onClick={() => goHome(true)}>Til start</button></div>
+            <div className="result-actions"><button className="primary-button" onClick={() => mode === "exam" ? startSession("exam") : startSession("skill", selectedTheme ?? undefined)}>{mode === "exam" ? "Prøv igjen" : "Øv en gang til"}<IconArrow /></button><button className="secondary-button" onClick={() => leaveSession(mode === "exam" ? "modes" : "topics", true)}>{mode === "exam" ? "Velg øvingsmåte" : "Velg tema"}</button></div>
           </section>
         </div>
       )}
