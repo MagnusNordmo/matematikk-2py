@@ -18,8 +18,8 @@ test("oppgavebanken har 500 komplette og unike oppgaver", () => {
     assert.equal(question.hjelpemidler, question.del === 1 ? "uten" : "med");
     assert.ok(question.sporsmal?.trim(), `${question.id} mangler spørsmål`);
     assert.ok(question.svar?.trim(), `${question.id} mangler løsning`);
-    assert.ok(Array.isArray(question.hint) && question.hint.length >= 2, `${question.id} har for få hint`);
-    assert.ok(question.hint.every((hint) => typeof hint === "string" && hint.trim().length >= 10), `${question.id} har et kort eller tomt hint`);
+    assert.ok(Array.isArray(question.hint) && question.hint.length >= 5, `${question.id} har for få worked-example-steg`);
+    assert.ok(question.hint.every((hint) => typeof hint === "string" && hint.trim().length >= 20), `${question.id} har et kort eller tomt hint`);
     assert.ok(["tall", "flere_tall", "valg", "valg_og_tall"].includes(question.fasit?.type), `${question.id} har ugyldig svarformat`);
   }
 });
@@ -77,42 +77,7 @@ test("oppgavebanken dekker digitale representasjoner uten filinnlevering", () =>
   assert.ok(bank.oppgaver.every((question) => !/last opp|lever inn|excel-fil/i.test(question.sporsmal)));
 });
 
-test("svake hintfamilier har konkrete, trinnvise mellomsteg", () => {
-  const revisedFamilies = new Set([
-    "d1-algebra-pastand",
-    "d1-blandet-representasjon",
-    "d1-formel-innsetting",
-    "d1-kode-statistikk",
-    "d1-konstantledd",
-    "d1-lineaert-skjaeringspunkt",
-    "d1-modellvalg",
-    "d1-omforme-formel",
-    "d1-potensregler",
-    "d1-rot-rekkefolge",
-    "d1-standardform",
-    "d1-statistikk-valg",
-    "d1-tolke-representasjon",
-    "d1-kritisk-statistikk",
-    "d1-vekstfaktor",
-    "d2-eksponential-a",
-    "d2-eksponential-b",
-    "d2-eksponential-c",
-    "d2-figur-c",
-    "d2-kode-a",
-    "d2-kode-b",
-    "d2-kode-c",
-    "d2-kort-eksponentialverdi",
-    "d2-kort-potensmodell",
-    "d2-lineaer-a",
-    "d2-lineaer-b",
-    "d2-lineaer-c",
-    "d2-omvendt-b",
-    "d2-omvendt-c",
-    "d2-regresjon-b",
-    "d2-regresjon-c",
-    "d2-sammensatt-prosent-d",
-    "d2-statistikk-c",
-  ]);
+test("alle hintforløp er fullstendige worked examples", () => {
   const forbiddenHints = new Set([
     "Bruk regelen som passer operasjonen.",
     "Følg regnerekkefølgen.",
@@ -128,14 +93,13 @@ test("svake hintfamilier har konkrete, trinnvise mellomsteg", () => {
       question.hint.every((hint) => !forbiddenHints.has(hint)),
       `${question.id} har fortsatt et hint som bare gjentar arbeidsordren`,
     );
-    if (revisedFamilies.has(question.variantfamilie)) {
-      assert.ok(question.hint.length >= 3, `${question.id} mangler gradvis hintprogresjon`);
-      assert.ok(
-        question.hint.join(" ").length >= 70,
-        `${question.id} har for lite forklaring til å gi gradvis støtte`,
-      );
-    }
+    assert.ok(question.hint.length >= 5, `${question.id} mangler gradvis hintprogresjon`);
+    assert.ok(question.hint.join(" ").length >= 300, `${question.id} har for lite forklaring til å være et worked example`);
+    assert.ok(question.hint.some((hint) => /Løsningen samlet:|Regn ut:/.test(hint)), `${question.id} mangler fullført utregning`);
+    assert.ok(question.hint.some((hint) => /Kontroller/.test(hint)), `${question.id} mangler kontrollsteg`);
   }
+
+  assert.ok(bank.oppgaver.reduce((total, question) => total + question.hint.length, 0) >= 2500);
 });
 
 test("standardformoppgaven viser samme tall som fasiten", () => {

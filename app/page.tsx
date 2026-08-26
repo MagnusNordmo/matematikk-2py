@@ -641,7 +641,7 @@ export default function Home() {
               )}
               <div className="hint-section">
                 <div className="hint-heading">
-                  <div><strong>Trenger du en forklaring?</strong><span>Åpne ett trinn om gangen. Når alle hint er åpnet, vises fasiten.</span></div>
+                  <div><strong>Trenger du en forklaring?</strong><span>Åpne ett løsningssteg om gangen. Hintene viser en fullstendig løsning steg for steg, og fasiten vises til slutt.</span></div>
                   {!resolved && hintIndex < currentQuestion.hint.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {currentQuestion.hint.length}</button>}
                 </div>
                 {hintIndex > 0 && (

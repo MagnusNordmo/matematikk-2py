@@ -7,7 +7,7 @@ const bankPath = join(scriptDir, "..", "public", "oppgaver-2027.json");
 const bank = JSON.parse(await readFile(bankPath, "utf8"));
 const questions = new Map(bank.oppgaver.map((question) => [question.id, question]));
 const groups = new Map(bank.oppgavegrupper.map((group) => [group.id, group]));
-let revised = 0;
+const revisedIds = new Set();
 
 function number(value, digits = null) {
   const numeric = Number(value);
@@ -35,7 +35,7 @@ function setQuestion(id, changes) {
     if (changes.hint.length < 3) throw new Error(`${id} må få minst tre trinnvise hint.`);
     if (changes.hint.some((hint) => hint.trim().length < 20)) throw new Error(`${id} har et for kort hint.`);
   }
-  revised += 1;
+  revisedIds.add(id);
 }
 
 function setHintsAndAnswer(id, hint, svar) {
@@ -44,6 +44,24 @@ function setHintsAndAnswer(id, hint, svar) {
 
 function byFamily(family) {
   return bank.oppgaver.filter((question) => question.variantfamilie === family);
+}
+
+// Omvendt prosent er mønstereksempelet for resten av banken: hele resonnementet
+// vises, ett meningsfullt delmål om gangen, og avsluttes med en kontroll.
+for (const question of byFamily("d1-omvendt-prosent")) {
+  const { ny, endring } = question.kontroll.inndata;
+  const factor = 1 + endring / 100;
+  const original = question.fasit.verdier[0].verdi;
+  const direction = endring >= 0 ? "økt" : "redusert";
+  const factorOperation = endring >= 0 ? "+" : "-";
+  setHintsAndAnswer(question.id, [
+    `Definer den ukjente: La ${math("x")} være verdien før den ble ${direction} med ${number(Math.abs(endring))} %.`,
+    `Finn vekstfaktoren: ${number(Math.abs(endring))} % er ${math(number(Math.abs(endring) / 100))}. Derfor er vekstfaktoren ${math(`1${factorOperation}${number(Math.abs(endring) / 100)}=${number(factor)}`)}.`,
+    `Lag ligningen: Gammel verdi multiplisert med vekstfaktoren skal bli den nye verdien. Det gir ${math(`${number(factor)}x=${number(ny)}`)}.`,
+    `Isoler den ukjente: Del begge sider på ${math(number(factor))}, slik at ${math(`x=${number(ny)}/${number(factor)}`)}.`,
+    `Regn ut: ${math(`x=${number(original)}`)}. Dette er verdien før prosentendringen.`,
+    `Kontroller svaret: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}. Vi får den oppgitte nye verdien, så svaret stemmer.`,
+  ], `Verdien før endringen var ${math(number(original))}. Kontroll: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}.`);
 }
 
 // Vekstfaktor: oppgavene går i begge retninger og trenger derfor ulike hint.
@@ -646,6 +664,109 @@ const codeRevisions = {
 };
 for (const [id, [hint, svar]] of Object.entries(codeRevisions)) setHintsAndAnswer(id, hint, svar);
 
+// Alle oppgavene får nå en full worked example. De eksisterende, fagspesifikke
+// mellomstegene beholdes, men settes inn i en tydelig progresjon fra forståelse
+// via oppsett og utregning til kontroll. Markørene gjør passet idempotent.
+const generatedPrefixes = [
+  "Forstå oppgaven:",
+  "Velg framgangsmåte:",
+  "Sett opp:",
+  "Regn videre:",
+  "Arbeid videre:",
+  "Løsningen samlet:",
+  "Kontroller og konkluder:",
+];
+
+function removeGeneratedPrefix(hint) {
+  for (const prefix of generatedPrefixes.slice(1, 5)) {
+    if (hint.startsWith(prefix)) return hint.slice(prefix.length).trim();
+  }
+  return hint;
+}
+
+function workedContext(question) {
+  const family = question.variantfamilie;
+  if (/kode/.test(family)) {
+    return "Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.";
+  }
+  if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
+    return "Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.";
+  }
+  if (/statistikk|frekvens|gjennomsnitt|median|typetall|uteliggere|gruppert|samfunn/.test(family)) {
+    return "Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.";
+  }
+  if (/figur/.test(family)) {
+    return "Koble hvert figurnummer til antallet elementer. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.";
+  }
+  if (/lineaer|graf|modell|regresjon|eksponential|proporsjonal|stigningstall/.test(family)) {
+    return "Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.";
+  }
+  if (/potens|standardform|rot/.test(family)) {
+    return "Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.";
+  }
+  if (/ligning|formel|algebra|konstantledd/.test(family)) {
+    return "Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.";
+  }
+  return "Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.";
+}
+
+function workedCheck(question) {
+  const family = question.variantfamilie;
+  if (/kode/.test(family)) {
+    return "Spor programmet én gang til med de opprinnelige startverdiene. Variablene og stoppvilkåret skal ende på verdiene i løsningen.";
+  }
+  if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
+    return "Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen.";
+  }
+  if (/statistikk|frekvens|gjennomsnitt|median|typetall|uteliggere|gruppert|samfunn/.test(family)) {
+    return "Kontroller antall observasjoner, samlet frekvens og eventuell sortering. Svaret skal ligge på en rimelig plass i datamaterialet.";
+  }
+  if (/figur/.test(family)) {
+    return "Prøv regelen på en av de oppgitte figurene og på figuren rett før eller etter. Begge kontrollene skal passe mønsteret.";
+  }
+  if (/lineaer|graf|modell|regresjon|eksponential|proporsjonal|stigningstall/.test(family)) {
+    return "Sett resultatet inn i modellen eller sammenlign det med tabellen og grafen. Fortegn, enhet og størrelsesorden skal passe situasjonen.";
+  }
+  if (/potens|standardform|rot/.test(family)) {
+    return "Regn uttrykket tilbake som et vanlig tall eller bruk en omvendt potensoperasjon. Fortegn og størrelsesorden skal stemme.";
+  }
+  if (/ligning|formel|algebra|konstantledd/.test(family)) {
+    return "Sett den funne verdien inn i den opprinnelige ligningen eller formelen. Venstre og høyre side skal bli like.";
+  }
+  if (question.fasit.type === "valg") {
+    return "Sammenlign konklusjonen med alle opplysningene i oppgaven. Det valgte alternativet skal oppfylle betingelsene, mens de andre bryter minst én av dem.";
+  }
+  return "Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden.";
+}
+
+function asWorkedExample(question) {
+  // Denne familien er skrevet ferdig som et detaljert mønstereksempel ovenfor.
+  if (question.variantfamilie === "d1-omvendt-prosent") return question.hint;
+
+  const coreHints = question.hint
+    .filter((hint) => ![
+      "Forstå oppgaven:",
+      "Løsningen samlet:",
+      "Kontroller og konkluder:",
+    ].some((prefix) => hint.startsWith(prefix)))
+    .map(removeGeneratedPrefix);
+  const stepLabels = ["Velg framgangsmåte", "Sett opp", "Regn videre"];
+  const worked = [`Forstå oppgaven: ${workedContext(question)}`];
+
+  coreHints.forEach((hint, index) => {
+    const label = stepLabels[index] ?? "Arbeid videre";
+    worked.push(`${label}: ${hint}`);
+  });
+
+  worked.push(`Løsningen samlet: ${question.svar}`);
+  worked.push(`Kontroller og konkluder: ${workedCheck(question)}`);
+  return worked;
+}
+
+for (const question of bank.oppgaver) {
+  setQuestion(question.id, { hint: asWorkedExample(question) });
+}
+
 // Verifiser at de provoserende standardformuleringene ikke står igjen i de reviderte familiene.
 const forbiddenExactHints = new Set([
   "Bruk regelen som passer operasjonen.",
@@ -662,10 +783,12 @@ for (const question of bank.oppgaver) {
   }
 }
 
-if (revised < 150) throw new Error(`For få oppgaver ble revidert: ${revised}`);
+if (revisedIds.size !== bank.oppgaver.length) {
+  throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
+}
 
-bank.samling.versjon = "2027.2";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er kvalitetsrevidert med oppgavespesifikke, trinnvise mellomsteg.`;
+bank.samling.versjon = "2027.3";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til gradvise worked examples med forståelse, metode, oppsett, utregning, konklusjon og kontroll.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
-console.log(`Reviderte ${revised} oppgaver i ${bank.oppgaver.length}-oppgavebanken.`);
+console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);
