@@ -10,7 +10,8 @@
     "deler": [
       1,
       2
-    ]
+    ],
+    "versjon": "2027.2"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -25,7 +26,7 @@
     "direkte_avskrift": false,
     "generator_seed": 20270823,
     "generert_dato": "2026-08-23",
-    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest."
+    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er kvalitetsrevidert med oppgavespesifikke, trinnvise mellomsteg."
   },
   "eksamensprofil": {
     "mål": "Trene ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
@@ -125,7 +126,7 @@
         ],
         "verdier": [
           28500,
-          23370.0,
+          23370,
           29212.5
         ]
       }
@@ -152,7 +153,7 @@
         ],
         "verdier": [
           4200,
-          4704.0,
+          4704,
           4327.68
         ]
       }
@@ -179,8 +180,8 @@
         ],
         "verdier": [
           185000,
-          157250.0,
-          147815.0
+          157250,
+          147815
         ]
       }
     },
@@ -206,8 +207,8 @@
         ],
         "verdier": [
           760000,
-          912000.0,
-          1003200.0
+          912000,
+          1003200
         ]
       }
     },
@@ -530,7 +531,7 @@
       "visualisering": {
         "type": "funksjonsgrafer",
         "x_min": 0,
-        "x_max": 276.0,
+        "x_max": 276,
         "grafer": [
           {
             "uttrykk": "79+2.4*x",
@@ -700,7 +701,7 @@
           1.2,
           8.1,
           11.4,
-          11.0,
+          11,
           6.8,
           0.2
         ],
@@ -724,7 +725,7 @@
           1.2,
           8.1,
           11.4,
-          11.0,
+          11,
           6.8,
           0.2
         ],
@@ -1291,7 +1292,7 @@
         "fast_tid": 2,
         "observasjon": {
           "x": 6,
-          "T": 22.0
+          "T": 22
         },
         "x_enhet": "personer",
         "T_enhet": "timer"
@@ -1313,7 +1314,7 @@
         "fast_tid": 1,
         "observasjon": {
           "x": 8,
-          "T": 46.0
+          "T": 46
         },
         "x_enhet": "pumper",
         "T_enhet": "timer"
@@ -1335,7 +1336,7 @@
         "fast_tid": 5,
         "observasjon": {
           "x": 15,
-          "T": 65.0
+          "T": 65
         },
         "x_enhet": "prosessorer",
         "T_enhet": "minutter"
@@ -1344,7 +1345,7 @@
       "visualisering": {
         "type": "omvendt_proporsjonal_graf",
         "x_min": 1,
-        "x_max": 54.0,
+        "x_max": 54,
         "fast_ledd": 5
       }
     },
@@ -1357,7 +1358,7 @@
         "fast_tid": 3,
         "observasjon": {
           "x": 10,
-          "T": 27.0
+          "T": 27
         },
         "x_enhet": "arbeidere",
         "T_enhet": "timer"
@@ -1366,7 +1367,7 @@
       "visualisering": {
         "type": "omvendt_proporsjonal_graf",
         "x_min": 1,
-        "x_max": 24.0,
+        "x_max": 24,
         "fast_ledd": 3
       }
     },
@@ -1379,7 +1380,7 @@
         "fast_tid": 4,
         "observasjon": {
           "x": 12,
-          "T": 44.0
+          "T": 44
         },
         "x_enhet": "kjøretøy",
         "T_enhet": "timer"
@@ -2440,7 +2441,7 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 54.0,
+          "del": 54,
           "prosent": 12
         },
         "resultat": [
@@ -2479,7 +2480,7 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 64.0,
+          "del": 64,
           "prosent": 20
         },
         "resultat": [
@@ -2518,7 +2519,7 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 190.0,
+          "del": 190,
           "prosent": 25
         },
         "resultat": [
@@ -2557,7 +2558,7 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 162.0,
+          "del": 162,
           "prosent": 30
         },
         "resultat": [
@@ -2596,7 +2597,7 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 370.0,
+          "del": 370,
           "prosent": 40
         },
         "resultat": [
@@ -2877,8 +2878,9 @@
       "hjelpemidler": "uten",
       "sporsmal": "En størrelse endres med \\(-35\\,\\%\\). Hva er vekstfaktoren?",
       "hint": [
-        "En uendret verdi har faktor 1.",
-        "Økning gir faktor over 1; nedgang gir faktor under 1."
+        "Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
+        "35 % er \\(0{,}35\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
+        "Skriv regnestykket \\(1-0{,}35\\) og regn ut vekstfaktoren."
       ],
       "svar": "Vekstfaktoren er \\(1-0{,}35=0{,}65\\).",
       "fasit": {
@@ -2915,10 +2917,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En verdi multipliseres med vekstfaktoren \\(0{,}82\\). Hva er den prosentvise endringen?",
       "hint": [
-        "En uendret verdi har faktor 1.",
-        "Økning gir faktor over 1; nedgang gir faktor under 1."
+        "Sammenlign vekstfaktoren \\(0{,}8200000000000001\\) med \\(1\\), som betyr ingen endring.",
+        "Finn forskjellen: \\(0{,}8200000000000001-1=-0{,}17999999999999994\\). Fortegnet viser om det er økning eller nedgang.",
+        "Gjør forskjellen om til prosent ved å gange med 100 %."
       ],
-      "svar": "\\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\).",
+      "svar": "Den prosentvise endringen er \\((0{,}8200000000000001-1)\\cdot100\\,\\%=-18\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2953,10 +2956,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En størrelse endres med \\(-7\\,\\%\\). Hva er vekstfaktoren?",
       "hint": [
-        "En uendret verdi har faktor 1.",
-        "Økning gir faktor over 1; nedgang gir faktor under 1."
+        "Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
+        "7 % er \\(0{,}07\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
+        "Skriv regnestykket \\(1-0{,}07\\) og regn ut vekstfaktoren."
       ],
-      "svar": "Vekstfaktoren er \\(1-0{,}07=0{,}93\\).",
+      "svar": "Vekstfaktoren er \\(1-0{,}07=0{,}9299999999999999\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2991,10 +2995,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En verdi multipliseres med vekstfaktoren \\(1{,}12\\). Hva er den prosentvise endringen?",
       "hint": [
-        "En uendret verdi har faktor 1.",
-        "Økning gir faktor over 1; nedgang gir faktor under 1."
+        "Sammenlign vekstfaktoren \\(1{,}12\\) med \\(1\\), som betyr ingen endring.",
+        "Finn forskjellen: \\(1{,}12-1=0{,}1200000000000001\\). Fortegnet viser om det er økning eller nedgang.",
+        "Gjør forskjellen om til prosent ved å gange med 100 %."
       ],
-      "svar": "\\((1{,}12-1)\\cdot100\\,\\%=12\\,\\%\\).",
+      "svar": "Den prosentvise endringen er \\((1{,}12-1)\\cdot100\\,\\%=12\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -3029,8 +3034,9 @@
       "hjelpemidler": "uten",
       "sporsmal": "En størrelse endres med \\(45\\,\\%\\). Hva er vekstfaktoren?",
       "hint": [
-        "En uendret verdi har faktor 1.",
-        "Økning gir faktor over 1; nedgang gir faktor under 1."
+        "Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
+        "45 % er \\(0{,}45\\) som desimaltall. Siden dette er en økning, skal tallet legges til 1.",
+        "Skriv regnestykket \\(1+0{,}45\\) og regn ut vekstfaktoren."
       ],
       "svar": "Vekstfaktoren er \\(1+0{,}45=1{,}45\\).",
       "fasit": {
@@ -3926,7 +3932,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -3966,7 +3972,7 @@
           {
             "verdi": 0.008,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4004,9 +4010,9 @@
         "type": "tall",
         "verdier": [
           {
-            "verdi": 1e-05,
+            "verdi": 0.00001,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4018,7 +4024,7 @@
           "eksponent": -5
         },
         "resultat": [
-          1e-05
+          0.00001
         ],
         "avrunding": 7
       },
@@ -4046,7 +4052,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4086,7 +4092,7 @@
           {
             "verdi": 0.0025,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4117,10 +4123,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ er lik \\(3^4\\cdot3^5\\)?",
       "hint": [
-        "Bruk regelen som passer operasjonen.",
-        "La grunntallet stå når du regner med eksponentene."
+        "Når potenser med samme grunntall multipliseres, legger vi sammen eksponentene.",
+        "Her blir uttrykket \\(3^{4+5}\\). Grunntallet 3 skal stå uendret.",
+        "Regn ut summen av eksponentene og velg alternativet som har denne eksponenten."
       ],
-      "svar": "Riktig svar er \\(3^9\\).",
+      "svar": "Siden \\(a^m\\cdot a^n=a^{m+n}\\), får vi \\(3^4\\cdot3^5=3^{4+5}=3^9\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4155,10 +4162,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ er lik \\(x^8/x^3\\)?",
       "hint": [
-        "Bruk regelen som passer operasjonen.",
-        "La grunntallet stå når du regner med eksponentene."
+        "Når potenser med samme grunntall divideres, trekker vi eksponenten i nevneren fra eksponenten i telleren.",
+        "Her blir uttrykket \\(x^{8-3}\\). Grunntallet x skal stå uendret.",
+        "Regn ut differansen mellom eksponentene og velg det tilsvarende alternativet."
       ],
-      "svar": "Riktig svar er \\(x^5\\).",
+      "svar": "Siden \\(a^m/a^n=a^{m-n}\\), får vi \\(x^8/x^3=x^{8-3}=x^5\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4193,10 +4201,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ er lik \\((a^3)^4\\)?",
       "hint": [
-        "Bruk regelen som passer operasjonen.",
-        "La grunntallet stå når du regner med eksponentene."
+        "Når en potens opphøyes i en ny potens, multipliserer vi eksponentene.",
+        "Skriv uttrykket som \\(a^{3\\cdot4}\\).",
+        "Regn ut produktet av eksponentene og velg alternativet som passer."
       ],
-      "svar": "Riktig svar er \\(a^{12}\\).",
+      "svar": "\\((a^3)^4=a^{3\\cdot4}=a^{12}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4231,10 +4240,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ er lik \\((2x)^3\\)?",
       "hint": [
-        "Bruk regelen som passer operasjonen.",
-        "La grunntallet stå når du regner med eksponentene."
+        "Eksponenten utenfor parentesen gjelder både tallet 2 og variabelen x.",
+        "Skriv \\((2x)^3=2^3\\cdot x^3\\).",
+        "Regn ut \\(2^3\\) og behold \\(x^3\\)."
       ],
-      "svar": "Riktig svar er \\(8x^3\\).",
+      "svar": "\\((2x)^3=2^3x^3=8x^3\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4269,10 +4279,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ er lik \\(b^0\\), der \\(b\\neq0\\)?",
       "hint": [
-        "Bruk regelen som passer operasjonen.",
-        "La grunntallet stå når du regner med eksponentene."
+        "For et grunntall som ikke er null, er en potens med eksponent 0 alltid lik 1.",
+        "Du kan se dette fra \\(b^1/b^1=b^{1-1}=b^0\\).",
+        "Samtidig er \\(b^1/b^1=1\\), siden et tall delt på seg selv er 1."
       ],
-      "svar": "Riktig svar er \\(1\\).",
+      "svar": "Når \\(b\\neq0\\), er \\(b^0=1\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4306,10 +4317,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser \\(0{,}0000720000\\) på standardform?",
       "hint": [
-        "På standardform skal første faktor være minst 1 og mindre enn 10.",
-        "Tell hvor mange plasser kommaet flyttes."
+        "På standardform skal tallet foran tierpotensen være minst 1 og mindre enn 10. Flytt derfor kommaet slik at du får \\(7{,}2\\).",
+        "Kommaet flyttes fem plasser mot høyre for å gå fra det opprinnelige tallet til 7,2.",
+        "Det opprinnelige tallet er mindre enn 1, så eksponenten skal være negativ."
       ],
-      "svar": "Riktig svar er \\(7{,}2\\cdot10^{-5}\\).",
+      "svar": "\\(0{,}000072=7{,}2\\cdot10^{-5}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4343,10 +4355,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser tallet \\(4{,}85\\cdot10^6\\) som vanlig tall?",
       "hint": [
-        "På standardform skal første faktor være minst 1 og mindre enn 10.",
-        "Tell hvor mange plasser kommaet flyttes."
+        "Eksponenten \\(6\\) betyr at \\(4{,}85\\) skal multipliseres med én million.",
+        "Flytt kommaet seks plasser mot høyre.",
+        "Fyll inn nuller i de tomme plassene og grupper gjerne sifrene i tusener."
       ],
-      "svar": "Riktig svar er \\(4\\,850\\,000\\).",
+      "svar": "\\(4{,}85\\cdot10^6=4\\,850\\,000\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4380,10 +4393,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser \\(0{,}03140000\\) på standardform?",
       "hint": [
-        "På standardform skal første faktor være minst 1 og mindre enn 10.",
-        "Tell hvor mange plasser kommaet flyttes."
+        "Flytt kommaet slik at første faktor blir \\(3{,}14\\).",
+        "Kommaet må flyttes to plasser mot høyre.",
+        "Siden det opprinnelige tallet er mindre enn 1, bruker du en negativ eksponent."
       ],
-      "svar": "Riktig svar er \\(3{,}14\\cdot10^{-2}\\).",
+      "svar": "\\(0{,}0314=3{,}14\\cdot10^{-2}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4417,10 +4431,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser tallet \\(9{,}2\\cdot10^{10}\\) som vanlig tall?",
       "hint": [
-        "På standardform skal første faktor være minst 1 og mindre enn 10.",
-        "Tell hvor mange plasser kommaet flyttes."
+        "Eksponenten \\(10\\) betyr at kommaet skal flyttes ti plasser mot høyre.",
+        "Start med \\(9{,}2\\) og fyll inn nuller etter 2-tallet.",
+        "Kontroller at resultatet har elleve sifre; 9 står på tiermilliardplassen."
       ],
-      "svar": "Riktig svar er \\(92\\,000\\,000\\,000\\).",
+      "svar": "\\(9{,}2\\cdot10^{10}=92\\,000\\,000\\,000\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4452,12 +4467,13 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Hvilket alternativ viser \\(0{,}000001\\) på standardform?",
+      "sporsmal": "Hvilket alternativ viser \\(0{,}000000605\\) på standardform?",
       "hint": [
-        "På standardform skal første faktor være minst 1 og mindre enn 10.",
-        "Tell hvor mange plasser kommaet flyttes."
+        "Flytt kommaet slik at tallet foran tierpotensen blir \\(6{,}05\\).",
+        "Fra 0,000000605 til 6,05 flyttes kommaet sju plasser mot høyre.",
+        "Tallet er mindre enn 1, så antallet plasser gir en negativ eksponent."
       ],
-      "svar": "Riktig svar er \\(6{,}05\\cdot10^{-7}\\).",
+      "svar": "\\(0{,}000000605=6{,}05\\cdot10^{-7}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4518,9 +4534,9 @@
         "operasjon": "beregning",
         "metode": "standard_form_operation",
         "inndata": {
-          "a": 3.0,
+          "a": 3,
           "m": 5,
-          "b": 2.0,
+          "b": 2,
           "n": 3,
           "operasjon": "produkt"
         },
@@ -4622,9 +4638,9 @@
         "operasjon": "beregning",
         "metode": "standard_form_operation",
         "inndata": {
-          "a": 6.0,
+          "a": 6,
           "m": -4,
-          "b": 5.0,
+          "b": 5,
           "n": 6,
           "operasjon": "produkt"
         },
@@ -4728,7 +4744,7 @@
         "inndata": {
           "a": 4.5,
           "m": 8,
-          "b": 2.0,
+          "b": 2,
           "n": -3,
           "operasjon": "produkt"
         },
@@ -4751,10 +4767,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Regn ut hvert uttrykk før du sammenligner.",
-        "Husk at en brøkeksponent kan uttrykke en rot."
+        "Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
+        "Regn ut de to første: \\(5^2=25\\) og \\(\\sqrt{900}=30\\).",
+        "Regn ut det siste uttrykket, \\(2^5=32\\), og sorter de tre tallverdiene fra minst til størst."
       ],
-      "svar": "Riktig rekkefølge er \\(5^2\\), \\(\\sqrt{900}\\), \\(2^5\\).",
+      "svar": "Tallverdiene er \\(5^2=25\\), \\(\\sqrt{900}=30\\), \\(2^5=32\\). Riktig rekkefølge er derfor \\(5^2\\), \\(\\sqrt{900}\\), \\(2^5\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4795,10 +4812,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Regn ut hvert uttrykk før du sammenligner.",
-        "Husk at en brøkeksponent kan uttrykke en rot."
+        "Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
+        "Regn ut de to første: \\(2^4=16\\) og \\(\\sqrt{625}=25\\).",
+        "Regn ut det siste uttrykket, \\(3^3=27\\), og sorter de tre tallverdiene fra minst til størst."
       ],
-      "svar": "Riktig rekkefølge er \\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\).",
+      "svar": "Tallverdiene er \\(2^4=16\\), \\(\\sqrt{625}=25\\), \\(3^3=27\\). Riktig rekkefølge er derfor \\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4839,10 +4857,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Regn ut hvert uttrykk før du sammenligner.",
-        "Husk at en brøkeksponent kan uttrykke en rot."
+        "Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
+        "Regn ut de to første: \\(10^{1/2}=\\sqrt{10}\\approx3{,}16\\) og \\(2^2=4\\).",
+        "Regn ut det siste uttrykket, \\(\\sqrt[3]{125}=5\\), og sorter de tre tallverdiene fra minst til størst."
       ],
-      "svar": "Riktig rekkefølge er \\(10^{1/2}\\), \\(2^2\\), \\(\\sqrt[3]{125}\\).",
+      "svar": "Tallverdiene er \\(10^{1/2}=\\sqrt{10}\\approx3{,}16\\), \\(2^2=4\\), \\(\\sqrt[3]{125}=5\\). Riktig rekkefølge er derfor \\(10^{1/2}\\), \\(2^2\\), \\(\\sqrt[3]{125}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4883,10 +4902,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Regn ut hvert uttrykk før du sammenligner.",
-        "Husk at en brøkeksponent kan uttrykke en rot."
+        "Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
+        "Regn ut de to første: \\(4^{3/2}=(\\sqrt4)^3=8\\) og \\(3^2=9\\).",
+        "Regn ut det siste uttrykket, \\(\\sqrt{100}=10\\), og sorter de tre tallverdiene fra minst til størst."
       ],
-      "svar": "Riktig rekkefølge er \\(4^{3/2}\\), \\(3^2\\), \\(\\sqrt{100}\\).",
+      "svar": "Tallverdiene er \\(4^{3/2}=(\\sqrt4)^3=8\\), \\(3^2=9\\), \\(\\sqrt{100}=10\\). Riktig rekkefølge er derfor \\(4^{3/2}\\), \\(3^2\\), \\(\\sqrt{100}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4927,10 +4947,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Regn ut hvert uttrykk før du sammenligner.",
-        "Husk at en brøkeksponent kan uttrykke en rot."
+        "Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
+        "Regn ut de to første: \\(2^3=8\\) og \\(27^{2/3}=(\\sqrt[3]{27})^2=9\\).",
+        "Regn ut det siste uttrykket, \\(\\sqrt{121}=11\\), og sorter de tre tallverdiene fra minst til størst."
       ],
-      "svar": "Riktig rekkefølge er \\(2^3\\), \\(27^{2/3}\\), \\(\\sqrt{121}\\).",
+      "svar": "Tallverdiene er \\(2^3=8\\), \\(27^{2/3}=(\\sqrt[3]{27})^2=9\\), \\(\\sqrt{121}=11\\). Riktig rekkefølge er derfor \\(2^3\\), \\(27^{2/3}\\), \\(\\sqrt{121}\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -4971,10 +4992,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Reiseutgiften er gitt ved \\(K=420+3{,}8x\\), der \\(x\\) er antall kilometer. Finn \\(K\\) når \\(x=75\\).",
       "hint": [
-        "Sett de oppgitte verdiene inn på riktig plass.",
-        "Følg regnerekkefølgen."
+        "Erstatt \\(x\\) med 75 i formelen. Da får du \\(K=420+3{,}8\\cdot75\\).",
+        "Regn multiplikasjonen først: \\(3{,}8\\cdot75=285\\).",
+        "Legg deretter 285 til fastbeløpet 420."
       ],
-      "svar": "Når verdiene settes inn i formelen, blir resultatet \\(705{,}0\\) kr.",
+      "svar": "\\(K=420+3{,}8\\cdot75=420+285=705\\) kr.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -5007,12 +5029,13 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Energien er gitt ved \\(E=0{,}5mv^2\\). Finn \\(E\\) når \\(m=12\\) og \\(v=5\\).",
+      "sporsmal": "Energien er gitt ved \\(E=0{,}5mv^2\\). Finn \\(E\\) når \\(m=12\\) kg og \\(v=5\\) m/s.",
       "hint": [
-        "Sett de oppgitte verdiene inn på riktig plass.",
-        "Følg regnerekkefølgen."
+        "Erstatt \\(m\\) med 12 og \\(v\\) med 5: \\(E=0{,}5\\cdot12\\cdot5^2\\).",
+        "Regn potensen først: \\(5^2=25\\).",
+        "Regn deretter \\(0{,}5\\cdot12\\cdot25\\)."
       ],
-      "svar": "Når verdiene settes inn i formelen, blir resultatet \\(150{,}0\\) J.",
+      "svar": "\\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\) J.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -5045,12 +5068,13 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Arealet av en trapesform er \\(A=(a+b)h/2\\). Finn \\(A\\) når \\(a=8\\), \\(b=14\\) og \\(h=6\\).",
+      "sporsmal": "Arealet av et trapes er \\(A=(a+b)h/2\\). Finn \\(A\\) når \\(a=8\\), \\(b=14\\) og \\(h=6\\).",
       "hint": [
-        "Sett de oppgitte verdiene inn på riktig plass.",
-        "Følg regnerekkefølgen."
+        "Sett inn alle tre verdiene: \\(A=(8+14)\\cdot6/2\\).",
+        "Regn parentesen først: \\(8+14=22\\).",
+        "Regn deretter \\(22\\cdot6/2\\)."
       ],
-      "svar": "Når verdiene settes inn i formelen, blir resultatet \\(66{,}0\\) m².",
+      "svar": "\\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\) m².",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -5085,10 +5109,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Temperaturen i fahrenheit er \\(F=1{,}8C+32\\). Finn \\(F\\) når \\(C=25\\).",
       "hint": [
-        "Sett de oppgitte verdiene inn på riktig plass.",
-        "Følg regnerekkefølgen."
+        "Erstatt \\(C\\) med 25: \\(F=1{,}8\\cdot25+32\\).",
+        "Regn multiplikasjonen først: \\(1{,}8\\cdot25=45\\).",
+        "Legg deretter til 32."
       ],
-      "svar": "Når verdiene settes inn i formelen, blir resultatet \\(77{,}0\\) °F.",
+      "svar": "\\(F=1{,}8\\cdot25+32=45+32=77\\) °F.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -5123,10 +5148,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En dosemodell er \\(D=0{,}04m+1{,}2\\). Finn \\(D\\) når \\(m=70\\).",
       "hint": [
-        "Sett de oppgitte verdiene inn på riktig plass.",
-        "Følg regnerekkefølgen."
+        "Erstatt \\(m\\) med 70: \\(D=0{,}04\\cdot70+1{,}2\\).",
+        "Regn multiplikasjonen først: \\(0{,}04\\cdot70=2{,}8\\).",
+        "Legg deretter \\(1{,}2\\) til \\(2{,}8\\)."
       ],
-      "svar": "Når verdiene settes inn i formelen, blir resultatet \\(4{,}0\\) enheter.",
+      "svar": "\\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4{,}0\\) enheter.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -5366,10 +5392,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken omforming av \\(A=bh/2\\) er riktig?",
       "hint": [
-        "Gjør den samme operasjonen på begge sider.",
-        "Kontroller ved å sette den omformede variabelen tilbake i originalformelen."
+        "Målet er å få h alene. Fjern først divisjonen på 2 ved å multiplisere begge sider med 2.",
+        "Da får du \\(2A=bh\\).",
+        "Del begge sider på b for å isolere h."
       ],
-      "svar": "Riktig omforming er \\(h=2A/b\\).",
+      "svar": "\\(A=bh/2\\Rightarrow2A=bh\\Rightarrow h=2A/b\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -5403,10 +5430,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken omforming av \\(s=vt\\) er riktig?",
       "hint": [
-        "Gjør den samme operasjonen på begge sider.",
-        "Kontroller ved å sette den omformede variabelen tilbake i originalformelen."
+        "Målet er å få t alene i produktet vt.",
+        "Del begge sider av s=vt på v.",
+        "Da står \\(t\\) alene på høyre side."
       ],
-      "svar": "Riktig omforming er \\(t=s/v\\).",
+      "svar": "\\(s=vt\\Rightarrow t=s/v\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -5440,10 +5468,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken omforming av \\(K=a+bx\\) er riktig?",
       "hint": [
-        "Gjør den samme operasjonen på begge sider.",
-        "Kontroller ved å sette den omformede variabelen tilbake i originalformelen."
+        "Målet er å få x alene. Fjern først konstantleddet a.",
+        "Trekk a fra begge sider: \\(K-a=bx\\).",
+        "Del deretter begge sider på b."
       ],
-      "svar": "Riktig omforming er \\(x=(K-a)/b\\).",
+      "svar": "\\(K=a+bx\\Rightarrow K-a=bx\\Rightarrow x=(K-a)/b\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -5477,10 +5506,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken omforming av \\(V=lbh\\) er riktig?",
       "hint": [
-        "Gjør den samme operasjonen på begge sider.",
-        "Kontroller ved å sette den omformede variabelen tilbake i originalformelen."
+        "I produktet lbh skal b stå alene.",
+        "Del begge sider på hele faktoren \\(lh\\).",
+        "Da blir venstre side \\(V/(lh)\\) og høyre side b."
       ],
-      "svar": "Riktig omforming er \\(b=V/(lh)\\).",
+      "svar": "\\(V=lbh\\Rightarrow b=V/(lh)\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -5514,10 +5544,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken omforming av \\(p=m/V\\) er riktig?",
       "hint": [
-        "Gjør den samme operasjonen på begge sider.",
-        "Kontroller ved å sette den omformede variabelen tilbake i originalformelen."
+        "Målet er å få m alene. I uttrykket m/V er m delt på V.",
+        "Gjør motsatt operasjon og multipliser begge sider med V.",
+        "Etter multiplikasjonen får du \\(pV=m\\), som kan skrives med m på venstre side."
       ],
-      "svar": "Riktig omforming er \\(m=pV\\).",
+      "svar": "\\(p=m/V\\Rightarrow pV=m\\), altså \\(m=pV\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -6176,10 +6207,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Vurder påstanden: «Hvis x øker med 1, øker 3x+7 alltid med 3.»",
       "hint": [
-        "Test påstanden med flere verdier.",
-        "Én moteksempel er nok til å vise at en generell påstand er feil."
+        "Sammenlign uttrykkets verdi for \\(x\\) og for \\(x+1\\).",
+        "Forskjellen er \\([3(x+1)+7]-(3x+7)\\).",
+        "Forenkle forskjellen. Hvis x-leddene forsvinner og svaret alltid blir 3, gjelder påstanden for alle x."
       ],
-      "svar": "Påstanden er riktig. Stigningstallet er 3.",
+      "svar": "\\([3(x+1)+7]-(3x+7)=3\\). Påstanden er derfor riktig for alle \\(x\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -6212,10 +6244,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Vurder påstanden: «Uttrykkene 2(x+4) og 2x+4 er like for alle x.»",
       "hint": [
-        "Test påstanden med flere verdier.",
-        "Én moteksempel er nok til å vise at en generell påstand er feil."
+        "En påstand som skal gjelde for alle x, er feil dersom du finner én x-verdi der uttrykkene blir ulike.",
+        "Prøv \\(x=0\\). Da blir venstre side \\(2(0+4)\\) og høyre side \\(2\\cdot0+4\\).",
+        "Regn ut begge sidene og sammenlign dem."
       ],
-      "svar": "Påstanden er feil. 2(x+4)=2x+8.",
+      "svar": "For \\(x=0\\) er \\(2(0+4)=8\\), mens \\(2\\cdot0+4=4\\). Påstanden er feil. Generelt er \\(2(x+4)=2x+8\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -6248,10 +6281,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Vurder påstanden: «Hvis a+b=10, er ab alltid 25.»",
       "hint": [
-        "Test påstanden med flere verdier.",
-        "Én moteksempel er nok til å vise at en generell påstand er feil."
+        "Det holder å finne to tall med sum 10 som ikke har produkt 25.",
+        "Prøv \\(a=2\\) og \\(b=8\\). De har summen 10.",
+        "Regn ut produktet \\(2\\cdot8\\) og sammenlign med 25."
       ],
-      "svar": "Påstanden er feil. For eksempel gir a=2 og b=8 produktet 16.",
+      "svar": "\\(2+8=10\\), men \\(2\\cdot8=16\\). Påstanden er derfor feil.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -6284,10 +6318,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Vurder påstanden: «Summen av to oddetall er alltid et partall.»",
       "hint": [
-        "Test påstanden med flere verdier.",
-        "Én moteksempel er nok til å vise at en generell påstand er feil."
+        "Skriv to vilkårlige oddetall som \\(2m+1\\) og \\(2n+1\\).",
+        "Legg dem sammen: \\((2m+1)+(2n+1)\\).",
+        "Trekk ut faktoren 2. Et tall som kan skrives som 2 ganger et heltall, er et partall."
       ],
-      "svar": "Påstanden er riktig. Skriv oddetallene som 2m+1 og 2n+1.",
+      "svar": "\\((2m+1)+(2n+1)=2m+2n+2=2(m+n+1)\\). Summen er derfor alltid et partall, så påstanden er riktig.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -6320,10 +6355,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Vurder påstanden: «Når y er proporsjonal med x, må grafen gå gjennom origo.»",
       "hint": [
-        "Test påstanden med flere verdier.",
-        "Én moteksempel er nok til å vise at en generell påstand er feil."
+        "En proporsjonal sammenheng har formen \\(y=kx\\).",
+        "Undersøk hva som skjer når \\(x=0\\).",
+        "Da blir \\(y=k\\cdot0\\). Punktet du får, avgjør om grafen går gjennom origo."
       ],
-      "svar": "Påstanden er riktig. En proporsjonal sammenheng har formen y=kx.",
+      "svar": "Når \\(x=0\\), får vi \\(y=k\\cdot0=0\\). Grafen går gjennom \\((0,0)\\), så påstanden er riktig.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -9611,10 +9647,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva er det mest hensiktsmessige valget i denne situasjonen: Lønningene i en liten bedrift der direktøren tjener langt mer enn de andre?",
       "hint": [
-        "Tenk på datatypen og hva som skal framheves.",
-        "Vurder om uteliggere eller tidsrekkefølge er viktig."
+        "Direktørens lønn er en ekstremverdi som vil trekke gjennomsnittet kraftig opp.",
+        "Et sentralmål som bestemmes av plasseringen i den sorterte listen, påvirkes mindre av ekstremverdien.",
+        "Velg derfor sentralmålet som beskriver den midterste lønnen."
       ],
-      "svar": "Det mest hensiktsmessige valget er median.",
+      "svar": "Median er mest hensiktsmessig i denne situasjonen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -9649,10 +9686,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva er det mest hensiktsmessige valget i denne situasjonen: Hvordan strømforbruket utvikler seg måned for måned?",
       "hint": [
-        "Tenk på datatypen og hva som skal framheves.",
-        "Vurder om uteliggere eller tidsrekkefølge er viktig."
+        "Månedene har en naturlig kronologisk rekkefølge.",
+        "Framstillingen bør gjøre det lett å se økning, nedgang og utvikling fra måned til måned.",
+        "Velg diagramtypen som forbinder målepunktene i tidsrekkefølge."
       ],
-      "svar": "Det mest hensiktsmessige valget er linjediagram.",
+      "svar": "Linjediagram er mest hensiktsmessig i denne situasjonen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -9687,10 +9725,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva er det mest hensiktsmessige valget i denne situasjonen: Fordelingen av sammenhengende reisetider gruppert i intervaller?",
       "hint": [
-        "Tenk på datatypen og hva som skal framheves.",
-        "Vurder om uteliggere eller tidsrekkefølge er viktig."
+        "Reisetid er en sammenhengende tallvariabel, og observasjonene er samlet i intervaller.",
+        "Du trenger en framstilling der arealet av søylene viser frekvensen i hvert intervall.",
+        "Velg diagramtypen med sammenhengende søyler langs en tallakse."
       ],
-      "svar": "Det mest hensiktsmessige valget er histogram.",
+      "svar": "Histogram er mest hensiktsmessig i denne situasjonen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -9725,10 +9764,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva er det mest hensiktsmessige valget i denne situasjonen: Den vanligste skostørrelsen i en butikk?",
       "hint": [
-        "Tenk på datatypen og hva som skal framheves.",
-        "Vurder om uteliggere eller tidsrekkefølge er viktig."
+        "Spørsmålet handler om hvilken skostørrelse som forekommer oftest.",
+        "Du trenger ikke beregne et gjennomsnitt eller finne en midtverdi.",
+        "Velg sentralmålet som er definert som den vanligste verdien."
       ],
-      "svar": "Det mest hensiktsmessige valget er typetall.",
+      "svar": "Typetall er mest hensiktsmessig i denne situasjonen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -9763,10 +9803,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva er det mest hensiktsmessige valget i denne situasjonen: Sammenligne typisk boligpris i et område med noen få svært dyre boliger?",
       "hint": [
-        "Tenk på datatypen og hva som skal framheves.",
-        "Vurder om uteliggere eller tidsrekkefølge er viktig."
+        "Noen få svært dyre boliger er ekstremverdier som kan trekke gjennomsnittet opp.",
+        "Den sorterte midtverdien påvirkes mindre av slike ekstremverdier.",
+        "Velg derfor målet som beskriver den midterste boligprisen."
       ],
-      "svar": "Det mest hensiktsmessige valget er median.",
+      "svar": "Median er mest hensiktsmessig i denne situasjonen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -10031,10 +10072,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En lineær funksjon har stigningstall \\(3{,}0\\) og går gjennom \\((4,19)\\). Finn konstantleddet \\(b\\) i \\(f(x)=3{,}0x+b\\).",
       "hint": [
-        "Sett punktets x- og y-verdi inn i funksjonsuttrykket.",
-        "Løs ligningen med hensyn på b."
+        "Punktet betyr at \\(f(4)=19\\). Sett derfor inn \\(x=4\\) og \\(f(x)=19\\).",
+        "Da får du ligningen \\(19=3\\cdot4+b\\). Regn først ut produktet \\(3\\cdot4=12\\).",
+        "Isoler b ved å bruke \\(b=19-(12)\\)."
       ],
-      "svar": "\\(19=3{,}0\\cdot4+b\\), så \\(b=7{,}0\\).",
+      "svar": "\\(19=3\\cdot4+b=12+b\\), så \\(b=19-(12)=7\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -10072,10 +10114,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En lineær funksjon har stigningstall \\(5{,}0\\) og går gjennom \\((6,47)\\). Finn konstantleddet \\(b\\) i \\(f(x)=5{,}0x+b\\).",
       "hint": [
-        "Sett punktets x- og y-verdi inn i funksjonsuttrykket.",
-        "Løs ligningen med hensyn på b."
+        "Punktet betyr at \\(f(6)=47\\). Sett derfor inn \\(x=6\\) og \\(f(x)=47\\).",
+        "Da får du ligningen \\(47=5\\cdot6+b\\). Regn først ut produktet \\(5\\cdot6=30\\).",
+        "Isoler b ved å bruke \\(b=47-(30)\\)."
       ],
-      "svar": "\\(47=5{,}0\\cdot6+b\\), så \\(b=17{,}0\\).",
+      "svar": "\\(47=5\\cdot6+b=30+b\\), så \\(b=47-(30)=17\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -10113,10 +10156,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En lineær funksjon har stigningstall \\(-2{,}0\\) og går gjennom \\((8,14)\\). Finn konstantleddet \\(b\\) i \\(f(x)=-2{,}0x+b\\).",
       "hint": [
-        "Sett punktets x- og y-verdi inn i funksjonsuttrykket.",
-        "Løs ligningen med hensyn på b."
+        "Punktet betyr at \\(f(8)=14\\). Sett derfor inn \\(x=8\\) og \\(f(x)=14\\).",
+        "Da får du ligningen \\(14=-2\\cdot8+b\\). Regn først ut produktet \\(-2\\cdot8=-16\\).",
+        "Isoler b ved å bruke \\(b=14-(-16)\\)."
       ],
-      "svar": "\\(14=-2{,}0\\cdot8+b\\), så \\(b=30{,}0\\).",
+      "svar": "\\(14=-2\\cdot8+b=-16+b\\), så \\(b=14-(-16)=30\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -10154,10 +10198,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En lineær funksjon har stigningstall \\(1{,}5\\) og går gjennom \\((10,32)\\). Finn konstantleddet \\(b\\) i \\(f(x)=1{,}5x+b\\).",
       "hint": [
-        "Sett punktets x- og y-verdi inn i funksjonsuttrykket.",
-        "Løs ligningen med hensyn på b."
+        "Punktet betyr at \\(f(10)=32\\). Sett derfor inn \\(x=10\\) og \\(f(x)=32\\).",
+        "Da får du ligningen \\(32=1{,}5\\cdot10+b\\). Regn først ut produktet \\(1{,}5\\cdot10=15\\).",
+        "Isoler b ved å bruke \\(b=32-(15)\\)."
       ],
-      "svar": "\\(32=1{,}5\\cdot10+b\\), så \\(b=17{,}0\\).",
+      "svar": "\\(32=1{,}5\\cdot10+b=15+b\\), så \\(b=32-(15)=17\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -10195,10 +10240,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "En lineær funksjon har stigningstall \\(7{,}0\\) og går gjennom \\((3,5)\\). Finn konstantleddet \\(b\\) i \\(f(x)=7{,}0x+b\\).",
       "hint": [
-        "Sett punktets x- og y-verdi inn i funksjonsuttrykket.",
-        "Løs ligningen med hensyn på b."
+        "Punktet betyr at \\(f(3)=5\\). Sett derfor inn \\(x=3\\) og \\(f(x)=5\\).",
+        "Da får du ligningen \\(5=7\\cdot3+b\\). Regn først ut produktet \\(7\\cdot3=21\\).",
+        "Isoler b ved å bruke \\(b=5-(21)\\)."
       ],
-      "svar": "\\(5=7{,}0\\cdot3+b\\), så \\(b=-16{,}0\\).",
+      "svar": "\\(5=7\\cdot3+b=21+b\\), så \\(b=5-(21)=-16\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -10426,10 +10472,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "To tilbud har kostnadene \\(A(x)=120+4{,}0x\\) og \\(B(x)=60+7{,}0x\\). For hvilken x-verdi koster tilbudene det samme, og hva er kostnaden da?",
       "hint": [
-        "Sett A(x) lik B(x).",
-        "Løs ligningen og sett x-verdien inn i én av modellene."
+        "Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(120+4x=60+7x\\).",
+        "Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=60\\).",
+        "Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=120+4x\\) for å finne kostnaden."
       ],
-      "svar": "Likningen gir \\(x=20{,}00\\). Da er kostnaden \\(200{,}00\\) kr.",
+      "svar": "\\(120+4x=60+7x\\) gir \\(3x=60\\), altså \\(x=20\\). Kostnaden blir \\(120+4\\cdot20=200\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -10476,10 +10523,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "To tilbud har kostnadene \\(A(x)=250+2{,}0x\\) og \\(B(x)=100+5{,}0x\\). For hvilken x-verdi koster tilbudene det samme, og hva er kostnaden da?",
       "hint": [
-        "Sett A(x) lik B(x).",
-        "Løs ligningen og sett x-verdien inn i én av modellene."
+        "Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(250+2x=100+5x\\).",
+        "Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=150\\).",
+        "Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=250+2x\\) for å finne kostnaden."
       ],
-      "svar": "Likningen gir \\(x=50{,}00\\). Da er kostnaden \\(350{,}00\\) kr.",
+      "svar": "\\(250+2x=100+5x\\) gir \\(3x=150\\), altså \\(x=50\\). Kostnaden blir \\(250+2\\cdot50=350\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -10526,10 +10574,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "To tilbud har kostnadene \\(A(x)=80+6{,}0x\\) og \\(B(x)=200+3{,}0x\\). For hvilken x-verdi koster tilbudene det samme, og hva er kostnaden da?",
       "hint": [
-        "Sett A(x) lik B(x).",
-        "Løs ligningen og sett x-verdien inn i én av modellene."
+        "Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(80+6x=200+3x\\).",
+        "Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
+        "Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=80+6x\\) for å finne kostnaden."
       ],
-      "svar": "Likningen gir \\(x=40{,}00\\). Da er kostnaden \\(320{,}00\\) kr.",
+      "svar": "\\(80+6x=200+3x\\) gir \\(3x=120\\), altså \\(x=40\\). Kostnaden blir \\(80+6\\cdot40=320\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -10576,10 +10625,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "To tilbud har kostnadene \\(A(x)=300+1{,}5x\\) og \\(B(x)=150+4{,}0x\\). For hvilken x-verdi koster tilbudene det samme, og hva er kostnaden da?",
       "hint": [
-        "Sett A(x) lik B(x).",
-        "Løs ligningen og sett x-verdien inn i én av modellene."
+        "Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(300+1{,}5x=150+4x\\).",
+        "Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(2{,}5x=150\\).",
+        "Del begge sider på 2{,}5. Sett deretter x-verdien inn i for eksempel \\(A(x)=300+1{,}5x\\) for å finne kostnaden."
       ],
-      "svar": "Likningen gir \\(x=60{,}00\\). Da er kostnaden \\(390{,}00\\) kr.",
+      "svar": "\\(300+1{,}5x=150+4x\\) gir \\(2{,}5x=150\\), altså \\(x=60\\). Kostnaden blir \\(300+1{,}5\\cdot60=390\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -10626,10 +10676,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "To tilbud har kostnadene \\(A(x)=95+8{,}0x\\) og \\(B(x)=215+5{,}0x\\). For hvilken x-verdi koster tilbudene det samme, og hva er kostnaden da?",
       "hint": [
-        "Sett A(x) lik B(x).",
-        "Løs ligningen og sett x-verdien inn i én av modellene."
+        "Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(95+8x=215+5x\\).",
+        "Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
+        "Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=95+8x\\) for å finne kostnaden."
       ],
-      "svar": "Likningen gir \\(x=40{,}00\\). Da er kostnaden \\(415{,}00\\) kr.",
+      "svar": "\\(95+8x=215+5x\\) gir \\(3x=120\\), altså \\(x=40\\). Kostnaden blir \\(95+8\\cdot40=415\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -11732,10 +11783,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
-        "Se etter konstante differanser, forholdstall eller andre differanser.",
-        "For omvendt proporsjonalitet er produktet x·y konstant."
+        "Finn forskjellen mellom to naboverdier i y-kolonnen.",
+        "Forskjellene er \\(11-7=4\\), \\(15-11=4\\) og videre 4.",
+        "Konstant første differanse betyr at sammenhengen er lineær."
       ],
-      "svar": "Mønsteret passer en lineær modell.",
+      "svar": "y-verdiene øker med 4 hver gang x øker med 1. Tabellen passer derfor nøyaktig til en lineær modell.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -11806,10 +11858,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
-        "Se etter konstante differanser, forholdstall eller andre differanser.",
-        "For omvendt proporsjonalitet er produktet x·y konstant."
+        "Del hver y-verdi på den forrige y-verdien.",
+        "Forholdstallene er \\(10/5=2\\), \\(20/10=2\\) og videre 2.",
+        "Konstant forholdstall betyr at sammenhengen er eksponentiell."
       ],
-      "svar": "Mønsteret passer en eksponentialmodell.",
+      "svar": "Hver y-verdi er dobbelt så stor som den forrige. Tabellen passer derfor nøyaktig til en eksponentialmodell.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -11880,10 +11933,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
-        "Se etter konstante differanser, forholdstall eller andre differanser.",
-        "For omvendt proporsjonalitet er produktet x·y konstant."
+        "Sammenlign y med kvadratet av x.",
+        "Regn ut \\(y/x^2\\): \\(3/1^2=3\\), \\(12/2^2=3\\) og \\(27/3^2=3\\).",
+        "Forholdet er konstant, så modellen har formen \\(y=3x^2\\)."
       ],
-      "svar": "Mønsteret passer en potensmodell.",
+      "svar": "\\(y=3x^2\\) passer alle radene. Dette er en potensmodell med eksponent 2.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -11954,10 +12008,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
-        "Se etter konstante differanser, forholdstall eller andre differanser.",
-        "For omvendt proporsjonalitet er produktet x·y konstant."
+        "Finn først differansene mellom y-verdiene.",
+        "Første differanser er \\(3,5,7,9\\). Differansene mellom disse er alle 2.",
+        "Konstant andre differanse kjennetegner en andregradsmodell."
       ],
-      "svar": "Mønsteret passer en andregradsmodell.",
+      "svar": "De andre differansene er konstante. Tabellen passer derfor nøyaktig til en andregradsmodell.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -12028,10 +12083,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
-        "Se etter konstante differanser, forholdstall eller andre differanser.",
-        "For omvendt proporsjonalitet er produktet x·y konstant."
+        "Undersøk produktet x·y i hver rad.",
+        "Produktene er \\(1\\cdot64=64\\), \\(2\\cdot32=64\\) og \\(4\\cdot16=64\\).",
+        "Konstant produkt betyr omvendt proporsjonalitet."
       ],
-      "svar": "Mønsteret passer en omvendt proporsjonal modell.",
+      "svar": "\\(x\\cdot y=64\\) i alle radene, altså \\(y=64/x\\). Tabellen er omvendt proporsjonal.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -13099,10 +13155,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
-        "Les nøye hvilke verdier som fjernes eller tas med.",
-        "Følg listen eller summen linje for linje."
+        "De to remove-linjene fjerner først minste verdi 4 og deretter største verdi 14.",
+        "Listen som står igjen, er [8, 10].",
+        "Programmet beregner gjennomsnittet \\((8+10)/2\\)."
       ],
-      "svar": "Programmet fjerner minste og største verdi og finner gjennomsnittet av resten. Utskriften blir \\(9{,}00\\).",
+      "svar": "Etter at minste og største verdi er fjernet, står [8, 10] igjen. Gjennomsnittet er \\(18/2=9\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -13153,10 +13210,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
-        "Les nøye hvilke verdier som fjernes eller tas med.",
-        "Følg listen eller summen linje for linje."
+        "If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
+        "Verdiene som tas med, er [9, 12].",
+        "Legg sammen akkurat disse verdiene: \\(9+12\\)."
       ],
-      "svar": "Programmet summerer bare verdier som er minst 8. Utskriften blir \\(21{,}00\\).",
+      "svar": "Programmet tar med [9, 12], og skriver derfor ut \\(9+12=21\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -13208,10 +13266,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
-        "Les nøye hvilke verdier som fjernes eller tas med.",
-        "Følg listen eller summen linje for linje."
+        "De to remove-linjene fjerner først minste verdi 20 og deretter største verdi 28.",
+        "Listen som står igjen, er [22, 24].",
+        "Programmet beregner gjennomsnittet \\((22+24)/2\\)."
       ],
-      "svar": "Programmet fjerner minste og største verdi og finner gjennomsnittet av resten. Utskriften blir \\(23{,}00\\).",
+      "svar": "Etter at minste og største verdi er fjernet, står [22, 24] igjen. Gjennomsnittet er \\(46/2=23\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -13262,10 +13321,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
-        "Les nøye hvilke verdier som fjernes eller tas med.",
-        "Følg listen eller summen linje for linje."
+        "If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
+        "Verdiene som tas med, er [9, 12, 15].",
+        "Legg sammen akkurat disse verdiene: \\(9+12+15\\)."
       ],
-      "svar": "Programmet summerer bare verdier som er minst 8. Utskriften blir \\(36{,}00\\).",
+      "svar": "Programmet tar med [9, 12, 15], og skriver derfor ut \\(9+12+15=36\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -13317,10 +13377,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
-        "Les nøye hvilke verdier som fjernes eller tas med.",
-        "Følg listen eller summen linje for linje."
+        "De to remove-linjene fjerner først minste verdi 18 og deretter største verdi 30.",
+        "Listen som står igjen, er [21, 25, 26].",
+        "Programmet beregner gjennomsnittet \\((21+25+26)/3\\)."
       ],
-      "svar": "Programmet fjerner minste og største verdi og finner gjennomsnittet av resten. Utskriften blir \\(24{,}00\\).",
+      "svar": "Etter at minste og største verdi er fjernet, står [21, 25, 26] igjen. Gjennomsnittet er \\(72/3=24\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -13972,10 +14033,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg riktig tolkning: Grafen til K(x)=250+6x starter på 250 på y-aksen.",
       "hint": [
-        "Knytt tallene i uttrykket til startverdi, endring eller konstant produkt.",
-        "Kontroller tolkningen med et punkt på grafen."
+        "Finn funksjonsverdien når x=0; dette er punktet der grafen møter y-aksen.",
+        "Regn \\(K(0)=250+6\\cdot0\\).",
+        "Tolk 250 som kostnaden før det er brukt noen enheter."
       ],
-      "svar": "250 er den faste kostnaden før forbruk.",
+      "svar": "Siden K(0)=250, er 250 den faste kostnaden før forbruk.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14010,10 +14072,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg riktig tolkning: Grafen til V(t)=900-30t krysser t-aksen ved 30.",
       "hint": [
-        "Knytt tallene i uttrykket til startverdi, endring eller konstant produkt.",
-        "Kontroller tolkningen med et punkt på grafen."
+        "Et skjæringspunkt med t-aksen har funksjonsverdi 0.",
+        "Sett \\(V(t)=0\\): \\(900-30t=0\\).",
+        "Løsningen \\(t=30\\) forteller når volumet er null."
       ],
-      "svar": "Modellen sier at volumet er 0 etter 30 tidsenheter.",
+      "svar": "Grafen krysser t-aksen ved 30 fordi modellen sier at volumet er 0 etter 30 tidsenheter.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14048,10 +14111,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg riktig tolkning: En eksponentialgraf har faktor 0,8.",
       "hint": [
-        "Knytt tallene i uttrykket til startverdi, endring eller konstant produkt.",
-        "Kontroller tolkningen med et punkt på grafen."
+        "En eksponentialfaktor sammenlignes med 1, som betyr uendret verdi.",
+        "Regn forskjellen \\(0{,}8-1=-0{,}2\\).",
+        "Gjør \\(-0{,}2\\) om til prosent."
       ],
-      "svar": "Størrelsen synker med 20 % per periode.",
+      "svar": "Faktoren 0,8 betyr at 80 % er igjen hver periode, altså en nedgang på 20 % per periode.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14086,10 +14150,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg riktig tolkning: En proporsjonal graf går gjennom (4,28).",
       "hint": [
-        "Knytt tallene i uttrykket til startverdi, endring eller konstant produkt.",
-        "Kontroller tolkningen med et punkt på grafen."
+        "En proporsjonal sammenheng har formen y=kx.",
+        "Bruk punktet: \\(28=4k\\).",
+        "Del 28 på 4 for å finne hvor mye y øker per x-enhet."
       ],
-      "svar": "Proporsjonalitetskonstanten er 7.",
+      "svar": "\\(k=28/4=7\\). Proporsjonalitetskonstanten er 7.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14124,10 +14189,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg riktig tolkning: En omvendt proporsjonal graf har modellen y=120/x.",
       "hint": [
-        "Knytt tallene i uttrykket til startverdi, endring eller konstant produkt.",
-        "Kontroller tolkningen med et punkt på grafen."
+        "Multipliser begge sider av y=120/x med x.",
+        "Da får du \\(xy=120\\).",
+        "Dette viser hvilken størrelse som er konstant når x endres."
       ],
-      "svar": "Produktet x·y er 120 for alle positive x.",
+      "svar": "\\(y=120/x\\) er det samme som \\(xy=120\\). Produktet x·y er derfor alltid 120.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14162,10 +14228,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «Gjennomsnittet steg fra 50 til 55, derfor steg alle observasjonene.»",
       "hint": [
-        "Skill mellom det dataene faktisk viser og en sterkere konklusjon.",
-        "Se etter utvalgsfeil, spredning eller misvisende skala."
+        "Et gjennomsnitt beskriver summen fordelt på antall observasjoner, ikke hva som skjedde med hver enkelt observasjon.",
+        "Tenk om én stor verdi kunne trekke gjennomsnittet opp selv om en annen verdi sank.",
+        "Påstanden sier mer om enkeltobservasjonene enn gjennomsnittet kan dokumentere."
       ],
-      "svar": "Påstanden følger ikke; gjennomsnittet kan øke selv om noen observasjoner synker.",
+      "svar": "Påstanden følger ikke. Gjennomsnittet kan stige selv om noen observasjoner synker.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14200,10 +14267,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «Medianen er 12, derfor er minst halvparten av observasjonene minst 12.»",
       "hint": [
-        "Skill mellom det dataene faktisk viser og en sterkere konklusjon.",
-        "Se etter utvalgsfeil, spredning eller misvisende skala."
+        "Medianen deler de sorterte observasjonene i en nedre og en øvre halvdel.",
+        "Verdier på selve medianplassen teller både som minst og høyst medianen.",
+        "Vurder derfor hvor stor del av datasettet som ligger på eller over medianen."
       ],
-      "svar": "Påstanden er riktig etter den vanlige definisjonen av median.",
+      "svar": "Påstanden er riktig: Etter den vanlige mediandefinisjonen er minst halvparten av observasjonene minst 12.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14238,10 +14306,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.»",
       "hint": [
-        "Skill mellom det dataene faktisk viser og en sterkere konklusjon.",
-        "Se etter utvalgsfeil, spredning eller misvisende skala."
+        "Gjennomsnitt og spredning beskriver to forskjellige egenskaper ved et datasett.",
+        "Sammenlign for eksempel datasettene 4, 5, 6 og 0, 5, 10.",
+        "De kan ha samme gjennomsnitt, men svært ulike avstander fra gjennomsnittet."
       ],
-      "svar": "Påstanden følger ikke; spredningen kan være svært forskjellig.",
+      "svar": "Påstanden følger ikke. To datasett kan ha samme gjennomsnitt og svært forskjellig spredning.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14276,10 +14345,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.»",
       "hint": [
-        "Skill mellom det dataene faktisk viser og en sterkere konklusjon.",
-        "Se etter utvalgsfeil, spredning eller misvisende skala."
+        "Resultatet beskriver dem som valgte å delta i nettavstemningen.",
+        "Spør om deltakerne er tilfeldig og representativt valgt fra hele befolkningen.",
+        "Selvseleksjon kan gjøre at utvalget skiller seg systematisk fra befolkningen."
       ],
-      "svar": "Påstanden krever et representativt utvalg og kan ikke konkluderes direkte.",
+      "svar": "Påstanden kan ikke konkluderes direkte. En nettavstemning må ha et representativt utvalg før resultatet kan generaliseres til hele befolkningen.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14314,10 +14384,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «En graf med avkuttet y-akse kan få en liten forskjell til å se stor ut.»",
       "hint": [
-        "Skill mellom det dataene faktisk viser og en sterkere konklusjon.",
-        "Se etter utvalgsfeil, spredning eller misvisende skala."
+        "Sammenlign den viste høydeforskjellen når y-aksen starter på 0 og når den starter nær datapunktene.",
+        "En avkuttet akse bruker en større del av diagramhøyden på den samme tallforskjellen.",
+        "Vurder om dette kan forsterke det visuelle inntrykket uten å endre dataene."
       ],
-      "svar": "Påstanden er riktig; akseskalaen påvirker det visuelle inntrykket.",
+      "svar": "Påstanden er riktig. En avkuttet y-akse kan få en liten tallforskjell til å se stor ut.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -14351,10 +14422,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av \\(3{,}2\\cdot10^5\\).",
       "hint": [
-        "Oversett uttrykket til en beregning.",
-        "Kontroller størrelsesorden og fortegn."
+        "Tierpotensen \\(10^5\\) betyr 100 000.",
+        "Skriv \\(3{,}2\\cdot100\\,000\\).",
+        "Å gange med 100 000 flytter kommaet fem plasser mot høyre."
       ],
-      "svar": "Tallet er \\(320000\\).",
+      "svar": "\\(3{,}2\\cdot10^5=320\\,000\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -14389,10 +14461,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av \\(45\\,\\%\\) av 800.",
       "hint": [
-        "Oversett uttrykket til en beregning.",
-        "Kontroller størrelsesorden og fortegn."
+        "Skriv 45 % som desimaltallet \\(0{,}45\\).",
+        "Regnestykket blir \\(0{,}45\\cdot800\\).",
+        "Du kan dele opp 45 % i 40 % og 5 % av 800."
       ],
-      "svar": "Tallet er \\(360\\).",
+      "svar": "\\(0{,}45\\cdot800=360\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -14427,10 +14500,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av \\(2^8\\).",
       "hint": [
-        "Oversett uttrykket til en beregning.",
-        "Kontroller størrelsesorden og fortegn."
+        "Eksponenten 8 betyr at tallet 2 skal være faktor åtte ganger.",
+        "Du kan bygge videre ved å doble: \\(2^4=16\\).",
+        "Da er \\(2^8=(2^4)^2=16^2\\)."
       ],
-      "svar": "Tallet er \\(256\\).",
+      "svar": "\\(2^8=256\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -14465,10 +14539,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av medianen av 4, 7, 9, 12, 18.",
       "hint": [
-        "Oversett uttrykket til en beregning.",
-        "Kontroller størrelsesorden og fortegn."
+        "Tallene er allerede sortert fra minst til størst.",
+        "Det er fem observasjoner, så medianen står på den tredje plassen.",
+        "Tell deg fram til det tredje tallet i listen."
       ],
-      "svar": "Tallet er \\(9\\).",
+      "svar": "Den tredje av de fem sorterte observasjonene er 9, så medianen er 9.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -14503,10 +14578,11 @@
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av verdien av 6x+5 når x=7.",
       "hint": [
-        "Oversett uttrykket til en beregning.",
-        "Kontroller størrelsesorden og fortegn."
+        "Erstatt x med 7 i uttrykket: \\(6\\cdot7+5\\).",
+        "Regn multiplikasjonen først: \\(6\\cdot7=42\\).",
+        "Legg deretter til 5."
       ],
-      "svar": "Tallet er \\(47\\).",
+      "svar": "\\(6\\cdot7+5=42+5=47\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -15023,7 +15099,7 @@
         "operasjon": "beregning",
         "metode": "relative_change",
         "inndata": {
-          "gammel": 132.0,
+          "gammel": 132,
           "ny": 136.6
         },
         "resultat": [
@@ -16034,10 +16110,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En størrelse er modellert med \\(f(x)=1200\\cdot 1{,}08^x\\). Finn \\(f(4)\\).",
       "hint": [
-        "Sett x-verdien inn som eksponent.",
-        "Beregn potensen før du multipliserer med startverdien."
+        "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
+        "Sett inn tallene: \\(f(4)=1\\,200\\cdot1{,}08^{4}\\).",
+        "Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever."
       ],
-      "svar": "\\(f(4)=1200\\cdot 1{,}08^4\\approx 1\\,632{,}59\\).",
+      "svar": "\\(f(4)=1\\,200\\cdot1{,}08^{4}\\approx1\\,632{,}59\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16075,10 +16152,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En størrelse er modellert med \\(f(x)=5000\\cdot 0{,}93^x\\). Finn \\(f(6)\\).",
       "hint": [
-        "Sett x-verdien inn som eksponent.",
-        "Beregn potensen før du multipliserer med startverdien."
+        "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
+        "Sett inn tallene: \\(f(6)=5\\,000\\cdot0{,}93^{6}\\).",
+        "Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever."
       ],
-      "svar": "\\(f(6)=5000\\cdot 0{,}93^6\\approx 3\\,234{,}95\\).",
+      "svar": "\\(f(6)=5\\,000\\cdot0{,}93^{6}\\approx3\\,234{,}95\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16116,10 +16194,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En størrelse er modellert med \\(f(x)=240\\cdot 1{,}15^x\\). Finn \\(f(3)\\).",
       "hint": [
-        "Sett x-verdien inn som eksponent.",
-        "Beregn potensen før du multipliserer med startverdien."
+        "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
+        "Sett inn tallene: \\(f(3)=240\\cdot1{,}15^{3}\\).",
+        "Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever."
       ],
-      "svar": "\\(f(3)=240\\cdot 1{,}15^3\\approx 365{,}01\\).",
+      "svar": "\\(f(3)=240\\cdot1{,}15^{3}\\approx365{,}01\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16157,10 +16236,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En størrelse er modellert med \\(f(x)=18000\\cdot 0{,}88^x\\). Finn \\(f(5)\\).",
       "hint": [
-        "Sett x-verdien inn som eksponent.",
-        "Beregn potensen før du multipliserer med startverdien."
+        "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
+        "Sett inn tallene: \\(f(5)=18\\,000\\cdot0{,}88^{5}\\).",
+        "Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever."
       ],
-      "svar": "\\(f(5)=18000\\cdot 0{,}88^5\\approx 9\\,499{,}17\\).",
+      "svar": "\\(f(5)=18\\,000\\cdot0{,}88^{5}\\approx9\\,499{,}17\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16198,10 +16278,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En størrelse er modellert med \\(f(x)=75\\cdot 1{,}25^x\\). Finn \\(f(4)\\).",
       "hint": [
-        "Sett x-verdien inn som eksponent.",
-        "Beregn potensen før du multipliserer med startverdien."
+        "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
+        "Sett inn tallene: \\(f(4)=75\\cdot1{,}25^{4}\\).",
+        "Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever."
       ],
-      "svar": "\\(f(4)=75\\cdot 1{,}25^4\\approx 183{,}11\\).",
+      "svar": "\\(f(4)=75\\cdot1{,}25^{4}\\approx183{,}11\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16239,10 +16320,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En modell er \\(f(x)=2{,}50x^{1{,}4}\\). Finn \\(f(8)\\).",
       "hint": [
-        "Sett x-verdien inn i potensen.",
-        "Regn ut potensen før du multipliserer med a."
+        "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
+        "Sett inn tallene: \\(f(8)=2{,}5\\cdot8^{1{,}4}\\).",
+        "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(f(8)=2{,}50\\cdot 8^{1{,}4}\\approx 45{,}95\\).",
+      "svar": "\\(f(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16279,10 +16361,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En modell er \\(f(x)=18{,}00x^{0{,}5}\\). Finn \\(f(16)\\).",
       "hint": [
-        "Sett x-verdien inn i potensen.",
-        "Regn ut potensen før du multipliserer med a."
+        "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
+        "Sett inn tallene: \\(f(16)=18\\cdot16^{0{,}5}\\).",
+        "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(f(16)=18{,}00\\cdot 16^{0{,}5}\\approx 72{,}00\\).",
+      "svar": "\\(f(16)=18\\cdot16^{0{,}5}\\approx72\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16319,10 +16402,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En modell er \\(f(x)=0{,}75x^{2{,}0}\\). Finn \\(f(12)\\).",
       "hint": [
-        "Sett x-verdien inn i potensen.",
-        "Regn ut potensen før du multipliserer med a."
+        "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
+        "Sett inn tallene: \\(f(12)=0{,}75\\cdot12^{2}\\).",
+        "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(f(12)=0{,}75\\cdot 12^{2{,}0}\\approx 108{,}00\\).",
+      "svar": "\\(f(12)=0{,}75\\cdot12^{2}\\approx108\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16359,10 +16443,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En modell er \\(f(x)=120{,}00x^{-0{,}5}\\). Finn \\(f(25)\\).",
       "hint": [
-        "Sett x-verdien inn i potensen.",
-        "Regn ut potensen før du multipliserer med a."
+        "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
+        "Sett inn tallene: \\(f(25)=120\\cdot25^{-0{,}5}\\).",
+        "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(f(25)=120{,}00\\cdot 25^{-0{,}5}\\approx 24{,}00\\).",
+      "svar": "\\(f(25)=120\\cdot25^{-0{,}5}\\approx24\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16399,10 +16484,11 @@
       "hjelpemidler": "med",
       "sporsmal": "En modell er \\(f(x)=4{,}20x^{1{,}2}\\). Finn \\(f(10)\\).",
       "hint": [
-        "Sett x-verdien inn i potensen.",
-        "Regn ut potensen før du multipliserer med a."
+        "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
+        "Sett inn tallene: \\(f(10)=4{,}2\\cdot10^{1{,}2}\\).",
+        "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(f(10)=4{,}20\\cdot 10^{1{,}2}\\approx 66{,}57\\).",
+      "svar": "\\(f(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -16575,8 +16661,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Målet er høyst \\(28\\,000\\) kr. Velg riktig konklusjon.",
       "hint": [
-        "Bruk sluttverdien fra b.",
-        "Sammenlign med målet og ta hensyn til om målet er høyst eller minst."
+        "Sluttverdien fra b er \\(29\\,212{,}5\\) kr.",
+        "Målet er en øvre grense på \\(28\\,000\\) kr. Ordet «høyst» avgjør hvilken side av grensen som er godkjent.",
+        "Sammenlign \\(29\\,212{,}5\\) med \\(28\\,000\\) og velg konklusjonen som følger av ulikheten."
       ],
       "svar": "Målet er ikke nådd, fordi sluttverdien er \\(29\\,212{,}50\\) kr.",
       "fasit": {
@@ -16752,8 +16839,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Målet er minst \\(4\\,300\\) medlemmer. Velg riktig konklusjon.",
       "hint": [
-        "Bruk sluttverdien fra b.",
-        "Sammenlign med målet og ta hensyn til om målet er høyst eller minst."
+        "Sluttverdien fra b er \\(4\\,327{,}68\\) medlemmer.",
+        "Målet er en nedre grense på \\(4\\,300\\) medlemmer. Ordet «minst» avgjør hvilken side av grensen som er godkjent.",
+        "Sammenlign \\(4\\,327{,}68\\) med \\(4\\,300\\) og velg konklusjonen som følger av ulikheten."
       ],
       "svar": "Målet er nådd, fordi sluttverdien er \\(4\\,327{,}68\\) medlemmer.",
       "fasit": {
@@ -16903,7 +16991,7 @@
         "metode": "d2_percent_total",
         "inndata": {
           "start": 185000,
-          "slutt": 147815.0
+          "slutt": 147815
         },
         "resultat": [
           -20.1
@@ -16929,8 +17017,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Målet er høyst \\(145\\,000\\) kWh. Velg riktig konklusjon.",
       "hint": [
-        "Bruk sluttverdien fra b.",
-        "Sammenlign med målet og ta hensyn til om målet er høyst eller minst."
+        "Sluttverdien fra b er \\(147\\,815\\) kWh.",
+        "Målet er en øvre grense på \\(145\\,000\\) kWh. Ordet «høyst» avgjør hvilken side av grensen som er godkjent.",
+        "Sammenlign \\(147\\,815\\) med \\(145\\,000\\) og velg konklusjonen som følger av ulikheten."
       ],
       "svar": "Målet er ikke nådd, fordi sluttverdien er \\(147\\,815{,}00\\) kWh.",
       "fasit": {
@@ -17106,8 +17195,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Målet er minst \\(950\\,000\\) kr. Velg riktig konklusjon.",
       "hint": [
-        "Bruk sluttverdien fra b.",
-        "Sammenlign med målet og ta hensyn til om målet er høyst eller minst."
+        "Sluttverdien fra b er \\(1\\,003\\,200\\) kr.",
+        "Målet er en nedre grense på \\(950\\,000\\) kr. Ordet «minst» avgjør hvilken side av grensen som er godkjent.",
+        "Sammenlign \\(1\\,003\\,200\\) med \\(950\\,000\\) og velg konklusjonen som følger av ulikheten."
       ],
       "svar": "Målet er nådd, fordi sluttverdien er \\(1\\,003\\,200{,}00\\) kr.",
       "fasit": {
@@ -17283,8 +17373,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Målet er høyst \\(1\\,000\\) tonn. Velg riktig konklusjon.",
       "hint": [
-        "Bruk sluttverdien fra b.",
-        "Sammenlign med målet og ta hensyn til om målet er høyst eller minst."
+        "Sluttverdien fra b er \\(1\\,048{,}32\\) tonn.",
+        "Målet er en øvre grense på \\(1\\,000\\) tonn. Ordet «høyst» avgjør hvilken side av grensen som er godkjent.",
+        "Sammenlign \\(1\\,048{,}32\\) med \\(1\\,000\\) og velg konklusjonen som følger av ulikheten."
       ],
       "svar": "Målet er ikke nådd, fordi sluttverdien er \\(1\\,048{,}32\\) tonn.",
       "fasit": {
@@ -17324,10 +17415,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per periode.",
       "hint": [
-        "Startverdien er a.",
-        "Prosentendringen finnes fra b-1."
+        "I modellen \\(M(x)=a\\cdot b^x\\) er startverdien funksjonsverdien når \\(x=0\\).",
+        "Siden \\(b^0=1\\), blir \\(M(0)=3\\,200\\cdot1\\).",
+        "Finn prosentendringen fra vekstfaktoren med \\((1{,}09-1)\\cdot100\\,\\%\\)."
       ],
-      "svar": "Startverdien er \\(3200\\) besøk, og endringen er \\(9{,}0\\,\\%\\) per periode.",
+      "svar": "Startverdien er \\(3\\,200\\). Den prosentvise endringen er \\((1{,}09-1)\\cdot100\\,\\%=9\\,\\%\\) per periode.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -17376,10 +17468,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellverdien når \\(x=6\\).",
       "hint": [
-        "Sett x-verdien inn i modellen.",
-        "Rund av til nærmeste hele enhet."
+        "Bruk modellen \\(M(x)=3\\,200\\cdot1{,}09^x\\) og erstatt x med 6.",
+        "Da skal du beregne \\(3\\,200\\cdot1{,}09^{6}\\).",
+        "Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om."
       ],
-      "svar": "\\(M(6)=3200\\cdot 1{,}090^{6}\\approx 5\\,367\\) besøk.",
+      "svar": "\\(M(6)=3\\,200\\cdot1{,}09^{6}\\approx5\\,367\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17421,10 +17514,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Etter hvor mange hele perioder er modellverdien for første gang minst \\(5\\,000\\) besøk?",
       "hint": [
-        "Løs ulikheten digitalt eller lag en tabell.",
-        "Kontroller både perioden du velger og perioden rett før."
+        "Skriv terskelkravet som \\(3\\,200\\cdot1{,}09^x\\) ≥ \\(5\\,000\\).",
+        "Lag en tabell med hele x-verdier, eller løs ulikheten digitalt. Start nær der grafen møter terskelen.",
+        "Kontroller både den første perioden som oppfyller kravet og perioden rett før; ellers vet du ikke om perioden er den første."
       ],
-      "svar": "Terskelen passeres første gang etter \\(6\\) perioder.",
+      "svar": "Ved \\(x=5\\) er kravet ennå ikke oppfylt, mens det er oppfylt ved \\(x=6\\). Terskelen passeres derfor første gang etter 6 perioder.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17508,10 +17602,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per periode.",
       "hint": [
-        "Startverdien er a.",
-        "Prosentendringen finnes fra b-1."
+        "I modellen \\(M(x)=a\\cdot b^x\\) er startverdien funksjonsverdien når \\(x=0\\).",
+        "Siden \\(b^0=1\\), blir \\(M(0)=850\\cdot1\\).",
+        "Finn prosentendringen fra vekstfaktoren med \\((0{,}82-1)\\cdot100\\,\\%\\)."
       ],
-      "svar": "Startverdien er \\(850\\) gram, og endringen er \\(-18{,}0\\,\\%\\) per periode.",
+      "svar": "Startverdien er \\(850\\). Den prosentvise endringen er \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\) per periode.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -17560,10 +17655,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellverdien når \\(x=5\\).",
       "hint": [
-        "Sett x-verdien inn i modellen.",
-        "Rund av til nærmeste hele enhet."
+        "Bruk modellen \\(M(x)=850\\cdot0{,}82^x\\) og erstatt x med 5.",
+        "Da skal du beregne \\(850\\cdot0{,}82^{5}\\).",
+        "Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om."
       ],
-      "svar": "\\(M(5)=850\\cdot 0{,}820^{5}\\approx 315\\) gram.",
+      "svar": "\\(M(5)=850\\cdot0{,}82^{5}\\approx315\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17605,10 +17701,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Etter hvor mange hele perioder er modellverdien for første gang høyst \\(300\\) gram?",
       "hint": [
-        "Løs ulikheten digitalt eller lag en tabell.",
-        "Kontroller både perioden du velger og perioden rett før."
+        "Skriv terskelkravet som \\(850\\cdot0{,}82^x\\) ≤ \\(300\\).",
+        "Lag en tabell med hele x-verdier, eller løs ulikheten digitalt. Start nær der grafen møter terskelen.",
+        "Kontroller både den første perioden som oppfyller kravet og perioden rett før; ellers vet du ikke om perioden er den første."
       ],
-      "svar": "Terskelen passeres første gang etter \\(6\\) perioder.",
+      "svar": "Ved \\(x=5\\) er kravet ennå ikke oppfylt, mens det er oppfylt ved \\(x=6\\). Terskelen passeres derfor første gang etter 6 perioder.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17692,10 +17789,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per periode.",
       "hint": [
-        "Startverdien er a.",
-        "Prosentendringen finnes fra b-1."
+        "I modellen \\(M(x)=a\\cdot b^x\\) er startverdien funksjonsverdien når \\(x=0\\).",
+        "Siden \\(b^0=1\\), blir \\(M(0)=640\\cdot1\\).",
+        "Finn prosentendringen fra vekstfaktoren med \\((1{,}18-1)\\cdot100\\,\\%\\)."
       ],
-      "svar": "Startverdien er \\(640\\) elsykler, og endringen er \\(18{,}0\\,\\%\\) per periode.",
+      "svar": "Startverdien er \\(640\\). Den prosentvise endringen er \\((1{,}18-1)\\cdot100\\,\\%=18\\,\\%\\) per periode.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -17744,10 +17842,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellverdien når \\(x=7\\).",
       "hint": [
-        "Sett x-verdien inn i modellen.",
-        "Rund av til nærmeste hele enhet."
+        "Bruk modellen \\(M(x)=640\\cdot1{,}18^x\\) og erstatt x med 7.",
+        "Da skal du beregne \\(640\\cdot1{,}18^{7}\\).",
+        "Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om."
       ],
-      "svar": "\\(M(7)=640\\cdot 1{,}180^{7}\\approx 2\\,039\\) elsykler.",
+      "svar": "\\(M(7)=640\\cdot1{,}18^{7}\\approx2\\,039\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17789,10 +17888,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Etter hvor mange hele perioder er modellverdien for første gang minst \\(1\\,800\\) elsykler?",
       "hint": [
-        "Løs ulikheten digitalt eller lag en tabell.",
-        "Kontroller både perioden du velger og perioden rett før."
+        "Skriv terskelkravet som \\(640\\cdot1{,}18^x\\) ≥ \\(1\\,800\\).",
+        "Lag en tabell med hele x-verdier, eller løs ulikheten digitalt. Start nær der grafen møter terskelen.",
+        "Kontroller både den første perioden som oppfyller kravet og perioden rett før; ellers vet du ikke om perioden er den første."
       ],
-      "svar": "Terskelen passeres første gang etter \\(7\\) perioder.",
+      "svar": "Ved \\(x=6\\) er kravet ennå ikke oppfylt, mens det er oppfylt ved \\(x=7\\). Terskelen passeres derfor første gang etter 7 perioder.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17876,10 +17976,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per periode.",
       "hint": [
-        "Startverdien er a.",
-        "Prosentendringen finnes fra b-1."
+        "I modellen \\(M(x)=a\\cdot b^x\\) er startverdien funksjonsverdien når \\(x=0\\).",
+        "Siden \\(b^0=1\\), blir \\(M(0)=240\\,000\\cdot1\\).",
+        "Finn prosentendringen fra vekstfaktoren med \\((0{,}94-1)\\cdot100\\,\\%\\)."
       ],
-      "svar": "Startverdien er \\(240000\\) m³, og endringen er \\(-6{,}0\\,\\%\\) per periode.",
+      "svar": "Startverdien er \\(240\\,000\\). Den prosentvise endringen er \\((0{,}94-1)\\cdot100\\,\\%=-6\\,\\%\\) per periode.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -17928,10 +18029,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellverdien når \\(x=8\\).",
       "hint": [
-        "Sett x-verdien inn i modellen.",
-        "Rund av til nærmeste hele enhet."
+        "Bruk modellen \\(M(x)=240\\,000\\cdot0{,}94^x\\) og erstatt x med 8.",
+        "Da skal du beregne \\(240\\,000\\cdot0{,}94^{8}\\).",
+        "Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om."
       ],
-      "svar": "\\(M(8)=240000\\cdot 0{,}940^{8}\\approx 146\\,297\\) m³.",
+      "svar": "\\(M(8)=240\\,000\\cdot0{,}94^{8}\\approx146\\,297\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -17973,10 +18075,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Etter hvor mange hele perioder er modellverdien for første gang høyst \\(150\\,000\\) m³?",
       "hint": [
-        "Løs ulikheten digitalt eller lag en tabell.",
-        "Kontroller både perioden du velger og perioden rett før."
+        "Skriv terskelkravet som \\(240\\,000\\cdot0{,}94^x\\) ≤ \\(150\\,000\\).",
+        "Lag en tabell med hele x-verdier, eller løs ulikheten digitalt. Start nær der grafen møter terskelen.",
+        "Kontroller både den første perioden som oppfyller kravet og perioden rett før; ellers vet du ikke om perioden er den første."
       ],
-      "svar": "Terskelen passeres første gang etter \\(8\\) perioder.",
+      "svar": "Ved \\(x=7\\) er kravet ennå ikke oppfylt, mens det er oppfylt ved \\(x=8\\). Terskelen passeres derfor første gang etter 8 perioder.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -18060,10 +18163,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per periode.",
       "hint": [
-        "Startverdien er a.",
-        "Prosentendringen finnes fra b-1."
+        "I modellen \\(M(x)=a\\cdot b^x\\) er startverdien funksjonsverdien når \\(x=0\\).",
+        "Siden \\(b^0=1\\), blir \\(M(0)=18\\,000\\cdot1\\).",
+        "Finn prosentendringen fra vekstfaktoren med \\((1{,}045-1)\\cdot100\\,\\%\\)."
       ],
-      "svar": "Startverdien er \\(18000\\) kr, og endringen er \\(4{,}5\\,\\%\\) per periode.",
+      "svar": "Startverdien er \\(18\\,000\\). Den prosentvise endringen er \\((1{,}045-1)\\cdot100\\,\\%=4{,}5\\,\\%\\) per periode.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -18112,10 +18216,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellverdien når \\(x=10\\).",
       "hint": [
-        "Sett x-verdien inn i modellen.",
-        "Rund av til nærmeste hele enhet."
+        "Bruk modellen \\(M(x)=18\\,000\\cdot1{,}045^x\\) og erstatt x med 10.",
+        "Da skal du beregne \\(18\\,000\\cdot1{,}045^{10}\\).",
+        "Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om."
       ],
-      "svar": "\\(M(10)=18000\\cdot 1{,}045^{10}\\approx 27\\,953\\) kr.",
+      "svar": "\\(M(10)=18\\,000\\cdot1{,}045^{10}\\approx27\\,953\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -18157,10 +18262,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Etter hvor mange hele perioder er modellverdien for første gang minst \\(28\\,000\\) kr?",
       "hint": [
-        "Løs ulikheten digitalt eller lag en tabell.",
-        "Kontroller både perioden du velger og perioden rett før."
+        "Skriv terskelkravet som \\(18\\,000\\cdot1{,}045^x\\) ≥ \\(28\\,000\\).",
+        "Lag en tabell med hele x-verdier, eller løs ulikheten digitalt. Start nær der grafen møter terskelen.",
+        "Kontroller både den første perioden som oppfyller kravet og perioden rett før; ellers vet du ikke om perioden er den første."
       ],
-      "svar": "Terskelen passeres første gang etter \\(11\\) perioder.",
+      "svar": "Ved \\(x=10\\) er kravet ennå ikke oppfylt, mens det er oppfylt ved \\(x=11\\). Terskelen passeres derfor første gang etter 11 perioder.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -18244,8 +18350,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=40\\) km.",
       "hint": [
-        "Sett x-verdien inn i begge modeller.",
-        "Oppgi svarene i samme rekkefølge som A og B."
+        "Hos A er prisen fastbeløpet 180 pluss 4{,}5 ganger x. Hos B brukes fastbeløpet 60 og satsen 7{,}5.",
+        "Sett inn \\(x=40\\): \\(A(40)=180+4{,}5\\cdot40\\).",
+        "Gjør det samme for B: \\(B(40)=60+7{,}5\\cdot40\\)."
       ],
       "svar": "A koster \\(360{,}00\\) kr, og B koster \\(360{,}00\\) kr.",
       "fasit": {
@@ -18303,10 +18410,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn x-verdien der tilbudene koster det samme, og den felles prisen.",
       "hint": [
-        "Sett A(x)=B(x).",
-        "Bruk x-verdien i én av modellene."
+        "Samme pris betyr \\(A(x)=B(x)\\): \\(180+4{,}5x=60+7{,}5x\\).",
+        "Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(3x=120\\).",
+        "Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris."
       ],
-      "svar": "Modellene er like ved \\(x=40{,}00\\) km. Prisen er da \\(360{,}00\\) kr.",
+      "svar": "\\(180+4{,}5x=60+7{,}5x\\) gir \\(x=40\\). Den felles prisen er \\(360\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -18361,8 +18469,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket tilbud er billigst ved \\(x=75\\) km?",
       "hint": [
-        "Beregn begge priser ved den aktuelle x-verdien.",
-        "Ikke velg bare ut fra fastprisen."
+        "Ikke avgjør ut fra fastbeløpet alene; satsen per enhet påvirker prisen når x er 75.",
+        "Beregn \\(A(75)=180+4{,}5\\cdot75\\).",
+        "Beregn også \\(B(75)=60+7{,}5\\cdot75\\) og velg det minste beløpet."
       ],
       "svar": "A koster \\(517{,}50\\), og B koster \\(622{,}50\\). Tilbud A er billigst.",
       "fasit": {
@@ -18445,8 +18554,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=120\\) GB.",
       "hint": [
-        "Sett x-verdien inn i begge modeller.",
-        "Oppgi svarene i samme rekkefølge som A og B."
+        "Hos A er prisen fastbeløpet 299 pluss 0{,}8 ganger x. Hos B brukes fastbeløpet 149 og satsen 1{,}8.",
+        "Sett inn \\(x=120\\): \\(A(120)=299+0{,}8\\cdot120\\).",
+        "Gjør det samme for B: \\(B(120)=149+1{,}8\\cdot120\\)."
       ],
       "svar": "A koster \\(395{,}00\\) kr, og B koster \\(365{,}00\\) kr.",
       "fasit": {
@@ -18504,10 +18614,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn x-verdien der tilbudene koster det samme, og den felles prisen.",
       "hint": [
-        "Sett A(x)=B(x).",
-        "Bruk x-verdien i én av modellene."
+        "Samme pris betyr \\(A(x)=B(x)\\): \\(299+0{,}8x=149+1{,}8x\\).",
+        "Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(1x=150\\).",
+        "Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris."
       ],
-      "svar": "Modellene er like ved \\(x=150{,}00\\) GB. Prisen er da \\(419{,}00\\) kr.",
+      "svar": "\\(299+0{,}8x=149+1{,}8x\\) gir \\(x=150\\). Den felles prisen er \\(419\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -18562,8 +18673,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket tilbud er billigst ved \\(x=220\\) GB?",
       "hint": [
-        "Beregn begge priser ved den aktuelle x-verdien.",
-        "Ikke velg bare ut fra fastprisen."
+        "Ikke avgjør ut fra fastbeløpet alene; satsen per enhet påvirker prisen når x er 220.",
+        "Beregn \\(A(220)=299+0{,}8\\cdot220\\).",
+        "Beregn også \\(B(220)=149+1{,}8\\cdot220\\) og velg det minste beløpet."
       ],
       "svar": "A koster \\(475{,}00\\), og B koster \\(545{,}00\\). Tilbud A er billigst.",
       "fasit": {
@@ -18646,8 +18758,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=8\\) besøk.",
       "hint": [
-        "Sett x-verdien inn i begge modeller.",
-        "Oppgi svarene i samme rekkefølge som A og B."
+        "Hos A er prisen fastbeløpet 499 pluss 0 ganger x. Hos B brukes fastbeløpet 199 og satsen 30.",
+        "Sett inn \\(x=8\\): \\(A(8)=499+0\\cdot8\\).",
+        "Gjør det samme for B: \\(B(8)=199+30\\cdot8\\)."
       ],
       "svar": "A koster \\(499{,}00\\) kr, og B koster \\(439{,}00\\) kr.",
       "fasit": {
@@ -18705,10 +18818,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn x-verdien der tilbudene koster det samme, og den felles prisen.",
       "hint": [
-        "Sett A(x)=B(x).",
-        "Bruk x-verdien i én av modellene."
+        "Samme pris betyr \\(A(x)=B(x)\\): \\(499+0x=199+30x\\).",
+        "Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(30x=300\\).",
+        "Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris."
       ],
-      "svar": "Modellene er like ved \\(x=10{,}00\\) besøk. Prisen er da \\(499{,}00\\) kr.",
+      "svar": "\\(499+0x=199+30x\\) gir \\(x=10\\). Den felles prisen er \\(499\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -18763,8 +18877,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket tilbud er billigst ved \\(x=15\\) besøk?",
       "hint": [
-        "Beregn begge priser ved den aktuelle x-verdien.",
-        "Ikke velg bare ut fra fastprisen."
+        "Ikke avgjør ut fra fastbeløpet alene; satsen per enhet påvirker prisen når x er 15.",
+        "Beregn \\(A(15)=499+0\\cdot15\\).",
+        "Beregn også \\(B(15)=199+30\\cdot15\\) og velg det minste beløpet."
       ],
       "svar": "A koster \\(499{,}00\\), og B koster \\(649{,}00\\). Tilbud A er billigst.",
       "fasit": {
@@ -18847,8 +18962,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=5\\) døgn.",
       "hint": [
-        "Sett x-verdien inn i begge modeller.",
-        "Oppgi svarene i samme rekkefølge som A og B."
+        "Hos A er prisen fastbeløpet 250 pluss 85 ganger x. Hos B brukes fastbeløpet 550 og satsen 45.",
+        "Sett inn \\(x=5\\): \\(A(5)=250+85\\cdot5\\).",
+        "Gjør det samme for B: \\(B(5)=550+45\\cdot5\\)."
       ],
       "svar": "A koster \\(675{,}00\\) kr, og B koster \\(775{,}00\\) kr.",
       "fasit": {
@@ -18906,10 +19022,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn x-verdien der tilbudene koster det samme, og den felles prisen.",
       "hint": [
-        "Sett A(x)=B(x).",
-        "Bruk x-verdien i én av modellene."
+        "Samme pris betyr \\(A(x)=B(x)\\): \\(250+85x=550+45x\\).",
+        "Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(40x=300\\).",
+        "Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris."
       ],
-      "svar": "Modellene er like ved \\(x=7{,}50\\) døgn. Prisen er da \\(887{,}50\\) kr.",
+      "svar": "\\(250+85x=550+45x\\) gir \\(x=7{,}5\\). Den felles prisen er \\(887{,}5\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -18964,8 +19081,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket tilbud er billigst ved \\(x=10\\) døgn?",
       "hint": [
-        "Beregn begge priser ved den aktuelle x-verdien.",
-        "Ikke velg bare ut fra fastprisen."
+        "Ikke avgjør ut fra fastbeløpet alene; satsen per enhet påvirker prisen når x er 10.",
+        "Beregn \\(A(10)=250+85\\cdot10\\).",
+        "Beregn også \\(B(10)=550+45\\cdot10\\) og velg det minste beløpet."
       ],
       "svar": "A koster \\(1\\,100{,}00\\), og B koster \\(1\\,000{,}00\\). Tilbud B er billigst.",
       "fasit": {
@@ -19048,8 +19166,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=100\\) kWh.",
       "hint": [
-        "Sett x-verdien inn i begge modeller.",
-        "Oppgi svarene i samme rekkefølge som A og B."
+        "Hos A er prisen fastbeløpet 79 pluss 2{,}4 ganger x. Hos B brukes fastbeløpet 199 og satsen 1{,}8.",
+        "Sett inn \\(x=100\\): \\(A(100)=79+2{,}4\\cdot100\\).",
+        "Gjør det samme for B: \\(B(100)=199+1{,}8\\cdot100\\)."
       ],
       "svar": "A koster \\(319{,}00\\) kr, og B koster \\(379{,}00\\) kr.",
       "fasit": {
@@ -19107,10 +19226,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn x-verdien der tilbudene koster det samme, og den felles prisen.",
       "hint": [
-        "Sett A(x)=B(x).",
-        "Bruk x-verdien i én av modellene."
+        "Samme pris betyr \\(A(x)=B(x)\\): \\(79+2{,}4x=199+1{,}8x\\).",
+        "Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(0{,}5999999999999999x=120\\).",
+        "Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris."
       ],
-      "svar": "Modellene er like ved \\(x=200{,}00\\) kWh. Prisen er da \\(559{,}00\\) kr.",
+      "svar": "\\(79+2{,}4x=199+1{,}8x\\) gir \\(x=200\\). Den felles prisen er \\(559\\) kr.",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -19165,8 +19285,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket tilbud er billigst ved \\(x=240\\) kWh?",
       "hint": [
-        "Beregn begge priser ved den aktuelle x-verdien.",
-        "Ikke velg bare ut fra fastprisen."
+        "Ikke avgjør ut fra fastbeløpet alene; satsen per enhet påvirker prisen når x er 240.",
+        "Beregn \\(A(240)=79+2{,}4\\cdot240\\).",
+        "Beregn også \\(B(240)=199+1{,}8\\cdot240\\) og velg det minste beløpet."
       ],
       "svar": "A koster \\(655{,}00\\), og B koster \\(631{,}00\\). Tilbud B er billigst.",
       "fasit": {
@@ -19291,8 +19412,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Utfør lineær regresjon. Oppgi modellparameterne i rekkefølgen som vises i svarfeltene.",
       "hint": [
-        "Legg x-verdiene og y-verdiene inn i et regresjonsverktøy.",
-        "Velg riktig modelltype og bruk minst tre signifikante siffer."
+        "Modelltypen fra a har formen \\(y=ax+b\\). Parameterne som skal finnes, er bokstavene i denne formen.",
+        "Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
+        "Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil."
       ],
       "svar": "Regresjonen gir omtrent \\(y=1{,}250x+13{,}200\\).",
       "fasit": {
@@ -19356,8 +19478,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk regresjonsmodellen til å anslå ladetid når batteristørrelse er \\(70{,}0\\) kWh.",
       "hint": [
-        "Bruk modellen fra b.",
-        "Sett inn x-verdien og rund av til én desimal."
+        "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
+        "Erstatt x med 70. Regnestykket blir \\(1{,}25\\cdot70+13{,}2\\).",
+        "Regn ut modellverdien og rund først til én desimal helt til slutt."
       ],
       "svar": "Modellen gir omtrent \\(100{,}7\\) minutter.",
       "fasit": {
@@ -19498,8 +19621,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Utfør eksponentialregresjon. Oppgi modellparameterne i rekkefølgen som vises i svarfeltene.",
       "hint": [
-        "Legg x-verdiene og y-verdiene inn i et regresjonsverktøy.",
-        "Velg riktig modelltype og bruk minst tre signifikante siffer."
+        "Modelltypen fra a har formen \\(y=a\\cdot b^x\\). Parameterne som skal finnes, er bokstavene i denne formen.",
+        "Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
+        "Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil."
       ],
       "svar": "Regresjonen gir omtrent \\(y=119{,}717\\cdot 1{,}1957^x\\).",
       "fasit": {
@@ -19565,8 +19689,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk regresjonsmodellen til å anslå antall daglige besøk når tid etter lansering er \\(7{,}0\\) måneder.",
       "hint": [
-        "Bruk modellen fra b.",
-        "Sett inn x-verdien og rund av til én desimal."
+        "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
+        "Erstatt x med 7. Regnestykket blir \\(119{,}717\\cdot1{,}1957^{7}\\).",
+        "Regn ut modellverdien og rund først til én desimal helt til slutt."
       ],
       "svar": "Modellen gir omtrent \\(418{,}3\\) tusen besøk.",
       "fasit": {
@@ -19709,8 +19834,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Utfør potensregresjon. Oppgi modellparameterne i rekkefølgen som vises i svarfeltene.",
       "hint": [
-        "Legg x-verdiene og y-verdiene inn i et regresjonsverktøy.",
-        "Velg riktig modelltype og bruk minst tre signifikante siffer."
+        "Modelltypen fra a har formen \\(y=a\\cdot x^b\\). Parameterne som skal finnes, er bokstavene i denne formen.",
+        "Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
+        "Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil."
       ],
       "svar": "Regresjonen gir omtrent \\(y=0{,}0180x^{1{,}948}\\).",
       "fasit": {
@@ -19774,8 +19900,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk regresjonsmodellen til å anslå bremselengde når fart er \\(70{,}0\\) km/t.",
       "hint": [
-        "Bruk modellen fra b.",
-        "Sett inn x-verdien og rund av til én desimal."
+        "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
+        "Erstatt x med 70. Regnestykket blir \\(0{,}018\\cdot70^{1{,}948}\\).",
+        "Regn ut modellverdien og rund først til én desimal helt til slutt."
       ],
       "svar": "Modellen gir omtrent \\(70{,}7\\) meter.",
       "fasit": {
@@ -19916,8 +20043,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Utfør andregradsregresjon. Oppgi modellparameterne i rekkefølgen som vises i svarfeltene.",
       "hint": [
-        "Legg x-verdiene og y-verdiene inn i et regresjonsverktøy.",
-        "Velg riktig modelltype og bruk minst tre signifikante siffer."
+        "Modelltypen fra a har formen \\(y=ax^2+bx+c\\). Parameterne som skal finnes, er bokstavene i denne formen.",
+        "Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
+        "Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil."
       ],
       "svar": "Regresjonen gir omtrent \\(y=-1{,}741x^2+8{,}440x+1{,}311\\).",
       "fasit": {
@@ -19960,7 +20088,7 @@
             1.2,
             8.1,
             11.4,
-            11.0,
+            11,
             6.8,
             0.2
           ]
@@ -19990,8 +20118,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk regresjonsmodellen til å anslå høyde når tid er \\(2{,}5\\) sekunder.",
       "hint": [
-        "Bruk modellen fra b.",
-        "Sett inn x-verdien og rund av til én desimal."
+        "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
+        "Erstatt x med 2{,}5. Regnestykket blir \\(-1{,}741\\cdot2{,}5^2+8{,}44\\cdot2{,}5+1{,}311\\).",
+        "Regn ut modellverdien og rund først til én desimal helt til slutt."
       ],
       "svar": "Modellen gir omtrent \\(11{,}5\\) meter.",
       "fasit": {
@@ -20021,7 +20150,7 @@
             1.2,
             8.1,
             11.4,
-            11.0,
+            11,
             6.8,
             0.2
           ],
@@ -20134,8 +20263,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Utfør lineær regresjon. Oppgi modellparameterne i rekkefølgen som vises i svarfeltene.",
       "hint": [
-        "Legg x-verdiene og y-verdiene inn i et regresjonsverktøy.",
-        "Velg riktig modelltype og bruk minst tre signifikante siffer."
+        "Modelltypen fra a har formen \\(y=ax+b\\). Parameterne som skal finnes, er bokstavene i denne formen.",
+        "Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
+        "Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil."
       ],
       "svar": "Regresjonen gir omtrent \\(y=-1{,}130x+95{,}300\\).",
       "fasit": {
@@ -20199,8 +20329,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk regresjonsmodellen til å anslå tid per enhet når antall produserte enheter er \\(60{,}0\\) enheter.",
       "hint": [
-        "Bruk modellen fra b.",
-        "Sett inn x-verdien og rund av til én desimal."
+        "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
+        "Erstatt x med 60. Regnestykket blir \\(-1{,}13\\cdot60+95{,}3\\).",
+        "Regn ut modellverdien og rund først til én desimal helt til slutt."
       ],
       "svar": "Modellen gir omtrent \\(27{,}5\\) minutter.",
       "fasit": {
@@ -20404,8 +20535,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken gruppe har størst populasjonsstandardavvik?",
       "hint": [
-        "Beregn populasjonsstandardavviket i begge grupper.",
-        "Større standardavvik betyr større typisk avstand fra gjennomsnittet."
+        "Standardavvik sammenligner observasjonenes typiske avstand fra gjennomsnittet; større avstander gir større standardavvik.",
+        "Legg verdiene fra gruppe A og B i hver sin liste i et statistikkverktøy og beregn standardavvik for begge.",
+        "Oppgaven ber om populasjonsstandardavvik, ofte merket \\(\\sigma\\) eller \\(\\sigma_x\\), ikke utvalgsstandardavviket \\(s\\). Velg gruppen med størst verdi."
       ],
       "svar": "Standardavvikene er \\(5{,}05\\) for A og \\(10{,}42\\) for B. Gruppe B har størst spredning.",
       "fasit": {
@@ -20590,8 +20722,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken gruppe har størst populasjonsstandardavvik?",
       "hint": [
-        "Beregn populasjonsstandardavviket i begge grupper.",
-        "Større standardavvik betyr større typisk avstand fra gjennomsnittet."
+        "Standardavvik sammenligner observasjonenes typiske avstand fra gjennomsnittet; større avstander gir større standardavvik.",
+        "Legg verdiene fra gruppe A og B i hver sin liste i et statistikkverktøy og beregn standardavvik for begge.",
+        "Oppgaven ber om populasjonsstandardavvik, ofte merket \\(\\sigma\\) eller \\(\\sigma_x\\), ikke utvalgsstandardavviket \\(s\\). Velg gruppen med størst verdi."
       ],
       "svar": "Standardavvikene er \\(26{,}99\\) for A og \\(40{,}00\\) for B. Gruppe B har størst spredning.",
       "fasit": {
@@ -20778,8 +20911,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken gruppe har størst populasjonsstandardavvik?",
       "hint": [
-        "Beregn populasjonsstandardavviket i begge grupper.",
-        "Større standardavvik betyr større typisk avstand fra gjennomsnittet."
+        "Standardavvik sammenligner observasjonenes typiske avstand fra gjennomsnittet; større avstander gir større standardavvik.",
+        "Legg verdiene fra gruppe A og B i hver sin liste i et statistikkverktøy og beregn standardavvik for begge.",
+        "Oppgaven ber om populasjonsstandardavvik, ofte merket \\(\\sigma\\) eller \\(\\sigma_x\\), ikke utvalgsstandardavviket \\(s\\). Velg gruppen med størst verdi."
       ],
       "svar": "Standardavvikene er \\(3{,}84\\) for A og \\(11{,}46\\) for B. Gruppe B har størst spredning.",
       "fasit": {
@@ -20966,8 +21100,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken gruppe har størst populasjonsstandardavvik?",
       "hint": [
-        "Beregn populasjonsstandardavviket i begge grupper.",
-        "Større standardavvik betyr større typisk avstand fra gjennomsnittet."
+        "Standardavvik sammenligner observasjonenes typiske avstand fra gjennomsnittet; større avstander gir større standardavvik.",
+        "Legg verdiene fra gruppe A og B i hver sin liste i et statistikkverktøy og beregn standardavvik for begge.",
+        "Oppgaven ber om populasjonsstandardavvik, ofte merket \\(\\sigma\\) eller \\(\\sigma_x\\), ikke utvalgsstandardavviket \\(s\\). Velg gruppen med størst verdi."
       ],
       "svar": "Standardavvikene er \\(1{,}90\\) for A og \\(4{,}58\\) for B. Gruppe B har størst spredning.",
       "fasit": {
@@ -21154,8 +21289,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken gruppe har størst populasjonsstandardavvik?",
       "hint": [
-        "Beregn populasjonsstandardavviket i begge grupper.",
-        "Større standardavvik betyr større typisk avstand fra gjennomsnittet."
+        "Standardavvik sammenligner observasjonenes typiske avstand fra gjennomsnittet; større avstander gir større standardavvik.",
+        "Legg verdiene fra gruppe A og B i hver sin liste i et statistikkverktøy og beregn standardavvik for begge.",
+        "Oppgaven ber om populasjonsstandardavvik, ofte merket \\(\\sigma\\) eller \\(\\sigma_x\\), ikke utvalgsstandardavviket \\(s\\). Velg gruppen med størst verdi."
       ],
       "svar": "Standardavvikene er \\(1{,}22\\) for A og \\(2{,}29\\) for B. Gruppe B har størst spredning.",
       "fasit": {
@@ -22231,7 +22367,7 @@
         "metode": "d2_inverse_constant",
         "inndata": {
           "x": 6,
-          "T": 22.0,
+          "T": 22,
           "fast": 2
         },
         "resultat": [
@@ -22257,10 +22393,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellert tid når det brukes \\(12\\) personer.",
       "hint": [
-        "Sett x-verdien inn i modellen med k fra a.",
-        "Legg til den faste tiden etter divisjonen."
+        "Bruk modellen \\(T(x)=120/x+2\\) fra oppgave a.",
+        "Sett inn \\(x=12\\): \\(T(12)=120/12+2\\).",
+        "Regn divisjonen før du legger til den faste tiden."
       ],
-      "svar": "\\(T(12)=120/12+2=12{,}00\\) timer.",
+      "svar": "\\(T(12)=120/12+2=12\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22302,10 +22439,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange personer gir modellert tid \\(12{,}00\\) timer?",
       "hint": [
-        "Sett den oppgitte tiden lik k/x+fast tid.",
-        "Trekk fra fast tid før du løser for x."
+        "Sett den oppgitte tiden inn på venstre side: \\(12=120/x+2\\).",
+        "Trekk fra den faste tiden: \\(10=120/x\\).",
+        "Multipliser med x og del på 10 for å isolere x."
       ],
-      "svar": "Ligningen gir \\(x=12\\) personer.",
+      "svar": "\\(12=120/x+2\\) gir \\(10=120/x\\), og dermed \\(x=120/10=12\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22322,7 +22460,7 @@
         "inndata": {
           "k": 120,
           "fast": 2,
-          "T": 12.0
+          "T": 12
         },
         "resultat": [
           12
@@ -22408,7 +22546,7 @@
         "metode": "d2_inverse_constant",
         "inndata": {
           "x": 8,
-          "T": 46.0,
+          "T": 46,
           "fast": 1
         },
         "resultat": [
@@ -22434,10 +22572,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellert tid når det brukes \\(24\\) pumper.",
       "hint": [
-        "Sett x-verdien inn i modellen med k fra a.",
-        "Legg til den faste tiden etter divisjonen."
+        "Bruk modellen \\(T(x)=360/x+1\\) fra oppgave a.",
+        "Sett inn \\(x=24\\): \\(T(24)=360/24+1\\).",
+        "Regn divisjonen før du legger til den faste tiden."
       ],
-      "svar": "\\(T(24)=360/24+1=16{,}00\\) timer.",
+      "svar": "\\(T(24)=360/24+1=16\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22479,10 +22618,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange pumper gir modellert tid \\(23{,}50\\) timer?",
       "hint": [
-        "Sett den oppgitte tiden lik k/x+fast tid.",
-        "Trekk fra fast tid før du løser for x."
+        "Sett den oppgitte tiden inn på venstre side: \\(23{,}5=360/x+1\\).",
+        "Trekk fra den faste tiden: \\(22{,}5=360/x\\).",
+        "Multipliser med x og del på 22{,}5 for å isolere x."
       ],
-      "svar": "Ligningen gir \\(x=16\\) pumper.",
+      "svar": "\\(23{,}5=360/x+1\\) gir \\(22{,}5=360/x\\), og dermed \\(x=360/22{,}5=16\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22585,7 +22725,7 @@
         "metode": "d2_inverse_constant",
         "inndata": {
           "x": 15,
-          "T": 65.0,
+          "T": 65,
           "fast": 5
         },
         "resultat": [
@@ -22611,10 +22751,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellert tid når det brukes \\(45\\) prosessorer.",
       "hint": [
-        "Sett x-verdien inn i modellen med k fra a.",
-        "Legg til den faste tiden etter divisjonen."
+        "Bruk modellen \\(T(x)=900/x+5\\) fra oppgave a.",
+        "Sett inn \\(x=45\\): \\(T(45)=900/45+5\\).",
+        "Regn divisjonen før du legger til den faste tiden."
       ],
-      "svar": "\\(T(45)=900/45+5=25{,}00\\) minutter.",
+      "svar": "\\(T(45)=900/45+5=25\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22656,10 +22797,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange prosessorer gir modellert tid \\(41{,}00\\) minutter?",
       "hint": [
-        "Sett den oppgitte tiden lik k/x+fast tid.",
-        "Trekk fra fast tid før du løser for x."
+        "Sett den oppgitte tiden inn på venstre side: \\(41=900/x+5\\).",
+        "Trekk fra den faste tiden: \\(36=900/x\\).",
+        "Multipliser med x og del på 36 for å isolere x."
       ],
-      "svar": "Ligningen gir \\(x=25\\) prosessorer.",
+      "svar": "\\(41=900/x+5\\) gir \\(36=900/x\\), og dermed \\(x=900/36=25\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22676,7 +22818,7 @@
         "inndata": {
           "k": 900,
           "fast": 5,
-          "T": 41.0
+          "T": 41
         },
         "resultat": [
           25
@@ -22762,7 +22904,7 @@
         "metode": "d2_inverse_constant",
         "inndata": {
           "x": 10,
-          "T": 27.0,
+          "T": 27,
           "fast": 3
         },
         "resultat": [
@@ -22788,10 +22930,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellert tid når det brukes \\(20\\) arbeidere.",
       "hint": [
-        "Sett x-verdien inn i modellen med k fra a.",
-        "Legg til den faste tiden etter divisjonen."
+        "Bruk modellen \\(T(x)=240/x+3\\) fra oppgave a.",
+        "Sett inn \\(x=20\\): \\(T(20)=240/20+3\\).",
+        "Regn divisjonen før du legger til den faste tiden."
       ],
-      "svar": "\\(T(20)=240/20+3=15{,}00\\) timer.",
+      "svar": "\\(T(20)=240/20+3=15\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22833,10 +22976,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange arbeidere gir modellert tid \\(19{,}00\\) timer?",
       "hint": [
-        "Sett den oppgitte tiden lik k/x+fast tid.",
-        "Trekk fra fast tid før du løser for x."
+        "Sett den oppgitte tiden inn på venstre side: \\(19=240/x+3\\).",
+        "Trekk fra den faste tiden: \\(16=240/x\\).",
+        "Multipliser med x og del på 16 for å isolere x."
       ],
-      "svar": "Ligningen gir \\(x=15\\) arbeidere.",
+      "svar": "\\(19=240/x+3\\) gir \\(16=240/x\\), og dermed \\(x=240/16=15\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -22853,7 +22997,7 @@
         "inndata": {
           "k": 240,
           "fast": 3,
-          "T": 19.0
+          "T": 19
         },
         "resultat": [
           15
@@ -22939,7 +23083,7 @@
         "metode": "d2_inverse_constant",
         "inndata": {
           "x": 12,
-          "T": 44.0,
+          "T": 44,
           "fast": 4
         },
         "resultat": [
@@ -22965,10 +23109,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Beregn modellert tid når det brukes \\(32\\) kjøretøy.",
       "hint": [
-        "Sett x-verdien inn i modellen med k fra a.",
-        "Legg til den faste tiden etter divisjonen."
+        "Bruk modellen \\(T(x)=480/x+4\\) fra oppgave a.",
+        "Sett inn \\(x=32\\): \\(T(32)=480/32+4\\).",
+        "Regn divisjonen før du legger til den faste tiden."
       ],
-      "svar": "\\(T(32)=480/32+4=19{,}00\\) timer.",
+      "svar": "\\(T(32)=480/32+4=19\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23010,10 +23155,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange kjøretøy gir modellert tid \\(24{,}00\\) timer?",
       "hint": [
-        "Sett den oppgitte tiden lik k/x+fast tid.",
-        "Trekk fra fast tid før du løser for x."
+        "Sett den oppgitte tiden inn på venstre side: \\(24=480/x+4\\).",
+        "Trekk fra den faste tiden: \\(20=480/x\\).",
+        "Multipliser med x og del på 20 for å isolere x."
       ],
-      "svar": "Ligningen gir \\(x=24\\) kjøretøy.",
+      "svar": "\\(24=480/x+4\\) gir \\(20=480/x\\), og dermed \\(x=480/20=24\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23030,7 +23176,7 @@
         "inndata": {
           "k": 480,
           "fast": 4,
-          "T": 24.0
+          "T": 24
         },
         "resultat": [
           24
@@ -23097,10 +23243,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
-        "Følg programmet linje for linje.",
-        "Noter når løkken stopper eller hvilke verdier som tas med."
+        "If-vilkåret tar bare med verdier som er minst 50.",
+        "Verdiene som tas med, er 55, 61, 73, 66 og 58.",
+        "Variabelen antall øker én gang for hver av disse verdiene."
       ],
-      "svar": "Den første numeriske utskriften er \\(5\\).",
+      "svar": "Fem verdier er minst 50, så den første utskriften er 5.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23141,10 +23288,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilket gjennomsnitt skriver programmet ut på den andre linjen?",
       "hint": [
-        "Bruk verdiene som er igjen eller x-verdien programmet finner.",
-        "Følg samme beregningsregel som i programmet."
+        "Den andre utskriften er gjennomsnittet av verdiene som er minst 50.",
+        "Legg sammen \\(55+61+73+66+58=313\\).",
+        "Del summen på antallet 5 og rund til én desimal."
       ],
-      "svar": "Den andre størrelsen er \\(62{,}60\\).",
+      "svar": "Gjennomsnittet er \\(313/5=62{,}6\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23184,10 +23332,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Grensen endres fra 50 til 60. Hvor mange verdier teller programmet etter denne endringen?",
       "hint": [
-        "La resten av programmet være uendret.",
-        "Kjør den samme algoritmen med den nye inndataen eller parameteren."
+        "Med ny grense 60 tas bare verdier som er minst 60 med.",
+        "Gå gjennom listen og marker 61, 73 og 66.",
+        "Variabelen antall øker én gang for hver av de tre markerte verdiene."
       ],
-      "svar": "Etter endringen blir svaret \\(3\\).",
+      "svar": "Etter endringen teller programmet 3 verdier.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23273,10 +23422,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
-        "Følg programmet linje for linje.",
-        "Noter når løkken stopper eller hvilke verdier som tas med."
+        "While-løkken fortsetter så lenge verdi er større enn 500.",
+        "Etter hver runde multipliseres verdien med \\(0{,}88\\), og aar øker med 1.",
+        "Lag en tabell over aar og verdi og stopp ved den første verdien som er høyst 500."
       ],
-      "svar": "Den første numeriske utskriften er \\(5\\).",
+      "svar": "Den første verdien som er høyst 500 kommer etter 5 runder, så programmet skriver først ut 5.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23317,10 +23467,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvilken verdi skriver programmet ut på den andre linjen?",
       "hint": [
-        "Bruk verdiene som er igjen eller x-verdien programmet finner.",
-        "Følg samme beregningsregel som i programmet."
+        "Den andre utskriften er verdien idet while-løkken stopper.",
+        "Beregn \\(900\\cdot0{,}88^5\\).",
+        "Programmet runder denne verdien til én desimal."
       ],
-      "svar": "Den andre størrelsen er \\(475\\).",
+      "svar": "\\(900\\cdot0{,}88^5\\approx475{,}0\\), så den andre utskriften er 475,0.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23360,10 +23511,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Grensen i while-vilkåret endres fra 500 til 600. Hvor mange år skriver programmet ut etter denne endringen?",
       "hint": [
-        "La resten av programmet være uendret.",
-        "Kjør den samme algoritmen med den nye inndataen eller parameteren."
+        "Den nye løkken stopper ved første verdi som er høyst 600.",
+        "Følg \\(900\\cdot0{,}88^n\\) for hele n-verdier.",
+        "Kontroller både n=3 og n=4 for å finne første gang grensen er nådd."
       ],
-      "svar": "Etter endringen blir svaret \\(4\\).",
+      "svar": "Verdien er fortsatt over 600 etter 3 år, men under etter 4 år. Programmet skriver ut 4.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23449,10 +23601,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
-        "Følg programmet linje for linje.",
-        "Noter når løkken stopper eller hvilke verdier som tas med."
+        "Programmet fjerner én minste og én største verdi.",
+        "Fra listen fjernes 12 og 45, slik at 14, 15, 17, 18 og 21 står igjen.",
+        "Den numeriske utskriften er gjennomsnittet av de fem gjenværende verdiene."
       ],
-      "svar": "Den første numeriske utskriften er \\(17\\).",
+      "svar": "\\((14+15+17+18+21)/5=17{,}0\\). Programmet skriver ut 17,0.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23493,10 +23646,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange observasjoner er igjen i listen når de to remove-linjene er kjørt?",
       "hint": [
-        "Bruk verdiene som er igjen eller x-verdien programmet finner.",
-        "Følg samme beregningsregel som i programmet."
+        "Listen inneholder opprinnelig sju observasjoner.",
+        "Én remove-linje fjerner den minste og den andre fjerner den største.",
+        "Trekk de to fjernede observasjonene fra antallet 7."
       ],
-      "svar": "Den andre størrelsen er \\(5\\).",
+      "svar": "Etter de to remove-linjene er 5 observasjoner igjen.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23536,10 +23690,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Verdien 60 legges til i den opprinnelige listen før programmet kjøres. Hvilket gjennomsnitt skriver programmet da ut?",
       "hint": [
-        "La resten av programmet være uendret.",
-        "Kjør den samme algoritmen med den nye inndataen eller parameteren."
+        "Når 60 legges til, blir 12 fortsatt minste verdi og 60 blir største verdi.",
+        "Etter fjerningen står 14, 15, 17, 18, 21 og 45 igjen.",
+        "Beregn \\((14+15+17+18+21+45)/6\\)."
       ],
-      "svar": "Etter endringen blir svaret \\(21{,}70\\).",
+      "svar": "\\(130/6\\approx21{,}7\\). Programmet skriver ut 21,7.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23625,10 +23780,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
-        "Følg programmet linje for linje.",
-        "Noter når løkken stopper eller hvilke verdier som tas med."
+        "Programmet tester heltallige x-verdier fra 0 og oppover.",
+        "Vilkåret er \\(200+5x\\le80+8x\\).",
+        "Omskriv til \\(120\\le3x\\) og finn det minste heltallet som oppfyller dette."
       ],
-      "svar": "Den første numeriske utskriften er \\(40\\).",
+      "svar": "\\(120\\le3x\\) gir \\(x\\ge40\\). Den første utskriften er 40.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23669,10 +23825,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva koster tilbud A ved x-verdien programmet skriver ut?",
       "hint": [
-        "Bruk verdiene som er igjen eller x-verdien programmet finner.",
-        "Følg samme beregningsregel som i programmet."
+        "Fra første del vet du at programmet skriver ut x=40.",
+        "Sett denne verdien inn i A: \\(A=200+5\\cdot40\\).",
+        "Regn multiplikasjonen før du legger til fastbeløpet."
       ],
-      "svar": "Den andre størrelsen er \\(400\\).",
+      "svar": "\\(A(40)=200+5\\cdot40=400\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23712,10 +23869,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Fastleddet i tilbud A endres fra 200 til 170. Hva blir den nye minste heltallige x-verdien programmet skriver ut?",
       "hint": [
-        "La resten av programmet være uendret.",
-        "Kjør den samme algoritmen med den nye inndataen eller parameteren."
+        "Etter endringen er vilkåret \\(170+5x\\le80+8x\\).",
+        "Omskriv til \\(90\\le3x\\).",
+        "Finn det minste heltallet som oppfyller ulikheten."
       ],
-      "svar": "Etter endringen blir svaret \\(30\\).",
+      "svar": "\\(90\\le3x\\) gir \\(x\\ge30\\). Programmet skriver ut 30.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23801,10 +23959,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
-        "Følg programmet linje for linje.",
-        "Noter når løkken stopper eller hvilke verdier som tas med."
+        "Medianplasseringen beregnes som \\((26+1)/2=13{,}5\\).",
+        "De kumulative frekvensene blir 4, 11, 20 og 26.",
+        "Programmet stopper ved den første kumulative frekvensen som er minst 13,5."
       ],
-      "svar": "Den første numeriske utskriften er \\(3\\).",
+      "svar": "Den kumulative frekvensen passerer 13,5 i kategori 3, så programmet skriver ut 3.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23845,10 +24004,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange observasjoner inneholder frekvenslisten totalt?",
       "hint": [
-        "Bruk verdiene som er igjen eller x-verdien programmet finner.",
-        "Følg samme beregningsregel som i programmet."
+        "Det totale antallet observasjoner er summen av frekvensene.",
+        "Legg sammen alle fire frekvensene: \\(4+7+9+6\\).",
+        "Denne summen brukes også når programmet finner medianplasseringen."
       ],
-      "svar": "Den andre størrelsen er \\(26\\).",
+      "svar": "\\(4+7+9+6=26\\). Frekvenslisten inneholder 26 observasjoner.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -23888,10 +24048,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Frekvenslisten endres til [4, 10, 2, 10]. Hvilken kategori skriver programmet ut med den nye listen?",
       "hint": [
-        "La resten av programmet være uendret.",
-        "Kjør den samme algoritmen med den nye inndataen eller parameteren."
+        "Den nye totalen er fortsatt 26, så medianplasseringen er \\(13{,}5\\).",
+        "De nye kumulative frekvensene er 4, 14, 16 og 26.",
+        "Finn den første kategorien der kumulativ frekvens er minst 13,5."
       ],
-      "svar": "Etter endringen blir svaret \\(2\\).",
+      "svar": "Kumulativ frekvens er 14 allerede i kategori 2, så programmet skriver ut 2.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -24067,10 +24228,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn antall elementer i figur \\(25\\).",
       "hint": [
-        "Bruk formelen fra b.",
-        "Sett n lik det oppgitte figurnummeret."
+        "Fra oppgave b har du formelen \\(4n+2\\).",
+        "Erstatt n med figurnummeret i oppgaven. Da får du \\(4\\cdot25+2\\).",
+        "Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon."
       ],
-      "svar": "Figur \\(25\\) har \\(102\\) elementer.",
+      "svar": "\\(4\\cdot25+2=102\\). Figuren har 102 elementer.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -24240,10 +24402,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn antall elementer i figur \\(12\\).",
       "hint": [
-        "Bruk formelen fra b.",
-        "Sett n lik det oppgitte figurnummeret."
+        "Fra oppgave b har du formelen \\(n^2+4n\\).",
+        "Erstatt n med figurnummeret i oppgaven. Da får du \\(12^2+4\\cdot12\\).",
+        "Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon."
       ],
-      "svar": "Figur \\(12\\) har \\(192\\) elementer.",
+      "svar": "\\(12^2+4\\cdot12=192\\). Figuren har 192 elementer.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -24413,10 +24576,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn antall elementer i figur \\(40\\).",
       "hint": [
-        "Bruk formelen fra b.",
-        "Sett n lik det oppgitte figurnummeret."
+        "Fra oppgave b har du formelen \\(2n+4\\).",
+        "Erstatt n med figurnummeret i oppgaven. Da får du \\(2\\cdot40+4\\).",
+        "Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon."
       ],
-      "svar": "Figur \\(40\\) har \\(84\\) elementer.",
+      "svar": "\\(2\\cdot40+4=84\\). Figuren har 84 elementer.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -24586,10 +24750,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn antall elementer i figur \\(18\\).",
       "hint": [
-        "Bruk formelen fra b.",
-        "Sett n lik det oppgitte figurnummeret."
+        "Fra oppgave b har du formelen \\(n(n+1)/2\\).",
+        "Erstatt n med figurnummeret i oppgaven. Da får du \\(18\\cdot19/2\\).",
+        "Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon."
       ],
-      "svar": "Figur \\(18\\) har \\(171\\) elementer.",
+      "svar": "\\(18\\cdot19/2=171\\). Figuren har 171 elementer.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -24759,10 +24924,11 @@
       "hjelpemidler": "med",
       "sporsmal": "Finn antall elementer i figur \\(30\\).",
       "hint": [
-        "Bruk formelen fra b.",
-        "Sett n lik det oppgitte figurnummeret."
+        "Fra oppgave b har du formelen \\((n+2)^2-n^2\\).",
+        "Erstatt n med figurnummeret i oppgaven. Da får du \\((30+2)^2-30^2\\).",
+        "Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon."
       ],
-      "svar": "Figur \\(30\\) har \\(124\\) elementer.",
+      "svar": "\\((30+2)^2-30^2=124\\). Figuren har 124 elementer.",
       "fasit": {
         "type": "tall",
         "verdier": [
