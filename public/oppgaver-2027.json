@@ -107,7 +107,7 @@
       "id": "d2-prosent-01",
       "del": 2,
       "tittel": "Pris på varmepumpe",
-      "innledning": "En størrelse er først \\(28\\,500\\) kr. Den endres i to trinn. Tabellen viser endringene og et mål som skal vurderes.",
+      "innledning": "En størrelse er først \\(28\\,500\\) kr. Den endres i to trinn. Opplysningene nedenfor viser endringene og målet som skal vurderes.",
       "data": {
         "startverdi": 28500,
         "enhet": "kr",
@@ -134,7 +134,7 @@
       "id": "d2-prosent-02",
       "del": 2,
       "tittel": "Medlemstall i en organisasjon",
-      "innledning": "En størrelse er først \\(4\\,200\\) medlemmer. Den endres i to trinn. Tabellen viser endringene og et mål som skal vurderes.",
+      "innledning": "En størrelse er først \\(4\\,200\\) medlemmer. Den endres i to trinn. Opplysningene nedenfor viser endringene og målet som skal vurderes.",
       "data": {
         "startverdi": 4200,
         "enhet": "medlemmer",
@@ -161,7 +161,7 @@
       "id": "d2-prosent-03",
       "del": 2,
       "tittel": "Årlig energibruk",
-      "innledning": "En størrelse er først \\(185\\,000\\) kWh. Den endres i to trinn. Tabellen viser endringene og et mål som skal vurderes.",
+      "innledning": "En størrelse er først \\(185\\,000\\) kWh. Den endres i to trinn. Opplysningene nedenfor viser endringene og målet som skal vurderes.",
       "data": {
         "startverdi": 185000,
         "enhet": "kWh",
@@ -188,7 +188,7 @@
       "id": "d2-prosent-04",
       "del": 2,
       "tittel": "Omsetning i en nettbutikk",
-      "innledning": "En størrelse er først \\(760\\,000\\) kr. Den endres i to trinn. Tabellen viser endringene og et mål som skal vurderes.",
+      "innledning": "En størrelse er først \\(760\\,000\\) kr. Den endres i to trinn. Opplysningene nedenfor viser endringene og målet som skal vurderes.",
       "data": {
         "startverdi": 760000,
         "enhet": "kr",
@@ -215,7 +215,7 @@
       "id": "d2-prosent-05",
       "del": 2,
       "tittel": "Utslipp fra en virksomhet",
-      "innledning": "En størrelse er først \\(1\\,280\\) tonn. Den endres i to trinn. Tabellen viser endringene og et mål som skal vurderes.",
+      "innledning": "En størrelse er først \\(1\\,280\\) tonn. Den endres i to trinn. Opplysningene nedenfor viser endringene og målet som skal vurderes.",
       "data": {
         "startverdi": 1280,
         "enhet": "tonn",

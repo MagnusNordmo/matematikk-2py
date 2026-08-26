@@ -218,7 +218,7 @@ function GroupContext({ group }: { group: QuestionGroup }) {
       <p className="group-label">Felles oppgavetekst</p>
       <h2 id={`group-${group.id}`}>{group.tittel}</h2>
       <p><MathText>{group.innledning}</MathText></p>
-      <DataPanel data={group.data} />
+      {group.visualisering?.type !== "tabell" && <DataPanel data={group.data} />}
       <VisualizationPanel visualization={group.visualisering} data={group.data} />
       {group.dataopprinnelse && <small>{group.dataopprinnelse}</small>}
     </section>
@@ -619,7 +619,7 @@ export default function Home() {
             <article className="question-card">
               <div className="question-text">
                 <MathText>{currentQuestion.sporsmal}</MathText>
-                <DataPanel data={currentQuestion.data} />
+                {currentQuestion.visualisering?.type !== "tabell" && <DataPanel data={currentQuestion.data} />}
                 <VisualizationPanel visualization={currentQuestion.visualisering} data={currentQuestion.data} />
               </div>
               <form onSubmit={submitAnswer} className="answer-form structured-answer-form">

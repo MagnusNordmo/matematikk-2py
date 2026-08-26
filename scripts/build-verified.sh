@@ -14,6 +14,7 @@ if [[ ! -x "${vinext}" ]]; then
 fi
 
 echo "Running vinext build..."
+node "${script_dir}/validate-question-representations.mjs"
 node "${script_dir}/build-review-app.mjs"
 node "${script_dir}/validate-review-app.mjs"
 if command -v timeout >/dev/null; then

@@ -42,6 +42,16 @@ export function MathText({ children }: { children: string }) {
 
 function labelFor(key: string) {
   const labels: Record<string, string> = {
+    kategori: "Kategori",
+    kategorier: "Kategori",
+    frekvens: "Frekvens",
+    frekvenser: "Frekvens",
+    kumulativ_frekvens: "Kumulativ frekvens",
+    klassegrenser: "Klassegrenser",
+    figurnummer: "Figurnummer",
+    antall: "Antall",
+    verdi: "Verdi",
+    verdier: "Verdi",
     startverdi: "Startverdi",
     enhet: "Enhet",
     endring_1_prosent: "Endring 1 (%)",
@@ -73,42 +83,67 @@ function formatValue(value: unknown): string {
   return String(value ?? "");
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function tableEntries(value: unknown): [string, unknown[]][] | null {
+  if (!isRecord(value)) return null;
+  const entries = Object.entries(value).filter((entry): entry is [string, unknown[]] =>
+    Array.isArray(entry[1]),
+  );
+  if (entries.length < 2 || entries[0][1].length === 0) return null;
+  return entries.every(([, column]) => column.length === entries[0][1].length)
+    ? entries
+    : null;
+}
+
+function DataTable({
+  entries,
+  caption = "Tabell",
+}: {
+  entries: [string, unknown[]][];
+  caption?: string;
+}) {
+  return (
+    <div className="data-table-wrap">
+      <table className="data-table">
+        <caption>{caption}</caption>
+        <thead>
+          <tr>{entries.map(([key]) => <th key={key} scope="col">{labelFor(key)}</th>)}</tr>
+        </thead>
+        <tbody>
+          {entries[0][1].map((_, rowIndex) => (
+            <tr key={rowIndex}>
+              {entries.map(([key, values]) => (
+                <td key={key}>{formatValue(values[rowIndex])}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export function DataPanel({ data }: { data?: Record<string, unknown> }) {
   if (!data || Object.keys(data).length === 0) return null;
   const entries = Object.entries(data).filter(([key]) => key !== "programkode");
   if (entries.length === 0) return null;
 
-  const arrayEntries = entries.filter(([, value]) => Array.isArray(value));
-  const sameLength =
-    arrayEntries.length >= 2 &&
-    arrayEntries.every(
-      ([, value]) =>
-        (value as unknown[]).length === (arrayEntries[0][1] as unknown[]).length,
-    );
+  const nestedTable = tableEntries(data.tabell);
+  const directTable = tableEntries(Object.fromEntries(entries));
+  const displayedTable = nestedTable ?? directTable;
+  const tableKeys = new Set(
+    nestedTable ? ["tabell"] : (directTable?.map(([key]) => key) ?? []),
+  );
 
   return (
     <div className="data-panel" aria-label="Oppgavedata">
-      {sameLength ? (
-        <div className="data-table-wrap">
-          <table className="data-table">
-            <thead>
-              <tr>{arrayEntries.map(([key]) => <th key={key}>{labelFor(key)}</th>)}</tr>
-            </thead>
-            <tbody>
-              {(arrayEntries[0][1] as unknown[]).map((_, rowIndex) => (
-                <tr key={rowIndex}>
-                  {arrayEntries.map(([key, value]) => (
-                    <td key={key}>{formatValue((value as unknown[])[rowIndex])}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : null}
+      {displayedTable && <DataTable entries={displayedTable} />}
       <dl className="data-list">
         {entries
-          .filter(([key]) => !sameLength || !arrayEntries.some(([arrayKey]) => arrayKey === key))
+          .filter(([key]) => !tableKeys.has(key))
           .map(([key, value]) => (
             <div key={key}>
               <dt>{labelFor(key)}</dt>
@@ -156,18 +191,39 @@ function linePath(
     .join(" ");
 }
 
+function tickValues(min: number, max: number, target = 5) {
+  if (!Number.isFinite(min) || !Number.isFinite(max) || max <= min) return [min];
+  const roughStep = (max - min) / target;
+  const magnitude = 10 ** Math.floor(Math.log10(roughStep));
+  const normalized = roughStep / magnitude;
+  const step = (normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10) * magnitude;
+  const start = Math.ceil(min / step) * step;
+  const ticks: number[] = [];
+  for (let value = start; value <= max + step * 0.001; value += step) {
+    ticks.push(Number(value.toPrecision(12)));
+  }
+  return ticks;
+}
+
+function formatAxisValue(value: number) {
+  return new Intl.NumberFormat("nb-NO", {
+    notation: Math.abs(value) >= 10_000 ? "compact" : "standard",
+    maximumFractionDigits: Math.abs(value) < 10 ? 2 : 1,
+  }).format(value);
+}
+
 function Plot({
   series,
   labels,
   description,
 }: {
-  series: { name: string; points: Point[] }[];
+  series: { name: string; points: Point[]; connect?: boolean }[];
   labels?: string[];
   description: string;
 }) {
   const width = 640;
   const height = 260;
-  const padding = 32;
+  const padding = { top: 24, right: 24, bottom: 42, left: 54 };
   const colors = ["#19766e", "#315f92", "#aa6a2f"];
   const allPoints = series.flatMap((item) => item.points);
   const xs = allPoints.map((point) => point.x);
@@ -175,18 +231,34 @@ function Plot({
   const minX = Math.min(...xs);
   const maxX = Math.max(...xs);
   const minY = Math.min(0, ...ys);
-  const maxY = Math.max(...ys);
-  const scaleX = (x: number) => padding + ((x - minX) / Math.max(1, maxX - minX)) * (width - padding * 2);
-  const scaleY = (y: number) => height - padding - ((y - minY) / Math.max(1, maxY - minY)) * (height - padding * 2);
+  const maxY = Math.max(0, ...ys);
+  const scaleX = (x: number) => padding.left + ((x - minX) / Math.max(1, maxX - minX)) * (width - padding.left - padding.right);
+  const scaleY = (y: number) => height - padding.bottom - ((y - minY) / Math.max(1, maxY - minY)) * (height - padding.top - padding.bottom);
+  const xTicks = tickValues(minX, maxX);
+  const yTicks = tickValues(minY, maxY);
+  const horizontalAxisY = scaleY(Math.min(maxY, Math.max(minY, 0)));
+  const verticalAxisX = scaleX(Math.min(maxX, Math.max(minX, 0)));
 
   return (
     <figure className="visual-card">
       <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={description}>
-        <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} className="chart-axis" />
-        <line x1={padding} y1={padding} x2={padding} y2={height - padding} className="chart-axis" />
+        {xTicks.map((tick) => (
+          <g key={`x-${tick}`}>
+            <line x1={scaleX(tick)} y1={padding.top} x2={scaleX(tick)} y2={height - padding.bottom} className="chart-grid" />
+            <text x={scaleX(tick)} y={height - 16} className="chart-tick" textAnchor="middle">{formatAxisValue(tick)}</text>
+          </g>
+        ))}
+        {yTicks.map((tick) => (
+          <g key={`y-${tick}`}>
+            <line x1={padding.left} y1={scaleY(tick)} x2={width - padding.right} y2={scaleY(tick)} className="chart-grid" />
+            <text x={padding.left - 9} y={scaleY(tick) + 4} className="chart-tick" textAnchor="end">{formatAxisValue(tick)}</text>
+          </g>
+        ))}
+        <line x1={padding.left} y1={horizontalAxisY} x2={width - padding.right} y2={horizontalAxisY} className="chart-axis" />
+        <line x1={verticalAxisX} y1={padding.top} x2={verticalAxisX} y2={height - padding.bottom} className="chart-axis" />
         {series.map((item, seriesIndex) => (
           <g key={item.name}>
-            {item.points.length > 1 && (
+            {item.connect !== false && item.points.length > 1 && (
               <path d={linePath(item.points, scaleX, scaleY)} fill="none" stroke={colors[seriesIndex % colors.length]} strokeWidth="3" />
             )}
             {item.points.map((point, index) => (
@@ -230,6 +302,68 @@ function BarChart({ labels, series, description }: { labels: string[]; series: {
   );
 }
 
+function Histogram({
+  limits,
+  frequencies,
+  useDensity,
+}: {
+  limits: number[];
+  frequencies: number[];
+  useDensity: boolean;
+}) {
+  const width = 640;
+  const height = 270;
+  const padding = { top: 28, right: 24, bottom: 48, left: 64 };
+  const classWidths = frequencies.map((_, index) => limits[index + 1] - limits[index]);
+  const heights = frequencies.map((frequency, index) =>
+    useDensity ? frequency / classWidths[index] : frequency,
+  );
+  const minX = limits[0];
+  const maxX = limits.at(-1) ?? minX + 1;
+  const maxY = Math.max(1, ...heights);
+  const scaleX = (value: number) => padding.left + ((value - minX) / Math.max(1, maxX - minX)) * (width - padding.left - padding.right);
+  const scaleY = (value: number) => height - padding.bottom - (value / maxY) * (height - padding.top - padding.bottom);
+  const yTicks = tickValues(0, maxY);
+  const yLabel = useDensity ? "Frekvenstetthet" : "Frekvens";
+
+  return (
+    <figure className="visual-card">
+      <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Histogram med ${yLabel.toLocaleLowerCase("nb-NO")}`}>
+        {yTicks.map((tick) => (
+          <g key={tick}>
+            <line x1={padding.left} y1={scaleY(tick)} x2={width - padding.right} y2={scaleY(tick)} className="chart-grid" />
+            <text x={padding.left - 9} y={scaleY(tick) + 4} className="chart-tick" textAnchor="end">{formatAxisValue(tick)}</text>
+          </g>
+        ))}
+        {frequencies.map((frequency, index) => {
+          const left = scaleX(limits[index]);
+          const right = scaleX(limits[index + 1]);
+          const top = scaleY(heights[index]);
+          return (
+            <rect
+              key={`${limits[index]}-${limits[index + 1]}`}
+              x={left}
+              y={top}
+              width={Math.max(1, right - left)}
+              height={height - padding.bottom - top}
+              className="histogram-bar"
+            >
+              <title>{`${limits[index]}–${limits[index + 1]}: ${frequency} observasjoner (${yLabel.toLocaleLowerCase("nb-NO")} ${formatAxisValue(heights[index])})`}</title>
+            </rect>
+          );
+        })}
+        <line x1={padding.left} y1={height - padding.bottom} x2={width - padding.right} y2={height - padding.bottom} className="chart-axis" />
+        <line x1={padding.left} y1={padding.top} x2={padding.left} y2={height - padding.bottom} className="chart-axis" />
+        {limits.map((limit) => (
+          <text key={limit} x={scaleX(limit)} y={height - 25} className="chart-tick" textAnchor="middle">{formatAxisValue(limit)}</text>
+        ))}
+        <text x={14} y={(padding.top + height - padding.bottom) / 2} className="chart-axis-label" textAnchor="middle" transform={`rotate(-90 14 ${(padding.top + height - padding.bottom) / 2})`}>{yLabel}</text>
+      </svg>
+      <figcaption className="chart-caption">Søylebredden følger klassebredden{useDensity ? ", og søylehøyden viser frekvenstetthet" : ""}.</figcaption>
+    </figure>
+  );
+}
+
 export function VisualizationPanel({ visualization, data }: { visualization?: Visualization; data?: Record<string, unknown> }) {
   if (!visualization) return null;
   const type = visualization.type;
@@ -239,17 +373,22 @@ export function VisualizationPanel({ visualization, data }: { visualization?: Vi
   if (type === "tabell") {
     const columns = (visualization.kolonner as string[]) ?? [];
     const rows = (visualization.rader as unknown[][]) ?? [];
+    const entries = columns.map((column, columnIndex) => [
+      column,
+      rows.map((row) => row[columnIndex]),
+    ] as [string, unknown[]]);
     return (
-      <div className="data-panel data-table-wrap">
-        <table className="data-table"><thead><tr>{columns.map((column) => <th key={column}>{column}</th>)}</tr></thead><tbody>{rows.map((row, index) => <tr key={index}>{row.map((value, cell) => <td key={cell}>{formatValue(value)}</td>)}</tr>)}</tbody></table>
+      <div className="data-panel">
+        <DataTable entries={entries} />
       </div>
     );
   }
   if (type === "figurmønster") {
-    const values = (visualization.verdier as number[]) ?? [];
+    const figures = (visualization.figurer as { n: number; antall: number }[] | undefined) ?? [];
+    const values = (visualization.verdier as number[] | undefined) ?? figures.map((figure) => figure.antall);
     return (
       <figure className="visual-card pattern-card" aria-label={visualization.tekstalternativ ?? "Figurmønster"}>
-        {values.map((value, index) => <div key={index}><div className="pattern-dots">{Array.from({ length: Math.min(value, 30) }, (_, dot) => <i key={dot} />)}</div><small>Figur {index + 1}: {value}</small></div>)}
+        {values.map((value, index) => <div key={index}><div className="pattern-dots">{Array.from({ length: Math.min(value, 30) }, (_, dot) => <i key={dot} />)}</div><small>Figur {figures[index]?.n ?? index + 1}: {value}</small></div>)}
       </figure>
     );
   }
@@ -259,19 +398,19 @@ export function VisualizationPanel({ visualization, data }: { visualization?: Vi
   if (type === "histogramdata") {
     const limits = (visualization.klassegrenser as number[]) ?? [];
     const values = (visualization.frekvenser as number[]) ?? [];
-    return <BarChart labels={values.map((_, index) => `${limits[index]}–${limits[index + 1]}`)} series={[{ name: "Frekvens", values }]} description="Histogram" />;
+    return <Histogram limits={limits} frequencies={values} useDensity={Boolean(visualization.bruk_frekvenstetthet)} />;
   }
   if (type === "prosentforløp") {
     return <BarChart labels={(visualization.etiketter as string[]) ?? []} series={[{ name: "Verdi", values: (visualization.verdier as number[]) ?? [] }]} description="Verdier gjennom to prosentendringer" />;
   }
   if (type === "sammenlignende_punktdiagram") {
-    const series = ((visualization.serier as { navn: string; verdier: number[] }[]) ?? []).map((item) => ({ name: item.navn, points: item.verdier.map((y, index) => ({ x: index + 1, y })) }));
+    const series = ((visualization.serier as { navn: string; verdier: number[] }[]) ?? []).map((item) => ({ name: item.navn, points: item.verdier.map((y, index) => ({ x: index + 1, y })), connect: false }));
     return <Plot series={series} description="Sammenlignende punktdiagram" />;
   }
   if (["punktdiagram", "spredningsdiagram"].includes(type)) {
     const xs = (visualization.x as number[]) ?? [];
     const ys = (visualization.y as number[]) ?? [];
-    return <Plot series={[{ name: "Data", points: xs.map((x, index) => ({ x, y: ys[index] })) }]} description={type === "spredningsdiagram" ? "Spredningsdiagram" : "Punktdiagram"} />;
+    return <Plot series={[{ name: "Data", points: xs.map((x, index) => ({ x, y: ys[index] })), connect: type === "punktdiagram" && Boolean(visualization.forbind_punkter) }]} description={type === "spredningsdiagram" ? "Spredningsdiagram" : "Punktdiagram"} />;
   }
   if (type === "funksjonsgraf" || type === "funksjonsgrafer") {
     const min = Number(visualization.x_min ?? 0);
