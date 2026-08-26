@@ -429,7 +429,7 @@
       "visualisering": {
         "type": "funksjonsgrafer",
         "x_min": 0,
-        "x_max": 252.99999999999997,
+        "x_max": 253,
         "grafer": [
           {
             "uttrykk": "299+0.8*x",
@@ -1301,7 +1301,7 @@
       "visualisering": {
         "type": "omvendt_proporsjonal_graf",
         "x_min": 1,
-        "x_max": 14.399999999999999,
+        "x_max": 14.4,
         "fast_ledd": 2
       }
     },
@@ -1323,7 +1323,7 @@
       "visualisering": {
         "type": "omvendt_proporsjonal_graf",
         "x_min": 1,
-        "x_max": 28.799999999999997,
+        "x_max": 28.8,
         "fast_ledd": 1
       }
     },
@@ -2981,13 +2981,13 @@
       "sporsmal": "En verdi multipliseres med vekstfaktoren \\(0{,}82\\). Hva er den prosentvise endringen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
-        "Velg framgangsmåte: Sammenlign vekstfaktoren \\(0{,}8200000000000001\\) med \\(1\\), som betyr ingen endring.",
-        "Sett opp: Finn forskjellen: \\(0{,}8200000000000001-1=-0{,}17999999999999994\\). Fortegnet viser om det er økning eller nedgang.",
+        "Velg framgangsmåte: Sammenlign vekstfaktoren \\(0{,}82\\) med \\(1\\), som betyr ingen endring.",
+        "Sett opp: Finn forskjellen: \\(0{,}82-1=-0{,}18\\). Fortegnet viser om det er økning eller nedgang.",
         "Regn videre: Gjør forskjellen om til prosent ved å gange med 100 %.",
-        "Løsningen samlet: Den prosentvise endringen er \\((0{,}8200000000000001-1)\\cdot100\\,\\%=-18\\,\\%\\).",
+        "Løsningen samlet: Den prosentvise endringen er \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\).",
         "Kontroller og konkluder: Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen."
       ],
-      "svar": "Den prosentvise endringen er \\((0{,}8200000000000001-1)\\cdot100\\,\\%=-18\\,\\%\\).",
+      "svar": "Den prosentvise endringen er \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -3026,10 +3026,10 @@
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 7 % er \\(0{,}07\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
         "Regn videre: Skriv regnestykket \\(1-0{,}07\\) og regn ut vekstfaktoren.",
-        "Løsningen samlet: Vekstfaktoren er \\(1-0{,}07=0{,}9299999999999999\\).",
+        "Løsningen samlet: Vekstfaktoren er \\(1-0{,}07=0{,}93\\).",
         "Kontroller og konkluder: Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen."
       ],
-      "svar": "Vekstfaktoren er \\(1-0{,}07=0{,}9299999999999999\\).",
+      "svar": "Vekstfaktoren er \\(1-0{,}07=0{,}93\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -3066,7 +3066,7 @@
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign vekstfaktoren \\(1{,}12\\) med \\(1\\), som betyr ingen endring.",
-        "Sett opp: Finn forskjellen: \\(1{,}12-1=0{,}1200000000000001\\). Fortegnet viser om det er økning eller nedgang.",
+        "Sett opp: Finn forskjellen: \\(1{,}12-1=0{,}12\\). Fortegnet viser om det er økning eller nedgang.",
         "Regn videre: Gjør forskjellen om til prosent ved å gange med 100 %.",
         "Løsningen samlet: Den prosentvise endringen er \\((1{,}12-1)\\cdot100\\,\\%=12\\,\\%\\).",
         "Kontroller og konkluder: Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen."
@@ -4071,10 +4071,10 @@
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
         "Velg framgangsmåte: En negativ eksponent gir den omvendte verdien.",
         "Sett opp: Skriv uttrykket som \\(1/2^4\\).",
-        "Løsningen samlet: \\(2^{-4}=1/2^4=0{,}0625000\\).",
+        "Løsningen samlet: \\(2^{-4}=1/2^4=0{,}0625\\).",
         "Kontroller og konkluder: Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden."
       ],
-      "svar": "\\(2^{-4}=1/2^4=0{,}0625000\\).",
+      "svar": "\\(2^{-4}=1/2^4=0{,}0625\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -4114,10 +4114,10 @@
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
         "Velg framgangsmåte: En negativ eksponent gir den omvendte verdien.",
         "Sett opp: Skriv uttrykket som \\(1/5^3\\).",
-        "Løsningen samlet: \\(5^{-3}=1/5^3=0{,}0080000\\).",
+        "Løsningen samlet: \\(5^{-3}=1/5^3=0{,}008\\).",
         "Kontroller og konkluder: Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden."
       ],
-      "svar": "\\(5^{-3}=1/5^3=0{,}0080000\\).",
+      "svar": "\\(5^{-3}=1/5^3=0{,}008\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -4157,10 +4157,10 @@
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
         "Velg framgangsmåte: En negativ eksponent gir den omvendte verdien.",
         "Sett opp: Skriv uttrykket som \\(1/10^5\\).",
-        "Løsningen samlet: \\(10^{-5}=1/10^5=0{,}0000100\\).",
+        "Løsningen samlet: \\(10^{-5}=1/10^5=0{,}00001\\).",
         "Kontroller og konkluder: Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden."
       ],
-      "svar": "\\(10^{-5}=1/10^5=0{,}0000100\\).",
+      "svar": "\\(10^{-5}=1/10^5=0{,}00001\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -4200,10 +4200,10 @@
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
         "Velg framgangsmåte: En negativ eksponent gir den omvendte verdien.",
         "Sett opp: Skriv uttrykket som \\(1/4^2\\).",
-        "Løsningen samlet: \\(4^{-2}=1/4^2=0{,}0625000\\).",
+        "Løsningen samlet: \\(4^{-2}=1/4^2=0{,}0625\\).",
         "Kontroller og konkluder: Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden."
       ],
-      "svar": "\\(4^{-2}=1/4^2=0{,}0625000\\).",
+      "svar": "\\(4^{-2}=1/4^2=0{,}0625\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -4243,10 +4243,10 @@
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
         "Velg framgangsmåte: En negativ eksponent gir den omvendte verdien.",
         "Sett opp: Skriv uttrykket som \\(1/20^2\\).",
-        "Løsningen samlet: \\(20^{-2}=1/20^2=0{,}0025000\\).",
+        "Løsningen samlet: \\(20^{-2}=1/20^2=0{,}0025\\).",
         "Kontroller og konkluder: Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden."
       ],
-      "svar": "\\(20^{-2}=1/20^2=0{,}0025000\\).",
+      "svar": "\\(20^{-2}=1/20^2=0{,}0025\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -4491,7 +4491,7 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Hvilket alternativ viser \\(0{,}0000720000\\) på standardform?",
+      "sporsmal": "Hvilket alternativ viser \\(0{,}000072\\) på standardform?",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
         "Velg framgangsmåte: På standardform skal tallet foran tierpotensen være minst 1 og mindre enn 10. Flytt derfor kommaet slik at du får \\(7{,}2\\).",
@@ -4573,7 +4573,7 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Hvilket alternativ viser \\(0{,}03140000\\) på standardform?",
+      "sporsmal": "Hvilket alternativ viser \\(0{,}0314\\) på standardform?",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
         "Velg framgangsmåte: Flytt kommaet slik at første faktor blir \\(3{,}14\\).",
@@ -18119,7 +18119,7 @@
         "metode": "d2_percent_total",
         "inndata": {
           "start": 760000,
-          "slutt": 1003200.0000000001
+          "slutt": 1003200
         },
         "resultat": [
           32
@@ -18309,7 +18309,7 @@
         "metode": "d2_percent_total",
         "inndata": {
           "start": 1280,
-          "slutt": 1048.3200000000002
+          "slutt": 1048.32
         },
         "resultat": [
           -18.1
@@ -20304,7 +20304,7 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Velg framgangsmåte: Samme pris betyr \\(A(x)=B(x)\\): \\(79+2{,}4x=199+1{,}8x\\).",
-        "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(0{,}5999999999999999x=120\\).",
+        "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(0{,}6x=120\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(79+2{,}4x=199+1{,}8x\\) gir \\(x=200\\). Den felles prisen er \\(559\\) kr.",
         "Kontroller og konkluder: Sett resultatet inn i modellen eller sammenlign det med tabellen og grafen. Fortegn, enhet og størrelsesorden skal passe situasjonen."

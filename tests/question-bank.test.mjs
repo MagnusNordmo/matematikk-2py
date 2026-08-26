@@ -102,6 +102,45 @@ test("alle hintforløp er fullstendige worked examples", () => {
   assert.ok(bank.oppgaver.reduce((total, question) => total + question.hint.length, 0) >= 2500);
 });
 
+test("synlige tall har fornuftige desimaler uten flyttallsstøy", () => {
+  const decimalPattern = /-?\d+(?:\{,\}|[.,])\d{5,}/gu;
+  const normalizeToken = (token) => {
+    const separator = token.includes("{,}") ? "{,}" : token.includes(",") ? "," : ".";
+    const numeric = Number(token.replace("{,}", ".").replace(",", "."));
+    const normalized = Number(numeric.toPrecision(12)).toLocaleString("en-US", {
+      useGrouping: false,
+      maximumSignificantDigits: 12,
+      maximumFractionDigits: 20,
+    });
+    return normalized.includes(".") ? normalized.replace(".", separator) : normalized;
+  };
+  const visit = (value, path) => {
+    if (typeof value === "number") {
+      assert.equal(value, Number(value.toPrecision(12)), `${path} inneholder unødvendig flyttallsstøy`);
+      return;
+    }
+    if (typeof value === "string") {
+      for (const match of value.matchAll(decimalPattern)) {
+        assert.equal(match[0], normalizeToken(match[0]), `${path} har et urimelig desimaltall: ${match[0]}`);
+      }
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach((child, index) => visit(child, `${path}[${index}]`));
+      return;
+    }
+    if (value && typeof value === "object") {
+      for (const [key, child] of Object.entries(value)) visit(child, `${path}.${key}`);
+    }
+  };
+
+  visit(bank.oppgaver, "oppgaver");
+  const factorQuestion = bank.oppgaver.find((question) => question.id === "2py27-022");
+  assert.match(factorQuestion.hint.join(" "), /0\{,\}82/);
+  assert.match(factorQuestion.hint.join(" "), /-0\{,\}18/);
+  assert.doesNotMatch(factorQuestion.hint.join(" "), /000000000|999999999/);
+});
+
 test("standardformoppgaven viser samme tall som fasiten", () => {
   const question = bank.oppgaver.find((item) => item.id === "2py27-062");
   assert.match(question.sporsmal, /0\{,\}000000605/);

@@ -9,9 +9,26 @@ const questions = new Map(bank.oppgaver.map((question) => [question.id, question
 const groups = new Map(bank.oppgavegrupper.map((group) => [group.id, group]));
 const revisedIds = new Set();
 
-function number(value, digits = null) {
+function normalizedNumber(value, significantDigits = 12) {
   const numeric = Number(value);
-  let text = digits === null ? String(numeric) : numeric.toFixed(digits);
+  if (!Number.isFinite(numeric)) return numeric;
+  if (Object.is(numeric, -0)) return 0;
+  return Number(numeric.toPrecision(significantDigits));
+}
+
+function plainDecimal(value) {
+  const numeric = normalizedNumber(value);
+  if (!Number.isFinite(numeric)) return String(numeric);
+  return numeric.toLocaleString("en-US", {
+    useGrouping: false,
+    maximumSignificantDigits: 12,
+    maximumFractionDigits: 20,
+  });
+}
+
+function number(value, digits = null) {
+  const numeric = normalizedNumber(value);
+  let text = digits === null ? plainDecimal(numeric) : numeric.toFixed(digits);
   let [integer, decimals] = text.split(".");
   const sign = integer.startsWith("-") ? "-" : "";
   integer = integer.replace("-", "").replace(/\B(?=(\d{3})+(?!\d))/g, "\\,");
@@ -19,7 +36,7 @@ function number(value, digits = null) {
 }
 
 function decimal(value, maxDigits = 4) {
-  const rounded = Number(Number(value).toFixed(maxDigits));
+  const rounded = normalizedNumber(Number(value).toFixed(maxDigits));
   return number(rounded);
 }
 
@@ -766,6 +783,33 @@ function asWorkedExample(question) {
 for (const question of bank.oppgaver) {
   setQuestion(question.id, { hint: asWorkedExample(question) });
 }
+
+// Rydd også i eldre, statiske tekster og kontrollverdier. Dette fjerner både
+// binær flyttallsstøy og meningsløse slutt-null­er, men beholder små tall som
+// 0,000000605 når nullene faktisk angir desimalplasseringen.
+const longDecimalPattern = /-?\d+(?:\{,\}|[.,])\d{5,}/gu;
+
+function normalizeDecimalToken(token) {
+  const separator = token.includes("{,}") ? "{,}" : token.includes(",") ? "," : ".";
+  const numeric = Number(token.replace("{,}", ".").replace(",", "."));
+  const normalized = plainDecimal(numeric);
+  if (!normalized.includes(".")) return normalized;
+  return normalized.replace(".", separator);
+}
+
+function normalizeBankValue(value) {
+  if (typeof value === "number") return normalizedNumber(value);
+  if (typeof value === "string") {
+    return value.replace(longDecimalPattern, normalizeDecimalToken);
+  }
+  if (Array.isArray(value)) return value.map(normalizeBankValue);
+  if (value && typeof value === "object") {
+    for (const [key, child] of Object.entries(value)) value[key] = normalizeBankValue(child);
+  }
+  return value;
+}
+
+normalizeBankValue(bank);
 
 // Verifiser at de provoserende standardformuleringene ikke står igjen i de reviderte familiene.
 const forbiddenExactHints = new Set([
