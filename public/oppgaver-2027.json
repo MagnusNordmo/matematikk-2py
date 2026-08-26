@@ -2628,12 +2628,14 @@
           {
             "verdi": 6,
             "enhet": "prosentpoeng",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Endring i prosentpoeng"
           },
           {
             "verdi": 33.3,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ endring i prosent"
           }
         ]
       },
@@ -2678,12 +2680,14 @@
           {
             "verdi": -6,
             "enhet": "prosentpoeng",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Endring i prosentpoeng"
           },
           {
             "verdi": -15,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ endring i prosent"
           }
         ]
       },
@@ -2728,12 +2732,14 @@
           {
             "verdi": 3,
             "enhet": "prosentpoeng",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Endring i prosentpoeng"
           },
           {
             "verdi": 50,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ endring i prosent"
           }
         ]
       },
@@ -2778,12 +2784,14 @@
           {
             "verdi": -9,
             "enhet": "prosentpoeng",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Endring i prosentpoeng"
           },
           {
             "verdi": -12.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ endring i prosent"
           }
         ]
       },
@@ -2828,12 +2836,14 @@
           {
             "verdi": 7,
             "enhet": "prosentpoeng",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Endring i prosentpoeng"
           },
           {
             "verdi": 58.3,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ endring i prosent"
           }
         ]
       },
@@ -4493,12 +4503,14 @@
           {
             "verdi": 6,
             "enhet": "faktor",
-            "toleranse": 0.0001
+            "toleranse": 0.0001,
+            "etikett": "Faktor"
           },
           {
             "verdi": 8,
             "enhet": "eksponent",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Eksponent"
           }
         ]
       },
@@ -4543,12 +4555,14 @@
           {
             "verdi": 4,
             "enhet": "faktor",
-            "toleranse": 0.0001
+            "toleranse": 0.0001,
+            "etikett": "Faktor"
           },
           {
             "verdi": 5,
             "enhet": "eksponent",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Eksponent"
           }
         ]
       },
@@ -4593,12 +4607,14 @@
           {
             "verdi": 3,
             "enhet": "faktor",
-            "toleranse": 0.0001
+            "toleranse": 0.0001,
+            "etikett": "Faktor"
           },
           {
             "verdi": 3,
             "enhet": "eksponent",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Eksponent"
           }
         ]
       },
@@ -4643,12 +4659,14 @@
           {
             "verdi": 3,
             "enhet": "faktor",
-            "toleranse": 0.0001
+            "toleranse": 0.0001,
+            "etikett": "Faktor"
           },
           {
             "verdi": 2,
             "enhet": "eksponent",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Eksponent"
           }
         ]
       },
@@ -4693,12 +4711,14 @@
           {
             "verdi": 9,
             "enhet": "faktor",
-            "toleranse": 0.0001
+            "toleranse": 0.0001,
+            "etikett": "Faktor"
           },
           {
             "verdi": 5,
             "enhet": "eksponent",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Eksponent"
           }
         ]
       },
@@ -5555,7 +5575,8 @@
           {
             "verdi": 59,
             "enhet": "ruter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall ruter i den etterspurte figuren"
           }
         ]
       },
@@ -5617,7 +5638,8 @@
           {
             "verdi": 27,
             "enhet": "ruter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall ruter i den etterspurte figuren"
           }
         ]
       },
@@ -5679,7 +5701,8 @@
           {
             "verdi": 135,
             "enhet": "ruter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall ruter i den etterspurte figuren"
           }
         ]
       },
@@ -5741,7 +5764,8 @@
           {
             "verdi": 23,
             "enhet": "ruter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall ruter i den etterspurte figuren"
           }
         ]
       },
@@ -5803,7 +5827,8 @@
           {
             "verdi": 124,
             "enhet": "ruter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall ruter i den etterspurte figuren"
           }
         ]
       },
@@ -5865,7 +5890,8 @@
           {
             "verdi": 82,
             "enhet": "brikker",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall brikker i den etterspurte figuren"
           }
         ]
       },
@@ -5926,7 +5952,8 @@
           {
             "verdi": 82,
             "enhet": "brikker",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall brikker i den etterspurte figuren"
           }
         ]
       },
@@ -5987,7 +6014,8 @@
           {
             "verdi": 51,
             "enhet": "brikker",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall brikker i den etterspurte figuren"
           }
         ]
       },
@@ -6048,7 +6076,8 @@
           {
             "verdi": 145,
             "enhet": "brikker",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall brikker i den etterspurte figuren"
           }
         ]
       },
@@ -6109,7 +6138,8 @@
           {
             "verdi": 146,
             "enhet": "brikker",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Antall brikker i den etterspurte figuren"
           }
         ]
       },
@@ -6937,12 +6967,14 @@
           {
             "verdi": 35,
             "enhet": "tidsenheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Verdien av T(x)"
           },
           {
             "verdi": 5,
             "enhet": "tidsenheter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Fast tid som ikke kan reduseres"
           }
         ]
       },
@@ -6984,12 +7016,14 @@
           {
             "verdi": 32,
             "enhet": "tidsenheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Verdien av T(x)"
           },
           {
             "verdi": 12,
             "enhet": "tidsenheter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Fast tid som ikke kan reduseres"
           }
         ]
       },
@@ -7031,12 +7065,14 @@
           {
             "verdi": 19,
             "enhet": "tidsenheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Verdien av T(x)"
           },
           {
             "verdi": 4,
             "enhet": "tidsenheter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Fast tid som ikke kan reduseres"
           }
         ]
       },
@@ -7078,12 +7114,14 @@
           {
             "verdi": 37,
             "enhet": "tidsenheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Verdien av T(x)"
           },
           {
             "verdi": 7,
             "enhet": "tidsenheter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Fast tid som ikke kan reduseres"
           }
         ]
       },
@@ -7125,12 +7163,14 @@
           {
             "verdi": 45,
             "enhet": "tidsenheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Verdien av T(x)"
           },
           {
             "verdi": 15,
             "enhet": "tidsenheter",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Fast tid som ikke kan reduseres"
           }
         ]
       },
@@ -8122,12 +8162,14 @@
           {
             "verdi": 4,
             "enhet": "typetall",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Typetall"
           },
           {
             "verdi": 7,
             "enhet": "variasjonsbredde",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Variasjonsbredde"
           }
         ]
       },
@@ -8184,12 +8226,14 @@
           {
             "verdi": 15,
             "enhet": "typetall",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Typetall"
           },
           {
             "verdi": 9,
             "enhet": "variasjonsbredde",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Variasjonsbredde"
           }
         ]
       },
@@ -8246,12 +8290,14 @@
           {
             "verdi": 11,
             "enhet": "typetall",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Typetall"
           },
           {
             "verdi": 8,
             "enhet": "variasjonsbredde",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Variasjonsbredde"
           }
         ]
       },
@@ -8312,12 +8358,14 @@
           {
             "verdi": 24,
             "enhet": "typetall",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Typetall"
           },
           {
             "verdi": 11,
             "enhet": "variasjonsbredde",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Variasjonsbredde"
           }
         ]
       },
@@ -8374,12 +8422,14 @@
           {
             "verdi": 9,
             "enhet": "typetall",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Typetall"
           },
           {
             "verdi": 9,
             "enhet": "variasjonsbredde",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Variasjonsbredde"
           }
         ]
       },
@@ -8438,12 +8488,14 @@
           {
             "verdi": 20,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           },
           {
             "verdi": 6,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens"
           }
         ]
       },
@@ -8505,12 +8557,14 @@
           {
             "verdi": 35,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           },
           {
             "verdi": 22,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens"
           }
         ]
       },
@@ -8572,12 +8626,14 @@
           {
             "verdi": 42.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           },
           {
             "verdi": 33,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens"
           }
         ]
       },
@@ -8639,12 +8695,14 @@
           {
             "verdi": 10,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           },
           {
             "verdi": 50,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens"
           }
         ]
       },
@@ -8706,12 +8764,14 @@
           {
             "verdi": 15,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           },
           {
             "verdi": 9,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens"
           }
         ]
       },
@@ -10376,12 +10436,14 @@
           {
             "verdi": 20,
             "enhet": "x-enheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 200,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Kostnad ved skjæringspunktet"
           }
         ]
       },
@@ -10424,12 +10486,14 @@
           {
             "verdi": 50,
             "enhet": "x-enheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 350,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Kostnad ved skjæringspunktet"
           }
         ]
       },
@@ -10472,12 +10536,14 @@
           {
             "verdi": 40,
             "enhet": "x-enheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 320,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Kostnad ved skjæringspunktet"
           }
         ]
       },
@@ -10520,12 +10586,14 @@
           {
             "verdi": 60,
             "enhet": "x-enheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 390,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Kostnad ved skjæringspunktet"
           }
         ]
       },
@@ -10568,12 +10636,14 @@
           {
             "verdi": 40,
             "enhet": "x-enheter",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 415,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Kostnad ved skjæringspunktet"
           }
         ]
       },
@@ -11032,12 +11102,14 @@
           {
             "verdi": 840,
             "enhet": "startverdi",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 6,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per x-enhet"
           }
         ]
       },
@@ -11078,12 +11150,14 @@
           {
             "verdi": 1250,
             "enhet": "startverdi",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": -8,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per x-enhet"
           }
         ]
       },
@@ -11124,12 +11198,14 @@
           {
             "verdi": 75,
             "enhet": "startverdi",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 18,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per x-enhet"
           }
         ]
       },
@@ -11170,12 +11246,14 @@
           {
             "verdi": 9000,
             "enhet": "startverdi",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": -3.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per x-enhet"
           }
         ]
       },
@@ -11216,12 +11294,14 @@
           {
             "verdi": 320,
             "enhet": "startverdi",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 12.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per x-enhet"
           }
         ]
       },
@@ -14599,12 +14679,14 @@
           {
             "verdi": 600,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris etter rabatt"
           },
           {
             "verdi": 480,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris uten merverdiavgift"
           }
         ]
       },
@@ -14648,12 +14730,14 @@
           {
             "verdi": 1000,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris etter rabatt"
           },
           {
             "verdi": 800,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris uten merverdiavgift"
           }
         ]
       },
@@ -14697,12 +14781,14 @@
           {
             "verdi": 544,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris etter rabatt"
           },
           {
             "verdi": 435.2,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris uten merverdiavgift"
           }
         ]
       },
@@ -14746,12 +14832,14 @@
           {
             "verdi": 1680,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris etter rabatt"
           },
           {
             "verdi": 1344,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris uten merverdiavgift"
           }
         ]
       },
@@ -14795,12 +14883,14 @@
           {
             "verdi": 864,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris etter rabatt"
           },
           {
             "verdi": 691.2,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris uten merverdiavgift"
           }
         ]
       },
@@ -15526,12 +15616,14 @@
           {
             "verdi": 0.8,
             "enhet": "frekvenstetthet",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Frekvenstetthet"
           },
           {
             "verdi": 50,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           }
         ]
       },
@@ -15610,12 +15702,14 @@
           {
             "verdi": 1.2,
             "enhet": "frekvenstetthet",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Frekvenstetthet"
           },
           {
             "verdi": 38.7,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           }
         ]
       },
@@ -15694,12 +15788,14 @@
           {
             "verdi": 1,
             "enhet": "frekvenstetthet",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Frekvenstetthet"
           },
           {
             "verdi": 47.6,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           }
         ]
       },
@@ -15778,12 +15874,14 @@
           {
             "verdi": 0.9,
             "enhet": "frekvenstetthet",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Frekvenstetthet"
           },
           {
             "verdi": 23.1,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           }
         ]
       },
@@ -15862,12 +15960,14 @@
           {
             "verdi": 1.1,
             "enhet": "frekvenstetthet",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Frekvenstetthet"
           },
           {
             "verdi": 55,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Relativ frekvens"
           }
         ]
       },
@@ -17234,12 +17334,14 @@
           {
             "verdi": 3200,
             "enhet": "besøk",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 9,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per periode"
           }
         ]
       },
@@ -17416,12 +17518,14 @@
           {
             "verdi": 850,
             "enhet": "gram",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": -18,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per periode"
           }
         ]
       },
@@ -17598,12 +17702,14 @@
           {
             "verdi": 640,
             "enhet": "elsykler",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 18,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per periode"
           }
         ]
       },
@@ -17780,12 +17886,14 @@
           {
             "verdi": 240000,
             "enhet": "m³",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": -6,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per periode"
           }
         ]
       },
@@ -17962,12 +18070,14 @@
           {
             "verdi": 18000,
             "enhet": "kr",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Startverdi"
           },
           {
             "verdi": 4.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.1,
+            "etikett": "Prosentvis endring per periode"
           }
         ]
       },
@@ -18144,12 +18254,14 @@
           {
             "verdi": 360,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder A"
           },
           {
             "verdi": 360,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder B"
           }
         ]
       },
@@ -18201,12 +18313,14 @@
           {
             "verdi": 40,
             "enhet": "km",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 360,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Felles pris"
           }
         ]
       },
@@ -18341,12 +18455,14 @@
           {
             "verdi": 395,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder A"
           },
           {
             "verdi": 365,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder B"
           }
         ]
       },
@@ -18398,12 +18514,14 @@
           {
             "verdi": 150,
             "enhet": "GB",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 419,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Felles pris"
           }
         ]
       },
@@ -18538,12 +18656,14 @@
           {
             "verdi": 499,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder A"
           },
           {
             "verdi": 439,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder B"
           }
         ]
       },
@@ -18595,12 +18715,14 @@
           {
             "verdi": 10,
             "enhet": "besøk",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 499,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Felles pris"
           }
         ]
       },
@@ -18735,12 +18857,14 @@
           {
             "verdi": 675,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder A"
           },
           {
             "verdi": 775,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder B"
           }
         ]
       },
@@ -18792,12 +18916,14 @@
           {
             "verdi": 7.5,
             "enhet": "døgn",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 887.5,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Felles pris"
           }
         ]
       },
@@ -18932,12 +19058,14 @@
           {
             "verdi": 319,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder A"
           },
           {
             "verdi": 379,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Pris hos tilbyder B"
           }
         ]
       },
@@ -18989,12 +19117,14 @@
           {
             "verdi": 200,
             "enhet": "kWh",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "x-verdi ved skjæringspunktet"
           },
           {
             "verdi": 559,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.01,
+            "etikett": "Felles pris"
           }
         ]
       },
@@ -19171,12 +19301,14 @@
           {
             "verdi": 1.25,
             "enhet": "stigningstall a",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "Stigningstall a"
           },
           {
             "verdi": 13.2,
             "enhet": "konstantledd b",
-            "toleranse": 0.05
+            "toleranse": 0.05,
+            "etikett": "Konstantledd b"
           }
         ]
       },
@@ -19376,12 +19508,14 @@
           {
             "verdi": 119.717,
             "enhet": "startverdi a",
-            "toleranse": 0.05
+            "toleranse": 0.05,
+            "etikett": "Startverdi a"
           },
           {
             "verdi": 1.1957,
             "enhet": "vekstfaktor b",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "Vekstfaktor b"
           }
         ]
       },
@@ -19585,12 +19719,14 @@
           {
             "verdi": 0.018,
             "enhet": "faktor a",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "Faktor a"
           },
           {
             "verdi": 1.948,
             "enhet": "eksponent b",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "Eksponent b"
           }
         ]
       },
@@ -19790,17 +19926,20 @@
           {
             "verdi": -1.741,
             "enhet": "a",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "A"
           },
           {
             "verdi": 8.44,
             "enhet": "b",
-            "toleranse": 0.05
+            "toleranse": 0.05,
+            "etikett": "B"
           },
           {
             "verdi": 1.311,
             "enhet": "c",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "C"
           }
         ]
       },
@@ -20005,12 +20144,14 @@
           {
             "verdi": -1.13,
             "enhet": "stigningstall a",
-            "toleranse": 0.006
+            "toleranse": 0.006,
+            "etikett": "Stigningstall a"
           },
           {
             "verdi": 95.3,
             "enhet": "konstantledd b",
-            "toleranse": 0.05
+            "toleranse": 0.05,
+            "etikett": "Konstantledd b"
           }
         ]
       },
@@ -21106,12 +21247,14 @@
           {
             "verdi": 50,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Totalt antall observasjoner"
           },
           {
             "verdi": 20,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens etter andre klasse"
           }
         ]
       },
@@ -21299,12 +21442,14 @@
           {
             "verdi": 60,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Totalt antall observasjoner"
           },
           {
             "verdi": 25,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens etter andre klasse"
           }
         ]
       },
@@ -21492,12 +21637,14 @@
           {
             "verdi": 50,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Totalt antall observasjoner"
           },
           {
             "verdi": 16,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens etter andre klasse"
           }
         ]
       },
@@ -21685,12 +21832,14 @@
           {
             "verdi": 50,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Totalt antall observasjoner"
           },
           {
             "verdi": 23,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens etter andre klasse"
           }
         ]
       },
@@ -21878,12 +22027,14 @@
           {
             "verdi": 50,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Totalt antall observasjoner"
           },
           {
             "verdi": 25,
             "enhet": "observasjoner",
-            "toleranse": 0
+            "toleranse": 0,
+            "etikett": "Kumulativ frekvens etter andre klasse"
           }
         ]
       },

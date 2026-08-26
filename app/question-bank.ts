@@ -2,6 +2,7 @@ export type Part = 1 | 2;
 
 export type NumericAnswer = {
   verdi: number;
+  etikett?: string;
   enhet?: string;
   toleranse?: number;
 };

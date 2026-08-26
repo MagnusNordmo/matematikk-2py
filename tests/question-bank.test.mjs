@@ -33,6 +33,25 @@ test("fordelingen mellom deler og svarformater er bevart", () => {
   }
 });
 
+test("alle oppgaver med flere svarbestanddeler har tydelige feltetiketter", () => {
+  const multipartQuestions = bank.oppgaver.filter((question) =>
+    ["flere_tall", "valg_og_tall"].includes(question.fasit.type),
+  );
+
+  for (const question of multipartQuestions) {
+    const labels = question.fasit.verdier.map((answer) => answer.etikett);
+    assert.ok(
+      labels.every((label) => typeof label === "string" && label.trim().length > 0),
+      `${question.id} mangler en tydelig feltetikett`,
+    );
+    assert.equal(
+      new Set(labels).size,
+      labels.length,
+      `${question.id} har svarfelt som ikke kan skilles fra hverandre`,
+    );
+  }
+});
+
 test("Del 2-case har fire sammenhengende deloppgaver", () => {
   const groupIds = new Set(bank.oppgavegrupper.map((group) => group.id));
   for (const group of bank.oppgavegrupper) {

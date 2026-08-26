@@ -165,28 +165,33 @@ function AnswerFields({
 
       {numbers.length > 0 && (
         <div className={`numeric-answers numeric-answers-${numbers.length}`}>
-          {numbers.map((number, index) => (
-            <label key={index} className="numeric-answer">
-              <span>{numbers.length === 1 ? "Svaret ditt" : `Svar ${index + 1}`}</span>
-              <span className={`answer-field ${feedback === "wrong" || feedback === "partial" ? "answer-field-wrong" : ""} ${feedback === "correct" ? "answer-field-correct" : ""}`}>
-                <input
-                  ref={index === 0 ? firstInputRef : undefined}
-                  value={value.numbers[index] ?? ""}
-                  onChange={(event) => {
-                    const nextNumbers = [...value.numbers];
-                    nextNumbers[index] = event.target.value;
-                    onChange({ ...value, numbers: nextNumbers });
-                  }}
-                  inputMode="decimal"
-                  autoComplete="off"
-                  spellCheck={false}
-                  placeholder="Skriv tallet"
-                  disabled={disabled}
-                />
-                {number.enhet && <span className="answer-unit">{number.enhet}</span>}
-              </span>
-            </label>
-          ))}
+          {numbers.map((number, index) => {
+            const fieldLabel =
+              number.etikett ??
+              (numbers.length === 1 ? "Svaret ditt" : `Svar ${index + 1}`);
+            return (
+              <label key={index} className="numeric-answer">
+                <span>{fieldLabel}</span>
+                <span className={`answer-field ${feedback === "wrong" || feedback === "partial" ? "answer-field-wrong" : ""} ${feedback === "correct" ? "answer-field-correct" : ""}`}>
+                  <input
+                    ref={index === 0 ? firstInputRef : undefined}
+                    value={value.numbers[index] ?? ""}
+                    onChange={(event) => {
+                      const nextNumbers = [...value.numbers];
+                      nextNumbers[index] = event.target.value;
+                      onChange({ ...value, numbers: nextNumbers });
+                    }}
+                    inputMode="decimal"
+                    autoComplete="off"
+                    spellCheck={false}
+                    placeholder={number.etikett ? `Skriv ${number.etikett.toLocaleLowerCase("nb-NO")}` : "Skriv tallet"}
+                    disabled={disabled}
+                  />
+                  {number.enhet && <span className="answer-unit">{number.enhet}</span>}
+                </span>
+              </label>
+            );
+          })}
         </div>
       )}
     </div>
