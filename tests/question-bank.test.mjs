@@ -141,6 +141,58 @@ test("synlige tall har fornuftige desimaler uten flyttallsstøy", () => {
   assert.doesNotMatch(factorQuestion.hint.join(" "), /000000000|999999999/);
 });
 
+test("Del 1 er konstruert for håndregning uten kalkulator", () => {
+  const del1 = bank.oppgaver.filter((question) => question.del === 1);
+  const visibleText = (question) => JSON.stringify({
+    sporsmal: question.sporsmal,
+    hint: question.hint,
+    svar: question.svar,
+    fasit: question.fasit,
+  });
+
+  for (const question of del1) {
+    const text = visibleText(question);
+    assert.doesNotMatch(text, /\\\\approx|≈|digitalt verktøy|logaritm/iu, `${question.id} krever tilnærming eller digital metode`);
+    assert.doesNotMatch(text, /-?\d+\{,\}\d*0(?!\d)/u, `${question.id} viser en meningsløs desimalnull`);
+    assert.doesNotMatch(text, /-?\d+\.\d*0(?!\d)/u, `${question.id} viser en meningsløs desimalnull`);
+  }
+
+  for (const question of del1.filter((item) => item.variantfamilie === "d1-omvendt-prosent")) {
+    const { ny, endring } = question.kontroll.inndata;
+    const original = question.kontroll.resultat[0];
+    assert.ok(Number.isInteger(original), `${question.id} har ikke en hel opprinnelig verdi`);
+    assert.equal(original * (1 + endring / 100), ny, `${question.id} har ikke en eksakt prosentkontroll`);
+  }
+
+  for (const question of del1.filter((item) => item.variantfamilie === "d1-kode-vekst")) {
+    const { start, faktor, runder } = question.kontroll.inndata;
+    const result = start * faktor ** runder;
+    assert.ok(runder <= 3, `${question.id} krever for mange gjentatte multiplikasjoner`);
+    assert.ok(Math.abs(result - Math.round(result)) < 1e-9, `${question.id} ender i tung desimalregning`);
+    assert.equal(Math.round(result), question.kontroll.resultat[0]);
+    assert.equal(question.data.programkode, question.visualisering.kode);
+  }
+
+  for (const question of del1.filter((item) => item.variantfamilie === "d1-kode-terskel")) {
+    const { start, faktor, grense } = question.kontroll.inndata;
+    let value = start;
+    let rounds = 0;
+    const shouldContinue = () => faktor > 1 ? value < grense : value > grense;
+    while (shouldContinue() && rounds < 10) {
+      value *= faktor;
+      rounds += 1;
+      assert.ok(Number.isInteger(value), `${question.id} får en tung mellomverdi`);
+    }
+    assert.ok(rounds <= 4, `${question.id} krever for lang sporing`);
+    assert.equal(rounds, question.kontroll.resultat[0]);
+    assert.equal(question.data.programkode, question.visualisering.kode);
+  }
+
+  assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /760/);
+  assert.doesNotMatch(bank.oppgaver.find((question) => question.id === "2py27-070").svar, /3\{,\}16|\\\\approx/);
+  assert.equal(bank.oppgaver.find((question) => question.id === "2py27-091").fasit.valg.riktige[0], "\\(n+5\\)");
+});
+
 test("standardformoppgaven viser samme tall som fasiten", () => {
   const question = bank.oppgaver.find((item) => item.id === "2py27-062");
   assert.match(question.sporsmal, /0\{,\}000000605/);

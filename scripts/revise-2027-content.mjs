@@ -63,20 +63,199 @@ function byFamily(family) {
   return bank.oppgaver.filter((question) => question.variantfamilie === family);
 }
 
+// Del 1 skal kunne løses uten kalkulator. Tallene under er derfor justert slik
+// at metoden fortsatt blir prøvd, mens selve regningen kan gjøres med enkle
+// prosentdeler, brøker eller en kort sporingstabell. Dette følger mønsteret i
+// tidligere eksamensoppgaver, der krevende resonnement kombineres med håndterlige tall.
+function replaceSingleNumericTask(id, { sporsmal, input, result, tolerance = 0 }) {
+  const question = questions.get(id);
+  setQuestion(id, {
+    sporsmal,
+    fasit: {
+      ...question.fasit,
+      verdier: question.fasit.verdier.map((answer, index) => index === 0
+        ? { ...answer, verdi: result, toleranse: tolerance }
+        : answer),
+    },
+    kontroll: {
+      ...question.kontroll,
+      inndata: input,
+      resultat: [result],
+    },
+  });
+}
+
+replaceSingleNumericTask("2py27-011", {
+  sporsmal: `${math("48")} personer utgjør ${math("12\\,\\%")} av en gruppe. Hvor mange personer er det i hele gruppen?`,
+  input: { del: 48, prosent: 12 },
+  result: 400,
+});
+replaceSingleNumericTask("2py27-015", {
+  sporsmal: `${math("360")} personer utgjør ${math("40\\,\\%")} av en gruppe. Hvor mange personer er det i hele gruppen?`,
+  input: { del: 360, prosent: 40 },
+  result: 900,
+});
+
+{
+  const question = questions.get("2py27-016");
+  setQuestion(question.id, {
+    sporsmal: `En andel endret seg fra ${math("18\\,\\%")} til ${math("27\\,\\%")}. Oppgi endringen i prosentpoeng og i prosent.`,
+    fasit: {
+      ...question.fasit,
+      verdier: [
+        { ...question.fasit.verdier[0], verdi: 9 },
+        { ...question.fasit.verdier[1], verdi: 50, toleranse: 0 },
+      ],
+    },
+    kontroll: {
+      ...question.kontroll,
+      inndata: { gammel: 18, ny: 27 },
+      resultat: [9, 50],
+      avrunding: [0, 0],
+    },
+  });
+}
+
+{
+  const question = questions.get("2py27-020");
+  setQuestion(question.id, {
+    sporsmal: `En andel endret seg fra ${math("12\\,\\%")} til ${math("15\\,\\%")}. Oppgi endringen i prosentpoeng og i prosent.`,
+    fasit: {
+      ...question.fasit,
+      verdier: [
+        { ...question.fasit.verdier[0], verdi: 3 },
+        { ...question.fasit.verdier[1], verdi: 25, toleranse: 0 },
+      ],
+    },
+    kontroll: {
+      ...question.kontroll,
+      inndata: { gammel: 12, ny: 15 },
+      resultat: [3, 25],
+      avrunding: [0, 0],
+    },
+  });
+}
+
+replaceSingleNumericTask("2py27-027", {
+  sporsmal: `En verdi reduseres først med ${math("10\\,\\%")} og økes deretter med ${math("10\\,\\%")}. Hva er den samlede prosentvise endringen?`,
+  input: { endringer: [-10, 10] },
+  result: -1,
+});
+
+replaceSingleNumericTask("2py27-030", {
+  sporsmal: `Etter at en verdi var blitt økt med ${math("25\\,\\%")}, var den ${math("1\\,500")}. Hva var verdien før endringen?`,
+  input: { ny: 1500, endring: 25 },
+  result: 1200,
+  tolerance: 0,
+});
+replaceSingleNumericTask("2py27-031", {
+  sporsmal: `Etter at en verdi var blitt redusert med ${math("5\\,\\%")}, var den ${math("760")}. Hva var verdien før endringen?`,
+  input: { ny: 760, endring: -5 },
+  result: 800,
+  tolerance: 0,
+});
+replaceSingleNumericTask("2py27-032", {
+  sporsmal: `Etter at en verdi var blitt økt med ${math("50\\,\\%")}, var den ${math("1\\,950")}. Hva var verdien før endringen?`,
+  input: { ny: 1950, endring: 50 },
+  result: 1300,
+  tolerance: 0,
+});
+
+setQuestion("2py27-042", {
+  sporsmal: `En vare koster ${math("1\\,500")} kr. Butikk A gir ${math("18\\,\\%")} rabatt, og butikk B gir ${math("250")} kr i avslag. Hvilket tilbud gir størst avslag?`,
+});
+
+// Komma mellom koordinater og klassegrenser er skilletegn, ikke desimaltegn.
+// Disse tekstene holdes eksplisitte slik at en formatteringspass aldri kan
+// forveksle (12,120) med desimaltallet 12,120.
+setQuestion("2py27-172", {
+  sporsmal: `En rett linje går gjennom punktene ${math("(12,120)")} og ${math("(20,168)")}. Finn stigningstallet.`,
+});
+setQuestion("2py27-286", {
+  sporsmal: `En gruppert fordeling har klassegrenser ${math("0, 10, 20, 40")} og frekvenser ${math("6, 10, 16")}. Finn frekvenstettheten og relativ frekvens for intervallet ${math("[20,40)")}.`,
+});
+setQuestion("2py27-288", {
+  sporsmal: `En gruppert fordeling har klassegrenser ${math("10, 20, 30, 50")} og frekvenser ${math("8, 14, 20")}. Finn frekvenstettheten og relativ frekvens for intervallet ${math("[30,50)")}.`,
+});
+setQuestion("2py27-289", {
+  sporsmal: `En gruppert fordeling har klassegrenser ${math("0, 20, 30, 60")} og frekvenser ${math("12, 9, 18")}. Finn frekvenstettheten og relativ frekvens for intervallet ${math("[20,30)")}.`,
+});
+
+// Sporingsoppgavene bruker faktorer som gir korte, eksakte mellomregninger.
+const calculatorFreeCodeGrowth = {
+  "2py27-218": { start: 1000, faktor: 1.1, runder: 2, values: [1000, 1100, 1210] },
+  "2py27-219": { start: 800, faktor: 0.5, runder: 3, values: [800, 400, 200, 100] },
+  "2py27-220": { start: 2500, faktor: 1.2, runder: 2, values: [2500, 3000, 3600] },
+  "2py27-221": { start: 600, faktor: 1.5, runder: 2, values: [600, 900, 1350] },
+  "2py27-222": { start: 1200, faktor: 0.75, runder: 2, values: [1200, 900, 675] },
+};
+for (const [id, revision] of Object.entries(calculatorFreeCodeGrowth)) {
+  const question = questions.get(id);
+  const result = revision.values.at(-1);
+  const code = `verdi = ${revision.start}\nfor i in range(${revision.runder}):\n    verdi = verdi * ${plainDecimal(revision.faktor)}\nprint(round(verdi))`;
+  setQuestion(id, {
+    fasit: {
+      ...question.fasit,
+      verdier: [{ ...question.fasit.verdier[0], verdi: result, toleranse: 0 }],
+    },
+    kontroll: {
+      ...question.kontroll,
+      inndata: { start: revision.start, faktor: revision.faktor, runder: revision.runder },
+      resultat: [result],
+    },
+    data: { ...question.data, programkode: code },
+    visualisering: { ...question.visualisering, kode: code },
+  });
+}
+
+const calculatorFreeThresholds = {
+  "2py27-228": { start: 100, faktor: 2, grense: 750, comparator: "<", values: [100, 200, 400, 800] },
+  "2py27-229": { start: 80, faktor: 1.5, grense: 400, comparator: "<", values: [80, 120, 180, 270, 405] },
+  "2py27-230": { start: 800, faktor: 0.5, grense: 90, comparator: ">", values: [800, 400, 200, 100, 50] },
+  "2py27-231": { start: 75, faktor: 2, grense: 250, comparator: "<", values: [75, 150, 300] },
+  "2py27-232": { start: 2400, faktor: 0.5, grense: 500, comparator: ">", values: [2400, 1200, 600, 300] },
+};
+for (const [id, revision] of Object.entries(calculatorFreeThresholds)) {
+  const question = questions.get(id);
+  const result = revision.values.length - 1;
+  const code = `verdi = ${revision.start}\nn = 0\nwhile verdi ${revision.comparator} ${revision.grense}:\n    verdi = verdi * ${plainDecimal(revision.faktor)}\n    n = n + 1\nprint(n)`;
+  setQuestion(id, {
+    fasit: {
+      ...question.fasit,
+      verdier: [{ ...question.fasit.verdier[0], verdi: result, toleranse: 0 }],
+    },
+    kontroll: {
+      ...question.kontroll,
+      inndata: { start: revision.start, faktor: revision.faktor, grense: revision.grense },
+      resultat: [result],
+    },
+    data: { ...question.data, programkode: code },
+    visualisering: { ...question.visualisering, kode: code },
+  });
+}
+
 // Omvendt prosent er mønstereksempelet for resten av banken: hele resonnementet
 // vises, ett meningsfullt delmål om gangen, og avsluttes med en kontroll.
+const reversePercentMentalSteps = {
+  "2py27-028": [`Her er 120 % lik ${math("816")}. Del begge tallene på 12: Da er 10 % lik ${math("68")}.`, `Gang 10 %-delen med 10: ${math("68\\cdot10=680")}. Dermed er 100 % lik ${math("680")}.`],
+  "2py27-029": [`Her er 90 % lik ${math("630")}. Siden 90 % er ni like 10 %-deler, er 10 % lik ${math("630/9=70")}.`, `Gang 10 %-delen med 10: ${math("70\\cdot10=700")}. Dermed er 100 % lik ${math("700")}.`],
+  "2py27-030": [`Her er 125 % lik ${math("1\\,500")}. Del begge tallene på 5: Da er 25 % lik ${math("300")}.`, `Fire deler på 25 % gir 100 %: ${math("300\\cdot4=1\\,200")}.`],
+  "2py27-031": [`Her er 95 % lik ${math("760")}. Siden ${math("95=19\\cdot5")}, deler du ${math("760")} på 19 og får at 5 % er ${math("40")}.`, `Tjue deler på 5 % gir 100 %: ${math("40\\cdot20=800")}.`],
+  "2py27-032": [`Her er 150 % lik ${math("1\\,950")}. Del begge tallene på 3: Da er 50 % lik ${math("650")}.`, `Dobbelt så mye er 100 %: ${math("650\\cdot2=1\\,300")}.`],
+};
 for (const question of byFamily("d1-omvendt-prosent")) {
   const { ny, endring } = question.kontroll.inndata;
   const factor = 1 + endring / 100;
   const original = question.fasit.verdier[0].verdi;
   const direction = endring >= 0 ? "økt" : "redusert";
   const factorOperation = endring >= 0 ? "+" : "-";
+  const [mentalStep, mentalResult] = reversePercentMentalSteps[question.id];
   setHintsAndAnswer(question.id, [
     `Definer den ukjente: La ${math("x")} være verdien før den ble ${direction} med ${number(Math.abs(endring))} %.`,
     `Finn vekstfaktoren: ${number(Math.abs(endring))} % er ${math(number(Math.abs(endring) / 100))}. Derfor er vekstfaktoren ${math(`1${factorOperation}${number(Math.abs(endring) / 100)}=${number(factor)}`)}.`,
     `Lag ligningen: Gammel verdi multiplisert med vekstfaktoren skal bli den nye verdien. Det gir ${math(`${number(factor)}x=${number(ny)}`)}.`,
-    `Isoler den ukjente: Del begge sider på ${math(number(factor))}, slik at ${math(`x=${number(ny)}/${number(factor)}`)}.`,
-    `Regn ut: ${math(`x=${number(original)}`)}. Dette er verdien før prosentendringen.`,
+    `Regn uten kalkulator: ${mentalStep}`,
+    `Regn ut: ${mentalResult} Dette er verdien før prosentendringen.`,
     `Kontroller svaret: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}. Vi får den oppgitte nye verdien, så svaret stemmer.`,
   ], `Verdien før endringen var ${math(number(original))}. Kontroll: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}.`);
 }
@@ -667,9 +846,9 @@ const codeRevisions = {
   "2py27-442": [["Den andre utskriften er gjennomsnittet av verdiene som er minst 50.", `Legg sammen ${math("55+61+73+66+58=313")}.`, `Del summen på antallet 5 og rund til én desimal.`], `Gjennomsnittet er ${math("313/5=62{,}6")}.`],
   "2py27-443": [["Med ny grense 60 tas bare verdier som er minst 60 med.", "Gå gjennom listen og marker 61, 73 og 66.", "Variabelen antall øker én gang for hver av de tre markerte verdiene."], "Etter endringen teller programmet 3 verdier."],
   "2py27-445": [["While-løkken fortsetter så lenge verdi er større enn 500.", `Etter hver runde multipliseres verdien med ${math("0{,}88")}, og aar øker med 1.`, "Lag en tabell over aar og verdi og stopp ved den første verdien som er høyst 500."], "Den første verdien som er høyst 500 kommer etter 5 runder, så programmet skriver først ut 5."],
-  "2py27-446": [["Den andre utskriften er verdien idet while-løkken stopper.", `Beregn ${math("900\\cdot0{,}88^5")}.`, "Programmet runder denne verdien til én desimal."], `${math("900\\cdot0{,}88^5\\approx475{,}0")}, så den andre utskriften er 475,0.`],
+  "2py27-446": [["Den andre utskriften er verdien idet while-løkken stopper.", `Beregn ${math("900\\cdot0{,}88^5")}.`, "Programmet runder denne verdien til én desimal."], `${math("900\\cdot0{,}88^5\\approx475")}, så den andre utskriften er 475.`],
   "2py27-447": [["Den nye løkken stopper ved første verdi som er høyst 600.", `Følg ${math("900\\cdot0{,}88^n")} for hele n-verdier.`, "Kontroller både n=3 og n=4 for å finne første gang grensen er nådd."], "Verdien er fortsatt over 600 etter 3 år, men under etter 4 år. Programmet skriver ut 4."],
-  "2py27-449": [["Programmet fjerner én minste og én største verdi.", "Fra listen fjernes 12 og 45, slik at 14, 15, 17, 18 og 21 står igjen.", "Den numeriske utskriften er gjennomsnittet av de fem gjenværende verdiene."], `${math("(14+15+17+18+21)/5=17{,}0")}. Programmet skriver ut 17,0.`],
+  "2py27-449": [["Programmet fjerner én minste og én største verdi.", "Fra listen fjernes 12 og 45, slik at 14, 15, 17, 18 og 21 står igjen.", "Den numeriske utskriften er gjennomsnittet av de fem gjenværende verdiene."], `${math("(14+15+17+18+21)/5=17")}. Programmet skriver ut 17.`],
   "2py27-450": [["Listen inneholder opprinnelig sju observasjoner.", "Én remove-linje fjerner den minste og den andre fjerner den største.", "Trekk de to fjernede observasjonene fra antallet 7."], "Etter de to remove-linjene er 5 observasjoner igjen."],
   "2py27-451": [["Når 60 legges til, blir 12 fortsatt minste verdi og 60 blir største verdi.", "Etter fjerningen står 14, 15, 17, 18, 21 og 45 igjen.", `Beregn ${math("(14+15+17+18+21+45)/6")}.`], `${math("130/6\\approx21{,}7")}. Programmet skriver ut 21,7.`],
   "2py27-453": [["Programmet tester heltallige x-verdier fra 0 og oppover.", `Vilkåret er ${math("200+5x\\le80+8x")}.`, `Omskriv til ${math("120\\le3x")} og finn det minste heltallet som oppfyller dette.`], `${math("120\\le3x")} gir ${math("x\\ge40")}. Den første utskriften er 40.`],
@@ -680,6 +859,198 @@ const codeRevisions = {
   "2py27-459": [[`Den nye totalen er fortsatt 26, så medianplasseringen er ${math("13{,}5")}.`, "De nye kumulative frekvensene er 4, 14, 16 og 26.", "Finn den første kategorien der kumulativ frekvens er minst 13,5."], "Kumulativ frekvens er 14 allerede i kategori 2, så programmet skriver ut 2."],
 };
 for (const [id, [hint, svar]] of Object.entries(codeRevisions)) setHintsAndAnswer(id, hint, svar);
+
+// Del 1: alle regnetunge familier får synlige mellomregninger som faktisk kan
+// utføres for hånd. Hintene viser en mulig løsning, ikke bare en arbeidsordre.
+const wholeFromPartWorked = {
+  "2py27-011": [`12 % tilsvarer ${math("48")}. Del begge tallene på 3, slik at 4 % tilsvarer ${math("16")}.`, `Del én gang til på 4: 1 % tilsvarer ${math("4")}.`, `Gang med 100: ${math("4\\cdot100=400")}. Hele gruppen har 400 personer.`],
+  "2py27-012": [`20 % tilsvarer ${math("64")}.`, "Fem like deler på 20 % utgjør 100 %.", `Regn ${math("64\\cdot5=320")}. Hele gruppen har 320 personer.`],
+  "2py27-013": [`25 % tilsvarer ${math("190")}.`, "25 % er en firedel av helheten, så helheten består av fire slike deler.", `Regn ${math("190\\cdot4=760")}. Hele gruppen har 760 personer.`],
+  "2py27-014": [`30 % tilsvarer ${math("162")}. Del begge tallene på 3: 10 % tilsvarer ${math("54")}.`, "100 % består av ti like 10 %-deler.", `Regn ${math("54\\cdot10=540")}. Hele gruppen har 540 personer.`],
+  "2py27-015": [`40 % tilsvarer ${math("360")}. Del begge tallene på 2: 20 % tilsvarer ${math("180")}.`, "100 % består av fem like 20 %-deler.", `Regn ${math("180\\cdot5=900")}. Hele gruppen har 900 personer.`],
+};
+for (const [id, hint] of Object.entries(wholeFromPartWorked)) {
+  const question = questions.get(id);
+  const result = question.kontroll.resultat[0];
+  setHintsAndAnswer(id, hint, `Hele gruppen har ${math(number(result))} personer.`);
+}
+
+const partAsPercentWorked = {
+  "2py27-006": [`10 % av 80 er ${math("8")}, og 20 % er derfor ${math("16")}.`, `2,5 % av 80 er ${math("2")}, fordi 2,5 % er en firedel av 10 %.`, `Da er ${math("16+2=18")} det samme som 22,5 % av 80.`],
+  "2py27-007": [`Skriv forholdet ${math("35/125")}. Målet er å få 100 i nevneren.`, `Gang teller og nevner med 8: ${math("35\\cdot8=280")} og ${math("125\\cdot8=1\\,000")}.`, `${math("280/1\\,000=28/100")}. Dermed var 28 % av svarene positive.`],
+  "2py27-008": [`Forkort ${math("66/240")} med 6. Da får du ${math("11/40")}.`, `${math("10/40=25/100")}, altså 25 %. Den siste delen ${math("1/40")} er 2,5 %.`, `Legg sammen: ${math("25+2{,}5=27{,}5")}.`],
+  "2py27-009": [`Forkort ${math("117/360")} med 9. Da får du ${math("13/40")}.`, `${math("12/40=30/100")}, altså 30 %. Den siste delen ${math("1/40")} er 2,5 %.`, `Legg sammen: ${math("30+2{,}5=32{,}5")}.`],
+  "2py27-010": [`Forkort ${math("275/625")} med 25. Da får du ${math("11/25")}.`, `Gang teller og nevner med 4: ${math("11/25=44/100")}.`, "Dermed var 44 % av svarene positive."],
+};
+for (const [id, hint] of Object.entries(partAsPercentWorked)) {
+  const question = questions.get(id);
+  const result = question.kontroll.resultat[0];
+  setHintsAndAnswer(id, hint, `Andelen er ${math(`${number(result)}\\,\\%`)}.`);
+}
+
+const percentagePointWorked = {
+  "2py27-016": { old: 18, next: 27, difference: 9, relative: 50, fraction: "9/18=1/2" },
+  "2py27-017": { old: 40, next: 34, difference: -6, relative: -15, fraction: "-6/40=-15/100" },
+  "2py27-018": { old: 6, next: 9, difference: 3, relative: 50, fraction: "3/6=1/2" },
+  "2py27-019": { old: 72, next: 63, difference: -9, relative: -12.5, fraction: "-9/72=-1/8" },
+  "2py27-020": { old: 12, next: 15, difference: 3, relative: 25, fraction: "3/12=1/4" },
+};
+for (const [id, values] of Object.entries(percentagePointWorked)) {
+  setHintsAndAnswer(id, [
+    `Finn først forskjellen mellom prosenttallene: ${math(`${number(values.next)}-${number(values.old)}=${number(values.difference)}`)} prosentpoeng.`,
+    `Relativ endring måles mot den gamle andelen. Forholdet blir ${math(values.fraction)}.`,
+    `Gjør forholdet om til prosent: ${math(`${number(values.relative)}\\,\\%`)}. Fortegnet viser om andelen økte eller sank.`,
+  ], `Endringen er ${math(number(values.difference))} prosentpoeng og ${math(`${number(values.relative)}\\,\\%`)}.`);
+}
+
+setHintsAndAnswer("2py27-026", [
+  `Velg en tenkt startverdi på 100. Etter en økning på 20 % blir verdien ${math("100+20=120")}.`,
+  `Nedgangen på 20 % regnes av 120. Siden ${math("20\\,\\%")} av 120 er 24, blir sluttverdien ${math("120-24=96")}.`,
+  "Fra 100 til 96 er en nedgang på 4 av 100, altså 4 %.",
+], `Sluttverdien er 96 % av startverdien. Den samlede endringen er derfor ${math("-4\\,\\%")}.`);
+setHintsAndAnswer("2py27-027", [
+  `Velg en tenkt startverdi på 100. Etter en nedgang på 10 % blir verdien ${math("100-10=90")}.`,
+  `Øk deretter 90 med 10 %. Ti prosent av 90 er 9, så sluttverdien blir ${math("90+9=99")}.`,
+  "Fra 100 til 99 er en nedgang på 1 av 100, altså 1 %.",
+], `Sluttverdien er 99 % av startverdien. Den samlede endringen er derfor ${math("-1\\,\\%")}.`);
+
+const offerWorked = {
+  "2py27-038": { parts: ["20 % er en femdel av 900.", "900/5=180"], fixed: 150, decision: "prosenttilbudet" },
+  "2py27-039": { parts: ["10 % av 1 250 er 125, og 5 % er halvparten av dette: 62,5.", "125+62{,}5=187{,}5"], fixed: 220, decision: "kroneavslaget" },
+  "2py27-040": { parts: ["25 % er en firedel av 680.", "680/4=170"], fixed: 190, decision: "kroneavslaget" },
+  "2py27-041": { parts: ["10 % av 2 400 er 240, og 2 % er 48.", "240+48=288"], fixed: 320, decision: "kroneavslaget" },
+  "2py27-042": { parts: ["10 % av 1 500 er 150, og 8 % er 120.", "150+120=270"], fixed: 250, decision: "prosenttilbudet" },
+};
+for (const [id, values] of Object.entries(offerWorked)) {
+  setHintsAndAnswer(id, [
+    `Regn prosentavslaget i deler som er enkle uten kalkulator: ${values.parts[0]}`,
+    `Legg sammen delene: ${math(values.parts[1])} kr i prosentavslag.`,
+    `Sammenlign ${math(values.parts[1].split("=")[1])} kr med kroneavslaget på ${math(number(values.fixed))} kr. Det største avslaget er best.`,
+  ], `Prosentavslaget er ${math(values.parts[1])} kr. Derfor gir ${values.decision} størst avslag.`);
+}
+
+setHintsAndAnswer("2py27-070", [
+  `Skriv ${math("10^{1/2}=\\sqrt{10}")}. Du trenger ikke finne en desimalverdi for roten.`,
+  `Sammenlign kvadrater: Siden ${math("10<16")}, er ${math("\\sqrt{10}<\\sqrt{16}=4")}. Dessuten er ${math("2^2=4")}.`,
+  `Regn ut det siste uttrykket: ${math("\\sqrt[3]{125}=5")}. Dermed er rekkefølgen rotuttrykket, 4 og 5.`,
+], `Siden ${math("\\sqrt{10}<4")} og ${math("\\sqrt[3]{125}=5")}, er riktig rekkefølge ${math("10^{1/2}")}, ${math("2^2")}, ${math("\\sqrt[3]{125}")}.`);
+
+const standardFormWorked = {
+  "2py27-063": { factor: "3\\cdot2=6", exponent: "5+3=8", result: "6\\cdot10^8" },
+  "2py27-064": { factor: "8{,}4/2{,}1=4", exponent: "7-2=5", result: "4\\cdot10^5" },
+  "2py27-065": { factor: "6\\cdot5=30", exponent: "-4+6=2", result: "30\\cdot10^2=3\\cdot10^3" },
+  "2py27-066": { factor: "9{,}6/3{,}2=3", exponent: "-3-(-5)=2", result: "3\\cdot10^2" },
+  "2py27-067": { factor: "4{,}5\\cdot2=9", exponent: "8+(-3)=5", result: "9\\cdot10^5" },
+};
+for (const [id, values] of Object.entries(standardFormWorked)) {
+  setHintsAndAnswer(id, [
+    `Regn med faktorene foran tierpotensene: ${math(values.factor)}.`,
+    `Regn med eksponentene: ${math(values.exponent)}. Ved produkt legges de sammen; ved divisjon trekkes de fra.`,
+    `Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: ${math(values.result)}.`,
+  ], `Resultatet er ${math(values.result)}.`);
+}
+
+{
+  const question = questions.get("2py27-091");
+  const correct = math("n+5");
+  setQuestion(question.id, {
+    hint: [
+      "Fra figur 1 til figur n skjer økningen n−1 ganger.",
+      `Start med 6 ruter og legg til ${math("n-1")}: ${math("6+(n-1)=n+5")}.`,
+      `Sett inn ${math("n=18")}: ${math("18+5=23")}.`,
+    ],
+    svar: `Formelen er ${correct}. Figur 18 har 23 ruter.`,
+    fasit: {
+      ...question.fasit,
+      valg: {
+        ...question.fasit.valg,
+        riktige: [correct],
+        alternativer: [math("n+6"), math("6n+1"), math("7n"), correct],
+      },
+    },
+    kontroll: { ...question.kontroll, riktige: [correct] },
+  });
+}
+
+setQuestion("2py27-114", {
+  sporsmal: `Reisetiden er omvendt proporsjonal med farten. En tur tar ${math("45")} minutter når farten er ${math("80")} km/t. Hvor lang tid tar turen med ${math("60")} km/t under de samme forutsetningene?`,
+  hint: [
+    "For samme strekning er produktet av fart og tid konstant.",
+    `Finn produktet for den første turen: ${math("80\\cdot45=3\\,600")}.`,
+    `Del på den nye farten: ${math("3\\,600/60=60")} minutter.`,
+  ],
+  svar: `Turen tar ${math("60")} minutter. Kontroll: ${math("60\\cdot60=3\\,600")}.`,
+});
+
+setHintsAndAnswer("2py27-127", [
+  `Test proporsjonalitet: Forholdene ${math("y/x")} er 2, 4, 6 og 8. De er ikke konstante.`,
+  `Test omvendt proporsjonalitet: Produktene ${math("xy")} er 2, 16, 54 og 128. De er heller ikke konstante.`,
+  "Test linearitet: Første differanser i y er 6, 10 og 14. Siden de ikke er like, er sammenhengen heller ikke lineær.",
+], "Tabellen viser ingen av de tre sammenhengene.");
+
+const outlierMedians = {
+  "2py27-158": { before: 14, after: "(14+15)/2=14{,}5" },
+  "2py27-159": { before: 22, after: "(22+24)/2=23" },
+  "2py27-160": { before: 8, after: "(8+9)/2=8{,}5" },
+  "2py27-161": { before: 34, after: "(34+35)/2=34{,}5" },
+  "2py27-162": { before: 10, after: "(10+10)/2=10" },
+};
+for (const [id, values] of Object.entries(outlierMedians)) {
+  setHintsAndAnswer(id, [
+    `Før den nye verdien legges til, er medianen den midterste verdien: ${math(number(values.before))}.`,
+    `Etterpå er det seks sorterte verdier. Medianen finnes fra de to i midten: ${math(values.after)}. Medianen flytter seg derfor lite eller ikke i det hele tatt.`,
+    "Den nye verdien er mye større enn de andre og går direkte inn i summen som brukes i gjennomsnittet. Derfor trekkes gjennomsnittet langt mer opp.",
+  ], "Gjennomsnittet påvirkes mest. Den svært store verdien endrer summen kraftig, mens plasseringen av de midterste verdiene nesten ikke endres.");
+}
+
+for (const question of byFamily("d1-kode-sum")) {
+  const values = question.kontroll.inndata.verdier;
+  const running = [];
+  let total = 0;
+  for (const value of values) { total += value; running.push(total); }
+  setHintsAndAnswer(question.id, [
+    `Variabelen sum starter på 0. Første listeverdi er ${number(values[0])}, så summen blir ${number(running[0])}.`,
+    `Etter hver ny verdi blir de løpende summene ${running.slice(1).map(number).join(", ")}.`,
+    `Når listen er slutt, er sum ${number(total)}. Det er denne verdien print-linjen skriver ut.`,
+  ], `Programmet skriver ut ${math(number(total))}.`);
+}
+
+for (const [id, revision] of Object.entries(calculatorFreeCodeGrowth)) {
+  const sequence = revision.values.map(number).join(" → ");
+  setHintsAndAnswer(id, [
+    `Løkken har ${number(revision.runder)} runder, så faktoren ${math(number(revision.faktor))} skal brukes akkurat ${number(revision.runder)} ganger.`,
+    `Spor verdi etter hver runde: ${math(sequence)}.`,
+    `Etter siste runde er verdi ${math(number(revision.values.at(-1)))}. round uten antall desimaler beholder dette heltallet.`,
+  ], `Programmet skriver ut ${math(number(revision.values.at(-1)))}.`);
+}
+
+const codeConditionValues = {
+  "2py27-223": { x: 72, first: false, second: true, result: "middels" },
+  "2py27-224": { x: 91, first: false, second: false, result: "høy" },
+  "2py27-225": { x: 42, first: true, second: null, result: "lav" },
+  "2py27-226": { x: 80, first: false, second: false, result: "høy" },
+  "2py27-227": { x: 50, first: false, second: true, result: "middels" },
+};
+for (const [id, values] of Object.entries(codeConditionValues)) {
+  const secondStep = values.first
+    ? "Det første vilkåret er sant, så programmet hopper over elif og else."
+    : `Det første vilkåret er usant. Deretter er ${math(`${values.x}<80`)} ${values.second ? "sant" : "usant"}.`;
+  setHintsAndAnswer(id, [
+    `Sett inn ${math(`x=${values.x}`)} i det første vilkåret ${math("x<50")}. Det er ${values.first ? "sant" : "usant"}.`,
+    secondStep,
+    `Den valgte grenen setter svar til «${values.result}». Det er denne teksten print-linjen viser.`,
+  ], `Programmet skriver «${values.result}».`);
+}
+
+for (const [id, revision] of Object.entries(calculatorFreeThresholds)) {
+  const result = revision.values.length - 1;
+  const states = revision.values.map((value, index) => `n=${index}: ${number(value)}`).join(", ");
+  setHintsAndAnswer(id, [
+    `Start med ${math(`verdi=${number(revision.start)}`)} og ${math("n=0")}. Løkken kjører bare mens ${math(`verdi${revision.comparator}${number(revision.grense)}`)} er sant.`,
+    `Spor begge variablene etter hver runde: ${states}.`,
+    `Ved ${math(`n=${result}`)} er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.`,
+  ], `Løkken kjøres ${math(number(result))} ganger, så programmet skriver ut ${math(number(result))}.`);
+}
 
 // Alle oppgavene får nå en full worked example. De eksisterende, fagspesifikke
 // mellomstegene beholdes, men settes inn i en tydelig progresjon fra forståelse
@@ -811,6 +1182,37 @@ function normalizeBankValue(value) {
 
 normalizeBankValue(bank);
 
+// Synlige tall skal heller ikke ha meningsløse sluttnuller. 6,0000 blir 6,
+// 18,50 blir 18,5 og 1,060 blir 1,06. Innledende nuller i små tall beholdes.
+const visibleDecimalPatterns = [
+  /-?\d+\{,\}\d+/gu,
+  /-?\d+\.\d+/gu,
+];
+
+function trimTrailingDecimalZeros(token) {
+  const separator = token.includes("{,}") ? "{,}" : token.includes(",") ? "," : ".";
+  const [integer, decimals] = token.split(separator);
+  const trimmedDecimals = decimals.replace(/0+$/u, "");
+  return trimmedDecimals ? `${integer}${separator}${trimmedDecimals}` : integer;
+}
+
+function normalizeVisibleDecimals(value) {
+  if (typeof value === "string") {
+    return visibleDecimalPatterns.reduce(
+      (text, pattern) => text.replace(pattern, trimTrailingDecimalZeros),
+      value,
+    );
+  }
+  if (Array.isArray(value)) return value.map(normalizeVisibleDecimals);
+  if (value && typeof value === "object") {
+    for (const [key, child] of Object.entries(value)) value[key] = normalizeVisibleDecimals(child);
+  }
+  return value;
+}
+
+normalizeVisibleDecimals(bank.oppgaver);
+normalizeVisibleDecimals(bank.oppgavegrupper);
+
 // Verifiser at de provoserende standardformuleringene ikke står igjen i de reviderte familiene.
 const forbiddenExactHints = new Set([
   "Bruk regelen som passer operasjonen.",
@@ -831,7 +1233,7 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.3";
+bank.samling.versjon = "2027.4";
 bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til gradvise worked examples med forståelse, metode, oppsett, utregning, konklusjon og kontroll.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
