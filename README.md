@@ -2,14 +2,14 @@
 
 En norsk nettapp for elever som øver til både Del 1 og Del 2 av matematikk 2PY. Eleven velger eksamensdel og kan deretter trene på et bestemt tema eller gjennomføre en blandet eksamensøkt.
 
-Oppgavebanken inneholder 500 oppgaver: 262 uten hjelpemidler og 238 med hjelpemidler. Del 2 inneholder 50 sammenhengende case med fire deloppgaver, i tillegg til selvstendige digitale oppgaver. Alle svar kan kontrolleres direkte i nettleseren.
+Oppgavebanken dekker både oppgaver uten hjelpemidler og digitale oppgaver med hjelpemidler. Del 2 inneholder sammenhengende case med fire deloppgaver, i tillegg til selvstendige digitale oppgaver. Alle svar kan kontrolleres direkte i nettleseren.
 
 ## Én felles oppgavebank
 
 `public/oppgaver-2027.json` er den autoritative kilden til det nye oppgaveinnholdet. Elevappen leser filen direkte. Kontrollappen og den selvstendige HTML-filen genereres fra nøyaktig samme fil under bygging. Den eldre `public/oppgaver.json` er beholdt som historikk, men brukes ikke av elevappen.
 
 ```text
-public/oppgaver-2027.json     500 spørsmål, 50 case, hint, fasiter og metadata
+public/oppgaver-2027.json     spørsmål, case, hint, fasiter og metadata
 app/page.tsx                  elevappen
 app/kontroll/page.tsx         kontrollappen på /kontroll
 scripts/build-review-app.mjs  lager selvstendig kontrollapp

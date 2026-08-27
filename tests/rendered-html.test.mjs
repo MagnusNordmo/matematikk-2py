@@ -33,4 +33,12 @@ test("den selvstendige kontrollsiden inneholder hele banken", async () => {
   assert.equal(embedded.oppgaver.filter((question) => question.del === 2).length, 238);
   assert.ok(html.includes("data:font/woff2;base64,"));
   assert.ok(html.includes('id="part-filters"'));
+  assert.doesNotMatch(html, /\b(?:500|262|238) oppgaver\b/);
+  assert.doesNotMatch(html, /\b50 Del 2-case\b/);
+});
+
+test("elevflaten viser ikke størrelsen på oppgavebanken", async () => {
+  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.doesNotMatch(source, /\b(?:500|262|238) oppgaver\b/);
+  assert.doesNotMatch(source, /\b50 case\b/);
 });

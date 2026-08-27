@@ -316,23 +316,6 @@ export default function Home() {
     const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart).map((question) => question.tema));
     return THEMES.filter((theme) => ids.has(theme.id));
   }, [bank, selectedPart]);
-  const resultTypeSummary = useMemo(() => {
-    const summary = new Map<string, { label: string; theme: string; correct: number; wrong: number }>();
-    for (const outcome of resultOutcomes) {
-      const key = `${outcome.question.tema}:${outcome.question.deltema}`;
-      const current = summary.get(key) ?? {
-        label: readableTaskType(outcome.question),
-        theme: THEMES.find((theme) => theme.id === outcome.question.tema)?.kortnavn ?? outcome.question.tema,
-        correct: 0,
-        wrong: 0,
-      };
-      if (outcome.correct) current.correct += 1;
-      else current.wrong += 1;
-      summary.set(key, current);
-    }
-    return [...summary.values()].sort((a, b) => b.wrong - a.wrong || a.label.localeCompare(b.label, "nb-NO"));
-  }, [resultOutcomes]);
-
   function choosePart(part: Part) {
     setSelectedPart(part);
     setSelectedTheme(null);
@@ -535,17 +518,17 @@ export default function Home() {
           <section className="choice-grid part-grid" aria-label="Velg eksamensdel">
             <button className="choice-card choice-card-primary" onClick={() => choosePart(1)} disabled={!bank}>
               <span className="part-number">1</span>
-              <span className="choice-content"><span className="choice-kicker">Uten hjelpemidler</span><strong>Del 1</strong><span>Korte og sammensatte oppgaver du skal kunne løse med egne ferdigheter.</span><span className="card-stat">262 oppgaver</span></span>
+              <span className="choice-content"><span className="choice-kicker">Uten hjelpemidler</span><strong>Del 1</strong><span>Korte og sammensatte oppgaver du skal kunne løse med egne ferdigheter.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
             <button className="choice-card" onClick={() => choosePart(2)} disabled={!bank}>
               <span className="part-number part-number-blue">2</span>
-              <span className="choice-content"><span className="choice-kicker">Med hjelpemidler</span><strong>Del 2</strong><span>Digitale oppgaver og eksamenslignende case med fire deloppgaver.</span><span className="card-stat">238 oppgaver · 50 case</span></span>
+              <span className="choice-content"><span className="choice-kicker">Med hjelpemidler</span><strong>Del 2</strong><span>Digitale oppgaver og eksamenslignende case med fire deloppgaver.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
           {loadError && <p className="load-message error-message" role="alert">Oppgavebanken kunne ikke lastes. Prøv å oppdatere siden.</p>}
-          {!bank && !loadError && <p className="load-message" role="status">Henter 500 oppgaver …</p>}
+          {!bank && !loadError && <p className="load-message" role="status">Henter oppgaver …</p>}
           <footer className="privacy-note"><span aria-hidden="true">●</span>Fremdrift lagres bare på denne enheten. Ingen innlogging eller innsamling.</footer>
         </div>
       )}
@@ -644,10 +627,10 @@ export default function Home() {
                   <div><strong>Trenger du en forklaring?</strong><span>Åpne ett løsningssteg om gangen. Hintene viser en fullstendig løsning steg for steg, og fasiten vises til slutt.</span></div>
                   {!resolved && hintIndex < currentQuestion.hint.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {currentQuestion.hint.length}</button>}
                 </div>
-                {hintIndex > 0 && (
+                {(resolved || hintIndex > 0) && (
                   <ol className="hint-list">
-                    {currentQuestion.hint.slice(0, hintIndex).map((hint, index) => <li key={`${currentQuestion.id}-hint-${index}`}><span>{index + 1}</span><p><MathText>{hint}</MathText></p></li>)}
-                    {hintIndex === currentQuestion.hint.length && <li className="final-hint"><span>✓</span><p><strong>Fasit:</strong> <MathText>{currentQuestion.svar}</MathText></p></li>}
+                    {currentQuestion.hint.slice(0, resolved ? currentQuestion.hint.length : hintIndex).map((hint, index) => <li key={`${currentQuestion.id}-hint-${index}`}><span>{index + 1}</span><p><MathText>{hint}</MathText></p></li>)}
+                    {(resolved || hintIndex === currentQuestion.hint.length) && <li className="final-hint"><span>✓</span><p><strong>Fasit:</strong> <MathText>{currentQuestion.svar}</MathText></p></li>}
                   </ol>
                 )}
               </div>
@@ -672,26 +655,10 @@ export default function Home() {
                 </div>
                 <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. På ekte eksamen vurderer sensor også framgangsmåte, begrunnelser og matematisk forståelse.</p>
 
-                <section className="exam-report" aria-labelledby="type-report-heading">
+                <section className="exam-report" aria-labelledby="question-report-heading">
                   <div className="report-heading">
                     <p className="eyebrow">Rapport</p>
-                    <h2 id="type-report-heading">Resultat etter oppgavetype</h2>
-                    <p>Her ser du hvilke typer du mestret, og hva du bør øve mer på.</p>
-                  </div>
-                  <div className="type-report-list">
-                    {resultTypeSummary.map((item) => (
-                      <div className="type-report-row" key={`${item.theme}-${item.label}`}>
-                        <span><small>{item.theme}</small><strong>{item.label}</strong></span>
-                        <span className="type-report-counts">
-                          <span className="report-correct">{item.correct} riktig</span>
-                          <span className="report-wrong">{item.wrong} feil</span>
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="report-heading report-heading-details">
-                    <h2>Oppgave for oppgave</h2>
+                    <h2 id="question-report-heading">Oppgave for oppgave</h2>
                     <p>Oppgaver som ikke var helt riktige, er åpnet slik at du kan se løsningsforslaget.</p>
                   </div>
                   <div className="question-report-list">

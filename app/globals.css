@@ -915,37 +915,18 @@ input:focus-visible {
   line-height: 1.6;
 }
 
-.report-heading-details {
-  margin-top: 42px;
-}
-
-.type-report-list,
 .question-report-list {
   display: grid;
   margin-top: 20px;
   gap: 10px;
 }
 
-.type-report-row {
-  display: flex;
-  min-height: 72px;
-  padding: 14px 16px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #faf9f5;
-}
-
-.type-report-row > span:first-child,
 .question-report-item summary > span:nth-child(2) {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.type-report-row small,
 .question-report-item summary small {
   color: var(--muted);
   font-size: 0.68rem;
@@ -954,18 +935,10 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.type-report-row strong,
 .question-report-item summary strong {
   font-size: 0.9rem;
 }
 
-.type-report-counts {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 7px;
-}
-
-.type-report-counts > span,
 .question-report-status {
   padding: 6px 9px;
   border-radius: 99px;
@@ -973,13 +946,11 @@ input:focus-visible {
   font-weight: 800;
 }
 
-.report-correct,
 .question-report-correct .question-report-status {
   background: var(--correct-soft);
   color: var(--correct);
 }
 
-.report-wrong,
 .question-report-wrong .question-report-status {
   background: var(--wrong-soft);
   color: var(--wrong);
@@ -1071,22 +1042,6 @@ input:focus-visible {
 .part-number-blue {
   background: var(--blue-soft);
   color: var(--blue);
-}
-
-.card-stat {
-  width: fit-content;
-  margin-top: 18px !important;
-  padding: 6px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 99px;
-  color: inherit !important;
-  font-size: 0.73rem !important;
-  font-weight: 750;
-}
-
-.choice-card:not(.choice-card-primary) .card-stat {
-  border-color: var(--line);
-  color: var(--muted) !important;
 }
 
 .group-context {
@@ -1618,11 +1573,6 @@ input:focus-visible {
   }
 
   .result-actions {
-    flex-direction: column;
-  }
-
-  .type-report-row {
-    align-items: flex-start;
     flex-direction: column;
   }
 
