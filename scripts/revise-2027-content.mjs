@@ -1052,6 +1052,686 @@ for (const [id, revision] of Object.entries(calculatorFreeThresholds)) {
   ], `Løkken kjøres ${math(number(result))} ganger, så programmet skriver ut ${math(number(result))}.`);
 }
 
+// Språket i en eksamensoppgave skal hjelpe eleven å forstå hva tallene betyr.
+// Ren algebra kan fortsatt være abstrakt, men anvendte oppgaver får navngitte
+// størrelser, realistiske enheter og korte situasjoner som tallene passer inn i.
+function reviseContext(id, { sporsmal, svar, units, labels, dataCategories } = {}) {
+  const question = questions.get(id);
+  const changes = {};
+  if (sporsmal) changes.sporsmal = sporsmal;
+  if (svar) changes.svar = svar;
+  if (units || labels) {
+    changes.fasit = {
+      ...question.fasit,
+      verdier: question.fasit.verdier.map((answer, index) => ({
+        ...answer,
+        ...(units?.[index] !== undefined ? { enhet: units[index] } : {}),
+        ...(labels?.[index] ? { etikett: labels[index] } : {}),
+      })),
+    };
+  }
+  if (dataCategories) {
+    changes.data = {
+      ...question.data,
+      tabell: { ...question.data.tabell, kategori: dataCategories },
+    };
+  }
+  setQuestion(id, changes);
+}
+
+const groupIntroductions2027 = {
+  "d2-prosent-01": `Prisen på en varmepumpe er først ${math("28\\,500")} kr. Prisen settes ned med ${math("18\\,\\%")} og økes senere med ${math("25\\,\\%")}.`,
+  "d2-prosent-02": `En organisasjon har først ${math("4\\,200")} medlemmer. Medlemstallet øker med ${math("12\\,\\%")} ett år og synker med ${math("8\\,\\%")} året etter.`,
+  "d2-prosent-03": `En virksomhet bruker først ${math("185\\,000")} kWh per år. Energibruken reduseres først med ${math("15\\,\\%")} og deretter med ${math("6\\,\\%")}.`,
+  "d2-prosent-04": `En nettbutikk har først en årlig omsetning på ${math("760\\,000")} kr. Omsetningen øker først med ${math("20\\,\\%")} og deretter med ${math("10\\,\\%")} året etter.`,
+  "d2-prosent-05": `En virksomhet har først et årlig utslipp på ${math("1\\,280")} tonn. Utslippet reduseres med ${math("22\\,\\%")} og øker deretter med ${math("5\\,\\%")}.`,
+  "d2-eksponential-01": `Antall månedlige besøk på en digital tjeneste modelleres med ${math("M(x)=3\\,200\\cdot1{,}09^x")}, der ${math("x")} er antall måneder etter start.`,
+  "d2-eksponential-02": `Restmengden av et stoff modelleres med ${math("M(x)=850\\cdot0{,}82^x")}, der ${math("x")} er antall timer etter start og ${math("M(x)")} måles i gram.`,
+  "d2-eksponential-03": `Antall elsykler i en ordning modelleres med ${math("M(x)=640\\cdot1{,}18^x")}, der ${math("x")} er antall år etter start.`,
+  "d2-eksponential-04": `Det årlige vannforbruket modelleres med ${math("M(x)=240\\,000\\cdot0{,}94^x")}, der ${math("x")} er antall år etter start og ${math("M(x)")} måles i m³.`,
+  "d2-eksponential-05": `Saldoen på en sparekonto modelleres med ${math("M(x)=18\\,000\\cdot1{,}045^x")}, der ${math("x")} er antall år etter at pengene ble satt inn.`,
+  "d2-lineaer-01": `To bildelingstjenester bruker prismodellene ${math("A(x)=180+4{,}5x")} og ${math("B(x)=60+7{,}5x")}, der ${math("x")} er kjørelengden i kilometer og prisen måles i kroner.`,
+  "d2-lineaer-02": `To mobilabonnement bruker prismodellene ${math("A(x)=299+0{,}8x")} og ${math("B(x)=149+1{,}8x")}, der ${math("x")} er databruken i GB og prisen måles i kroner.`,
+  "d2-lineaer-03": `To treningssentre bruker prismodellene ${math("A(x)=499")} og ${math("B(x)=199+30x")}, der ${math("x")} er antall besøk i en måned og prisen måles i kroner.`,
+  "d2-lineaer-04": `To firmaer leier ut samme type verktøy. Prisene modelleres med ${math("A(x)=250+85x")} og ${math("B(x)=550+45x")}, der ${math("x")} er antall døgn.`,
+  "d2-lineaer-05": `To ladeavtaler bruker prismodellene ${math("A(x)=79+2{,}4x")} og ${math("B(x)=199+1{,}8x")}, der ${math("x")} er energimengden i kWh og prisen måles i kroner.`,
+  "d2-statistikk-01": "Tabellen viser reisetiden til skolen, målt i minutter, for elevene i gruppe A og gruppe B.",
+  "d2-statistikk-02": "Tabellen viser daglig skjermtid i minutter for deltakerne i gruppe A og gruppe B.",
+  "d2-statistikk-03": "Tabellen viser antall produserte enheter på hvert skift for produksjonslinje A og produksjonslinje B.",
+  "d2-statistikk-04": "Tabellen viser ventetid i minutter for kunder ved servicepunkt A og servicepunkt B.",
+  "d2-statistikk-05": "Tabellen viser ukentlig treningsmengde i timer for deltakerne i gruppe A og gruppe B.",
+  "d2-gruppert-01": "Fordelingen viser reisetiden til jobb for 50 ansatte. Reisetidene er gruppert i intervaller og målt i minutter.",
+  "d2-gruppert-02": "Fordelingen viser hvor mange minutter 60 kunder oppholdt seg i en butikk. Tidene er gruppert i intervaller.",
+  "d2-gruppert-03": "Fordelingen viser antall enheter som ble produsert per time i 50 registrerte timer. Resultatene er gruppert i intervaller.",
+  "d2-gruppert-04": "Fordelingen viser daglig energibruk for 50 dager. Energibruken er gruppert i intervaller og målt i kWh.",
+  "d2-gruppert-05": "Fordelingen viser ukentlig treningsmengde for 50 personer. Treningstiden er gruppert i intervaller og målt i timer.",
+  "d2-figur-01": "De fire første figurene viser benker som settes sammen etter det samme mønsteret.",
+  "d2-figur-02": "De fire første figurene viser hvor mange fliser som trengs rundt et kvadrat som vokser fra figur til figur.",
+  "d2-figur-03": "De fire første figurene viser stoler rundt bord som kobles sammen på samme måte.",
+  "d2-figur-04": "De fire første figurene viser et trekantmønster av prikker.",
+  "d2-figur-05": "De fire første figurene viser antall ruter i en ramme som vokser fra figur til figur.",
+  "d2-samfunn-01": "Tabellen viser hvor mange personer som oppga bil, kollektivtransport, sykkel eller gange som sin vanligste reisemåte i to undersøkelser.",
+  "d2-samfunn-02": "Tabellen viser energiproduksjon i GWh fra fire energikilder i to ulike år.",
+  "d2-samfunn-03": "Tabellen viser antall søkere til fire utdanningsområder i to ulike år.",
+  "d2-samfunn-04": "Tabellen viser avfallsmengden i tonn fordelt på fire avfallstyper i to ulike år.",
+  "d2-samfunn-05": "Tabellen viser antall besøk, målt i tusen, til fire kulturaktiviteter i to ulike år.",
+};
+
+for (const [id, innledning] of Object.entries(groupIntroductions2027)) {
+  groups.get(id).innledning = innledning;
+}
+
+for (const [id, xUnit] of Object.entries({
+  "d2-eksponential-01": "måneder",
+  "d2-eksponential-02": "timer",
+  "d2-eksponential-03": "år",
+  "d2-eksponential-04": "år",
+  "d2-eksponential-05": "år",
+})) {
+  groups.get(id).data.x_enhet = xUnit;
+}
+
+const del1ContextRevisions = {
+  "2py27-001": {
+    sporsmal: `På en aktivitetsdag deltar ${math("240")} elever. ${math("15\\,\\%")} av elevene velger klatring. Hvor mange elever velger klatring?`,
+    svar: `${math("240\\cdot0{,}15=36")}. Det er ${math("36")} elever som velger klatring.`,
+    units: ["elever"],
+  },
+  "2py27-002": {
+    sporsmal: `En konsert har ${math("360")} billetter. Den første dagen blir ${math("25\\,\\%")} av billettene solgt. Hvor mange billetter blir solgt den første dagen?`,
+    svar: `${math("360\\cdot0{,}25=90")}. Det blir solgt ${math("90")} billetter.`,
+    units: ["billetter"],
+  },
+  "2py27-003": {
+    sporsmal: `En arbeidsplass har ${math("450")} ansatte. ${math("32\\,\\%")} sykler til jobb. Hvor mange ansatte sykler til jobb?`,
+    svar: `${math("450\\cdot0{,}32=144")}. Det er ${math("144")} ansatte som sykler til jobb.`,
+    units: ["ansatte"],
+  },
+  "2py27-004": {
+    sporsmal: `Et idrettslag har ${math("640")} medlemmer. ${math("12{,}5\\,\\%")} av medlemmene er trenere. Hvor mange trenere har idrettslaget?`,
+    svar: `${math("640\\cdot0{,}125=80")}. Idrettslaget har ${math("80")} trenere.`,
+    units: ["trenere"],
+  },
+  "2py27-005": {
+    sporsmal: `I en spørreundersøkelse kom det inn ${math("875")} svar. ${math("8\\,\\%")} svarte «vet ikke». Hvor mange svarte «vet ikke»?`,
+    svar: `${math("875\\cdot0{,}08=70")}. Det var ${math("70")} slike svar.`,
+    units: ["svar"],
+  },
+  "2py27-006": { sporsmal: `På en skole reiser ${math("18")} av ${math("80")} elever med tog. Hvor mange prosent av elevene reiser med tog?` },
+  "2py27-007": { sporsmal: `I en kantine velger ${math("35")} av ${math("125")} kunder vegetarretten. Hvor mange prosent velger vegetarretten?` },
+  "2py27-008": { sporsmal: `I en undersøkelse svarer ${math("66")} av ${math("240")} personer at de bruker kollektivtransport daglig. Hvor mange prosent er dette?` },
+  "2py27-009": { sporsmal: `I en medlemsundersøkelse svarer ${math("117")} av ${math("360")} medlemmer ja. Hvor mange prosent svarer ja?` },
+  "2py27-010": { sporsmal: `Et teater solgte ${math("275")} av ${math("625")} billetter på nett. Hvor mange prosent av billettene ble solgt på nett?` },
+  "2py27-011": {
+    sporsmal: `${math("48")} frivillige utgjør ${math("12\\,\\%")} av alle som deltar på en festival. Hvor mange deltakere er det totalt?`,
+    svar: `Det er ${math("400")} deltakere på festivalen.`,
+    units: ["deltakere"],
+  },
+  "2py27-012": {
+    sporsmal: `${math("64")} sykler utgjør ${math("20\\,\\%")} av alle registrerte kjøretøy i en telling. Hvor mange kjøretøy ble registrert?`,
+    svar: `Det ble registrert ${math("320")} kjøretøy.`,
+    units: ["kjøretøy"],
+  },
+  "2py27-013": {
+    sporsmal: `${math("190")} billetter utgjør ${math("25\\,\\%")} av alle billettene til en forestilling. Hvor mange billetter er det totalt?`,
+    svar: `Det er ${math("760")} billetter totalt.`,
+    units: ["billetter"],
+  },
+  "2py27-014": {
+    sporsmal: `${math("162")} ansatte jobber skift. Dette er ${math("30\\,\\%")} av de ansatte i bedriften. Hvor mange ansatte har bedriften?`,
+    svar: `Bedriften har ${math("540")} ansatte.`,
+    units: ["ansatte"],
+  },
+  "2py27-015": {
+    sporsmal: `${math("360")} plasser utgjør ${math("40\\,\\%")} av kapasiteten i en konsertsal. Hvor mange plasser har salen?`,
+    svar: `Konsertsalen har ${math("900")} plasser.`,
+    units: ["plasser"],
+  },
+  "2py27-016": { sporsmal: `Andelen som reiser kollektivt, økte fra ${math("18\\,\\%")} til ${math("27\\,\\%")}. Oppgi økningen i prosentpoeng og i prosent.` },
+  "2py27-017": { sporsmal: `Andelen som svarte ja i en undersøkelse, sank fra ${math("40\\,\\%")} til ${math("34\\,\\%")}. Oppgi endringen i prosentpoeng og i prosent.` },
+  "2py27-018": { sporsmal: `Renten på et lån økte fra ${math("6\\,\\%")} til ${math("9\\,\\%")}. Oppgi økningen i prosentpoeng og i prosent.` },
+  "2py27-019": { sporsmal: `Andelen fornybar energi sank fra ${math("72\\,\\%")} til ${math("63\\,\\%")}. Oppgi endringen i prosentpoeng og i prosent.` },
+  "2py27-020": { sporsmal: `Andelen elever med fravær en bestemt dag økte fra ${math("12\\,\\%")} til ${math("15\\,\\%")}. Oppgi økningen i prosentpoeng og i prosent.` },
+  "2py27-021": { sporsmal: `Prisen på en vare settes ned med ${math("35\\,\\%")}. Hvilken vekstfaktor skal prisen multipliseres med?` },
+  "2py27-022": { sporsmal: `Antall brukere av en tjeneste multipliseres med vekstfaktoren ${math("0{,}82")}. Hva er den prosentvise endringen i antall brukere?` },
+  "2py27-023": { sporsmal: `Vannforbruket i en bygning reduseres med ${math("7\\,\\%")}. Hvilken vekstfaktor skal forbruket multipliseres med?` },
+  "2py27-024": { sporsmal: `Medlemstallet i et idrettslag multipliseres med vekstfaktoren ${math("1{,}12")}. Hva er den prosentvise endringen i medlemstallet?` },
+  "2py27-025": { sporsmal: `Prisen på en tjeneste økes med ${math("45\\,\\%")}. Hvilken vekstfaktor skal prisen multipliseres med?` },
+  "2py27-026": {
+    sporsmal: `Prisen på en sykkel økes først med ${math("20\\,\\%")} og settes senere ned med ${math("20\\,\\%")}. Hva er den samlede prosentvise endringen i prisen?`,
+    svar: `Sluttprisen er ${math("96\\,\\%")} av den opprinnelige prisen. Den samlede endringen er derfor ${math("-4\\,\\%")}.`,
+  },
+  "2py27-027": {
+    sporsmal: `Medlemstallet i en forening synker først med ${math("10\\,\\%")} og øker deretter med ${math("10\\,\\%")}. Hva er den samlede prosentvise endringen?`,
+    svar: `Det nye medlemstallet er ${math("99\\,\\%")} av det opprinnelige. Den samlede endringen er derfor ${math("-1\\,\\%")}.`,
+  },
+  "2py27-077": {
+    sporsmal: `En modell for malingsbehov er ${math("D=0{,}04m+1{,}2")}, der ${math("m")} er veggarealet i m² og ${math("D")} er antall liter maling. Finn ${math("D")} når ${math("m=70")}.`,
+    svar: `${math("D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4")} liter.`,
+    units: ["liter"],
+  },
+  "2py27-078": {
+    sporsmal: `En tank inneholder ${math("120")} liter vann og fylles med ${math("3{,}5")} liter per minutt. Modellen er ${math("V(t)=3{,}5t+120")}. Hvor mange minutter tar det før tanken inneholder ${math("365")} liter?`,
+    svar: `${math("t=(365-120)/3{,}5=70")}. Det tar ${math("70")} minutter.`,
+    units: ["minutter"],
+  },
+  "2py27-079": {
+    sporsmal: `En drosjetur koster ${math("K(x)=8x+45")} kroner, der ${math("x")} er antall kilometer. Hvor lang er turen når prisen er ${math("285")} kr?`,
+    svar: `${math("x=(285-45)/8=30")}. Turen er ${math("30")} km.`,
+    units: ["km"],
+  },
+  "2py27-080": {
+    sporsmal: `En ladeavtale har kostnaden ${math("K(x)=2{,}4x+150")} kroner, der ${math("x")} er antall kWh. Hvor mange kWh er brukt når kostnaden er ${math("390")} kr?`,
+    svar: `${math("x=(390-150)/2{,}4=100")}. Det er brukt ${math("100")} kWh.`,
+    units: ["kWh"],
+  },
+  "2py27-081": {
+    sporsmal: `Et sparebeløp modelleres med ${math("S(m)=12m+75")}, der ${math("m")} er antall måneder. Etter hvor mange måneder er sparebeløpet ${math("495")} kr?`,
+    svar: `${math("m=(495-75)/12=35")}. Det tar ${math("35")} måneder.`,
+    units: ["måneder"],
+  },
+  "2py27-082": {
+    sporsmal: `Høyden til en plante modelleres med ${math("H(d)=0{,}8d+36")}, der ${math("d")} er antall dager og høyden måles i centimeter. Etter hvor mange dager er planten ${math("100")} cm høy?`,
+    svar: `${math("d=(100-36)/0{,}8=80")}. Planten er ${math("100")} cm høy etter ${math("80")} dager.`,
+    units: ["dager"],
+  },
+};
+
+for (const [id, revision] of Object.entries(del1ContextRevisions)) reviseContext(id, revision);
+
+const reversePercentContexts = {
+  "2py27-028": {
+    sporsmal: `En årsavgift ble økt med ${math("20\\,\\%")} til ${math("816")} kr. Hva var årsavgiften før økningen?`,
+    subject: "årsavgiften",
+    unit: "kr",
+    hand: `Siden ${math("120\\,\\%=816")} kr, er ${math("10\\,\\%=816/12=68")} kr.`,
+  },
+  "2py27-029": {
+    sporsmal: `En jakke ble satt ned med ${math("10\\,\\%")} og kostet da ${math("630")} kr. Hva kostet jakken før rabatten?`,
+    subject: "prisen på jakken",
+    unit: "kr",
+    hand: `Siden ${math("90\\,\\%=630")} kr, er ${math("10\\,\\%=630/9=70")} kr.`,
+  },
+  "2py27-030": {
+    sporsmal: `Prisen på en sykkel ble økt med ${math("25\\,\\%")} til ${math("1\\,500")} kr. Hva kostet sykkelen før prisøkningen?`,
+    subject: "prisen på sykkelen",
+    unit: "kr",
+    hand: `Siden ${math("125\\,\\%=1\\,500")} kr, er ${math("25\\,\\%=1\\,500/5=300")} kr.`,
+  },
+  "2py27-031": {
+    sporsmal: `Et årskort ble satt ned med ${math("5\\,\\%")} og kostet da ${math("760")} kr. Hva kostet årskortet før rabatten?`,
+    subject: "prisen på årskortet",
+    unit: "kr",
+    hand: `${math("95\\,\\%")} består av 19 deler på ${math("5\\,\\%")}. Derfor er ${math("5\\,\\%=760/19=40")} kr.`,
+  },
+  "2py27-032": {
+    sporsmal: `Medlemstallet i en organisasjon økte med ${math("50\\,\\%")} til ${math("1\\,950")}. Hvor mange medlemmer hadde organisasjonen før økningen?`,
+    subject: "medlemstallet",
+    unit: "medlemmer",
+    hand: `Siden ${math("150\\,\\%=1\\,950")}, er ${math("50\\,\\%=1\\,950/3=650")}.`,
+  },
+};
+
+for (const [id, context] of Object.entries(reversePercentContexts)) {
+  const question = questions.get(id);
+  const { ny, endring } = question.kontroll.inndata;
+  const original = question.kontroll.resultat[0];
+  const factor = 1 + endring / 100;
+  setQuestion(id, {
+    sporsmal: context.sporsmal,
+    hint: [
+      `Definer den ukjente: La ${math("x")} være ${context.subject} før prosentendringen.`,
+      `Finn vekstfaktoren: ${math(`${Math.abs(endring)}\\,\\%`)} er ${math(number(Math.abs(endring / 100)))}. ${endring > 0 ? "Ved økning legger vi dette tallet til 1" : "Ved nedgang trekker vi dette tallet fra 1"}, og får ${math(number(factor))}.`,
+      `Lag ligningen: ${context.subject[0].toUpperCase()}${context.subject.slice(1)} multiplisert med vekstfaktoren skal bli ${math(number(ny))}${context.unit === "kr" ? " kr" : ""}. Det gir ${math(`${number(factor)}x=${number(ny)}`)}.`,
+      `Regn uten kalkulator: ${context.hand}`,
+      `Regn ut: ${math("100\\,\\%")} er ${math(number(original))}${context.unit === "kr" ? " kr" : " medlemmer"}. Dette er svaret oppgaven spør etter.`,
+      `Kontroller svaret: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}. Vi får den oppgitte verdien etter prosentendringen.`,
+    ],
+    svar: `${context.subject[0].toUpperCase()}${context.subject.slice(1)} var ${math(number(original))} ${context.unit}. Kontroll: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}.`,
+    fasit: {
+      ...question.fasit,
+      verdier: question.fasit.verdier.map((answer) => ({ ...answer, enhet: context.unit })),
+    },
+  });
+}
+
+const del1AppliedRevisions = {
+  "2py27-103": {
+    sporsmal: `Fire penner koster ${math("74")} kr. Prisen ${math("K")} er proporsjonal med antall penner ${math("x")}, slik at ${math("K=kx")}. Finn ${math("k")}, og tolk svaret.`,
+    svar: `${math("k=74/4=18{,}5")}. Én penn koster ${math("18{,}5")} kr.`,
+    units: ["kr per penn"],
+  },
+  "2py27-104": {
+    sporsmal: `Seks rundstykker koster ${math("51")} kr. Prisen ${math("K")} er proporsjonal med antall rundstykker ${math("x")}, slik at ${math("K=kx")}. Finn ${math("k")}, og tolk svaret.`,
+    svar: `${math("k=51/6=8{,}5")}. Ett rundstykke koster ${math("8{,}5")} kr.`,
+    units: ["kr per rundstykke"],
+  },
+  "2py27-105": {
+    sporsmal: `En maskin produserer ${math("120")} deler på ${math("8")} timer med jevn fart. Antall deler ${math("y")} er proporsjonalt med tiden ${math("x")}, slik at ${math("y=kx")}. Finn ${math("k")}, og tolk svaret.`,
+    svar: `${math("k=120/8=15")}. Maskinen produserer ${math("15")} deler per time.`,
+    units: ["deler per time"],
+  },
+  "2py27-106": {
+    sporsmal: `Fem meter stoff koster ${math("325")} kr. Prisen ${math("K")} er proporsjonal med lengden ${math("x")}, slik at ${math("K=kx")}. Finn ${math("k")}, og tolk svaret.`,
+    svar: `${math("k=325/5=65")}. Meterprisen er ${math("65")} kr.`,
+    units: ["kr per meter"],
+  },
+  "2py27-107": {
+    sporsmal: `En bil kjører ${math("210")} km på ${math("12")} liter drivstoff. Kjørelengden ${math("y")} regnes som proporsjonal med drivstoffmengden ${math("x")}, slik at ${math("y=kx")}. Finn ${math("k")}, og tolk svaret.`,
+    svar: `${math("k=210/12=17{,}5")}. Modellen tilsvarer ${math("17{,}5")} km per liter.`,
+    units: ["km per liter"],
+  },
+  "2py27-108": {
+    sporsmal: `${math("3")} kg poteter koster ${math("84")} kr. Hva koster ${math("7")} kg når prisen er proporsjonal med vekten?`,
+    svar: `Kiloprisen er ${math("84/3=28")} kr. Da koster ${math("7")} kg ${math("7\\cdot28=196")} kr.`,
+  },
+  "2py27-109": {
+    sporsmal: `${math("5")} meter gavebånd koster ${math("42{,}5")} kr. Hva koster ${math("12")} meter når prisen er proporsjonal med lengden?`,
+    svar: `Meterprisen er ${math("42{,}5/5=8{,}5")} kr. Da koster ${math("12")} meter ${math("12\\cdot8{,}5=102")} kr.`,
+  },
+  "2py27-110": {
+    sporsmal: `${math("8")} bussbilletter koster ${math("260")} kr. Hva koster ${math("14")} billetter når alle billettene har samme pris?`,
+    svar: `Én billett koster ${math("260/8=32{,}5")} kr. Da koster ${math("14")} billetter ${math("14\\cdot32{,}5=455")} kr.`,
+  },
+  "2py27-111": {
+    sporsmal: `${math("6")} meter kabel koster ${math("450")} kr. Hva koster ${math("9")} meter når prisen er proporsjonal med lengden?`,
+    svar: `Meterprisen er ${math("450/6=75")} kr. Da koster ${math("9")} meter ${math("9\\cdot75=675")} kr.`,
+  },
+  "2py27-112": {
+    sporsmal: `En oppskrift til ${math("4")} porsjoner bruker ${math("18")} dl suppe. Hvor mye suppe trengs til ${math("15")} porsjoner når mengden er proporsjonal med antall porsjoner?`,
+    svar: `Per porsjon trengs ${math("18/4=4{,}5")} dl. Til ${math("15")} porsjoner trengs ${math("15\\cdot4{,}5=67{,}5")} dl.`,
+  },
+  "2py27-113": {
+    sporsmal: `Seks arbeidere bruker ${math("20")} timer på en jobb. Hvor lang tid bruker ${math("8")} arbeidere dersom jobben er den samme og alle arbeider i samme tempo?`,
+  },
+  "2py27-115": {
+    sporsmal: `Fire like pumper tømmer et basseng på ${math("18")} timer. Hvor lang tid bruker ${math("9")} like pumper på samme vannmengde?`,
+  },
+  "2py27-116": {
+    sporsmal: `Tolv like maskiner bruker ${math("30")} dager på en produksjonsordre. Hvor lang tid bruker ${math("20")} slike maskiner på den samme ordren?`,
+  },
+  "2py27-117": {
+    sporsmal: `Fem like kraner flytter en bestemt last på ${math("24")} timer. Hvor lang tid bruker ${math("16")} kraner på den samme lasten?`,
+  },
+  "2py27-118": {
+    sporsmal: `Tiden for å pakke en forsendelse modelleres med ${math("T(x)=240/x+5")}, der ${math("x")} er antall arbeidere og ${math("T(x)")} måles i minutter. Finn ${math("T(8)")}. Hvor mange minutter i modellen er uavhengige av antall arbeidere?`,
+    svar: `${math("T(8)=240/8+5=35")} minutter. Konstantleddet viser at ${math("5")} minutter ikke avhenger av antall arbeidere.`,
+    units: ["minutter", "minutter"],
+    labels: ["Samlet tid", "Fast tid"],
+  },
+  "2py27-119": {
+    sporsmal: `Tiden for å rigge et arrangement modelleres med ${math("T(x)=360/x+12")}, der ${math("x")} er antall arbeidere og ${math("T(x)")} måles i minutter. Finn ${math("T(18)")}. Hvor mange minutter i modellen er uavhengige av antall arbeidere?`,
+    svar: `${math("T(18)=360/18+12=32")} minutter. Konstantleddet viser at ${math("12")} minutter ikke avhenger av antall arbeidere.`,
+    units: ["minutter", "minutter"],
+    labels: ["Samlet tid", "Fast tid"],
+  },
+  "2py27-120": {
+    sporsmal: `Tiden for å sortere en bunke skjemaer modelleres med ${math("T(x)=150/x+4")}, der ${math("x")} er antall arbeidere og ${math("T(x)")} måles i minutter. Finn ${math("T(10)")}. Hvor mange minutter i modellen er uavhengige av antall arbeidere?`,
+    svar: `${math("T(10)=150/10+4=19")} minutter. Konstantleddet viser at ${math("4")} minutter ikke avhenger av antall arbeidere.`,
+    units: ["minutter", "minutter"],
+    labels: ["Samlet tid", "Fast tid"],
+  },
+  "2py27-121": {
+    sporsmal: `Tiden for å kontrollere en vareleveranse modelleres med ${math("T(x)=480/x+7")}, der ${math("x")} er antall arbeidere og ${math("T(x)")} måles i minutter. Finn ${math("T(16)")}. Hvor mange minutter i modellen er uavhengige av antall arbeidere?`,
+    svar: `${math("T(16)=480/16+7=37")} minutter. Konstantleddet viser at ${math("7")} minutter ikke avhenger av antall arbeidere.`,
+    units: ["minutter", "minutter"],
+    labels: ["Samlet tid", "Fast tid"],
+  },
+  "2py27-122": {
+    sporsmal: `Tiden for en varetelling modelleres med ${math("T(x)=900/x+15")}, der ${math("x")} er antall arbeidere og ${math("T(x)")} måles i minutter. Finn ${math("T(30)")}. Hvor mange minutter i modellen er uavhengige av antall arbeidere?`,
+    svar: `${math("T(30)=900/30+15=45")} minutter. Konstantleddet viser at ${math("15")} minutter ikke avhenger av antall arbeidere.`,
+    units: ["minutter", "minutter"],
+    labels: ["Samlet tid", "Fast tid"],
+  },
+};
+
+for (const [id, revision] of Object.entries(del1AppliedRevisions)) reviseContext(id, revision);
+
+const frequencyContexts = [
+  ["2py27-143", 1, "en kundemåling"],
+  ["2py27-144", 2, "en elevundersøkelse"],
+  ["2py27-145", 3, "en kursvurdering"],
+  ["2py27-146", 4, "en publikumsundersøkelse"],
+  ["2py27-147", 1, "en serviceundersøkelse"],
+];
+for (const [id, rating, context] of frequencyContexts) {
+  const question = questions.get(id);
+  const total = question.kontroll.inndata.frekvenser.reduce((sum, value) => sum + value, 0);
+  const frequency = question.kontroll.inndata.frekvenser[rating - 1];
+  const cumulative = question.kontroll.inndata.frekvenser.slice(0, rating).reduce((sum, value) => sum + value, 0);
+  reviseContext(id, {
+    sporsmal: `Deltakerne i ${context} ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering ${rating}, og kumulativ frekvens til og med denne vurderingen.`,
+    svar: `Det er ${math(number(total))} svar. Relativ frekvens er ${math(`${number(frequency)}/${number(total)}\\cdot100\\,\\%=${number(frequency / total * 100)}\\,\\%`)}, og kumulativ frekvens til og med vurdering ${rating} er ${math(number(cumulative))}.`,
+    dataCategories: [1, 2, 3, 4],
+  });
+}
+
+const missingAverageContexts = {
+  "2py27-148": { noun: "dagstemperaturene", values: "8, 11, 14, 17", count: 5, mean: 13, result: 15, unit: "°C" },
+  "2py27-149": { noun: "reisetidene", values: "22, 25, 28, 30, 35", count: 6, mean: 29, result: 34, unit: "minutter" },
+  "2py27-150": { noun: "poengsummene", values: "4, 7, 9, 10, 15", count: 6, mean: 9, result: 9, unit: "poeng" },
+  "2py27-151": { noun: "testresultatene", values: "60, 72, 75, 81", count: 5, mean: 74, result: 82, unit: "poeng" },
+  "2py27-152": { noun: "ventetidene", values: "12, 18, 21, 24, 27", count: 6, mean: 20, result: 18, unit: "minutter" },
+};
+for (const [id, context] of Object.entries(missingAverageContexts)) {
+  reviseContext(id, {
+    sporsmal: `${context.noun[0].toUpperCase()}${context.noun.slice(1)} er ${math(context.values)} ${context.unit}. Én observasjon mangler. Gjennomsnittet av alle ${context.count} observasjonene er ${math(number(context.mean))} ${context.unit}. Finn den manglende observasjonen.`,
+    svar: `Totalsummen må være ${math(`${number(context.mean)}\\cdot${context.count}=${number(context.mean * context.count)}`)}. Den manglende observasjonen er ${math(number(context.result))} ${context.unit}.`,
+    units: [context.unit],
+  });
+}
+
+const conciseExamWording = {
+  "2py27-099": { sporsmal: `Vurder påstanden: «Uttrykkene ${math("2(x+4)")} og ${math("2x+4")} er like for alle ${math("x")}.»` },
+  "2py27-163": {
+    sporsmal: "I en liten bedrift tjener direktøren langt mer enn de andre ansatte. Hvilket sentralmål gir best bilde av en typisk lønn?",
+    svar: "Medianen gir best bilde av en typisk lønn fordi den påvirkes lite av den svært høye direktørlønnen.",
+  },
+  "2py27-164": {
+    sporsmal: "Hvilken framstilling passer best for å vise hvordan strømforbruket utvikler seg fra måned til måned?",
+    svar: "Et linjediagram passer best fordi målingene følger en tidsrekkefølge.",
+  },
+  "2py27-165": {
+    sporsmal: "Reisetider er gruppert i sammenhengende intervaller. Hvilken framstilling passer best for å vise fordelingen?",
+    svar: "Et histogram passer best for grupperte, sammenhengende måleverdier.",
+  },
+  "2py27-166": {
+    sporsmal: "En butikk vil finne den skostørrelsen som selges oftest. Hvilket sentralmål skal butikken bruke?",
+    svar: "Typetallet skal brukes fordi det viser den vanligste skostørrelsen.",
+  },
+  "2py27-167": {
+    sporsmal: "Noen få svært dyre boliger trekker prisene i et område kraftig opp. Hvilket sentralmål gir best bilde av en typisk boligpris?",
+    svar: "Medianen gir best bilde av en typisk boligpris fordi den påvirkes lite av de dyreste boligene.",
+  },
+  "2py27-178": {
+    sporsmal: `Et mobilabonnement koster ${math("149")} kr per måned og ${math("3")} kr per brukt GB. La ${math("x")} være antall GB. Velg modellen for månedskostnaden ${math("K(x)")}.`,
+  },
+  "2py27-181": {
+    sporsmal: `En tank inneholder ${math("240")} liter vann og tømmes med ${math("8")} liter per minutt. La ${math("x")} være antall minutter. Velg modellen for vannmengden ${math("f(x)")}.`,
+  },
+  "2py27-248": { sporsmal: `Et abonnement har kostnadsmodellen ${math("K(x)=250+6x")}. Hva betyr tallet ${math("250")} i modellen?` },
+  "2py27-251": { sporsmal: `En proporsjonal graf går gjennom punktet ${math("(4,28)")}. Hva er proporsjonalitetskonstanten?` },
+  "2py27-252": { sporsmal: `En omvendt proporsjonal sammenheng har modellen ${math("y=120/x")}. Hvilken påstand er riktig?` },
+  "2py27-262": { sporsmal: `Finn verdien av ${math("6x+5")} når ${math("x=7")}.` },
+};
+for (const [id, revision] of Object.entries(conciseExamWording)) reviseContext(id, revision);
+
+{
+  const question = questions.get("2py27-249");
+  const correct = "Modellen sier at tanken er tom etter 30 minutter.";
+  setQuestion(question.id, {
+    sporsmal: `Vannmengden i en tank modelleres med ${math("V(t)=900-30t")}, der ${math("t")} er antall minutter. Hva betyr det at grafen krysser ${math("t")}-aksen ved ${math("30")}?`,
+    svar: `Siden ${math("V(30)=0")}, sier modellen at tanken er tom etter ${math("30")} minutter.`,
+    fasit: {
+      ...question.fasit,
+      riktige: [correct],
+      alternativer: question.fasit.alternativer.map((option) =>
+        option === "Modellen sier at volumet er 0 etter 30 tidsenheter." ? correct : option),
+    },
+    kontroll: { ...question.kontroll, riktige: [correct] },
+  });
+}
+
+{
+  const question = questions.get("2py27-250");
+  const oldCorrect = "Størrelsen synker med 20 % per periode.";
+  const correct = "Algemengden synker med 20 % per uke.";
+  setQuestion(question.id, {
+    sporsmal: `En algekultur modelleres eksponentielt. Algemengden multipliseres med ${math("0{,}8")} hver uke. Hvilken tolkning er riktig?`,
+    svar: `Faktoren ${math("0{,}8")} betyr at ${math("80\\,\\%")} er igjen hver uke. Algemengden synker derfor med ${math("20\\,\\%")} per uke.`,
+    fasit: {
+      ...question.fasit,
+      riktige: [correct],
+      alternativer: question.fasit.alternativer.map((option) => option === oldCorrect ? correct : option),
+    },
+    kontroll: { ...question.kontroll, riktige: [correct] },
+  });
+}
+
+const intersectionContexts = {
+  "2py27-183": { context: "To mobilabonnement", x: "antall GB", unit: "GB" },
+  "2py27-184": { context: "To trykkerier", x: "antall plakater", unit: "plakater" },
+  "2py27-185": { context: "To bildelingstjenester", x: "antall kjørte kilometer", unit: "km" },
+  "2py27-186": { context: "To ladeavtaler", x: "antall kWh", unit: "kWh" },
+  "2py27-187": { context: "To vaskeritjenester", x: "antall plagg", unit: "plagg" },
+};
+for (const [id, context] of Object.entries(intersectionContexts)) {
+  const question = questions.get(id);
+  const { a1, b1, a2, b2 } = question.kontroll.inndata;
+  const [xValue, price] = question.kontroll.resultat;
+  reviseContext(id, {
+    sporsmal: `${context.context} har kostnadsmodellene ${math(`A(x)=${number(b1)}+${number(a1)}x`)} og ${math(`B(x)=${number(b2)}+${number(a2)}x`)}. Her er ${math("x")} ${context.x}, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?`,
+    svar: `${math(`${number(b1)}+${number(a1)}x=${number(b2)}+${number(a2)}x`)} gir ${math(`x=${number(xValue)}`)}. Tjenestene koster det samme ved ${math(number(xValue))} ${context.unit}, og kostnaden er da ${math(number(price))} kr.`,
+    units: [context.unit, "kr"],
+    labels: [`Forbruk ved samme kostnad (${context.unit})`, "Felles kostnad"],
+  });
+}
+
+const exponentialInterpretations = {
+  "2py27-193": { subject: "Antall abonnenter", xUnit: "år", yUnit: "abonnenter" },
+  "2py27-194": { subject: "Stoffmengden i gram", xUnit: "timer", yUnit: "gram" },
+  "2py27-195": { subject: "Antall bakterier i en prøve", xUnit: "timer", yUnit: "bakterier" },
+  "2py27-196": { subject: "Et årlig utslipp i tonn", xUnit: "år", yUnit: "tonn" },
+  "2py27-197": { subject: "Medlemstallet i en organisasjon", xUnit: "år", yUnit: "medlemmer" },
+};
+for (const [id, context] of Object.entries(exponentialInterpretations)) {
+  const question = questions.get(id);
+  const { a, faktor } = question.kontroll.inndata;
+  const percent = normalizedNumber((faktor - 1) * 100);
+  reviseContext(id, {
+    sporsmal: `${context.subject} modelleres med ${math(`f(x)=${number(a)}\\cdot${number(faktor)}^x`)}, der ${math("x")} er antall ${context.xUnit} etter start. Oppgi startverdien og den prosentvise endringen per ${context.xUnit === "år" ? "år" : "time"}.`,
+    svar: `Startverdien er ${math(number(a))} ${context.yUnit}. Den prosentvise endringen er ${math(`${number(percent)}\\,\\%`)} per ${context.xUnit === "år" ? "år" : "time"}.`,
+    units: [context.yUnit, "%"],
+    labels: ["Startverdi", `Prosentvis endring per ${context.xUnit === "år" ? "år" : "time"}`],
+  });
+}
+
+const averageRateContexts = {
+  "2py27-198": {
+    sporsmal: `Vannmengden i en tank øker fra ${math("15")} liter ved ${math("t=0")} minutter til ${math("45")} liter ved ${math("t=10")} minutter. Finn den gjennomsnittlige vekstfarten.`,
+    svar: `Den gjennomsnittlige vekstfarten er ${math("(45-15)/(10-0)=3")} liter per minutt.`, unit: "liter per minutt",
+  },
+  "2py27-199": {
+    sporsmal: `Temperaturen i en ovn øker fra ${math("30")} °C ved ${math("t=2")} minutter til ${math("78")} °C ved ${math("t=18")} minutter. Finn den gjennomsnittlige vekstfarten.`,
+    svar: `Den gjennomsnittlige vekstfarten er ${math("(78-30)/(18-2)=3")} °C per minutt.`, unit: "°C per minutt",
+  },
+  "2py27-200": {
+    sporsmal: `Vannmengden i et basseng øker fra ${math("12")} m³ ved ${math("t=5")} minutter til ${math("61")} m³ ved ${math("t=25")} minutter. Finn den gjennomsnittlige vekstfarten.`,
+    svar: `Den gjennomsnittlige vekstfarten er ${math("(61-12)/(25-5)=2{,}45")} m³ per minutt.`, unit: "m³ per minutt",
+  },
+  "2py27-201": {
+    sporsmal: `Temperaturen i en væske synker fra ${math("120")} °C ved ${math("t=0")} minutter til ${math("72")} °C ved ${math("t=8")} minutter. Finn den gjennomsnittlige vekstfarten.`,
+    svar: `Den gjennomsnittlige vekstfarten er ${math("(72-120)/(8-0)=-6")} °C per minutt.`, unit: "°C per minutt",
+  },
+  "2py27-202": {
+    sporsmal: `En produksjonslinje har produsert ${math("250")} enheter etter ${math("10")} timer og ${math("610")} enheter etter ${math("40")} timer. Finn den gjennomsnittlige vekstfarten.`,
+    svar: `Den gjennomsnittlige vekstfarten er ${math("(610-250)/(40-10)=12")} enheter per time.`, unit: "enheter per time",
+  },
+};
+for (const [id, revision] of Object.entries(averageRateContexts)) {
+  reviseContext(id, { sporsmal: revision.sporsmal, svar: revision.svar, units: [revision.unit] });
+}
+
+for (const id of ["2py27-243", "2py27-244", "2py27-245", "2py27-246", "2py27-247"]) {
+  const question = questions.get(id);
+  const result = question.kontroll.resultat[0];
+  const total = question.kontroll.inndata.kumulativ.at(-1);
+  reviseContext(id, {
+    sporsmal: "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
+    svar: `Det er ${math(number(total))} svar. Den midterste plasseringen passeres ved vurdering ${math(number(result))}, så medianvurderingen er ${math(number(result))}.`,
+    units: ["vurdering"],
+    dataCategories: [1, 2, 3, 4],
+  });
+}
+
+const del2ShortContexts = {
+  "2py27-263": {
+    sporsmal: `Prisen på et abonnement økes først med ${math("10\\,\\%")} og deretter med ${math("12\\,\\%")} året etter. Hva er den samlede prosentvise endringen i prisen?`,
+    svar: `Samlet vekstfaktor er ${math("1{,}1\\cdot1{,}12=1{,}232")}. Abonnementsprisen har økt med ${math("23{,}2\\,\\%")}.`,
+  },
+  "2py27-264": {
+    sporsmal: `Energibruken i en bygning reduseres først med ${math("8\\,\\%")} og deretter med ${math("5\\,\\%")} året etter. Hva er den samlede prosentvise endringen?`,
+    svar: `Samlet vekstfaktor er ${math("0{,}92\\cdot0{,}95=0{,}874")}. Energibruken har gått ned med ${math("12{,}6\\,\\%")}.`,
+  },
+  "2py27-265": {
+    sporsmal: `Medlemstallet i en organisasjon øker først med ${math("25\\,\\%")} og synker deretter med ${math("10\\,\\%")} året etter. Hva er den samlede prosentvise endringen?`,
+    svar: `Samlet vekstfaktor er ${math("1{,}25\\cdot0{,}9=1{,}125")}. Medlemstallet har økt med ${math("12{,}5\\,\\%")}.`,
+  },
+  "2py27-276": {
+    sporsmal: `Et nettsted har ${math("1\\,000")} daglige besøk. Antallet øker med ${math("10\\,\\%")} per år. Etter hvor mange hele år er antallet for første gang minst ${math("1\\,300")}?`,
+    svar: `Første gang grensen passeres er etter ${math("3")} år. Da gir modellen omtrent ${math("1\\,331")} daglige besøk.`, units: ["år"],
+  },
+  "2py27-277": {
+    sporsmal: `Et årlig utslipp er ${math("2\\,500")} tonn og reduseres med ${math("8\\,\\%")} per år. Etter hvor mange hele år er utslippet for første gang høyst ${math("1\\,900")} tonn?`,
+    svar: `Første gang grensen passeres er etter ${math("4")} år. Da gir modellen et utslipp på omtrent ${math("1\\,791")} tonn.`, units: ["år"],
+  },
+  "2py27-278": {
+    sporsmal: `En organisasjon har ${math("800")} medlemmer. Medlemstallet øker med ${math("15\\,\\%")} per år. Etter hvor mange hele år er medlemstallet for første gang minst ${math("1\\,200")}?`,
+    svar: `Første gang grensen passeres er etter ${math("3")} år. Da gir modellen omtrent ${math("1\\,217")} medlemmer.`, units: ["år"],
+  },
+  "2py27-279": {
+    sporsmal: `En maskin er verdt ${math("5\\,000")} kr og synker i verdi med ${math("12\\,\\%")} per år. Etter hvor mange hele år er verdien for første gang høyst ${math("3\\,000")} kr?`,
+    svar: `Første gang grensen passeres er etter ${math("4")} år. Da er modellverdien omtrent ${math("2\\,998{,}5")} kr.`, units: ["år"],
+  },
+  "2py27-280": {
+    sporsmal: `Et arrangement har ${math("1\\,200")} deltakere. Deltakertallet øker med ${math("6\\,\\%")} per år. Etter hvor mange hele år er deltakertallet for første gang minst ${math("1\\,500")}?`,
+    svar: `Første gang grensen passeres er etter ${math("4")} år. Da gir modellen omtrent ${math("1\\,515")} deltakere.`, units: ["år"],
+  },
+  "2py27-286": { sporsmal: `Reisetiden til jobb for ${math("32")} ansatte er gruppert i intervallene ${math("[0,10), [10,20), [20,40)")}. Frekvensene er henholdsvis ${math("6, 10, 16")}. Finn frekvenstettheten og den relative frekvensen for intervallet ${math("[20,40)")}.` },
+  "2py27-287": { sporsmal: `Ventetiden i minutter for ${math("31")} kunder er gruppert med klassegrensene ${math("0, 5, 15, 30")} og frekvensene ${math("4, 12, 15")}. Finn frekvenstettheten og den relative frekvensen for intervallet ${math("[5,15)")}.` },
+  "2py27-288": { sporsmal: `Antall kunder per time i ${math("42")} registrerte timer er gruppert med klassegrensene ${math("10, 20, 30, 50")} og frekvensene ${math("8, 14, 20")}. Finn frekvenstettheten og den relative frekvensen for intervallet ${math("[30,50)")}.` },
+  "2py27-289": { sporsmal: `Daglig skjermtid i minutter for ${math("39")} personer er gruppert med klassegrensene ${math("0, 20, 30, 60")} og frekvensene ${math("12, 9, 18")}. Finn frekvenstettheten og den relative frekvensen for intervallet ${math("[20,30)")}.` },
+  "2py27-290": { sporsmal: `Servicetiden i minutter for ${math("40")} kunder er gruppert med klassegrensene ${math("5, 15, 25, 45")} og frekvensene ${math("7, 11, 22")}. Finn frekvenstettheten og den relative frekvensen for intervallet ${math("[25,45)")}.` },
+  "2py27-291": { sporsmal: `Saldoen på en konto modelleres med ${math("S(x)=1\\,200\\cdot1{,}08^x")}, der ${math("x")} er antall år. Finn ${math("S(4)")}.`, svar: `${math("S(4)=1\\,200\\cdot1{,}08^4\\approx1\\,632{,}59")} kr.`, units: ["kr"] },
+  "2py27-292": { sporsmal: `Massen av et stoff modelleres med ${math("M(x)=5\\,000\\cdot0{,}93^x")}, der ${math("x")} er antall døgn og massen måles i gram. Finn ${math("M(6)")}.`, svar: `${math("M(6)=5\\,000\\cdot0{,}93^6\\approx3\\,234{,}95")} gram.`, units: ["gram"] },
+  "2py27-293": { sporsmal: `Vannmengden i et magasin modelleres med ${math("V(x)=240\\cdot1{,}15^x")}, der ${math("x")} er antall døgn og vannmengden måles i m³. Finn ${math("V(3)")}.`, svar: `${math("V(3)=240\\cdot1{,}15^3\\approx365{,}01")} m³.`, units: ["m³"] },
+  "2py27-294": { sporsmal: `Verdien av en maskin modelleres med ${math("V(x)=18\\,000\\cdot0{,}88^x")}, der ${math("x")} er antall år og verdien måles i kroner. Finn ${math("V(5)")}.`, svar: `${math("V(5)=18\\,000\\cdot0{,}88^5\\approx9\\,499{,}17")} kr.`, units: ["kr"] },
+  "2py27-295": { sporsmal: `Omsetningen i en virksomhet modelleres med ${math("O(x)=75\\cdot1{,}25^x")}, der ${math("x")} er antall år og omsetningen måles i tusen kroner. Finn ${math("O(4)")}.`, svar: `${math("O(4)=75\\cdot1{,}25^4\\approx183{,}11")} tusen kr.`, units: ["tusen kr"] },
+  "2py27-296": { sporsmal: `Tiden for å teste ${math("n")} komponenter modelleres med ${math("T(n)=2{,}5n^{1{,}4}")}, der ${math("T(n)")} måles i minutter. Finn ${math("T(8)")}.`, svar: `${math("T(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95")} minutter.`, units: ["minutter"] },
+  "2py27-297": { sporsmal: `Kabellengden i et anlegg modelleres med ${math("L(x)=18x^{0{,}5}")}, der ${math("x")} er antall tilkoblede enheter og ${math("L(x)")} måles i meter. Finn ${math("L(16)")}.`, svar: `${math("L(16)=18\\cdot16^{0{,}5}=72")} meter.`, units: ["meter"] },
+  "2py27-298": { sporsmal: `Et trekantet område har grunnlinje ${math("1{,}5x")} meter og høyde ${math("x")} meter. Arealet kan da skrives som ${math("A(x)=0{,}75x^2")}. Finn arealet når ${math("x=12")}.`, svar: `${math("A(12)=0{,}75\\cdot12^2=108")} m².`, units: ["m²"] },
+  "2py27-299": { sporsmal: `Behandlingstiden modelleres med ${math("T(x)=120x^{-0{,}5}")}, der ${math("x")} er antall prosessorer og ${math("T(x)")} måles i minutter. Finn ${math("T(25)")}.`, svar: `${math("T(25)=120\\cdot25^{-0{,}5}=24")} minutter.`, units: ["minutter"] },
+  "2py27-300": { sporsmal: `Kostnaden for å pusse opp et bad modelleres med ${math("K(x)=4{,}2x^{1{,}2}")}, der ${math("x")} er arealet i m² og ${math("K(x)")} måles i tusen kroner. Finn ${math("K(10)")}.`, svar: `${math("K(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57")} tusen kr.`, units: ["tusen kr"] },
+};
+for (const [id, revision] of Object.entries(del2ShortContexts)) reviseContext(id, revision);
+
+const percentCaseNouns = [
+  [301, "prisen"],
+  [305, "medlemstallet"],
+  [309, "energibruken"],
+  [313, "omsetningen"],
+  [317, "utslippet"],
+];
+for (const [startId, noun] of percentCaseNouns) {
+  const ids = Array.from({ length: 4 }, (_, index) => `2py27-${startId + index}`);
+  const [first, second, total, conclusion] = ids.map((id) => questions.get(id));
+  setQuestion(first.id, {
+    sporsmal: `Beregn ${noun} etter den første prosentendringen.`,
+    svar: first.svar.replace("verdien", noun),
+  });
+  setQuestion(second.id, {
+    sporsmal: `Beregn ${noun} etter begge prosentendringene.`,
+    svar: second.svar.replace("Sluttverdien", `${noun[0].toUpperCase()}${noun.slice(1)} etter begge endringene`),
+  });
+  setQuestion(total.id, { sporsmal: `Finn den samlede prosentvise endringen i ${noun}.` });
+  setQuestion(conclusion.id, { svar: conclusion.svar.replace("sluttverdien", noun) });
+}
+
+{
+  const question = questions.get("2py27-306");
+  setQuestion(question.id, {
+    sporsmal: "Beregn medlemstallet etter begge prosentendringene. Rund av til nærmeste hele medlem.",
+    svar: `Beregningen gir ${math("4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68")}. Avrundet til nærmeste hele medlem blir dette ${math("4\\,328")} medlemmer.`,
+    fasit: {
+      ...question.fasit,
+      verdier: question.fasit.verdier.map((answer) => ({ ...answer, verdi: 4328, toleranse: 0 })),
+    },
+    kontroll: { ...question.kontroll, resultat: [4328], avrunding: 0 },
+  });
+  setQuestion("2py27-308", {
+    svar: `Målet er nådd, fordi det beregnede medlemstallet er omtrent ${math("4\\,328")} medlemmer.`,
+  });
+}
+
+const exponentialCases = [
+  { start: 321, group: "d2-eksponential-01", quantity: "antall månedlige besøk", time: "måneder", timeSingular: "måned", yUnit: "besøk" },
+  { start: 325, group: "d2-eksponential-02", quantity: "stoffmengden", time: "timer", timeSingular: "time", yUnit: "gram" },
+  { start: 329, group: "d2-eksponential-03", quantity: "antall elsykler", time: "år", timeSingular: "år", yUnit: "elsykler" },
+  { start: 333, group: "d2-eksponential-04", quantity: "det årlige vannforbruket", time: "år", timeSingular: "år", yUnit: "m³" },
+  { start: 337, group: "d2-eksponential-05", quantity: "saldoen", time: "år", timeSingular: "år", yUnit: "kr" },
+];
+for (const context of exponentialCases) {
+  const [parameters, value, threshold] = [0, 1, 2].map((offset) => questions.get(`2py27-${context.start + offset}`));
+  const x = value.kontroll.inndata.x;
+  reviseContext(parameters.id, {
+    sporsmal: `Oppgi startverdien og den prosentvise endringen per ${context.timeSingular}.`,
+    svar: parameters.svar.replace("per periode", `per ${context.timeSingular}`).replace("Startverdien er", `Startverdien for ${context.quantity} er`),
+    units: [context.yUnit, "%"],
+    labels: ["Startverdi", `Prosentvis endring per ${context.timeSingular}`],
+  });
+  reviseContext(value.id, {
+    sporsmal: `Beregn ${context.quantity} etter ${math(number(x))} ${context.time}.`,
+    svar: `${value.svar.replace(/\.$/u, "")} ${context.yUnit}.`,
+    units: [context.yUnit],
+  });
+  reviseContext(threshold.id, {
+    sporsmal: threshold.sporsmal.replace("hele perioder", `hele ${context.time}`).replace("modellverdien", context.quantity),
+    svar: threshold.svar.replaceAll("perioder", context.time),
+    units: [context.time],
+  });
+}
+
+const figureCases = [
+  { start: 461, group: "d2-figur-01", noun: "benker" },
+  { start: 465, group: "d2-figur-02", noun: "fliser" },
+  { start: 469, group: "d2-figur-03", noun: "stoler" },
+  { start: 473, group: "d2-figur-04", noun: "prikker" },
+  { start: 477, group: "d2-figur-05", noun: "ruter" },
+];
+for (const context of figureCases) {
+  for (let offset = 0; offset < 4; offset += 1) {
+    const question = questions.get(`2py27-${context.start + offset}`);
+    setQuestion(question.id, {
+      sporsmal: question.sporsmal.replaceAll("elementer", context.noun),
+      svar: question.svar.replaceAll("elementer", context.noun),
+      ...(question.fasit.verdier ? {
+        fasit: {
+          ...question.fasit,
+          verdier: question.fasit.verdier.map((answer) =>
+            answer.enhet === "elementer" ? { ...answer, enhet: context.noun } : answer),
+        },
+      } : {}),
+    });
+  }
+  groups.get(context.group).visualisering.tekstalternativ =
+    groups.get(context.group).visualisering.tekstalternativ.replace("Antallene", `Antall ${context.noun}`);
+}
+
+reviseContext("2py27-379", {
+  sporsmal: `Bruk regresjonsmodellen til å anslå tid per enhet når det er produsert ${math("60")} enheter.`,
+});
+
+const contextualRateHints = {
+  "2py27-178": "Finn hvor mye kostnaden endres for hver GB, og bestem fortegnet.",
+  "2py27-179": "Finn hvor mye vannmengden endres for hvert minutt, og bestem fortegnet.",
+  "2py27-180": "Finn hvor mye temperaturen endres for hver time, og bestem fortegnet.",
+  "2py27-181": "Finn hvor mye vannmengden endres for hvert minutt, og bestem fortegnet.",
+  "2py27-182": "Finn hvor mye kostnaden endres for hver kilometer, og bestem fortegnet.",
+  "2py27-251": "Bruk punktet til å finne hvor mye y øker når x øker med 1.",
+  "2py27-344": "Stigningstallet viser prisøkningen for hver kilometer.",
+  "2py27-348": "Stigningstallet viser prisøkningen for hver GB.",
+  "2py27-352": "Stigningstallet viser prisøkningen for hvert besøk.",
+  "2py27-356": "Stigningstallet viser prisøkningen for hvert døgn.",
+  "2py27-360": "Stigningstallet viser prisøkningen for hver kWh.",
+};
+for (const [id, replacement] of Object.entries(contextualRateHints)) {
+  const question = questions.get(id);
+  setQuestion(id, {
+    hint: question.hint.map((hint) =>
+      /per x-enhet/u.test(hint) ? hint.replace(/[^:]*per x-enhet[^.]*(?:\.|$)/u, replacement) : hint),
+  });
+}
+
 // Alle oppgavene får nå en full worked example. De eksisterende, fagspesifikke
 // mellomstegene beholdes, men settes inn i en tydelig progresjon fra forståelse
 // via oppsett og utregning til kontroll. Markørene gjør passet idempotent.
@@ -1077,6 +1757,22 @@ function workedContext(question) {
   if (/kode/.test(family)) {
     return "Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.";
   }
+  if (family === "d1-prosent-av-tall") {
+    return "Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.";
+  }
+  if (family === "d1-finne-prosent") {
+    return "Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.";
+  }
+  if (family === "d1-finne-helhet") {
+    return "Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.";
+  }
+  if (family === "d1-prosentpoeng") {
+    return "Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.";
+  }
+  if (family === "d1-gjennomsnittlig-vekstfart") {
+    const timeUnit = /timer|time/u.test(question.sporsmal) ? "time" : "minutt";
+    return `Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert ${timeUnit}.`;
+  }
   if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
     return "Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.";
   }
@@ -1084,7 +1780,7 @@ function workedContext(question) {
     return "Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.";
   }
   if (/figur/.test(family)) {
-    return "Koble hvert figurnummer til antallet elementer. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.";
+    return "Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.";
   }
   if (/lineaer|graf|modell|regresjon|eksponential|proporsjonal|stigningstall/.test(family)) {
     return "Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.";
@@ -1229,12 +1925,24 @@ for (const question of bank.oppgaver) {
   }
 }
 
+const vagueExamLanguage = /\bEn verdi\b|\bEn størrelse\b|bestemt gruppe|tidsenheter|per x-enhet|kategoriene A-D|kategori 1-4|tegnes direkte i HTML|laget for å trene/iu;
+for (const question of bank.oppgaver) {
+  if (vagueExamLanguage.test(question.sporsmal)) {
+    throw new Error(`${question.id} har fortsatt unødig abstrakt eller intern maltekst: ${question.sporsmal}`);
+  }
+}
+for (const group of bank.oppgavegrupper) {
+  if (vagueExamLanguage.test(group.innledning)) {
+    throw new Error(`${group.id} har fortsatt unødig abstrakt eller intern maltekst: ${group.innledning}`);
+  }
+}
+
 if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.4";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til gradvise worked examples med forståelse, metode, oppsett, utregning, konklusjon og kontroll.`;
+bank.samling.versjon = "2027.5";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til gradvise worked examples med forståelse, metode, oppsett, utregning, konklusjon og kontroll. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

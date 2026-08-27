@@ -193,6 +193,25 @@ test("Del 1 er konstruert for håndregning uten kalkulator", () => {
   assert.equal(bank.oppgaver.find((question) => question.id === "2py27-091").fasit.valg.riktige[0], "\\(n+5\\)");
 });
 
+test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", () => {
+  const forbiddenTemplateLanguage = /\bEn verdi\b|\bEn størrelse\b|bestemt gruppe|tidsenheter|per x-enhet|kategoriene A-D|kategori 1-4|tegnes direkte i HTML|laget for å trene/iu;
+
+  for (const question of bank.oppgaver) {
+    const visibleText = [question.sporsmal, question.svar, ...question.hint].join(" ");
+    assert.doesNotMatch(visibleText, forbiddenTemplateLanguage, `${question.id} har abstrakt eller intern maltekst`);
+  }
+  for (const group of bank.oppgavegrupper) {
+    assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
+  }
+
+  assert.equal(bank.samling.versjon, "2027.5");
+  assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
+  assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
+  assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
+  assert.match(bank.oppgavegrupper.find((group) => group.id === "d2-figur-01").innledning, /benker/);
+  assert.equal(bank.oppgaver.find((question) => question.id === "2py27-306").fasit.verdier[0].verdi, 4328);
+});
+
 test("standardformoppgaven viser samme tall som fasiten", () => {
   const question = bank.oppgaver.find((item) => item.id === "2py27-062");
   assert.match(question.sporsmal, /0\{,\}000000605/);
