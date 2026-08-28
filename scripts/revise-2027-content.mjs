@@ -264,7 +264,7 @@ for (const question of byFamily("d1-omvendt-prosent")) {
 for (const question of byFamily("d1-vekstfaktor")) {
   const change = question.kontroll.inndata.endring;
   const factor = 1 + change / 100;
-  if (/Hva er vekstfaktoren/.test(question.sporsmal)) {
+  if (/(?:Hva er|Hvilken) vekstfaktor/.test(question.sporsmal)) {
     const operation = change < 0 ? "trekkes fra" : "legges til";
     const symbol = change < 0 ? "-" : "+";
     setHintsAndAnswer(question.id, [
@@ -704,7 +704,7 @@ for (const question of bank.oppgaver.filter((item) => item.variantfamilie.starts
   if (question.variantfamilie === "d2-lineaer-a") {
     const x = question.kontroll.inndata.x;
     setQuestion(question.id, { hint: [
-      `Hos A er prisen fastbeløpet ${number(A.fast)} pluss ${number(A.per_enhet)} ganger x. Hos B brukes fastbeløpet ${number(B.fast)} og satsen ${number(B.per_enhet)}.`,
+      `Hos A er prisen fastbeløpet ${math(number(A.fast))} pluss ${math(number(A.per_enhet))} ganger ${math("x")}. Hos B brukes fastbeløpet ${math(number(B.fast))} og satsen ${math(number(B.per_enhet))}.`,
       `Sett inn ${math(`x=${number(x)}`)}: ${math(`A(${number(x)})=${number(A.fast)}+${number(A.per_enhet)}\\cdot${number(x)}`)}.`,
       `Gjør det samme for B: ${math(`B(${number(x)})=${number(B.fast)}+${number(B.per_enhet)}\\cdot${number(x)}`)}.`,
     ] });
@@ -752,8 +752,8 @@ for (const question of bank.oppgaver.filter((item) => ["d2-regresjon-b", "d2-reg
     if (input.modell === "potens") expression = `${number(coefficients[0])}\\cdot${number(input.ny_x)}^{${number(coefficients[1])}}`;
     if (input.modell === "andregrad") expression = `${number(coefficients[0])}\\cdot${number(input.ny_x)}^2+${number(coefficients[1])}\\cdot${number(input.ny_x)}+${number(coefficients[2])}`;
     setQuestion(question.id, { hint: [
-      "Bruk parameterne fra regresjonsverktøyet med flere sifre enn dem du eventuelt skrev i svarfeltene i b.",
-      `Erstatt x med ${number(input.ny_x)}. Regnestykket blir ${math(expression)}.`,
+      "Bruk de samme parameterne som vises i løsningen fra oppgave b, slik at innsettingen og avrundingen kan etterprøves.",
+      `Erstatt ${math("x")} med ${math(number(input.ny_x))}. Regnestykket blir ${math(expression)}.`,
       "Regn ut modellverdien og rund først til én desimal helt til slutt.",
     ] });
   }
@@ -783,7 +783,7 @@ for (const question of bank.oppgaver.filter((item) => ["d2-omvendt-b", "d2-omven
     setHintsAndAnswer(question.id, [
       `Sett den oppgitte tiden inn på venstre side: ${math(`${number(input.T)}=${number(input.k)}/x+${number(input.fast)}`)}.`,
       `Trekk fra den faste tiden: ${math(`${number(input.T - input.fast)}=${number(input.k)}/x`)}.`,
-      `Multipliser med x og del på ${number(input.T - input.fast)} for å isolere x.`,
+      `Multipliser med ${math("x")} og del på ${math(number(input.T - input.fast))} for å isolere ${math("x")}.`,
     ], `${math(`${number(input.T)}=${number(input.k)}/x+${number(input.fast)}`)} gir ${math(`${number(input.T - input.fast)}=${number(input.k)}/x`)}, og dermed ${math(`x=${number(input.k)}/${number(input.T - input.fast)}=${number(result)}`)}.`);
   }
 }
@@ -924,7 +924,7 @@ const offerWorked = {
 for (const [id, values] of Object.entries(offerWorked)) {
   setHintsAndAnswer(id, [
     `Regn prosentavslaget i deler som er enkle uten kalkulator: ${values.parts[0]}`,
-    `Legg sammen delene: ${math(values.parts[1])} kr i prosentavslag.`,
+    `Regn ut prosentavslaget: ${math(values.parts[1])} kr.`,
     `Sammenlign ${math(values.parts[1].split("=")[1])} kr med kroneavslaget på ${math(number(values.fixed))} kr. Det største avslaget er best.`,
   ], `Prosentavslaget er ${math(values.parts[1])} kr. Derfor gir ${values.decision} størst avslag.`);
 }
@@ -1732,6 +1732,311 @@ for (const [id, replacement] of Object.entries(contextualRateHints)) {
   });
 }
 
+// Siste pedagogiske reparasjonspass. Her rettes familier der en generell mal
+// tidligere skjulte manglende mellomregning, feil variabelnavn eller feil
+// avrunding. Passet bruker oppgavenes egne kontrollverdier og er derfor like
+// konkret for alle fem variantene i hver familie.
+function roundHalfUp(value, digits = 0) {
+  const factor = 10 ** digits;
+  return Math.sign(value) * Math.round(Math.abs(value) * factor + Number.EPSILON) / factor;
+}
+
+function numericMathValues(text) {
+  return [...text.matchAll(/\\\((-?\d+(?:\{,\}\d+)?)\\\)/gu)]
+    .map((match) => Number(match[1].replace("{,}", ".")))
+    .filter(Number.isFinite);
+}
+
+function bareFormula(formula) {
+  return formula.replace(/^\\\(/u, "").replace(/\\\)$/u, "");
+}
+
+function formulaAt(formula, n) {
+  const value = number(n);
+  return bareFormula(formula)
+    .replace(/(\d+)n/gu, `$1\\cdot${value}`)
+    .replace(/n(?=\()/gu, `${value}\\cdot`)
+    .replaceAll("n", value);
+}
+
+function figureValue(groupId, n) {
+  const calculators = {
+    "d2-figur-01": (value) => 4 * value + 2,
+    "d2-figur-02": (value) => value ** 2 + 4 * value,
+    "d2-figur-03": (value) => 2 * value + 4,
+    "d2-figur-04": (value) => value * (value + 1) / 2,
+    "d2-figur-05": (value) => (value + 2) ** 2 - value ** 2,
+  };
+  return calculators[groupId](n);
+}
+
+for (const question of byFamily("d1-potensverdi")) {
+  const { grunntall, eksponent } = question.kontroll.inndata;
+  const result = question.kontroll.resultat[0];
+  const factor = grunntall < 0 ? `(${number(grunntall)})` : number(grunntall);
+  const product = Array.from({ length: eksponent }, () => factor).join("\\cdot");
+  setHintsAndAnswer(question.id, [
+    `Eksponenten ${math(number(eksponent))} betyr at grunntallet ${math(factor)} skal brukes som faktor ${number(eksponent)} ganger.`,
+    `Skriv potensen som produktet ${math(product)}.`,
+    `${grunntall < 0 ? `Det er ${number(eksponent)} negative faktorer. ${eksponent % 2 === 0 ? "De kan pares, så produktet blir positivt." : "Én negativ faktor blir stående, så produktet blir negativt."}` : "Alle faktorene er positive, så produktet blir positivt."} Regn deretter ut produktet.`,
+  ], `${math(`${factor}^{${number(eksponent)}}=${product}=${number(result)}`)}.`);
+}
+
+for (const question of byFamily("d1-negativ-eksponent")) {
+  const { grunntall, eksponent } = question.kontroll.inndata;
+  const positiveExponent = Math.abs(eksponent);
+  const denominator = grunntall ** positiveExponent;
+  const result = question.kontroll.resultat[0];
+  setHintsAndAnswer(question.id, [
+    `En negativ eksponent betyr at vi tar den omvendte verdien: ${math(`${number(grunntall)}^{-${number(positiveExponent)}}=1/${number(grunntall)}^{${number(positiveExponent)}}`)}.`,
+    `Regn først ut nevneren: ${math(`${number(grunntall)}^{${number(positiveExponent)}}=${number(denominator)}`)}.`,
+    `Gjør deretter brøken om til desimaltall: ${math(`1/${number(denominator)}=${number(result)}`)}.`,
+  ], `${math(`${number(grunntall)}^{${number(eksponent)}}=1/${number(denominator)}=${number(result)}`)}.`);
+}
+
+for (const question of byFamily("d1-ligning")) {
+  const { a, b, y } = question.kontroll.inndata;
+  const result = question.kontroll.resultat[0];
+  const variable = question.svar.match(/\\\(([a-z])=/u)?.[1] ?? "x";
+  setHintsAndAnswer(question.id, [
+    `Sett modelluttrykket lik den oppgitte sluttverdien: ${math(`${number(a)}${variable}+${number(b)}=${number(y)}`)}.`,
+    `Trekk ${math(number(b))} fra begge sider: ${math(`${number(a)}${variable}=${number(y - b)}`)}.`,
+    `Del begge sider på koeffisienten ${math(number(a))}: ${math(`${variable}=${number(y - b)}/${number(a)}=${number(result)}`)}.`,
+  ], question.svar);
+}
+
+for (const question of byFamily("d1-lineart-figurmonster")) {
+  const values = numericMathValues(question.sporsmal);
+  const start = values[0];
+  const increase = values[1];
+  const target = values.at(-1);
+  const formula = question.fasit.valg.riktige[0];
+  const result = question.fasit.verdier[0].verdi;
+  setHintsAndAnswer(question.id, [
+    `Figur 1 har ${math(number(start))}, og fra figur 1 til figur ${math("n")} skjer det ${math("n-1")} like økninger.`,
+    `En generell regel er derfor ${math(`${number(start)}+${number(increase)}(n-1)`)}. Forenkling gir ${formula}.`,
+    `Sett inn ${math(`n=${number(target)}`)} i regelen: ${math(`${formulaAt(formula, target)}=${number(result)}`)}.`,
+  ], `Formelen er ${formula}. Figur ${math(number(target))} har ${math(number(result))} ${question.fasit.verdier[0].enhet}.`);
+}
+
+for (const question of byFamily("d1-kvadratisk-figurmonster")) {
+  const values = numericMathValues(question.sporsmal);
+  const target = values.at(-1);
+  const formula = question.fasit.valg.riktige[0];
+  const result = question.fasit.verdier[0].verdi;
+  setHintsAndAnswer(question.id, [
+    `Test den riktige formelen på figur 1: ${math(`${formulaAt(formula, 1)}=${number(values[0])}`)}.`,
+    `Test også figur 2: ${math(`${formulaAt(formula, 2)}=${number(values[1])}`)}. Formelen passer dermed de oppgitte startverdiene.`,
+    `Sett inn ${math(`n=${number(target)}`)}: ${math(`${formulaAt(formula, target)}=${number(result)}`)}.`,
+  ], `Formelen ${formula} passer tallfølgen. Figur ${math(number(target))} har ${math(number(result))} ${question.fasit.verdier[0].enhet}.`);
+}
+
+for (const question of byFamily("d2-figur-a")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const sequence = group.data.antall;
+  const differences = sequence.slice(1).map((value, index) => value - sequence[index]);
+  const result = question.kontroll.resultat[0];
+  const nextDifference = result - sequence.at(-1);
+  setQuestion(question.id, { hint: [
+    `Regn differansene mellom nabotallene: ${math(differences.join(", "))}.`,
+    `Fortsett differansemønsteret. Den neste differansen er ${math(number(nextDifference))}.`,
+    `Legg den til siste kjente verdi: ${math(`${number(sequence.at(-1))}+${number(nextDifference)}=${number(result)}`)}.`,
+  ] });
+}
+
+for (const question of byFamily("d2-figur-b")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const formula = question.fasit.riktige[0];
+  const [first, second] = group.data.antall;
+  setQuestion(question.id, { hint: [
+    `Test formelen på figur 1: ${math(`${formulaAt(formula, 1)}=${number(first)}`)}.`,
+    `Test den på figur 2: ${math(`${formulaAt(formula, 2)}=${number(second)}`)}.`,
+    `De andre alternativene feiler på minst én av disse kontrollene. Regelen ${formula} passer også resten av tallfølgen.`,
+  ] });
+}
+
+for (const question of byFamily("d2-figur-d")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const formula = group.visualisering.regel;
+  const result = question.kontroll.resultat[0];
+  const threshold = question.kontroll.inndata.grense;
+  const previousValue = figureValue(group.id, result - 1);
+  const currentValue = figureValue(group.id, result);
+  setHintsAndAnswer(question.id, [
+    `Bruk regelen ${formula} og sammenlign den med grensen ${math(number(threshold))}.`,
+    `Kontroller figuren før kandidaten: ${math(`${formulaAt(formula, result - 1)}=${number(previousValue)}`)}. Den når ikke grensen.`,
+    `Kontroller kandidaten: ${math(`${formulaAt(formula, result)}=${number(currentValue)}`)}. Denne figuren når grensen.`,
+  ], `Det minste figurnummeret som oppfyller kravet, er ${math(number(result))}.`);
+}
+
+for (const question of byFamily("d2-samfunn-a")) {
+  const { gammel, ny } = question.kontroll.inndata;
+  const oldTotal = gammel.reduce((total, value) => total + value, 0);
+  const newTotal = ny.reduce((total, value) => total + value, 0);
+  const result = roundHalfUp((newTotal - oldTotal) / oldTotal * 100, 1);
+  setQuestion(question.id, {
+    sporsmal: `${question.sporsmal.replace(/\s*Rund til én desimal\.?$/u, "")} Rund til én desimal.`,
+    svar: `Totalene er ${math(number(oldTotal))} og ${math(number(newTotal))}. ${math(`(${number(newTotal)}-${number(oldTotal)})/${number(oldTotal)}\\cdot100\\,\\%=${number(result)}\\,\\%`)}.`,
+    fasit: {
+      ...question.fasit,
+      verdier: question.fasit.verdier.map((answer) => ({ ...answer, verdi: result, toleranse: 0.05 })),
+    },
+    kontroll: { ...question.kontroll, resultat: [result], avrunding: 1 },
+    hint: [
+      `Summer kategoriene i år 1: ${math(`${gammel.map(number).join("+")}=${number(oldTotal)}`)}.`,
+      `Summer kategoriene i år 2: ${math(`${ny.map(number).join("+")}=${number(newTotal)}`)}.`,
+      `Del endringen på totalen i år 1: ${math(`(${number(newTotal)}-${number(oldTotal)})/${number(oldTotal)}\\cdot100\\,\\%=${number(result)}\\,\\%`)}.`,
+    ],
+  });
+}
+
+for (const question of byFamily("d2-samfunn-b")) {
+  setQuestion(question.id, {
+    sporsmal: `${question.sporsmal.replace(/\s*Rund til én desimal\.?$/u, "")} Rund til én desimal.`,
+  });
+}
+
+const modelCritiqueHints = {
+  "2py27-203": [
+    "Datagrunnlaget slutter i 2026, mens anslaget gjelder 2050. Det er ekstrapolasjon langt utenfor det observerte tidsrommet.",
+    "En lineær utvikling kan ikke automatisk fortsette når marked, kapasitet og politikk endrer seg.",
+    "Konklusjonen må derfor uttrykke stor usikkerhet, ikke behandle 2050-anslaget som sikkert.",
+  ],
+  "2py27-204": [
+    "En eksponentialmodell med vekstfaktor over 1 gir stadig raskere vekst når den brukes om og om igjen.",
+    "Bakterier får etter hvert begrenset plass og næring, så den samme prosentveksten kan ikke fortsette ubegrenset.",
+    "Modellen kan passe en kort startfase, men trenger et avgrenset gyldighetsområde.",
+  ],
+  "2py27-205": [
+    "En negativ drosjepris er umulig i den praktiske situasjonen.",
+    "Resultatet viser at modellen brukes utenfor området der startpris og korteste turer er riktig beskrevet.",
+    "Den faglige vurderingen er derfor at modellen eller gyldighetsområdet må endres.",
+  ],
+  "2py27-206": [
+    "Data fra ett døgn beskriver variasjon gjennom akkurat dette døgnet.",
+    "Et helt år innebærer andre årstider, værforhold og dagslengder som ikke finnes i datagrunnlaget.",
+    "Modellen kan derfor ikke brukes til samme dato neste år uten nye data eller en modell for årstidsvariasjon.",
+  ],
+  "2py27-207": [
+    `Modellen er laget for produksjon mellom ${math("100")} og ${math("500")} enheter.`,
+    `Verdien ${math("350")} ligger inne i intervallet: ${math("100<350<500")}. Dette er interpolasjon.`,
+    "Interpolasjon er normalt tryggere enn ekstrapolasjon, selv om modellens øvrige forutsetninger fortsatt må vurderes.",
+  ],
+};
+for (const [id, hint] of Object.entries(modelCritiqueHints)) setQuestion(id, { hint });
+
+for (const question of byFamily("d2-eksponential-d")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const { a, b } = group.data.modell;
+  const percent = Math.abs((b - 1) * 100);
+  setQuestion(question.id, { hint: [
+    `Modellen starter på ${math(number(a))} og multipliserer med ${math(number(b))} hver periode, altså en ${b > 1 ? "økning" : "nedgang"} på ${math(`${decimal(percent, 2)}\\,\\%`)} hver gang.`,
+    `Hvis den samme faktoren brukes ubegrenset, vil modellverdien ${b > 1 ? "vokse uten øvre grense" : "nærme seg null"}. Det er en matematisk følge av modellen, ikke automatisk en realistisk langtidsprognose.`,
+    "Sammenlign derfor med praktiske grenser som kapasitet, ressurser og endrede rammevilkår før du vurderer langtidsbruk.",
+  ] });
+}
+
+for (const question of byFamily("d2-regresjon-a")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const { x, y } = group.data;
+  const model = question.fasit.riktige[0];
+  let hint;
+  if (/lineær/u.test(model)) {
+    const differences = y.slice(1).map((value, index) => value - y[index]);
+    hint = [
+      `x-verdiene øker med like store trinn. Beregn derfor første differanser i y: ${math(differences.map((value) => number(value)).join(", "))}.`,
+      "Differansene er konstante eller svært nær konstante, mens forholdstallene ikke er det.",
+      "Spredningspunktene ligger derfor omtrent langs en rett linje, og en lineær modell passer hovedmønsteret best.",
+    ];
+  } else if (/eksponential/u.test(model)) {
+    const ratios = y.slice(1).map((value, index) => value / y[index]);
+    hint = [
+      `Beregn forholdet mellom y-verdier som følger etter hverandre: ${math(ratios.map((value) => decimal(value, 2)).join(", "))}.`,
+      "Forholdstallene er omtrent konstante, mens første differansene vokser.",
+      "Omtrent konstant vekstfaktor kjennetegner en eksponentialmodell.",
+    ];
+  } else if (/potens/u.test(model)) {
+    const squareRatios = x.map((value, index) => y[index] / value ** 2);
+    hint = [
+      `Bremselengden vokser krumt. Test et kvadratisk potensmønster med ${math("y/x^2")}: ${math(squareRatios.map((value) => decimal(value, 4)).join(", "))}.`,
+      `Verdiene av ${math("y/x^2")} er omtrent konstante, så dataene ligger nær formen ${math("y=ax^2")}.`,
+      "Dette er en potensmodell med eksponent nær 2, og den passer hovedmønsteret bedre enn en rett linje.",
+    ];
+  } else {
+    const first = y.slice(1).map((value, index) => value - y[index]);
+    const second = first.slice(1).map((value, index) => value - first[index]);
+    hint = [
+      `Første differanser er ${math(first.map((value) => number(value)).join(", "))}, og andre differanser er omtrent ${math(second.map((value) => number(value)).join(", "))}.`,
+      "Punktene stiger først, har et toppunkt og synker deretter. Denne krumningen kan ikke beskrives godt av en lineær eller eksponentiell modell.",
+      "En andregradsmodell beskriver den parabel-lignende hovedformen best.",
+    ];
+  }
+  setQuestion(question.id, { hint });
+}
+
+for (const question of byFamily("d2-regresjon-d")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const prediction = bank.oppgaver.find((item) =>
+    item.oppgavegruppe?.id === question.oppgavegruppe.id && item.variantfamilie === "d2-regresjon-c");
+  const newX = prediction.kontroll.inndata.ny_x;
+  const minimum = Math.min(...group.data.x);
+  const maximum = Math.max(...group.data.x);
+  const inside = newX >= minimum && newX <= maximum;
+  setQuestion(question.id, { hint: [
+    `Dataene dekker x-intervallet ${math(`[${number(minimum)},${number(maximum)}]`)}, mens anslaget bruker ${math(`x=${number(newX)}`)}.`,
+    inside
+      ? `${math(`${number(minimum)}\\le${number(newX)}\\le${number(maximum)}`)}, så anslaget er interpolasjon.`
+      : `${math(number(newX))} ligger utenfor intervallet, så anslaget er ekstrapolasjon.`,
+    inside
+      ? "Anslaget ligger innenfor dataområdet og er normalt mindre usikkert enn ekstrapolasjon."
+      : "Usikkerheten øker utenfor dataområdet fordi modellen kan endre gyldighet der det ikke finnes observasjoner.",
+  ] });
+}
+
+const codeAssessmentHints = {
+  "2py27-444": [
+    "If-vilkåret tar bare med verdier som er minst grensen; både antall og sum oppdateres for disse verdiene.",
+    `Den andre utskriften deler summen på antallet. Hvis ingen verdier tas med, blir nevneren ${math("0")}.`,
+    "Dermed er både beskrivelsen av gjennomsnittet og risikoen for divisjon på null riktige.",
+  ],
+  "2py27-448": [
+    "While-løkken fortsetter mens verdien er over grensen og stopper ved første hele år der den er høyst grensen.",
+    `Hver runde bruker samme faktor ${math("0{,}88")}, altså samme prosentvise nedgang.`,
+    "Programmet finner derfor terskelåret, men modellforutsetningen om fast prosentnedgang må vurderes mot virkelige data.",
+  ],
+  "2py27-452": [
+    "De to remove-linjene fjerner én minste og én største observasjon før gjennomsnittet beregnes.",
+    "Dette reduserer virkningen av ekstremverdier, men betyr samtidig at reelle observasjoner utelates.",
+    "Begge påstandene beskriver derfor henholdsvis algoritmen og en viktig faglig begrensning.",
+  ],
+  "2py27-456": [
+    `Løkken tester bare heltallene fra ${math("0")} til ${math("100")} og stopper ved første verdi der ${math("A\\le B")}.`,
+    "Break-linjen gjør at det minste heltallet som oppfyller vilkåret, skrives ut.",
+    "Et skjæringspunkt mellom heltall eller utenfor søkeintervallet blir ikke funnet, som er algoritmens begrensning.",
+  ],
+  "2py27-460": [
+    "Programmet summerer frekvensene kumulativt og stopper i den første kategorien som når medianplasseringen.",
+    "Utskriften er kategorinummeret, ikke en observert verdi inne i kategorien.",
+    "Programmet finner derfor medianens kategori, men kan ikke gi en nøyaktig medianverdi fra grupperte data alene.",
+  ],
+};
+for (const [id, hint] of Object.entries(codeAssessmentHints)) setQuestion(id, { hint });
+
+for (const question of byFamily("d2-samfunn-d")) {
+  const group = groups.get(question.oppgavegruppe.id);
+  const category = question.sporsmal.match(/«([^»]+)»/u)?.[1];
+  const index = group.data.kategorier.indexOf(category);
+  const before = group.data["år_1"][index];
+  const after = group.data["år_2"][index];
+  const absolute = after - before;
+  const relative = roundHalfUp(absolute / before * 100, 1);
+  setQuestion(question.id, { hint: [
+    `Kategorien «${category}» går fra ${math(number(before))} til ${math(number(after))}.`,
+    `Den absolutte endringen er ${math(`${number(after)}-${number(before)}=${number(absolute)}`)}.`,
+    `Den relative endringen er ${math(`${number(absolute)}/${number(before)}\\cdot100\\,\\%\\approx${number(relative)}\\,\\%`)}. Tallene beskriver endringen, men beviser ikke hva som forårsaket den.`,
+  ] });
+}
+
 // Alle oppgavene får nå en full worked example. De eksisterende, fagspesifikke
 // mellomstegene beholdes, men settes inn i en tydelig progresjon fra forståelse
 // via oppsett og utregning til kontroll. Markørene gjør passet idempotent.
@@ -1740,22 +2045,170 @@ const generatedPrefixes = [
   "Velg framgangsmåte:",
   "Sett opp:",
   "Regn videre:",
+  "Regn ut:",
   "Arbeid videre:",
   "Løsningen samlet:",
   "Kontroller og konkluder:",
 ];
 
 function removeGeneratedPrefix(hint) {
-  for (const prefix of generatedPrefixes.slice(1, 5)) {
+  for (const prefix of generatedPrefixes.slice(1, 6)) {
     if (hint.startsWith(prefix)) return hint.slice(prefix.length).trim();
   }
   return hint;
+}
+
+const numericAnswerTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
+
+function answerValues(question) {
+  return question.fasit.verdier?.map((answer) => answer.verdi)
+    ?? question.kontroll?.resultat
+    ?? [];
+}
+
+function equationFromAnswer(question) {
+  const expressions = [...question.svar.matchAll(/\\\((.*?)\\\)/gu)].map((match) => match[1]);
+  const equation = expressions.find((expression) => expression.includes("="));
+  return equation ? `Bruk oppgavens tall og utfør regnestykket: ${math(equation)}.` : null;
+}
+
+function regressionExpression(question) {
+  const input = question.kontroll.inndata;
+  const sibling = bank.oppgaver.find((item) =>
+    item.oppgavegruppe?.id === question.oppgavegruppe?.id && item.variantfamilie === "d2-regresjon-b");
+  const coefficients = sibling?.kontroll.resultat ?? [];
+  if (input.modell === "lineær") return `${number(coefficients[0])}\\cdot${number(input.ny_x)}+${number(coefficients[1])}`;
+  if (input.modell === "eksponential") return `${number(coefficients[0])}\\cdot${number(coefficients[1])}^{${number(input.ny_x)}}`;
+  if (input.modell === "potens") return `${number(coefficients[0])}\\cdot${number(input.ny_x)}^{${number(coefficients[1])}}`;
+  if (input.modell === "andregrad") return `${number(coefficients[0])}\\cdot${number(input.ny_x)}^2+${number(coefficients[1])}\\cdot${number(input.ny_x)}+${number(coefficients[2])}`;
+  return null;
+}
+
+function workedCalculation(question) {
+  const method = question.kontroll?.metode;
+  const input = question.kontroll?.inndata ?? {};
+  const result = answerValues(question);
+
+  if (method === "mean" || method === "d2_stats_mean") {
+    const sum = input.verdier.reduce((total, value) => total + value, 0);
+    return `Summer først og del på antallet: ${math(`${input.verdier.map(number).join("+")}=${number(sum)}`)} og ${math(`${number(sum)}/${input.verdier.length}=${number(result[0])}`)}.`;
+  }
+  if (method === "median" || method === "d2_stats_median") {
+    const sorted = [...input.verdier].sort((a, b) => a - b);
+    if (sorted.length % 2 === 1) {
+      const position = (sorted.length + 1) / 2;
+      return `Det er ${math(`n=${sorted.length}`)} observasjoner, så medianplassen er ${math(`(${sorted.length}+1)/2=${position}`)}. Verdien på denne plassen er ${math(number(result[0]))}.`;
+    }
+    const right = sorted.length / 2;
+    const left = right - 1;
+    return `De to midterste verdiene er ${math(number(sorted[left]))} og ${math(number(sorted[right]))}. Regn ${math(`(${number(sorted[left])}+${number(sorted[right])})/2=${number(result[0])}`)}.`;
+  }
+  if (method === "mode_range") {
+    const minimum = Math.min(...input.verdier);
+    const maximum = Math.max(...input.verdier);
+    const frequency = input.verdier.filter((value) => value === result[0]).length;
+    return `Tallet ${math(number(result[0]))} forekommer ${math(number(frequency))} ganger og er typetallet. Variasjonsbredden er ${math(`${number(maximum)}-${number(minimum)}=${number(result[1])}`)}.`;
+  }
+  if (method === "relative_cumulative") {
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    const frequency = input.frekvenser[input.indeks];
+    const cumulative = input.frekvenser.slice(0, input.indeks + 1).reduce((sum, value) => sum + value, 0);
+    return `Total frekvens er ${math(`${input.frekvenser.map(number).join("+")}=${number(total)}`)}. Relativ frekvens er ${math(`${number(frequency)}/${number(total)}\\cdot100\\,\\%=${number(result[0])}\\,\\%`)}, og kumulativ frekvens er ${math(`${input.frekvenser.slice(0, input.indeks + 1).map(number).join("+")}=${number(cumulative)}`)}.`;
+  }
+  if (method === "missing_from_mean") {
+    const knownSum = input.kjente.reduce((sum, value) => sum + value, 0);
+    const count = input.kjente.length + 1;
+    const targetSum = input.gjennomsnitt * count;
+    return `Totalsummen må være ${math(`${number(input.gjennomsnitt)}\\cdot${count}=${number(targetSum)}`)}. De kjente verdiene summeres til ${math(`${input.kjente.map(number).join("+")}=${number(knownSum)}`)}, så den manglende er ${math(`${number(targetSum)}-${number(knownSum)}=${number(result[0])}`)}.`;
+  }
+  if (method === "weighted_mean") {
+    const products = input.verdier.map((value, index) => value * input.frekvenser[index]);
+    const weightedSum = products.reduce((sum, value) => sum + value, 0);
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    return `Den veide summen er ${math(`${products.map(number).join("+")}=${number(weightedSum)}`)}, og total frekvens er ${math(`${input.frekvenser.map(number).join("+")}=${number(total)}`)}. Dermed blir gjennomsnittet ${math(`${number(weightedSum)}/${number(total)}=${number(result[0])}`)}.`;
+  }
+  if (method === "table_slope") {
+    return `Bruk to nabopunkter: ${math(`(${number(input.y[1])}-${number(input.y[0])})/(${number(input.x[1])}-${number(input.x[0])})=${number(result[0])}`)}.`;
+  }
+  if (method === "median_category") {
+    const total = input.kumulativ.at(-1);
+    const threshold = total / 2;
+    const category = result[0];
+    const previous = category > 1 ? input.kumulativ[category - 2] : 0;
+    const current = input.kumulativ[category - 1];
+    return `Halvparten av ${math(number(total))} er ${math(`${number(total)}/2=${number(threshold)}`)}. Kumulativ frekvens går fra ${math(number(previous))} til ${math(number(current))} i kategori ${math(number(category))}, så medianplassen ligger der.`;
+  }
+  if (method === "code_sum") {
+    return `Følg den løpende summen helt ut: ${math(`${input.verdier.map(number).join("+")}=${number(result[0])}`)}.`;
+  }
+  if (method === "code_growth") {
+    return `Løkken utfører samme multiplikasjon ${math(number(input.runder))} ganger: ${math(`${number(input.start)}\\cdot${number(input.faktor)}^{${number(input.runder)}=${number(result[0])}`)}.`;
+  }
+  if (method === "growth_threshold") {
+    const periods = result[0];
+    const previous = input.start * input.faktor ** (periods - 1);
+    const current = input.start * input.faktor ** periods;
+    return `Sammenlign to naboperioder: ${math(`${number(input.start)}\\cdot${number(input.faktor)}^{${periods - 1}}\\approx${decimal(previous, 2)}`)} og ${math(`${number(input.start)}\\cdot${number(input.faktor)}^{${periods}}\\approx${decimal(current, 2)}`)}. Bare den siste har passert grensen ${math(number(input.grense))}.`;
+  }
+  if (method === "d2_exp_threshold") {
+    const periods = result[0];
+    const previous = input.a * input.b ** (periods - 1);
+    const current = input.a * input.b ** periods;
+    return `Beregn periodene rundt terskelen: ${math(`${number(input.a)}\\cdot${number(input.b)}^{${periods - 1}}\\approx${decimal(previous, 2)}`)} og ${math(`${number(input.a)}\\cdot${number(input.b)}^{${periods}}\\approx${decimal(current, 2)}`)}. Dermed er ${math(`x=${periods}`)} første hele periode som oppfyller kravet.`;
+  }
+  if (method === "d2_regression_prediction") {
+    const expression = regressionExpression(question);
+    return `Sett inn den nye x-verdien og regn helt ut: ${math(`${expression}\\approx${number(result[0])}`)}.`;
+  }
+  if (method === "d2_grouped_total_cumulative") {
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    const cumulative = input.frekvenser[0] + input.frekvenser[1];
+    return `Totalen er ${math(`${input.frekvenser.map(number).join("+")}=${number(total)}`)}. Til og med klasse 2 er kumulativ frekvens ${math(`${number(input.frekvenser[0])}+${number(input.frekvenser[1])}=${number(cumulative)}`)}.`;
+  }
+  if (method === "d2_grouped_mean") {
+    const midpoints = input.frekvenser.map((_, index) => (input.grenser[index] + input.grenser[index + 1]) / 2);
+    const products = midpoints.map((midpoint, index) => midpoint * input.frekvenser[index]);
+    const weightedSum = products.reduce((sum, value) => sum + value, 0);
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    return `Klassemidtpunktene er ${math(midpoints.map(number).join(", "))}. Den veide summen er ${math(`${products.map(number).join("+")}=${number(weightedSum)}`)}, så anslaget blir ${math(`${number(weightedSum)}/${number(total)}=${number(result[0])}`)}.`;
+  }
+  if (method === "d2_society_share") {
+    const total = input.ny.reduce((sum, value) => sum + value, 0);
+    const part = input.ny[input.indeks];
+    return `Summer år 2 til ${math(`${input.ny.map(number).join("+")}=${number(total)}`)}. Andelen er ${math(`${number(part)}/${number(total)}\\cdot100\\,\\%=${number(result[0])}\\,\\%`)}.`;
+  }
+  if (method === "mixed_value" && question.id === "2py27-261") {
+    return `Det er fem sorterte verdier. Medianplassen er ${math(`(5+1)/2=3`)}, og den tredje verdien er ${math(number(result[0]))}.`;
+  }
+
+  const specialCodeCalculations = {
+    "2py27-441": `Fem treff gir ${math("1+1+1+1+1=5")}.`,
+    "2py27-443": `Verdiene 61, 73 og 66 gir ${math("1+1+1=3")} treff.`,
+    "2py27-445": `Etter fem multiplikasjoner er ${math("900\\cdot0{,}88^5\\approx475\\le500")}.`,
+    "2py27-446": `Den andre utskriften kommer fra ${math("900\\cdot0{,}88^5\\approx475")}.`,
+    "2py27-447": `${math("900\\cdot0{,}88^3\\approx613>600")}, mens ${math("900\\cdot0{,}88^4\\approx540\\le600")}. Derfor stopper løkken etter 4 runder.`,
+    "2py27-450": `Listen har 7 verdier og to fjernes: ${math("7-2=5")}.`,
+    "2py27-451": `Etter at ytterverdiene er fjernet, blir gjennomsnittet ${math("130/6\\approx21{,}7")}.`,
+    "2py27-453": `Ulikheten ${math("120\\le3x")} gir ${math("x\\ge40")}, så den første utskriften er 40.`,
+    "2py27-455": `Med den nye grensen gir ${math("90\\le3x")} at ${math("x\\ge30")}.`,
+    "2py27-457": `Halvparten av totalfrekvensen er ${math("26/2=13")}, og ${math("4+7=11<13\\le4+7+9=20")}. Medianen ligger i kategori 3.`,
+    "2py27-459": `Med de nye frekvensene er ${math("4<13\\le4+10=14")}. Medianen ligger derfor i kategori 2.`,
+  };
+  if (specialCodeCalculations[question.id]) return specialCodeCalculations[question.id];
+
+  return equationFromAnswer(question);
 }
 
 function workedContext(question) {
   const family = question.variantfamilie;
   if (/kode/.test(family)) {
     return "Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.";
+  }
+  if (/pastand/.test(family)) {
+    return "Avgjør om påstanden skal gjelde alltid eller bare i ett tilfelle. En generell påstand krever et bevis, mens ett gyldig moteksempel er nok til å avkrefte den.";
+  }
+  if (family === "d1-formel-innsetting") {
+    return "Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.";
   }
   if (family === "d1-prosent-av-tall") {
     return "Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.";
@@ -1770,8 +2223,8 @@ function workedContext(question) {
     return "Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.";
   }
   if (family === "d1-gjennomsnittlig-vekstfart") {
-    const timeUnit = /timer|time/u.test(question.sporsmal) ? "time" : "minutt";
-    return `Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert ${timeUnit}.`;
+    const ratePhrase = /timer|time/u.test(question.sporsmal) ? "for hver time" : "for hvert minutt";
+    return `Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres ${ratePhrase}.`;
   }
   if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
     return "Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.";
@@ -1785,47 +2238,81 @@ function workedContext(question) {
   if (/lineaer|graf|modell|regresjon|eksponential|proporsjonal|stigningstall/.test(family)) {
     return "Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.";
   }
-  if (/potens|standardform|rot/.test(family)) {
+  if (/potens|eksponent|standardform|rot/.test(family)) {
     return "Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.";
   }
   if (/ligning|formel|algebra|konstantledd/.test(family)) {
     return "Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.";
   }
+  if (question.fasit.type === "valg") {
+    return "Finn nøkkelopplysningene som hvert svaralternativ må passe med. Bruk beregning, definisjon eller et moteksempel til å avgjøre valget.";
+  }
   return "Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.";
 }
 
 function workedCheck(question) {
-  const family = question.variantfamilie;
-  if (/kode/.test(family)) {
-    return "Spor programmet én gang til med de opprinnelige startverdiene. Variablene og stoppvilkåret skal ende på verdiene i løsningen.";
-  }
-  if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
-    return "Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen.";
-  }
-  if (/statistikk|frekvens|gjennomsnitt|median|typetall|uteliggere|gruppert|samfunn/.test(family)) {
-    return "Kontroller antall observasjoner, samlet frekvens og eventuell sortering. Svaret skal ligge på en rimelig plass i datamaterialet.";
-  }
-  if (/figur/.test(family)) {
-    return "Prøv regelen på en av de oppgitte figurene og på figuren rett før eller etter. Begge kontrollene skal passe mønsteret.";
-  }
-  if (/lineaer|graf|modell|regresjon|eksponential|proporsjonal|stigningstall/.test(family)) {
-    return "Sett resultatet inn i modellen eller sammenlign det med tabellen og grafen. Fortegn, enhet og størrelsesorden skal passe situasjonen.";
-  }
-  if (/potens|standardform|rot/.test(family)) {
-    return "Regn uttrykket tilbake som et vanlig tall eller bruk en omvendt potensoperasjon. Fortegn og størrelsesorden skal stemme.";
-  }
-  if (/ligning|formel|algebra|konstantledd/.test(family)) {
-    return "Sett den funne verdien inn i den opprinnelige ligningen eller formelen. Venstre og høyre side skal bli like.";
-  }
+  const method = question.kontroll?.metode;
+  const input = question.kontroll?.inndata ?? {};
+  const result = answerValues(question);
+
   if (question.fasit.type === "valg") {
-    return "Sammenlign konklusjonen med alle opplysningene i oppgaven. Det valgte alternativet skal oppfylle betingelsene, mens de andre bryter minst én av dem.";
+    return `Kontroll mot opplysningene: ${question.svar} Dette samsvarer med de konkrete beregningene eller argumentene i stegene ovenfor.`;
   }
-  return "Sett svaret tilbake i den opprinnelige sammenhengen, og kontroller enhet, fortegn og størrelsesorden.";
+  if (method === "percent_of") return `${math(`${number(result[0])}/${number(input.total)}\\cdot100\\,\\%=${number(input.prosent)}\\,\\%`)}. Andelen blir den oppgitte prosenten av totalen.`;
+  if (method === "part_as_percent") return `${math(`${number(input.hel)}\\cdot${number(result[0] / 100)}=${number(input.del)}`)}. Vi får tilbake den oppgitte delen.`;
+  if (method === "whole_from_part") return `${math(`${number(result[0])}\\cdot${number(input.prosent / 100)}=${number(input.del)}`)}. Den beregnede helheten gir riktig del.`;
+  if (method === "percentage_points") {
+    const symbol = result[0] < 0 ? "-" : "+";
+    return `${math(`${number(input.gammel)}${symbol}${number(Math.abs(result[0]))}=${number(input.ny)}`)}. Prosentpoengsendringen fører tilbake til den nye andelen.`;
+  }
+  if (method === "growth_factor") {
+    const symbol = input.endring < 0 ? "-" : "+";
+    return `${math(`1${symbol}${number(Math.abs(input.endring))}/100=${number(1 + input.endring / 100)}`)}. Faktoren har riktig retning og størrelse.`;
+  }
+  if (method === "power") {
+    const { grunntall, eksponent } = input;
+    if (eksponent < 0) {
+      const denominator = grunntall ** Math.abs(eksponent);
+      return `${math(`${number(result[0])}\\cdot${number(denominator)}=1`)}. Desimaltallet og den omvendte potensen gir samme verdi.`;
+    }
+    const partial = grunntall ** (eksponent - 1);
+    return `${math(`${number(result[0])}/${number(partial)}=${number(grunntall)}`)}. Når én faktor tas bort, står grunntallet igjen.`;
+  }
+  if (method === "linear_solve") return `${math(`${number(input.a)}\\cdot${number(result[0])}+${number(input.b)}=${number(input.y)}`)}. Innsettingen gir den oppgitte sluttverdien.`;
+  if (method === "mean" || method === "d2_stats_mean") {
+    const sum = input.verdier.reduce((total, value) => total + value, 0);
+    return `${math(`${number(result[0])}\\cdot${input.verdier.length}=${number(sum)}`)}. Gjennomsnitt ganger antall observasjoner gir totalsummen.`;
+  }
+  if (method === "slope") return `${math(`${number(result[0])}\\cdot(${number(input.p2[0])}-${number(input.p1[0])})=${number(input.p2[1])}-${number(input.p1[1])}`)}. Endringen i y stemmer med punktene.`;
+  if (method === "average_rate") return `${math(`${number(result[0])}\\cdot(${number(input.x2)}-${number(input.x1)})=${number(input.y2)}-${number(input.y1)}`)}. Vekstfarten ganger tidsintervallet gir hele verdiendringen.`;
+  if (method === "d2_society_total_change") {
+    const oldTotal = input.gammel.reduce((total, value) => total + value, 0);
+    const newTotal = input.ny.reduce((total, value) => total + value, 0);
+    return `${math(`${number(oldTotal)}\\cdot(1+${number(result[0])}/100)\\approx${number(newTotal)}`)}. Avviket skyldes bare avrunding til én desimal.`;
+  }
+  if (question.variantfamilie === "d2-figur-d") {
+    const group = groups.get(question.oppgavegruppe.id);
+    const n = result[0];
+    return `${math(`f(${number(n - 1)})=${number(figureValue(group.id, n - 1))}`)} er under grensen, mens ${math(`f(${number(n)})=${number(figureValue(group.id, n))}`)} når den. Derfor er figurnummeret det minste mulige.`;
+  }
+
+  const calculation = workedCalculation(question);
+  if (calculation) return `Kontroll med originalopplysningene: ${calculation}`;
+  return `Kontroll mot oppgaven: ${question.svar} Enhet, fortegn og størrelsesorden stemmer med opplysningene.`;
+}
+
+function wrapBareDecimalMath(text) {
+  return text
+    .split(/(\\\(.*?\\\))/gu)
+    .map((part) => part.startsWith("\\(")
+      ? part
+      : part.replace(/-?\d+\{,\}\d+/gu, (token) => math(token)))
+    .join("");
 }
 
 function asWorkedExample(question) {
   // Denne familien er skrevet ferdig som et detaljert mønstereksempel ovenfor.
-  if (question.variantfamilie === "d1-omvendt-prosent") return question.hint;
+  if (question.variantfamilie === "d1-omvendt-prosent") return question.hint.map(wrapBareDecimalMath);
 
   const coreHints = question.hint
     .filter((hint) => ![
@@ -1833,8 +2320,16 @@ function asWorkedExample(question) {
       "Løsningen samlet:",
       "Kontroller og konkluder:",
     ].some((prefix) => hint.startsWith(prefix)))
-    .map(removeGeneratedPrefix);
-  const stepLabels = ["Velg framgangsmåte", "Sett opp", "Regn videre"];
+    .map(removeGeneratedPrefix)
+    .filter((hint, index, hints) => hints.indexOf(hint) === index);
+  const hasWorkedRelation = /=|\\(?:approx|le|ge)|[≤≥]/u.test(coreHints.join(" "));
+  if (numericAnswerTypes.has(question.fasit.type) && !hasWorkedRelation) {
+    const calculation = workedCalculation(question);
+    if (!calculation) throw new Error(`${question.id} mangler en konkret mellomregning.`);
+    coreHints.push(calculation);
+  }
+
+  const stepLabels = ["Velg framgangsmåte", "Sett opp", "Regn videre", "Regn ut"];
   const worked = [`Forstå oppgaven: ${workedContext(question)}`];
 
   coreHints.forEach((hint, index) => {
@@ -1844,7 +2339,7 @@ function asWorkedExample(question) {
 
   worked.push(`Løsningen samlet: ${question.svar}`);
   worked.push(`Kontroller og konkluder: ${workedCheck(question)}`);
-  return worked;
+  return worked.map(wrapBareDecimalMath);
 }
 
 for (const question of bank.oppgaver) {
@@ -1941,8 +2436,8 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.5";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til gradvise worked examples med forståelse, metode, oppsett, utregning, konklusjon og kontroll. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.6";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, metode, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

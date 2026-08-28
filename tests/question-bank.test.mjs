@@ -87,6 +87,16 @@ test("alle hintforløp er fullstendige worked examples", () => {
     "Oversett uttrykket til en beregning.",
     "Kjør den samme algoritmen med den nye inndataen eller parameteren.",
   ]);
+  const obsoleteGenericChecks = new Set([
+    "Kontroller og konkluder: Spor programmet én gang til med de opprinnelige startverdiene. Variablene og stoppvilkåret skal ende på verdiene i løsningen.",
+    "Kontroller og konkluder: Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen.",
+    "Kontroller og konkluder: Kontroller antall observasjoner, samlet frekvens og eventuell sortering. Svaret skal ligge på en rimelig plass i datamaterialet.",
+    "Kontroller og konkluder: Prøv regelen på en av de oppgitte figurene og på figuren rett før eller etter. Begge kontrollene skal passe mønsteret.",
+    "Kontroller og konkluder: Sett resultatet inn i modellen eller sammenlign det med tabellen og grafen. Fortegn, enhet og størrelsesorden skal passe situasjonen.",
+    "Kontroller og konkluder: Regn uttrykket tilbake som et vanlig tall eller bruk en omvendt potensoperasjon. Fortegn og størrelsesorden skal stemme.",
+    "Kontroller og konkluder: Sett den funne verdien inn i den opprinnelige ligningen eller formelen. Venstre og høyre side skal bli like.",
+  ]);
+  const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
 
   for (const question of bank.oppgaver) {
     assert.ok(
@@ -96,10 +106,57 @@ test("alle hintforløp er fullstendige worked examples", () => {
     assert.ok(question.hint.length >= 5, `${question.id} mangler gradvis hintprogresjon`);
     assert.ok(question.hint.join(" ").length >= 300, `${question.id} har for lite forklaring til å være et worked example`);
     assert.ok(question.hint.some((hint) => /Løsningen samlet:|Regn ut:/.test(hint)), `${question.id} mangler fullført utregning`);
-    assert.ok(question.hint.some((hint) => /Kontroller/.test(hint)), `${question.id} mangler kontrollsteg`);
+    assert.match(question.hint.at(-1), /^Kontroller/u, `${question.id} mangler avsluttende kontrollsteg`);
+    assert.ok(!obsoleteGenericChecks.has(question.hint.at(-1)), `${question.id} har et generisk kontrollsteg uten konkret kontroll`);
+
+    if (numericTypes.has(question.fasit.type)) {
+      const solutionIndex = question.hint.findIndex((hint) => hint.startsWith("Løsningen samlet:"));
+      const workedSteps = question.hint.slice(1, solutionIndex >= 0 ? solutionIndex : -1).join(" ");
+      assert.match(
+        workedSteps,
+        /=|\\(?:approx|le|ge)|[≤≥]/u,
+        `${question.id} mangler en utført matematisk relasjon før konklusjonen`,
+      );
+    }
   }
 
   assert.ok(bank.oppgaver.reduce((total, question) => total + question.hint.length, 0) >= 2500);
+  assert.ok(new Set(bank.oppgaver.map((question) => question.hint.at(-1))).size >= 400, "Kontrollstegene er fortsatt for generiske");
+});
+
+test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
+  const byId = (id) => bank.oppgaver.find((question) => question.id === id);
+
+  for (const id of ["2py27-021", "2py27-023", "2py27-025"]) {
+    const question = byId(id);
+    assert.match(question.svar, /^Vekstfaktoren er/u, `${id} svarer ikke på det oppgaven spør om`);
+    assert.doesNotMatch(question.svar, /prosentvise endringen/u, `${id} svarer fortsatt med prosentendring`);
+  }
+
+  assert.match(byId("2py27-099").hint.at(-1), /ulike|Påstanden er feil/u);
+  assert.doesNotMatch(byId("2py27-099").hint.at(-1), /Venstre og høyre side skal bli like/u);
+
+  for (const id of ["2py27-198", "2py27-199", "2py27-200", "2py27-201", "2py27-202"]) {
+    assert.match(byId(id).hint.at(-1), /tidsintervallet|verdiendringen/u);
+    assert.doesNotMatch(byId(id).hint.join(" "), /samlet frekvens|sortering/u);
+  }
+
+  const roundedQuestion = byId("2py27-481");
+  assert.equal(roundedQuestion.fasit.verdier[0].verdi, 6.3);
+  assert.equal(roundedQuestion.kontroll.resultat[0], 6.3);
+  assert.match(roundedQuestion.svar, /6\{,\}3/);
+  assert.doesNotMatch(roundedQuestion.svar, /6\{,\}2/);
+
+  for (const question of bank.oppgaver) {
+    for (const [index, hint] of question.hint.entries()) {
+      const outsideMath = hint.replace(/\\\(.*?\\\)/gu, "");
+      assert.doesNotMatch(
+        outsideMath,
+        /\{,\}|\\(?:cdot|frac|div|sqrt)|\^/u,
+        `${question.id} hint ${index + 1} har matematikkkode utenfor matematikkmarkører`,
+      );
+    }
+  }
 });
 
 test("synlige tall har fornuftige desimaler uten flyttallsstøy", () => {
@@ -204,7 +261,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.5");
+  assert.equal(bank.samling.versjon, "2027.6");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
