@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.10"
+    "versjon": "2027.11"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -2054,36 +2054,7 @@
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
-      "id": "2py27-001",
-      "losningsveier": [
-        {
-          "id": "prosentbiter",
-          "navn": "10 % og 5 %",
-          "forklaring": "Kortest her: bygg 15 % av to enkle prosentbiter.",
-          "hint": [
-            "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(15\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg en enkel regnevei: Du trenger ikke gange med et desimaltall. Del 15 % i 10 % og 5 %, der 5 % er halvparten av 10 %.",
-            "Lag en plan: Finn først 10 %: \\(240/10=24\\).",
-            "Gjør første del: Fem prosent er halvparten av 10 %: \\(24/2=12\\).",
-            "Gjør neste del: Legg sammen delene: \\(24+12=36\\). Dermed er 15 % av 240 lik 36.",
-            "Svar på spørsmålet: Siden 15 % er 10 % og 5 %, får vi \\(240/10+(240/10)/2=24+12=36\\). Det er \\(36\\) elever som velger klatring.",
-            "Sjekk svaret: \\(36/240\\cdot100\\,\\%=15\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        },
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "En generell metode som virker for alle prosenttall.",
-          "hint": [
-            "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(15\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg denne veien: Finn først 1 % ved å dele hele mengden på 100.",
-            "Lag en plan: Regn \\(240/100=2{,}4\\). Dermed er 1 % lik 2,4 elever i regnestykket.",
-            "Gjør første del: Bygg 15 % av femten 1 %-deler: \\(2{,}4\\cdot15=2{,}4\\cdot10+2{,}4\\cdot5=24+12=36\\).",
-            "Svar på spørsmålet: Det er \\(36\\) elever som velger klatring.",
-            "Sjekk svaret: \\(36/240\\cdot100\\,\\%=15\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        }
-      ]
+      "id": "2py27-001"
     },
     {
       "del": 1,
@@ -2200,36 +2171,7 @@
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
-      "id": "2py27-003",
-      "losningsveier": [
-        {
-          "id": "prosentbiter",
-          "navn": "30 % og 2 %",
-          "forklaring": "Bygg 32 % av prosentbiter som passer tallene.",
-          "hint": [
-            "Hva vet vi? \\(450\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(32\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg en enkel regnevei: Du kan unngå tung desimalregning ved å dele 32 % i 30 % og 2 %.",
-            "Lag en plan: Finn 30 % som tre 10 %-deler: \\(450/10=45\\) og \\(3\\cdot45=135\\).",
-            "Gjør første del: Finn 2 % som to 1 %-deler: \\(450/100=4{,}5\\) og \\(2\\cdot4{,}5=9\\).",
-            "Gjør neste del: Legg sammen 30 % og 2 %: \\(135+9=144\\).",
-            "Svar på spørsmålet: Del 32 % i 30 % og 2 %: \\(135+9=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
-            "Sjekk svaret: \\(144/450\\cdot100\\,\\%=32\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        },
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "Går via én hundredel før du bygger 32 %.",
-          "hint": [
-            "Hva vet vi? \\(450\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(32\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg denne veien: Finn verdien av 1 % ved å dele 450 på 100.",
-            "Lag en plan: Regn \\(450/100=4{,}5\\). Dermed er 1 % lik 4,5.",
-            "Gjør første del: Bygg 32 %: \\(4{,}5\\cdot30=135\\) og \\(4{,}5\\cdot2=9\\). Til sammen blir det \\(135+9=144\\).",
-            "Svar på spørsmålet: Det er \\(144\\) ansatte som sykler til jobb.",
-            "Sjekk svaret: \\(144/450\\cdot100\\,\\%=32\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        }
-      ]
+      "id": "2py27-003"
     },
     {
       "del": 1,
@@ -2273,36 +2215,7 @@
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
-      "id": "2py27-004",
-      "losningsveier": [
-        {
-          "id": "kjent-brok",
-          "navn": "Kjent brøk: en åttedel",
-          "forklaring": "Kortest her: 12,5 % betyr én av åtte like deler.",
-          "hint": [
-            "Hva vet vi? \\(640\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(12{,}5\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg en enkel regnevei: Dette kan gjøres i hodet: 12,5 % er en åttedel. Del 640 i åtte like deler.",
-            "Lag en plan: Tenk på 640 medlemmer som åtte like store deler.",
-            "Gjør første del: Finn størrelsen på én del: \\(640/8=80\\).",
-            "Gjør neste del: Én av åtte like deler er 12,5 %, så det er 80 trenere.",
-            "Svar på spørsmålet: Siden 12,5 % er en åttedel, får vi \\(640/8=80\\). Idrettslaget har \\(80\\) trenere.",
-            "Sjekk svaret: \\(80/640\\cdot100\\,\\%=12{,}5\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        },
-        {
-          "id": "halvering",
-          "navn": "Halver tre ganger",
-          "forklaring": "Viser veien 100 % → 50 % → 25 % → 12,5 %.",
-          "hint": [
-            "Hva vet vi? \\(640\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(12{,}5\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg denne veien: Hver halvering halverer både antallet og prosenten.",
-            "Lag en plan: Halver 640: \\(640/2=320\\). Det er 50 %. Halver igjen: \\(320/2=160\\). Det er 25 %.",
-            "Gjør første del: Halver én gang til: \\(160/2=80\\). Da har du 12,5 %, så svaret er 80.",
-            "Svar på spørsmålet: Idrettslaget har \\(80\\) trenere.",
-            "Sjekk svaret: \\(80/640\\cdot100\\,\\%=12{,}5\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        }
-      ]
+      "id": "2py27-004"
     },
     {
       "del": 1,
@@ -2346,36 +2259,7 @@
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
-      "id": "2py27-005",
-      "losningsveier": [
-        {
-          "id": "per-hundre",
-          "navn": "Gang med 8, del på 100",
-          "forklaring": "Bruker direkte at 8 % betyr 8 per 100.",
-          "hint": [
-            "Hva vet vi? \\(875\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(8\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg en enkel regnevei: Se etter et rundt mellomresultat: \\(875\\cdot8=7\\,000\\), som er lett å dele på 100.",
-            "Lag en plan: Gang først med 8 ved å dele opp 875: \\(8\\cdot875=8\\cdot800+8\\cdot75=6\\,400+600=7\\,000\\).",
-            "Gjør første del: Åtte prosent betyr 8 per 100, så del deretter på 100: \\(7\\,000/100=70\\).",
-            "Gjør neste del: Dermed er 8 % av 875 lik 70.",
-            "Svar på spørsmålet: \\(875\\cdot8/100=7\\,000/100=70\\). Det var \\(70\\) slike svar.",
-            "Sjekk svaret: \\(70/875\\cdot100\\,\\%=8\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        },
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "Gjør prosentbetydningen synlig før du ganger opp.",
-          "hint": [
-            "Hva vet vi? \\(875\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(8\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-            "Velg denne veien: Finn én hundredel av 875.",
-            "Lag en plan: Regn \\(875/100=8{,}75\\). Dermed er 1 % lik 8,75.",
-            "Gjør første del: Åtte prosent er åtte slike deler: \\(8{,}75\\cdot8=70\\).",
-            "Svar på spørsmålet: Det var \\(70\\) slike svar.",
-            "Sjekk svaret: \\(70/875\\cdot100\\,\\%=8\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
-          ]
-        }
-      ]
+      "id": "2py27-005"
     },
     {
       "del": 1,
@@ -2494,36 +2378,7 @@
         "avrunding": 1
       },
       "variantfamilie": "d1-finne-prosent",
-      "id": "2py27-007",
-      "losningsveier": [
-        {
-          "id": "forkort-brok",
-          "navn": "Forkort brøken",
-          "forklaring": "Brøken 35 av 125 kan reduseres til deler på 4 %.",
-          "hint": [
-            "Hva vet vi? \\(125\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(35\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-            "Lag en plan: Skriv delen over totalen: \\(\\frac{35}{125}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-            "Gjør første del: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\).",
-            "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{7}{25}\\cdot100\\,\\%=28\\,\\%\\).",
-            "Svar på spørsmålet: Andelen er \\(28\\,\\%\\).",
-            "Sjekk svaret: \\(125\\cdot0{,}28=35\\). Vi får tilbake den oppgitte delen."
-          ]
-        },
-        {
-          "id": "prosentbiter",
-          "navn": "Bygg med prosentbiter",
-          "forklaring": "Finn antall som svarer til 20 % og 8 %.",
-          "hint": [
-            "Hva vet vi? \\(125\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(35\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg denne veien: Finn først 20 % av 125. Det er en femdel.",
-            "Lag en plan: Regn \\(125/5=25\\). Dermed er 25 kunder lik 20 %.",
-            "Gjør første del: Fire prosent av 125 er 5, så 8 % er 10. Da er \\(25+10=35\\), og \\(20\\,\\%+8\\,\\%=28\\,\\%\\).",
-            "Svar på spørsmålet: Andelen er \\(28\\,\\%\\).",
-            "Sjekk svaret: \\(125\\cdot0{,}28=35\\). Vi får tilbake den oppgitte delen."
-          ]
-        }
-      ]
+      "id": "2py27-007"
     },
     {
       "del": 1,
@@ -2568,36 +2423,7 @@
         "avrunding": 1
       },
       "variantfamilie": "d1-finne-prosent",
-      "id": "2py27-008",
-      "losningsveier": [
-        {
-          "id": "forkort-brok",
-          "navn": "Forkort brøken",
-          "forklaring": "Del både 66 og 240 på 6 og arbeid videre med 11 av 40.",
-          "hint": [
-            "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(66\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{66\\div6}{240\\div6}=\\frac{11}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-            "Lag en plan: Skriv delen over totalen: \\(\\frac{66}{240}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-            "Gjør første del: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{66\\div6}{240\\div6}=\\frac{11}{40}\\).",
-            "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{40}\\cdot100\\,\\%=27{,}5\\,\\%\\).",
-            "Svar på spørsmålet: Andelen er \\(27{,}5\\,\\%\\).",
-            "Sjekk svaret: \\(240\\cdot0{,}275=66\\). Vi får tilbake den oppgitte delen."
-          ]
-        },
-        {
-          "id": "prosentbiter",
-          "navn": "25 % og 2,5 %",
-          "forklaring": "Finn prosentbiter som til sammen gir akkurat 66 personer.",
-          "hint": [
-            "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(66\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg denne veien: En firedel av 240 er 60, så 60 personer tilsvarer 25 %.",
-            "Lag en plan: Regn \\(240/4=60\\). Det mangler \\(66-60=6\\) personer.",
-            "Gjør første del: Siden \\(240/40=6\\), er 6 personer 2,5 %. Dermed er 66 personer \\(25\\,\\%+2{,}5\\,\\%=27{,}5\\,\\%\\).",
-            "Svar på spørsmålet: Andelen er \\(27{,}5\\,\\%\\).",
-            "Sjekk svaret: \\(240\\cdot0{,}275=66\\). Vi får tilbake den oppgitte delen."
-          ]
-        }
-      ]
+      "id": "2py27-008"
     },
     {
       "del": 1,
@@ -2789,36 +2615,7 @@
         ]
       },
       "variantfamilie": "d1-finne-helhet",
-      "id": "2py27-011",
-      "losningsveier": [
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "Reduser 12 % til 1 %, og bygg derfra til 100 %.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(48\\) tilsvarer \\(12\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg en enkel regnevei: Tallene passer godt til prosent via 1 %: del 48 og 12 med 12, så ser du direkte at 1 % er 4.",
-            "Lag en plan: 12 % tilsvarer \\(48\\). Del begge tallene på 3, slik at 4 % tilsvarer \\(16\\).",
-            "Gjør første del: Del én gang til på 4: 1 % tilsvarer \\(4\\).",
-            "Gjør neste del: Gang med 100: \\(4\\cdot100=400\\). Hele gruppen har 400 personer.",
-            "Svar på spørsmålet: Det er \\(400\\) deltakere på festivalen.",
-            "Sjekk svaret: \\(400\\cdot0{,}12=48\\). Den beregnede helheten gir riktig del."
-          ]
-        },
-        {
-          "id": "brokdeler",
-          "navn": "Tenk 12 % som 3 av 25 deler",
-          "forklaring": "Forkort prosentbrøken før du bygger hele mengden.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(48\\) tilsvarer \\(12\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg denne veien: Forkort \\(12/100\\) ved å dele både 12 og 100 på 4: \\(12/100=3/25\\).",
-            "Lag en plan: De 48 personene er derfor 3 like deler. Én del er \\(48/3=16\\).",
-            "Gjør første del: Hele gruppen består av 25 slike deler: \\(16\\cdot25=16\\cdot100/4=400\\).",
-            "Svar på spørsmålet: Det er \\(400\\) deltakere på festivalen.",
-            "Sjekk svaret: \\(400\\cdot0{,}12=48\\). Den beregnede helheten gir riktig del."
-          ]
-        }
-      ]
+      "id": "2py27-011"
     },
     {
       "del": 1,
@@ -2935,36 +2732,7 @@
         ]
       },
       "variantfamilie": "d1-finne-helhet",
-      "id": "2py27-013",
-      "losningsveier": [
-        {
-          "id": "kjent-brok",
-          "navn": "Kjent brøk: en firedel",
-          "forklaring": "25 % er én av fire like deler.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(190\\) tilsvarer \\(25\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg en enkel regnevei: Dette kan gjøres i hodet: 25 % er en firedel, så hele mengden består av fire like deler på 190.",
-            "Lag en plan: 25 % tilsvarer \\(190\\).",
-            "Gjør første del: 25 % er en firedel av helheten, så helheten består av fire slike deler.",
-            "Gjør neste del: Regn \\(190\\cdot4=760\\). Hele gruppen har 760 personer.",
-            "Svar på spørsmålet: Det er \\(760\\) billetter totalt.",
-            "Sjekk svaret: \\(760\\cdot0{,}25=190\\). Den beregnede helheten gir riktig del."
-          ]
-        },
-        {
-          "id": "dobling",
-          "navn": "Doble to ganger",
-          "forklaring": "Bygg fra 25 % til 50 % og videre til 100 %.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(190\\) tilsvarer \\(25\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg denne veien: Doble både prosenten og antallet samtidig.",
-            "Lag en plan: Fra 25 % til 50 %: \\(190\\cdot2=380\\).",
-            "Gjør første del: Fra 50 % til 100 %: \\(380\\cdot2=760\\).",
-            "Svar på spørsmålet: Det er \\(760\\) billetter totalt.",
-            "Sjekk svaret: \\(760\\cdot0{,}25=190\\). Den beregnede helheten gir riktig del."
-          ]
-        }
-      ]
+      "id": "2py27-013"
     },
     {
       "del": 1,
@@ -3008,36 +2776,7 @@
         ]
       },
       "variantfamilie": "d1-finne-helhet",
-      "id": "2py27-014",
-      "losningsveier": [
-        {
-          "id": "ti-prosent",
-          "navn": "Finn 10 % først",
-          "forklaring": "Del 30 %-delen i tre, og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(162\\) tilsvarer \\(30\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg en enkel regnevei: Del først 30 % i tre like 10 %-deler. Da blir 10 % lik \\(162/3=54\\).",
-            "Lag en plan: 30 % tilsvarer \\(162\\). Del begge tallene på 3: 10 % tilsvarer \\(54\\).",
-            "Gjør første del: 100 % består av ti like 10 %-deler.",
-            "Gjør neste del: Regn \\(54\\cdot10=540\\). Hele gruppen har 540 personer.",
-            "Svar på spørsmålet: Bedriften har \\(540\\) ansatte.",
-            "Sjekk svaret: \\(540\\cdot0{,}3=162\\). Den beregnede helheten gir riktig del."
-          ]
-        },
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "En generell vei via én hundredel av helheten.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(162\\) tilsvarer \\(30\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg denne veien: Når 30 % er 162, finner du 1 % ved først å finne 10 % og så dele på 10.",
-            "Lag en plan: Regn \\(162/3=54\\), og deretter \\(54/10=5{,}4\\). Dermed er 1 % lik 5,4.",
-            "Gjør første del: Hundre slike deler gir \\(5{,}4\\cdot100=540\\).",
-            "Svar på spørsmålet: Bedriften har \\(540\\) ansatte.",
-            "Sjekk svaret: \\(540\\cdot0{,}3=162\\). Den beregnede helheten gir riktig del."
-          ]
-        }
-      ]
+      "id": "2py27-014"
     },
     {
       "del": 1,
@@ -3081,36 +2820,7 @@
         ]
       },
       "variantfamilie": "d1-finne-helhet",
-      "id": "2py27-015",
-      "losningsveier": [
-        {
-          "id": "tjue-prosent",
-          "navn": "Finn 20 % først",
-          "forklaring": "Halver 40 %-delen og bygg fem slike deler.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(360\\) tilsvarer \\(40\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg en enkel regnevei: Del først 40 % i to like 20 %-deler. Da blir 20 % lik \\(360/2=180\\).",
-            "Lag en plan: 40 % tilsvarer \\(360\\). Del begge tallene på 2: 20 % tilsvarer \\(180\\).",
-            "Gjør første del: 100 % består av fem like 20 %-deler.",
-            "Gjør neste del: Regn \\(180\\cdot5=900\\). Hele gruppen har 900 personer.",
-            "Svar på spørsmålet: Konsertsalen har \\(900\\) plasser.",
-            "Sjekk svaret: \\(900\\cdot0{,}4=360\\). Den beregnede helheten gir riktig del."
-          ]
-        },
-        {
-          "id": "ti-prosent",
-          "navn": "Finn 10 % først",
-          "forklaring": "Reduser til en kjent tidel og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Vi vet at \\(360\\) tilsvarer \\(40\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-            "Velg denne veien: Når 40 % er 360, er 10 % en firedel av 360.",
-            "Lag en plan: Regn \\(360/4=90\\). Dermed er 10 % lik 90.",
-            "Gjør første del: Ti slike 10 %-deler gir 100 %: \\(90\\cdot10=900\\).",
-            "Svar på spørsmålet: Konsertsalen har \\(900\\) plasser.",
-            "Sjekk svaret: \\(900\\cdot0{,}4=360\\). Den beregnede helheten gir riktig del."
-          ]
-        }
-      ]
+      "id": "2py27-015"
     },
     {
       "del": 1,
@@ -3810,36 +3520,7 @@
         "avrunding": 2
       },
       "variantfamilie": "d1-omvendt-prosent",
-      "id": "2py27-028",
-      "losningsveier": [
-        {
-          "id": "prosentstripe",
-          "navn": "Bygg fra 10 %",
-          "forklaring": "Reduser 120 % til en enkel 10 %-del og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(20\\,\\%\\) er årsavgiften \\(816\\) kr. Vi skal finne årsavgiften før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100+20=120\\,\\%\\). Dermed vet vi at \\(120\\,\\%\\) tilsvarer \\(816\\) kr.",
-            "Velg én regnevei: Vi bruker en prosentstripe hele veien. Del \\(120\\,\\%\\) i \\(12\\) like deler. Hver del er \\(120/12=10\\,\\%\\).",
-            "Finn verdien av én del: De \\(12\\) like delene er til sammen \\(816\\) kr. Derfor deler vi \\(816\\) på \\(12\\): \\(816/12=68\\). Én del, altså \\(10\\,\\%\\), er \\(68\\) kr.",
-            "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/10=10\\), så hele verdien består av \\(10\\) slike deler. Regn \\(68\\cdot10=680\\).",
-            "Svar på spørsmålet: Årsavgiften var \\(680\\) kr før endringen.",
-            "Sjekk svaret: \\(20\\,\\%\\) er \\(2\\) slike deler: \\(68\\cdot2=136\\) kr. Da blir \\(680+136=816\\), akkurat som i oppgaven."
-          ]
-        },
-        {
-          "id": "kjent-brok",
-          "navn": "Tenk 120 % som seks femdeler",
-          "forklaring": "Bruk brøken 6/5 til å se antallet like deler.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(20\\,\\%\\) er årsavgiften \\(816\\) kr. Vi skal finne årsavgiften før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Velg denne veien: Skriv \\(120\\,\\%=6/5\\). Den nye prisen på 816 kr er derfor 6 like deler.",
-            "Lag en plan: Finn én del: \\(816/6=136\\).",
-            "Gjør første del: Den opprinnelige verdien er 5 slike deler: \\(136\\cdot5=680\\).",
-            "Svar på spørsmålet: Årsavgiften var \\(680\\) kr.",
-            "Sjekk svaret: \\(20\\,\\%\\) er \\(2\\) slike deler: \\(68\\cdot2=136\\) kr. Da blir \\(680+136=816\\), akkurat som i oppgaven."
-          ]
-        }
-      ]
+      "id": "2py27-028"
     },
     {
       "del": 1,
@@ -3884,36 +3565,7 @@
         "avrunding": 2
       },
       "variantfamilie": "d1-omvendt-prosent",
-      "id": "2py27-029",
-      "losningsveier": [
-        {
-          "id": "prosentstripe",
-          "navn": "Bygg fra 10 %",
-          "forklaring": "Reduser 90 % til én 10 %-del og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Etter en rabatt på \\(10\\,\\%\\) er prisen på jakken \\(630\\) kr. Vi skal finne prisen på jakken før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100-10=90\\,\\%\\). Dermed vet vi at \\(90\\,\\%\\) tilsvarer \\(630\\) kr.",
-            "Velg én regnevei: Vi bruker en prosentstripe hele veien. Del \\(90\\,\\%\\) i \\(9\\) like deler. Hver del er \\(90/9=10\\,\\%\\).",
-            "Finn verdien av én del: De \\(9\\) like delene er til sammen \\(630\\) kr. Derfor deler vi \\(630\\) på \\(9\\): \\(630/9=70\\). Én del, altså \\(10\\,\\%\\), er \\(70\\) kr.",
-            "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/10=10\\), så hele verdien består av \\(10\\) slike deler. Regn \\(70\\cdot10=700\\).",
-            "Svar på spørsmålet: Prisen på jakken var \\(700\\) kr før endringen.",
-            "Sjekk svaret: \\(10\\,\\%\\) er én slik del, altså \\(70\\) kr. Da blir \\(700-70=630\\), akkurat som i oppgaven."
-          ]
-        },
-        {
-          "id": "kjent-brok",
-          "navn": "Tenk 90 % som ni tideler",
-          "forklaring": "Bruk brøken 9/10 til å se antallet like deler.",
-          "hint": [
-            "Hva vet vi? Etter en rabatt på \\(10\\,\\%\\) er prisen på jakken \\(630\\) kr. Vi skal finne prisen på jakken før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Velg denne veien: Skriv \\(90\\,\\%=9/10\\). Prisen 630 kr er derfor 9 like deler.",
-            "Lag en plan: Finn én del: \\(630/9=70\\).",
-            "Gjør første del: Den opprinnelige prisen er 10 slike deler: \\(70\\cdot10=700\\).",
-            "Svar på spørsmålet: Prisen på jakken var \\(700\\) kr.",
-            "Sjekk svaret: \\(10\\,\\%\\) er én slik del, altså \\(70\\) kr. Da blir \\(700-70=630\\), akkurat som i oppgaven."
-          ]
-        }
-      ]
+      "id": "2py27-029"
     },
     {
       "del": 1,
@@ -3958,36 +3610,7 @@
         "avrunding": 2
       },
       "variantfamilie": "d1-omvendt-prosent",
-      "id": "2py27-030",
-      "losningsveier": [
-        {
-          "id": "prosentstripe",
-          "navn": "Bygg fra 25 %",
-          "forklaring": "Reduser 125 % til en enkel 25 %-del og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(25\\,\\%\\) er prisen på sykkelen \\(1\\,500\\) kr. Vi skal finne prisen på sykkelen før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100+25=125\\,\\%\\). Dermed vet vi at \\(125\\,\\%\\) tilsvarer \\(1\\,500\\) kr.",
-            "Velg én regnevei: Vi bruker en prosentstripe hele veien. Del \\(125\\,\\%\\) i \\(5\\) like deler. Hver del er \\(125/5=25\\,\\%\\).",
-            "Finn verdien av én del: De \\(5\\) like delene er til sammen \\(1\\,500\\) kr. Derfor deler vi \\(1\\,500\\) på \\(5\\): \\(1\\,500/5=300\\). Én del, altså \\(25\\,\\%\\), er \\(300\\) kr.",
-            "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/25=4\\), så hele verdien består av \\(4\\) slike deler. Regn \\(300\\cdot4=1\\,200\\).",
-            "Svar på spørsmålet: Prisen på sykkelen var \\(1\\,200\\) kr før endringen.",
-            "Sjekk svaret: \\(25\\,\\%\\) er én slik del, altså \\(300\\) kr. Da blir \\(1\\,200+300=1\\,500\\), akkurat som i oppgaven."
-          ]
-        },
-        {
-          "id": "kjent-brok",
-          "navn": "Tenk 125 % som fem firedeler",
-          "forklaring": "Bruk brøken 5/4 til å finne den opprinnelige prisen.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(25\\,\\%\\) er prisen på sykkelen \\(1\\,500\\) kr. Vi skal finne prisen på sykkelen før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Velg denne veien: Skriv \\(125\\,\\%=5/4\\). Den nye prisen på 1 500 kr er derfor 5 like deler.",
-            "Lag en plan: Finn én del: \\(1,500/5=300\\).",
-            "Gjør første del: Den opprinnelige prisen er 4 slike deler: \\(300\\cdot4=1,200\\).",
-            "Svar på spørsmålet: Prisen på sykkelen var \\(1\\,200\\) kr.",
-            "Sjekk svaret: \\(25\\,\\%\\) er én slik del, altså \\(300\\) kr. Da blir \\(1\\,200+300=1\\,500\\), akkurat som i oppgaven."
-          ]
-        }
-      ]
+      "id": "2py27-030"
     },
     {
       "del": 1,
@@ -4077,36 +3700,7 @@
         "avrunding": 2
       },
       "variantfamilie": "d1-omvendt-prosent",
-      "id": "2py27-032",
-      "losningsveier": [
-        {
-          "id": "prosentstripe",
-          "navn": "Bygg fra 50 %",
-          "forklaring": "Reduser 150 % til en enkel 50 %-del og bygg til 100 %.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(50\\,\\%\\) er medlemstallet \\(1\\,950\\) medlemmer. Vi skal finne medlemstallet før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100+50=150\\,\\%\\). Dermed vet vi at \\(150\\,\\%\\) tilsvarer \\(1\\,950\\) medlemmer.",
-            "Velg én regnevei: Vi bruker en prosentstripe hele veien. Del \\(150\\,\\%\\) i \\(3\\) like deler. Hver del er \\(150/3=50\\,\\%\\).",
-            "Finn verdien av én del: De \\(3\\) like delene er til sammen \\(1\\,950\\) medlemmer. Derfor deler vi \\(1\\,950\\) på \\(3\\): \\(1\\,950/3=650\\). Én del, altså \\(50\\,\\%\\), er \\(650\\) medlemmer.",
-            "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/50=2\\), så hele verdien består av \\(2\\) slike deler. Regn \\(650\\cdot2=1\\,300\\).",
-            "Svar på spørsmålet: Medlemstallet var \\(1\\,300\\) medlemmer før endringen.",
-            "Sjekk svaret: \\(50\\,\\%\\) er én slik del, altså \\(650\\) medlemmer. Da blir \\(1\\,300+650=1\\,950\\), akkurat som i oppgaven."
-          ]
-        },
-        {
-          "id": "kjent-brok",
-          "navn": "Tenk 150 % som tre halvdeler",
-          "forklaring": "Bruk brøken 3/2 til å finne den opprinnelige verdien.",
-          "hint": [
-            "Hva vet vi? Etter en økning på \\(50\\,\\%\\) er medlemstallet \\(1\\,950\\) medlemmer. Vi skal finne medlemstallet før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-            "Velg denne veien: Skriv \\(150\\,\\%=3/2\\). Det nye medlemstallet 1 950 er derfor 3 like deler.",
-            "Lag en plan: Finn én del: \\(1,950/3=650\\).",
-            "Gjør første del: Den opprinnelige verdien er 2 slike deler: \\(650\\cdot2=1,300\\).",
-            "Svar på spørsmålet: Medlemstallet var \\(1\\,300\\) medlemmer.",
-            "Sjekk svaret: \\(50\\,\\%\\) er én slik del, altså \\(650\\) medlemmer. Da blir \\(1\\,300+650=1\\,950\\), akkurat som i oppgaven."
-          ]
-        }
-      ]
+      "id": "2py27-032"
     },
     {
       "del": 1,
@@ -4416,35 +4010,7 @@
         ]
       },
       "variantfamilie": "d1-tilbud",
-      "id": "2py27-039",
-      "losningsveier": [
-        {
-          "id": "prosentbiter",
-          "navn": "10 % og 5 %",
-          "forklaring": "Bygg 15 % ved å finne 10 % og halvparten av dette.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Lag en plan: Regn prosentavslaget i deler som er enkle uten kalkulator: 10 % av 1 250 er 125, og 5 % er halvparten av dette: 62,5.",
-            "Gjør første del: Regn ut prosentavslaget: \\(125+62{,}5=187{,}5\\) kr.",
-            "Gjør neste del: Sammenlign \\(187{,}5\\) kr med kroneavslaget på \\(220\\) kr. Det største avslaget er best.",
-            "Svar på spørsmålet: Prosentavslaget er \\(125+62{,}5=187{,}5\\) kr. Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(187{,}5\\) kr med kroneavslaget på \\(220\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(125+62{,}5=187{,}5\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        },
-        {
-          "id": "trekk-fra",
-          "navn": "20 % minus 5 %",
-          "forklaring": "Bruk at 15 % ligger 5 prosentpoeng under 20 %.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Velg denne veien: Finn 20 % som en femdel: \\(1,250/5=250\\).",
-            "Lag en plan: Fem prosent er halvparten av 10 %. Siden 10 % er 125 kr, er 5 % \\(125/2=62{,}5\\) kr.",
-            "Gjør første del: Trekk fra: \\(250-62{,}5=187{,}5\\) kr. Det er mindre enn 220 kr, så kroneavslaget er best.",
-            "Svar på spørsmålet: Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(187{,}5\\) kr med kroneavslaget på \\(220\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(125+62{,}5=187{,}5\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        }
-      ]
+      "id": "2py27-039"
     },
     {
       "del": 1,
@@ -4485,35 +4051,7 @@
         ]
       },
       "variantfamilie": "d1-tilbud",
-      "id": "2py27-040",
-      "losningsveier": [
-        {
-          "id": "kjent-brok",
-          "navn": "25 % er en firedel",
-          "forklaring": "Kortest her: del 680 i fire like deler.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Lag en plan: Regn prosentavslaget i deler som er enkle uten kalkulator: 25 % er en firedel av 680.",
-            "Gjør første del: Regn ut prosentavslaget: \\(680/4=170\\) kr.",
-            "Gjør neste del: Sammenlign \\(170\\) kr med kroneavslaget på \\(190\\) kr. Det største avslaget er best.",
-            "Svar på spørsmålet: Prosentavslaget er \\(680/4=170\\) kr. Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(170\\) kr med kroneavslaget på \\(190\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(680/4=170\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        },
-        {
-          "id": "halvering",
-          "navn": "Halver to ganger",
-          "forklaring": "Gå fra 100 % til 50 % og videre til 25 %.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Velg denne veien: Halver 680: \\(680/2=340\\). Det er 50 %.",
-            "Lag en plan: Halver én gang til: \\(340/2=170\\). Det er 25 %.",
-            "Gjør første del: Sammenlign 170 kr med 190 kr. Siden \\(170<190\\), er kroneavslaget best.",
-            "Svar på spørsmålet: Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(170\\) kr med kroneavslaget på \\(190\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(680/4=170\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        }
-      ]
+      "id": "2py27-040"
     },
     {
       "del": 1,
@@ -4554,35 +4092,7 @@
         ]
       },
       "variantfamilie": "d1-tilbud",
-      "id": "2py27-041",
-      "losningsveier": [
-        {
-          "id": "prosentbiter",
-          "navn": "10 % og 2 %",
-          "forklaring": "Bygg 12 % av to enkle prosentbiter.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Lag en plan: Regn prosentavslaget i deler som er enkle uten kalkulator: 10 % av 2 400 er 240, og 2 % er 48.",
-            "Gjør første del: Regn ut prosentavslaget: \\(240+48=288\\) kr.",
-            "Gjør neste del: Sammenlign \\(288\\) kr med kroneavslaget på \\(320\\) kr. Det største avslaget er best.",
-            "Svar på spørsmålet: Prosentavslaget er \\(240+48=288\\) kr. Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(288\\) kr med kroneavslaget på \\(320\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(240+48=288\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        },
-        {
-          "id": "en-prosent",
-          "navn": "Finn 1 % først",
-          "forklaring": "En generell vei som gjør 12 % til tolv like deler.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Velg denne veien: Finn 1 %: \\(2,400/100=24\\).",
-            "Lag en plan: Bygg 12 %: \\(24\\cdot12=24\\cdot10+24\\cdot2=240+48=288\\).",
-            "Gjør første del: Sammenlign 288 kr med 320 kr. Siden \\(288<320\\), er kroneavslaget best.",
-            "Svar på spørsmålet: Derfor gir kroneavslaget størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(288\\) kr med kroneavslaget på \\(320\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(240+48=288\\) kr. Derfor gir kroneavslaget størst avslag."
-          ]
-        }
-      ]
+      "id": "2py27-041"
     },
     {
       "del": 1,
@@ -4623,35 +4133,7 @@
         ]
       },
       "variantfamilie": "d1-tilbud",
-      "id": "2py27-042",
-      "losningsveier": [
-        {
-          "id": "prosentbiter",
-          "navn": "10 % og 8 %",
-          "forklaring": "Bygg 18 % av prosentbiter som passer 1 500.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Lag en plan: Regn prosentavslaget i deler som er enkle uten kalkulator: 10 % av 1 500 er 150, og 8 % er 120.",
-            "Gjør første del: Regn ut prosentavslaget: \\(150+120=270\\) kr.",
-            "Gjør neste del: Sammenlign \\(270\\) kr med kroneavslaget på \\(250\\) kr. Det største avslaget er best.",
-            "Svar på spørsmålet: Prosentavslaget er \\(150+120=270\\) kr. Derfor gir prosenttilbudet størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(270\\) kr med kroneavslaget på \\(250\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(150+120=270\\) kr. Derfor gir prosenttilbudet størst avslag."
-          ]
-        },
-        {
-          "id": "trekk-fra",
-          "navn": "20 % minus 2 %",
-          "forklaring": "Finn en rund prosent og trekk fra den lille forskjellen.",
-          "hint": [
-            "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
-            "Velg denne veien: Finn 20 % som en femdel: \\(1,500/5=300\\).",
-            "Lag en plan: Finn 2 %: 1 % er \\(1,500/100=15\\), så 2 % er \\(15\\cdot2=30\\).",
-            "Gjør første del: Trekk fra: \\(300-30=270\\) kr. Det er mer enn 250 kr, så prosenttilbudet er best.",
-            "Svar på spørsmålet: Derfor gir prosenttilbudet størst avslag.",
-            "Sjekk svaret: Sjekk begrunnelsen, ikke bare svaralternativet: Sammenlign \\(270\\) kr med kroneavslaget på \\(250\\) kr. Det største avslaget er best. Denne testen støtter konklusjonen: Prosentavslaget er \\(150+120=270\\) kr. Derfor gir prosenttilbudet størst avslag."
-          ]
-        }
-      ]
+      "id": "2py27-042"
     },
     {
       "del": 1,

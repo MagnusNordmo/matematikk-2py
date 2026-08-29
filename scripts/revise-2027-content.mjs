@@ -3267,11 +3267,25 @@ const percentageSolutionPaths = {
   },
 };
 
+// Vis metodevalg bare når tallene gjør to ulike hovedveier både naturlige og
+// enkle uten kalkulator. Lengre omskrivinger av den samme regneveien er ikke
+// et reelt valg for eleven og skal derfor ikke publiseres.
+const percentageQuestionsWithNaturalChoices = new Set([
+  "2py27-002",
+  "2py27-006",
+  "2py27-009",
+  "2py27-010",
+  "2py27-012",
+  "2py27-026",
+  "2py27-027",
+  "2py27-038",
+]);
+
 for (const question of bank.oppgaver.filter((item) => item.del === 1 && item.tema === "prosent")) {
   delete question.losningsveier;
 }
 
-for (const [id, config] of Object.entries(percentageSolutionPaths)) {
+for (const [id, config] of Object.entries(percentageSolutionPaths).filter(([id]) => percentageQuestionsWithNaturalChoices.has(id))) {
   const question = questions.get(id);
   if (!question || question.del !== 1 || question.tema !== "prosent") {
     throw new Error(`${id} er ikke en prosentoppgave i Del 1.`);
@@ -3386,7 +3400,7 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.10";
+bank.samling.versjon = "2027.11";
 bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");

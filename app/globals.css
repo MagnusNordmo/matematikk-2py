@@ -748,53 +748,6 @@ input:focus-visible {
   width: 17px;
 }
 
-.percent-strategy-map {
-  width: min(980px, calc(100% - 40px));
-  margin: 0 auto 22px;
-  border: 1px solid #c9ddd6;
-  border-radius: 15px;
-  background: #f4faf7;
-  color: var(--ink);
-}
-
-.percent-strategy-map h2 {
-  margin: 0;
-  padding: 15px 18px;
-  font-size: 0.83rem;
-  font-weight: 800;
-}
-
-.percent-strategy-map > div {
-  display: grid;
-  padding: 0 18px 17px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.percent-strategy-map p {
-  margin: 0;
-  padding: 12px;
-  border: 1px solid #dbe9e4;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.percent-strategy-map strong,
-.percent-strategy-map span {
-  display: block;
-}
-
-.percent-strategy-map strong {
-  font-size: 0.76rem;
-}
-
-.percent-strategy-map span {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 0.71rem;
-  line-height: 1.48;
-}
-
 .solution-paths {
   display: grid;
   margin-top: 22px;
@@ -1641,11 +1594,6 @@ input:focus-visible {
     width: 100%;
   }
 
-  .percent-strategy-map {
-    width: min(100% - 28px, 980px);
-  }
-
-  .percent-strategy-map > div,
   .solution-paths {
     grid-template-columns: 1fr;
   }
