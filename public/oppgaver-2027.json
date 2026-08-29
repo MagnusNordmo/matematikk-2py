@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.7"
+    "versjon": "2027.8"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -2244,10 +2244,10 @@
       "sporsmal": "På en skole reiser \\(18\\) av \\(80\\) elever med tog. Hvor mange prosent av elevene reiser med tog?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
-        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(18/80=9/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Velg framgangsmåte: 10 % av 80 er \\(8\\), og 20 % er derfor \\(16\\).",
-        "Sett opp: 2,5 % av 80 er \\(2\\), fordi 2,5 % er en firedel av 10 %.",
-        "Regn videre: Da er \\(16+2=18\\) det samme som 22,5 % av 80.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
+        "Velg framgangsmåte: Skriv delen over totalen: \\(\\frac{18}{80}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
+        "Sett opp: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\).",
+        "Regn videre: Gjør den forkortede brøken om til prosent: \\(\\frac{9}{40}\\cdot100\\,\\%=22{,}5\\,\\%\\).",
         "Løsningen samlet: Andelen er \\(22{,}5\\,\\%\\).",
         "Kontroller og konkluder: \\(80\\cdot0{,}225=18\\). Vi får tilbake den oppgitte delen."
       ],
@@ -2289,10 +2289,10 @@
       "sporsmal": "I en kantine velger \\(35\\) av \\(125\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
-        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(35/125=7/25\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Velg framgangsmåte: Skriv forholdet \\(35/125\\). Målet er å få 100 i nevneren.",
-        "Sett opp: Gang teller og nevner med 8: \\(35\\cdot8=280\\) og \\(125\\cdot8=1\\,000\\).",
-        "Regn videre: \\(280/1\\,000=28/100\\). Dermed var 28 % av svarene positive.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
+        "Velg framgangsmåte: Skriv delen over totalen: \\(\\frac{35}{125}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
+        "Sett opp: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\).",
+        "Regn videre: Gjør den forkortede brøken om til prosent: \\(\\frac{7}{25}\\cdot100\\,\\%=28\\,\\%\\).",
         "Løsningen samlet: Andelen er \\(28\\,\\%\\).",
         "Kontroller og konkluder: \\(125\\cdot0{,}28=35\\). Vi får tilbake den oppgitte delen."
       ],
@@ -2334,10 +2334,10 @@
       "sporsmal": "I en undersøkelse svarer \\(66\\) av \\(240\\) personer at de bruker kollektivtransport daglig. Hvor mange prosent er dette?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
-        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(66/240=11/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Velg framgangsmåte: Forkort \\(66/240\\) med 6. Da får du \\(11/40\\).",
-        "Sett opp: \\(10/40=25/100\\), altså 25 %. Den siste delen \\(1/40\\) er 2,5 %.",
-        "Regn videre: Legg sammen: \\(25+2{,}5=27{,}5\\).",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{66\\div6}{240\\div6}=\\frac{11}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
+        "Velg framgangsmåte: Skriv delen over totalen: \\(\\frac{66}{240}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
+        "Sett opp: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{66\\div6}{240\\div6}=\\frac{11}{40}\\).",
+        "Regn videre: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{40}\\cdot100\\,\\%=27{,}5\\,\\%\\).",
         "Løsningen samlet: Andelen er \\(27{,}5\\,\\%\\).",
         "Kontroller og konkluder: \\(240\\cdot0{,}275=66\\). Vi får tilbake den oppgitte delen."
       ],
@@ -2379,10 +2379,10 @@
       "sporsmal": "I en medlemsundersøkelse svarer \\(117\\) av \\(360\\) medlemmer ja. Hvor mange prosent svarer ja?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
-        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(117/360=13/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Velg framgangsmåte: Forkort \\(117/360\\) med 9. Da får du \\(13/40\\).",
-        "Sett opp: \\(12/40=30/100\\), altså 30 %. Den siste delen \\(1/40\\) er 2,5 %.",
-        "Regn videre: Legg sammen: \\(30+2{,}5=32{,}5\\).",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{117\\div9}{360\\div9}=\\frac{13}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
+        "Velg framgangsmåte: Skriv delen over totalen: \\(\\frac{117}{360}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
+        "Sett opp: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{117\\div9}{360\\div9}=\\frac{13}{40}\\).",
+        "Regn videre: Gjør den forkortede brøken om til prosent: \\(\\frac{13}{40}\\cdot100\\,\\%=32{,}5\\,\\%\\).",
         "Løsningen samlet: Andelen er \\(32{,}5\\,\\%\\).",
         "Kontroller og konkluder: \\(360\\cdot0{,}325=117\\). Vi får tilbake den oppgitte delen."
       ],
@@ -2424,10 +2424,10 @@
       "sporsmal": "Et teater solgte \\(275\\) av \\(625\\) billetter på nett. Hvor mange prosent av billettene ble solgt på nett?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
-        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(275/625=11/25\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Velg framgangsmåte: Forkort \\(275/625\\) med 25. Da får du \\(11/25\\).",
-        "Sett opp: Gang teller og nevner med 4: \\(11/25=44/100\\).",
-        "Regn videre: Dermed var 44 % av svarene positive.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(25\\): \\(\\frac{275\\div25}{625\\div25}=\\frac{11}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
+        "Velg framgangsmåte: Skriv delen over totalen: \\(\\frac{275}{625}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
+        "Sett opp: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(25\\): \\(\\frac{275\\div25}{625\\div25}=\\frac{11}{25}\\).",
+        "Regn videre: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{25}\\cdot100\\,\\%=44\\,\\%\\).",
         "Løsningen samlet: Andelen er \\(44\\,\\%\\).",
         "Kontroller og konkluder: \\(625\\cdot0{,}44=275\\). Vi får tilbake den oppgitte delen."
       ],
@@ -2690,10 +2690,10 @@
       "sporsmal": "Andelen som reiser kollektivt, økte fra \\(18\\,\\%\\) til \\(27\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
-        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(9/18=1/2\\).",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{9\\div9}{18\\div9}=\\frac{1}{2}\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(27-18=9\\) prosentpoeng.",
-        "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(9/18=1/2\\).",
-        "Regn videre: Gjør forholdet om til prosent: \\(50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
+        "Sett opp: Relativ endring er forskjellen delt på den gamle andelen. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{9\\div9}{18\\div9}=\\frac{1}{2}\\).",
+        "Regn videre: Den forkortede brøken er \\(\\frac{1}{2}=50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
         "Løsningen samlet: Endringen er \\(9\\) prosentpoeng og \\(50\\,\\%\\).",
         "Kontroller og konkluder: \\(18+9=27\\). Prosentpoengsendringen fører tilbake til den nye andelen."
       ],
@@ -2747,10 +2747,10 @@
       "sporsmal": "Andelen som svarte ja i en undersøkelse, sank fra \\(40\\,\\%\\) til \\(34\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
-        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(-6/40=-3/20\\).",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{-6\\div2}{40\\div2}=\\frac{-3}{20}\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(34-40=-6\\) prosentpoeng.",
-        "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(-6/40=-15/100\\).",
-        "Regn videre: Gjør forholdet om til prosent: \\(-15\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
+        "Sett opp: Relativ endring er forskjellen delt på den gamle andelen. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{-6\\div2}{40\\div2}=\\frac{-3}{20}\\).",
+        "Regn videre: Den forkortede brøken er \\(\\frac{-3}{20}=-15\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
         "Løsningen samlet: Endringen er \\(-6\\) prosentpoeng og \\(-15\\,\\%\\).",
         "Kontroller og konkluder: \\(40-6=34\\). Prosentpoengsendringen fører tilbake til den nye andelen."
       ],
@@ -2804,10 +2804,10 @@
       "sporsmal": "Renten på et lån økte fra \\(6\\,\\%\\) til \\(9\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
-        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(3/6=1/2\\).",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{3\\div3}{6\\div3}=\\frac{1}{2}\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(9-6=3\\) prosentpoeng.",
-        "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(3/6=1/2\\).",
-        "Regn videre: Gjør forholdet om til prosent: \\(50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
+        "Sett opp: Relativ endring er forskjellen delt på den gamle andelen. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{3\\div3}{6\\div3}=\\frac{1}{2}\\).",
+        "Regn videre: Den forkortede brøken er \\(\\frac{1}{2}=50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
         "Løsningen samlet: Endringen er \\(3\\) prosentpoeng og \\(50\\,\\%\\).",
         "Kontroller og konkluder: \\(6+3=9\\). Prosentpoengsendringen fører tilbake til den nye andelen."
       ],
@@ -2861,10 +2861,10 @@
       "sporsmal": "Andelen fornybar energi sank fra \\(72\\,\\%\\) til \\(63\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
-        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(-9/72=-1/8\\).",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{-9\\div9}{72\\div9}=\\frac{-1}{8}\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(63-72=-9\\) prosentpoeng.",
-        "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(-9/72=-1/8\\).",
-        "Regn videre: Gjør forholdet om til prosent: \\(-12{,}5\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
+        "Sett opp: Relativ endring er forskjellen delt på den gamle andelen. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{-9\\div9}{72\\div9}=\\frac{-1}{8}\\).",
+        "Regn videre: Den forkortede brøken er \\(\\frac{-1}{8}=-12{,}5\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
         "Løsningen samlet: Endringen er \\(-9\\) prosentpoeng og \\(-12{,}5\\,\\%\\).",
         "Kontroller og konkluder: \\(72-9=63\\). Prosentpoengsendringen fører tilbake til den nye andelen."
       ],
@@ -2918,10 +2918,10 @@
       "sporsmal": "Andelen elever med fravær en bestemt dag økte fra \\(12\\,\\%\\) til \\(15\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
-        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(3/12=1/4\\).",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{3\\div3}{12\\div3}=\\frac{1}{4}\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(15-12=3\\) prosentpoeng.",
-        "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(3/12=1/4\\).",
-        "Regn videre: Gjør forholdet om til prosent: \\(25\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
+        "Sett opp: Relativ endring er forskjellen delt på den gamle andelen. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{3\\div3}{12\\div3}=\\frac{1}{4}\\).",
+        "Regn videre: Den forkortede brøken er \\(\\frac{1}{4}=25\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
         "Løsningen samlet: Endringen er \\(3\\) prosentpoeng og \\(25\\,\\%\\).",
         "Kontroller og konkluder: \\(12+3=15\\). Prosentpoengsendringen fører tilbake til den nye andelen."
       ],
@@ -2978,7 +2978,7 @@
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 35 % er \\(0{,}35\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
         "Regn videre: Skriv regnestykket \\(1-0{,}35\\) og regn ut vekstfaktoren.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(1-0{,}35=0{,}65\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(1-0{,}35=0{,}65\\).",
         "Løsningen samlet: Vekstfaktoren er \\(1-0{,}35=0{,}65\\).",
         "Kontroller og konkluder: \\(1-35/100=0{,}65\\). Faktoren har riktig retning og størrelse."
       ],
@@ -3065,7 +3065,7 @@
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 7 % er \\(0{,}07\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
         "Regn videre: Skriv regnestykket \\(1-0{,}07\\) og regn ut vekstfaktoren.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(1-0{,}07=0{,}93\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(1-0{,}07=0{,}93\\).",
         "Løsningen samlet: Vekstfaktoren er \\(1-0{,}07=0{,}93\\).",
         "Kontroller og konkluder: \\(1-7/100=0{,}93\\). Faktoren har riktig retning og størrelse."
       ],
@@ -3152,7 +3152,7 @@
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 45 % er \\(0{,}45\\) som desimaltall. Siden dette er en økning, skal tallet legges til 1.",
         "Regn videre: Skriv regnestykket \\(1+0{,}45\\) og regn ut vekstfaktoren.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(1+0{,}45=1{,}45\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(1+0{,}45=1{,}45\\).",
         "Løsningen samlet: Vekstfaktoren er \\(1+0{,}45=1{,}45\\).",
         "Kontroller og konkluder: \\(1+45/100=1{,}45\\). Faktoren har riktig retning og størrelse."
       ],
@@ -3911,7 +3911,7 @@
         "Velg framgangsmåte: Eksponenten \\(4\\) betyr at grunntallet \\((-3)\\) skal brukes som faktor 4 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-3)\\cdot(-3)\\cdot(-3)\\cdot(-3)\\).",
         "Regn videre: Det er 4 negative faktorer. De kan pares, så produktet blir positivt. Regn deretter ut produktet.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\((-3)^{4}=(-3)\\cdot(-3)\\cdot(-3)\\cdot(-3)=81\\).",
+        "Regn ut: Regn uttrykket helt ut: \\((-3)^{4}=(-3)\\cdot(-3)\\cdot(-3)\\cdot(-3)=81\\).",
         "Løsningen samlet: \\((-3)^{4}=(-3)\\cdot(-3)\\cdot(-3)\\cdot(-3)=81\\).",
         "Kontroller og konkluder: \\(81/-27=-3\\). Når én faktor tas bort, står grunntallet igjen."
       ],
@@ -3957,7 +3957,7 @@
         "Velg framgangsmåte: Eksponenten \\(5\\) betyr at grunntallet \\((-2)\\) skal brukes som faktor 5 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\).",
         "Regn videre: Det er 5 negative faktorer. Én negativ faktor blir stående, så produktet blir negativt. Regn deretter ut produktet.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\((-2)^{5}=(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)=-32\\).",
+        "Regn ut: Regn uttrykket helt ut: \\((-2)^{5}=(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)=-32\\).",
         "Løsningen samlet: \\((-2)^{5}=(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)=-32\\).",
         "Kontroller og konkluder: \\(-32/16=-2\\). Når én faktor tas bort, står grunntallet igjen."
       ],
@@ -4003,7 +4003,7 @@
         "Velg framgangsmåte: Eksponenten \\(3\\) betyr at grunntallet \\(5\\) skal brukes som faktor 3 ganger.",
         "Sett opp: Skriv potensen som produktet \\(5\\cdot5\\cdot5\\).",
         "Regn videre: Alle faktorene er positive, så produktet blir positivt. Regn deretter ut produktet.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(5^{3}=5\\cdot5\\cdot5=125\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(5^{3}=5\\cdot5\\cdot5=125\\).",
         "Løsningen samlet: \\(5^{3}=5\\cdot5\\cdot5=125\\).",
         "Kontroller og konkluder: \\(125/25=5\\). Når én faktor tas bort, står grunntallet igjen."
       ],
@@ -4049,7 +4049,7 @@
         "Velg framgangsmåte: Eksponenten \\(4\\) betyr at grunntallet \\(10\\) skal brukes som faktor 4 ganger.",
         "Sett opp: Skriv potensen som produktet \\(10\\cdot10\\cdot10\\cdot10\\).",
         "Regn videre: Alle faktorene er positive, så produktet blir positivt. Regn deretter ut produktet.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(10^{4}=10\\cdot10\\cdot10\\cdot10=10\\,000\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(10^{4}=10\\cdot10\\cdot10\\cdot10=10\\,000\\).",
         "Løsningen samlet: \\(10^{4}=10\\cdot10\\cdot10\\cdot10=10\\,000\\).",
         "Kontroller og konkluder: \\(10\\,000/1\\,000=10\\). Når én faktor tas bort, står grunntallet igjen."
       ],
@@ -4095,7 +4095,7 @@
         "Velg framgangsmåte: Eksponenten \\(3\\) betyr at grunntallet \\((-4)\\) skal brukes som faktor 3 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-4)\\cdot(-4)\\cdot(-4)\\).",
         "Regn videre: Det er 3 negative faktorer. Én negativ faktor blir stående, så produktet blir negativt. Regn deretter ut produktet.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\((-4)^{3}=(-4)\\cdot(-4)\\cdot(-4)=-64\\).",
+        "Regn ut: Regn uttrykket helt ut: \\((-4)^{3}=(-4)\\cdot(-4)\\cdot(-4)=-64\\).",
         "Løsningen samlet: \\((-4)^{3}=(-4)\\cdot(-4)\\cdot(-4)=-64\\).",
         "Kontroller og konkluder: \\(-64/16=-4\\). Når én faktor tas bort, står grunntallet igjen."
       ],
@@ -4782,7 +4782,7 @@
         "Sett opp: Regn med eksponentene: \\(5+3=8\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(6\\cdot10^8\\).",
         "Løsningen samlet: Resultatet er \\(6\\cdot10^8\\).",
-        "Kontroller og konkluder: Kontroll mot oppgaven: Resultatet er \\(6\\cdot10^8\\). Enhet, fortegn og størrelsesorden stemmer med opplysningene."
+        "Kontroller og konkluder: \\((6\\cdot10^{8})/(2\\cdot10^{3})=3\\cdot10^{5}\\). Divisjon med den ene faktoren gir den andre tilbake."
       ],
       "svar": "Resultatet er \\(6\\cdot10^8\\).",
       "fasit": {
@@ -4838,7 +4838,7 @@
         "Sett opp: Regn med eksponentene: \\(7-2=5\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(4\\cdot10^5\\).",
         "Løsningen samlet: Resultatet er \\(4\\cdot10^5\\).",
-        "Kontroller og konkluder: Kontroll mot oppgaven: Resultatet er \\(4\\cdot10^5\\). Enhet, fortegn og størrelsesorden stemmer med opplysningene."
+        "Kontroller og konkluder: \\((4\\cdot10^{5})\\cdot(2{,}1\\cdot10^{2})=8{,}4\\cdot10^{7}\\). Multiplikasjon med divisoren gir telleren tilbake."
       ],
       "svar": "Resultatet er \\(4\\cdot10^5\\).",
       "fasit": {
@@ -4894,7 +4894,7 @@
         "Sett opp: Regn med eksponentene: \\(-4+6=2\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(30\\cdot10^2=3\\cdot10^3\\).",
         "Løsningen samlet: Resultatet er \\(30\\cdot10^2=3\\cdot10^3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(30\\cdot10^2=3\\cdot10^3\\)."
+        "Kontroller og konkluder: \\((3\\cdot10^{3})/(5\\cdot10^{6})=6\\cdot10^{-4}\\). Divisjon med den ene faktoren gir den andre tilbake."
       ],
       "svar": "Resultatet er \\(30\\cdot10^2=3\\cdot10^3\\).",
       "fasit": {
@@ -4950,7 +4950,7 @@
         "Sett opp: Regn med eksponentene: \\(-3-(-5)=2\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(3\\cdot10^2\\).",
         "Løsningen samlet: Resultatet er \\(3\\cdot10^2\\).",
-        "Kontroller og konkluder: Kontroll mot oppgaven: Resultatet er \\(3\\cdot10^2\\). Enhet, fortegn og størrelsesorden stemmer med opplysningene."
+        "Kontroller og konkluder: \\((3\\cdot10^{2})\\cdot(3{,}2\\cdot10^{-5})=9{,}6\\cdot10^{-3}\\). Multiplikasjon med divisoren gir telleren tilbake."
       ],
       "svar": "Resultatet er \\(3\\cdot10^2\\).",
       "fasit": {
@@ -5006,7 +5006,7 @@
         "Sett opp: Regn med eksponentene: \\(8+(-3)=5\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(9\\cdot10^5\\).",
         "Løsningen samlet: Resultatet er \\(9\\cdot10^5\\).",
-        "Kontroller og konkluder: Kontroll mot oppgaven: Resultatet er \\(9\\cdot10^5\\). Enhet, fortegn og størrelsesorden stemmer med opplysningene."
+        "Kontroller og konkluder: \\((9\\cdot10^{5})/(2\\cdot10^{-3})=4{,}5\\cdot10^{8}\\). Divisjon med den ene faktoren gir den andre tilbake."
       ],
       "svar": "Resultatet er \\(9\\cdot10^5\\).",
       "fasit": {
@@ -5301,7 +5301,7 @@
         "Sett opp: Regn multiplikasjonen først: \\(3{,}8\\cdot75=285\\).",
         "Regn videre: Legg deretter 285 til fastbeløpet 420.",
         "Løsningen samlet: \\(K=420+3{,}8\\cdot75=420+285=705\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(K=420+3{,}8\\cdot75=420+285=705\\)."
+        "Kontroller og konkluder: \\(705-420=285=3{,}8\\cdot75\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
       ],
       "svar": "\\(K=420+3{,}8\\cdot75=420+285=705\\) kr.",
       "fasit": {
@@ -5344,7 +5344,7 @@
         "Sett opp: Regn potensen først: \\(5^2=25\\).",
         "Regn videre: Regn deretter \\(0{,}5\\cdot12\\cdot25\\).",
         "Løsningen samlet: \\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\) J.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\)."
+        "Kontroller og konkluder: \\(150/25=6=0{,}5\\cdot12\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
       ],
       "svar": "\\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\) J.",
       "fasit": {
@@ -5387,7 +5387,7 @@
         "Sett opp: Regn parentesen først: \\(8+14=22\\).",
         "Regn videre: Regn deretter \\(22\\cdot6/2\\).",
         "Løsningen samlet: \\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\) m².",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\)."
+        "Kontroller og konkluder: \\(66\\cdot2/6=22=8+14\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
       ],
       "svar": "\\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\) m².",
       "fasit": {
@@ -5430,7 +5430,7 @@
         "Sett opp: Regn multiplikasjonen først: \\(1{,}8\\cdot25=45\\).",
         "Regn videre: Legg deretter til 32.",
         "Løsningen samlet: \\(F=1{,}8\\cdot25+32=45+32=77\\) °F.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(F=1{,}8\\cdot25+32=45+32=77\\)."
+        "Kontroller og konkluder: \\(77-32=45=1{,}8\\cdot25\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
       ],
       "svar": "\\(F=1{,}8\\cdot25+32=45+32=77\\) °F.",
       "fasit": {
@@ -5473,7 +5473,7 @@
         "Sett opp: Regn multiplikasjonen først: \\(0{,}04\\cdot70=2{,}8\\).",
         "Regn videre: Legg deretter \\(1{,}2\\) til \\(2{,}8\\).",
         "Løsningen samlet: \\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4\\) liter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4\\)."
+        "Kontroller og konkluder: \\(4-1{,}2=2{,}8=0{,}04\\cdot70\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
       ],
       "svar": "\\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4\\) liter.",
       "fasit": {
@@ -6824,9 +6824,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(74/4=18{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=74/4=18{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(k=74/4=18{,}5\\).",
         "Løsningen samlet: \\(k=74/4=18{,}5\\). Én penn koster \\(18{,}5\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(k=74/4=18{,}5\\)."
+        "Kontroller og konkluder: \\(18{,}5\\cdot4=74\\). Enhetsverdien ganger antallet gir totalen tilbake."
       ],
       "svar": "\\(k=74/4=18{,}5\\). Én penn koster \\(18{,}5\\) kr.",
       "fasit": {
@@ -6868,9 +6868,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(51/6=8{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=51/6=8{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(k=51/6=8{,}5\\).",
         "Løsningen samlet: \\(k=51/6=8{,}5\\). Ett rundstykke koster \\(8{,}5\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(k=51/6=8{,}5\\)."
+        "Kontroller og konkluder: \\(8{,}5\\cdot6=51\\). Enhetsverdien ganger antallet gir totalen tilbake."
       ],
       "svar": "\\(k=51/6=8{,}5\\). Ett rundstykke koster \\(8{,}5\\) kr.",
       "fasit": {
@@ -6912,9 +6912,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(120/8=15\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=120/8=15\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(k=120/8=15\\).",
         "Løsningen samlet: \\(k=120/8=15\\). Maskinen produserer \\(15\\) deler per time.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(k=120/8=15\\)."
+        "Kontroller og konkluder: \\(15\\cdot8=120\\). Enhetsverdien ganger antallet gir totalen tilbake."
       ],
       "svar": "\\(k=120/8=15\\). Maskinen produserer \\(15\\) deler per time.",
       "fasit": {
@@ -6956,9 +6956,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(325/5=65\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=325/5=65\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(k=325/5=65\\).",
         "Løsningen samlet: \\(k=325/5=65\\). Meterprisen er \\(65\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(k=325/5=65\\)."
+        "Kontroller og konkluder: \\(65\\cdot5=325\\). Enhetsverdien ganger antallet gir totalen tilbake."
       ],
       "svar": "\\(k=325/5=65\\). Meterprisen er \\(65\\) kr.",
       "fasit": {
@@ -7000,9 +7000,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(210/12=17{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=210/12=17{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(k=210/12=17{,}5\\).",
         "Løsningen samlet: \\(k=210/12=17{,}5\\). Modellen tilsvarer \\(17{,}5\\) km per liter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(k=210/12=17{,}5\\)."
+        "Kontroller og konkluder: \\(17{,}5\\cdot12=210\\). Enhetsverdien ganger antallet gir totalen tilbake."
       ],
       "svar": "\\(k=210/12=17{,}5\\). Modellen tilsvarer \\(17{,}5\\) km per liter.",
       "fasit": {
@@ -7045,9 +7045,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(84/3=28\\). Gang deretter med \\(7\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(84/3=28\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(84/3=28\\).",
         "Løsningen samlet: Kiloprisen er \\(84/3=28\\) kr. Da koster \\(7\\) kg \\(7\\cdot28=196\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(84/3=28\\)."
+        "Kontroller og konkluder: \\(196\\cdot3=84\\cdot7\\). Kryssproduktene er like, så skaleringen er proporsjonal."
       ],
       "svar": "Kiloprisen er \\(84/3=28\\) kr. Da koster \\(7\\) kg \\(7\\cdot28=196\\) kr.",
       "fasit": {
@@ -7091,9 +7091,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(42{,}5/5=8{,}5\\). Gang deretter med \\(12\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(42{,}5/5=8{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(42{,}5/5=8{,}5\\).",
         "Løsningen samlet: Meterprisen er \\(42{,}5/5=8{,}5\\) kr. Da koster \\(12\\) meter \\(12\\cdot8{,}5=102\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(42{,}5/5=8{,}5\\)."
+        "Kontroller og konkluder: \\(102\\cdot5=42{,}5\\cdot12\\). Kryssproduktene er like, så skaleringen er proporsjonal."
       ],
       "svar": "Meterprisen er \\(42{,}5/5=8{,}5\\) kr. Da koster \\(12\\) meter \\(12\\cdot8{,}5=102\\) kr.",
       "fasit": {
@@ -7134,12 +7134,12 @@
       "sporsmal": "\\(8\\) bussbilletter koster \\(260\\) kr. Hva koster \\(14\\) billetter når alle billettene har samme pris?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Forkort skaleringsforholdet før du ganger: \\(14/8=7/4\\). Del \\(260\\) på \\(4\\) før du ganger med \\(7\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{14\\div2}{8\\div2}=\\frac{7}{4}\\). Del \\(260\\) på \\(4\\) før du ganger med \\(7\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(260/8=32{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(260/8=32{,}5\\).",
         "Løsningen samlet: Én billett koster \\(260/8=32{,}5\\) kr. Da koster \\(14\\) billetter \\(14\\cdot32{,}5=455\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(260/8=32{,}5\\)."
+        "Kontroller og konkluder: \\(455\\cdot8=260\\cdot14\\). Kryssproduktene er like, så skaleringen er proporsjonal."
       ],
       "svar": "Én billett koster \\(260/8=32{,}5\\) kr. Da koster \\(14\\) billetter \\(14\\cdot32{,}5=455\\) kr.",
       "fasit": {
@@ -7180,12 +7180,12 @@
       "sporsmal": "\\(6\\) meter kabel koster \\(450\\) kr. Hva koster \\(9\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Forkort skaleringsforholdet før du ganger: \\(9/6=3/2\\). Del \\(450\\) på \\(2\\) før du ganger med \\(3\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{9\\div3}{6\\div3}=\\frac{3}{2}\\). Del \\(450\\) på \\(2\\) før du ganger med \\(3\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(450/6=75\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(450/6=75\\).",
         "Løsningen samlet: Meterprisen er \\(450/6=75\\) kr. Da koster \\(9\\) meter \\(9\\cdot75=675\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(450/6=75\\)."
+        "Kontroller og konkluder: \\(675\\cdot6=450\\cdot9\\). Kryssproduktene er like, så skaleringen er proporsjonal."
       ],
       "svar": "Meterprisen er \\(450/6=75\\) kr. Da koster \\(9\\) meter \\(9\\cdot75=675\\) kr.",
       "fasit": {
@@ -7229,9 +7229,9 @@
         "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(18/4=4{,}5\\). Gang deretter med \\(15\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(18/4=4{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(18/4=4{,}5\\).",
         "Løsningen samlet: Per porsjon trengs \\(18/4=4{,}5\\) dl. Til \\(15\\) porsjoner trengs \\(15\\cdot4{,}5=67{,}5\\) dl.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(18/4=4{,}5\\)."
+        "Kontroller og konkluder: \\(67{,}5\\cdot4=18\\cdot15\\). Kryssproduktene er like, så skaleringen er proporsjonal."
       ],
       "svar": "Per porsjon trengs \\(18/4=4{,}5\\) dl. Til \\(15\\) porsjoner trengs \\(15\\cdot4{,}5=67{,}5\\) dl.",
       "fasit": {
@@ -7271,12 +7271,12 @@
       "sporsmal": "Seks arbeidere bruker \\(20\\) timer på en jobb. Hvor lang tid bruker \\(8\\) arbeidere dersom jobben er den samme og alle arbeider i samme tempo?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Forkort før du ganger: \\(6/8=3/4\\). Regn derfor \\(20\\cdot3/4\\) med den enkleste divisjonen først.",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{6\\div2}{8\\div2}=\\frac{3}{4}\\). Regn derfor \\(20\\cdot3/4\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(6\\cdot 20=120\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(6\\cdot 20=120\\).",
         "Løsningen samlet: Konstanten er \\(6\\cdot 20=120\\). Dermed blir tiden \\(120/8=15\\) timer.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(6\\cdot 20=120\\)."
+        "Kontroller og konkluder: \\(6\\cdot20=8\\cdot15\\). Produktet er det samme før og etter."
       ],
       "svar": "Konstanten er \\(6\\cdot 20=120\\). Dermed blir tiden \\(120/8=15\\) timer.",
       "fasit": {
@@ -7316,12 +7316,12 @@
       "sporsmal": "Reisetiden er omvendt proporsjonal med farten. En tur tar \\(45\\) minutter når farten er \\(80\\) km/t. Hvor lang tid tar turen med \\(60\\) km/t under de samme forutsetningene?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Forkort før du ganger: \\(80/60=4/3\\). Regn derfor \\(45\\cdot4/3\\) med den enkleste divisjonen først.",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(20\\): \\(\\frac{80\\div20}{60\\div20}=\\frac{4}{3}\\). Regn derfor \\(45\\cdot4/3\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: For samme strekning er produktet av fart og tid konstant.",
         "Sett opp: Finn produktet for den første turen: \\(80\\cdot45=3\\,600\\).",
         "Regn videre: Del på den nye farten: \\(3\\,600/60=60\\) minutter.",
         "Løsningen samlet: Turen tar \\(60\\) minutter. Kontroll: \\(60\\cdot60=3\\,600\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(60\\cdot60=3\\,600\\)."
+        "Kontroller og konkluder: \\(80\\cdot45=60\\cdot60\\). Produktet er det samme før og etter."
       ],
       "svar": "Turen tar \\(60\\) minutter. Kontroll: \\(60\\cdot60=3\\,600\\).",
       "fasit": {
@@ -7364,9 +7364,9 @@
         "Se etter en enkel vei: Del i den rekkefølgen som gir små tall: \\(18/9=2\\), og gang deretter med \\(4\\).",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\cdot 18=72\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(4\\cdot 18=72\\).",
         "Løsningen samlet: Konstanten er \\(4\\cdot 18=72\\). Dermed blir tiden \\(72/9=8\\) timer.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(4\\cdot 18=72\\)."
+        "Kontroller og konkluder: \\(4\\cdot18=9\\cdot8\\). Produktet er det samme før og etter."
       ],
       "svar": "Konstanten er \\(4\\cdot 18=72\\). Dermed blir tiden \\(72/9=8\\) timer.",
       "fasit": {
@@ -7406,12 +7406,12 @@
       "sporsmal": "Tolv like maskiner bruker \\(30\\) dager på en produksjonsordre. Hvor lang tid bruker \\(20\\) slike maskiner på den samme ordren?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Forkort før du ganger: \\(12/20=3/5\\). Regn derfor \\(30\\cdot3/5\\) med den enkleste divisjonen først.",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(4\\): \\(\\frac{12\\div4}{20\\div4}=\\frac{3}{5}\\). Regn derfor \\(30\\cdot3/5\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(12\\cdot 30=360\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(12\\cdot 30=360\\).",
         "Løsningen samlet: Konstanten er \\(12\\cdot 30=360\\). Dermed blir tiden \\(360/20=18\\) dager.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(12\\cdot 30=360\\)."
+        "Kontroller og konkluder: \\(12\\cdot30=20\\cdot18\\). Produktet er det samme før og etter."
       ],
       "svar": "Konstanten er \\(12\\cdot 30=360\\). Dermed blir tiden \\(360/20=18\\) dager.",
       "fasit": {
@@ -7454,9 +7454,9 @@
         "Se etter en enkel vei: Del i den rekkefølgen som gir små tall: \\(24/16=1{,}5\\), og gang deretter med \\(5\\).",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(5\\cdot 24=120\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(5\\cdot 24=120\\).",
         "Løsningen samlet: Konstanten er \\(5\\cdot 24=120\\). Dermed blir tiden \\(120/16=7{,}5\\) timer.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(5\\cdot 24=120\\)."
+        "Kontroller og konkluder: \\(5\\cdot24=16\\cdot7{,}5\\). Produktet er det samme før og etter."
       ],
       "svar": "Konstanten er \\(5\\cdot 24=120\\). Dermed blir tiden \\(120/16=7{,}5\\) timer.",
       "fasit": {
@@ -7500,9 +7500,9 @@
         "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(240/8=30\\), så bare den korte addisjonen \\(30+5\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(8)=240/8+5=35\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(T(8)=240/8+5=35\\).",
         "Løsningen samlet: \\(T(8)=240/8+5=35\\) minutter. Konstantleddet viser at \\(5\\) minutter ikke avhenger av antall arbeidere.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(8)=240/8+5=35\\)."
+        "Kontroller og konkluder: \\((35-5)\\cdot8=240\\). Når fastleddet fjernes, får vi den omvendt proporsjonale delen tilbake."
       ],
       "svar": "\\(T(8)=240/8+5=35\\) minutter. Konstantleddet viser at \\(5\\) minutter ikke avhenger av antall arbeidere.",
       "fasit": {
@@ -7554,9 +7554,9 @@
         "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(360/18=20\\), så bare den korte addisjonen \\(20+12\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(18)=360/18+12=32\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(T(18)=360/18+12=32\\).",
         "Løsningen samlet: \\(T(18)=360/18+12=32\\) minutter. Konstantleddet viser at \\(12\\) minutter ikke avhenger av antall arbeidere.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(18)=360/18+12=32\\)."
+        "Kontroller og konkluder: \\((32-12)\\cdot18=360\\). Når fastleddet fjernes, får vi den omvendt proporsjonale delen tilbake."
       ],
       "svar": "\\(T(18)=360/18+12=32\\) minutter. Konstantleddet viser at \\(12\\) minutter ikke avhenger av antall arbeidere.",
       "fasit": {
@@ -7608,9 +7608,9 @@
         "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(150/10=15\\), så bare den korte addisjonen \\(15+4\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(10)=150/10+4=19\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(T(10)=150/10+4=19\\).",
         "Løsningen samlet: \\(T(10)=150/10+4=19\\) minutter. Konstantleddet viser at \\(4\\) minutter ikke avhenger av antall arbeidere.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(10)=150/10+4=19\\)."
+        "Kontroller og konkluder: \\((19-4)\\cdot10=150\\). Når fastleddet fjernes, får vi den omvendt proporsjonale delen tilbake."
       ],
       "svar": "\\(T(10)=150/10+4=19\\) minutter. Konstantleddet viser at \\(4\\) minutter ikke avhenger av antall arbeidere.",
       "fasit": {
@@ -7662,9 +7662,9 @@
         "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(480/16=30\\), så bare den korte addisjonen \\(30+7\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(16)=480/16+7=37\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(T(16)=480/16+7=37\\).",
         "Løsningen samlet: \\(T(16)=480/16+7=37\\) minutter. Konstantleddet viser at \\(7\\) minutter ikke avhenger av antall arbeidere.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(16)=480/16+7=37\\)."
+        "Kontroller og konkluder: \\((37-7)\\cdot16=480\\). Når fastleddet fjernes, får vi den omvendt proporsjonale delen tilbake."
       ],
       "svar": "\\(T(16)=480/16+7=37\\) minutter. Konstantleddet viser at \\(7\\) minutter ikke avhenger av antall arbeidere.",
       "fasit": {
@@ -7716,9 +7716,9 @@
         "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(900/30=30\\), så bare den korte addisjonen \\(30+15\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(30)=900/30+15=45\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(T(30)=900/30+15=45\\).",
         "Løsningen samlet: \\(T(30)=900/30+15=45\\) minutter. Konstantleddet viser at \\(15\\) minutter ikke avhenger av antall arbeidere.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(30)=900/30+15=45\\)."
+        "Kontroller og konkluder: \\((45-15)\\cdot30=900\\). Når fastleddet fjernes, får vi den omvendt proporsjonale delen tilbake."
       ],
       "svar": "\\(T(30)=900/30+15=45\\) minutter. Konstantleddet viser at \\(15\\) minutter ikke avhenger av antall arbeidere.",
       "fasit": {
@@ -9134,7 +9134,7 @@
       "sporsmal": "Deltakerne i en kundemåling ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 1, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(6/30=1/5\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{6\\div6}{30\\div6}=\\frac{1}{5}\\). Gjør deretter den forkortede brøken om til prosent.",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(6+9+12+3=30\\). Relativ frekvens er \\(6/30\\cdot100\\,\\%=20\\,\\%\\), og kumulativ frekvens er \\(6=6\\).",
@@ -9208,7 +9208,7 @@
       "sporsmal": "Deltakerne i en elevundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 2, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(14/40=7/20\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{14\\div2}{40\\div2}=\\frac{7}{20}\\). Gjør deretter den forkortede brøken om til prosent.",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(8+14+10+8=40\\). Relativ frekvens er \\(14/40\\cdot100\\,\\%=35\\,\\%\\), og kumulativ frekvens er \\(8+14=22\\).",
@@ -9356,7 +9356,7 @@
       "sporsmal": "Deltakerne i en publikumsundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 4, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(5/50=1/10\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{5\\div5}{50\\div5}=\\frac{1}{10}\\). Gjør deretter den forkortede brøken om til prosent.",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(12+18+15+5=50\\). Relativ frekvens er \\(5/50\\cdot100\\,\\%=10\\,\\%\\), og kumulativ frekvens er \\(12+18+15+5=50\\).",
@@ -9430,7 +9430,7 @@
       "sporsmal": "Deltakerne i en serviceundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 1, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(9/60=3/20\\).",
+        "Se etter en enkel vei: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(3\\): \\(\\frac{9\\div3}{60\\div3}=\\frac{3}{20}\\). Gjør deretter den forkortede brøken om til prosent.",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(9+16+20+15=60\\). Relativ frekvens er \\(9/60\\cdot100\\,\\%=15\\,\\%\\), og kumulativ frekvens er \\(9=9\\).",
@@ -9757,11 +9757,11 @@
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
         "Se etter en enkel vei: Bruk \\(2\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(9\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(2+9/20=2{,}45\\).",
-        "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
-        "Sett opp: Del summen av produktene på samlet frekvens.",
-        "Regn videre: Den veide summen er \\(4+14+15+16=49\\), og total frekvens er \\(4+7+5+4=20\\). Dermed blir gjennomsnittet \\(49/20=2{,}45\\).",
+        "Velg framgangsmåte: Multipliser hver verdi med frekvensen som står ved siden av: \\(1\\cdot4=4, 2\\cdot7=14, 3\\cdot5=15, 4\\cdot4=16\\).",
+        "Sett opp: Legg sammen produktene: \\(4+14+15+16=49\\).",
+        "Regn videre: Legg sammen frekvensene og del: \\(4+7+5+4=20\\) og \\(49/20=2{,}45\\).",
         "Løsningen samlet: Veid sum er \\(49\\), total frekvens er \\(20\\), og gjennomsnittet er \\(2{,}45\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Den veide summen er \\(4+14+15+16=49\\), og total frekvens er \\(4+7+5+4=20\\). Dermed blir gjennomsnittet \\(49/20=2{,}45\\)."
+        "Kontroller og konkluder: \\(2{,}45\\cdot20=49\\). Gjennomsnitt ganger samlet frekvens gir den veide summen tilbake."
       ],
       "svar": "Veid sum er \\(49\\), total frekvens er \\(20\\), og gjennomsnittet er \\(2{,}45\\).",
       "fasit": {
@@ -9827,11 +9827,11 @@
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
         "Se etter en enkel vei: Bruk \\(6\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(-18\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(6-18/20=5{,}1\\).",
-        "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
-        "Sett opp: Del summen av produktene på samlet frekvens.",
-        "Regn videre: Den veide summen er \\(6+24+48+24=102\\), og total frekvens er \\(3+6+8+3=20\\). Dermed blir gjennomsnittet \\(102/20=5{,}1\\).",
+        "Velg framgangsmåte: Multipliser hver verdi med frekvensen som står ved siden av: \\(2\\cdot3=6, 4\\cdot6=24, 6\\cdot8=48, 8\\cdot3=24\\).",
+        "Sett opp: Legg sammen produktene: \\(6+24+48+24=102\\).",
+        "Regn videre: Legg sammen frekvensene og del: \\(3+6+8+3=20\\) og \\(102/20=5{,}1\\).",
         "Løsningen samlet: Veid sum er \\(102\\), total frekvens er \\(20\\), og gjennomsnittet er \\(5{,}1\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Den veide summen er \\(6+24+48+24=102\\), og total frekvens er \\(3+6+8+3=20\\). Dermed blir gjennomsnittet \\(102/20=5{,}1\\)."
+        "Kontroller og konkluder: \\(5{,}1\\cdot20=102\\). Gjennomsnitt ganger samlet frekvens gir den veide summen tilbake."
       ],
       "svar": "Veid sum er \\(102\\), total frekvens er \\(20\\), og gjennomsnittet er \\(5{,}1\\).",
       "fasit": {
@@ -9897,11 +9897,11 @@
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
         "Se etter en enkel vei: Bruk \\(20\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(30\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(20+30/20=21{,}5\\).",
-        "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
-        "Sett opp: Del summen av produktene på samlet frekvens.",
-        "Regn videre: Den veide summen er \\(50+180+120+80=430\\), og total frekvens er \\(5+9+4+2=20\\). Dermed blir gjennomsnittet \\(430/20=21{,}5\\).",
+        "Velg framgangsmåte: Multipliser hver verdi med frekvensen som står ved siden av: \\(10\\cdot5=50, 20\\cdot9=180, 30\\cdot4=120, 40\\cdot2=80\\).",
+        "Sett opp: Legg sammen produktene: \\(50+180+120+80=430\\).",
+        "Regn videre: Legg sammen frekvensene og del: \\(5+9+4+2=20\\) og \\(430/20=21{,}5\\).",
         "Løsningen samlet: Veid sum er \\(430\\), total frekvens er \\(20\\), og gjennomsnittet er \\(21{,}5\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Den veide summen er \\(50+180+120+80=430\\), og total frekvens er \\(5+9+4+2=20\\). Dermed blir gjennomsnittet \\(430/20=21{,}5\\)."
+        "Kontroller og konkluder: \\(21{,}5\\cdot20=430\\). Gjennomsnitt ganger samlet frekvens gir den veide summen tilbake."
       ],
       "svar": "Veid sum er \\(430\\), total frekvens er \\(20\\), og gjennomsnittet er \\(21{,}5\\).",
       "fasit": {
@@ -9967,11 +9967,11 @@
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
         "Se etter en enkel vei: Bruk \\(1\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(1\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(1+1/20=1{,}05\\).",
-        "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
-        "Sett opp: Del summen av produktene på samlet frekvens.",
-        "Regn videre: Den veide summen er \\(0+8+10+3=21\\), og total frekvens er \\(6+8+5+1=20\\). Dermed blir gjennomsnittet \\(21/20=1{,}05\\).",
+        "Velg framgangsmåte: Multipliser hver verdi med frekvensen som står ved siden av: \\(0\\cdot6=0, 1\\cdot8=8, 2\\cdot5=10, 3\\cdot1=3\\).",
+        "Sett opp: Legg sammen produktene: \\(0+8+10+3=21\\).",
+        "Regn videre: Legg sammen frekvensene og del: \\(6+8+5+1=20\\) og \\(21/20=1{,}05\\).",
         "Løsningen samlet: Veid sum er \\(21\\), total frekvens er \\(20\\), og gjennomsnittet er \\(1{,}05\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Den veide summen er \\(0+8+10+3=21\\), og total frekvens er \\(6+8+5+1=20\\). Dermed blir gjennomsnittet \\(21/20=1{,}05\\)."
+        "Kontroller og konkluder: \\(1{,}05\\cdot20=21\\). Gjennomsnitt ganger samlet frekvens gir den veide summen tilbake."
       ],
       "svar": "Veid sum er \\(21\\), total frekvens er \\(20\\), og gjennomsnittet er \\(1{,}05\\).",
       "fasit": {
@@ -10037,11 +10037,11 @@
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
         "Se etter en enkel vei: Bruk \\(15\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(-40\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(15-40/20=13\\).",
-        "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
-        "Sett opp: Del summen av produktene på samlet frekvens.",
-        "Regn videre: Den veide summen er \\(10+70+120+60=260\\), og total frekvens er \\(2+7+8+3=20\\). Dermed blir gjennomsnittet \\(260/20=13\\).",
+        "Velg framgangsmåte: Multipliser hver verdi med frekvensen som står ved siden av: \\(5\\cdot2=10, 10\\cdot7=70, 15\\cdot8=120, 20\\cdot3=60\\).",
+        "Sett opp: Legg sammen produktene: \\(10+70+120+60=260\\).",
+        "Regn videre: Legg sammen frekvensene og del: \\(2+7+8+3=20\\) og \\(260/20=13\\).",
         "Løsningen samlet: Veid sum er \\(260\\), total frekvens er \\(20\\), og gjennomsnittet er \\(13\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Den veide summen er \\(10+70+120+60=260\\), og total frekvens er \\(2+7+8+3=20\\). Dermed blir gjennomsnittet \\(260/20=13\\)."
+        "Kontroller og konkluder: \\(13\\cdot20=260\\). Gjennomsnitt ganger samlet frekvens gir den veide summen tilbake."
       ],
       "svar": "Veid sum er \\(260\\), total frekvens er \\(20\\), og gjennomsnittet er \\(13\\).",
       "fasit": {
@@ -10575,7 +10575,7 @@
         "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(12/4=3\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((23-11)/(6-2)=3\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((23-11)/(6-2)=3\\).",
         "Løsningen samlet: Stigningstallet er \\((23-11)/(6-2)=3\\).",
         "Kontroller og konkluder: \\(3\\cdot(6-2)=23-11\\). Endringen i y stemmer med punktene."
       ],
@@ -10626,7 +10626,7 @@
         "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(27/6=4{,}5\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((65-38)/(10-4)=4{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((65-38)/(10-4)=4{,}5\\).",
         "Løsningen samlet: Stigningstallet er \\((65-38)/(10-4)=4{,}5\\).",
         "Kontroller og konkluder: \\(4{,}5\\cdot(10-4)=65-38\\). Endringen i y stemmer med punktene."
       ],
@@ -10677,7 +10677,7 @@
         "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(-10/5=-2\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((8-18)/(5-0)=-2\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((8-18)/(5-0)=-2\\).",
         "Løsningen samlet: Stigningstallet er \\((8-18)/(5-0)=-2\\).",
         "Kontroller og konkluder: \\(-2\\cdot(5-0)=8-18\\). Endringen i y stemmer med punktene."
       ],
@@ -10728,7 +10728,7 @@
         "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(24/6=4\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((31-7)/(9-3)=4\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((31-7)/(9-3)=4\\).",
         "Løsningen samlet: Stigningstallet er \\((31-7)/(9-3)=4\\).",
         "Kontroller og konkluder: \\(4\\cdot(9-3)=31-7\\). Endringen i y stemmer med punktene."
       ],
@@ -10779,7 +10779,7 @@
         "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(48/8=6\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((168-120)/(20-12)=6\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((168-120)/(20-12)=6\\).",
         "Løsningen samlet: Stigningstallet er \\((168-120)/(20-12)=6\\).",
         "Kontroller og konkluder: \\(6\\cdot(20-12)=168-120\\). Endringen i y stemmer med punktene."
       ],
@@ -10827,12 +10827,12 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(3\\) og går gjennom \\((4,19)\\). Finn konstantleddet \\(b\\) i \\(f(x)=3x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
-        "Se etter en enkel vei: Regn produktet før du flytter det: \\(3\\cdot4=12\\). Deretter er konstantleddet \\(19-12=7\\).",
+        "Se etter en enkel vei: Regn produktet først: \\(3\\cdot4=12\\). Trekk så produktet fra begge sider; da er konstantleddet \\(19-12=7\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(4)=19\\). Sett derfor inn \\(x=4\\) og \\(f(x)=19\\).",
         "Sett opp: Da får du ligningen \\(19=3\\cdot4+b\\). Regn først ut produktet \\(3\\cdot4=12\\).",
-        "Regn videre: Isoler b ved å bruke \\(b=19-(12)\\).",
+        "Regn videre: Trekk \\((12)\\) fra begge sider: \\(19-(12)=12+b-(12)\\). Da er \\(b=7\\).",
         "Løsningen samlet: \\(19=3\\cdot4+b=12+b\\), så \\(b=19-(12)=7\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(19=3\\cdot4+b=12+b\\)."
+        "Kontroller og konkluder: \\(3\\cdot4+7=19\\). Punktets x- og y-verdi passer i linjens uttrykk."
       ],
       "svar": "\\(19=3\\cdot4+b=12+b\\), så \\(b=19-(12)=7\\).",
       "fasit": {
@@ -10873,12 +10873,12 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(5\\) og går gjennom \\((6,47)\\). Finn konstantleddet \\(b\\) i \\(f(x)=5x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
-        "Se etter en enkel vei: Regn produktet før du flytter det: \\(5\\cdot6=30\\). Deretter er konstantleddet \\(47-30=17\\).",
+        "Se etter en enkel vei: Regn produktet først: \\(5\\cdot6=30\\). Trekk så produktet fra begge sider; da er konstantleddet \\(47-30=17\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(6)=47\\). Sett derfor inn \\(x=6\\) og \\(f(x)=47\\).",
         "Sett opp: Da får du ligningen \\(47=5\\cdot6+b\\). Regn først ut produktet \\(5\\cdot6=30\\).",
-        "Regn videre: Isoler b ved å bruke \\(b=47-(30)\\).",
+        "Regn videre: Trekk \\((30)\\) fra begge sider: \\(47-(30)=30+b-(30)\\). Da er \\(b=17\\).",
         "Løsningen samlet: \\(47=5\\cdot6+b=30+b\\), så \\(b=47-(30)=17\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(47=5\\cdot6+b=30+b\\)."
+        "Kontroller og konkluder: \\(5\\cdot6+17=47\\). Punktets x- og y-verdi passer i linjens uttrykk."
       ],
       "svar": "\\(47=5\\cdot6+b=30+b\\), så \\(b=47-(30)=17\\).",
       "fasit": {
@@ -10919,12 +10919,12 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(-2\\) og går gjennom \\((8,14)\\). Finn konstantleddet \\(b\\) i \\(f(x)=-2x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
-        "Se etter en enkel vei: Regn produktet før du flytter det: \\(-2\\cdot8=-16\\). Deretter er konstantleddet \\(14+16=30\\).",
+        "Se etter en enkel vei: Regn produktet først: \\(-2\\cdot8=-16\\). Trekk så produktet fra begge sider; da er konstantleddet \\(14+16=30\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(8)=14\\). Sett derfor inn \\(x=8\\) og \\(f(x)=14\\).",
         "Sett opp: Da får du ligningen \\(14=-2\\cdot8+b\\). Regn først ut produktet \\(-2\\cdot8=-16\\).",
-        "Regn videre: Isoler b ved å bruke \\(b=14-(-16)\\).",
+        "Regn videre: Trekk \\((-16)\\) fra begge sider: \\(14-(-16)=-16+b-(-16)\\). Da er \\(b=30\\).",
         "Løsningen samlet: \\(14=-2\\cdot8+b=-16+b\\), så \\(b=14-(-16)=30\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(14=-2\\cdot8+b=-16+b\\)."
+        "Kontroller og konkluder: \\(-2\\cdot8+30=14\\). Punktets x- og y-verdi passer i linjens uttrykk."
       ],
       "svar": "\\(14=-2\\cdot8+b=-16+b\\), så \\(b=14-(-16)=30\\).",
       "fasit": {
@@ -10965,12 +10965,12 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(1{,}5\\) og går gjennom \\((10,32)\\). Finn konstantleddet \\(b\\) i \\(f(x)=1{,}5x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
-        "Se etter en enkel vei: Regn produktet før du flytter det: \\(1{,}5\\cdot10=15\\). Deretter er konstantleddet \\(32-15=17\\).",
+        "Se etter en enkel vei: Regn produktet først: \\(1{,}5\\cdot10=15\\). Trekk så produktet fra begge sider; da er konstantleddet \\(32-15=17\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(10)=32\\). Sett derfor inn \\(x=10\\) og \\(f(x)=32\\).",
         "Sett opp: Da får du ligningen \\(32=1{,}5\\cdot10+b\\). Regn først ut produktet \\(1{,}5\\cdot10=15\\).",
-        "Regn videre: Isoler b ved å bruke \\(b=32-(15)\\).",
+        "Regn videre: Trekk \\((15)\\) fra begge sider: \\(32-(15)=15+b-(15)\\). Da er \\(b=17\\).",
         "Løsningen samlet: \\(32=1{,}5\\cdot10+b=15+b\\), så \\(b=32-(15)=17\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(32=1{,}5\\cdot10+b=15+b\\)."
+        "Kontroller og konkluder: \\(1{,}5\\cdot10+17=32\\). Punktets x- og y-verdi passer i linjens uttrykk."
       ],
       "svar": "\\(32=1{,}5\\cdot10+b=15+b\\), så \\(b=32-(15)=17\\).",
       "fasit": {
@@ -11011,12 +11011,12 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(7\\) og går gjennom \\((3,5)\\). Finn konstantleddet \\(b\\) i \\(f(x)=7x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
-        "Se etter en enkel vei: Regn produktet før du flytter det: \\(7\\cdot3=21\\). Deretter er konstantleddet \\(5-21=-16\\).",
+        "Se etter en enkel vei: Regn produktet først: \\(7\\cdot3=21\\). Trekk så produktet fra begge sider; da er konstantleddet \\(5-21=-16\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(3)=5\\). Sett derfor inn \\(x=3\\) og \\(f(x)=5\\).",
         "Sett opp: Da får du ligningen \\(5=7\\cdot3+b\\). Regn først ut produktet \\(7\\cdot3=21\\).",
-        "Regn videre: Isoler b ved å bruke \\(b=5-(21)\\).",
+        "Regn videre: Trekk \\((21)\\) fra begge sider: \\(5-(21)=21+b-(21)\\). Da er \\(b=-16\\).",
         "Løsningen samlet: \\(5=7\\cdot3+b=21+b\\), så \\(b=5-(21)=-16\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(5=7\\cdot3+b=21+b\\)."
+        "Kontroller og konkluder: \\(7\\cdot3+-16=5\\). Punktets x- og y-verdi passer i linjens uttrykk."
       ],
       "svar": "\\(5=7\\cdot3+b=21+b\\), så \\(b=5-(21)=-16\\).",
       "fasit": {
@@ -11262,12 +11262,13 @@
       "sporsmal": "To mobilabonnement har kostnadsmodellene \\(A(x)=120+4x\\) og \\(B(x)=60+7x\\). Her er \\(x\\) antall GB, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-3x=-60\\). Da gjenstår én enkel divisjon.",
+        "Se etter en enkel vei: Start med å trekke \\(4x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(120+4x=60+7x\\).",
-        "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=60\\).",
-        "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=120+4x\\) for å finne kostnaden.",
+        "Sett opp: Trekk \\(4x\\) fra begge sider. Da får du \\(120=60+3x\\).",
+        "Regn videre: Trekk deretter \\(60\\) fra begge sider: \\(3x=120-60=60\\).",
+        "Regn ut: Del begge sider på 3: \\(x=60/3=20\\). Sett så x inn i én av modellene.",
         "Løsningen samlet: \\(120+4x=60+7x\\) gir \\(x=20\\). Tjenestene koster det samme ved \\(20\\) GB, og kostnaden er da \\(200\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(120+4x=60+7x\\)."
+        "Kontroller og konkluder: \\(120+4\\cdot20=200\\) og \\(60+7\\cdot20=200\\). Begge modellene gir samme kostnad."
       ],
       "svar": "\\(120+4x=60+7x\\) gir \\(x=20\\). Tjenestene koster det samme ved \\(20\\) GB, og kostnaden er da \\(200\\) kr.",
       "fasit": {
@@ -11317,12 +11318,13 @@
       "sporsmal": "To trykkerier har kostnadsmodellene \\(A(x)=250+2x\\) og \\(B(x)=100+5x\\). Her er \\(x\\) antall plakater, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-3x=-150\\). Da gjenstår én enkel divisjon.",
+        "Se etter en enkel vei: Start med å trekke \\(2x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(250+2x=100+5x\\).",
-        "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=150\\).",
-        "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=250+2x\\) for å finne kostnaden.",
+        "Sett opp: Trekk \\(2x\\) fra begge sider. Da får du \\(250=100+3x\\).",
+        "Regn videre: Trekk deretter \\(100\\) fra begge sider: \\(3x=250-100=150\\).",
+        "Regn ut: Del begge sider på 3: \\(x=150/3=50\\). Sett så x inn i én av modellene.",
         "Løsningen samlet: \\(250+2x=100+5x\\) gir \\(x=50\\). Tjenestene koster det samme ved \\(50\\) plakater, og kostnaden er da \\(350\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(250+2x=100+5x\\)."
+        "Kontroller og konkluder: \\(250+2\\cdot50=350\\) og \\(100+5\\cdot50=350\\). Begge modellene gir samme kostnad."
       ],
       "svar": "\\(250+2x=100+5x\\) gir \\(x=50\\). Tjenestene koster det samme ved \\(50\\) plakater, og kostnaden er da \\(350\\) kr.",
       "fasit": {
@@ -11372,12 +11374,13 @@
       "sporsmal": "To bildelingstjenester har kostnadsmodellene \\(A(x)=80+6x\\) og \\(B(x)=200+3x\\). Her er \\(x\\) antall kjørte kilometer, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(3x=120\\). Da gjenstår én enkel divisjon.",
+        "Se etter en enkel vei: Start med å trekke \\(3x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(80+6x=200+3x\\).",
-        "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
-        "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=80+6x\\) for å finne kostnaden.",
+        "Sett opp: Trekk \\(3x\\) fra begge sider. Da får du \\(80+3x=200\\).",
+        "Regn videre: Trekk deretter \\(80\\) fra begge sider: \\(3x=200-80=120\\).",
+        "Regn ut: Del begge sider på 3: \\(x=120/3=40\\). Sett så x inn i én av modellene.",
         "Løsningen samlet: \\(80+6x=200+3x\\) gir \\(x=40\\). Tjenestene koster det samme ved \\(40\\) km, og kostnaden er da \\(320\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(80+6x=200+3x\\)."
+        "Kontroller og konkluder: \\(80+6\\cdot40=320\\) og \\(200+3\\cdot40=320\\). Begge modellene gir samme kostnad."
       ],
       "svar": "\\(80+6x=200+3x\\) gir \\(x=40\\). Tjenestene koster det samme ved \\(40\\) km, og kostnaden er da \\(320\\) kr.",
       "fasit": {
@@ -11427,12 +11430,13 @@
       "sporsmal": "To ladeavtaler har kostnadsmodellene \\(A(x)=300+1{,}5x\\) og \\(B(x)=150+4x\\). Her er \\(x\\) antall kWh, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-2{,}5x=-150\\). Da gjenstår én enkel divisjon.",
+        "Se etter en enkel vei: Start med å trekke \\(1{,}5x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(300+1{,}5x=150+4x\\).",
-        "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(2{,}5x=150\\).",
-        "Regn videre: Del begge sider på \\(2{,}5\\). Sett deretter x-verdien inn i for eksempel \\(A(x)=300+1{,}5x\\) for å finne kostnaden.",
+        "Sett opp: Trekk \\(1{,}5x\\) fra begge sider. Da får du \\(300=150+2{,}5x\\).",
+        "Regn videre: Trekk deretter \\(150\\) fra begge sider: \\(2{,}5x=300-150=150\\).",
+        "Regn ut: Del begge sider på \\(2{,}5\\): \\(x=150/2{,}5=60\\). Sett så x inn i én av modellene.",
         "Løsningen samlet: \\(300+1{,}5x=150+4x\\) gir \\(x=60\\). Tjenestene koster det samme ved \\(60\\) kWh, og kostnaden er da \\(390\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(300+1{,}5x=150+4x\\)."
+        "Kontroller og konkluder: \\(300+1{,}5\\cdot60=390\\) og \\(150+4\\cdot60=390\\). Begge modellene gir samme kostnad."
       ],
       "svar": "\\(300+1{,}5x=150+4x\\) gir \\(x=60\\). Tjenestene koster det samme ved \\(60\\) kWh, og kostnaden er da \\(390\\) kr.",
       "fasit": {
@@ -11482,12 +11486,13 @@
       "sporsmal": "To vaskeritjenester har kostnadsmodellene \\(A(x)=95+8x\\) og \\(B(x)=215+5x\\). Her er \\(x\\) antall plagg, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
-        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(3x=120\\). Da gjenstår én enkel divisjon.",
+        "Se etter en enkel vei: Start med å trekke \\(5x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(95+8x=215+5x\\).",
-        "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
-        "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=95+8x\\) for å finne kostnaden.",
+        "Sett opp: Trekk \\(5x\\) fra begge sider. Da får du \\(95+3x=215\\).",
+        "Regn videre: Trekk deretter \\(95\\) fra begge sider: \\(3x=215-95=120\\).",
+        "Regn ut: Del begge sider på 3: \\(x=120/3=40\\). Sett så x inn i én av modellene.",
         "Løsningen samlet: \\(95+8x=215+5x\\) gir \\(x=40\\). Tjenestene koster det samme ved \\(40\\) plagg, og kostnaden er da \\(415\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(95+8x=215+5x\\)."
+        "Kontroller og konkluder: \\(95+8\\cdot40=415\\) og \\(215+5\\cdot40=415\\). Begge modellene gir samme kostnad."
       ],
       "svar": "\\(95+8x=215+5x\\) gir \\(x=40\\). Tjenestene koster det samme ved \\(40\\) plagg, og kostnaden er da \\(415\\) kr.",
       "fasit": {
@@ -12241,7 +12246,7 @@
         "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=30\\) og \\(\\Delta x=10\\). Da blir vekstfarten \\(30/10=3\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((45-15)/(10-0)=3\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((45-15)/(10-0)=3\\).",
         "Løsningen samlet: Den gjennomsnittlige vekstfarten er \\((45-15)/(10-0)=3\\) liter per minutt.",
         "Kontroller og konkluder: \\(3\\cdot(10-0)=45-15\\). Vekstfarten ganger tidsintervallet gir hele verdiendringen."
       ],
@@ -12288,7 +12293,7 @@
         "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=48\\) og \\(\\Delta x=16\\). Da blir vekstfarten \\(48/16=3\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((78-30)/(18-2)=3\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((78-30)/(18-2)=3\\).",
         "Løsningen samlet: Den gjennomsnittlige vekstfarten er \\((78-30)/(18-2)=3\\) °C per minutt.",
         "Kontroller og konkluder: \\(3\\cdot(18-2)=78-30\\). Vekstfarten ganger tidsintervallet gir hele verdiendringen."
       ],
@@ -12335,7 +12340,7 @@
         "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=49\\) og \\(\\Delta x=20\\). Da blir vekstfarten \\(49/20=2{,}45\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((61-12)/(25-5)=2{,}45\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((61-12)/(25-5)=2{,}45\\).",
         "Løsningen samlet: Den gjennomsnittlige vekstfarten er \\((61-12)/(25-5)=2{,}45\\) m³ per minutt.",
         "Kontroller og konkluder: \\(2{,}45\\cdot(25-5)=61-12\\). Vekstfarten ganger tidsintervallet gir hele verdiendringen."
       ],
@@ -12382,7 +12387,7 @@
         "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=-48\\) og \\(\\Delta x=8\\). Da blir vekstfarten \\(-48/8=-6\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((72-120)/(8-0)=-6\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((72-120)/(8-0)=-6\\).",
         "Løsningen samlet: Den gjennomsnittlige vekstfarten er \\((72-120)/(8-0)=-6\\) °C per minutt.",
         "Kontroller og konkluder: \\(-6\\cdot(8-0)=72-120\\). Vekstfarten ganger tidsintervallet gir hele verdiendringen."
       ],
@@ -12429,7 +12434,7 @@
         "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=360\\) og \\(\\Delta x=30\\). Da blir vekstfarten \\(360/30=12\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((610-250)/(40-10)=12\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((610-250)/(40-10)=12\\).",
         "Løsningen samlet: Den gjennomsnittlige vekstfarten er \\((610-250)/(40-10)=12\\) enheter per time.",
         "Kontroller og konkluder: \\(12\\cdot(40-10)=610-250\\). Vekstfarten ganger tidsintervallet gir hele verdiendringen."
       ],
@@ -13374,9 +13379,9 @@
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}1\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(1\\,000 → 1\\,100 → 1\\,210\\).",
         "Regn videre: Etter siste runde er verdi \\(1\\,210\\). round uten antall desimaler beholder dette heltallet.",
-        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,000\\cdot1{,}1^{2=1\\,210\\).",
+        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,000\\cdot1{,}1^{2}=1\\,210\\).",
         "Løsningen samlet: Programmet skriver ut \\(1\\,210\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,000\\cdot1{,}1^{2=1\\,210\\)."
+        "Kontroller og konkluder: \\(1\\,210/1{,}1=1\\,100\\). Ett steg bakover gir verdien fra nest siste runde."
       ],
       "svar": "Programmet skriver ut \\(1\\,210\\).",
       "fasit": {
@@ -13430,9 +13435,9 @@
         "Velg framgangsmåte: Løkken har 3 runder, så faktoren \\(0{,}5\\) skal brukes akkurat 3 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(800 → 400 → 200 → 100\\).",
         "Regn videre: Etter siste runde er verdi \\(100\\). round uten antall desimaler beholder dette heltallet.",
-        "Regn ut: Løkken utfører samme multiplikasjon \\(3\\) ganger: \\(800\\cdot0{,}5^{3=100\\).",
+        "Regn ut: Løkken utfører samme multiplikasjon \\(3\\) ganger: \\(800\\cdot0{,}5^{3}=100\\).",
         "Løsningen samlet: Programmet skriver ut \\(100\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Løkken utfører samme multiplikasjon \\(3\\) ganger: \\(800\\cdot0{,}5^{3=100\\)."
+        "Kontroller og konkluder: \\(100/0{,}5=200\\). Ett steg bakover gir verdien fra nest siste runde."
       ],
       "svar": "Programmet skriver ut \\(100\\).",
       "fasit": {
@@ -13486,9 +13491,9 @@
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}2\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(2\\,500 → 3\\,000 → 3\\,600\\).",
         "Regn videre: Etter siste runde er verdi \\(3\\,600\\). round uten antall desimaler beholder dette heltallet.",
-        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(2\\,500\\cdot1{,}2^{2=3\\,600\\).",
+        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(2\\,500\\cdot1{,}2^{2}=3\\,600\\).",
         "Løsningen samlet: Programmet skriver ut \\(3\\,600\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(2\\,500\\cdot1{,}2^{2=3\\,600\\)."
+        "Kontroller og konkluder: \\(3\\,600/1{,}2=3\\,000\\). Ett steg bakover gir verdien fra nest siste runde."
       ],
       "svar": "Programmet skriver ut \\(3\\,600\\).",
       "fasit": {
@@ -13542,9 +13547,9 @@
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}5\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(600 → 900 → 1\\,350\\).",
         "Regn videre: Etter siste runde er verdi \\(1\\,350\\). round uten antall desimaler beholder dette heltallet.",
-        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(600\\cdot1{,}5^{2=1\\,350\\).",
+        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(600\\cdot1{,}5^{2}=1\\,350\\).",
         "Løsningen samlet: Programmet skriver ut \\(1\\,350\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(600\\cdot1{,}5^{2=1\\,350\\)."
+        "Kontroller og konkluder: \\(1\\,350/1{,}5=900\\). Ett steg bakover gir verdien fra nest siste runde."
       ],
       "svar": "Programmet skriver ut \\(1\\,350\\).",
       "fasit": {
@@ -13598,9 +13603,9 @@
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(0{,}75\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(1\\,200 → 900 → 675\\).",
         "Regn videre: Etter siste runde er verdi \\(675\\). round uten antall desimaler beholder dette heltallet.",
-        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,200\\cdot0{,}75^{2=675\\).",
+        "Regn ut: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,200\\cdot0{,}75^{2}=675\\).",
         "Løsningen samlet: Programmet skriver ut \\(675\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,200\\cdot0{,}75^{2=675\\)."
+        "Kontroller og konkluder: \\(675/0{,}75=900\\). Ett steg bakover gir verdien fra nest siste runde."
       ],
       "svar": "Programmet skriver ut \\(675\\).",
       "fasit": {
@@ -14179,9 +14184,9 @@
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 4 og deretter største verdi 14.",
         "Sett opp: Listen som står igjen, er [8, 10].",
         "Regn videre: Programmet beregner gjennomsnittet \\((8+10)/2\\).",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(18/2=9\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(18/2=9\\).",
         "Løsningen samlet: Etter at minste og største verdi er fjernet, står [8, 10] igjen. Gjennomsnittet er \\(18/2=9\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(18/2=9\\)."
+        "Kontroller og konkluder: \\(9\\cdot2=18\\). Gjennomsnittet gir summen av verdiene som står igjen."
       ],
       "svar": "Etter at minste og største verdi er fjernet, står [8, 10] igjen. Gjennomsnittet er \\(18/2=9\\).",
       "fasit": {
@@ -14239,9 +14244,9 @@
         "Velg framgangsmåte: If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
         "Sett opp: Verdiene som tas med, er [9, 12].",
         "Regn videre: Legg sammen akkurat disse verdiene: \\(9+12\\).",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(9+12=21\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(9+12=21\\).",
         "Løsningen samlet: Programmet tar med [9, 12], og skriver derfor ut \\(9+12=21\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(9+12=21\\)."
+        "Kontroller og konkluder: \\(9+12=21\\). Bare verdiene som oppfyller vilkåret, er med i summen."
       ],
       "svar": "Programmet tar med [9, 12], og skriver derfor ut \\(9+12=21\\).",
       "fasit": {
@@ -14300,9 +14305,9 @@
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 20 og deretter største verdi 28.",
         "Sett opp: Listen som står igjen, er [22, 24].",
         "Regn videre: Programmet beregner gjennomsnittet \\((22+24)/2\\).",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(46/2=23\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(46/2=23\\).",
         "Løsningen samlet: Etter at minste og største verdi er fjernet, står [22, 24] igjen. Gjennomsnittet er \\(46/2=23\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(46/2=23\\)."
+        "Kontroller og konkluder: \\(23\\cdot2=46\\). Gjennomsnittet gir summen av verdiene som står igjen."
       ],
       "svar": "Etter at minste og største verdi er fjernet, står [22, 24] igjen. Gjennomsnittet er \\(46/2=23\\).",
       "fasit": {
@@ -14360,9 +14365,9 @@
         "Velg framgangsmåte: If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
         "Sett opp: Verdiene som tas med, er [9, 12, 15].",
         "Regn videre: Legg sammen akkurat disse verdiene: \\(9+12+15\\).",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(9+12+15=36\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(9+12+15=36\\).",
         "Løsningen samlet: Programmet tar med [9, 12, 15], og skriver derfor ut \\(9+12+15=36\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(9+12+15=36\\)."
+        "Kontroller og konkluder: \\(9+12+15=36\\). Bare verdiene som oppfyller vilkåret, er med i summen."
       ],
       "svar": "Programmet tar med [9, 12, 15], og skriver derfor ut \\(9+12+15=36\\).",
       "fasit": {
@@ -14421,9 +14426,9 @@
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 18 og deretter største verdi 30.",
         "Sett opp: Listen som står igjen, er [21, 25, 26].",
         "Regn videre: Programmet beregner gjennomsnittet \\((21+25+26)/3\\).",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(72/3=24\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(72/3=24\\).",
         "Løsningen samlet: Etter at minste og største verdi er fjernet, står [21, 25, 26] igjen. Gjennomsnittet er \\(72/3=24\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(72/3=24\\)."
+        "Kontroller og konkluder: \\(24\\cdot3=72\\). Gjennomsnittet gir summen av verdiene som står igjen."
       ],
       "svar": "Etter at minste og største verdi er fjernet, står [21, 25, 26] igjen. Gjennomsnittet er \\(72/3=24\\).",
       "fasit": {
@@ -14479,11 +14484,11 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Se etter en enkel vei: Ta den variable delen først: \\(2\\cdot4=8\\). Legg så til konstantleddet \\(3\\).",
-        "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
-        "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=4\\).",
+        "Velg framgangsmåte: Erstatt \\(x\\) med \\(4\\) i linjens uttrykk: \\(y=2\\cdot4+3\\).",
+        "Sett opp: Regn multiplikasjonen først: \\(2\\cdot4=8\\).",
+        "Regn videre: Legg til konstantleddet: \\(y=8+3=11\\).",
         "Løsningen samlet: Når \\(x=4\\), er \\(y=11\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(x=4\\)."
+        "Kontroller og konkluder: \\(11-3=8=2\\cdot4\\). Når konstantleddet trekkes fra, står den variable delen igjen."
       ],
       "svar": "Når \\(x=4\\), er \\(y=11\\).",
       "fasit": {
@@ -14538,11 +14543,11 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Se etter en enkel vei: Ta den variable delen først: \\(5\\cdot3=15\\). Legg så til konstantleddet \\(-2\\).",
-        "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
-        "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=3\\).",
+        "Velg framgangsmåte: Erstatt \\(x\\) med \\(3\\) i linjens uttrykk: \\(y=5\\cdot3+-2\\).",
+        "Sett opp: Regn multiplikasjonen først: \\(5\\cdot3=15\\).",
+        "Regn videre: Legg til konstantleddet: \\(y=15+-2=13\\).",
         "Løsningen samlet: Når \\(x=3\\), er \\(y=13\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(x=3\\)."
+        "Kontroller og konkluder: \\(13--2=15=5\\cdot3\\). Når konstantleddet trekkes fra, står den variable delen igjen."
       ],
       "svar": "Når \\(x=3\\), er \\(y=13\\).",
       "fasit": {
@@ -14597,11 +14602,11 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Se etter en enkel vei: Ta den variable delen først: \\(-3\\cdot5=-15\\). Legg så til konstantleddet \\(18\\).",
-        "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
-        "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=5\\).",
+        "Velg framgangsmåte: Erstatt \\(x\\) med \\(5\\) i linjens uttrykk: \\(y=-3\\cdot5+18\\).",
+        "Sett opp: Regn multiplikasjonen først: \\(-3\\cdot5=-15\\).",
+        "Regn videre: Legg til konstantleddet: \\(y=-15+18=3\\).",
         "Løsningen samlet: Når \\(x=5\\), er \\(y=3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(x=5\\)."
+        "Kontroller og konkluder: \\(3-18=-15=-3\\cdot5\\). Når konstantleddet trekkes fra, står den variable delen igjen."
       ],
       "svar": "Når \\(x=5\\), er \\(y=3\\).",
       "fasit": {
@@ -14656,11 +14661,11 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Se etter en enkel vei: Ta den variable delen først: \\(0{,}5\\cdot8=4\\). Legg så til konstantleddet \\(6\\).",
-        "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
-        "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=8\\).",
+        "Velg framgangsmåte: Erstatt \\(x\\) med \\(8\\) i linjens uttrykk: \\(y=0{,}5\\cdot8+6\\).",
+        "Sett opp: Regn multiplikasjonen først: \\(0{,}5\\cdot8=4\\).",
+        "Regn videre: Legg til konstantleddet: \\(y=4+6=10\\).",
         "Løsningen samlet: Når \\(x=8\\), er \\(y=10\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(x=8\\)."
+        "Kontroller og konkluder: \\(10-6=4=0{,}5\\cdot8\\). Når konstantleddet trekkes fra, står den variable delen igjen."
       ],
       "svar": "Når \\(x=8\\), er \\(y=10\\).",
       "fasit": {
@@ -14715,11 +14720,11 @@
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
         "Se etter en enkel vei: Ta den variable delen først: \\(4\\cdot6=24\\). Legg så til konstantleddet \\(1\\).",
-        "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
-        "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=6\\).",
+        "Velg framgangsmåte: Erstatt \\(x\\) med \\(6\\) i linjens uttrykk: \\(y=4\\cdot6+1\\).",
+        "Sett opp: Regn multiplikasjonen først: \\(4\\cdot6=24\\).",
+        "Regn videre: Legg til konstantleddet: \\(y=24+1=25\\).",
         "Løsningen samlet: Når \\(x=6\\), er \\(y=25\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(x=6\\)."
+        "Kontroller og konkluder: \\(25-1=24=4\\cdot6\\). Når konstantleddet trekkes fra, står den variable delen igjen."
       ],
       "svar": "Når \\(x=6\\), er \\(y=25\\).",
       "fasit": {
@@ -14773,12 +14778,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((21+1)/2=11\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
-        "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
-        "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
-        "Regn videre: Halvparten av \\(21\\) er \\(21/2=10{,}5\\). Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\), så medianplassen ligger der.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((21+1)/2=11\\). Les deretter av den første kumulative frekvensen som når denne plassen.",
+        "Velg framgangsmåte: Det totale antallet svar er den siste kumulative frekvensen: \\(21\\).",
+        "Sett opp: Det er et oddetall antall svar. Den midterste plassen er \\((21+1)/2=11\\).",
+        "Regn videre: Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\). Derfor ligger den aktuelle midtposisjonen der.",
         "Løsningen samlet: Det er \\(21\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(21\\) er \\(21/2=11\\). Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: \\(9<11\\le15\\). Midtposisjonen ligger derfor i kategori \\(3\\)."
       ],
       "svar": "Det er \\(21\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -14844,12 +14849,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((35+1)/2=18\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
-        "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
-        "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
-        "Regn videre: Halvparten av \\(35\\) er \\(35/2=17{,}5\\). Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\), så medianplassen ligger der.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((35+1)/2=18\\). Les deretter av den første kumulative frekvensen som når denne plassen.",
+        "Velg framgangsmåte: Det totale antallet svar er den siste kumulative frekvensen: \\(35\\).",
+        "Sett opp: Det er et oddetall antall svar. Den midterste plassen er \\((35+1)/2=18\\).",
+        "Regn videre: Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\). Derfor ligger den aktuelle midtposisjonen der.",
         "Løsningen samlet: Det er \\(35\\) svar. Den midterste plasseringen passeres ved vurdering \\(2\\), så medianvurderingen er \\(2\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(35\\) er \\(35/2=18\\). Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\), så medianplassen ligger der."
+        "Kontroller og konkluder: \\(10<18\\le18\\). Midtposisjonen ligger derfor i kategori \\(2\\)."
       ],
       "svar": "Det er \\(35\\) svar. Den midterste plasseringen passeres ved vurdering \\(2\\), så medianvurderingen er \\(2\\).",
       "fasit": {
@@ -14915,12 +14920,13 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\(30/2=15\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
-        "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
-        "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
-        "Regn videre: Halvparten av \\(30\\) er \\(30/2=15\\). Kumulativ frekvens går fra \\(11\\) til \\(19\\) i kategori \\(3\\), så medianplassen ligger der.",
+        "Se etter en enkel vei: Ved et partall antall svar må begge midtposisjonene sjekkes: \\(15\\). og \\(16\\). plass.",
+        "Velg framgangsmåte: Det totale antallet svar er den siste kumulative frekvensen: \\(30\\).",
+        "Sett opp: Det er et partall antall svar. De to midterste plassene er \\(15\\) og \\(16\\); de ligger i kategori \\(3\\).",
+        "Regn videre: Kumulativ frekvens går fra \\(11\\) til \\(19\\) i kategori \\(3\\). Derfor ligger den aktuelle midtposisjonen der.",
+        "Regn ut: De to midterste posisjonene er \\(15\\) og \\(16\\), og \\(11<15<16\\le19\\). Begge ligger i kategori \\(3\\).",
         "Løsningen samlet: Det er \\(30\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(30\\) er \\(30/2=15\\). Kumulativ frekvens går fra \\(11\\) til \\(19\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: \\(11<15<16\\le19\\). Begge midtposisjonene ligger derfor i kategori \\(3\\)."
       ],
       "svar": "Det er \\(30\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -14986,12 +14992,13 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\(40/2=20\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
-        "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
-        "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
-        "Regn videre: Halvparten av \\(40\\) er \\(40/2=20\\). Kumulativ frekvens går fra \\(14\\) til \\(23\\) i kategori \\(3\\), så medianplassen ligger der.",
+        "Se etter en enkel vei: Ved et partall antall svar må begge midtposisjonene sjekkes: \\(20\\). og \\(21\\). plass.",
+        "Velg framgangsmåte: Det totale antallet svar er den siste kumulative frekvensen: \\(40\\).",
+        "Sett opp: Det er et partall antall svar. De to midterste plassene er \\(20\\) og \\(21\\); de ligger i kategori \\(3\\).",
+        "Regn videre: Kumulativ frekvens går fra \\(14\\) til \\(23\\) i kategori \\(3\\). Derfor ligger den aktuelle midtposisjonen der.",
+        "Regn ut: De to midterste posisjonene er \\(20\\) og \\(21\\), og \\(14<20<21\\le23\\). Begge ligger i kategori \\(3\\).",
         "Løsningen samlet: Det er \\(40\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(40\\) er \\(40/2=20\\). Kumulativ frekvens går fra \\(14\\) til \\(23\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: \\(14<20<21\\le23\\). Begge midtposisjonene ligger derfor i kategori \\(3\\)."
       ],
       "svar": "Det er \\(40\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -15057,12 +15064,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
-        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((45+1)/2=23\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
-        "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
-        "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
-        "Regn videre: Halvparten av \\(45\\) er \\(45/2=22{,}5\\). Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\), så medianplassen ligger der.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((45+1)/2=23\\). Les deretter av den første kumulative frekvensen som når denne plassen.",
+        "Velg framgangsmåte: Det totale antallet svar er den siste kumulative frekvensen: \\(45\\).",
+        "Sett opp: Det er et oddetall antall svar. Den midterste plassen er \\((45+1)/2=23\\).",
+        "Regn videre: Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\). Derfor ligger den aktuelle midtposisjonen der.",
         "Løsningen samlet: Det er \\(45\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(45\\) er \\(45/2=23\\). Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: \\(16<23\\le29\\). Midtposisjonen ligger derfor i kategori \\(3\\)."
       ],
       "svar": "Det er \\(45\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -15551,9 +15558,9 @@
         "Velg framgangsmåte: Tierpotensen \\(10^5\\) betyr 100 000.",
         "Sett opp: Skriv \\(3{,}2\\cdot100\\,000\\).",
         "Regn videre: Å gange med 100 000 flytter kommaet fem plasser mot høyre.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(3{,}2\\cdot10^5=320\\,000\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(3{,}2\\cdot10^5=320\\,000\\).",
         "Løsningen samlet: \\(3{,}2\\cdot10^5=320\\,000\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(3{,}2\\cdot10^5=320\\,000\\)."
+        "Kontroller og konkluder: \\(320\\,000/100\\,000=3{,}2\\). Kontrollregningen passer med opplysningene."
       ],
       "svar": "\\(3{,}2\\cdot10^5=320\\,000\\).",
       "fasit": {
@@ -15595,9 +15602,9 @@
         "Velg framgangsmåte: Skriv 45 % som desimaltallet \\(0{,}45\\).",
         "Sett opp: Regnestykket blir \\(0{,}45\\cdot800\\).",
         "Regn videre: Du kan dele opp 45 % i 40 % og 5 % av 800.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(0{,}45\\cdot800=360\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(0{,}45\\cdot800=360\\).",
         "Løsningen samlet: \\(0{,}45\\cdot800=360\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(0{,}45\\cdot800=360\\)."
+        "Kontroller og konkluder: \\(360/800\\cdot100\\,\\%=45\\,\\%\\). Kontrollregningen passer med opplysningene."
       ],
       "svar": "\\(0{,}45\\cdot800=360\\).",
       "fasit": {
@@ -15640,7 +15647,7 @@
         "Sett opp: Du kan bygge videre ved å doble: \\(2^4=16\\).",
         "Regn videre: Da er \\(2^8=(2^4)^2=16^2\\).",
         "Løsningen samlet: \\(2^8=256\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(2^8=256\\)."
+        "Kontroller og konkluder: \\(256/16=16=2^4\\). Kontrollregningen passer med opplysningene."
       ],
       "svar": "\\(2^8=256\\).",
       "fasit": {
@@ -15684,7 +15691,7 @@
         "Regn videre: Tell deg fram til det tredje tallet i listen.",
         "Regn ut: Det er fem sorterte verdier. Medianplassen er \\((5+1)/2=3\\), og den tredje verdien er \\(9\\).",
         "Løsningen samlet: Den tredje av de fem sorterte observasjonene er 9, så medianen er 9.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Det er fem sorterte verdier. Medianplassen er \\((5+1)/2=3\\), og den tredje verdien er \\(9\\)."
+        "Kontroller og konkluder: \\((5+1)/2=3\\). Kontrollregningen passer med opplysningene."
       ],
       "svar": "Den tredje av de fem sorterte observasjonene er 9, så medianen er 9.",
       "fasit": {
@@ -15727,7 +15734,7 @@
         "Sett opp: Regn multiplikasjonen først: \\(6\\cdot7=42\\).",
         "Regn videre: Legg deretter til 5.",
         "Løsningen samlet: \\(6\\cdot7+5=42+5=47\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(6\\cdot7+5=42+5=47\\)."
+        "Kontroller og konkluder: \\(47-5=42=6\\cdot7\\). Kontrollregningen passer med opplysningene."
       ],
       "svar": "\\(6\\cdot7+5=42+5=47\\).",
       "fasit": {
@@ -15768,9 +15775,9 @@
         "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1{,}1\\cdot1{,}12=1{,}232\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(1{,}1\\cdot1{,}12=1{,}232\\).",
         "Løsningen samlet: Samlet vekstfaktor er \\(1{,}1\\cdot1{,}12=1{,}232\\). Abonnementsprisen har økt med \\(23{,}2\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(1{,}1\\cdot1{,}12=1{,}232\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(1{,}1\\cdot1{,}12=1{,}232\\)."
       ],
       "svar": "Samlet vekstfaktor er \\(1{,}1\\cdot1{,}12=1{,}232\\). Abonnementsprisen har økt med \\(23{,}2\\,\\%\\).",
       "fasit": {
@@ -15815,9 +15822,9 @@
         "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(0{,}92\\cdot0{,}95=0{,}874\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(0{,}92\\cdot0{,}95=0{,}874\\).",
         "Løsningen samlet: Samlet vekstfaktor er \\(0{,}92\\cdot0{,}95=0{,}874\\). Energibruken har gått ned med \\(12{,}6\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(0{,}92\\cdot0{,}95=0{,}874\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(0{,}92\\cdot0{,}95=0{,}874\\)."
       ],
       "svar": "Samlet vekstfaktor er \\(0{,}92\\cdot0{,}95=0{,}874\\). Energibruken har gått ned med \\(12{,}6\\,\\%\\).",
       "fasit": {
@@ -15862,9 +15869,9 @@
         "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1{,}25\\cdot0{,}9=1{,}125\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(1{,}25\\cdot0{,}9=1{,}125\\).",
         "Løsningen samlet: Samlet vekstfaktor er \\(1{,}25\\cdot0{,}9=1{,}125\\). Medlemstallet har økt med \\(12{,}5\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(1{,}25\\cdot0{,}9=1{,}125\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(1{,}25\\cdot0{,}9=1{,}125\\)."
       ],
       "svar": "Samlet vekstfaktor er \\(1{,}25\\cdot0{,}9=1{,}125\\). Medlemstallet har økt med \\(12{,}5\\,\\%\\).",
       "fasit": {
@@ -15911,9 +15918,9 @@
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(800\\cdot 0{,}75=600\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(800\\cdot 0{,}75=600\\).",
         "Løsningen samlet: Etter rabatt blir prisen \\(800\\cdot 0{,}75=600\\) kr. Uten mva er den \\(600\\div1{,}25=480\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(800\\cdot 0{,}75=600\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(800\\cdot 0{,}75=600\\)."
       ],
       "svar": "Etter rabatt blir prisen \\(800\\cdot 0{,}75=600\\) kr. Uten mva er den \\(600\\div1{,}25=480\\) kr.",
       "fasit": {
@@ -15967,9 +15974,9 @@
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(1250\\cdot 0{,}8=1\\,000\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(1250\\cdot 0{,}8=1\\,000\\).",
         "Løsningen samlet: Etter rabatt blir prisen \\(1250\\cdot 0{,}8=1\\,000\\) kr. Uten mva er den \\(1\\,000\\div1{,}25=800\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(1250\\cdot 0{,}8=1\\,000\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(1250\\cdot 0{,}8=1\\,000\\)."
       ],
       "svar": "Etter rabatt blir prisen \\(1250\\cdot 0{,}8=1\\,000\\) kr. Uten mva er den \\(1\\,000\\div1{,}25=800\\) kr.",
       "fasit": {
@@ -16023,9 +16030,9 @@
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(640\\cdot 0{,}85=544\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(640\\cdot 0{,}85=544\\).",
         "Løsningen samlet: Etter rabatt blir prisen \\(640\\cdot 0{,}85=544\\) kr. Uten mva er den \\(544\\div1{,}25=435{,}2\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(640\\cdot 0{,}85=544\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(640\\cdot 0{,}85=544\\)."
       ],
       "svar": "Etter rabatt blir prisen \\(640\\cdot 0{,}85=544\\) kr. Uten mva er den \\(544\\div1{,}25=435{,}2\\) kr.",
       "fasit": {
@@ -16079,9 +16086,9 @@
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(2400\\cdot 0{,}7=1\\,680\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(2400\\cdot 0{,}7=1\\,680\\).",
         "Løsningen samlet: Etter rabatt blir prisen \\(2400\\cdot 0{,}7=1\\,680\\) kr. Uten mva er den \\(1\\,680\\div1{,}25=1\\,344\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(2400\\cdot 0{,}7=1\\,680\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(2400\\cdot 0{,}7=1\\,680\\)."
       ],
       "svar": "Etter rabatt blir prisen \\(2400\\cdot 0{,}7=1\\,680\\) kr. Uten mva er den \\(1\\,680\\div1{,}25=1\\,344\\) kr.",
       "fasit": {
@@ -16135,9 +16142,9 @@
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(960\\cdot 0{,}9=864\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(960\\cdot 0{,}9=864\\).",
         "Løsningen samlet: Etter rabatt blir prisen \\(960\\cdot 0{,}9=864\\) kr. Uten mva er den \\(864\\div1{,}25=691{,}2\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(960\\cdot 0{,}9=864\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(960\\cdot 0{,}9=864\\)."
       ],
       "svar": "Etter rabatt blir prisen \\(960\\cdot 0{,}9=864\\) kr. Uten mva er den \\(864\\div1{,}25=691{,}2\\) kr.",
       "fasit": {
@@ -16190,9 +16197,9 @@
         "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}7/118{,}4\\) er omtrent \\(4\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\).",
         "Løsningen samlet: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\)."
       ],
       "svar": "\\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\).",
       "fasit": {
@@ -16236,9 +16243,9 @@
         "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(5{,}6/104{,}2\\) er omtrent \\(5\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\).",
         "Løsningen samlet: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\)."
       ],
       "svar": "\\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\).",
       "fasit": {
@@ -16282,9 +16289,9 @@
         "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}6/132\\) er omtrent \\(3\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\).",
         "Løsningen samlet: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\)."
       ],
       "svar": "\\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\).",
       "fasit": {
@@ -16328,9 +16335,9 @@
         "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}8/97{,}5\\) er omtrent \\(5\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\).",
         "Løsningen samlet: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\)."
       ],
       "svar": "\\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\).",
       "fasit": {
@@ -16374,9 +16381,9 @@
         "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(5{,}8/145{,}8\\) er omtrent \\(4\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\).",
         "Løsningen samlet: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\)."
       ],
       "svar": "\\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\).",
       "fasit": {
@@ -16932,9 +16939,9 @@
         "Velg framgangsmåte: Klassebredden er øvre grense minus nedre grense.",
         "Sett opp: Frekvenstetthet er frekvens delt på klassebredde.",
         "Regn videre: Relativ frekvens er klassefrekvens delt på total frekvens.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(16/20=0{,}8\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(16/20=0{,}8\\).",
         "Løsningen samlet: Tettheten er \\(16/20=0{,}8\\). Relativ frekvens er \\(16/32\\cdot100\\,\\%=50\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(16/20=0{,}8\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(16/20=0{,}8\\)."
       ],
       "svar": "Tettheten er \\(16/20=0{,}8\\). Relativ frekvens er \\(16/32\\cdot100\\,\\%=50\\,\\%\\).",
       "fasit": {
@@ -17022,9 +17029,9 @@
         "Velg framgangsmåte: Klassebredden er øvre grense minus nedre grense.",
         "Sett opp: Frekvenstetthet er frekvens delt på klassebredde.",
         "Regn videre: Relativ frekvens er klassefrekvens delt på total frekvens.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(12/10=1{,}2\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(12/10=1{,}2\\).",
         "Løsningen samlet: Tettheten er \\(12/10=1{,}2\\). Relativ frekvens er \\(12/31\\cdot100\\,\\%=38{,}7\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(12/10=1{,}2\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(12/10=1{,}2\\)."
       ],
       "svar": "Tettheten er \\(12/10=1{,}2\\). Relativ frekvens er \\(12/31\\cdot100\\,\\%=38{,}7\\,\\%\\).",
       "fasit": {
@@ -17112,9 +17119,9 @@
         "Velg framgangsmåte: Klassebredden er øvre grense minus nedre grense.",
         "Sett opp: Frekvenstetthet er frekvens delt på klassebredde.",
         "Regn videre: Relativ frekvens er klassefrekvens delt på total frekvens.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(20/20=1\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(20/20=1\\).",
         "Løsningen samlet: Tettheten er \\(20/20=1\\). Relativ frekvens er \\(20/42\\cdot100\\,\\%=47{,}6\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(20/20=1\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(20/20=1\\)."
       ],
       "svar": "Tettheten er \\(20/20=1\\). Relativ frekvens er \\(20/42\\cdot100\\,\\%=47{,}6\\,\\%\\).",
       "fasit": {
@@ -17202,9 +17209,9 @@
         "Velg framgangsmåte: Klassebredden er øvre grense minus nedre grense.",
         "Sett opp: Frekvenstetthet er frekvens delt på klassebredde.",
         "Regn videre: Relativ frekvens er klassefrekvens delt på total frekvens.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(9/10=0{,}9\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(9/10=0{,}9\\).",
         "Løsningen samlet: Tettheten er \\(9/10=0{,}9\\). Relativ frekvens er \\(9/39\\cdot100\\,\\%=23{,}1\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(9/10=0{,}9\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(9/10=0{,}9\\)."
       ],
       "svar": "Tettheten er \\(9/10=0{,}9\\). Relativ frekvens er \\(9/39\\cdot100\\,\\%=23{,}1\\,\\%\\).",
       "fasit": {
@@ -17292,9 +17299,9 @@
         "Velg framgangsmåte: Klassebredden er øvre grense minus nedre grense.",
         "Sett opp: Frekvenstetthet er frekvens delt på klassebredde.",
         "Regn videre: Relativ frekvens er klassefrekvens delt på total frekvens.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(22/20=1{,}1\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(22/20=1{,}1\\).",
         "Løsningen samlet: Tettheten er \\(22/20=1{,}1\\). Relativ frekvens er \\(22/40\\cdot100\\,\\%=55\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(22/20=1{,}1\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(22/20=1{,}1\\)."
       ],
       "svar": "Tettheten er \\(22/20=1{,}1\\). Relativ frekvens er \\(22/40\\cdot100\\,\\%=55\\,\\%\\).",
       "fasit": {
@@ -17382,7 +17389,7 @@
         "Sett opp: Sett inn tallene: \\(f(4)=1\\,200\\cdot1{,}08^{4}\\).",
         "Regn videre: Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever.",
         "Løsningen samlet: \\(S(4)=1\\,200\\cdot1{,}08^4\\approx1\\,632{,}59\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(S(4)=1\\,200\\cdot1{,}08^4\\approx1\\,632{,}59\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(S(4)=1\\,200\\cdot1{,}08^4\\approx1\\,632{,}59\\)."
       ],
       "svar": "\\(S(4)=1\\,200\\cdot1{,}08^4\\approx1\\,632{,}59\\) kr.",
       "fasit": {
@@ -17427,7 +17434,7 @@
         "Sett opp: Sett inn tallene: \\(f(6)=5\\,000\\cdot0{,}93^{6}\\).",
         "Regn videre: Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever.",
         "Løsningen samlet: \\(M(6)=5\\,000\\cdot0{,}93^6\\approx3\\,234{,}95\\) gram.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(6)=5\\,000\\cdot0{,}93^6\\approx3\\,234{,}95\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(6)=5\\,000\\cdot0{,}93^6\\approx3\\,234{,}95\\)."
       ],
       "svar": "\\(M(6)=5\\,000\\cdot0{,}93^6\\approx3\\,234{,}95\\) gram.",
       "fasit": {
@@ -17472,7 +17479,7 @@
         "Sett opp: Sett inn tallene: \\(f(3)=240\\cdot1{,}15^{3}\\).",
         "Regn videre: Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever.",
         "Løsningen samlet: \\(V(3)=240\\cdot1{,}15^3\\approx365{,}01\\) m³.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(V(3)=240\\cdot1{,}15^3\\approx365{,}01\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(V(3)=240\\cdot1{,}15^3\\approx365{,}01\\)."
       ],
       "svar": "\\(V(3)=240\\cdot1{,}15^3\\approx365{,}01\\) m³.",
       "fasit": {
@@ -17517,7 +17524,7 @@
         "Sett opp: Sett inn tallene: \\(f(5)=18\\,000\\cdot0{,}88^{5}\\).",
         "Regn videre: Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever.",
         "Løsningen samlet: \\(V(5)=18\\,000\\cdot0{,}88^5\\approx9\\,499{,}17\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(V(5)=18\\,000\\cdot0{,}88^5\\approx9\\,499{,}17\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(V(5)=18\\,000\\cdot0{,}88^5\\approx9\\,499{,}17\\)."
       ],
       "svar": "\\(V(5)=18\\,000\\cdot0{,}88^5\\approx9\\,499{,}17\\) kr.",
       "fasit": {
@@ -17562,7 +17569,7 @@
         "Sett opp: Sett inn tallene: \\(f(4)=75\\cdot1{,}25^{4}\\).",
         "Regn videre: Regn ut potensen først, multipliser med startverdien og rund som oppgaven krever.",
         "Løsningen samlet: \\(O(4)=75\\cdot1{,}25^4\\approx183{,}11\\) tusen kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(O(4)=75\\cdot1{,}25^4\\approx183{,}11\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(O(4)=75\\cdot1{,}25^4\\approx183{,}11\\)."
       ],
       "svar": "\\(O(4)=75\\cdot1{,}25^4\\approx183{,}11\\) tusen kr.",
       "fasit": {
@@ -17607,7 +17614,7 @@
         "Sett opp: Sett inn tallene: \\(f(8)=2{,}5\\cdot8^{1{,}4}\\).",
         "Regn videre: Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt.",
         "Løsningen samlet: \\(T(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95\\) minutter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95\\)."
       ],
       "svar": "\\(T(8)=2{,}5\\cdot8^{1{,}4}\\approx45{,}95\\) minutter.",
       "fasit": {
@@ -17651,7 +17658,7 @@
         "Sett opp: Sett inn tallene: \\(f(16)=18\\cdot16^{0{,}5}\\).",
         "Regn videre: Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt.",
         "Løsningen samlet: \\(L(16)=18\\cdot16^{0{,}5}=72\\) meter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(L(16)=18\\cdot16^{0{,}5}=72\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(L(16)=18\\cdot16^{0{,}5}=72\\)."
       ],
       "svar": "\\(L(16)=18\\cdot16^{0{,}5}=72\\) meter.",
       "fasit": {
@@ -17695,7 +17702,7 @@
         "Sett opp: Sett inn tallene: \\(f(12)=0{,}75\\cdot12^{2}\\).",
         "Regn videre: Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt.",
         "Løsningen samlet: \\(A(12)=0{,}75\\cdot12^2=108\\) m².",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(A(12)=0{,}75\\cdot12^2=108\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(A(12)=0{,}75\\cdot12^2=108\\)."
       ],
       "svar": "\\(A(12)=0{,}75\\cdot12^2=108\\) m².",
       "fasit": {
@@ -17739,7 +17746,7 @@
         "Sett opp: Sett inn tallene: \\(f(25)=120\\cdot25^{-0{,}5}\\).",
         "Regn videre: Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt.",
         "Løsningen samlet: \\(T(25)=120\\cdot25^{-0{,}5}=24\\) minutter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(25)=120\\cdot25^{-0{,}5}=24\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(25)=120\\cdot25^{-0{,}5}=24\\)."
       ],
       "svar": "\\(T(25)=120\\cdot25^{-0{,}5}=24\\) minutter.",
       "fasit": {
@@ -17783,7 +17790,7 @@
         "Sett opp: Sett inn tallene: \\(f(10)=4{,}2\\cdot10^{1{,}2}\\).",
         "Regn videre: Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt.",
         "Løsningen samlet: \\(K(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57\\) tusen kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(K(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(K(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57\\)."
       ],
       "svar": "\\(K(10)=4{,}2\\cdot10^{1{,}2}\\approx66{,}57\\) tusen kr.",
       "fasit": {
@@ -17826,9 +17833,9 @@
         "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 20 % minus 2 %. Med disse tallene blir det \\(5\\,700-570=5\\,130\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82=23\\,370\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(28\\,500\\cdot 0{,}82=23\\,370\\).",
         "Løsningen samlet: Etter første endring er prisen \\(28\\,500\\cdot 0{,}82=23\\,370\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82=23\\,370\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(28\\,500\\cdot 0{,}82=23\\,370\\)."
       ],
       "svar": "Etter første endring er prisen \\(28\\,500\\cdot 0{,}82=23\\,370\\) kr.",
       "fasit": {
@@ -17875,9 +17882,9 @@
         "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. 25 % er en firedel. Del derfor \\(23\\,370/4=5\\,842{,}5\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\).",
         "Løsningen samlet: Prisen etter begge endringene er \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\)."
       ],
       "svar": "Prisen etter begge endringene er \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\) kr.",
       "fasit": {
@@ -17926,9 +17933,9 @@
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign sluttverdien med startverdien.",
         "Sett opp: Bruk (slutt-start)/start·100 %.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\).",
         "Løsningen samlet: Samlet endring er \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\)."
       ],
       "svar": "Samlet endring er \\((29\\,212{,}5-28\\,500)/28\\,500\\cdot100\\,\\%=2{,}5\\,\\%\\).",
       "fasit": {
@@ -18021,9 +18028,9 @@
         "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 10 % pluss 2 %. Med disse tallene blir det \\(420+84=504\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot 1{,}12=4\\,704\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(4\\,200\\cdot 1{,}12=4\\,704\\).",
         "Løsningen samlet: Etter første endring er medlemstallet \\(4\\,200\\cdot 1{,}12=4\\,704\\) medlemmer.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot 1{,}12=4\\,704\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(4\\,200\\cdot 1{,}12=4\\,704\\)."
       ],
       "svar": "Etter første endring er medlemstallet \\(4\\,200\\cdot 1{,}12=4\\,704\\) medlemmer.",
       "fasit": {
@@ -18070,9 +18077,9 @@
         "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Del prosenten i kjente deler: 10 % minus 2 %. Med disse tallene blir det \\(470{,}4-94{,}08=376{,}32\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\).",
         "Løsningen samlet: Beregningen gir \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\). Avrundet til nærmeste hele medlem blir dette \\(4\\,328\\) medlemmer.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\)."
       ],
       "svar": "Beregningen gir \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\). Avrundet til nærmeste hele medlem blir dette \\(4\\,328\\) medlemmer.",
       "fasit": {
@@ -18122,9 +18129,9 @@
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign sluttverdien med startverdien.",
         "Sett opp: Bruk (slutt-start)/start·100 %.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\).",
         "Løsningen samlet: Samlet endring er \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\)."
       ],
       "svar": "Samlet endring er \\((4\\,327{,}68-4\\,200)/4\\,200\\cdot100\\,\\%=3{,}04\\,\\%\\).",
       "fasit": {
@@ -18217,9 +18224,9 @@
         "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 10 % pluss 5 %. Med disse tallene blir det \\(18\\,500+9\\,250=27\\,750\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85=157\\,250\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(185\\,000\\cdot 0{,}85=157\\,250\\).",
         "Løsningen samlet: Etter første endring er energibruken \\(185\\,000\\cdot 0{,}85=157\\,250\\) kWh.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85=157\\,250\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(185\\,000\\cdot 0{,}85=157\\,250\\)."
       ],
       "svar": "Etter første endring er energibruken \\(185\\,000\\cdot 0{,}85=157\\,250\\) kWh.",
       "fasit": {
@@ -18266,9 +18273,9 @@
         "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Del prosenten i kjente deler: 5 % pluss 1 %. Med disse tallene blir det \\(7\\,862{,}5+1\\,572{,}5=9\\,435\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\).",
         "Løsningen samlet: Energibruken etter begge endringene er \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\) kWh.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\)."
       ],
       "svar": "Energibruken etter begge endringene er \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\) kWh.",
       "fasit": {
@@ -18317,9 +18324,9 @@
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign sluttverdien med startverdien.",
         "Sett opp: Bruk (slutt-start)/start·100 %.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\).",
         "Løsningen samlet: Samlet endring er \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\)."
       ],
       "svar": "Samlet endring er \\((147\\,815-185\\,000)/185\\,000\\cdot100\\,\\%=-20{,}1\\,\\%\\).",
       "fasit": {
@@ -18412,9 +18419,9 @@
         "Se etter en enkel vei: Gjør et overslag uten verktøy først. 20 % er en femdel. Del derfor \\(760\\,000/5=152\\,000\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2=912\\,000\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(760\\,000\\cdot 1{,}2=912\\,000\\).",
         "Løsningen samlet: Etter første endring er omsetningen \\(760\\,000\\cdot 1{,}2=912\\,000\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2=912\\,000\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(760\\,000\\cdot 1{,}2=912\\,000\\)."
       ],
       "svar": "Etter første endring er omsetningen \\(760\\,000\\cdot 1{,}2=912\\,000\\) kr.",
       "fasit": {
@@ -18461,9 +18468,9 @@
         "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. 10 % er en tidel. Del derfor \\(912\\,000/10=91\\,200\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\).",
         "Løsningen samlet: Omsetningen etter begge endringene er \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\)."
       ],
       "svar": "Omsetningen etter begge endringene er \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\) kr.",
       "fasit": {
@@ -18512,9 +18519,9 @@
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign sluttverdien med startverdien.",
         "Sett opp: Bruk (slutt-start)/start·100 %.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\).",
         "Løsningen samlet: Samlet endring er \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\)."
       ],
       "svar": "Samlet endring er \\((1\\,003\\,200-760\\,000)/760\\,000\\cdot100\\,\\%=32\\,\\%\\).",
       "fasit": {
@@ -18607,9 +18614,9 @@
         "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 20 % pluss 2 %. Med disse tallene blir det \\(256+25{,}6=281{,}6\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78=998{,}4\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(1\\,280\\cdot 0{,}78=998{,}4\\).",
         "Løsningen samlet: Etter første endring er utslippet \\(1\\,280\\cdot 0{,}78=998{,}4\\) tonn.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78=998{,}4\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(1\\,280\\cdot 0{,}78=998{,}4\\)."
       ],
       "svar": "Etter første endring er utslippet \\(1\\,280\\cdot 0{,}78=998{,}4\\) tonn.",
       "fasit": {
@@ -18656,9 +18663,9 @@
         "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Finn 10 % og halver: \\(998{,}4/10=99{,}84\\) og \\(99{,}84/2=49{,}92\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\).",
+        "Regn videre: Regn uttrykket helt ut: \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\).",
         "Løsningen samlet: Utslippet etter begge endringene er \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\) tonn.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\)."
       ],
       "svar": "Utslippet etter begge endringene er \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\) tonn.",
       "fasit": {
@@ -18707,9 +18714,9 @@
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
         "Velg framgangsmåte: Sammenlign sluttverdien med startverdien.",
         "Sett opp: Bruk (slutt-start)/start·100 %.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\).",
+        "Regn videre: Regn uttrykket helt ut: \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\).",
         "Løsningen samlet: Samlet endring er \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\)."
       ],
       "svar": "Samlet endring er \\((1\\,048{,}32-1\\,280)/1\\,280\\cdot100\\,\\%=-18{,}1\\,\\%\\).",
       "fasit": {
@@ -18803,7 +18810,7 @@
         "Sett opp: Siden \\(b^0=1\\), blir \\(M(0)=3\\,200\\cdot1\\).",
         "Regn videre: Finn prosentendringen fra vekstfaktoren med \\((1{,}09-1)\\cdot100\\,\\%\\).",
         "Løsningen samlet: Startverdien for antall månedlige besøk er \\(3\\,200\\). Den prosentvise endringen er \\((1{,}09-1)\\cdot100\\,\\%=9\\,\\%\\) per måned.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((1{,}09-1)\\cdot100\\,\\%=9\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((1{,}09-1)\\cdot100\\,\\%=9\\,\\%\\)."
       ],
       "svar": "Startverdien for antall månedlige besøk er \\(3\\,200\\). Den prosentvise endringen er \\((1{,}09-1)\\cdot100\\,\\%=9\\,\\%\\) per måned.",
       "fasit": {
@@ -18859,7 +18866,7 @@
         "Sett opp: Da skal du beregne \\(3\\,200\\cdot1{,}09^{6}\\).",
         "Regn videre: Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om.",
         "Løsningen samlet: \\(M(6)=3\\,200\\cdot1{,}09^{6}\\approx5\\,367\\) besøk.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(6)=3\\,200\\cdot1{,}09^{6}\\approx5\\,367\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(6)=3\\,200\\cdot1{,}09^{6}\\approx5\\,367\\)."
       ],
       "svar": "\\(M(6)=3\\,200\\cdot1{,}09^{6}\\approx5\\,367\\) besøk.",
       "fasit": {
@@ -19003,7 +19010,7 @@
         "Sett opp: Siden \\(b^0=1\\), blir \\(M(0)=850\\cdot1\\).",
         "Regn videre: Finn prosentendringen fra vekstfaktoren med \\((0{,}82-1)\\cdot100\\,\\%\\).",
         "Løsningen samlet: Startverdien for stoffmengden er \\(850\\). Den prosentvise endringen er \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\) per time.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\)."
       ],
       "svar": "Startverdien for stoffmengden er \\(850\\). Den prosentvise endringen er \\((0{,}82-1)\\cdot100\\,\\%=-18\\,\\%\\) per time.",
       "fasit": {
@@ -19059,7 +19066,7 @@
         "Sett opp: Da skal du beregne \\(850\\cdot0{,}82^{5}\\).",
         "Regn videre: Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om.",
         "Løsningen samlet: \\(M(5)=850\\cdot0{,}82^{5}\\approx315\\) gram.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(5)=850\\cdot0{,}82^{5}\\approx315\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(5)=850\\cdot0{,}82^{5}\\approx315\\)."
       ],
       "svar": "\\(M(5)=850\\cdot0{,}82^{5}\\approx315\\) gram.",
       "fasit": {
@@ -19203,7 +19210,7 @@
         "Sett opp: Siden \\(b^0=1\\), blir \\(M(0)=640\\cdot1\\).",
         "Regn videre: Finn prosentendringen fra vekstfaktoren med \\((1{,}18-1)\\cdot100\\,\\%\\).",
         "Løsningen samlet: Startverdien for antall elsykler er \\(640\\). Den prosentvise endringen er \\((1{,}18-1)\\cdot100\\,\\%=18\\,\\%\\) per år.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((1{,}18-1)\\cdot100\\,\\%=18\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((1{,}18-1)\\cdot100\\,\\%=18\\,\\%\\)."
       ],
       "svar": "Startverdien for antall elsykler er \\(640\\). Den prosentvise endringen er \\((1{,}18-1)\\cdot100\\,\\%=18\\,\\%\\) per år.",
       "fasit": {
@@ -19259,7 +19266,7 @@
         "Sett opp: Da skal du beregne \\(640\\cdot1{,}18^{7}\\).",
         "Regn videre: Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om.",
         "Løsningen samlet: \\(M(7)=640\\cdot1{,}18^{7}\\approx2\\,039\\) elsykler.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(7)=640\\cdot1{,}18^{7}\\approx2\\,039\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(7)=640\\cdot1{,}18^{7}\\approx2\\,039\\)."
       ],
       "svar": "\\(M(7)=640\\cdot1{,}18^{7}\\approx2\\,039\\) elsykler.",
       "fasit": {
@@ -19403,7 +19410,7 @@
         "Sett opp: Siden \\(b^0=1\\), blir \\(M(0)=240\\,000\\cdot1\\).",
         "Regn videre: Finn prosentendringen fra vekstfaktoren med \\((0{,}94-1)\\cdot100\\,\\%\\).",
         "Løsningen samlet: Startverdien for det årlige vannforbruket er \\(240\\,000\\). Den prosentvise endringen er \\((0{,}94-1)\\cdot100\\,\\%=-6\\,\\%\\) per år.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((0{,}94-1)\\cdot100\\,\\%=-6\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((0{,}94-1)\\cdot100\\,\\%=-6\\,\\%\\)."
       ],
       "svar": "Startverdien for det årlige vannforbruket er \\(240\\,000\\). Den prosentvise endringen er \\((0{,}94-1)\\cdot100\\,\\%=-6\\,\\%\\) per år.",
       "fasit": {
@@ -19459,7 +19466,7 @@
         "Sett opp: Da skal du beregne \\(240\\,000\\cdot0{,}94^{8}\\).",
         "Regn videre: Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om.",
         "Løsningen samlet: \\(M(8)=240\\,000\\cdot0{,}94^{8}\\approx146\\,297\\) m³.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(8)=240\\,000\\cdot0{,}94^{8}\\approx146\\,297\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(8)=240\\,000\\cdot0{,}94^{8}\\approx146\\,297\\)."
       ],
       "svar": "\\(M(8)=240\\,000\\cdot0{,}94^{8}\\approx146\\,297\\) m³.",
       "fasit": {
@@ -19603,7 +19610,7 @@
         "Sett opp: Siden \\(b^0=1\\), blir \\(M(0)=18\\,000\\cdot1\\).",
         "Regn videre: Finn prosentendringen fra vekstfaktoren med \\((1{,}045-1)\\cdot100\\,\\%\\).",
         "Løsningen samlet: Startverdien for saldoen er \\(18\\,000\\). Den prosentvise endringen er \\((1{,}045-1)\\cdot100\\,\\%=4{,}5\\,\\%\\) per år.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((1{,}045-1)\\cdot100\\,\\%=4{,}5\\,\\%\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((1{,}045-1)\\cdot100\\,\\%=4{,}5\\,\\%\\)."
       ],
       "svar": "Startverdien for saldoen er \\(18\\,000\\). Den prosentvise endringen er \\((1{,}045-1)\\cdot100\\,\\%=4{,}5\\,\\%\\) per år.",
       "fasit": {
@@ -19659,7 +19666,7 @@
         "Sett opp: Da skal du beregne \\(18\\,000\\cdot1{,}045^{10}\\).",
         "Regn videre: Regn ut potensen i et digitalt verktøy før du multipliserer med startverdien, og rund som oppgaven ber om.",
         "Løsningen samlet: \\(M(10)=18\\,000\\cdot1{,}045^{10}\\approx27\\,953\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(M(10)=18\\,000\\cdot1{,}045^{10}\\approx27\\,953\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(M(10)=18\\,000\\cdot1{,}045^{10}\\approx27\\,953\\)."
       ],
       "svar": "\\(M(10)=18\\,000\\cdot1{,}045^{10}\\approx27\\,953\\) kr.",
       "fasit": {
@@ -19866,7 +19873,7 @@
         "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(3x=120\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(180+4{,}5x=60+7{,}5x\\) gir \\(x=40\\). Den felles prisen er \\(360\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(180+4{,}5x=60+7{,}5x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(180+4{,}5x=60+7{,}5x\\)."
       ],
       "svar": "\\(180+4{,}5x=60+7{,}5x\\) gir \\(x=40\\). Den felles prisen er \\(360\\) kr.",
       "fasit": {
@@ -20082,7 +20089,7 @@
         "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(1x=150\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(299+0{,}8x=149+1{,}8x\\) gir \\(x=150\\). Den felles prisen er \\(419\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(299+0{,}8x=149+1{,}8x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(299+0{,}8x=149+1{,}8x\\)."
       ],
       "svar": "\\(299+0{,}8x=149+1{,}8x\\) gir \\(x=150\\). Den felles prisen er \\(419\\) kr.",
       "fasit": {
@@ -20298,7 +20305,7 @@
         "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(30x=300\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(499+0x=199+30x\\) gir \\(x=10\\). Den felles prisen er \\(499\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(499+0x=199+30x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(499+0x=199+30x\\)."
       ],
       "svar": "\\(499+0x=199+30x\\) gir \\(x=10\\). Den felles prisen er \\(499\\) kr.",
       "fasit": {
@@ -20514,7 +20521,7 @@
         "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(40x=300\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(250+85x=550+45x\\) gir \\(x=7{,}5\\). Den felles prisen er \\(887{,}5\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(250+85x=550+45x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(250+85x=550+45x\\)."
       ],
       "svar": "\\(250+85x=550+45x\\) gir \\(x=7{,}5\\). Den felles prisen er \\(887{,}5\\) kr.",
       "fasit": {
@@ -20730,7 +20737,7 @@
         "Sett opp: Samle x-leddene og fastbeløpene på hver sin side. Da får du \\(0{,}6x=120\\).",
         "Regn videre: Del for å finne x, og sett deretter x-verdien inn i én av prismodellene for å finne felles pris.",
         "Løsningen samlet: \\(79+2{,}4x=199+1{,}8x\\) gir \\(x=200\\). Den felles prisen er \\(559\\) kr.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(79+2{,}4x=199+1{,}8x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(79+2{,}4x=199+1{,}8x\\)."
       ],
       "svar": "\\(79+2{,}4x=199+1{,}8x\\) gir \\(x=200\\). Den felles prisen er \\(559\\) kr.",
       "fasit": {
@@ -20929,7 +20936,7 @@
         "Sett opp: Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
         "Regn videre: Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil.",
         "Løsningen samlet: Regresjonen gir omtrent \\(y=1{,}25x+13{,}2\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(y=1{,}25x+13{,}2\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(y=1{,}25x+13{,}2\\)."
       ],
       "svar": "Regresjonen gir omtrent \\(y=1{,}25x+13{,}2\\).",
       "fasit": {
@@ -21153,7 +21160,7 @@
         "Sett opp: Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
         "Regn videre: Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil.",
         "Løsningen samlet: Regresjonen gir omtrent \\(y=119{,}717\\cdot 1{,}1957^x\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(y=119{,}717\\cdot 1{,}1957^x\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(y=119{,}717\\cdot 1{,}1957^x\\)."
       ],
       "svar": "Regresjonen gir omtrent \\(y=119{,}717\\cdot 1{,}1957^x\\).",
       "fasit": {
@@ -21381,7 +21388,7 @@
         "Sett opp: Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
         "Regn videre: Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil.",
         "Løsningen samlet: Regresjonen gir omtrent \\(y=0{,}018x^{1{,}948}\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(y=0{,}018x^{1{,}948}\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(y=0{,}018x^{1{,}948}\\)."
       ],
       "svar": "Regresjonen gir omtrent \\(y=0{,}018x^{1{,}948}\\).",
       "fasit": {
@@ -21605,7 +21612,7 @@
         "Sett opp: Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
         "Regn videre: Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil.",
         "Løsningen samlet: Regresjonen gir omtrent \\(y=-1{,}741x^2+8{,}44x+1{,}311\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(y=-1{,}741x^2+8{,}44x+1{,}311\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(y=-1{,}741x^2+8{,}44x+1{,}311\\)."
       ],
       "svar": "Regresjonen gir omtrent \\(y=-1{,}741x^2+8{,}44x+1{,}311\\).",
       "fasit": {
@@ -21840,7 +21847,7 @@
         "Sett opp: Legg x-verdiene i én kolonne og de tilhørende y-verdiene i en annen. Velg riktig regresjonstype i verktøyet.",
         "Regn videre: Les av parameterne i samme rekkefølge som svarfeltene. Behold minst tre signifikante sifre, slik at senere beregninger ikke får unødvendig avrundingsfeil.",
         "Løsningen samlet: Regresjonen gir omtrent \\(y=-1{,}13x+95{,}3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(y=-1{,}13x+95{,}3\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(y=-1{,}13x+95{,}3\\)."
       ],
       "svar": "Regresjonen gir omtrent \\(y=-1{,}13x+95{,}3\\).",
       "fasit": {
@@ -24083,7 +24090,7 @@
         "Velg framgangsmåte: Sett observasjonen inn i T(x)=k/x+fast tid.",
         "Sett opp: Trekk fra fast tid og multipliser med x.",
         "Løsningen samlet: \\(22=120/6+2\\), så \\(k=120\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(22=120/6+2\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(22=120/6+2\\)."
       ],
       "svar": "\\(22=120/6+2\\), så \\(k=120\\).",
       "fasit": {
@@ -24132,7 +24139,7 @@
         "Sett opp: Sett inn \\(x=12\\): \\(T(12)=120/12+2\\).",
         "Regn videre: Regn divisjonen før du legger til den faste tiden.",
         "Løsningen samlet: \\(T(12)=120/12+2=12\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(12)=120/12+2=12\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(12)=120/12+2=12\\)."
       ],
       "svar": "\\(T(12)=120/12+2=12\\).",
       "fasit": {
@@ -24181,7 +24188,7 @@
         "Sett opp: Trekk fra den faste tiden: \\(10=120/x\\).",
         "Regn videre: Multipliser med \\(x\\) og del på \\(10\\) for å isolere \\(x\\).",
         "Løsningen samlet: \\(12=120/x+2\\) gir \\(10=120/x\\), og dermed \\(x=120/10=12\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(12=120/x+2\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(12=120/x+2\\)."
       ],
       "svar": "\\(12=120/x+2\\) gir \\(10=120/x\\), og dermed \\(x=120/10=12\\).",
       "fasit": {
@@ -24274,7 +24281,7 @@
         "Velg framgangsmåte: Sett observasjonen inn i T(x)=k/x+fast tid.",
         "Sett opp: Trekk fra fast tid og multipliser med x.",
         "Løsningen samlet: \\(46=360/8+1\\), så \\(k=360\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(46=360/8+1\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(46=360/8+1\\)."
       ],
       "svar": "\\(46=360/8+1\\), så \\(k=360\\).",
       "fasit": {
@@ -24323,7 +24330,7 @@
         "Sett opp: Sett inn \\(x=24\\): \\(T(24)=360/24+1\\).",
         "Regn videre: Regn divisjonen før du legger til den faste tiden.",
         "Løsningen samlet: \\(T(24)=360/24+1=16\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(24)=360/24+1=16\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(24)=360/24+1=16\\)."
       ],
       "svar": "\\(T(24)=360/24+1=16\\).",
       "fasit": {
@@ -24372,7 +24379,7 @@
         "Sett opp: Trekk fra den faste tiden: \\(22{,}5=360/x\\).",
         "Regn videre: Multipliser med \\(x\\) og del på \\(22{,}5\\) for å isolere \\(x\\).",
         "Løsningen samlet: \\(23{,}5=360/x+1\\) gir \\(22{,}5=360/x\\), og dermed \\(x=360/22{,}5=16\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(23{,}5=360/x+1\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(23{,}5=360/x+1\\)."
       ],
       "svar": "\\(23{,}5=360/x+1\\) gir \\(22{,}5=360/x\\), og dermed \\(x=360/22{,}5=16\\).",
       "fasit": {
@@ -24465,7 +24472,7 @@
         "Velg framgangsmåte: Sett observasjonen inn i T(x)=k/x+fast tid.",
         "Sett opp: Trekk fra fast tid og multipliser med x.",
         "Løsningen samlet: \\(65=900/15+5\\), så \\(k=900\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(65=900/15+5\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(65=900/15+5\\)."
       ],
       "svar": "\\(65=900/15+5\\), så \\(k=900\\).",
       "fasit": {
@@ -24514,7 +24521,7 @@
         "Sett opp: Sett inn \\(x=45\\): \\(T(45)=900/45+5\\).",
         "Regn videre: Regn divisjonen før du legger til den faste tiden.",
         "Løsningen samlet: \\(T(45)=900/45+5=25\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(45)=900/45+5=25\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(45)=900/45+5=25\\)."
       ],
       "svar": "\\(T(45)=900/45+5=25\\).",
       "fasit": {
@@ -24563,7 +24570,7 @@
         "Sett opp: Trekk fra den faste tiden: \\(36=900/x\\).",
         "Regn videre: Multipliser med \\(x\\) og del på \\(36\\) for å isolere \\(x\\).",
         "Løsningen samlet: \\(41=900/x+5\\) gir \\(36=900/x\\), og dermed \\(x=900/36=25\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(41=900/x+5\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(41=900/x+5\\)."
       ],
       "svar": "\\(41=900/x+5\\) gir \\(36=900/x\\), og dermed \\(x=900/36=25\\).",
       "fasit": {
@@ -24656,7 +24663,7 @@
         "Velg framgangsmåte: Sett observasjonen inn i T(x)=k/x+fast tid.",
         "Sett opp: Trekk fra fast tid og multipliser med x.",
         "Løsningen samlet: \\(27=240/10+3\\), så \\(k=240\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(27=240/10+3\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(27=240/10+3\\)."
       ],
       "svar": "\\(27=240/10+3\\), så \\(k=240\\).",
       "fasit": {
@@ -24705,7 +24712,7 @@
         "Sett opp: Sett inn \\(x=20\\): \\(T(20)=240/20+3\\).",
         "Regn videre: Regn divisjonen før du legger til den faste tiden.",
         "Løsningen samlet: \\(T(20)=240/20+3=15\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(20)=240/20+3=15\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(20)=240/20+3=15\\)."
       ],
       "svar": "\\(T(20)=240/20+3=15\\).",
       "fasit": {
@@ -24754,7 +24761,7 @@
         "Sett opp: Trekk fra den faste tiden: \\(16=240/x\\).",
         "Regn videre: Multipliser med \\(x\\) og del på \\(16\\) for å isolere \\(x\\).",
         "Løsningen samlet: \\(19=240/x+3\\) gir \\(16=240/x\\), og dermed \\(x=240/16=15\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(19=240/x+3\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(19=240/x+3\\)."
       ],
       "svar": "\\(19=240/x+3\\) gir \\(16=240/x\\), og dermed \\(x=240/16=15\\).",
       "fasit": {
@@ -24847,7 +24854,7 @@
         "Velg framgangsmåte: Sett observasjonen inn i T(x)=k/x+fast tid.",
         "Sett opp: Trekk fra fast tid og multipliser med x.",
         "Løsningen samlet: \\(44=480/12+4\\), så \\(k=480\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(44=480/12+4\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(44=480/12+4\\)."
       ],
       "svar": "\\(44=480/12+4\\), så \\(k=480\\).",
       "fasit": {
@@ -24896,7 +24903,7 @@
         "Sett opp: Sett inn \\(x=32\\): \\(T(32)=480/32+4\\).",
         "Regn videre: Regn divisjonen før du legger til den faste tiden.",
         "Løsningen samlet: \\(T(32)=480/32+4=19\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(T(32)=480/32+4=19\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(T(32)=480/32+4=19\\)."
       ],
       "svar": "\\(T(32)=480/32+4=19\\).",
       "fasit": {
@@ -24945,7 +24952,7 @@
         "Sett opp: Trekk fra den faste tiden: \\(20=480/x\\).",
         "Regn videre: Multipliser med \\(x\\) og del på \\(20\\) for å isolere \\(x\\).",
         "Løsningen samlet: \\(24=480/x+4\\) gir \\(20=480/x\\), og dermed \\(x=480/20=24\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(24=480/x+4\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(24=480/x+4\\)."
       ],
       "svar": "\\(24=480/x+4\\) gir \\(20=480/x\\), og dermed \\(x=480/20=24\\).",
       "fasit": {
@@ -25088,7 +25095,7 @@
         "Sett opp: Legg sammen \\(55+61+73+66+58=313\\).",
         "Regn videre: Del summen på antallet 5 og rund til én desimal.",
         "Løsningen samlet: Gjennomsnittet er \\(313/5=62{,}6\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(313/5=62{,}6\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(313/5=62{,}6\\)."
       ],
       "svar": "Gjennomsnittet er \\(313/5=62{,}6\\).",
       "fasit": {
@@ -25426,9 +25433,9 @@
         "Velg framgangsmåte: Programmet fjerner én minste og én største verdi.",
         "Sett opp: Fra listen fjernes 12 og 45, slik at 14, 15, 17, 18 og 21 står igjen.",
         "Regn videre: Den numeriske utskriften er gjennomsnittet av de fem gjenværende verdiene.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\((14+15+17+18+21)/5=17\\).",
+        "Regn ut: Regn uttrykket helt ut: \\((14+15+17+18+21)/5=17\\).",
         "Løsningen samlet: \\((14+15+17+18+21)/5=17\\). Programmet skriver ut 17.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((14+15+17+18+21)/5=17\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((14+15+17+18+21)/5=17\\)."
       ],
       "svar": "\\((14+15+17+18+21)/5=17\\). Programmet skriver ut 17.",
       "fasit": {
@@ -25670,7 +25677,7 @@
         "Sett opp: Sett denne verdien inn i A: \\(A=200+5\\cdot40\\).",
         "Regn videre: Regn multiplikasjonen før du legger til fastbeløpet.",
         "Løsningen samlet: \\(A(40)=200+5\\cdot40=400\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(A(40)=200+5\\cdot40=400\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(A(40)=200+5\\cdot40=400\\)."
       ],
       "svar": "\\(A(40)=200+5\\cdot40=400\\).",
       "fasit": {
@@ -25861,9 +25868,9 @@
         "Velg framgangsmåte: Det totale antallet observasjoner er summen av frekvensene.",
         "Sett opp: Legg sammen alle fire frekvensene: \\(4+7+9+6\\).",
         "Regn videre: Denne summen brukes også når programmet finner medianplasseringen.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(4+7+9+6=26\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(4+7+9+6=26\\).",
         "Løsningen samlet: \\(4+7+9+6=26\\). Frekvenslisten inneholder 26 observasjoner.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(4+7+9+6=26\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(4+7+9+6=26\\)."
       ],
       "svar": "\\(4+7+9+6=26\\). Frekvenslisten inneholder 26 observasjoner.",
       "fasit": {
@@ -26105,9 +26112,9 @@
         "Velg framgangsmåte: Fra oppgave b har du formelen \\(4n+2\\).",
         "Sett opp: Erstatt n med figurnummeret i oppgaven. Da får du \\(4\\cdot25+2\\).",
         "Regn videre: Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(4\\cdot25+2=102\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(4\\cdot25+2=102\\).",
         "Løsningen samlet: \\(4\\cdot25+2=102\\). Figuren har 102 benker.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(4\\cdot25+2=102\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(4\\cdot25+2=102\\)."
       ],
       "svar": "\\(4\\cdot25+2=102\\). Figuren har 102 benker.",
       "fasit": {
@@ -26295,9 +26302,9 @@
         "Velg framgangsmåte: Fra oppgave b har du formelen \\(n^2+4n\\).",
         "Sett opp: Erstatt n med figurnummeret i oppgaven. Da får du \\(12^2+4\\cdot12\\).",
         "Regn videre: Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(12^2+4\\cdot12=192\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(12^2+4\\cdot12=192\\).",
         "Løsningen samlet: \\(12^2+4\\cdot12=192\\). Figuren har 192 fliser.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(12^2+4\\cdot12=192\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(12^2+4\\cdot12=192\\)."
       ],
       "svar": "\\(12^2+4\\cdot12=192\\). Figuren har 192 fliser.",
       "fasit": {
@@ -26485,9 +26492,9 @@
         "Velg framgangsmåte: Fra oppgave b har du formelen \\(2n+4\\).",
         "Sett opp: Erstatt n med figurnummeret i oppgaven. Da får du \\(2\\cdot40+4\\).",
         "Regn videre: Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(2\\cdot40+4=84\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(2\\cdot40+4=84\\).",
         "Løsningen samlet: \\(2\\cdot40+4=84\\). Figuren har 84 stoler.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(2\\cdot40+4=84\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(2\\cdot40+4=84\\)."
       ],
       "svar": "\\(2\\cdot40+4=84\\). Figuren har 84 stoler.",
       "fasit": {
@@ -26675,9 +26682,9 @@
         "Velg framgangsmåte: Fra oppgave b har du formelen \\(n(n+1)/2\\).",
         "Sett opp: Erstatt n med figurnummeret i oppgaven. Da får du \\(18\\cdot19/2\\).",
         "Regn videre: Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\(18\\cdot19/2=171\\).",
+        "Regn ut: Regn uttrykket helt ut: \\(18\\cdot19/2=171\\).",
         "Løsningen samlet: \\(18\\cdot19/2=171\\). Figuren har 171 prikker.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\(18\\cdot19/2=171\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\(18\\cdot19/2=171\\)."
       ],
       "svar": "\\(18\\cdot19/2=171\\). Figuren har 171 prikker.",
       "fasit": {
@@ -26865,9 +26872,9 @@
         "Velg framgangsmåte: Fra oppgave b har du formelen \\((n+2)^2-n^2\\).",
         "Sett opp: Erstatt n med figurnummeret i oppgaven. Da får du \\((30+2)^2-30^2\\).",
         "Regn videre: Følg regnerekkefølgen: regn potenser og multiplikasjon før addisjon eller subtraksjon.",
-        "Regn ut: Bruk oppgavens tall og utfør regnestykket: \\((30+2)^2-30^2=124\\).",
+        "Regn ut: Regn uttrykket helt ut: \\((30+2)^2-30^2=124\\).",
         "Løsningen samlet: \\((30+2)^2-30^2=124\\). Figuren har 124 ruter.",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Bruk oppgavens tall og utfør regnestykket: \\((30+2)^2-30^2=124\\)."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Regn uttrykket helt ut: \\((30+2)^2-30^2=124\\)."
       ],
       "svar": "\\((30+2)^2-30^2=124\\). Figuren har 124 ruter.",
       "fasit": {
