@@ -124,6 +124,45 @@ test("alle hintforløp er fullstendige worked examples", () => {
   assert.ok(new Set(bank.oppgaver.map((question) => question.hint.at(-1))).size >= 400, "Kontrollstegene er fortsatt for generiske");
 });
 
+test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til det", () => {
+  const byId = (id) => bank.oppgaver.find((question) => question.id === id);
+  const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
+  const numericDel1 = bank.oppgaver.filter((question) =>
+    question.del === 1 && numericTypes.has(question.fasit.type));
+
+  for (const question of numericDel1) {
+    if (question.variantfamilie === "d1-omvendt-prosent") {
+      assert.match(question.hint.join(" "), /Regn uten kalkulator/u, question.id + " mangler håndregningsstrategi");
+    } else {
+      assert.ok(
+        question.hint.some((hint) => hint.startsWith("Se etter en enkel vei:")),
+        question.id + " signaliserer ikke den enkle regneveien",
+      );
+    }
+  }
+
+  const strategies = bank.oppgaver
+    .flatMap((question) => question.hint)
+    .filter((hint) => hint.startsWith("Se etter en enkel vei:"));
+  assert.ok(strategies.length >= 200, "For få oppgaver har fått et konkret strategihint");
+  assert.ok(new Set(strategies).size >= 180, "Strategihintene er for generiske eller gjentatte");
+  assert.ok(strategies.every((hint) => hint.length >= 60), "Et strategihint er for kort til å hjelpe");
+  assert.doesNotMatch(strategies.join(" "), /--|\+-|skal (?:legg|halver)\b/u, "Et strategihint har uklar matematikk eller språk");
+
+  const quarterQuestion = byId("2py27-002");
+  assert.match(quarterQuestion.hint.join(" "), /Dette kan gjøres i hodet/u);
+  assert.match(quarterQuestion.hint.join(" "), /25 % er en firedel/u);
+  assert.match(quarterQuestion.hint.join(" "), /360\/4=90/u);
+  assert.doesNotMatch(quarterQuestion.svar, /0\{,\}25/u);
+
+  assert.match(byId("2py27-001").hint.join(" "), /10 % og 5 %/u);
+  assert.match(byId("2py27-004").hint.join(" "), /12,5 % er en åttedel/u);
+  assert.match(byId("2py27-128").hint.join(" "), /balansering rundt/u);
+  assert.match(byId("2py27-213").hint.join(" "), /Grupper til to like summer/u);
+  assert.match(byId("2py27-043").hint.join(" "), /\(-3\)\^2=9/u);
+  assert.match(byId("2py27-243").hint.join(" "), /\(21\+1\)\/2=11/u);
+});
+
 test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
@@ -261,7 +300,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.6");
+  assert.equal(bank.samling.versjon, "2027.7");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

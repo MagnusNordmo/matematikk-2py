@@ -862,6 +862,35 @@ for (const [id, [hint, svar]] of Object.entries(codeRevisions)) setHintsAndAnswe
 
 // Del 1: alle regnetunge familier får synlige mellomregninger som faktisk kan
 // utføres for hånd. Hintene viser en mulig løsning, ikke bare en arbeidsordre.
+const percentOfWorked = {
+  "2py27-001": [
+    `Finn først 10 %: ${math("240/10=24")}.`,
+    `Fem prosent er halvparten av 10 %: ${math("24/2=12")}.`,
+    `Legg sammen delene: ${math("24+12=36")}. Dermed er 15 % av 240 lik 36.`,
+  ],
+  "2py27-002": [
+    "Tenk på 360 billetter som fire like store deler.",
+    `Finn størrelsen på én del: ${math("360/4=90")}.`,
+    "Én av fire like deler er 25 %, så 90 billetter er svaret.",
+  ],
+  "2py27-003": [
+    `Finn 30 % som tre 10 %-deler: ${math("450/10=45")} og ${math("3\\cdot45=135")}.`,
+    `Finn 2 % som to 1 %-deler: ${math("450/100=4{,}5")} og ${math("2\\cdot4{,}5=9")}.`,
+    `Legg sammen 30 % og 2 %: ${math("135+9=144")}.`,
+  ],
+  "2py27-004": [
+    "Tenk på 640 medlemmer som åtte like store deler.",
+    `Finn størrelsen på én del: ${math("640/8=80")}.`,
+    "Én av åtte like deler er 12,5 %, så det er 80 trenere.",
+  ],
+  "2py27-005": [
+    `Gang først med 8 ved å dele opp 875: ${math("8\\cdot875=8\\cdot800+8\\cdot75=6\\,400+600=7\\,000")}.`,
+    `Åtte prosent betyr 8 per 100, så del deretter på 100: ${math("7\\,000/100=70")}.`,
+    "Dermed er 8 % av 875 lik 70.",
+  ],
+};
+for (const [id, hint] of Object.entries(percentOfWorked)) setQuestion(id, { hint });
+
 const wholeFromPartWorked = {
   "2py27-011": [`12 % tilsvarer ${math("48")}. Del begge tallene på 3, slik at 4 % tilsvarer ${math("16")}.`, `Del én gang til på 4: 1 % tilsvarer ${math("4")}.`, `Gang med 100: ${math("4\\cdot100=400")}. Hele gruppen har 400 personer.`],
   "2py27-012": [`20 % tilsvarer ${math("64")}.`, "Fem like deler på 20 % utgjør 100 %.", `Regn ${math("64\\cdot5=320")}. Hele gruppen har 320 personer.`],
@@ -1134,27 +1163,27 @@ for (const [id, xUnit] of Object.entries({
 const del1ContextRevisions = {
   "2py27-001": {
     sporsmal: `På en aktivitetsdag deltar ${math("240")} elever. ${math("15\\,\\%")} av elevene velger klatring. Hvor mange elever velger klatring?`,
-    svar: `${math("240\\cdot0{,}15=36")}. Det er ${math("36")} elever som velger klatring.`,
+    svar: `Siden 15 % er 10 % og 5 %, får vi ${math("240/10+(240/10)/2=24+12=36")}. Det er ${math("36")} elever som velger klatring.`,
     units: ["elever"],
   },
   "2py27-002": {
     sporsmal: `En konsert har ${math("360")} billetter. Den første dagen blir ${math("25\\,\\%")} av billettene solgt. Hvor mange billetter blir solgt den første dagen?`,
-    svar: `${math("360\\cdot0{,}25=90")}. Det blir solgt ${math("90")} billetter.`,
+    svar: `Siden 25 % er en firedel, får vi ${math("360/4=90")}. Det blir solgt ${math("90")} billetter.`,
     units: ["billetter"],
   },
   "2py27-003": {
     sporsmal: `En arbeidsplass har ${math("450")} ansatte. ${math("32\\,\\%")} sykler til jobb. Hvor mange ansatte sykler til jobb?`,
-    svar: `${math("450\\cdot0{,}32=144")}. Det er ${math("144")} ansatte som sykler til jobb.`,
+    svar: `Del 32 % i 30 % og 2 %: ${math("135+9=144")}. Det er ${math("144")} ansatte som sykler til jobb.`,
     units: ["ansatte"],
   },
   "2py27-004": {
     sporsmal: `Et idrettslag har ${math("640")} medlemmer. ${math("12{,}5\\,\\%")} av medlemmene er trenere. Hvor mange trenere har idrettslaget?`,
-    svar: `${math("640\\cdot0{,}125=80")}. Idrettslaget har ${math("80")} trenere.`,
+    svar: `Siden 12,5 % er en åttedel, får vi ${math("640/8=80")}. Idrettslaget har ${math("80")} trenere.`,
     units: ["trenere"],
   },
   "2py27-005": {
     sporsmal: `I en spørreundersøkelse kom det inn ${math("875")} svar. ${math("8\\,\\%")} svarte «vet ikke». Hvor mange svarte «vet ikke»?`,
-    svar: `${math("875\\cdot0{,}08=70")}. Det var ${math("70")} slike svar.`,
+    svar: `${math("875\\cdot8/100=7\\,000/100=70")}. Det var ${math("70")} slike svar.`,
     units: ["svar"],
   },
   "2py27-006": { sporsmal: `På en skole reiser ${math("18")} av ${math("80")} elever med tog. Hvor mange prosent av elevene reiser med tog?` },
@@ -2042,6 +2071,7 @@ for (const question of byFamily("d2-samfunn-d")) {
 // via oppsett og utregning til kontroll. Markørene gjør passet idempotent.
 const generatedPrefixes = [
   "Forstå oppgaven:",
+  "Se etter en enkel vei:",
   "Velg framgangsmåte:",
   "Sett opp:",
   "Regn videre:",
@@ -2052,7 +2082,7 @@ const generatedPrefixes = [
 ];
 
 function removeGeneratedPrefix(hint) {
-  for (const prefix of generatedPrefixes.slice(1, 6)) {
+  for (const prefix of generatedPrefixes) {
     if (hint.startsWith(prefix)) return hint.slice(prefix.length).trim();
   }
   return hint;
@@ -2132,7 +2162,7 @@ function workedCalculation(question) {
   }
   if (method === "median_category") {
     const total = input.kumulativ.at(-1);
-    const threshold = total / 2;
+    const threshold = total % 2 === 1 ? (total + 1) / 2 : total / 2;
     const category = result[0];
     const previous = category > 1 ? input.kumulativ[category - 2] : 0;
     const current = input.kumulativ[category - 1];
@@ -2310,6 +2340,344 @@ function wrapBareDecimalMath(text) {
     .join("");
 }
 
+function greatestCommonDivisor(left, right) {
+  let a = Math.abs(Math.round(left));
+  let b = Math.abs(Math.round(right));
+  while (b !== 0) [a, b] = [b, a % b];
+  return a || 1;
+}
+
+function signedSumExpression(values) {
+  return values.map((value, index) =>
+    (index > 0 && value >= 0 ? "+" : "") + number(value)).join("");
+}
+
+function percentShortcut(total, percent) {
+  const p = Math.abs(percent);
+  const value = normalizedNumber(total * p / 100);
+  const fractionNames = new Map([
+    [50, ["halvparten", 2]],
+    [25, ["en firedel", 4]],
+    [20, ["en femdel", 5]],
+    [12.5, ["en åttedel", 8]],
+    [10, ["en tidel", 10]],
+  ]);
+  if (fractionNames.has(p)) {
+    const [name, denominator] = fractionNames.get(p);
+    return number(p) + " % er " + name + ". Del derfor " + math(number(total) + "/" + denominator + "=" + number(value)) + " i stedet for å starte med desimaltall.";
+  }
+  if (p === 5) {
+    const tenPercent = normalizedNumber(total / 10);
+    return "Finn 10 % og halver: " + math(number(total) + "/10=" + number(tenPercent)) + " og " + math(number(tenPercent) + "/2=" + number(value)) + ".";
+  }
+  const decompositions = new Map([
+    [2, [1, 1]],
+    [6, [5, 1]],
+    [8, [10, -2]],
+    [12, [10, 2]],
+    [15, [10, 5]],
+    [18, [20, -2]],
+    [22, [20, 2]],
+    [30, [10, 10, 10]],
+    [32, [30, 2]],
+    [35, [25, 10]],
+    [45, [50, -5]],
+  ]);
+  const chunks = decompositions.get(p);
+  if (!chunks) return null;
+  const chunkValues = chunks.map((chunk) => normalizedNumber(total * Math.abs(chunk) / 100));
+  let expression = "";
+  let description = "";
+  chunks.forEach((chunk, index) => {
+    const sign = chunk < 0 ? "-" : index === 0 ? "" : "+";
+    expression += sign + number(chunkValues[index]);
+    description += (index === 0 ? "" : chunk < 0 ? " minus " : " pluss ") + number(Math.abs(chunk)) + " %";
+  });
+  return "Del prosenten i kjente deler: " + description + ". Med disse tallene blir det " + math(expression + "=" + number(value)) + ".";
+}
+
+const simpleStrategyOverrides = {
+  "2py27-001": "Du trenger ikke gange med et desimaltall. Del 15 % i 10 % og 5 %, der 5 % er halvparten av 10 %.",
+  "2py27-002": "Dette kan gjøres i hodet: 25 % er en firedel. Del 360 i fire like deler og spør hvor stor hver del blir.",
+  "2py27-003": "Du kan unngå tung desimalregning ved å dele 32 % i 30 % og 2 %.",
+  "2py27-004": "Dette kan gjøres i hodet: 12,5 % er en åttedel. Del 640 i åtte like deler.",
+  "2py27-005": "Se etter et rundt mellomresultat: " + math("875\\cdot8=7\\,000") + ", som er lett å dele på 100.",
+  "2py27-011": "Tallene passer godt til prosent via 1 %: del 48 og 12 med 12, så ser du direkte at 1 % er 4.",
+  "2py27-012": "Dette kan gjøres i hodet: 20 % er en femdel, så hele mengden består av fem like deler på 64.",
+  "2py27-013": "Dette kan gjøres i hodet: 25 % er en firedel, så hele mengden består av fire like deler på 190.",
+  "2py27-014": "Del først 30 % i tre like 10 %-deler. Da blir 10 % lik " + math("162/3=54") + ".",
+  "2py27-015": "Del først 40 % i to like 20 %-deler. Da blir 20 % lik " + math("360/2=180") + ".",
+  "2py27-073": "Gjør 3,8 om til " + math("4-0{,}2") + ": " + math("75\\cdot4-75\\cdot0{,}2=300-15=285") + ".",
+  "2py27-074": "Halver 12 før du ganger: " + math("0{,}5\\cdot12=6") + ". Da gjenstår bare " + math("6\\cdot25=150") + ".",
+  "2py27-075": "Halver før du ganger: " + math("6/2=3") + ", slik at " + math("22\\cdot3=66") + ".",
+  "2py27-076": "Tenk " + math("1{,}8=2-0{,}2") + ": " + math("25\\cdot2-25\\cdot0{,}2=50-5=45") + ".",
+  "2py27-077": "Regn de to delene slik at de møtes i et helt tall: " + math("0{,}04\\cdot70=2{,}8") + " og " + math("2{,}8+1{,}2=4") + ".",
+  "2py27-078": "Fjern desimalen i divisjonen ved å doble begge tall: " + math("245/3{,}5=490/7=70") + ".",
+  "2py27-079": "Etter at fastbeløpet er trukket fra, er " + math("240/8=30") + " en kort hoderegning.",
+  "2py27-080": "Flytt kommaet i begge tall: " + math("240/2{,}4=2\\,400/24=100") + ". Verdien i brøken endres ikke.",
+  "2py27-081": "Del 420 i kjente multipler av 12: " + math("420=360+60=12\\cdot30+12\\cdot5") + ", altså 35 grupper.",
+  "2py27-082": "Flytt kommaet i begge tall: " + math("64/0{,}8=640/8=80") + ".",
+  "2py27-088": "Regn nær et rundt tall: " + math("4\\cdot15=60") + ", og trekk deretter fra 1.",
+  "2py27-089": "Dobling er nok her: " + math("2\\cdot12=24") + ", og så " + math("24+3=27") + ".",
+  "2py27-090": "Bruk at 20 tiere er lett å gange: " + math("7\\cdot20=140") + ", og trekk deretter fra 5.",
+  "2py27-091": "Formelen er allerede et hoderegningsstykke: " + math("18+5=23") + ".",
+  "2py27-092": "Fem ganger 25 er en kjent kvart av 500: " + math("5\\cdot25=125") + ", og så " + math("125-1=124") + ".",
+  "2py27-093": "Regn inni parentesen før kvadratet: " + math("8+1=9") + ", så " + math("9^2+1=81+1=82") + ".",
+  "2py27-094": "Regn inni parentesen før kvadratet: " + math("7+2=9") + ", så " + math("9^2+1=81+1=82") + ".",
+  "2py27-095": "Regn inni parentesen før kvadratet: " + math("6+1=7") + ", så " + math("7^2+2=49+2=51") + ".",
+  "2py27-096": "Regn inni parentesen før kvadratet: " + math("9+3=12") + ", så " + math("12^2+1=144+1=145") + ".",
+  "2py27-097": "Regn inni parentesen før kvadratet: " + math("10+2=12") + ", så " + math("12^2+2=144+2=146") + ".",
+  "2py27-213": "Grupper til to like summer: " + math("(4+12)+(7+9)=16+16=32") + ".",
+  "2py27-214": "Lag to summer på 25: " + math("(10+15)+(8+6+11)=25+25=50") + ".",
+  "2py27-215": "Utnytt doblingen i tallene: " + math("24+12=36") + " og " + math("3+6=9") + ", så totalen er 45.",
+  "2py27-216": "Lag en rund sum først: " + math("(14+16)+(18+20)=30+38=68") + ".",
+  "2py27-217": "Se at " + math("8+13=21") + ": " + math("5+5+21+21=10+42=52") + ".",
+  "2py27-233": "Når bare 8 og 10 står igjen, er gjennomsnittet midt mellom dem: " + math("9") + ". Du trenger ikke en lang utregning.",
+  "2py27-234": "Etter vilkåret gjenstår bare den korte summen " + math("9+12=21") + ".",
+  "2py27-235": "Når bare 22 og 24 står igjen, er gjennomsnittet midt mellom dem: " + math("23") + ".",
+  "2py27-236": "Par ytterverdiene: " + math("9+15=24") + ", og legg til 12 slik at summen blir " + math("36") + ".",
+  "2py27-237": "Bruk balansering rundt 24: avvikene er " + math("-3+1+2=0") + ". Gjennomsnittet er derfor 24.",
+  "2py27-258": "Flytt kommaet fem plasser mot høyre i stedet for å skrive alle nullene én om gangen: " + math("3{,}2\\cdot10^5=320\\,000") + ".",
+  "2py27-259": "Del 45 % i 40 % og 5 %. Av 800 er dette " + math("320+40=360") + ".",
+  "2py27-260": "Bruk gjentatt kvadrering: " + math("2^4=16") + " og " + math("2^8=16^2=256") + ".",
+  "2py27-261": "Du skal ikke summere tallene. Med fem sorterte tall er medianen ganske enkelt det tredje tallet.",
+  "2py27-262": "Ta multiplikasjonen først og bruk et kjent gangestykke: " + math("6\\cdot7=42") + ", deretter " + math("42+5=47") + ".",
+};
+
+function mentalStrategyHint(question) {
+  if (simpleStrategyOverrides[question.id]) return simpleStrategyOverrides[question.id];
+
+  const method = question.kontroll?.metode;
+  const input = question.kontroll?.inndata ?? {};
+  const result = answerValues(question);
+
+  if (method === "percent_of") return percentShortcut(input.total, input.prosent);
+
+  if (method === "part_as_percent") {
+    const divisor = greatestCommonDivisor(input.del, input.hel);
+    const numerator = input.del / divisor;
+    const denominator = input.hel / divisor;
+    const unitPercents = new Map([[2, 50], [4, 25], [5, 20], [8, 12.5], [10, 10], [20, 5], [25, 4], [40, 2.5]]);
+    const unitPercent = unitPercents.get(denominator);
+    if (unitPercent) {
+      return "Unngå lang divisjon. Forkort først " + math(number(input.del) + "/" + number(input.hel) + "=" + number(numerator) + "/" + number(denominator)) + ". Siden " + math("1/" + number(denominator) + "=" + number(unitPercent) + "\\,\\%") + ", kan prosenten bygges av kjente deler.";
+    }
+  }
+
+  if (method === "whole_from_part") {
+    return "Prøv prosentstripa før en formel: finn en enkel prosentdel som 1 %, 10 %, 20 % eller 25 %, og bygg derfra til 100 % med oppgavens egne tall.";
+  }
+
+  if (method === "percentage_points") {
+    const difference = input.ny - input.gammel;
+    const divisor = greatestCommonDivisor(difference, input.gammel);
+    return "Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: " + math(number(difference) + "/" + number(input.gammel) + "=" + number(difference / divisor) + "/" + number(input.gammel / divisor)) + ".";
+  }
+
+  if (method === "growth_factor") {
+    const factor = normalizedNumber(1 + input.endring / 100);
+    if (/(?:Hva er|Hvilken) vekstfaktor/u.test(question.sporsmal)) {
+      return "Tenk i prosent før desimaltall: " + math("100" + (input.endring < 0 ? "-" : "+") + number(Math.abs(input.endring)) + "=" + number(100 + input.endring) + "\\,\\%") + ", som skrives " + math(number(factor)) + ".";
+    }
+    return "Les faktoren som prosent direkte: " + math(number(factor) + "=" + number(factor * 100) + "\\,\\%") + ". Forskjellen fra 100 % gir endringen.";
+  }
+
+  if (method === "successive_percent") {
+    return "Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.";
+  }
+
+  if (method === "power") {
+    const base = input.grunntall;
+    const exponent = input.eksponent;
+    const displayedBase = base < 0 ? "(" + number(base) + ")" : number(base);
+    if (exponent < 0) {
+      const denominator = Math.abs(base) ** Math.abs(exponent);
+      return "Regn først den positive potensen og snu brøken etterpå: " + math(displayedBase + "^{" + number(exponent) + "}=1/" + displayedBase + "^{" + number(Math.abs(exponent)) + "}=1/" + number(denominator)) + ".";
+    }
+    if (exponent >= 2) {
+      const square = base ** 2;
+      return "Bygg potensen av kjente blokker. Start med " + math(displayedBase + "^2=" + number(square)) + " og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.";
+    }
+  }
+
+  if (method === "standard_form_operation") {
+    const coefficientExpression = input.operasjon === "produkt"
+      ? number(input.a) + "\\cdot" + number(input.b)
+      : number(input.a) + "/" + number(input.b);
+    const exponentExpression = input.operasjon === "produkt"
+      ? number(input.m) + (input.n < 0 ? "-" : "+") + number(Math.abs(input.n))
+      : number(input.m) + (input.n < 0 ? "+" : "-") + number(Math.abs(input.n));
+    return "Hold de to små regnestykkene fra hverandre: koeffisienten blir " + math(coefficientExpression) + ", mens tierpotensen bruker " + math(exponentExpression) + ".";
+  }
+
+  if (method === "direct_constant") {
+    return "Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: " + math(number(input.y) + "/" + number(input.x) + "=" + number(result[0])) + ".";
+  }
+
+  if (method === "direct_scale") {
+    const divisor = greatestCommonDivisor(input.x2, input.x1);
+    const numerator = input.x2 / divisor;
+    const denominator = input.x1 / divisor;
+    if (divisor === 1) {
+      const unitValue = normalizedNumber(input.y1 / input.x1);
+      return "Finn én-enhetsverdien før du skalerer: " + math(number(input.y1) + "/" + number(input.x1) + "=" + number(unitValue)) + ". Gang deretter med " + math(number(input.x2)) + ".";
+    }
+    return "Forkort skaleringsforholdet før du ganger: " + math(number(input.x2) + "/" + number(input.x1) + "=" + number(numerator) + "/" + number(denominator)) + ". Del " + math(number(input.y1)) + " på " + math(number(denominator)) + " før du ganger med " + math(number(numerator)) + ".";
+  }
+
+  if (method === "inverse_scale") {
+    const divisor = greatestCommonDivisor(input.x1, input.x2);
+    const numerator = input.x1 / divisor;
+    const denominator = input.x2 / divisor;
+    if (divisor === 1) {
+      const divided = normalizedNumber(input.y1 / input.x2);
+      return "Del i den rekkefølgen som gir små tall: " + math(number(input.y1) + "/" + number(input.x2) + "=" + number(divided)) + ", og gang deretter med " + math(number(input.x1)) + ".";
+    }
+    return "Forkort før du ganger: " + math(number(input.x1) + "/" + number(input.x2) + "=" + number(numerator) + "/" + number(denominator)) + ". Regn derfor " + math(number(input.y1) + "\\cdot" + number(numerator) + "/" + number(denominator)) + " med den enkleste divisjonen først.";
+  }
+
+  if (method === "inverse_plus_constant") {
+    const variablePart = normalizedNumber(input.k / input.x);
+    return "Del før du legger til fastleddet. Her er " + math(number(input.k) + "/" + number(input.x) + "=" + number(variablePart)) + ", så bare den korte addisjonen " + math(number(variablePart) + "+" + number(input.fast)) + " gjenstår.";
+  }
+
+  if (method === "mean" || method === "d2_stats_mean") {
+    const mean = result[0];
+    if (question.del === 2 && !Number.isInteger(mean)) return null;
+    const deviations = input.verdier.map((value) => normalizedNumber(value - mean));
+    const deviationSum = deviations.reduce((sum, value) => sum + value, 0);
+    return "Bruk balansering rundt " + math(number(mean)) + " i stedet for bare lang summering. Avvikene er " + math(signedSumExpression(deviations) + "=" + number(deviationSum)) + ", så de opphever hverandre.";
+  }
+
+  if (method === "median" || method === "d2_stats_median") {
+    const sorted = [...input.verdier].sort((a, b) => a - b);
+    const middle = sorted.length % 2 === 0
+      ? number(sorted.length / 2) + ". og " + number(sorted.length / 2 + 1) + "."
+      : number((sorted.length + 1) / 2) + ".";
+    return "Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med " + math(number(sorted.length)) + " observasjoner trenger du bare den " + middle + " plassen.";
+  }
+
+  if (method === "mode_range") {
+    const minimum = Math.min(...input.verdier);
+    const maximum = Math.max(...input.verdier);
+    return "Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: " + math(number(maximum) + "-" + number(minimum) + "=" + number(maximum - minimum)) + ".";
+  }
+
+  if (method === "relative_cumulative") {
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    const frequency = input.frekvenser[input.indeks];
+    const divisor = greatestCommonDivisor(frequency, total);
+    if (divisor === 1 && total === 40) {
+      return "Når totalen er 40, er hver observasjon " + math("100/40=2{,}5\\,\\%") + ". Gang derfor " + math(number(frequency) + "\\cdot2{,}5\\,\\%=" + number(result[0]) + "\\,\\%") + ".";
+    }
+    return "Forkort frekvensbrøken før du gjør den om til prosent: " + math(number(frequency) + "/" + number(total) + "=" + number(frequency / divisor) + "/" + number(total / divisor)) + ".";
+  }
+
+  if (method === "missing_from_mean") {
+    const deviations = input.kjente.map((value) => normalizedNumber(value - input.gjennomsnitt));
+    const deviationSum = deviations.reduce((sum, value) => sum + value, 0);
+    return "Bruk balansering rundt målgjennomsnittet " + math(number(input.gjennomsnitt)) + ". De kjente avvikene gir " + math(signedSumExpression(deviations) + "=" + number(deviationSum)) + ", så den manglende verdien må gi motsatt avvik.";
+  }
+
+  if (method === "weighted_mean") {
+    const reference = input.verdier.reduce((best, value) =>
+      Math.abs(value - result[0]) < Math.abs(best - result[0]) ? value : best);
+    const total = input.frekvenser.reduce((sum, value) => sum + value, 0);
+    const deviationSum = input.verdier.reduce((sum, value, index) =>
+      sum + (value - reference) * input.frekvenser[index], 0);
+    return "Bruk " + math(number(reference)) + " som referanse og tell bare avvikene. Det samlede veide avviket er " + math(number(deviationSum)) + " over " + math(number(total)) + " observasjoner, så gjennomsnittet blir " + math(number(reference) + (deviationSum < 0 ? "" : "+") + number(deviationSum) + "/" + number(total) + "=" + number(result[0])) + ".";
+  }
+
+  if (method === "slope") {
+    const deltaX = input.p2[0] - input.p1[0];
+    const deltaY = input.p2[1] - input.p1[1];
+    return "Finn de to endringene først. Da står bare den korte divisjonen " + math(number(deltaY) + "/" + number(deltaX) + "=" + number(result[0])) + " igjen.";
+  }
+
+  if (method === "line_intercept") {
+    const product = normalizedNumber(input.a * input.x);
+    const interceptExpression = product < 0
+      ? number(input.y) + "+" + number(Math.abs(product))
+      : number(input.y) + "-" + number(product);
+    return "Regn produktet før du flytter det: " + math(number(input.a) + "\\cdot" + number(input.x) + "=" + number(product)) + ". Deretter er konstantleddet " + math(interceptExpression + "=" + number(result[0])) + ".";
+  }
+
+  if (method === "line_intersection") {
+    const slopeDifference = input.a1 - input.a2;
+    const constantDifference = input.b2 - input.b1;
+    return "Trekk modellene fra hverandre, så forsvinner mye på én gang: " + math(number(slopeDifference) + "x=" + number(constantDifference)) + ". Da gjenstår én enkel divisjon.";
+  }
+
+  if (method === "table_slope") {
+    const deltaX = input.x[1] - input.x[0];
+    const deltaY = input.y[1] - input.y[0];
+    return "Bruk to nabokolonner i stedet for hele tabellen. Endringene er " + math("\\Delta x=" + number(deltaX)) + " og " + math("\\Delta y=" + number(deltaY)) + ", så " + math(number(deltaY) + "/" + number(deltaX) + "=" + number(result[0])) + ".";
+  }
+
+  if (method === "interpret_exponential") {
+    const factor = input.faktor;
+    const percent = normalizedNumber((factor - 1) * 100);
+    return "Les vekstfaktoren som prosent i hodet: " + math(number(factor) + "=" + number(factor * 100) + "\\,\\%") + ". Forskjellen fra 100 % er " + math(number(percent) + "\\,\\%") + ".";
+  }
+
+  if (method === "average_rate") {
+    const deltaX = input.x2 - input.x1;
+    const deltaY = input.y2 - input.y1;
+    return "Regn endringene før du deler: " + math("\\Delta y=" + number(deltaY)) + " og " + math("\\Delta x=" + number(deltaX)) + ". Da blir vekstfarten " + math(number(deltaY) + "/" + number(deltaX) + "=" + number(result[0])) + ".";
+  }
+
+  if (method === "code_growth" || method === "code_threshold") {
+    const factorDescriptions = new Map([
+      [0.5, "halvere verdien"],
+      [0.75, "ta tre firedeler av verdien"],
+      [1.1, "legge til en tidel"],
+      [1.2, "legge til en femdel"],
+      [1.5, "legge til halvparten"],
+      [2, "doble verdien"],
+    ]);
+    const description = factorDescriptions.get(input.faktor);
+    if (description) return "Oversett faktoren til hoderegning før du sporer programmet: faktor " + math(number(input.faktor)) + " betyr at du skal " + description + " i hver runde.";
+  }
+
+  if (method === "line_value") {
+    const product = normalizedNumber(input.a * input.x);
+    return "Ta den variable delen først: " + math(number(input.a) + "\\cdot" + number(input.x) + "=" + number(product)) + ". Legg så til konstantleddet " + math(number(input.b)) + ".";
+  }
+
+  if (method === "median_category") {
+    const total = input.kumulativ.at(-1);
+    const medianPosition = total % 2 === 1 ? (total + 1) / 2 : total / 2;
+    const positionExpression = total % 2 === 1
+      ? "(" + number(total) + "+1)/2=" + number(medianPosition)
+      : number(total) + "/2=" + number(medianPosition);
+    return "Finn medianplassen uten å skrive ut hele datasettet: " + math(positionExpression) + ". Les deretter av den første kumulative frekvensen som når denne plasseringen.";
+  }
+
+  if (method === "discount_vat") {
+    const discount = percentShortcut(input.pris, input.rabatt);
+    return (discount ? discount + " " : "") + "Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.";
+  }
+
+  if (method === "d2_percent_first") {
+    const shortcut = percentShortcut(input.start, Math.abs(input.endring));
+    if (shortcut) return "Gjør et overslag uten verktøy først. " + shortcut;
+  }
+
+  if (method === "d2_percent_final") {
+    const firstValue = normalizedNumber(input.start * (1 + input.endringer[0] / 100));
+    const shortcut = percentShortcut(firstValue, Math.abs(input.endringer[1]));
+    if (shortcut) return "Den andre prosenten regnes av mellomverdien, ikke av starten. " + shortcut;
+  }
+
+  if (method === "relative_change") {
+    const difference = normalizedNumber(input.ny - input.gammel);
+    const estimate = Math.round(Math.abs(difference / input.gammel * 100));
+    return "Gjør et raskt overslag før den nøyaktige beregningen: " + math(number(Math.abs(difference)) + "/" + number(input.gammel)) + " er omtrent " + math(number(estimate) + "\\,\\%") + ". Det gir en nyttig kontroll på kalkulatorsvaret.";
+  }
+
+  return null;
+}
+
 function asWorkedExample(question) {
   // Denne familien er skrevet ferdig som et detaljert mønstereksempel ovenfor.
   if (question.variantfamilie === "d1-omvendt-prosent") return question.hint.map(wrapBareDecimalMath);
@@ -2317,6 +2685,7 @@ function asWorkedExample(question) {
   const coreHints = question.hint
     .filter((hint) => ![
       "Forstå oppgaven:",
+      "Se etter en enkel vei:",
       "Løsningen samlet:",
       "Kontroller og konkluder:",
     ].some((prefix) => hint.startsWith(prefix)))
@@ -2331,6 +2700,8 @@ function asWorkedExample(question) {
 
   const stepLabels = ["Velg framgangsmåte", "Sett opp", "Regn videre", "Regn ut"];
   const worked = [`Forstå oppgaven: ${workedContext(question)}`];
+  const strategyHint = mentalStrategyHint(question);
+  if (strategyHint) worked.push(`Se etter en enkel vei: ${strategyHint}`);
 
   coreHints.forEach((hint, index) => {
     const label = stepLabels[index] ?? "Arbeid videre";
@@ -2436,8 +2807,8 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.6";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, metode, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.7";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);
