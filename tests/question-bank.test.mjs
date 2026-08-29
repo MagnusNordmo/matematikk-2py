@@ -163,6 +163,57 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
   assert.match(byId("2py27-243").hint.join(" "), /\(21\+1\)\/2=11/u);
 });
 
+test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
+  const byId = (id) => bank.oppgaver.find((question) => question.id === id);
+  const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
+  const numericDel1 = bank.oppgaver.filter((question) =>
+    question.del === 1 && numericTypes.has(question.fasit.type));
+
+  const shortenedFractions = numericDel1.filter((question) => /Forkort/u.test(question.hint.join(" ")));
+  assert.equal(shortenedFractions.length, 19);
+  for (const question of shortenedFractions) {
+    const hints = question.hint.join(" ");
+    assert.match(hints, /tallet over brøkstreken/u, `${question.id} forklarer ikke telleren`);
+    assert.match(hints, /tallet under brøkstreken/u, `${question.id} forklarer ikke nevneren`);
+    assert.match(hints, /\\div/u, `${question.id} viser ikke divisjonen over og under brøkstreken`);
+  }
+
+  const percentExample = byId("2py27-008").hint.join(" ");
+  assert.match(percentExample, /66\\div6/u);
+  assert.match(percentExample, /240\\div6/u);
+  assert.match(percentExample, /11.*40/u);
+
+  for (const question of numericDel1.filter((item) => item.variantfamilie === "d1-veid-gjennomsnitt")) {
+    assert.match(question.hint.join(" "), /Multipliser hver verdi med frekvensen/u, question.id);
+    assert.match(question.hint.join(" "), /\\cdot.*=/u, question.id);
+  }
+  for (const question of numericDel1.filter((item) => item.variantfamilie === "d1-grafavlesning")) {
+    assert.match(question.hint.join(" "), /Erstatt.*x.*linjens uttrykk/u, question.id);
+    assert.match(question.hint.join(" "), /Legg til konstantleddet/u, question.id);
+  }
+  for (const question of numericDel1.filter((item) =>
+    ["d1-konstantledd", "d1-lineaert-skjaeringspunkt"].includes(item.variantfamilie))) {
+    assert.match(question.hint.join(" "), /fra begge sider/u, question.id);
+  }
+
+  const cumulativeMedian = numericDel1.filter((item) => item.variantfamilie === "d1-kumulativ-median");
+  assert.match(byId("2py27-245").hint.join(" "), /to midterste plassene er.*15.*16/u);
+  for (const question of cumulativeMedian) {
+    assert.doesNotMatch(question.hint.join(" "), /21\/2=11|35\/2=18|45\/2=23/u, question.id);
+  }
+
+  for (const question of numericDel1.filter((item) => item.variantfamilie === "d1-kode-vekst")) {
+    const visible = question.hint.join(" ");
+    assert.match(visible, /\^\{\d+\}=/u, question.id);
+    assert.doesNotMatch(visible, /\^\{[^}]*=/u, question.id);
+  }
+
+  assert.doesNotMatch(
+    numericDel1.flatMap((question) => question.hint).join(" "),
+    /Bruk oppgavens tall og utfør regnestykket/u,
+  );
+});
+
 test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
@@ -300,7 +351,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.7");
+  assert.equal(bank.samling.versjon, "2027.8");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
