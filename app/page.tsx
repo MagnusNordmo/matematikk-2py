@@ -604,17 +604,6 @@ export default function Home() {
             <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={baseCount} aria-valuenow={stats.baseSolved}><span style={{ width: `${progressPercent}%` }} /></div>
           </section>
 
-          {mode === "skill" && selectedPart === 1 && selectedTheme === "prosent" && currentIndex === 0 && (
-            <section className="percent-strategy-map" aria-label="Tre hovedveier i prosentregning">
-              <h2>Tre hovedveier i prosentregning</h2>
-              <div>
-                <p><strong>Bygg fra en enkel prosent</strong><span>Finn for eksempel 1 %, 10 %, 25 % eller 50 %, og bygg videre.</span></p>
-                <p><strong>Bruk en kjent brøk</strong><span>Se for eksempel 25 % som en firedel og 50 % som en halvpart.</span></p>
-                <p><strong>Sammenlign delen med helheten</strong><span>Finn først hva som er delen, og hva som er hele mengden – altså 100 %.</span></p>
-              </div>
-            </section>
-          )}
-
           <section className="question-wrap">
             <div className="question-meta">
               <span>{currentItem.isExtra ? "Samme ferdighet – prøv uten hint" : themeById.get(currentQuestion.tema)?.kortnavn}</span>
