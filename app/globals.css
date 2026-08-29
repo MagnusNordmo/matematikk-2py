@@ -748,6 +748,97 @@ input:focus-visible {
   width: 17px;
 }
 
+.percent-strategy-map {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto 22px;
+  border: 1px solid #c9ddd6;
+  border-radius: 15px;
+  background: #f4faf7;
+  color: var(--ink);
+}
+
+.percent-strategy-map h2 {
+  margin: 0;
+  padding: 15px 18px;
+  font-size: 0.83rem;
+  font-weight: 800;
+}
+
+.percent-strategy-map > div {
+  display: grid;
+  padding: 0 18px 17px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.percent-strategy-map p {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #dbe9e4;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.percent-strategy-map strong,
+.percent-strategy-map span {
+  display: block;
+}
+
+.percent-strategy-map strong {
+  font-size: 0.76rem;
+}
+
+.percent-strategy-map span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.71rem;
+  line-height: 1.48;
+}
+
+.solution-paths {
+  display: grid;
+  margin-top: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.solution-path {
+  min-height: 84px;
+  padding: 14px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+.solution-path:hover {
+  border-color: var(--accent);
+}
+
+.solution-path-selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.solution-path strong,
+.solution-path span {
+  display: block;
+}
+
+.solution-path strong {
+  font-size: 0.82rem;
+}
+
+.solution-path span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.48;
+}
+
 .hint-list {
   display: grid;
   margin: 27px 0 0;
@@ -1548,6 +1639,15 @@ input:focus-visible {
 
   .hint-button {
     width: 100%;
+  }
+
+  .percent-strategy-map {
+    width: min(100% - 28px, 980px);
+  }
+
+  .percent-strategy-map > div,
+  .solution-paths {
+    grid-template-columns: 1fr;
   }
 
   .result-page {

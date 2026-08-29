@@ -26,6 +26,13 @@ export type Visualization = {
   [key: string]: unknown;
 };
 
+export type SolutionPath = {
+  id: string;
+  navn: string;
+  forklaring: string;
+  hint: string[];
+};
+
 export type Question = {
   id: string;
   del: Part;
@@ -36,6 +43,7 @@ export type Question = {
   hjelpemidler: "uten" | "med";
   sporsmal: string;
   hint: string[];
+  losningsveier?: SolutionPath[];
   svar: string;
   fasit: AnswerKey;
   variantfamilie: string;
