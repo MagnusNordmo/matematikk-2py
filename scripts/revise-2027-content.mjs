@@ -3089,6 +3089,213 @@ for (const question of bank.oppgaver) {
   setQuestion(question.id, { hint: asWorkedExample(question) });
 }
 
+// I prosentøvingen i Del 1 skal eleven kunne sammenligne reelt forskjellige
+// hoderegningsstrategier. Vi tilbyr to veier bare når begge er naturlige med
+// oppgavens tall. Resten av prosentoppgavene beholder én tydelig hovedmetode.
+function alternativeRouteHints(question, introduction, steps) {
+  const labels = ["Lag en plan", "Gjør første del", "Gjør neste del", "Fullfør regningen"];
+  const check = question.hint.at(-1);
+  const neutralConclusion = question.svar.split(/(?<=\.)\s+/u).at(-1);
+  if (!neutralConclusion || !check?.startsWith("Sjekk svaret:")) {
+    throw new Error(`${question.id} mangler felles svar eller kontroll for løsningsveiene.`);
+  }
+  return [
+    question.hint[0],
+    `Velg denne veien: ${introduction}`,
+    ...steps.map((step, index) => `${labels[index] ?? "Arbeid videre"}: ${step}`),
+    `Svar på spørsmålet: ${neutralConclusion}`,
+    check,
+  ].map(wrapBareDecimalMath);
+}
+
+const percentageSolutionPaths = {
+  "2py27-001": {
+    primary: ["prosentbiter", "10 % og 5 %", "Kortest her: bygg 15 % av to enkle prosentbiter."],
+    alternative: ["en-prosent", "Finn 1 % først", "En generell metode som virker for alle prosenttall.",
+      "Finn først 1 % ved å dele hele mengden på 100.",
+      [`Regn ${math("240/100=2{,}4")}. Dermed er 1 % lik 2,4 elever i regnestykket.`, `Bygg 15 % av femten 1 %-deler: ${math("2{,}4\\cdot15=2{,}4\\cdot10+2{,}4\\cdot5=24+12=36")}.`]],
+  },
+  "2py27-002": {
+    primary: ["kjent-brok", "Kjent brøk: en firedel", "Kortest her: 25 % betyr én av fire like deler."],
+    alternative: ["prosentbiter", "10 % + 10 % + 5 %", "Viser hvordan 25 % kan bygges av kjente prosentbiter.",
+      "Del 25 % opp i 10 %, 10 % og 5 %.",
+      [`Finn 10 %: ${math("360/10=36")}. Derfor er 20 % lik ${math("36+36=72")}.`, `Fem prosent er halvparten av 10 %: ${math("36/2=18")}. Legg sammen: ${math("72+18=90")}.`]],
+  },
+  "2py27-003": {
+    primary: ["prosentbiter", "30 % og 2 %", "Bygg 32 % av prosentbiter som passer tallene."],
+    alternative: ["en-prosent", "Finn 1 % først", "Går via én hundredel før du bygger 32 %.",
+      "Finn verdien av 1 % ved å dele 450 på 100.",
+      [`Regn ${math("450/100=4{,}5")}. Dermed er 1 % lik 4,5.`, `Bygg 32 %: ${math("4{,}5\\cdot30=135")} og ${math("4{,}5\\cdot2=9")}. Til sammen blir det ${math("135+9=144")}.`]],
+  },
+  "2py27-004": {
+    primary: ["kjent-brok", "Kjent brøk: en åttedel", "Kortest her: 12,5 % betyr én av åtte like deler."],
+    alternative: ["halvering", "Halver tre ganger", "Viser veien 100 % → 50 % → 25 % → 12,5 %.",
+      "Hver halvering halverer både antallet og prosenten.",
+      [`Halver 640: ${math("640/2=320")}. Det er 50 %. Halver igjen: ${math("320/2=160")}. Det er 25 %.`, `Halver én gang til: ${math("160/2=80")}. Da har du 12,5 %, så svaret er 80.`]],
+  },
+  "2py27-005": {
+    primary: ["per-hundre", "Gang med 8, del på 100", "Bruker direkte at 8 % betyr 8 per 100."],
+    alternative: ["en-prosent", "Finn 1 % først", "Gjør prosentbetydningen synlig før du ganger opp.",
+      "Finn én hundredel av 875.",
+      [`Regn ${math("875/100=8{,}75")}. Dermed er 1 % lik 8,75.`, `Åtte prosent er åtte slike deler: ${math("8{,}75\\cdot8=70")}.`]],
+  },
+  "2py27-006": {
+    primary: ["forkort-brok", "Forkort brøken", "Skriv delen over helheten og gjør brøken enklere."],
+    alternative: ["skalering", "Skaler helheten til 100", "Gjør 80 om til 100 og gjør nøyaktig det samme med 18.",
+      "Fra 80 til 100 legger vi til en firedel av 80.",
+      [`Gjør det samme med delen: En firedel av 18 er ${math("18/4=4{,}5")}.`, `Legg til firedelen: ${math("18+4{,}5=22{,}5")}. Når helheten er 100, er delen 22,5, altså 22,5 %.`]],
+  },
+  "2py27-007": {
+    primary: ["forkort-brok", "Forkort brøken", "Brøken 35 av 125 kan reduseres til deler på 4 %."],
+    alternative: ["prosentbiter", "Bygg med prosentbiter", "Finn antall som svarer til 20 % og 8 %.",
+      "Finn først 20 % av 125. Det er en femdel.",
+      [`Regn ${math("125/5=25")}. Dermed er 25 kunder lik 20 %.`, `Fire prosent av 125 er 5, så 8 % er 10. Da er ${math("25+10=35")}, og ${math("20\\,\\%+8\\,\\%=28\\,\\%")}.`]],
+  },
+  "2py27-008": {
+    primary: ["forkort-brok", "Forkort brøken", "Del både 66 og 240 på 6 og arbeid videre med 11 av 40."],
+    alternative: ["prosentbiter", "25 % og 2,5 %", "Finn prosentbiter som til sammen gir akkurat 66 personer.",
+      "En firedel av 240 er 60, så 60 personer tilsvarer 25 %.",
+      [`Regn ${math("240/4=60")}. Det mangler ${math("66-60=6")} personer.`, `Siden ${math("240/40=6")}, er 6 personer 2,5 %. Dermed er 66 personer ${math("25\\,\\%+2{,}5\\,\\%=27{,}5\\,\\%")}.`]],
+  },
+  "2py27-009": {
+    primary: ["forkort-brok", "Forkort brøken", "Reduser 117 av 360 til 13 av 40."],
+    alternative: ["prosentbiter", "25 % + 5 % + 2,5 %", "Bygg delen 117 av tre enkle prosentbiter.",
+      "Finn først 25 % av 360 ved å dele på 4.",
+      [`Regn ${math("360/4=90")}. Fem prosent er ${math("360/20=18")}, og 2,5 % er halvparten: ${math("18/2=9")}.`, `Tallene gir ${math("90+18+9=117")}. Prosentene gir ${math("25\\,\\%+5\\,\\%+2{,}5\\,\\%=32{,}5\\,\\%")}.`]],
+  },
+  "2py27-010": {
+    primary: ["forkort-brok", "Forkort brøken", "Reduser 275 av 625 til 11 av 25."],
+    alternative: ["prosentbiter", "40 % og 4 %", "Bygg 275 billetter av to oversiktlige prosentbiter.",
+      "Finn 40 % av 625 som to femdeler.",
+      [`En femdel er ${math("625/5=125")}, så 40 % er ${math("2\\cdot125=250")}.`, `Fire prosent er ${math("625/25=25")}. Da er ${math("250+25=275")}, som svarer til ${math("40\\,\\%+4\\,\\%=44\\,\\%")}.`]],
+  },
+  "2py27-011": {
+    primary: ["en-prosent", "Finn 1 % først", "Reduser 12 % til 1 %, og bygg derfra til 100 %."],
+    alternative: ["brokdeler", "Tenk 12 % som 3 av 25 deler", "Forkort prosentbrøken før du bygger hele mengden.",
+      `Forkort ${math("12/100")} ved å dele både 12 og 100 på 4: ${math("12/100=3/25")}.`,
+      [`De 48 personene er derfor 3 like deler. Én del er ${math("48/3=16")}.`, `Hele gruppen består av 25 slike deler: ${math("16\\cdot25=16\\cdot100/4=400")}.`]],
+  },
+  "2py27-012": {
+    primary: ["kjent-brok", "Kjent brøk: en femdel", "20 % er én av fem like deler."],
+    alternative: ["ti-prosent", "Finn 10 % først", "Halver den kjente 20 %-delen og bygg til 100 %.",
+      "Når 20 % er 64, er 10 % halvparten av 64.",
+      [`Regn ${math("64/2=32")}. Dermed er 10 % lik 32.`, `Ti deler på 10 % gir 100 %: ${math("32\\cdot10=320")}.`]],
+  },
+  "2py27-013": {
+    primary: ["kjent-brok", "Kjent brøk: en firedel", "25 % er én av fire like deler."],
+    alternative: ["dobling", "Doble to ganger", "Bygg fra 25 % til 50 % og videre til 100 %.",
+      "Doble både prosenten og antallet samtidig.",
+      [`Fra 25 % til 50 %: ${math("190\\cdot2=380")}.`, `Fra 50 % til 100 %: ${math("380\\cdot2=760")}.`]],
+  },
+  "2py27-014": {
+    primary: ["ti-prosent", "Finn 10 % først", "Del 30 %-delen i tre, og bygg til 100 %."],
+    alternative: ["en-prosent", "Finn 1 % først", "En generell vei via én hundredel av helheten.",
+      "Når 30 % er 162, finner du 1 % ved først å finne 10 % og så dele på 10.",
+      [`Regn ${math("162/3=54")}, og deretter ${math("54/10=5{,}4")}. Dermed er 1 % lik 5,4.`, `Hundre slike deler gir ${math("5{,}4\\cdot100=540")}.`]],
+  },
+  "2py27-015": {
+    primary: ["tjue-prosent", "Finn 20 % først", "Halver 40 %-delen og bygg fem slike deler."],
+    alternative: ["ti-prosent", "Finn 10 % først", "Reduser til en kjent tidel og bygg til 100 %.",
+      "Når 40 % er 360, er 10 % en firedel av 360.",
+      [`Regn ${math("360/4=90")}. Dermed er 10 % lik 90.`, `Ti slike 10 %-deler gir 100 %: ${math("90\\cdot10=900")}.`]],
+  },
+  "2py27-026": {
+    primary: ["start-hundre", "Start med 100", "Gjør prosentene om til konkrete tall og følg endringene."],
+    alternative: ["vekstfaktorer", "Bruk vekstfaktorer", "En kortere, mer formell vei som viser begge endringene samlet.",
+      "En økning på 20 % gir faktor 1,20. En nedgang på 20 % gir faktor 0,80.",
+      [`Gang faktorene: ${math("1{,}20\\cdot0{,}80=0{,}96")}.`, `Faktoren 0,96 betyr at 96 % er igjen. Fra 100 % til 96 % er endringen ${math("96-100=-4\\,\\%")}.`]],
+  },
+  "2py27-027": {
+    primary: ["start-hundre", "Start med 100", "Gjør prosentene om til konkrete tall og følg endringene."],
+    alternative: ["vekstfaktorer", "Bruk vekstfaktorer", "En kortere, mer formell vei som samler de to endringene.",
+      "En nedgang på 10 % gir faktor 0,90. En økning på 10 % gir faktor 1,10.",
+      [`Gang faktorene: ${math("0{,}90\\cdot1{,}10=0{,}99")}.`, `Faktoren 0,99 betyr at 99 % er igjen. Fra 100 % til 99 % er endringen ${math("99-100=-1\\,\\%")}.`]],
+  },
+  "2py27-028": {
+    primary: ["prosentstripe", "Bygg fra 10 %", "Reduser 120 % til en enkel 10 %-del og bygg til 100 %."],
+    alternative: ["kjent-brok", "Tenk 120 % som seks femdeler", "Bruk brøken 6/5 til å se antallet like deler.",
+      `Skriv ${math("120\\,\\%=6/5")}. Den nye prisen på 816 kr er derfor 6 like deler.`,
+      [`Finn én del: ${math("816/6=136")}.`, `Den opprinnelige verdien er 5 slike deler: ${math("136\\cdot5=680")}.`]],
+  },
+  "2py27-029": {
+    primary: ["prosentstripe", "Bygg fra 10 %", "Reduser 90 % til én 10 %-del og bygg til 100 %."],
+    alternative: ["kjent-brok", "Tenk 90 % som ni tideler", "Bruk brøken 9/10 til å se antallet like deler.",
+      `Skriv ${math("90\\,\\%=9/10")}. Prisen 630 kr er derfor 9 like deler.`,
+      [`Finn én del: ${math("630/9=70")}.`, `Den opprinnelige prisen er 10 slike deler: ${math("70\\cdot10=700")}.`]],
+  },
+  "2py27-030": {
+    primary: ["prosentstripe", "Bygg fra 25 %", "Reduser 125 % til en enkel 25 %-del og bygg til 100 %."],
+    alternative: ["kjent-brok", "Tenk 125 % som fem firedeler", "Bruk brøken 5/4 til å finne den opprinnelige prisen.",
+      `Skriv ${math("125\\,\\%=5/4")}. Den nye prisen på 1 500 kr er derfor 5 like deler.`,
+      [`Finn én del: ${math("1\,500/5=300")}.`, `Den opprinnelige prisen er 4 slike deler: ${math("300\\cdot4=1\,200")}.`]],
+  },
+  "2py27-032": {
+    primary: ["prosentstripe", "Bygg fra 50 %", "Reduser 150 % til en enkel 50 %-del og bygg til 100 %."],
+    alternative: ["kjent-brok", "Tenk 150 % som tre halvdeler", "Bruk brøken 3/2 til å finne den opprinnelige verdien.",
+      `Skriv ${math("150\\,\\%=3/2")}. Det nye medlemstallet 1 950 er derfor 3 like deler.`,
+      [`Finn én del: ${math("1\,950/3=650")}.`, `Den opprinnelige verdien er 2 slike deler: ${math("650\\cdot2=1\,300")}.`]],
+  },
+  "2py27-038": {
+    primary: ["kjent-brok", "20 % er en femdel", "Kortest her: del 900 i fem like deler."],
+    alternative: ["ti-prosent", "Finn 10 % og doble", "Bygg 20 % av to like 10 %-deler.",
+      `Finn 10 %: ${math("900/10=90")}.`,
+      [`Doble 10 %-delen: ${math("90\\cdot2=180")}. Dermed er prosentavslaget 180 kr.`, `Sammenlign 180 kr med 150 kr. Siden ${math("180>150")}, er prosenttilbudet best.`]],
+  },
+  "2py27-039": {
+    primary: ["prosentbiter", "10 % og 5 %", "Bygg 15 % ved å finne 10 % og halvparten av dette."],
+    alternative: ["trekk-fra", "20 % minus 5 %", "Bruk at 15 % ligger 5 prosentpoeng under 20 %.",
+      `Finn 20 % som en femdel: ${math("1\,250/5=250")}.`,
+      [`Fem prosent er halvparten av 10 %. Siden 10 % er 125 kr, er 5 % ${math("125/2=62{,}5")} kr.`, `Trekk fra: ${math("250-62{,}5=187{,}5")} kr. Det er mindre enn 220 kr, så kroneavslaget er best.`]],
+  },
+  "2py27-040": {
+    primary: ["kjent-brok", "25 % er en firedel", "Kortest her: del 680 i fire like deler."],
+    alternative: ["halvering", "Halver to ganger", "Gå fra 100 % til 50 % og videre til 25 %.",
+      `Halver 680: ${math("680/2=340")}. Det er 50 %.`,
+      [`Halver én gang til: ${math("340/2=170")}. Det er 25 %.`, `Sammenlign 170 kr med 190 kr. Siden ${math("170<190")}, er kroneavslaget best.`]],
+  },
+  "2py27-041": {
+    primary: ["prosentbiter", "10 % og 2 %", "Bygg 12 % av to enkle prosentbiter."],
+    alternative: ["en-prosent", "Finn 1 % først", "En generell vei som gjør 12 % til tolv like deler.",
+      `Finn 1 %: ${math("2\,400/100=24")}.`,
+      [`Bygg 12 %: ${math("24\\cdot12=24\\cdot10+24\\cdot2=240+48=288")}.`, `Sammenlign 288 kr med 320 kr. Siden ${math("288<320")}, er kroneavslaget best.`]],
+  },
+  "2py27-042": {
+    primary: ["prosentbiter", "10 % og 8 %", "Bygg 18 % av prosentbiter som passer 1 500."],
+    alternative: ["trekk-fra", "20 % minus 2 %", "Finn en rund prosent og trekk fra den lille forskjellen.",
+      `Finn 20 % som en femdel: ${math("1\,500/5=300")}.`,
+      [`Finn 2 %: 1 % er ${math("1\,500/100=15")}, så 2 % er ${math("15\\cdot2=30")}.`, `Trekk fra: ${math("300-30=270")} kr. Det er mer enn 250 kr, så prosenttilbudet er best.`]],
+  },
+};
+
+for (const question of bank.oppgaver.filter((item) => item.del === 1 && item.tema === "prosent")) {
+  delete question.losningsveier;
+}
+
+for (const [id, config] of Object.entries(percentageSolutionPaths)) {
+  const question = questions.get(id);
+  if (!question || question.del !== 1 || question.tema !== "prosent") {
+    throw new Error(`${id} er ikke en prosentoppgave i Del 1.`);
+  }
+  const [primaryId, primaryName, primaryDescription] = config.primary;
+  const [alternativeId, alternativeName, alternativeDescription, introduction, steps] = config.alternative;
+  setQuestion(id, {
+    losningsveier: [
+      {
+        id: primaryId,
+        navn: primaryName,
+        forklaring: primaryDescription,
+        hint: question.hint,
+      },
+      {
+        id: alternativeId,
+        navn: alternativeName,
+        forklaring: alternativeDescription,
+        hint: alternativeRouteHints(question, introduction, steps),
+      },
+    ],
+  });
+}
+
 // Rydd også i eldre, statiske tekster og kontrollverdier. Dette fjerner både
 // binær flyttallsstøy og meningsløse slutt-null­er, men beholder små tall som
 // 0,000000605 når nullene faktisk angir desimalplasseringen.
@@ -3179,8 +3386,8 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.9";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.10";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

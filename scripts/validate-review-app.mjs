@@ -27,11 +27,13 @@ for (const original of source.oppgaver) {
   assert(copy.sporsmal === original.sporsmal, `Spørsmålsteksten er endret i ${original.id}.`);
   assert(copy.svar === original.svar, `Fasiten er endret i ${original.id}.`);
   assert(JSON.stringify(copy.hints) === JSON.stringify(original.hint), `Hintene er endret i ${original.id}.`);
+  assert(JSON.stringify(copy.losningsveier ?? []) === JSON.stringify(original.losningsveier ?? []), `Løsningsveiene er endret i ${original.id}.`);
   assert(copy.del === original.del, `Eksamensdelen er endret i ${original.id}.`);
 }
 
 assert(embedded.oppgaver.filter((question) => question.del === 1).length === 262, "Del 1 må ha 262 oppgaver.");
 assert(embedded.oppgaver.filter((question) => question.del === 2).length === 238, "Del 2 må ha 238 oppgaver.");
+assert(embedded.oppgaver.filter((question) => question.losningsveier?.length === 2).length === 26, "Kontrollsiden må inneholde de 26 oppgavene med metodevalg.");
 
 assert(!html.includes("fetch("), "Filen skal ikke hente oppgavebanken eksternt.");
 assert(html.includes("data:font/woff2;base64,"), "Matematikkfontene må være innebygd for bruk uten nett.");

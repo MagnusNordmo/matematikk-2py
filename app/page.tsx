@@ -237,6 +237,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState<AnswerInput>(EMPTY_ANSWER);
   const [hintIndex, setHintIndex] = useState(0);
+  const [selectedSolutionPathId, setSelectedSolutionPathId] = useState<string | null>(null);
   const [attempts, setAttempts] = useState(0);
   const [resolved, setResolved] = useState(false);
   const [feedback, setFeedback] = useState<Feedback>(null);
@@ -311,6 +312,10 @@ export default function Home() {
   const currentGroup = currentQuestion?.oppgavegruppe
     ? groupById.get(currentQuestion.oppgavegruppe.id)
     : undefined;
+  const solutionPaths = currentQuestion?.losningsveier ?? [];
+  const selectedSolutionPath = solutionPaths.find((path) => path.id === selectedSolutionPathId);
+  const activeHints = selectedSolutionPath?.hint ?? currentQuestion?.hint ?? [];
+  const needsSolutionPath = solutionPaths.length > 0 && !selectedSolutionPath;
   const availableThemes = useMemo(() => {
     if (!bank || !selectedPart) return [];
     const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart).map((question) => question.tema));
@@ -354,6 +359,7 @@ export default function Home() {
     setCurrentIndex(0);
     setAnswer(EMPTY_ANSWER);
     setHintIndex(0);
+    setSelectedSolutionPathId(null);
     setAttempts(0);
     setResolved(false);
     setFeedback(null);
@@ -368,9 +374,15 @@ export default function Home() {
   }
 
   function revealHint() {
-    if (!currentQuestion || resolved || hintIndex >= currentQuestion.hint.length) return;
+    if (!currentQuestion || resolved || needsSolutionPath || hintIndex >= activeHints.length) return;
     setHintIndex((value) => value + 1);
     setStats((value) => ({ ...value, hints: value.hints + 1 }));
+  }
+
+  function chooseSolutionPath(pathId: string) {
+    if (pathId === selectedSolutionPathId) return;
+    setSelectedSolutionPathId(pathId);
+    setHintIndex(0);
   }
 
   function insertRetryAfterGroup(question: Question) {
@@ -458,6 +470,7 @@ export default function Home() {
     setCurrentIndex((value) => value + 1);
     setAnswer(EMPTY_ANSWER);
     setHintIndex(0);
+    setSelectedSolutionPathId(null);
     setAttempts(0);
     setResolved(false);
     setFeedback(null);
@@ -591,6 +604,17 @@ export default function Home() {
             <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={baseCount} aria-valuenow={stats.baseSolved}><span style={{ width: `${progressPercent}%` }} /></div>
           </section>
 
+          {mode === "skill" && selectedPart === 1 && selectedTheme === "prosent" && currentIndex === 0 && (
+            <section className="percent-strategy-map" aria-label="Tre hovedveier i prosentregning">
+              <h2>Tre hovedveier i prosentregning</h2>
+              <div>
+                <p><strong>Bygg fra en enkel prosent</strong><span>Finn for eksempel 1 %, 10 %, 25 % eller 50 %, og bygg videre.</span></p>
+                <p><strong>Bruk en kjent brøk</strong><span>Se for eksempel 25 % som en firedel og 50 % som en halvpart.</span></p>
+                <p><strong>Sammenlign delen med helheten</strong><span>Finn først hva som er delen, og hva som er hele mengden – altså 100 %.</span></p>
+              </div>
+            </section>
+          )}
+
           <section className="question-wrap">
             <div className="question-meta">
               <span>{currentItem.isExtra ? "Samme ferdighet – prøv uten hint" : themeById.get(currentQuestion.tema)?.kortnavn}</span>
@@ -624,13 +648,29 @@ export default function Home() {
               )}
               <div className="hint-section">
                 <div className="hint-heading">
-                  <div><strong>Trenger du en forklaring?</strong><span>Åpne ett løsningssteg om gangen. Hintene viser en fullstendig løsning steg for steg, og fasiten vises til slutt.</span></div>
-                  {!resolved && hintIndex < currentQuestion.hint.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {currentQuestion.hint.length}</button>}
+                  <div><strong>{solutionPaths.length > 0 ? "Velg en regnevei" : "Trenger du en forklaring?"}</strong><span>{solutionPaths.length > 0 ? "Samme oppgave kan løses på flere måter. Velg én vei, og åpne løsningen steg for steg. Du kan bytte vei og sammenligne etterpå." : "Åpne ett løsningssteg om gangen. Hintene viser en fullstendig løsning steg for steg, og fasiten vises til slutt."}</span></div>
+                  {!resolved && !needsSolutionPath && hintIndex < activeHints.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {activeHints.length}</button>}
                 </div>
-                {(resolved || hintIndex > 0) && (
+                {solutionPaths.length > 0 && (
+                  <div className="solution-paths" role="group" aria-label="Velg løsningsmetode">
+                    {solutionPaths.map((path) => (
+                      <button
+                        className={`solution-path ${selectedSolutionPathId === path.id ? "solution-path-selected" : ""}`}
+                        type="button"
+                        key={`${currentQuestion.id}-${path.id}`}
+                        aria-pressed={selectedSolutionPathId === path.id}
+                        onClick={() => chooseSolutionPath(path.id)}
+                      >
+                        <strong>{path.navn}</strong>
+                        <span>{path.forklaring}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {!needsSolutionPath && (resolved || hintIndex > 0) && (
                   <ol className="hint-list">
-                    {currentQuestion.hint.slice(0, resolved ? currentQuestion.hint.length : hintIndex).map((hint, index) => <li key={`${currentQuestion.id}-hint-${index}`}><span>{index + 1}</span><p><MathText>{hint}</MathText></p></li>)}
-                    {(resolved || hintIndex === currentQuestion.hint.length) && <li className="final-hint"><span>✓</span><p><strong>Fasit:</strong> <MathText>{currentQuestion.svar}</MathText></p></li>}
+                    {activeHints.slice(0, resolved ? activeHints.length : hintIndex).map((hint, index) => <li key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}-hint-${index}`}><span>{index + 1}</span><p><MathText>{hint}</MathText></p></li>)}
+                    {(resolved || hintIndex === activeHints.length) && <li className="final-hint"><span>✓</span><p><strong>Fasit:</strong> <MathText>{currentQuestion.svar}</MathText></p></li>}
                   </ol>
                 )}
               </div>

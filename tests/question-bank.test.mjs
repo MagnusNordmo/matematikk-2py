@@ -214,7 +214,7 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
   );
 });
 
-test("Del 1 holder fast ved én tydelig metode og forklarer hva tallene betyr", () => {
+test("hver hovedløsning i Del 1 holder fast ved én tydelig metode", () => {
   const del1 = bank.oppgaver.filter((question) => question.del === 1);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
@@ -252,6 +252,49 @@ test("Del 1 holder fast ved én tydelig metode og forklarer hva tallene betyr", 
   }
 });
 
+test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
+  const percentQuestions = bank.oppgaver.filter((question) => question.del === 1 && question.tema === "prosent");
+  const withPaths = percentQuestions.filter((question) => question.losningsveier);
+  const byId = (id) => bank.oppgaver.find((question) => question.id === id);
+
+  assert.equal(bank.samling.versjon, "2027.10");
+  assert.equal(percentQuestions.length, 42);
+  assert.equal(withPaths.length, 26);
+
+  for (const question of withPaths) {
+    assert.equal(question.losningsveier.length, 2, `${question.id} skal ha to oversiktlige metodevalg`);
+    assert.equal(new Set(question.losningsveier.map((path) => path.id)).size, 2, `${question.id} har like metode-ID-er`);
+    assert.ok(question.losningsveier.every((path) => path.navn.length >= 8), `${question.id} har et uklart metodenavn`);
+    assert.ok(question.losningsveier.every((path) => path.forklaring.length >= 25), `${question.id} forklarer ikke når metoden passer`);
+    for (const path of question.losningsveier) {
+      assert.ok(path.hint.length >= 6, `${question.id}/${path.id} har for få løsningssteg`);
+      assert.match(path.hint[0], /^Hva vet vi\?/u, `${question.id}/${path.id} starter ikke med forståelse`);
+      assert.ok(path.hint.some((hint) => hint.startsWith("Svar på spørsmålet:")), `${question.id}/${path.id} mangler svarsteg`);
+      assert.match(path.hint.at(-1), /^Sjekk svaret:/u, `${question.id}/${path.id} mangler kontroll`);
+    }
+    assert.notDeepEqual(
+      question.losningsveier[0].hint,
+      question.losningsveier[1].hint,
+      `${question.id} viser samme løsning to ganger`,
+    );
+  }
+
+  assert.deepEqual(byId("2py27-002").losningsveier.map((path) => path.navn), [
+    "Kjent brøk: en firedel",
+    "10 % + 10 % + 5 %",
+  ]);
+  assert.deepEqual(byId("2py27-026").losningsveier.map((path) => path.navn), [
+    "Start med 100",
+    "Bruk vekstfaktorer",
+  ]);
+  assert.equal(byId("2py27-031").losningsveier, undefined, "95 %-oppgaven skal ikke få et kunstig metodevalg");
+
+  for (const question of percentQuestions.filter((item) =>
+    ["d1-prosentpoeng", "d1-vekstfaktor", "d1-prosent-pastand"].includes(item.variantfamilie))) {
+    assert.equal(question.losningsveier, undefined, `${question.id} har fått et kunstig metodevalg`);
+  }
+});
+
 test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
@@ -276,13 +319,16 @@ test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
   assert.doesNotMatch(roundedQuestion.svar, /6\{,\}2/);
 
   for (const question of bank.oppgaver) {
-    for (const [index, hint] of question.hint.entries()) {
-      const outsideMath = hint.replace(/\\\(.*?\\\)/gu, "");
-      assert.doesNotMatch(
-        outsideMath,
-        /\{,\}|\\(?:cdot|frac|div|sqrt)|\^/u,
-        `${question.id} hint ${index + 1} har matematikkkode utenfor matematikkmarkører`,
-      );
+    const hintCollections = [question.hint, ...(question.losningsveier ?? []).map((path) => path.hint)];
+    for (const [collectionIndex, hints] of hintCollections.entries()) {
+      for (const [index, hint] of hints.entries()) {
+        const outsideMath = hint.replace(/\\\(.*?\\\)/gu, "");
+        assert.doesNotMatch(
+          outsideMath,
+          /\{,\}|\\(?:cdot|frac|div|sqrt)|\^/u,
+          `${question.id} løsningsvei ${collectionIndex + 1}, hint ${index + 1} har matematikkkode utenfor matematikkmarkører`,
+        );
+      }
     }
   }
 });
@@ -389,7 +435,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.9");
+  assert.equal(bank.samling.versjon, "2027.10");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
