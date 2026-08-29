@@ -1350,31 +1350,51 @@ const reversePercentContexts = {
     sporsmal: `En årsavgift ble økt med ${math("20\\,\\%")} til ${math("816")} kr. Hva var årsavgiften før økningen?`,
     subject: "årsavgiften",
     unit: "kr",
-    hand: `Siden ${math("120\\,\\%=816")} kr, er ${math("10\\,\\%=816/12=68")} kr.`,
+    changedPercent: 120,
+    chunkPercent: 10,
+    chunkCount: 12,
+    chunkValue: 68,
+    wholeCount: 10,
   },
   "2py27-029": {
     sporsmal: `En jakke ble satt ned med ${math("10\\,\\%")} og kostet da ${math("630")} kr. Hva kostet jakken før rabatten?`,
     subject: "prisen på jakken",
     unit: "kr",
-    hand: `Siden ${math("90\\,\\%=630")} kr, er ${math("10\\,\\%=630/9=70")} kr.`,
+    changedPercent: 90,
+    chunkPercent: 10,
+    chunkCount: 9,
+    chunkValue: 70,
+    wholeCount: 10,
   },
   "2py27-030": {
     sporsmal: `Prisen på en sykkel ble økt med ${math("25\\,\\%")} til ${math("1\\,500")} kr. Hva kostet sykkelen før prisøkningen?`,
     subject: "prisen på sykkelen",
     unit: "kr",
-    hand: `Siden ${math("125\\,\\%=1\\,500")} kr, er ${math("25\\,\\%=1\\,500/5=300")} kr.`,
+    changedPercent: 125,
+    chunkPercent: 25,
+    chunkCount: 5,
+    chunkValue: 300,
+    wholeCount: 4,
   },
   "2py27-031": {
     sporsmal: `Et årskort ble satt ned med ${math("5\\,\\%")} og kostet da ${math("760")} kr. Hva kostet årskortet før rabatten?`,
     subject: "prisen på årskortet",
     unit: "kr",
-    hand: `${math("95\\,\\%")} består av 19 deler på ${math("5\\,\\%")}. Derfor er ${math("5\\,\\%=760/19=40")} kr.`,
+    changedPercent: 95,
+    chunkPercent: 5,
+    chunkCount: 19,
+    chunkValue: 40,
+    wholeCount: 20,
   },
   "2py27-032": {
     sporsmal: `Medlemstallet i en organisasjon økte med ${math("50\\,\\%")} til ${math("1\\,950")}. Hvor mange medlemmer hadde organisasjonen før økningen?`,
     subject: "medlemstallet",
     unit: "medlemmer",
-    hand: `Siden ${math("150\\,\\%=1\\,950")}, er ${math("50\\,\\%=1\\,950/3=650")}.`,
+    changedPercent: 150,
+    chunkPercent: 50,
+    chunkCount: 3,
+    chunkValue: 650,
+    wholeCount: 2,
   },
 };
 
@@ -1382,18 +1402,29 @@ for (const [id, context] of Object.entries(reversePercentContexts)) {
   const question = questions.get(id);
   const { ny, endring } = question.kontroll.inndata;
   const original = question.kontroll.resultat[0];
-  const factor = 1 + endring / 100;
+  const absoluteChange = Math.abs(endring);
+  const changeWord = endring > 0 ? "økning" : "rabatt";
+  const paidOperation = endring > 0 ? "+" : "-";
+  const valueUnit = context.unit === "kr" ? " kr" : " medlemmer";
+  const changeChunks = absoluteChange / context.chunkPercent;
+  const changeValue = Math.abs(ny - original);
+  const checkedChange = changeChunks === 1
+    ? `${math(`${number(absoluteChange)}\\,\\%`)} er én slik del, altså ${math(number(changeValue))}${valueUnit}`
+    : `${math(`${number(absoluteChange)}\\,\\%`)} er ${math(number(changeChunks))} slike deler: ${math(`${number(context.chunkValue)}\\cdot${number(changeChunks)}=${number(changeValue)}`)}${valueUnit}`;
   setQuestion(id, {
     sporsmal: context.sporsmal,
     hint: [
-      `Definer den ukjente: La ${math("x")} være ${context.subject} før prosentendringen.`,
-      `Finn vekstfaktoren: ${math(`${Math.abs(endring)}\\,\\%`)} er ${math(number(Math.abs(endring / 100)))}. ${endring > 0 ? "Ved økning legger vi dette tallet til 1" : "Ved nedgang trekker vi dette tallet fra 1"}, og får ${math(number(factor))}.`,
-      `Lag ligningen: ${context.subject[0].toUpperCase()}${context.subject.slice(1)} multiplisert med vekstfaktoren skal bli ${math(number(ny))}${context.unit === "kr" ? " kr" : ""}. Det gir ${math(`${number(factor)}x=${number(ny)}`)}.`,
-      `Regn uten kalkulator: ${context.hand}`,
-      `Regn ut: ${math("100\\,\\%")} er ${math(number(original))}${context.unit === "kr" ? " kr" : " medlemmer"}. Dette er svaret oppgaven spør etter.`,
-      `Kontroller svaret: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}. Vi får den oppgitte verdien etter prosentendringen.`,
+      `Hva vet vi? Etter en ${changeWord} på ${math(`${number(absoluteChange)}\\,\\%`)} er ${context.subject} ${math(number(ny))}${valueUnit}. Vi skal finne ${context.subject} før endringen, altså verdien som tilsvarer ${math("100\\,\\%")}.`,
+      `Finn prosenten etter endringen: Start med ${math("100\\,\\%")}. Regn ${math(`100${paidOperation}${number(absoluteChange)}=${number(context.changedPercent)}\\,\\%`)}. Dermed vet vi at ${math(`${number(context.changedPercent)}\\,\\%`)} tilsvarer ${math(number(ny))}${valueUnit}.`,
+      `Velg én regnevei: Vi bruker en prosentstripe hele veien. Del ${math(`${number(context.changedPercent)}\\,\\%`)} i ${math(number(context.chunkCount))} like deler. Hver del er ${math(`${number(context.changedPercent)}/${number(context.chunkCount)}=${number(context.chunkPercent)}\\,\\%`)}.`,
+      `Finn verdien av én del: De ${math(number(context.chunkCount))} like delene er til sammen ${math(number(ny))}${valueUnit}. Derfor deler vi ${math(number(ny))} på ${math(number(context.chunkCount))}: ${math(`${number(ny)}/${number(context.chunkCount)}=${number(context.chunkValue)}`)}. Én del, altså ${math(`${number(context.chunkPercent)}\\,\\%`)}, er ${math(number(context.chunkValue))}${valueUnit}.`,
+      `Bygg opp ${math("100\\,\\%")} med samme deler: ${math(`100/${number(context.chunkPercent)}=${number(context.wholeCount)}`)}, så hele verdien består av ${math(number(context.wholeCount))} slike deler. Regn ${math(`${number(context.chunkValue)}\\cdot${number(context.wholeCount)}=${number(original)}`)}.`,
+      `Svar på spørsmålet: ${context.subject[0].toUpperCase()}${context.subject.slice(1)} var ${math(number(original))} ${context.unit} før endringen.`,
+      endring > 0
+        ? `Sjekk svaret: ${checkedChange}. Da blir ${math(`${number(original)}+${number(changeValue)}=${number(ny)}`)}, akkurat som i oppgaven.`
+        : `Sjekk svaret: ${checkedChange}. Da blir ${math(`${number(original)}-${number(changeValue)}=${number(ny)}`)}, akkurat som i oppgaven.`,
     ],
-    svar: `${context.subject[0].toUpperCase()}${context.subject.slice(1)} var ${math(number(original))} ${context.unit}. Kontroll: ${math(`${number(original)}\\cdot${number(factor)}=${number(ny)}`)}.`,
+    svar: `${context.subject[0].toUpperCase()}${context.subject.slice(1)} var ${math(number(original))} ${context.unit}.`,
     fasit: {
       ...question.fasit,
       verdier: question.fasit.verdier.map((answer) => ({ ...answer, enhet: context.unit })),
@@ -2148,14 +2179,22 @@ for (const question of byFamily("d2-samfunn-d")) {
 // via oppsett og utregning til kontroll. Markørene gjør passet idempotent.
 const generatedPrefixes = [
   "Forstå oppgaven:",
+  "Hva vet vi?",
   "Se etter en enkel vei:",
+  "Velg en enkel regnevei:",
   "Velg framgangsmåte:",
+  "Lag en plan:",
   "Sett opp:",
+  "Gjør første del:",
   "Regn videre:",
+  "Gjør neste del:",
   "Regn ut:",
+  "Fullfør regningen:",
   "Arbeid videre:",
   "Løsningen samlet:",
+  "Svar på spørsmålet:",
   "Kontroller og konkluder:",
+  "Sjekk svaret:",
 ];
 
 function removeGeneratedPrefix(hint) {
@@ -2177,6 +2216,27 @@ function equationFromAnswer(question) {
   const expressions = [...question.svar.matchAll(/\\\((.*?)\\\)/gu)].map((match) => match[1]);
   const equation = expressions.find((expression) => expression.includes("="));
   return equation ? `Regn uttrykket helt ut: ${math(equation)}.` : null;
+}
+
+const beginnerChoiceEvidence = {
+  "2py27-033": `Bruk 100 kr som start: Etter økningen er prisen ${math("100+10=110")} kr. Nedgangen er ${math("10\\,\\%")} av 110 kr, altså ${math("11")} kr, så sluttprisen er ${math("110-11=99")} kr, ikke 100 kr.`,
+  "2py27-034": `Prosentpoeng er bare forskjellen mellom prosenttallene: ${math("30-20=10")} prosentpoeng.`,
+  "2py27-035": `Test med 100 kr uten mva. Med 25 % mva blir prisen ${math("100+25=125")} kr. Trekker vi 25 % av 125 kr, trekker vi ${math("31{,}25")} kr og får ${math("125-31{,}25=93{,}75")} kr, ikke 100 kr.`,
+  "2py27-036": `Bruk 100 kr som start: ${math("100\\cdot1{,}05=105")} og deretter ${math("105\\cdot1{,}05=110{,}25")}. Økningen er dermed ${math("10{,}25\\,\\%")}, som er mer enn 10 %.`,
+  "2py27-037": `Økningen er ${math("6-4=2")} prosentpoeng. Målt mot den gamle andelen blir regnestykket ${math("2/4\\cdot100\\,\\%=50\\,\\%")}. Dette er den relative økningen.`,
+  "2py27-098": `Regn ut hele forskjellen: ${math("[3(x+1)+7]-(3x+7)=3x+3+7-3x-7=3")}. Siden x-leddene forsvinner, blir økningen 3 for alle x.`,
+  "2py27-123": `Regn forholdet i hver kolonne: ${math("5/1=10/2=15/3=20/4=5")}. Det konstante forholdet viser proporsjonalitet.`,
+  "2py27-124": `Regn produktet i hver kolonne: ${math("1\\cdot24=2\\cdot12=4\\cdot6=8\\cdot3=24")}. Det konstante produktet viser omvendt proporsjonalitet.`,
+  "2py27-125": `Når x øker med 1, øker y hver gang med 4: ${math("11-7=15-11=19-15=4")}. Siden ${math("y(0)=7")}, er sammenhengen lineær, men ikke proporsjonal.`,
+  "2py27-126": `Regn produktet i hver kolonne: ${math("2\\cdot30=3\\cdot20=5\\cdot12=10\\cdot6=60")}. Det konstante produktet viser omvendt proporsjonalitet.`,
+  "2py27-127": `Forholdene er ikke like, produktene er ikke like, og y-differansene er ${math("8-2=6")}, ${math("18-8=10")} og ${math("32-18=14")}. Derfor passer ingen av de tre typene.`,
+  "2py27-211": `Første differanser er 3, 5, 7 og 9. De neste differansene er ${math("5-3=7-5=9-7=2")}. Konstant andre differanse kjennetegner en andregradsmodell.`,
+  "2py27-253": `Et moteksempel er nok: Tallene 0 og 100 har gjennomsnitt ${math("(0+100)/2=50")}, mens 40 og 70 har gjennomsnitt ${math("(40+70)/2=55")}. Gjennomsnittet steg selv om observasjonen 100 sank til 70.`,
+  "2py27-255": `Datasett ${math("4,6")} og ${math("0,10")} har begge gjennomsnitt 5, men variasjonsbreddene er ${math("6-4=2")} og ${math("10-0=10")}. Samme gjennomsnitt betyr derfor ikke samme spredning.`,
+};
+
+function choiceWorkedEvidence(question) {
+  return beginnerChoiceEvidence[question.id] ?? equationFromAnswer(question);
 }
 
 function regressionExpression(question) {
@@ -2315,6 +2375,141 @@ function workedCalculation(question) {
 
 function workedContext(question) {
   const family = question.variantfamilie;
+  const method = question.kontroll?.metode;
+  const input = question.kontroll?.inndata ?? {};
+  const mixedContexts = {
+    "2py27-073": `Formelen er ${math("K=420+3{,}8x")}, og ${math("x=75")} kilometer er kjent. Vi skal finne K, altså reiseutgiften, ved å erstatte x med 75.`,
+    "2py27-074": `Formelen er ${math("E=0{,}5mv^2")}. Vi kjenner ${math("m=12")} og ${math("v=5")}, og skal finne energien E ved å sette begge tallene inn på riktig plass.`,
+    "2py27-075": `Formelen er ${math("A=(a+b)h/2")}. Vi kjenner ${math("a=8")}, ${math("b=14")} og ${math("h=6")}, og skal finne arealet A.`,
+    "2py27-076": `Formelen er ${math("F=1{,}8C+32")}, og ${math("C=25")} er kjent. Vi skal finne temperaturen F ved å erstatte C med 25.`,
+    "2py27-077": `Formelen er ${math("D=0{,}04m+1{,}2")}, og veggarealet er ${math("m=70")}. Vi skal finne malingsbehovet D ved å erstatte m med 70.`,
+    "2py27-248": `I modellen ${math("K(x)=250+6x")} er 250 leddet uten x. Oppgaven spør hva dette tallet betyr i situasjonen, ikke bare hva det heter.`,
+    "2py27-249": `Grafen krysser t-aksen når høydeverdien er 0. Her betyr skjæringen ved ${math("t=30")} at vi må tolke hva ${math("V(30)=0")} sier om tanken.`,
+    "2py27-250": `Algemengden multipliseres med ${math("0{,}8")} hver uke. Faktoren forteller hvor stor del som er igjen, og forskjellen opp til ${math("1")} forteller nedgangen.`,
+    "2py27-251": `Den proporsjonale grafen går gjennom ${math("(4,28)")}. Det betyr at 4 enheter av x svarer til 28 enheter av y. Konstanten forteller hvor mye y øker når x øker med 1.`,
+    "2py27-252": `Modellen er ${math("y=120/x")}. Oppgaven spør etter en egenskap som må gjelde for alle punkter som følger denne modellen.`,
+    "2py27-258": `Tallet er skrevet som ${math("3{,}2\\cdot10^5")}. Tierpotensen bestemmer hvor mange plasser kommaet skal flyttes, mens ${math("3{,}2")} skal beholde de samme sifrene.`,
+    "2py27-259": `${math("800")} er hele mengden, altså ${math("100\\,\\%")}. Vi skal finne delen som svarer til ${math("45\\,\\%")} av denne mengden.`,
+    "2py27-260": `Grunntallet er ${math("2")}, og eksponenten ${math("8")} forteller at 2 skal brukes som faktor åtte ganger.`,
+    "2py27-261": `Tallene er allerede sortert, og det er fem av dem. Medianen er derfor verdien på den ene plassen som ligger nøyaktig i midten.`,
+    "2py27-262": `Uttrykket er ${math("6x+5")}, og ${math("x=7")}. Vi skal erstatte x med 7 og bruke multiplikasjon før addisjon.`,
+  };
+
+  // Del 1 skal ikke starte med en generell arbeidsordre. Første hint peker ut
+  // de faktiske tallene og rollene deres, slik at en nybegynner vet hva som er
+  // kjent, hva som er hele mengden, og hva som skal finnes før regningen starter.
+  if (question.del === 1) {
+    if (mixedContexts[question.id]) return mixedContexts[question.id];
+    if (method === "percent_of") {
+      return `${math(number(input.total))} er hele mengden, altså ${math("100\\,\\%")}. Vi kjenner prosentdelen ${math(`${number(input.prosent)}\\,\\%`)}, og skal finne hvor mange den delen inneholder.`;
+    }
+    if (method === "part_as_percent") {
+      return `${math(number(input.hel))} er hele mengden, altså ${math("100\\,\\%")}, mens ${math(number(input.del))} er delen. Vi skal finne hvor mange prosent denne delen utgjør.`;
+    }
+    if (method === "whole_from_part") {
+      return `Vi vet at ${math(number(input.del))} tilsvarer ${math(`${number(input.prosent)}\\,\\%`)}. Det vi mangler, er hele mengden, altså ${math("100\\,\\%")}.`;
+    }
+    if (method === "percentage_points") {
+      return `Den gamle andelen er ${math(`${number(input.gammel)}\\,\\%`)}, og den nye er ${math(`${number(input.ny)}\\,\\%`)}. Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.`;
+    }
+    if (method === "growth_factor") {
+      return `En vekstfaktor forteller hvilken del av startverdien som er igjen etter endringen. ${math("1")} betyr ${math("100\\,\\%")}; oppgaven gir en endring på ${math(`${number(input.endring)}\\,\\%`)}.`;
+    }
+    if (method === "successive_percent") {
+      return `Det skjer to endringer etter hverandre: først ${math(`${number(input.endringer[0])}\\,\\%`)}, deretter ${math(`${number(input.endringer[1])}\\,\\%`)}. Den andre prosenten må regnes av mellomverdien, ikke av startverdien.`;
+    }
+    if (method === "power") {
+      return `Grunntallet er ${math(number(input.grunntall))}, og eksponenten er ${math(number(input.eksponent))}. Eksponenten forteller hvordan grunntallet skal brukes; den er ikke en vanlig faktor.`;
+    }
+    if (method === "standard_form_operation") {
+      return `Hvert tall har en faktor foran tierpotensen og en eksponent. Regn med faktorene og eksponentene hver for seg, og samle dem først etterpå.`;
+    }
+    if (method === "linear_solve") {
+      return `Modellen har den ukjente størrelsen multiplisert med ${math(number(input.a))}, et fastledd på ${math(number(input.b))} og en kjent sluttverdi på ${math(number(input.y))}. Målet er å finne den ukjente uten å endre likheten.`;
+    }
+    if (method === "mean") {
+      return `Vi har ${math(number(input.verdier.length))} observasjoner: ${math(input.verdier.map(number).join(", "))}. Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.`;
+    }
+    if (method === "median") {
+      return `Vi har ${math(number(input.verdier.length))} observasjoner. Medianen er verdien i midten etter sortering, så rekkefølgen må ordnes før vi velger midtposisjonen.`;
+    }
+    if (method === "mode_range") {
+      return `De samme observasjonene skal brukes til to ulike mål: typetallet er verdien som forekommer oftest, mens variasjonsbredden er avstanden fra minste til største verdi.`;
+    }
+    if (method === "relative_cumulative") {
+      return `Frekvensene er ${math(input.frekvenser.map(number).join(", "))}. Relativ frekvens sammenligner én frekvens med totalen, mens kumulativ frekvens legger sammen fra starten til den aktuelle kategorien.`;
+    }
+    if (method === "missing_from_mean") {
+      return `Målgjennomsnittet er ${math(number(input.gjennomsnitt))}, og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.`;
+    }
+    if (method === "weighted_mean") {
+      return `Hver verdi forekommer så mange ganger som frekvensen ved siden av viser. Derfor må hver verdi multipliseres med sin egen frekvens før vi deler på samlet antall observasjoner.`;
+    }
+    if (method === "slope") {
+      return `Linjen går gjennom ${math(`(${number(input.p1[0])},${number(input.p1[1])})`)} og ${math(`(${number(input.p2[0])},${number(input.p2[1])})`)}. Stigningstallet er endringen opp eller ned delt på endringen mot høyre.`;
+    }
+    if (method === "average_rate") {
+      return `Startpunktet er ${math(`(${number(input.x1)},${number(input.y1)})`)}, og sluttpunktet er ${math(`(${number(input.x2)},${number(input.y2)})`)}. Vi skal fordele hele verdiendringen på hele tidsintervallet.`;
+    }
+    if (method === "line_value") {
+      return `I uttrykket ${math(`y=${number(input.a)}x+${number(input.b)}`)} er ${math(`x=${number(input.x)}`)} kjent. Vi skal erstatte x med dette tallet og finne den tilhørende y-verdien.`;
+    }
+    if (method === "line_intercept") {
+      return `Vi kjenner stigningstallet ${math(number(input.a))} og punktet ${math(`(${number(input.x)},${number(input.y)})`)}. Det ukjente konstantleddet er tallet som gjør at punktet passer i linjens uttrykk.`;
+    }
+    if (method === "line_intersection") {
+      return `Skjæringspunktet er stedet der de to modellene gir samme verdi. Først finner vi x-verdien ved å sette uttrykkene lik hverandre; deretter finner vi den felles y-verdien.`;
+    }
+    if (method === "table_slope") {
+      return `Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.`;
+    }
+    if (method === "direct_constant") {
+      return `${math(number(input.x))} enheter svarer til ${math(number(input.y))}. Konstanten er verdien for én enhet, så totalen skal deles på antallet enheter.`;
+    }
+    if (method === "direct_scale") {
+      return `${math(number(input.x1))} enheter svarer til ${math(number(input.y1))}, og vi skal finne verdien for ${math(number(input.x2))} enheter. Ved proporsjonalitet er verdien per enhet den samme.`;
+    }
+    if (method === "inverse_scale") {
+      return `${math(number(input.x1))} av den første størrelsen hører sammen med ${math(number(input.y1))} av den andre. Ved omvendt proporsjonalitet er produktet konstant når den ene størrelsen endres.`;
+    }
+    if (method === "inverse_plus_constant") {
+      return `Modellen består av en omvendt proporsjonal del, ${math(`${number(input.k)}/x`)}, og et fastledd på ${math(number(input.fast))}. Disse to delene må regnes hver for seg.`;
+    }
+    if (method === "median_category") {
+      return `Den siste kumulative frekvensen, ${math(number(input.kumulativ.at(-1)))}, er totalt antall svar. Medianen finnes ved å plassere midtposisjonen i riktig kategori.`;
+    }
+    if (method === "code_sum") {
+      return `Programmet starter summen på ${math("0")} og legger til verdiene ${math(input.verdier.map(number).join(", "))} én om gangen. Utskriften kommer først etter at hele listen er brukt.`;
+    }
+    if (method === "code_growth") {
+      return `Programmet starter med ${math(number(input.start))} og bruker faktoren ${math(number(input.faktor))} i ${math(number(input.runder))} runder. Hver runde begynner med verdien fra runden før.`;
+    }
+    if (method === "code_threshold") {
+      return `Programmet starter med verdi ${math(number(input.start))} og teller ${math("n=0")}. I hver runde endres verdien med faktor ${math(number(input.faktor))} før stoppgrensen ${math(number(input.grense))} testes på nytt.`;
+    }
+    if (method === "code_statistics") {
+      return `Programmet endrer eller filtrerer listen før det regner. Vi må derfor først finne nøyaktig hvilke verdier som står igjen, og bare bruke disse i sluttregningen.`;
+    }
+    if (method === "interpret_exponential") {
+      return `I modellen er ${math(number(input.a))} startverdien, mens ${math(number(input.faktor))} er faktoren som brukes én gang per periode. Vi skal oversette faktoren til en prosentvis endring.`;
+    }
+    if (family === "d1-prosent-pastand" || family === "d1-algebra-pastand") {
+      return "Påstanden bruker ord som «alltid» eller beskriver en generell regel. Derfor må hvert steg enten bevise regelen generelt eller vise ett konkret moteksempel som avkrefter den.";
+    }
+    if (family === "d1-tilbud") {
+      return "Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.";
+    }
+    if (family === "d1-proporsjonal-tabell") {
+      return "Vi skal klassifisere sammenhengen i tabellen. Proporsjonalitet har konstant forhold, omvendt proporsjonalitet har konstant produkt, og en lineær sammenheng har konstant differanse i y for like x-steg.";
+    }
+    if (/statistikk-valg|kritisk-statistikk|uteliggere/.test(family)) {
+      return "Oppgaven spør hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.";
+    }
+    if (/modellkritikk|modellvalg|lineaer-modell/.test(family)) {
+      return "Sammenlign modellen med situasjonen: Se etter startverdi, endring per enhet, gyldig område og om utviklingen er jevn eller prosentvis.";
+    }
+  }
+
   if (/kode/.test(family)) {
     return "Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.";
   }
@@ -2364,13 +2559,16 @@ function workedContext(question) {
   return "Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.";
 }
 
-function workedCheck(question) {
+function workedCheck(question, workedSteps = []) {
   const method = question.kontroll?.metode;
   const input = question.kontroll?.inndata ?? {};
   const result = answerValues(question);
 
   if (question.fasit.type === "valg") {
-    return `Kontroll mot opplysningene: ${question.svar} Dette samsvarer med de konkrete beregningene eller argumentene i stegene ovenfor.`;
+    const evidence = [...workedSteps].reverse().find((hint) => hint !== question.svar);
+    return evidence
+      ? `Sjekk begrunnelsen, ikke bare svaralternativet: ${evidence} Denne testen støtter konklusjonen: ${question.svar}`
+      : `Sammenlign det valgte alternativet med alle opplysningene i oppgaven. Ingen opplysning skal motsi valget.`;
   }
   if (method === "percent_of") return `${math(`${number(result[0])}/${number(input.total)}\\cdot100\\,\\%=${number(input.prosent)}\\,\\%`)}. Andelen blir den oppgitte prosenten av totalen.`;
   if (method === "part_as_percent") return `${math(`${number(input.hel)}\\cdot${number(result[0] / 100)}=${number(input.del)}`)}. Vi får tilbake den oppgitte delen.`;
@@ -2850,9 +3048,13 @@ function asWorkedExample(question) {
   const coreHints = question.hint
     .filter((hint) => ![
       "Forstå oppgaven:",
+      "Hva vet vi?",
       "Se etter en enkel vei:",
+      "Velg en enkel regnevei:",
       "Løsningen samlet:",
+      "Svar på spørsmålet:",
       "Kontroller og konkluder:",
+      "Sjekk svaret:",
     ].some((prefix) => hint.startsWith(prefix)))
     .map(removeGeneratedPrefix)
     .filter((hint) => !hint.startsWith("Bruk oppgavens tall og utfør regnestykket:"))
@@ -2863,19 +3065,23 @@ function asWorkedExample(question) {
     if (!calculation) throw new Error(`${question.id} mangler en konkret mellomregning.`);
     coreHints.push(calculation);
   }
+  if (question.del === 1 && question.fasit.type === "valg" && !hasWorkedRelation) {
+    const evidence = choiceWorkedEvidence(question);
+    if (evidence) coreHints.push(evidence);
+  }
 
-  const stepLabels = ["Velg framgangsmåte", "Sett opp", "Regn videre", "Regn ut"];
-  const worked = [`Forstå oppgaven: ${workedContext(question)}`];
+  const stepLabels = ["Lag en plan", "Gjør første del", "Gjør neste del", "Fullfør regningen"];
+  const worked = [`Hva vet vi? ${workedContext(question)}`];
   const strategyHint = mentalStrategyHint(question);
-  if (strategyHint) worked.push(`Se etter en enkel vei: ${strategyHint}`);
+  if (strategyHint) worked.push(`Velg en enkel regnevei: ${strategyHint}`);
 
   coreHints.forEach((hint, index) => {
     const label = stepLabels[index] ?? "Arbeid videre";
     worked.push(`${label}: ${hint}`);
   });
 
-  worked.push(`Løsningen samlet: ${question.svar}`);
-  worked.push(`Kontroller og konkluder: ${workedCheck(question)}`);
+  worked.push(`Svar på spørsmålet: ${question.svar}`);
+  worked.push(`Sjekk svaret: ${workedCheck(question, coreHints)}`);
   return worked.map(wrapBareDecimalMath);
 }
 
@@ -2973,7 +3179,7 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.8";
+bank.samling.versjon = "2027.9";
 bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
