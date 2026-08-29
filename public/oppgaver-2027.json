@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.6"
+    "versjon": "2027.7"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -26,7 +26,7 @@
     "direkte_avskrift": false,
     "generator_seed": 20270823,
     "generert_dato": "2026-08-23",
-    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, metode, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
+    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
   },
   "eksamensprofil": {
     "mål": "Trene ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
@@ -2024,13 +2024,14 @@
       "sporsmal": "På en aktivitetsdag deltar \\(240\\) elever. \\(15\\,\\%\\) av elevene velger klatring. Hvor mange elever velger klatring?",
       "hint": [
         "Forstå oppgaven: Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.",
-        "Velg framgangsmåte: Skriv prosenten som desimaltall.",
-        "Sett opp: Multipliser totalen med desimaltallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(240\\cdot0{,}15=36\\).",
-        "Løsningen samlet: \\(240\\cdot0{,}15=36\\). Det er \\(36\\) elever som velger klatring.",
+        "Se etter en enkel vei: Du trenger ikke gange med et desimaltall. Del 15 % i 10 % og 5 %, der 5 % er halvparten av 10 %.",
+        "Velg framgangsmåte: Finn først 10 %: \\(240/10=24\\).",
+        "Sett opp: Fem prosent er halvparten av 10 %: \\(24/2=12\\).",
+        "Regn videre: Legg sammen delene: \\(24+12=36\\). Dermed er 15 % av 240 lik 36.",
+        "Løsningen samlet: Siden 15 % er 10 % og 5 %, får vi \\(240/10+(240/10)/2=24+12=36\\). Det er \\(36\\) elever som velger klatring.",
         "Kontroller og konkluder: \\(36/240\\cdot100\\,\\%=15\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
       ],
-      "svar": "\\(240\\cdot0{,}15=36\\). Det er \\(36\\) elever som velger klatring.",
+      "svar": "Siden 15 % er 10 % og 5 %, får vi \\(240/10+(240/10)/2=24+12=36\\). Det er \\(36\\) elever som velger klatring.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2067,13 +2068,14 @@
       "sporsmal": "En konsert har \\(360\\) billetter. Den første dagen blir \\(25\\,\\%\\) av billettene solgt. Hvor mange billetter blir solgt den første dagen?",
       "hint": [
         "Forstå oppgaven: Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.",
-        "Velg framgangsmåte: Skriv prosenten som desimaltall.",
-        "Sett opp: Multipliser totalen med desimaltallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(360\\cdot0{,}25=90\\).",
-        "Løsningen samlet: \\(360\\cdot0{,}25=90\\). Det blir solgt \\(90\\) billetter.",
+        "Se etter en enkel vei: Dette kan gjøres i hodet: 25 % er en firedel. Del 360 i fire like deler og spør hvor stor hver del blir.",
+        "Velg framgangsmåte: Tenk på 360 billetter som fire like store deler.",
+        "Sett opp: Finn størrelsen på én del: \\(360/4=90\\).",
+        "Regn videre: Én av fire like deler er 25 %, så 90 billetter er svaret.",
+        "Løsningen samlet: Siden 25 % er en firedel, får vi \\(360/4=90\\). Det blir solgt \\(90\\) billetter.",
         "Kontroller og konkluder: \\(90/360\\cdot100\\,\\%=25\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
       ],
-      "svar": "\\(360\\cdot0{,}25=90\\). Det blir solgt \\(90\\) billetter.",
+      "svar": "Siden 25 % er en firedel, får vi \\(360/4=90\\). Det blir solgt \\(90\\) billetter.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2110,13 +2112,14 @@
       "sporsmal": "En arbeidsplass har \\(450\\) ansatte. \\(32\\,\\%\\) sykler til jobb. Hvor mange ansatte sykler til jobb?",
       "hint": [
         "Forstå oppgaven: Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.",
-        "Velg framgangsmåte: Skriv prosenten som desimaltall.",
-        "Sett opp: Multipliser totalen med desimaltallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(450\\cdot0{,}32=144\\).",
-        "Løsningen samlet: \\(450\\cdot0{,}32=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
+        "Se etter en enkel vei: Du kan unngå tung desimalregning ved å dele 32 % i 30 % og 2 %.",
+        "Velg framgangsmåte: Finn 30 % som tre 10 %-deler: \\(450/10=45\\) og \\(3\\cdot45=135\\).",
+        "Sett opp: Finn 2 % som to 1 %-deler: \\(450/100=4{,}5\\) og \\(2\\cdot4{,}5=9\\).",
+        "Regn videre: Legg sammen 30 % og 2 %: \\(135+9=144\\).",
+        "Løsningen samlet: Del 32 % i 30 % og 2 %: \\(135+9=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
         "Kontroller og konkluder: \\(144/450\\cdot100\\,\\%=32\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
       ],
-      "svar": "\\(450\\cdot0{,}32=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
+      "svar": "Del 32 % i 30 % og 2 %: \\(135+9=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2153,13 +2156,14 @@
       "sporsmal": "Et idrettslag har \\(640\\) medlemmer. \\(12{,}5\\,\\%\\) av medlemmene er trenere. Hvor mange trenere har idrettslaget?",
       "hint": [
         "Forstå oppgaven: Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.",
-        "Velg framgangsmåte: Skriv prosenten som desimaltall.",
-        "Sett opp: Multipliser totalen med desimaltallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(640\\cdot0{,}125=80\\).",
-        "Løsningen samlet: \\(640\\cdot0{,}125=80\\). Idrettslaget har \\(80\\) trenere.",
+        "Se etter en enkel vei: Dette kan gjøres i hodet: 12,5 % er en åttedel. Del 640 i åtte like deler.",
+        "Velg framgangsmåte: Tenk på 640 medlemmer som åtte like store deler.",
+        "Sett opp: Finn størrelsen på én del: \\(640/8=80\\).",
+        "Regn videre: Én av åtte like deler er 12,5 %, så det er 80 trenere.",
+        "Løsningen samlet: Siden 12,5 % er en åttedel, får vi \\(640/8=80\\). Idrettslaget har \\(80\\) trenere.",
         "Kontroller og konkluder: \\(80/640\\cdot100\\,\\%=12{,}5\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
       ],
-      "svar": "\\(640\\cdot0{,}125=80\\). Idrettslaget har \\(80\\) trenere.",
+      "svar": "Siden 12,5 % er en åttedel, får vi \\(640/8=80\\). Idrettslaget har \\(80\\) trenere.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2196,13 +2200,14 @@
       "sporsmal": "I en spørreundersøkelse kom det inn \\(875\\) svar. \\(8\\,\\%\\) svarte «vet ikke». Hvor mange svarte «vet ikke»?",
       "hint": [
         "Forstå oppgaven: Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.",
-        "Velg framgangsmåte: Skriv prosenten som desimaltall.",
-        "Sett opp: Multipliser totalen med desimaltallet.",
-        "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(875\\cdot0{,}08=70\\).",
-        "Løsningen samlet: \\(875\\cdot0{,}08=70\\). Det var \\(70\\) slike svar.",
+        "Se etter en enkel vei: Se etter et rundt mellomresultat: \\(875\\cdot8=7\\,000\\), som er lett å dele på 100.",
+        "Velg framgangsmåte: Gang først med 8 ved å dele opp 875: \\(8\\cdot875=8\\cdot800+8\\cdot75=6\\,400+600=7\\,000\\).",
+        "Sett opp: Åtte prosent betyr 8 per 100, så del deretter på 100: \\(7\\,000/100=70\\).",
+        "Regn videre: Dermed er 8 % av 875 lik 70.",
+        "Løsningen samlet: \\(875\\cdot8/100=7\\,000/100=70\\). Det var \\(70\\) slike svar.",
         "Kontroller og konkluder: \\(70/875\\cdot100\\,\\%=8\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
       ],
-      "svar": "\\(875\\cdot0{,}08=70\\). Det var \\(70\\) slike svar.",
+      "svar": "\\(875\\cdot8/100=7\\,000/100=70\\). Det var \\(70\\) slike svar.",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -2239,6 +2244,7 @@
       "sporsmal": "På en skole reiser \\(18\\) av \\(80\\) elever med tog. Hvor mange prosent av elevene reiser med tog?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(18/80=9/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
         "Velg framgangsmåte: 10 % av 80 er \\(8\\), og 20 % er derfor \\(16\\).",
         "Sett opp: 2,5 % av 80 er \\(2\\), fordi 2,5 % er en firedel av 10 %.",
         "Regn videre: Da er \\(16+2=18\\) det samme som 22,5 % av 80.",
@@ -2283,6 +2289,7 @@
       "sporsmal": "I en kantine velger \\(35\\) av \\(125\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(35/125=7/25\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
         "Velg framgangsmåte: Skriv forholdet \\(35/125\\). Målet er å få 100 i nevneren.",
         "Sett opp: Gang teller og nevner med 8: \\(35\\cdot8=280\\) og \\(125\\cdot8=1\\,000\\).",
         "Regn videre: \\(280/1\\,000=28/100\\). Dermed var 28 % av svarene positive.",
@@ -2327,6 +2334,7 @@
       "sporsmal": "I en undersøkelse svarer \\(66\\) av \\(240\\) personer at de bruker kollektivtransport daglig. Hvor mange prosent er dette?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(66/240=11/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
         "Velg framgangsmåte: Forkort \\(66/240\\) med 6. Da får du \\(11/40\\).",
         "Sett opp: \\(10/40=25/100\\), altså 25 %. Den siste delen \\(1/40\\) er 2,5 %.",
         "Regn videre: Legg sammen: \\(25+2{,}5=27{,}5\\).",
@@ -2371,6 +2379,7 @@
       "sporsmal": "I en medlemsundersøkelse svarer \\(117\\) av \\(360\\) medlemmer ja. Hvor mange prosent svarer ja?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(117/360=13/40\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
         "Velg framgangsmåte: Forkort \\(117/360\\) med 9. Da får du \\(13/40\\).",
         "Sett opp: \\(12/40=30/100\\), altså 30 %. Den siste delen \\(1/40\\) er 2,5 %.",
         "Regn videre: Legg sammen: \\(30+2{,}5=32{,}5\\).",
@@ -2415,6 +2424,7 @@
       "sporsmal": "Et teater solgte \\(275\\) av \\(625\\) billetter på nett. Hvor mange prosent av billettene ble solgt på nett?",
       "hint": [
         "Forstå oppgaven: Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.",
+        "Se etter en enkel vei: Unngå lang divisjon. Forkort først \\(275/625=11/25\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
         "Velg framgangsmåte: Forkort \\(275/625\\) med 25. Da får du \\(11/25\\).",
         "Sett opp: Gang teller og nevner med 4: \\(11/25=44/100\\).",
         "Regn videre: Dermed var 44 % av svarene positive.",
@@ -2459,6 +2469,7 @@
       "sporsmal": "\\(48\\) frivillige utgjør \\(12\\,\\%\\) av alle som deltar på en festival. Hvor mange deltakere er det totalt?",
       "hint": [
         "Forstå oppgaven: Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.",
+        "Se etter en enkel vei: Tallene passer godt til prosent via 1 %: del 48 og 12 med 12, så ser du direkte at 1 % er 4.",
         "Velg framgangsmåte: 12 % tilsvarer \\(48\\). Del begge tallene på 3, slik at 4 % tilsvarer \\(16\\).",
         "Sett opp: Del én gang til på 4: 1 % tilsvarer \\(4\\).",
         "Regn videre: Gang med 100: \\(4\\cdot100=400\\). Hele gruppen har 400 personer.",
@@ -2502,6 +2513,7 @@
       "sporsmal": "\\(64\\) sykler utgjør \\(20\\,\\%\\) av alle registrerte kjøretøy i en telling. Hvor mange kjøretøy ble registrert?",
       "hint": [
         "Forstå oppgaven: Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.",
+        "Se etter en enkel vei: Dette kan gjøres i hodet: 20 % er en femdel, så hele mengden består av fem like deler på 64.",
         "Velg framgangsmåte: 20 % tilsvarer \\(64\\).",
         "Sett opp: Fem like deler på 20 % utgjør 100 %.",
         "Regn videre: Regn \\(64\\cdot5=320\\). Hele gruppen har 320 personer.",
@@ -2545,6 +2557,7 @@
       "sporsmal": "\\(190\\) billetter utgjør \\(25\\,\\%\\) av alle billettene til en forestilling. Hvor mange billetter er det totalt?",
       "hint": [
         "Forstå oppgaven: Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.",
+        "Se etter en enkel vei: Dette kan gjøres i hodet: 25 % er en firedel, så hele mengden består av fire like deler på 190.",
         "Velg framgangsmåte: 25 % tilsvarer \\(190\\).",
         "Sett opp: 25 % er en firedel av helheten, så helheten består av fire slike deler.",
         "Regn videre: Regn \\(190\\cdot4=760\\). Hele gruppen har 760 personer.",
@@ -2588,6 +2601,7 @@
       "sporsmal": "\\(162\\) ansatte jobber skift. Dette er \\(30\\,\\%\\) av de ansatte i bedriften. Hvor mange ansatte har bedriften?",
       "hint": [
         "Forstå oppgaven: Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.",
+        "Se etter en enkel vei: Del først 30 % i tre like 10 %-deler. Da blir 10 % lik \\(162/3=54\\).",
         "Velg framgangsmåte: 30 % tilsvarer \\(162\\). Del begge tallene på 3: 10 % tilsvarer \\(54\\).",
         "Sett opp: 100 % består av ti like 10 %-deler.",
         "Regn videre: Regn \\(54\\cdot10=540\\). Hele gruppen har 540 personer.",
@@ -2631,6 +2645,7 @@
       "sporsmal": "\\(360\\) plasser utgjør \\(40\\,\\%\\) av kapasiteten i en konsertsal. Hvor mange plasser har salen?",
       "hint": [
         "Forstå oppgaven: Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.",
+        "Se etter en enkel vei: Del først 40 % i to like 20 %-deler. Da blir 20 % lik \\(360/2=180\\).",
         "Velg framgangsmåte: 40 % tilsvarer \\(360\\). Del begge tallene på 2: 20 % tilsvarer \\(180\\).",
         "Sett opp: 100 % består av fem like 20 %-deler.",
         "Regn videre: Regn \\(180\\cdot5=900\\). Hele gruppen har 900 personer.",
@@ -2675,6 +2690,7 @@
       "sporsmal": "Andelen som reiser kollektivt, økte fra \\(18\\,\\%\\) til \\(27\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(9/18=1/2\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(27-18=9\\) prosentpoeng.",
         "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(9/18=1/2\\).",
         "Regn videre: Gjør forholdet om til prosent: \\(50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
@@ -2731,6 +2747,7 @@
       "sporsmal": "Andelen som svarte ja i en undersøkelse, sank fra \\(40\\,\\%\\) til \\(34\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(-6/40=-3/20\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(34-40=-6\\) prosentpoeng.",
         "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(-6/40=-15/100\\).",
         "Regn videre: Gjør forholdet om til prosent: \\(-15\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
@@ -2787,6 +2804,7 @@
       "sporsmal": "Renten på et lån økte fra \\(6\\,\\%\\) til \\(9\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(3/6=1/2\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(9-6=3\\) prosentpoeng.",
         "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(3/6=1/2\\).",
         "Regn videre: Gjør forholdet om til prosent: \\(50\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
@@ -2843,6 +2861,7 @@
       "sporsmal": "Andelen fornybar energi sank fra \\(72\\,\\%\\) til \\(63\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(-9/72=-1/8\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(63-72=-9\\) prosentpoeng.",
         "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(-9/72=-1/8\\).",
         "Regn videre: Gjør forholdet om til prosent: \\(-12{,}5\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
@@ -2899,6 +2918,7 @@
       "sporsmal": "Andelen elever med fravær en bestemt dag økte fra \\(12\\,\\%\\) til \\(15\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Forstå oppgaven: Marker den gamle og den nye prosentandelen. Du skal skille mellom endring i prosentpoeng og relativ endring i prosent.",
+        "Se etter en enkel vei: Etter prosentpoengsdifferansen kan den relative endringen forkortes i hodet: \\(3/12=1/4\\).",
         "Velg framgangsmåte: Finn først forskjellen mellom prosenttallene: \\(15-12=3\\) prosentpoeng.",
         "Sett opp: Relativ endring måles mot den gamle andelen. Forholdet blir \\(3/12=1/4\\).",
         "Regn videre: Gjør forholdet om til prosent: \\(25\\,\\%\\). Fortegnet viser om andelen økte eller sank.",
@@ -2954,6 +2974,7 @@
       "sporsmal": "Prisen på en vare settes ned med \\(35\\,\\%\\). Hvilken vekstfaktor skal prisen multipliseres med?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Tenk i prosent før desimaltall: \\(100-35=65\\,\\%\\), som skrives \\(0{,}65\\).",
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 35 % er \\(0{,}35\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
         "Regn videre: Skriv regnestykket \\(1-0{,}35\\) og regn ut vekstfaktoren.",
@@ -2997,6 +3018,7 @@
       "sporsmal": "Antall brukere av en tjeneste multipliseres med vekstfaktoren \\(0{,}82\\). Hva er den prosentvise endringen i antall brukere?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Les faktoren som prosent direkte: \\(0{,}82=82\\,\\%\\). Forskjellen fra 100 % gir endringen.",
         "Velg framgangsmåte: Sammenlign vekstfaktoren \\(0{,}82\\) med \\(1\\), som betyr ingen endring.",
         "Sett opp: Finn forskjellen: \\(0{,}82-1=-0{,}18\\). Fortegnet viser om det er økning eller nedgang.",
         "Regn videre: Gjør forskjellen om til prosent ved å gange med 100 %.",
@@ -3039,6 +3061,7 @@
       "sporsmal": "Vannforbruket i en bygning reduseres med \\(7\\,\\%\\). Hvilken vekstfaktor skal forbruket multipliseres med?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Tenk i prosent før desimaltall: \\(100-7=93\\,\\%\\), som skrives \\(0{,}93\\).",
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 7 % er \\(0{,}07\\) som desimaltall. Siden dette er en nedgang, skal tallet trekkes fra 1.",
         "Regn videre: Skriv regnestykket \\(1-0{,}07\\) og regn ut vekstfaktoren.",
@@ -3082,6 +3105,7 @@
       "sporsmal": "Medlemstallet i et idrettslag multipliseres med vekstfaktoren \\(1{,}12\\). Hva er den prosentvise endringen i medlemstallet?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Les faktoren som prosent direkte: \\(1{,}12=112\\,\\%\\). Forskjellen fra 100 % gir endringen.",
         "Velg framgangsmåte: Sammenlign vekstfaktoren \\(1{,}12\\) med \\(1\\), som betyr ingen endring.",
         "Sett opp: Finn forskjellen: \\(1{,}12-1=0{,}12\\). Fortegnet viser om det er økning eller nedgang.",
         "Regn videre: Gjør forskjellen om til prosent ved å gange med 100 %.",
@@ -3124,6 +3148,7 @@
       "sporsmal": "Prisen på en tjeneste økes med \\(45\\,\\%\\). Hvilken vekstfaktor skal prisen multipliseres med?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Tenk i prosent før desimaltall: \\(100+45=145\\,\\%\\), som skrives \\(1{,}45\\).",
         "Velg framgangsmåte: Uten endring er 100 % igjen, og det tilsvarer vekstfaktor \\(1\\).",
         "Sett opp: 45 % er \\(0{,}45\\) som desimaltall. Siden dette er en økning, skal tallet legges til 1.",
         "Regn videre: Skriv regnestykket \\(1+0{,}45\\) og regn ut vekstfaktoren.",
@@ -3167,6 +3192,7 @@
       "sporsmal": "Prisen på en sykkel økes først med \\(20\\,\\%\\) og settes senere ned med \\(20\\,\\%\\). Hva er den samlede prosentvise endringen i prisen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Velg en tenkt startverdi på 100. Etter en økning på 20 % blir verdien \\(100+20=120\\).",
         "Sett opp: Nedgangen på 20 % regnes av 120. Siden \\(20\\,\\%\\) av 120 er 24, blir sluttverdien \\(120-24=96\\).",
         "Regn videre: Fra 100 til 96 er en nedgang på 4 av 100, altså 4 %.",
@@ -3213,6 +3239,7 @@
       "sporsmal": "Medlemstallet i en forening synker først med \\(10\\,\\%\\) og øker deretter med \\(10\\,\\%\\). Hva er den samlede prosentvise endringen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Velg en tenkt startverdi på 100. Etter en nedgang på 10 % blir verdien \\(100-10=90\\).",
         "Sett opp: Øk deretter 90 med 10 %. Ti prosent av 90 er 9, så sluttverdien blir \\(90+9=99\\).",
         "Regn videre: Fra 100 til 99 er en nedgang på 1 av 100, altså 1 %.",
@@ -3880,6 +3907,7 @@
       "sporsmal": "Regn ut \\((-3)^4\\).",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Bygg potensen av kjente blokker. Start med \\((-3)^2=9\\) og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.",
         "Velg framgangsmåte: Eksponenten \\(4\\) betyr at grunntallet \\((-3)\\) skal brukes som faktor 4 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-3)\\cdot(-3)\\cdot(-3)\\cdot(-3)\\).",
         "Regn videre: Det er 4 negative faktorer. De kan pares, så produktet blir positivt. Regn deretter ut produktet.",
@@ -3925,6 +3953,7 @@
       "sporsmal": "Regn ut \\((-2)^5\\).",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Bygg potensen av kjente blokker. Start med \\((-2)^2=4\\) og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.",
         "Velg framgangsmåte: Eksponenten \\(5\\) betyr at grunntallet \\((-2)\\) skal brukes som faktor 5 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\cdot(-2)\\).",
         "Regn videre: Det er 5 negative faktorer. Én negativ faktor blir stående, så produktet blir negativt. Regn deretter ut produktet.",
@@ -3970,6 +3999,7 @@
       "sporsmal": "Regn ut \\((5)^3\\).",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Bygg potensen av kjente blokker. Start med \\(5^2=25\\) og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.",
         "Velg framgangsmåte: Eksponenten \\(3\\) betyr at grunntallet \\(5\\) skal brukes som faktor 3 ganger.",
         "Sett opp: Skriv potensen som produktet \\(5\\cdot5\\cdot5\\).",
         "Regn videre: Alle faktorene er positive, så produktet blir positivt. Regn deretter ut produktet.",
@@ -4015,6 +4045,7 @@
       "sporsmal": "Regn ut \\((10)^4\\).",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Bygg potensen av kjente blokker. Start med \\(10^2=100\\) og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.",
         "Velg framgangsmåte: Eksponenten \\(4\\) betyr at grunntallet \\(10\\) skal brukes som faktor 4 ganger.",
         "Sett opp: Skriv potensen som produktet \\(10\\cdot10\\cdot10\\cdot10\\).",
         "Regn videre: Alle faktorene er positive, så produktet blir positivt. Regn deretter ut produktet.",
@@ -4060,6 +4091,7 @@
       "sporsmal": "Regn ut \\((-4)^3\\).",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Bygg potensen av kjente blokker. Start med \\((-4)^2=16\\) og bruk dette videre; bestem fortegnet før du regner når grunntallet er negativt.",
         "Velg framgangsmåte: Eksponenten \\(3\\) betyr at grunntallet \\((-4)\\) skal brukes som faktor 3 ganger.",
         "Sett opp: Skriv potensen som produktet \\((-4)\\cdot(-4)\\cdot(-4)\\).",
         "Regn videre: Det er 3 negative faktorer. Én negativ faktor blir stående, så produktet blir negativt. Regn deretter ut produktet.",
@@ -4104,6 +4136,7 @@
       "sporsmal": "Regn ut \\(2^{-4}\\) som desimaltall.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Regn først den positive potensen og snu brøken etterpå: \\(2^{-4}=1/2^{4}=1/16\\).",
         "Velg framgangsmåte: En negativ eksponent betyr at vi tar den omvendte verdien: \\(2^{-4}=1/2^{4}\\).",
         "Sett opp: Regn først ut nevneren: \\(2^{4}=16\\).",
         "Regn videre: Gjør deretter brøken om til desimaltall: \\(1/16=0{,}0625\\).",
@@ -4148,6 +4181,7 @@
       "sporsmal": "Regn ut \\(5^{-3}\\) som desimaltall.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Regn først den positive potensen og snu brøken etterpå: \\(5^{-3}=1/5^{3}=1/125\\).",
         "Velg framgangsmåte: En negativ eksponent betyr at vi tar den omvendte verdien: \\(5^{-3}=1/5^{3}\\).",
         "Sett opp: Regn først ut nevneren: \\(5^{3}=125\\).",
         "Regn videre: Gjør deretter brøken om til desimaltall: \\(1/125=0{,}008\\).",
@@ -4192,6 +4226,7 @@
       "sporsmal": "Regn ut \\(10^{-5}\\) som desimaltall.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Regn først den positive potensen og snu brøken etterpå: \\(10^{-5}=1/10^{5}=1/100\\,000\\).",
         "Velg framgangsmåte: En negativ eksponent betyr at vi tar den omvendte verdien: \\(10^{-5}=1/10^{5}\\).",
         "Sett opp: Regn først ut nevneren: \\(10^{5}=100\\,000\\).",
         "Regn videre: Gjør deretter brøken om til desimaltall: \\(1/100\\,000=0{,}00001\\).",
@@ -4236,6 +4271,7 @@
       "sporsmal": "Regn ut \\(4^{-2}\\) som desimaltall.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Regn først den positive potensen og snu brøken etterpå: \\(4^{-2}=1/4^{2}=1/16\\).",
         "Velg framgangsmåte: En negativ eksponent betyr at vi tar den omvendte verdien: \\(4^{-2}=1/4^{2}\\).",
         "Sett opp: Regn først ut nevneren: \\(4^{2}=16\\).",
         "Regn videre: Gjør deretter brøken om til desimaltall: \\(1/16=0{,}0625\\).",
@@ -4280,6 +4316,7 @@
       "sporsmal": "Regn ut \\(20^{-2}\\) som desimaltall.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Regn først den positive potensen og snu brøken etterpå: \\(20^{-2}=1/20^{2}=1/400\\).",
         "Velg framgangsmåte: En negativ eksponent betyr at vi tar den omvendte verdien: \\(20^{-2}=1/20^{2}\\).",
         "Sett opp: Regn først ut nevneren: \\(20^{2}=400\\).",
         "Regn videre: Gjør deretter brøken om til desimaltall: \\(1/400=0{,}0025\\).",
@@ -4740,6 +4777,7 @@
       "sporsmal": "Regn ut \\((3\\cdot10^{5}) \\cdot (2\\cdot10^{3})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(3\\cdot2\\), mens tierpotensen bruker \\(5+3\\).",
         "Velg framgangsmåte: Regn med faktorene foran tierpotensene: \\(3\\cdot2=6\\).",
         "Sett opp: Regn med eksponentene: \\(5+3=8\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(6\\cdot10^8\\).",
@@ -4795,6 +4833,7 @@
       "sporsmal": "Regn ut \\((8{,}4\\cdot10^{7}) \\div (2{,}1\\cdot10^{2})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(8{,}4/2{,}1\\), mens tierpotensen bruker \\(7-2\\).",
         "Velg framgangsmåte: Regn med faktorene foran tierpotensene: \\(8{,}4/2{,}1=4\\).",
         "Sett opp: Regn med eksponentene: \\(7-2=5\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(4\\cdot10^5\\).",
@@ -4850,6 +4889,7 @@
       "sporsmal": "Regn ut \\((6\\cdot10^{-4}) \\cdot (5\\cdot10^{6})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(6\\cdot5\\), mens tierpotensen bruker \\(-4+6\\).",
         "Velg framgangsmåte: Regn med faktorene foran tierpotensene: \\(6\\cdot5=30\\).",
         "Sett opp: Regn med eksponentene: \\(-4+6=2\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(30\\cdot10^2=3\\cdot10^3\\).",
@@ -4905,6 +4945,7 @@
       "sporsmal": "Regn ut \\((9{,}6\\cdot10^{-3}) \\div (3{,}2\\cdot10^{-5})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(9{,}6/3{,}2\\), mens tierpotensen bruker \\(-3+5\\).",
         "Velg framgangsmåte: Regn med faktorene foran tierpotensene: \\(9{,}6/3{,}2=3\\).",
         "Sett opp: Regn med eksponentene: \\(-3-(-5)=2\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(3\\cdot10^2\\).",
@@ -4960,6 +5001,7 @@
       "sporsmal": "Regn ut \\((4{,}5\\cdot10^{8}) \\cdot (2\\cdot10^{-3})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Forstå oppgaven: Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
+        "Se etter en enkel vei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(4{,}5\\cdot2\\), mens tierpotensen bruker \\(8-3\\).",
         "Velg framgangsmåte: Regn med faktorene foran tierpotensene: \\(4{,}5\\cdot2=9\\).",
         "Sett opp: Regn med eksponentene: \\(8+(-3)=5\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
         "Regn videre: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(9\\cdot10^5\\).",
@@ -5254,6 +5296,7 @@
       "sporsmal": "Reiseutgiften er gitt ved \\(K=420+3{,}8x\\), der \\(x\\) er antall kilometer. Finn \\(K\\) når \\(x=75\\).",
       "hint": [
         "Forstå oppgaven: Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.",
+        "Se etter en enkel vei: Gjør 3,8 om til \\(4-0{,}2\\): \\(75\\cdot4-75\\cdot0{,}2=300-15=285\\).",
         "Velg framgangsmåte: Erstatt \\(x\\) med 75 i formelen. Da får du \\(K=420+3{,}8\\cdot75\\).",
         "Sett opp: Regn multiplikasjonen først: \\(3{,}8\\cdot75=285\\).",
         "Regn videre: Legg deretter 285 til fastbeløpet 420.",
@@ -5296,6 +5339,7 @@
       "sporsmal": "Energien er gitt ved \\(E=0{,}5mv^2\\). Finn \\(E\\) når \\(m=12\\) kg og \\(v=5\\) m/s.",
       "hint": [
         "Forstå oppgaven: Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.",
+        "Se etter en enkel vei: Halver 12 før du ganger: \\(0{,}5\\cdot12=6\\). Da gjenstår bare \\(6\\cdot25=150\\).",
         "Velg framgangsmåte: Erstatt \\(m\\) med 12 og \\(v\\) med 5: \\(E=0{,}5\\cdot12\\cdot5^2\\).",
         "Sett opp: Regn potensen først: \\(5^2=25\\).",
         "Regn videre: Regn deretter \\(0{,}5\\cdot12\\cdot25\\).",
@@ -5338,6 +5382,7 @@
       "sporsmal": "Arealet av et trapes er \\(A=(a+b)h/2\\). Finn \\(A\\) når \\(a=8\\), \\(b=14\\) og \\(h=6\\).",
       "hint": [
         "Forstå oppgaven: Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.",
+        "Se etter en enkel vei: Halver før du ganger: \\(6/2=3\\), slik at \\(22\\cdot3=66\\).",
         "Velg framgangsmåte: Sett inn alle tre verdiene: \\(A=(8+14)\\cdot6/2\\).",
         "Sett opp: Regn parentesen først: \\(8+14=22\\).",
         "Regn videre: Regn deretter \\(22\\cdot6/2\\).",
@@ -5380,6 +5425,7 @@
       "sporsmal": "Temperaturen i fahrenheit er \\(F=1{,}8C+32\\). Finn \\(F\\) når \\(C=25\\).",
       "hint": [
         "Forstå oppgaven: Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.",
+        "Se etter en enkel vei: Tenk \\(1{,}8=2-0{,}2\\): \\(25\\cdot2-25\\cdot0{,}2=50-5=45\\).",
         "Velg framgangsmåte: Erstatt \\(C\\) med 25: \\(F=1{,}8\\cdot25+32\\).",
         "Sett opp: Regn multiplikasjonen først: \\(1{,}8\\cdot25=45\\).",
         "Regn videre: Legg deretter til 32.",
@@ -5422,6 +5468,7 @@
       "sporsmal": "En modell for malingsbehov er \\(D=0{,}04m+1{,}2\\), der \\(m\\) er veggarealet i m² og \\(D\\) er antall liter maling. Finn \\(D\\) når \\(m=70\\).",
       "hint": [
         "Forstå oppgaven: Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.",
+        "Se etter en enkel vei: Regn de to delene slik at de møtes i et helt tall: \\(0{,}04\\cdot70=2{,}8\\) og \\(2{,}8+1{,}2=4\\).",
         "Velg framgangsmåte: Erstatt \\(m\\) med 70: \\(D=0{,}04\\cdot70+1{,}2\\).",
         "Sett opp: Regn multiplikasjonen først: \\(0{,}04\\cdot70=2{,}8\\).",
         "Regn videre: Legg deretter \\(1{,}2\\) til \\(2{,}8\\).",
@@ -5465,6 +5512,7 @@
       "sporsmal": "En tank inneholder \\(120\\) liter vann og fylles med \\(3{,}5\\) liter per minutt. Modellen er \\(V(t)=3{,}5t+120\\). Hvor mange minutter tar det før tanken inneholder \\(365\\) liter?",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Fjern desimalen i divisjonen ved å doble begge tall: \\(245/3{,}5=490/7=70\\).",
         "Velg framgangsmåte: Sett modelluttrykket lik den oppgitte sluttverdien: \\(3{,}5t+120=365\\).",
         "Sett opp: Trekk \\(120\\) fra begge sider: \\(3{,}5t=245\\).",
         "Regn videre: Del begge sider på koeffisienten \\(3{,}5\\): \\(t=245/3{,}5=70\\).",
@@ -5510,6 +5558,7 @@
       "sporsmal": "En drosjetur koster \\(K(x)=8x+45\\) kroner, der \\(x\\) er antall kilometer. Hvor lang er turen når prisen er \\(285\\) kr?",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Etter at fastbeløpet er trukket fra, er \\(240/8=30\\) en kort hoderegning.",
         "Velg framgangsmåte: Sett modelluttrykket lik den oppgitte sluttverdien: \\(8x+45=285\\).",
         "Sett opp: Trekk \\(45\\) fra begge sider: \\(8x=240\\).",
         "Regn videre: Del begge sider på koeffisienten \\(8\\): \\(x=240/8=30\\).",
@@ -5555,6 +5604,7 @@
       "sporsmal": "En ladeavtale har kostnaden \\(K(x)=2{,}4x+150\\) kroner, der \\(x\\) er antall kWh. Hvor mange kWh er brukt når kostnaden er \\(390\\) kr?",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Flytt kommaet i begge tall: \\(240/2{,}4=2\\,400/24=100\\). Verdien i brøken endres ikke.",
         "Velg framgangsmåte: Sett modelluttrykket lik den oppgitte sluttverdien: \\(2{,}4x+150=390\\).",
         "Sett opp: Trekk \\(150\\) fra begge sider: \\(2{,}4x=240\\).",
         "Regn videre: Del begge sider på koeffisienten \\(2{,}4\\): \\(x=240/2{,}4=100\\).",
@@ -5600,6 +5650,7 @@
       "sporsmal": "Et sparebeløp modelleres med \\(S(m)=12m+75\\), der \\(m\\) er antall måneder. Etter hvor mange måneder er sparebeløpet \\(495\\) kr?",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Del 420 i kjente multipler av 12: \\(420=360+60=12\\cdot30+12\\cdot5\\), altså 35 grupper.",
         "Velg framgangsmåte: Sett modelluttrykket lik den oppgitte sluttverdien: \\(12m+75=495\\).",
         "Sett opp: Trekk \\(75\\) fra begge sider: \\(12m=420\\).",
         "Regn videre: Del begge sider på koeffisienten \\(12\\): \\(m=420/12=35\\).",
@@ -5645,6 +5696,7 @@
       "sporsmal": "Høyden til en plante modelleres med \\(H(d)=0{,}8d+36\\), der \\(d\\) er antall dager og høyden måles i centimeter. Etter hvor mange dager er planten \\(100\\) cm høy?",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Flytt kommaet i begge tall: \\(64/0{,}8=640/8=80\\).",
         "Velg framgangsmåte: Sett modelluttrykket lik den oppgitte sluttverdien: \\(0{,}8d+36=100\\).",
         "Sett opp: Trekk \\(36\\) fra begge sider: \\(0{,}8d=64\\).",
         "Regn videre: Del begge sider på koeffisienten \\(0{,}8\\): \\(d=64/0{,}8=80\\).",
@@ -5895,6 +5947,7 @@
       "sporsmal": "Figur 1 har \\(3\\) ruter. Hver ny figur får \\(4\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(15\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn nær et rundt tall: \\(4\\cdot15=60\\), og trekk deretter fra 1.",
         "Velg framgangsmåte: Figur 1 har \\(3\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
         "Sett opp: En generell regel er derfor \\(3+4(n-1)\\). Forenkling gir \\(4n-1\\).",
         "Regn videre: Sett inn \\(n=15\\) i regelen: \\(4\\cdot15-1=59\\).",
@@ -5962,6 +6015,7 @@
       "sporsmal": "Figur 1 har \\(5\\) ruter. Hver ny figur får \\(2\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(12\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Dobling er nok her: \\(2\\cdot12=24\\), og så \\(24+3=27\\).",
         "Velg framgangsmåte: Figur 1 har \\(5\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
         "Sett opp: En generell regel er derfor \\(5+2(n-1)\\). Forenkling gir \\(2n+3\\).",
         "Regn videre: Sett inn \\(n=12\\) i regelen: \\(2\\cdot12+3=27\\).",
@@ -6029,6 +6083,7 @@
       "sporsmal": "Figur 1 har \\(2\\) ruter. Hver ny figur får \\(7\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(20\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Bruk at 20 tiere er lett å gange: \\(7\\cdot20=140\\), og trekk deretter fra 5.",
         "Velg framgangsmåte: Figur 1 har \\(2\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
         "Sett opp: En generell regel er derfor \\(2+7(n-1)\\). Forenkling gir \\(7n-5\\).",
         "Regn videre: Sett inn \\(n=20\\) i regelen: \\(7\\cdot20-5=135\\).",
@@ -6096,6 +6151,7 @@
       "sporsmal": "Figur 1 har \\(6\\) ruter. Hver ny figur får \\(1\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(18\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Formelen er allerede et hoderegningsstykke: \\(18+5=23\\).",
         "Velg framgangsmåte: Figur 1 har \\(6\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
         "Sett opp: En generell regel er derfor \\(6+1(n-1)\\). Forenkling gir \\(n+5\\).",
         "Regn videre: Sett inn \\(n=18\\) i regelen: \\(18+5=23\\).",
@@ -6163,6 +6219,7 @@
       "sporsmal": "Figur 1 har \\(4\\) ruter. Hver ny figur får \\(5\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(25\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Fem ganger 25 er en kjent kvart av 500: \\(5\\cdot25=125\\), og så \\(125-1=124\\).",
         "Velg framgangsmåte: Figur 1 har \\(4\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
         "Sett opp: En generell regel er derfor \\(4+5(n-1)\\). Forenkling gir \\(5n-1\\).",
         "Regn videre: Sett inn \\(n=25\\) i regelen: \\(5\\cdot25-1=124\\).",
@@ -6230,6 +6287,7 @@
       "sporsmal": "De tre første figurene har \\(5\\), \\(10\\) og \\(17\\) brikker. Velg formelen som passer, og finn antallet i figur \\(8\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn inni parentesen før kvadratet: \\(8+1=9\\), så \\(9^2+1=81+1=82\\).",
         "Velg framgangsmåte: Test den riktige formelen på figur 1: \\((1+1)^2+1=5\\).",
         "Sett opp: Test også figur 2: \\((2+1)^2+1=10\\). Formelen passer dermed de oppgitte startverdiene.",
         "Regn videre: Sett inn \\(n=8\\): \\((8+1)^2+1=82\\).",
@@ -6296,6 +6354,7 @@
       "sporsmal": "De tre første figurene har \\(10\\), \\(17\\) og \\(26\\) brikker. Velg formelen som passer, og finn antallet i figur \\(7\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn inni parentesen før kvadratet: \\(7+2=9\\), så \\(9^2+1=81+1=82\\).",
         "Velg framgangsmåte: Test den riktige formelen på figur 1: \\((1+2)^2+1=10\\).",
         "Sett opp: Test også figur 2: \\((2+2)^2+1=17\\). Formelen passer dermed de oppgitte startverdiene.",
         "Regn videre: Sett inn \\(n=7\\): \\((7+2)^2+1=82\\).",
@@ -6362,6 +6421,7 @@
       "sporsmal": "De tre første figurene har \\(6\\), \\(11\\) og \\(18\\) brikker. Velg formelen som passer, og finn antallet i figur \\(6\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn inni parentesen før kvadratet: \\(6+1=7\\), så \\(7^2+2=49+2=51\\).",
         "Velg framgangsmåte: Test den riktige formelen på figur 1: \\((1+1)^2+2=6\\).",
         "Sett opp: Test også figur 2: \\((2+1)^2+2=11\\). Formelen passer dermed de oppgitte startverdiene.",
         "Regn videre: Sett inn \\(n=6\\): \\((6+1)^2+2=51\\).",
@@ -6428,6 +6488,7 @@
       "sporsmal": "De tre første figurene har \\(17\\), \\(26\\) og \\(37\\) brikker. Velg formelen som passer, og finn antallet i figur \\(9\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn inni parentesen før kvadratet: \\(9+3=12\\), så \\(12^2+1=144+1=145\\).",
         "Velg framgangsmåte: Test den riktige formelen på figur 1: \\((1+3)^2+1=17\\).",
         "Sett opp: Test også figur 2: \\((2+3)^2+1=26\\). Formelen passer dermed de oppgitte startverdiene.",
         "Regn videre: Sett inn \\(n=9\\): \\((9+3)^2+1=145\\).",
@@ -6494,6 +6555,7 @@
       "sporsmal": "De tre første figurene har \\(11\\), \\(18\\) og \\(27\\) brikker. Velg formelen som passer, og finn antallet i figur \\(10\\).",
       "hint": [
         "Forstå oppgaven: Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
+        "Se etter en enkel vei: Regn inni parentesen før kvadratet: \\(10+2=12\\), så \\(12^2+2=144+2=146\\).",
         "Velg framgangsmåte: Test den riktige formelen på figur 1: \\((1+2)^2+2=11\\).",
         "Sett opp: Test også figur 2: \\((2+2)^2+2=18\\). Formelen passer dermed de oppgitte startverdiene.",
         "Regn videre: Sett inn \\(n=10\\): \\((10+2)^2+2=146\\).",
@@ -6759,6 +6821,7 @@
       "sporsmal": "Fire penner koster \\(74\\) kr. Prisen \\(K\\) er proporsjonal med antall penner \\(x\\), slik at \\(K=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(74/4=18{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=74/4=18{,}5\\).",
@@ -6802,6 +6865,7 @@
       "sporsmal": "Seks rundstykker koster \\(51\\) kr. Prisen \\(K\\) er proporsjonal med antall rundstykker \\(x\\), slik at \\(K=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(51/6=8{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=51/6=8{,}5\\).",
@@ -6845,6 +6909,7 @@
       "sporsmal": "En maskin produserer \\(120\\) deler på \\(8\\) timer med jevn fart. Antall deler \\(y\\) er proporsjonalt med tiden \\(x\\), slik at \\(y=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(120/8=15\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=120/8=15\\).",
@@ -6888,6 +6953,7 @@
       "sporsmal": "Fem meter stoff koster \\(325\\) kr. Prisen \\(K\\) er proporsjonal med lengden \\(x\\), slik at \\(K=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(325/5=65\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=325/5=65\\).",
@@ -6931,6 +6997,7 @@
       "sporsmal": "En bil kjører \\(210\\) km på \\(12\\) liter drivstoff. Kjørelengden \\(y\\) regnes som proporsjonal med drivstoffmengden \\(x\\), slik at \\(y=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: \\(210/12=17{,}5\\).",
         "Velg framgangsmåte: I en proporsjonal sammenheng er forholdet y/x konstant.",
         "Sett opp: Del y-verdien på x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(k=210/12=17{,}5\\).",
@@ -6975,6 +7042,7 @@
       "sporsmal": "\\(3\\) kg poteter koster \\(84\\) kr. Hva koster \\(7\\) kg når prisen er proporsjonal med vekten?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(84/3=28\\). Gang deretter med \\(7\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(84/3=28\\).",
@@ -7020,6 +7088,7 @@
       "sporsmal": "\\(5\\) meter gavebånd koster \\(42{,}5\\) kr. Hva koster \\(12\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(42{,}5/5=8{,}5\\). Gang deretter med \\(12\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(42{,}5/5=8{,}5\\).",
@@ -7065,6 +7134,7 @@
       "sporsmal": "\\(8\\) bussbilletter koster \\(260\\) kr. Hva koster \\(14\\) billetter når alle billettene har samme pris?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Forkort skaleringsforholdet før du ganger: \\(14/8=7/4\\). Del \\(260\\) på \\(4\\) før du ganger med \\(7\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(260/8=32{,}5\\).",
@@ -7110,6 +7180,7 @@
       "sporsmal": "\\(6\\) meter kabel koster \\(450\\) kr. Hva koster \\(9\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Forkort skaleringsforholdet før du ganger: \\(9/6=3/2\\). Del \\(450\\) på \\(2\\) før du ganger med \\(3\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(450/6=75\\).",
@@ -7155,6 +7226,7 @@
       "sporsmal": "En oppskrift til \\(4\\) porsjoner bruker \\(18\\) dl suppe. Hvor mye suppe trengs til \\(15\\) porsjoner når mengden er proporsjonal med antall porsjoner?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn én-enhetsverdien før du skalerer: \\(18/4=4{,}5\\). Gang deretter med \\(15\\).",
         "Velg framgangsmåte: Finn først verdien for én enhet.",
         "Sett opp: Multipliser enhetsverdien med det nye antallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(18/4=4{,}5\\).",
@@ -7199,6 +7271,7 @@
       "sporsmal": "Seks arbeidere bruker \\(20\\) timer på en jobb. Hvor lang tid bruker \\(8\\) arbeidere dersom jobben er den samme og alle arbeider i samme tempo?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Forkort før du ganger: \\(6/8=3/4\\). Regn derfor \\(20\\cdot3/4\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(6\\cdot 20=120\\).",
@@ -7243,6 +7316,7 @@
       "sporsmal": "Reisetiden er omvendt proporsjonal med farten. En tur tar \\(45\\) minutter når farten er \\(80\\) km/t. Hvor lang tid tar turen med \\(60\\) km/t under de samme forutsetningene?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Forkort før du ganger: \\(80/60=4/3\\). Regn derfor \\(45\\cdot4/3\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: For samme strekning er produktet av fart og tid konstant.",
         "Sett opp: Finn produktet for den første turen: \\(80\\cdot45=3\\,600\\).",
         "Regn videre: Del på den nye farten: \\(3\\,600/60=60\\) minutter.",
@@ -7287,6 +7361,7 @@
       "sporsmal": "Fire like pumper tømmer et basseng på \\(18\\) timer. Hvor lang tid bruker \\(9\\) like pumper på samme vannmengde?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Del i den rekkefølgen som gir små tall: \\(18/9=2\\), og gang deretter med \\(4\\).",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\cdot 18=72\\).",
@@ -7331,6 +7406,7 @@
       "sporsmal": "Tolv like maskiner bruker \\(30\\) dager på en produksjonsordre. Hvor lang tid bruker \\(20\\) slike maskiner på den samme ordren?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Forkort før du ganger: \\(12/20=3/5\\). Regn derfor \\(30\\cdot3/5\\) med den enkleste divisjonen først.",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(12\\cdot 30=360\\).",
@@ -7375,6 +7451,7 @@
       "sporsmal": "Fem like kraner flytter en bestemt last på \\(24\\) timer. Hvor lang tid bruker \\(16\\) kraner på den samme lasten?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Del i den rekkefølgen som gir små tall: \\(24/16=1{,}5\\), og gang deretter med \\(5\\).",
         "Velg framgangsmåte: Ved omvendt proporsjonalitet er produktet x·y konstant.",
         "Sett opp: Finn først konstanten og del den på den nye x-verdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(5\\cdot 24=120\\).",
@@ -7420,6 +7497,7 @@
       "sporsmal": "Tiden for å pakke en forsendelse modelleres med \\(T(x)=240/x+5\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(8)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(240/8=30\\), så bare den korte addisjonen \\(30+5\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(8)=240/8+5=35\\).",
@@ -7473,6 +7551,7 @@
       "sporsmal": "Tiden for å rigge et arrangement modelleres med \\(T(x)=360/x+12\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(18)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(360/18=20\\), så bare den korte addisjonen \\(20+12\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(18)=360/18+12=32\\).",
@@ -7526,6 +7605,7 @@
       "sporsmal": "Tiden for å sortere en bunke skjemaer modelleres med \\(T(x)=150/x+4\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(10)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(150/10=15\\), så bare den korte addisjonen \\(15+4\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(10)=150/10+4=19\\).",
@@ -7579,6 +7659,7 @@
       "sporsmal": "Tiden for å kontrollere en vareleveranse modelleres med \\(T(x)=480/x+7\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(16)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(480/16=30\\), så bare den korte addisjonen \\(30+7\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(16)=480/16+7=37\\).",
@@ -7632,6 +7713,7 @@
       "sporsmal": "Tiden for en varetelling modelleres med \\(T(x)=900/x+15\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(30)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del før du legger til fastleddet. Her er \\(900/30=30\\), så bare den korte addisjonen \\(30+15\\) gjenstår.",
         "Velg framgangsmåte: Sett x-verdien inn i modellen.",
         "Sett opp: Det faste tillegget er delen som ikke avhenger av x.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(T(30)=900/30+15=45\\).",
@@ -8095,6 +8177,7 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(4, 6, 7, 8, 10\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(7\\) i stedet for bare lang summering. Avvikene er \\(-3-1+0+1+3=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Legg sammen alle observasjonene.",
         "Sett opp: Del summen på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(4+6+7+8+10=35\\) og \\(35/5=7\\).",
@@ -8152,6 +8235,7 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(12, 15, 15, 18, 20, 22\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(17\\) i stedet for bare lang summering. Avvikene er \\(-5-2-2+1+3+5=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Legg sammen alle observasjonene.",
         "Sett opp: Del summen på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(12+15+15+18+20+22=102\\) og \\(102/6=17\\).",
@@ -8211,6 +8295,7 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(3, 5, 9, 11, 12\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(8\\) i stedet for bare lang summering. Avvikene er \\(-5-3+1+3+4=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Legg sammen alle observasjonene.",
         "Sett opp: Del summen på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(3+5+9+11+12=40\\) og \\(40/5=8\\).",
@@ -8268,6 +8353,7 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(24, 28, 31, 34, 38\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(31\\) i stedet for bare lang summering. Avvikene er \\(-7-3+0+3+7=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Legg sammen alle observasjonene.",
         "Sett opp: Del summen på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(24+28+31+34+38=155\\) og \\(155/5=31\\).",
@@ -8325,6 +8411,7 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(7, 8, 8, 9, 13, 15, 17\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(11\\) i stedet for bare lang summering. Avvikene er \\(-4-3-3-2+2+4+6=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Legg sammen alle observasjonene.",
         "Sett opp: Del summen på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(7+8+8+9+13+15+17=77\\) og \\(77/7=11\\).",
@@ -8387,6 +8474,7 @@
       "sporsmal": "Finn medianen i datasettet \\(4, 9, 2, 7, 11\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(5\\) observasjoner trenger du bare den 3. plassen.",
         "Velg framgangsmåte: Sorter tallene fra minst til størst.",
         "Sett opp: Finn det midterste tallet, eller gjennomsnittet av de to midterste.",
         "Regn videre: Det er \\(n=5\\) observasjoner, så medianplassen er \\((5+1)/2=3\\). Verdien på denne plassen er \\(7\\).",
@@ -8445,6 +8533,7 @@
       "sporsmal": "Finn medianen i datasettet \\(14, 8, 20, 12, 10, 16\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(6\\) observasjoner trenger du bare den 3. og 4. plassen.",
         "Velg framgangsmåte: Sorter tallene fra minst til størst.",
         "Sett opp: Finn det midterste tallet, eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(12\\) og \\(14\\). Regn \\((12+14)/2=13\\).",
@@ -8505,6 +8594,7 @@
       "sporsmal": "Finn medianen i datasettet \\(3, 3, 9, 1, 8, 12, 5\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(7\\) observasjoner trenger du bare den 4. plassen.",
         "Velg framgangsmåte: Sorter tallene fra minst til størst.",
         "Sett opp: Finn det midterste tallet, eller gjennomsnittet av de to midterste.",
         "Regn videre: Det er \\(n=7\\) observasjoner, så medianplassen er \\((7+1)/2=4\\). Verdien på denne plassen er \\(5\\).",
@@ -8567,6 +8657,7 @@
       "sporsmal": "Finn medianen i datasettet \\(25, 18, 22, 31, 27, 19\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(6\\) observasjoner trenger du bare den 3. og 4. plassen.",
         "Velg framgangsmåte: Sorter tallene fra minst til størst.",
         "Sett opp: Finn det midterste tallet, eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(22\\) og \\(25\\). Regn \\((22+25)/2=23{,}5\\).",
@@ -8627,6 +8718,7 @@
       "sporsmal": "Finn medianen i datasettet \\(6, 15, 10, 8, 12, 20, 7, 9\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(8\\) observasjoner trenger du bare den 4. og 5. plassen.",
         "Velg framgangsmåte: Sorter tallene fra minst til størst.",
         "Sett opp: Finn det midterste tallet, eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(9\\) og \\(10\\). Regn \\((9+10)/2=9{,}5\\).",
@@ -8691,6 +8783,7 @@
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(2, 4, 4, 5, 7, 9\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: \\(9-2=7\\).",
         "Velg framgangsmåte: Typetallet forekommer flest ganger.",
         "Sett opp: Variasjonsbredden er største verdi minus minste verdi.",
         "Regn videre: Tallet \\(4\\) forekommer \\(2\\) ganger og er typetallet. Variasjonsbredden er \\(9-2=7\\).",
@@ -8759,6 +8852,7 @@
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(12, 15, 15, 15, 18, 21\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: \\(21-12=9\\).",
         "Velg framgangsmåte: Typetallet forekommer flest ganger.",
         "Sett opp: Variasjonsbredden er største verdi minus minste verdi.",
         "Regn videre: Tallet \\(15\\) forekommer \\(3\\) ganger og er typetallet. Variasjonsbredden er \\(21-12=9\\).",
@@ -8827,6 +8921,7 @@
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(3, 6, 6, 8, 10, 11, 11, 11\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: \\(11-3=8\\).",
         "Velg framgangsmåte: Typetallet forekommer flest ganger.",
         "Sett opp: Variasjonsbredden er største verdi minus minste verdi.",
         "Regn videre: Tallet \\(11\\) forekommer \\(3\\) ganger og er typetallet. Variasjonsbredden er \\(11-3=8\\).",
@@ -8899,6 +8994,7 @@
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(24, 24, 27, 30, 31, 35\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: \\(35-24=11\\).",
         "Velg framgangsmåte: Typetallet forekommer flest ganger.",
         "Sett opp: Variasjonsbredden er største verdi minus minste verdi.",
         "Regn videre: Tallet \\(24\\) forekommer \\(2\\) ganger og er typetallet. Variasjonsbredden er \\(35-24=11\\).",
@@ -8967,6 +9063,7 @@
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(5, 7, 9, 9, 10, 12, 14\\).",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Her trengs ingen summering. Tell gjentakelser for typetallet, og bruk bare ytterpunktene til variasjonsbredden: \\(14-5=9\\).",
         "Velg framgangsmåte: Typetallet forekommer flest ganger.",
         "Sett opp: Variasjonsbredden er største verdi minus minste verdi.",
         "Regn videre: Tallet \\(9\\) forekommer \\(2\\) ganger og er typetallet. Variasjonsbredden er \\(14-5=9\\).",
@@ -9037,6 +9134,7 @@
       "sporsmal": "Deltakerne i en kundemåling ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 1, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(6/30=1/5\\).",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(6+9+12+3=30\\). Relativ frekvens er \\(6/30\\cdot100\\,\\%=20\\,\\%\\), og kumulativ frekvens er \\(6=6\\).",
@@ -9110,6 +9208,7 @@
       "sporsmal": "Deltakerne i en elevundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 2, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(14/40=7/20\\).",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(8+14+10+8=40\\). Relativ frekvens er \\(14/40\\cdot100\\,\\%=35\\,\\%\\), og kumulativ frekvens er \\(8+14=22\\).",
@@ -9183,6 +9282,7 @@
       "sporsmal": "Deltakerne i en kursvurdering ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 3, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Når totalen er 40, er hver observasjon \\(100/40=2{,}5\\,\\%\\). Gang derfor \\(17\\cdot2{,}5\\,\\%=42{,}5\\,\\%\\).",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(5+11+17+7=40\\). Relativ frekvens er \\(17/40\\cdot100\\,\\%=42{,}5\\,\\%\\), og kumulativ frekvens er \\(5+11+17=33\\).",
@@ -9256,6 +9356,7 @@
       "sporsmal": "Deltakerne i en publikumsundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 4, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(5/50=1/10\\).",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(12+18+15+5=50\\). Relativ frekvens er \\(5/50\\cdot100\\,\\%=10\\,\\%\\), og kumulativ frekvens er \\(12+18+15+5=50\\).",
@@ -9329,6 +9430,7 @@
       "sporsmal": "Deltakerne i en serviceundersøkelse ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 1, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Forkort frekvensbrøken før du gjør den om til prosent: \\(9/60=3/20\\).",
         "Velg framgangsmåte: Relativ frekvens er frekvens delt på totalen.",
         "Sett opp: Kumulativ frekvens er summen fra første kategori til den aktuelle.",
         "Regn videre: Total frekvens er \\(9+16+20+15=60\\). Relativ frekvens er \\(9/60\\cdot100\\,\\%=15\\,\\%\\), og kumulativ frekvens er \\(9=9\\).",
@@ -9402,6 +9504,7 @@
       "sporsmal": "Dagstemperaturene er \\(8, 11, 14, 17\\) °C. Én observasjon mangler. Gjennomsnittet av alle 5 observasjonene er \\(13\\) °C. Finn den manglende observasjonen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt målgjennomsnittet \\(13\\). De kjente avvikene gir \\(-5-2+1+4=-2\\), så den manglende verdien må gi motsatt avvik.",
         "Velg framgangsmåte: Finn summen alle målingene må ha.",
         "Sett opp: Trekk fra summen av de kjente målingene.",
         "Regn videre: Totalsummen må være \\(13\\cdot5=65\\). De kjente verdiene summeres til \\(8+11+14+17=50\\), så den manglende er \\(65-50=15\\).",
@@ -9451,6 +9554,7 @@
       "sporsmal": "Reisetidene er \\(22, 25, 28, 30, 35\\) minutter. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(29\\) minutter. Finn den manglende observasjonen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt målgjennomsnittet \\(29\\). De kjente avvikene gir \\(-7-4-1+1+6=-5\\), så den manglende verdien må gi motsatt avvik.",
         "Velg framgangsmåte: Finn summen alle målingene må ha.",
         "Sett opp: Trekk fra summen av de kjente målingene.",
         "Regn videre: Totalsummen må være \\(29\\cdot6=174\\). De kjente verdiene summeres til \\(22+25+28+30+35=140\\), så den manglende er \\(174-140=34\\).",
@@ -9501,6 +9605,7 @@
       "sporsmal": "Poengsummene er \\(4, 7, 9, 10, 15\\) poeng. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(9\\) poeng. Finn den manglende observasjonen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt målgjennomsnittet \\(9\\). De kjente avvikene gir \\(-5-2+0+1+6=0\\), så den manglende verdien må gi motsatt avvik.",
         "Velg framgangsmåte: Finn summen alle målingene må ha.",
         "Sett opp: Trekk fra summen av de kjente målingene.",
         "Regn videre: Totalsummen må være \\(9\\cdot6=54\\). De kjente verdiene summeres til \\(4+7+9+10+15=45\\), så den manglende er \\(54-45=9\\).",
@@ -9551,6 +9656,7 @@
       "sporsmal": "Testresultatene er \\(60, 72, 75, 81\\) poeng. Én observasjon mangler. Gjennomsnittet av alle 5 observasjonene er \\(74\\) poeng. Finn den manglende observasjonen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt målgjennomsnittet \\(74\\). De kjente avvikene gir \\(-14-2+1+7=-8\\), så den manglende verdien må gi motsatt avvik.",
         "Velg framgangsmåte: Finn summen alle målingene må ha.",
         "Sett opp: Trekk fra summen av de kjente målingene.",
         "Regn videre: Totalsummen må være \\(74\\cdot5=370\\). De kjente verdiene summeres til \\(60+72+75+81=288\\), så den manglende er \\(370-288=82\\).",
@@ -9600,6 +9706,7 @@
       "sporsmal": "Ventetidene er \\(12, 18, 21, 24, 27\\) minutter. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(20\\) minutter. Finn den manglende observasjonen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt målgjennomsnittet \\(20\\). De kjente avvikene gir \\(-8-2+1+4+7=2\\), så den manglende verdien må gi motsatt avvik.",
         "Velg framgangsmåte: Finn summen alle målingene må ha.",
         "Sett opp: Trekk fra summen av de kjente målingene.",
         "Regn videre: Totalsummen må være \\(20\\cdot6=120\\). De kjente verdiene summeres til \\(12+18+21+24+27=102\\), så den manglende er \\(120-102=18\\).",
@@ -9649,6 +9756,7 @@
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk \\(2\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(9\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(2+9/20=2{,}45\\).",
         "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
         "Sett opp: Del summen av produktene på samlet frekvens.",
         "Regn videre: Den veide summen er \\(4+14+15+16=49\\), og total frekvens er \\(4+7+5+4=20\\). Dermed blir gjennomsnittet \\(49/20=2{,}45\\).",
@@ -9718,6 +9826,7 @@
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk \\(6\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(-18\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(6-18/20=5{,}1\\).",
         "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
         "Sett opp: Del summen av produktene på samlet frekvens.",
         "Regn videre: Den veide summen er \\(6+24+48+24=102\\), og total frekvens er \\(3+6+8+3=20\\). Dermed blir gjennomsnittet \\(102/20=5{,}1\\).",
@@ -9787,6 +9896,7 @@
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk \\(20\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(30\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(20+30/20=21{,}5\\).",
         "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
         "Sett opp: Del summen av produktene på samlet frekvens.",
         "Regn videre: Den veide summen er \\(50+180+120+80=430\\), og total frekvens er \\(5+9+4+2=20\\). Dermed blir gjennomsnittet \\(430/20=21{,}5\\).",
@@ -9856,6 +9966,7 @@
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk \\(1\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(1\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(1+1/20=1{,}05\\).",
         "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
         "Sett opp: Del summen av produktene på samlet frekvens.",
         "Regn videre: Den veide summen er \\(0+8+10+3=21\\), og total frekvens er \\(6+8+5+1=20\\). Dermed blir gjennomsnittet \\(21/20=1{,}05\\).",
@@ -9925,6 +10036,7 @@
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk \\(15\\) som referanse og tell bare avvikene. Det samlede veide avviket er \\(-40\\) over \\(20\\) observasjoner, så gjennomsnittet blir \\(15-40/20=13\\).",
         "Velg framgangsmåte: Multipliser hver verdi med frekvensen.",
         "Sett opp: Del summen av produktene på samlet frekvens.",
         "Regn videre: Den veide summen er \\(10+70+120+60=260\\), og total frekvens er \\(2+7+8+3=20\\). Dermed blir gjennomsnittet \\(260/20=13\\).",
@@ -10460,6 +10572,7 @@
       "sporsmal": "En rett linje går gjennom punktene \\((2,11)\\) og \\((6,23)\\). Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(12/4=3\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((23-11)/(6-2)=3\\).",
@@ -10510,6 +10623,7 @@
       "sporsmal": "En rett linje går gjennom punktene \\((4,38)\\) og \\((10,65)\\). Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(27/6=4{,}5\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((65-38)/(10-4)=4{,}5\\).",
@@ -10560,6 +10674,7 @@
       "sporsmal": "En rett linje går gjennom punktene \\((0,18)\\) og \\((5,8)\\). Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(-10/5=-2\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((8-18)/(5-0)=-2\\).",
@@ -10610,6 +10725,7 @@
       "sporsmal": "En rett linje går gjennom punktene \\((3,7)\\) og \\((9,31)\\). Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(24/6=4\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((31-7)/(9-3)=4\\).",
@@ -10660,6 +10776,7 @@
       "sporsmal": "En rett linje går gjennom punktene \\((12,120)\\) og \\((20,168)\\). Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Finn de to endringene først. Da står bare den korte divisjonen \\(48/8=6\\) igjen.",
         "Velg framgangsmåte: Finn endringen i y og endringen i x.",
         "Sett opp: Del y-endringen på x-endringen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((168-120)/(20-12)=6\\).",
@@ -10710,6 +10827,7 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(3\\) og går gjennom \\((4,19)\\). Finn konstantleddet \\(b\\) i \\(f(x)=3x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Regn produktet før du flytter det: \\(3\\cdot4=12\\). Deretter er konstantleddet \\(19-12=7\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(4)=19\\). Sett derfor inn \\(x=4\\) og \\(f(x)=19\\).",
         "Sett opp: Da får du ligningen \\(19=3\\cdot4+b\\). Regn først ut produktet \\(3\\cdot4=12\\).",
         "Regn videre: Isoler b ved å bruke \\(b=19-(12)\\).",
@@ -10755,6 +10873,7 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(5\\) og går gjennom \\((6,47)\\). Finn konstantleddet \\(b\\) i \\(f(x)=5x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Regn produktet før du flytter det: \\(5\\cdot6=30\\). Deretter er konstantleddet \\(47-30=17\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(6)=47\\). Sett derfor inn \\(x=6\\) og \\(f(x)=47\\).",
         "Sett opp: Da får du ligningen \\(47=5\\cdot6+b\\). Regn først ut produktet \\(5\\cdot6=30\\).",
         "Regn videre: Isoler b ved å bruke \\(b=47-(30)\\).",
@@ -10800,6 +10919,7 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(-2\\) og går gjennom \\((8,14)\\). Finn konstantleddet \\(b\\) i \\(f(x)=-2x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Regn produktet før du flytter det: \\(-2\\cdot8=-16\\). Deretter er konstantleddet \\(14+16=30\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(8)=14\\). Sett derfor inn \\(x=8\\) og \\(f(x)=14\\).",
         "Sett opp: Da får du ligningen \\(14=-2\\cdot8+b\\). Regn først ut produktet \\(-2\\cdot8=-16\\).",
         "Regn videre: Isoler b ved å bruke \\(b=14-(-16)\\).",
@@ -10845,6 +10965,7 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(1{,}5\\) og går gjennom \\((10,32)\\). Finn konstantleddet \\(b\\) i \\(f(x)=1{,}5x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Regn produktet før du flytter det: \\(1{,}5\\cdot10=15\\). Deretter er konstantleddet \\(32-15=17\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(10)=32\\). Sett derfor inn \\(x=10\\) og \\(f(x)=32\\).",
         "Sett opp: Da får du ligningen \\(32=1{,}5\\cdot10+b\\). Regn først ut produktet \\(1{,}5\\cdot10=15\\).",
         "Regn videre: Isoler b ved å bruke \\(b=32-(15)\\).",
@@ -10890,6 +11011,7 @@
       "sporsmal": "En lineær funksjon har stigningstall \\(7\\) og går gjennom \\((3,5)\\). Finn konstantleddet \\(b\\) i \\(f(x)=7x+b\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp hva som er kjent og hva som er ukjent. Målet er å bevare likheten mens den ukjente størrelsen isoleres.",
+        "Se etter en enkel vei: Regn produktet før du flytter det: \\(7\\cdot3=21\\). Deretter er konstantleddet \\(5-21=-16\\).",
         "Velg framgangsmåte: Punktet betyr at \\(f(3)=5\\). Sett derfor inn \\(x=3\\) og \\(f(x)=5\\).",
         "Sett opp: Da får du ligningen \\(5=7\\cdot3+b\\). Regn først ut produktet \\(7\\cdot3=21\\).",
         "Regn videre: Isoler b ved å bruke \\(b=5-(21)\\).",
@@ -11140,6 +11262,7 @@
       "sporsmal": "To mobilabonnement har kostnadsmodellene \\(A(x)=120+4x\\) og \\(B(x)=60+7x\\). Her er \\(x\\) antall GB, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-3x=-60\\). Da gjenstår én enkel divisjon.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(120+4x=60+7x\\).",
         "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=60\\).",
         "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=120+4x\\) for å finne kostnaden.",
@@ -11194,6 +11317,7 @@
       "sporsmal": "To trykkerier har kostnadsmodellene \\(A(x)=250+2x\\) og \\(B(x)=100+5x\\). Her er \\(x\\) antall plakater, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-3x=-150\\). Da gjenstår én enkel divisjon.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(250+2x=100+5x\\).",
         "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=150\\).",
         "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=250+2x\\) for å finne kostnaden.",
@@ -11248,6 +11372,7 @@
       "sporsmal": "To bildelingstjenester har kostnadsmodellene \\(A(x)=80+6x\\) og \\(B(x)=200+3x\\). Her er \\(x\\) antall kjørte kilometer, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(3x=120\\). Da gjenstår én enkel divisjon.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(80+6x=200+3x\\).",
         "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
         "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=80+6x\\) for å finne kostnaden.",
@@ -11302,6 +11427,7 @@
       "sporsmal": "To ladeavtaler har kostnadsmodellene \\(A(x)=300+1{,}5x\\) og \\(B(x)=150+4x\\). Her er \\(x\\) antall kWh, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(-2{,}5x=-150\\). Da gjenstår én enkel divisjon.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(300+1{,}5x=150+4x\\).",
         "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(2{,}5x=150\\).",
         "Regn videre: Del begge sider på \\(2{,}5\\). Sett deretter x-verdien inn i for eksempel \\(A(x)=300+1{,}5x\\) for å finne kostnaden.",
@@ -11356,6 +11482,7 @@
       "sporsmal": "To vaskeritjenester har kostnadsmodellene \\(A(x)=95+8x\\) og \\(B(x)=215+5x\\). Her er \\(x\\) antall plagg, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Trekk modellene fra hverandre, så forsvinner mye på én gang: \\(3x=120\\). Da gjenstår én enkel divisjon.",
         "Velg framgangsmåte: Samme kostnad betyr at \\(A(x)=B(x)\\). Med tallene i oppgaven blir det \\(95+8x=215+5x\\).",
         "Sett opp: Samle x-leddene på én side og fastbeløpene på den andre. Da får du \\(3x=120\\).",
         "Regn videre: Del begge sider på 3. Sett deretter x-verdien inn i for eksempel \\(A(x)=95+8x\\) for å finne kostnaden.",
@@ -11410,6 +11537,7 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=1\\) og \\(\\Delta y=3\\), så \\(3/1=3\\).",
         "Velg framgangsmåte: Velg to rader i tabellen.",
         "Sett opp: Del endringen i y på endringen i x.",
         "Regn videre: Bruk to nabopunkter: \\((8-5)/(1-0)=3\\).",
@@ -11502,6 +11630,7 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=2\\) og \\(\\Delta y=-4\\), så \\(-4/2=-2\\).",
         "Velg framgangsmåte: Velg to rader i tabellen.",
         "Sett opp: Del endringen i y på endringen i x.",
         "Regn videre: Bruk to nabopunkter: \\((26-30)/(4-2)=-2\\).",
@@ -11588,6 +11717,7 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=5\\) og \\(\\Delta y=15\\), så \\(15/5=3\\).",
         "Velg framgangsmåte: Velg to rader i tabellen.",
         "Sett opp: Del endringen i y på endringen i x.",
         "Regn videre: Bruk to nabopunkter: \\((27-12)/(5-0)=3\\).",
@@ -11674,6 +11804,7 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=2\\) og \\(\\Delta y=-6\\), så \\(-6/2=-3\\).",
         "Velg framgangsmåte: Velg to rader i tabellen.",
         "Sett opp: Del endringen i y på endringen i x.",
         "Regn videre: Bruk to nabopunkter: \\((44-50)/(3-1)=-3\\).",
@@ -11760,6 +11891,7 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=10\\) og \\(\\Delta y=5\\), så \\(5/10=0{,}5\\).",
         "Velg framgangsmåte: Velg to rader i tabellen.",
         "Sett opp: Del endringen i y på endringen i x.",
         "Regn videre: Bruk to nabopunkter: \\((12-7)/(20-10)=0{,}5\\).",
@@ -11846,6 +11978,7 @@
       "sporsmal": "Antall abonnenter modelleres med \\(f(x)=840\\cdot1{,}06^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Les vekstfaktoren som prosent i hodet: \\(1{,}06=106\\,\\%\\). Forskjellen fra 100 % er \\(6\\,\\%\\).",
         "Velg framgangsmåte: Startverdien er verdien når x=0.",
         "Sett opp: Trekk 1 fra vekstfaktoren og gang med 100 %.",
         "Løsningen samlet: Startverdien er \\(840\\) abonnenter. Den prosentvise endringen er \\(6\\,\\%\\) per år.",
@@ -11897,6 +12030,7 @@
       "sporsmal": "Stoffmengden i gram modelleres med \\(f(x)=1\\,250\\cdot0{,}92^x\\), der \\(x\\) er antall timer etter start. Oppgi startverdien og den prosentvise endringen per time.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Les vekstfaktoren som prosent i hodet: \\(0{,}92=92\\,\\%\\). Forskjellen fra 100 % er \\(-8\\,\\%\\).",
         "Velg framgangsmåte: Startverdien er verdien når x=0.",
         "Sett opp: Trekk 1 fra vekstfaktoren og gang med 100 %.",
         "Løsningen samlet: Startverdien er \\(1\\,250\\) gram. Den prosentvise endringen er \\(-8\\,\\%\\) per time.",
@@ -11948,6 +12082,7 @@
       "sporsmal": "Antall bakterier i en prøve modelleres med \\(f(x)=75\\cdot1{,}18^x\\), der \\(x\\) er antall timer etter start. Oppgi startverdien og den prosentvise endringen per time.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Les vekstfaktoren som prosent i hodet: \\(1{,}18=118\\,\\%\\). Forskjellen fra 100 % er \\(18\\,\\%\\).",
         "Velg framgangsmåte: Startverdien er verdien når x=0.",
         "Sett opp: Trekk 1 fra vekstfaktoren og gang med 100 %.",
         "Løsningen samlet: Startverdien er \\(75\\) bakterier. Den prosentvise endringen er \\(18\\,\\%\\) per time.",
@@ -11999,6 +12134,7 @@
       "sporsmal": "Et årlig utslipp i tonn modelleres med \\(f(x)=9\\,000\\cdot0{,}965^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Les vekstfaktoren som prosent i hodet: \\(0{,}965=96{,}5\\,\\%\\). Forskjellen fra 100 % er \\(-3{,}5\\,\\%\\).",
         "Velg framgangsmåte: Startverdien er verdien når x=0.",
         "Sett opp: Trekk 1 fra vekstfaktoren og gang med 100 %.",
         "Løsningen samlet: Startverdien er \\(9\\,000\\) tonn. Den prosentvise endringen er \\(-3{,}5\\,\\%\\) per år.",
@@ -12050,6 +12186,7 @@
       "sporsmal": "Medlemstallet i en organisasjon modelleres med \\(f(x)=320\\cdot1{,}125^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Les vekstfaktoren som prosent i hodet: \\(1{,}125=112{,}5\\,\\%\\). Forskjellen fra 100 % er \\(12{,}5\\,\\%\\).",
         "Velg framgangsmåte: Startverdien er verdien når x=0.",
         "Sett opp: Trekk 1 fra vekstfaktoren og gang med 100 %.",
         "Løsningen samlet: Startverdien er \\(320\\) medlemmer. Den prosentvise endringen er \\(12{,}5\\,\\%\\) per år.",
@@ -12101,6 +12238,7 @@
       "sporsmal": "Vannmengden i en tank øker fra \\(15\\) liter ved \\(t=0\\) minutter til \\(45\\) liter ved \\(t=10\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Forstå oppgaven: Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert minutt.",
+        "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=30\\) og \\(\\Delta x=10\\). Da blir vekstfarten \\(30/10=3\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((45-15)/(10-0)=3\\).",
@@ -12147,6 +12285,7 @@
       "sporsmal": "Temperaturen i en ovn øker fra \\(30\\) °C ved \\(t=2\\) minutter til \\(78\\) °C ved \\(t=18\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Forstå oppgaven: Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert minutt.",
+        "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=48\\) og \\(\\Delta x=16\\). Da blir vekstfarten \\(48/16=3\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((78-30)/(18-2)=3\\).",
@@ -12193,6 +12332,7 @@
       "sporsmal": "Vannmengden i et basseng øker fra \\(12\\) m³ ved \\(t=5\\) minutter til \\(61\\) m³ ved \\(t=25\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Forstå oppgaven: Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert minutt.",
+        "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=49\\) og \\(\\Delta x=20\\). Da blir vekstfarten \\(49/20=2{,}45\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((61-12)/(25-5)=2{,}45\\).",
@@ -12239,6 +12379,7 @@
       "sporsmal": "Temperaturen i en væske synker fra \\(120\\) °C ved \\(t=0\\) minutter til \\(72\\) °C ved \\(t=8\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Forstå oppgaven: Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hvert minutt.",
+        "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=-48\\) og \\(\\Delta x=8\\). Da blir vekstfarten \\(-48/8=-6\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((72-120)/(8-0)=-6\\).",
@@ -12285,6 +12426,7 @@
       "sporsmal": "En produksjonslinje har produsert \\(250\\) enheter etter \\(10\\) timer og \\(610\\) enheter etter \\(40\\) timer. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Forstå oppgaven: Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres for hver time.",
+        "Se etter en enkel vei: Regn endringene før du deler: \\(\\Delta y=360\\) og \\(\\Delta x=30\\). Da blir vekstfarten \\(360/30=12\\).",
         "Velg framgangsmåte: Finn endringen i størrelsen.",
         "Sett opp: Del på lengden av x-intervallet.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((610-250)/(40-10)=12\\).",
@@ -12931,6 +13073,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Grupper til to like summer: \\((4+12)+(7+9)=16+16=32\\).",
         "Velg framgangsmåte: Variabelen sum starter på 0. Første listeverdi er 4, så summen blir 4.",
         "Sett opp: Etter hver ny verdi blir de løpende summene 11, \\(20\\), \\(32\\).",
         "Regn videre: Når listen er slutt, er sum 32. Det er denne verdien print-linjen skriver ut.",
@@ -12989,6 +13132,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Lag to summer på 25: \\((10+15)+(8+6+11)=25+25=50\\).",
         "Velg framgangsmåte: Variabelen sum starter på 0. Første listeverdi er 10, så summen blir 10.",
         "Sett opp: Etter hver ny verdi blir de løpende summene 25, \\(33\\), \\(39\\), \\(50\\).",
         "Regn videre: Når listen er slutt, er sum 50. Det er denne verdien print-linjen skriver ut.",
@@ -13048,6 +13192,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Utnytt doblingen i tallene: \\(24+12=36\\) og \\(3+6=9\\), så totalen er 45.",
         "Velg framgangsmåte: Variabelen sum starter på 0. Første listeverdi er 3, så summen blir 3.",
         "Sett opp: Etter hver ny verdi blir de løpende summene 9, \\(21\\), \\(45\\).",
         "Regn videre: Når listen er slutt, er sum 45. Det er denne verdien print-linjen skriver ut.",
@@ -13106,6 +13251,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Lag en rund sum først: \\((14+16)+(18+20)=30+38=68\\).",
         "Velg framgangsmåte: Variabelen sum starter på 0. Første listeverdi er 18, så summen blir 18.",
         "Sett opp: Etter hver ny verdi blir de løpende summene 32, \\(52\\), \\(68\\).",
         "Regn videre: Når listen er slutt, er sum 68. Det er denne verdien print-linjen skriver ut.",
@@ -13164,6 +13310,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Se at \\(8+13=21\\): \\(5+5+21+21=10+42=52\\).",
         "Velg framgangsmåte: Variabelen sum starter på 0. Første listeverdi er 5, så summen blir 5.",
         "Sett opp: Etter hver ny verdi blir de løpende summene 10, \\(18\\), \\(31\\), \\(52\\).",
         "Regn videre: Når listen er slutt, er sum 52. Det er denne verdien print-linjen skriver ut.",
@@ -13223,6 +13370,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}1\\) betyr at du skal legge til en tidel i hver runde.",
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}1\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(1\\,000 → 1\\,100 → 1\\,210\\).",
         "Regn videre: Etter siste runde er verdi \\(1\\,210\\). round uten antall desimaler beholder dette heltallet.",
@@ -13278,6 +13426,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}5\\) betyr at du skal halvere verdien i hver runde.",
         "Velg framgangsmåte: Løkken har 3 runder, så faktoren \\(0{,}5\\) skal brukes akkurat 3 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(800 → 400 → 200 → 100\\).",
         "Regn videre: Etter siste runde er verdi \\(100\\). round uten antall desimaler beholder dette heltallet.",
@@ -13333,6 +13482,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}2\\) betyr at du skal legge til en femdel i hver runde.",
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}2\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(2\\,500 → 3\\,000 → 3\\,600\\).",
         "Regn videre: Etter siste runde er verdi \\(3\\,600\\). round uten antall desimaler beholder dette heltallet.",
@@ -13388,6 +13538,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}5\\) betyr at du skal legge til halvparten i hver runde.",
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(1{,}5\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(600 → 900 → 1\\,350\\).",
         "Regn videre: Etter siste runde er verdi \\(1\\,350\\). round uten antall desimaler beholder dette heltallet.",
@@ -13443,6 +13594,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}75\\) betyr at du skal ta tre firedeler av verdien i hver runde.",
         "Velg framgangsmåte: Løkken har 2 runder, så faktoren \\(0{,}75\\) skal brukes akkurat 2 ganger.",
         "Sett opp: Spor verdi etter hver runde: \\(1\\,200 → 900 → 675\\).",
         "Regn videre: Etter siste runde er verdi \\(675\\). round uten antall desimaler beholder dette heltallet.",
@@ -13748,6 +13900,7 @@
       "sporsmal": "Hvilket heltall skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(2\\) betyr at du skal doble verdien i hver runde.",
         "Velg framgangsmåte: Start med \\(verdi=100\\) og \\(n=0\\). Løkken kjører bare mens \\(verdi<750\\) er sant.",
         "Sett opp: Spor begge variablene etter hver runde: n=0: 100, n=1: 200, n=2: 400, n=3: 800.",
         "Regn videre: Ved \\(n=3\\) er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.",
@@ -13802,6 +13955,7 @@
       "sporsmal": "Hvilket heltall skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}5\\) betyr at du skal legge til halvparten i hver runde.",
         "Velg framgangsmåte: Start med \\(verdi=80\\) og \\(n=0\\). Løkken kjører bare mens \\(verdi<400\\) er sant.",
         "Sett opp: Spor begge variablene etter hver runde: n=0: 80, n=1: 120, n=2: 180, n=3: 270, n=4: 405.",
         "Regn videre: Ved \\(n=4\\) er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.",
@@ -13856,6 +14010,7 @@
       "sporsmal": "Hvilket heltall skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}5\\) betyr at du skal halvere verdien i hver runde.",
         "Velg framgangsmåte: Start med \\(verdi=800\\) og \\(n=0\\). Løkken kjører bare mens \\(verdi>90\\) er sant.",
         "Sett opp: Spor begge variablene etter hver runde: n=0: 800, n=1: 400, n=2: 200, n=3: 100, n=4: 50.",
         "Regn videre: Ved \\(n=4\\) er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.",
@@ -13910,6 +14065,7 @@
       "sporsmal": "Hvilket heltall skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(2\\) betyr at du skal doble verdien i hver runde.",
         "Velg framgangsmåte: Start med \\(verdi=75\\) og \\(n=0\\). Løkken kjører bare mens \\(verdi<250\\) er sant.",
         "Sett opp: Spor begge variablene etter hver runde: n=0: 75, n=1: 150, n=2: 300.",
         "Regn videre: Ved \\(n=2\\) er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.",
@@ -13964,6 +14120,7 @@
       "sporsmal": "Hvilket heltall skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}5\\) betyr at du skal halvere verdien i hver runde.",
         "Velg framgangsmåte: Start med \\(verdi=2\\,400\\) og \\(n=0\\). Løkken kjører bare mens \\(verdi>500\\) er sant.",
         "Sett opp: Spor begge variablene etter hver runde: n=0: 2\\,400, n=1: 1\\,200, n=2: 600, n=3: 300.",
         "Regn videre: Ved \\(n=3\\) er vilkåret usant for første gang. Da stopper løkken før en ny multiplikasjon.",
@@ -14018,6 +14175,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Når bare 8 og 10 står igjen, er gjennomsnittet midt mellom dem: \\(9\\). Du trenger ikke en lang utregning.",
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 4 og deretter største verdi 14.",
         "Sett opp: Listen som står igjen, er [8, 10].",
         "Regn videre: Programmet beregner gjennomsnittet \\((8+10)/2\\).",
@@ -14077,6 +14235,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Etter vilkåret gjenstår bare den korte summen \\(9+12=21\\).",
         "Velg framgangsmåte: If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
         "Sett opp: Verdiene som tas med, er [9, 12].",
         "Regn videre: Legg sammen akkurat disse verdiene: \\(9+12\\).",
@@ -14137,6 +14296,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Når bare 22 og 24 står igjen, er gjennomsnittet midt mellom dem: \\(23\\).",
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 20 og deretter største verdi 28.",
         "Sett opp: Listen som står igjen, er [22, 24].",
         "Regn videre: Programmet beregner gjennomsnittet \\((22+24)/2\\).",
@@ -14196,6 +14356,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Par ytterverdiene: \\(9+15=24\\), og legg til 12 slik at summen blir \\(36\\).",
         "Velg framgangsmåte: If-vilkåret gjør at bare verdier som er minst 8, blir lagt til summen.",
         "Sett opp: Verdiene som tas med, er [9, 12, 15].",
         "Regn videre: Legg sammen akkurat disse verdiene: \\(9+12+15\\).",
@@ -14256,6 +14417,7 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Forstå oppgaven: Noter startverdien til hver variabel. Les deretter løkker og vilkår i samme rekkefølge som programmet utfører dem.",
+        "Se etter en enkel vei: Bruk balansering rundt 24: avvikene er \\(-3+1+2=0\\). Gjennomsnittet er derfor 24.",
         "Velg framgangsmåte: De to remove-linjene fjerner først minste verdi 18 og deretter største verdi 30.",
         "Sett opp: Listen som står igjen, er [21, 25, 26].",
         "Regn videre: Programmet beregner gjennomsnittet \\((21+25+26)/3\\).",
@@ -14316,6 +14478,7 @@
       "sporsmal": "Grafen viser linjen \\(y=2x+3\\). Les av eller beregn y-verdien når \\(x=4\\).",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Ta den variable delen først: \\(2\\cdot4=8\\). Legg så til konstantleddet \\(3\\).",
         "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
         "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=4\\).",
@@ -14374,6 +14537,7 @@
       "sporsmal": "Grafen viser linjen \\(y=5x-2\\). Les av eller beregn y-verdien når \\(x=3\\).",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Ta den variable delen først: \\(5\\cdot3=15\\). Legg så til konstantleddet \\(-2\\).",
         "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
         "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=3\\).",
@@ -14432,6 +14596,7 @@
       "sporsmal": "Grafen viser linjen \\(y=-3x+18\\). Les av eller beregn y-verdien når \\(x=5\\).",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Ta den variable delen først: \\(-3\\cdot5=-15\\). Legg så til konstantleddet \\(18\\).",
         "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
         "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=5\\).",
@@ -14490,6 +14655,7 @@
       "sporsmal": "Grafen viser linjen \\(y=0{,}5x+6\\). Les av eller beregn y-verdien når \\(x=8\\).",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Ta den variable delen først: \\(0{,}5\\cdot8=4\\). Legg så til konstantleddet \\(6\\).",
         "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
         "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=8\\).",
@@ -14548,6 +14714,7 @@
       "sporsmal": "Grafen viser linjen \\(y=4x+1\\). Les av eller beregn y-verdien når \\(x=6\\).",
       "hint": [
         "Forstå oppgaven: Marker hvilke størrelser som er input og output, og hva tallene i tabellen, grafen eller modellen representerer.",
+        "Se etter en enkel vei: Ta den variable delen først: \\(4\\cdot6=24\\). Legg så til konstantleddet \\(1\\).",
         "Velg framgangsmåte: Finn x-verdien på den vannrette aksen.",
         "Sett opp: Gå til linjen og les y-verdien, eller sett x inn i uttrykket.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(x=6\\).",
@@ -14606,11 +14773,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((21+1)/2=11\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
         "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
         "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
         "Regn videre: Halvparten av \\(21\\) er \\(21/2=10{,}5\\). Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\), så medianplassen ligger der.",
         "Løsningen samlet: Det er \\(21\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(21\\) er \\(21/2=10{,}5\\). Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(21\\) er \\(21/2=11\\). Kumulativ frekvens går fra \\(9\\) til \\(15\\) i kategori \\(3\\), så medianplassen ligger der."
       ],
       "svar": "Det er \\(21\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -14676,11 +14844,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((35+1)/2=18\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
         "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
         "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
         "Regn videre: Halvparten av \\(35\\) er \\(35/2=17{,}5\\). Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\), så medianplassen ligger der.",
         "Løsningen samlet: Det er \\(35\\) svar. Den midterste plasseringen passeres ved vurdering \\(2\\), så medianvurderingen er \\(2\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(35\\) er \\(35/2=17{,}5\\). Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\), så medianplassen ligger der."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(35\\) er \\(35/2=18\\). Kumulativ frekvens går fra \\(10\\) til \\(18\\) i kategori \\(2\\), så medianplassen ligger der."
       ],
       "svar": "Det er \\(35\\) svar. Den midterste plasseringen passeres ved vurdering \\(2\\), så medianvurderingen er \\(2\\).",
       "fasit": {
@@ -14746,6 +14915,7 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\(30/2=15\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
         "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
         "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
         "Regn videre: Halvparten av \\(30\\) er \\(30/2=15\\). Kumulativ frekvens går fra \\(11\\) til \\(19\\) i kategori \\(3\\), så medianplassen ligger der.",
@@ -14816,6 +14986,7 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\(40/2=20\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
         "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
         "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
         "Regn videre: Halvparten av \\(40\\) er \\(40/2=20\\). Kumulativ frekvens går fra \\(14\\) til \\(23\\) i kategori \\(3\\), så medianplassen ligger der.",
@@ -14886,11 +15057,12 @@
       "sporsmal": "Deltakerne vurderte et arrangement fra 1 til 4. Tabellen viser frekvens og kumulativ frekvens. Hva er medianvurderingen?",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Finn medianplassen uten å skrive ut hele datasettet: \\((45+1)/2=23\\). Les deretter av den første kumulative frekvensen som når denne plasseringen.",
         "Velg framgangsmåte: Finn først hvor mange observasjoner det er totalt.",
         "Sett opp: Finn den midterste plasseringen og se når kumulativ frekvens passerer den.",
         "Regn videre: Halvparten av \\(45\\) er \\(45/2=22{,}5\\). Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\), så medianplassen ligger der.",
         "Løsningen samlet: Det er \\(45\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
-        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(45\\) er \\(45/2=22{,}5\\). Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\), så medianplassen ligger der."
+        "Kontroller og konkluder: Kontroll med originalopplysningene: Halvparten av \\(45\\) er \\(45/2=23\\). Kumulativ frekvens går fra \\(16\\) til \\(29\\) i kategori \\(3\\), så medianplassen ligger der."
       ],
       "svar": "Det er \\(45\\) svar. Den midterste plasseringen passeres ved vurdering \\(3\\), så medianvurderingen er \\(3\\).",
       "fasit": {
@@ -15375,6 +15547,7 @@
       "sporsmal": "Finn tallet som beskrives av \\(3{,}2\\cdot10^5\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Flytt kommaet fem plasser mot høyre i stedet for å skrive alle nullene én om gangen: \\(3{,}2\\cdot10^5=320\\,000\\).",
         "Velg framgangsmåte: Tierpotensen \\(10^5\\) betyr 100 000.",
         "Sett opp: Skriv \\(3{,}2\\cdot100\\,000\\).",
         "Regn videre: Å gange med 100 000 flytter kommaet fem plasser mot høyre.",
@@ -15418,6 +15591,7 @@
       "sporsmal": "Finn tallet som beskrives av \\(45\\,\\%\\) av 800.",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del 45 % i 40 % og 5 %. Av 800 er dette \\(320+40=360\\).",
         "Velg framgangsmåte: Skriv 45 % som desimaltallet \\(0{,}45\\).",
         "Sett opp: Regnestykket blir \\(0{,}45\\cdot800\\).",
         "Regn videre: Du kan dele opp 45 % i 40 % og 5 % av 800.",
@@ -15461,6 +15635,7 @@
       "sporsmal": "Finn tallet som beskrives av \\(2^8\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Bruk gjentatt kvadrering: \\(2^4=16\\) og \\(2^8=16^2=256\\).",
         "Velg framgangsmåte: Eksponenten 8 betyr at tallet 2 skal være faktor åtte ganger.",
         "Sett opp: Du kan bygge videre ved å doble: \\(2^4=16\\).",
         "Regn videre: Da er \\(2^8=(2^4)^2=16^2\\).",
@@ -15503,6 +15678,7 @@
       "sporsmal": "Finn tallet som beskrives av medianen av 4, 7, 9, 12, 18.",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Du skal ikke summere tallene. Med fem sorterte tall er medianen ganske enkelt det tredje tallet.",
         "Velg framgangsmåte: Tallene er allerede sortert fra minst til størst.",
         "Sett opp: Det er fem observasjoner, så medianen står på den tredje plassen.",
         "Regn videre: Tell deg fram til det tredje tallet i listen.",
@@ -15546,6 +15722,7 @@
       "sporsmal": "Finn verdien av \\(6x+5\\) når \\(x=7\\).",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Ta multiplikasjonen først og bruk et kjent gangestykke: \\(6\\cdot7=42\\), deretter \\(42+5=47\\).",
         "Velg framgangsmåte: Erstatt x med 7 i uttrykket: \\(6\\cdot7+5\\).",
         "Sett opp: Regn multiplikasjonen først: \\(6\\cdot7=42\\).",
         "Regn videre: Legg deretter til 5.",
@@ -15588,6 +15765,7 @@
       "sporsmal": "Prisen på et abonnement økes først med \\(10\\,\\%\\) og deretter med \\(12\\,\\%\\) året etter. Hva er den samlede prosentvise endringen i prisen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1{,}1\\cdot1{,}12=1{,}232\\).",
@@ -15634,6 +15812,7 @@
       "sporsmal": "Energibruken i en bygning reduseres først med \\(8\\,\\%\\) og deretter med \\(5\\,\\%\\) året etter. Hva er den samlede prosentvise endringen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(0{,}92\\cdot0{,}95=0{,}874\\).",
@@ -15680,6 +15859,7 @@
       "sporsmal": "Medlemstallet i en organisasjon øker først med \\(25\\,\\%\\) og synker deretter med \\(10\\,\\%\\) året etter. Hva er den samlede prosentvise endringen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
         "Velg framgangsmåte: Gjør begge endringene om til vekstfaktorer.",
         "Sett opp: Multipliser faktorene og sammenlign produktet med 1.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1{,}25\\cdot0{,}9=1{,}125\\).",
@@ -15727,6 +15907,7 @@
       "sporsmal": "En vare er merket \\(800\\) kr inkludert mva. Kunden får \\(25\\,\\%\\) rabatt. Hva blir prisen etter rabatt, og hvor mye av denne prisen er uten \\(25\\,\\%\\) mva?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: 25 % er en firedel. Del derfor \\(800/4=200\\) i stedet for å starte med desimaltall. Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.",
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
@@ -15782,6 +15963,7 @@
       "sporsmal": "En vare er merket \\(1250\\) kr inkludert mva. Kunden får \\(20\\,\\%\\) rabatt. Hva blir prisen etter rabatt, og hvor mye av denne prisen er uten \\(25\\,\\%\\) mva?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: 20 % er en femdel. Del derfor \\(1\\,250/5=250\\) i stedet for å starte med desimaltall. Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.",
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
@@ -15837,6 +16019,7 @@
       "sporsmal": "En vare er merket \\(640\\) kr inkludert mva. Kunden får \\(15\\,\\%\\) rabatt. Hva blir prisen etter rabatt, og hvor mye av denne prisen er uten \\(25\\,\\%\\) mva?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del prosenten i kjente deler: 10 % pluss 5 %. Med disse tallene blir det \\(64+32=96\\). Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.",
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
@@ -15892,6 +16075,7 @@
       "sporsmal": "En vare er merket \\(2400\\) kr inkludert mva. Kunden får \\(30\\,\\%\\) rabatt. Hva blir prisen etter rabatt, og hvor mye av denne prisen er uten \\(25\\,\\%\\) mva?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: Del prosenten i kjente deler: 10 % pluss 10 % pluss 10 %. Med disse tallene blir det \\(240+240+240=720\\). Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.",
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
@@ -15947,6 +16131,7 @@
       "sporsmal": "En vare er merket \\(960\\) kr inkludert mva. Kunden får \\(10\\,\\%\\) rabatt. Hva blir prisen etter rabatt, og hvor mye av denne prisen er uten \\(25\\,\\%\\) mva?",
       "hint": [
         "Forstå oppgaven: Skriv opp de gitte størrelsene med riktige enheter, og bestem nøyaktig hvilken størrelse eller påstand som skal finnes.",
+        "Se etter en enkel vei: 10 % er en tidel. Del derfor \\(960/10=96\\) i stedet for å starte med desimaltall. Når 25 % mva er inkludert, består prisen av fem firedeler; prisen uten mva er derfor fire femdeler av beløpet med mva.",
         "Velg framgangsmåte: Rabatten regnes av den merkede prisen.",
         "Sett opp: For å fjerne mva må du dele, ikke trekke 25 %.",
         "Regn videre: Bruk vekstfaktoren 1,25 for mva.",
@@ -16002,6 +16187,7 @@
       "sporsmal": "En prisindeks økte fra \\(118{,}4\\) til \\(123{,}1\\). Hvor stor var den prosentvise økningen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}7/118{,}4\\) er omtrent \\(4\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((123{,}1-118{,}4)/118{,}4\\cdot100\\,\\%=4\\,\\%\\).",
@@ -16047,6 +16233,7 @@
       "sporsmal": "En prisindeks økte fra \\(104{,}2\\) til \\(109{,}8\\). Hvor stor var den prosentvise økningen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(5{,}6/104{,}2\\) er omtrent \\(5\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((109{,}8-104{,}2)/104{,}2\\cdot100\\,\\%=5{,}4\\,\\%\\).",
@@ -16092,6 +16279,7 @@
       "sporsmal": "En prisindeks økte fra \\(132\\) til \\(136{,}6\\). Hvor stor var den prosentvise økningen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}6/132\\) er omtrent \\(3\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((136{,}6-132)/132\\cdot100\\,\\%=3{,}5\\,\\%\\).",
@@ -16137,6 +16325,7 @@
       "sporsmal": "En prisindeks økte fra \\(97{,}5\\) til \\(102{,}3\\). Hvor stor var den prosentvise økningen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(4{,}8/97{,}5\\) er omtrent \\(5\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((102{,}3-97{,}5)/97{,}5\\cdot100\\,\\%=4{,}9\\,\\%\\).",
@@ -16182,6 +16371,7 @@
       "sporsmal": "En prisindeks økte fra \\(145{,}8\\) til \\(151{,}6\\). Hvor stor var den prosentvise økningen?",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et raskt overslag før den nøyaktige beregningen: \\(5{,}8/145{,}8\\) er omtrent \\(4\\,\\%\\). Det gir en nyttig kontroll på kalkulatorsvaret.",
         "Velg framgangsmåte: Finn endringen i indeksverdien.",
         "Sett opp: Del endringen på den gamle indeksverdien.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\((151{,}6-145{,}8)/145{,}8\\cdot100\\,\\%=4\\,\\%\\).",
@@ -17633,6 +17823,7 @@
       "sporsmal": "Beregn prisen etter den første prosentendringen.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 20 % minus 2 %. Med disse tallene blir det \\(5\\,700-570=5\\,130\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82=23\\,370\\).",
@@ -17681,6 +17872,7 @@
       "sporsmal": "Beregn prisen etter begge prosentendringene.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. 25 % er en firedel. Del derfor \\(23\\,370/4=5\\,842{,}5\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(28\\,500\\cdot 0{,}82\\cdot 1{,}25=29\\,212{,}5\\).",
@@ -17826,6 +18018,7 @@
       "sporsmal": "Beregn medlemstallet etter den første prosentendringen.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 10 % pluss 2 %. Med disse tallene blir det \\(420+84=504\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot 1{,}12=4\\,704\\).",
@@ -17874,6 +18067,7 @@
       "sporsmal": "Beregn medlemstallet etter begge prosentendringene. Rund av til nærmeste hele medlem.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Del prosenten i kjente deler: 10 % minus 2 %. Med disse tallene blir det \\(470{,}4-94{,}08=376{,}32\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(4\\,200\\cdot1{,}12\\cdot0{,}92=4\\,327{,}68\\).",
@@ -18020,6 +18214,7 @@
       "sporsmal": "Beregn energibruken etter den første prosentendringen.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 10 % pluss 5 %. Med disse tallene blir det \\(18\\,500+9\\,250=27\\,750\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85=157\\,250\\).",
@@ -18068,6 +18263,7 @@
       "sporsmal": "Beregn energibruken etter begge prosentendringene.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Del prosenten i kjente deler: 5 % pluss 1 %. Med disse tallene blir det \\(7\\,862{,}5+1\\,572{,}5=9\\,435\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(185\\,000\\cdot 0{,}85\\cdot 0{,}94=147\\,815\\).",
@@ -18213,6 +18409,7 @@
       "sporsmal": "Beregn omsetningen etter den første prosentendringen.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et overslag uten verktøy først. 20 % er en femdel. Del derfor \\(760\\,000/5=152\\,000\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2=912\\,000\\).",
@@ -18261,6 +18458,7 @@
       "sporsmal": "Beregn omsetningen etter begge prosentendringene.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. 10 % er en tidel. Del derfor \\(912\\,000/10=91\\,200\\) i stedet for å starte med desimaltall.",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(760\\,000\\cdot 1{,}2\\cdot 1{,}1=1\\,003\\,200\\).",
@@ -18406,6 +18604,7 @@
       "sporsmal": "Beregn utslippet etter den første prosentendringen.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Gjør et overslag uten verktøy først. Del prosenten i kjente deler: 20 % pluss 2 %. Med disse tallene blir det \\(256+25{,}6=281{,}6\\).",
         "Velg framgangsmåte: Gjør prosentendringen om til en vekstfaktor.",
         "Sett opp: Multipliser startverdien med faktoren.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78=998{,}4\\).",
@@ -18454,6 +18653,7 @@
       "sporsmal": "Beregn utslippet etter begge prosentendringene.",
       "hint": [
         "Forstå oppgaven: Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.",
+        "Se etter en enkel vei: Den andre prosenten regnes av mellomverdien, ikke av starten. Finn 10 % og halver: \\(998{,}4/10=99{,}84\\) og \\(99{,}84/2=49{,}92\\).",
         "Velg framgangsmåte: Bruk resultatet fra a eller multipliser begge vekstfaktorene med startverdien.",
         "Sett opp: Ikke legg prosentene direkte sammen.",
         "Regn videre: Bruk oppgavens tall og utfør regnestykket: \\(1\\,280\\cdot 0{,}78\\cdot 1{,}05=1\\,048{,}32\\).",
@@ -21814,6 +22014,7 @@
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(25\\) i stedet for bare lang summering. Avvikene er \\(-7-5-3-1+0+2+4+10=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Summer alle verdiene i A.",
         "Sett opp: Del på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(18+20+22+24+25+27+29+35=200\\) og \\(200/8=25\\).",
@@ -21870,6 +22071,7 @@
       "sporsmal": "Finn medianen i gruppe B.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(8\\) observasjoner trenger du bare den 4. og 5. plassen.",
         "Velg framgangsmåte: Verdiene er allerede sortert.",
         "Sett opp: Bruk midtverdien eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(24\\) og \\(27\\). Regn \\((24+27)/2=25{,}5\\).",
@@ -22017,6 +22219,7 @@
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(135\\) i stedet for bare lang summering. Avvikene er \\(-40-25-10-5+10+25+45=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Summer alle verdiene i A.",
         "Sett opp: Del på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(95+110+125+130+145+160+180=945\\) og \\(945/7=135\\).",
@@ -22072,6 +22275,7 @@
       "sporsmal": "Finn medianen i gruppe B.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(7\\) observasjoner trenger du bare den 4. plassen.",
         "Velg framgangsmåte: Verdiene er allerede sortert.",
         "Sett opp: Bruk midtverdien eller gjennomsnittet av de to midterste.",
         "Regn videre: Det er \\(n=7\\) observasjoner, så medianplassen er \\((7+1)/2=4\\). Verdien på denne plassen er \\(140\\).",
@@ -22274,6 +22478,7 @@
       "sporsmal": "Finn medianen i gruppe B.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(8\\) observasjoner trenger du bare den 4. og 5. plassen.",
         "Velg framgangsmåte: Verdiene er allerede sortert.",
         "Sett opp: Bruk midtverdien eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(50\\) og \\(55\\). Regn \\((50+55)/2=52{,}5\\).",
@@ -22477,6 +22682,7 @@
       "sporsmal": "Finn medianen i gruppe B.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(8\\) observasjoner trenger du bare den 4. og 5. plassen.",
         "Velg framgangsmåte: Verdiene er allerede sortert.",
         "Sett opp: Bruk midtverdien eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(9\\) og \\(11\\). Regn \\((9+11)/2=10\\).",
@@ -22624,6 +22830,7 @@
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Bruk balansering rundt \\(4\\) i stedet for bare lang summering. Avvikene er \\(-2-1-1+0+0+1+1+2=0\\), så de opphever hverandre.",
         "Velg framgangsmåte: Summer alle verdiene i A.",
         "Sett opp: Del på antall observasjoner.",
         "Regn videre: Summer først og del på antallet: \\(2+3+3+4+4+5+5+6=32\\) og \\(32/8=4\\).",
@@ -22680,6 +22887,7 @@
       "sporsmal": "Finn medianen i gruppe B.",
       "hint": [
         "Forstå oppgaven: Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.",
+        "Se etter en enkel vei: Ikke summer tallene. Sorter og stryk ett tall fra hver ende; med \\(8\\) observasjoner trenger du bare den 4. og 5. plassen.",
         "Velg framgangsmåte: Verdiene er allerede sortert.",
         "Sett opp: Bruk midtverdien eller gjennomsnittet av de to midterste.",
         "Regn videre: De to midterste verdiene er \\(4\\) og \\(5\\). Regn \\((4+5)/2=4{,}5\\).",
