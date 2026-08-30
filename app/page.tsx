@@ -751,7 +751,7 @@ export default function Home() {
               )}
               <div className="hint-section">
                 <div className="hint-heading">
-                  <div><strong>{solutionPaths.length > 0 ? "Velg en regnevei" : "Trenger du en forklaring?"}</strong><span>{solutionPaths.length > 0 ? "Samme oppgave kan løses på flere måter. Velg én vei, og åpne løsningen steg for steg. Du kan bytte vei og sammenligne etterpå." : "Åpne ett løsningssteg om gangen. Hintene viser en fullstendig løsning steg for steg, og fasiten vises til slutt."}</span></div>
+                  <div><strong>{solutionPaths.length > 0 ? "Velg en regnevei" : "Trenger du en forklaring?"}</strong><span>{solutionPaths.length > 0 ? "Samme oppgave kan løses på flere måter. Velg én vei, og åpne løsningen steg for steg. Du kan bytte vei og sammenligne etterpå." : "Åpne ett steg om gangen. Hintene viser framgangsmåten, og fasiten vises til slutt."}</span></div>
                   {!resolved && !needsSolutionPath && hintIndex < activeHints.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {activeHints.length}</button>}
                 </div>
                 {solutionPaths.length > 0 && (

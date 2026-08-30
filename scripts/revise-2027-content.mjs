@@ -50,7 +50,10 @@ function setQuestion(id, changes) {
   if (!question) throw new Error(`Ukjent oppgave-ID: ${id}`);
   Object.assign(question, changes);
   if (changes.hint) {
-    if (changes.hint.length < 3) throw new Error(`${id} må få minst tre trinnvise hint.`);
+    const minimumHintCount = question.del === 2 ? 2 : 3;
+    if (changes.hint.length < minimumHintCount) {
+      throw new Error(`${id} må få minst ${minimumHintCount} trinnvise hint.`);
+    }
     if (changes.hint.some((hint) => hint.trim().length < 20)) throw new Error(`${id} har et for kort hint.`);
   }
   revisedIds.add(id);
@@ -3086,8 +3089,51 @@ function asWorkedExample(question) {
   return worked.map(wrapBareDecimalMath);
 }
 
+// Del 2 løses med kalkulator og andre digitale verktøy. Hintene skal derfor
+// hjelpe eleven med metode, oppsett og tolkning, ikke gjøre samme utregning
+// flere ganger. Appen viser fasiten automatisk etter siste hint, så fasiten og
+// et gjentatt kontrollsteg skal ikke ligge i selve hintrekken.
+function asPart2Hints(question) {
+  const generatedCalculation = workedCalculation(question);
+  const removablePrefixes = [
+    "Hva vet vi:",
+    "Hva vet vi?",
+    "Forstå oppgaven:",
+    "Se etter en enkel vei:",
+    "Velg en enkel regnevei:",
+    "Svar på spørsmålet:",
+    "Løsningen samlet:",
+    "Kontroller og konkluder:",
+    "Sjekk svaret:",
+  ];
+
+  const candidates = question.hint
+    .filter((hint) => !removablePrefixes.some((prefix) => hint.startsWith(prefix)))
+    .map(removeGeneratedPrefix)
+    .filter((hint) => hint !== question.svar)
+    .filter((hint) => hint !== generatedCalculation)
+    .filter((hint) => !hint.startsWith("Regn uttrykket helt ut:"))
+    .filter((hint) => !hint.startsWith("Regn med de oppgitte verdiene:"))
+    .filter((hint, index, hints) => hints.indexOf(hint) === index)
+    .map(wrapBareDecimalMath);
+
+  // Fire trinn er nok selv i de sammensatte Del 2-oppgavene. Dersom en eldre
+  // hintrekke er lengre, beholdes de tre første metodestegene og det siste
+  // faglige steget slik at både oppsett og konklusjonsgrunnlag er med.
+  const concise = candidates.length > 4
+    ? [...candidates.slice(0, 3), candidates.at(-1)]
+    : candidates;
+
+  if (concise.length < 2) {
+    throw new Error(`${question.id} mangler to selvstendige Del 2-hint etter forkortingen.`);
+  }
+  return concise;
+}
+
 for (const question of bank.oppgaver) {
-  setQuestion(question.id, { hint: asWorkedExample(question) });
+  setQuestion(question.id, {
+    hint: question.del === 2 ? asPart2Hints(question) : asWorkedExample(question),
+  });
 }
 
 // I prosentøvingen i Del 1 skal eleven kunne sammenligne reelt forskjellige
@@ -3439,8 +3485,8 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.14";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.15";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene i Del 1 er konkrete, gradvise worked examples for håndregning. Hintene i Del 2 er korte forløp på to til fire trinn som prioriterer metode, oppsett, digital verktøybruk og tolkning uten å gjenta fasiten eller kalkulatorregningen. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

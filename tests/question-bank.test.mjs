@@ -18,7 +18,8 @@ test("oppgavebanken har 500 komplette og unike oppgaver", () => {
     assert.equal(question.hjelpemidler, question.del === 1 ? "uten" : "med");
     assert.ok(question.sporsmal?.trim(), `${question.id} mangler spørsmål`);
     assert.ok(question.svar?.trim(), `${question.id} mangler løsning`);
-    assert.ok(Array.isArray(question.hint) && question.hint.length >= 5, `${question.id} har for få worked-example-steg`);
+    const minimumHintCount = question.del === 1 ? 5 : 2;
+    assert.ok(Array.isArray(question.hint) && question.hint.length >= minimumHintCount, `${question.id} har for få hint`);
     assert.ok(question.hint.every((hint) => typeof hint === "string" && hint.trim().length >= 20), `${question.id} har et kort eller tomt hint`);
     assert.ok(["tall", "flere_tall", "valg", "valg_og_tall"].includes(question.fasit?.type), `${question.id} har ugyldig svarformat`);
   }
@@ -106,7 +107,7 @@ test("oppgavebanken dekker digitale representasjoner uten filinnlevering", () =>
   assert.ok(bank.oppgaver.every((question) => !/last opp|lever inn|excel-fil/i.test(question.sporsmal)));
 });
 
-test("alle hintforløp er fullstendige worked examples", () => {
+test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
   const forbiddenHints = new Set([
     "Bruk regelen som passer operasjonen.",
     "Følg regnerekkefølgen.",
@@ -132,25 +133,36 @@ test("alle hintforløp er fullstendige worked examples", () => {
       question.hint.every((hint) => !forbiddenHints.has(hint)),
       `${question.id} har fortsatt et hint som bare gjentar arbeidsordren`,
     );
-    assert.ok(question.hint.length >= 5, `${question.id} mangler gradvis hintprogresjon`);
-    assert.ok(question.hint.join(" ").length >= 300, `${question.id} har for lite forklaring til å være et worked example`);
-    assert.ok(question.hint.some((hint) => /Svar på spørsmålet:|Fullfør regningen:/.test(hint)), `${question.id} mangler fullført utregning`);
-    assert.match(question.hint.at(-1), /^(?:Sjekk svaret|Kontroller)/u, `${question.id} mangler avsluttende kontrollsteg`);
-    assert.ok(!obsoleteGenericChecks.has(question.hint.at(-1)), `${question.id} har et generisk kontrollsteg uten konkret kontroll`);
+    if (question.del === 1) {
+      assert.ok(question.hint.length >= 5, `${question.id} mangler gradvis hintprogresjon`);
+      assert.ok(question.hint.join(" ").length >= 300, `${question.id} har for lite forklaring til å være et worked example`);
+      assert.ok(question.hint.some((hint) => /Svar på spørsmålet:|Fullfør regningen:/.test(hint)), `${question.id} mangler fullført utregning`);
+      assert.match(question.hint.at(-1), /^(?:Sjekk svaret|Kontroller)/u, `${question.id} mangler avsluttende kontrollsteg`);
+      assert.ok(!obsoleteGenericChecks.has(question.hint.at(-1)), `${question.id} har et generisk kontrollsteg uten konkret kontroll`);
 
-    if (numericTypes.has(question.fasit.type)) {
-      const solutionIndex = question.hint.findIndex((hint) => hint.startsWith("Svar på spørsmålet:"));
-      const workedSteps = question.hint.slice(1, solutionIndex >= 0 ? solutionIndex : -1).join(" ");
-      assert.match(
-        workedSteps,
-        /=|\\(?:approx|le|ge)|[≤≥]/u,
-        `${question.id} mangler en utført matematisk relasjon før konklusjonen`,
+      if (numericTypes.has(question.fasit.type)) {
+        const solutionIndex = question.hint.findIndex((hint) => hint.startsWith("Svar på spørsmålet:"));
+        const workedSteps = question.hint.slice(1, solutionIndex >= 0 ? solutionIndex : -1).join(" ");
+        assert.match(
+          workedSteps,
+          /=|\\(?:approx|le|ge)|[≤≥]/u,
+          `${question.id} mangler en utført matematisk relasjon før konklusjonen`,
+        );
+      }
+    } else {
+      assert.ok(question.hint.length >= 2 && question.hint.length <= 4, `${question.id} skal ha 2–4 korte Del 2-hint`);
+      assert.ok(question.hint.join(" ").length <= 600, `${question.id} har fortsatt et for omstendelig Del 2-forløp`);
+      assert.ok(
+        question.hint.every((hint) => !/^(?:Hva vet vi|Velg en enkel regnevei|Svar på spørsmålet|Sjekk svaret|Kontroller og konkluder)/u.test(hint)),
+        `${question.id} har beholdt rammetekst eller fasitgjentakelse i Del 2`,
       );
+      assert.equal(new Set(question.hint).size, question.hint.length, `${question.id} gjentar et Del 2-hint`);
     }
   }
 
-  assert.ok(bank.oppgaver.reduce((total, question) => total + question.hint.length, 0) >= 2500);
-  assert.ok(new Set(bank.oppgaver.map((question) => question.hint.at(-1))).size >= 400, "Kontrollstegene er fortsatt for generiske");
+  const del1 = bank.oppgaver.filter((question) => question.del === 1);
+  assert.ok(del1.reduce((total, question) => total + question.hint.length, 0) >= 1750);
+  assert.ok(new Set(del1.map((question) => question.hint.at(-1))).size >= 240, "Kontrollstegene i Del 1 er fortsatt for generiske");
 });
 
 test("elevhint inneholder ikke interne redaksjonelle kommentarer", () => {
@@ -182,10 +194,11 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
   }
 
   const strategies = bank.oppgaver
+    .filter((question) => question.del === 1)
     .flatMap((question) => question.hint)
     .filter((hint) => hint.startsWith("Velg en enkel regnevei:"));
-  assert.ok(strategies.length >= 200, "For få oppgaver har fått et konkret strategihint");
-  assert.ok(new Set(strategies).size >= 180, "Strategihintene er for generiske eller gjentatte");
+  assert.ok(strategies.length >= 175, "For få Del 1-oppgaver har fått et konkret strategihint");
+  assert.ok(new Set(strategies).size >= 165, "Strategihintene er for generiske eller gjentatte");
   assert.ok(strategies.every((hint) => hint.length >= 60), "Et strategihint er for kort til å hjelpe");
   assert.doesNotMatch(strategies.join(" "), /--|\+-|skal (?:legg|halver)\b/u, "Et strategihint har uklar matematikk eller språk");
 
@@ -297,7 +310,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.14");
+  assert.equal(bank.samling.versjon, "2027.15");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -483,7 +496,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.14");
+  assert.equal(bank.samling.versjon, "2027.15");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
