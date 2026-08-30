@@ -1420,7 +1420,7 @@ for (const [id, context] of Object.entries(reversePercentContexts)) {
     hint: [
       `Hva vet vi? Etter en ${changeWord} på ${math(`${number(absoluteChange)}\\,\\%`)} er ${context.subject} ${math(number(ny))}${valueUnit}. Vi skal finne ${context.subject} før endringen, altså verdien som tilsvarer ${math("100\\,\\%")}.`,
       `Finn prosenten etter endringen: Start med ${math("100\\,\\%")}. Regn ${math(`100${paidOperation}${number(absoluteChange)}=${number(context.changedPercent)}\\,\\%`)}. Dermed vet vi at ${math(`${number(context.changedPercent)}\\,\\%`)} tilsvarer ${math(number(ny))}${valueUnit}.`,
-      `Velg én regnevei: Vi bruker en prosentstripe hele veien. Del ${math(`${number(context.changedPercent)}\\,\\%`)} i ${math(number(context.chunkCount))} like deler. Hver del er ${math(`${number(context.changedPercent)}/${number(context.chunkCount)}=${number(context.chunkPercent)}\\,\\%`)}.`,
+      `Del prosenten etter endringen i ${math(number(context.chunkCount))} like deler: ${math(`${number(context.changedPercent)}/${number(context.chunkCount)}=${number(context.chunkPercent)}\\,\\%`)}.`,
       `Finn verdien av én del: De ${math(number(context.chunkCount))} like delene er til sammen ${math(number(ny))}${valueUnit}. Derfor deler vi ${math(number(ny))} på ${math(number(context.chunkCount))}: ${math(`${number(ny)}/${number(context.chunkCount)}=${number(context.chunkValue)}`)}. Én del, altså ${math(`${number(context.chunkPercent)}\\,\\%`)}, er ${math(number(context.chunkValue))}${valueUnit}.`,
       `Bygg opp ${math("100\\,\\%")} med samme deler: ${math(`100/${number(context.chunkPercent)}=${number(context.wholeCount)}`)}, så hele verdien består av ${math(number(context.wholeCount))} slike deler. Regn ${math(`${number(context.chunkValue)}\\cdot${number(context.wholeCount)}=${number(original)}`)}.`,
       `Svar på spørsmålet: ${context.subject[0].toUpperCase()}${context.subject.slice(1)} var ${math(number(original))} ${context.unit} før endringen.`,
@@ -2832,7 +2832,7 @@ function mentalStrategyHint(question) {
   }
 
   if (method === "whole_from_part") {
-    return "Prøv prosentstripa før en formel: finn en enkel prosentdel som 1 %, 10 %, 20 % eller 25 %, og bygg derfra til 100 % med oppgavens egne tall.";
+    return "Finn først en enkel prosentdel som 1 %, 10 %, 20 % eller 25 %, og bygg derfra til 100 % med oppgavens egne tall.";
   }
 
   if (method === "percentage_points") {
@@ -3259,25 +3259,25 @@ const percentageSolutionPaths = {
       [`Gang faktorene: ${math("0{,}90\\cdot1{,}10=0{,}99")}.`, `Faktoren 0,99 betyr at 99 % er igjen. Fra 100 % til 99 % er endringen ${math("99-100=-1\\,\\%")}.`]],
   },
   "2py27-028": {
-    primary: ["prosentstripe", "Bygg fra 10 %", "Reduser 120 % til en enkel 10 %-del og bygg til 100 %."],
+    primary: ["like-prosentdeler", "Bygg fra 10 %", "Reduser 120 % til en enkel 10 %-del og bygg til 100 %."],
     alternative: ["kjent-brok", "Tenk 120 % som seks femdeler", "Bruk brøken 6/5 til å se antallet like deler.",
       `Skriv ${math("120\\,\\%=6/5")}. Den nye prisen på 816 kr er derfor 6 like deler.`,
       [`Finn én del: ${math("816/6=136")}.`, `Den opprinnelige verdien er 5 slike deler: ${math("136\\cdot5=680")}.`]],
   },
   "2py27-029": {
-    primary: ["prosentstripe", "Bygg fra 10 %", "Reduser 90 % til én 10 %-del og bygg til 100 %."],
+    primary: ["like-prosentdeler", "Bygg fra 10 %", "Reduser 90 % til én 10 %-del og bygg til 100 %."],
     alternative: ["kjent-brok", "Tenk 90 % som ni tideler", "Bruk brøken 9/10 til å se antallet like deler.",
       `Skriv ${math("90\\,\\%=9/10")}. Prisen 630 kr er derfor 9 like deler.`,
       [`Finn én del: ${math("630/9=70")}.`, `Den opprinnelige prisen er 10 slike deler: ${math("70\\cdot10=700")}.`]],
   },
   "2py27-030": {
-    primary: ["prosentstripe", "Bygg fra 25 %", "Reduser 125 % til en enkel 25 %-del og bygg til 100 %."],
+    primary: ["like-prosentdeler", "Bygg fra 25 %", "Reduser 125 % til en enkel 25 %-del og bygg til 100 %."],
     alternative: ["kjent-brok", "Tenk 125 % som fem firedeler", "Bruk brøken 5/4 til å finne den opprinnelige prisen.",
       `Skriv ${math("125\\,\\%=5/4")}. Den nye prisen på 1 500 kr er derfor 5 like deler.`,
       [`Finn én del: ${math("1\,500/5=300")}.`, `Den opprinnelige prisen er 4 slike deler: ${math("300\\cdot4=1\,200")}.`]],
   },
   "2py27-032": {
-    primary: ["prosentstripe", "Bygg fra 50 %", "Reduser 150 % til en enkel 50 %-del og bygg til 100 %."],
+    primary: ["like-prosentdeler", "Bygg fra 50 %", "Reduser 150 % til en enkel 50 %-del og bygg til 100 %."],
     alternative: ["kjent-brok", "Tenk 150 % som tre halvdeler", "Bruk brøken 3/2 til å finne den opprinnelige verdien.",
       `Skriv ${math("150\\,\\%=3/2")}. Det nye medlemstallet 1 950 er derfor 3 like deler.`,
       [`Finn én del: ${math("1\,950/3=650")}.`, `Den opprinnelige verdien er 2 slike deler: ${math("650\\cdot2=1\,300")}.`]],
@@ -3423,6 +3423,9 @@ normalizeVisibleDecimals(bank.oppgavegrupper);
 // bort eldre formuleringer som beskriver forfatterens valg eller selve malen.
 function removeInternalHintLanguage(text) {
   return text
+    .replace(/Lag en plan:\s*Skriv en enkel prosentstripe:\s*/gu, "Lag en plan: ")
+    .replace(/Vi bruker en prosentstripe hele veien\.\s*/gu, "")
+    .replace(/Prøv prosentstripa før en formel:\s*/gu, "")
     .replace(/Sjekk begrunnelsen, ikke bare svaralternativet:\s*/gu, "")
     .replace(/\s*Denne testen støtter konklusjonen:\s*/gu, " Derfor passer svaret: ")
     .replace(/Kontroll med originalopplysningene:\s*/gu, "Regn med de oppgitte verdiene: ")
@@ -3443,6 +3446,12 @@ for (const question of bank.oppgaver) {
   }
 }
 
+// Oppgavene bruker konstruerte øvingsdata. Det er allerede tydelig av
+// konteksten og trenger ikke en gjentatt personvernmerknad til eleven.
+for (const group of bank.oppgavegrupper) {
+  delete group.dataopprinnelse;
+}
+
 // Verifiser at de provoserende standardformuleringene ikke står igjen i de reviderte familiene.
 const forbiddenExactHints = new Set([
   "Bruk regelen som passer operasjonen.",
@@ -3459,7 +3468,7 @@ for (const question of bank.oppgaver) {
   }
 }
 
-const internalHintLanguage = /Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
+const internalHintLanguage = /prosentstripe|prosentstripa|Vi bruker .* hele veien|Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
 for (const question of bank.oppgaver) {
   const hintCollections = [question.hint, ...(question.losningsveier ?? []).map((route) => route.hint)];
   for (const hint of hintCollections.flat()) {
@@ -3481,12 +3490,17 @@ for (const group of bank.oppgavegrupper) {
   }
 }
 
+const unnecessaryDataDisclaimer = /personvern|personopplys|faktiske persondata|generisk(?:e)? data|syntetisk(?:e)? data|fiktiv(?:e)? data|anonymisert/iu;
+if (unnecessaryDataDisclaimer.test(JSON.stringify(bank))) {
+  throw new Error("Oppgavebanken har fortsatt en unødvendig merknad om generiske data eller personvern.");
+}
+
 if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.15";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene i Del 1 er konkrete, gradvise worked examples for håndregning. Hintene i Del 2 er korte forløp på to til fire trinn som prioriterer metode, oppsett, digital verktøybruk og tolkning uten å gjenta fasiten eller kalkulatorregningen. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.16";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene i Del 1 er konkrete, gradvise worked examples for håndregning uten intern metodejargon. Hintene i Del 2 er korte forløp på to til fire trinn som prioriterer metode, oppsett, digital verktøybruk og tolkning uten å gjenta fasiten eller kalkulatorregningen. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

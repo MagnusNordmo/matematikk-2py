@@ -166,7 +166,7 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
 });
 
 test("elevhint inneholder ikke interne redaksjonelle kommentarer", () => {
-  const internalHintLanguage = /Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
+  const internalHintLanguage = /prosentstripe|prosentstripa|Vi bruker .* hele veien|Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
 
   for (const question of bank.oppgaver) {
     const hintCollections = [question.hint, ...(question.losningsveier ?? []).map((route) => route.hint)];
@@ -184,7 +184,7 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
 
   for (const question of numericDel1) {
     if (question.variantfamilie === "d1-omvendt-prosent") {
-      assert.match(question.hint.join(" "), /prosentstripe hele veien/u, question.id + " mangler én sammenhengende håndregningsstrategi");
+      assert.match(question.hint.join(" "), /Del prosenten etter endringen i .* like deler/u, question.id + " mangler én sammenhengende håndregningsstrategi");
     } else {
       assert.ok(
         question.hint.some((hint) => hint.startsWith("Velg en enkel regnevei:")),
@@ -287,7 +287,7 @@ test("hver hovedløsning i Del 1 holder fast ved én tydelig metode", () => {
 
   for (const question of del1.filter((item) => item.variantfamilie === "d1-omvendt-prosent")) {
     const hints = question.hint.join(" ");
-    assert.match(hints, /prosentstripe hele veien/u, question.id);
+    assert.match(hints, /Del prosenten etter endringen i .* like deler/u, question.id);
     assert.match(hints, /like delene er til sammen/u, question.id);
     assert.match(hints, /Derfor deler vi/u, question.id);
     assert.doesNotMatch(hints, /vekstfaktor|Lag ligningen|\bx\b/u, `${question.id} skifter metode underveis`);
@@ -310,7 +310,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.15");
+  assert.equal(bank.samling.versjon, "2027.16");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -496,12 +496,22 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.15");
+  assert.equal(bank.samling.versjon, "2027.16");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
   assert.match(bank.oppgavegrupper.find((group) => group.id === "d2-figur-01").innledning, /benker/);
   assert.equal(bank.oppgaver.find((question) => question.id === "2py27-306").fasit.verdier[0].verdi, 4328);
+});
+
+test("oppgavebanken har ikke overflødige personvernmerknader om øvingsdata", () => {
+  const unnecessaryDataDisclaimer = /personvern|personopplys|faktiske persondata|generisk(?:e)? data|syntetisk(?:e)? data|fiktiv(?:e)? data|anonymisert/iu;
+
+  assert.ok(
+    bank.oppgavegrupper.every((group) => !("dataopprinnelse" in group)),
+    "En oppgavegruppe har fortsatt dataopprinnelse som elevtekst",
+  );
+  assert.doesNotMatch(JSON.stringify(bank), unnecessaryDataDisclaimer);
 });
 
 test("standardformoppgaven viser samme tall som fasiten", () => {

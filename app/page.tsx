@@ -232,7 +232,6 @@ function GroupContext({ group }: { group: QuestionGroup }) {
       <p><MathText>{group.innledning}</MathText></p>
       {group.visualisering?.type !== "tabell" && <DataPanel data={group.data} />}
       <VisualizationPanel visualization={group.visualisering} data={group.data} />
-      {group.dataopprinnelse && <small>{group.dataopprinnelse}</small>}
     </section>
   );
 }

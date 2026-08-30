@@ -62,7 +62,6 @@ export type QuestionGroup = {
   tittel: string;
   innledning: string;
   data: Record<string, unknown>;
-  dataopprinnelse?: string;
   visualisering?: Visualization;
 };
 

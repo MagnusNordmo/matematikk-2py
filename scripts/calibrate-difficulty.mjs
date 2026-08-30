@@ -187,7 +187,7 @@ function reviseMildPercentQuestions(byId) {
     hints: [
       "Hva vet vi? 20 frivillige tilsvarer 10 %, og vi skal finne hele gruppen på 100 %.",
       "Velg en enkel regnevei: Fra 10 % til 100 % ganger vi med 10. Det samme må vi gjøre med antallet personer.",
-      "Lag en plan: Skriv en enkel prosentstripe: 10 % er 20 personer, mens 100 % er ti slike deler.",
+      "Lag en plan: 10 % er 20 personer, mens 100 % er ti slike deler.",
       "Gjør regningen: \\(20\\cdot10=200\\). Hele gruppen består av ti grupper med 20 personer.",
       "Svar på spørsmålet: Det er \\(200\\) deltakere på festivalen.",
       "Sjekk svaret: \\(10\\,\\%\\) av \\(200\\) er \\(200/10=20\\), som er antallet oppgaven ga.",
