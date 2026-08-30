@@ -153,6 +153,17 @@ test("alle hintforløp er fullstendige worked examples", () => {
   assert.ok(new Set(bank.oppgaver.map((question) => question.hint.at(-1))).size >= 400, "Kontrollstegene er fortsatt for generiske");
 });
 
+test("elevhint inneholder ikke interne redaksjonelle kommentarer", () => {
+  const internalHintLanguage = /Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
+
+  for (const question of bank.oppgaver) {
+    const hintCollections = [question.hint, ...(question.losningsveier ?? []).map((route) => route.hint)];
+    for (const hint of hintCollections.flat()) {
+      assert.doesNotMatch(hint, internalHintLanguage, `${question.id} har en intern kommentar i et elevhint`);
+    }
+  }
+});
+
 test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til det", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
   const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
@@ -286,7 +297,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.13");
+  assert.equal(bank.samling.versjon, "2027.14");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -472,7 +483,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.13");
+  assert.equal(bank.samling.versjon, "2027.14");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

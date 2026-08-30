@@ -274,7 +274,7 @@ export function calibrateDifficulty(bank) {
   bank.statistikk.fordeling_niva = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  bank.samling.versjon = "2027.13";
+  bank.samling.versjon = "2027.14";
   const difficultyNote = "Alle oppgaver er vurdert på nytt etter en streng nivåregel: Mild betyr en direkte avlesning, gjenkjenning eller kort beregning med vennlige tall; middels krever flere sammenhengende steg; utfordrende krever strategivalg, kombinasjon av ideer eller selvstendig vurdering.";
   const noteWithoutOldCalibration = bank.opphav.merknad
     .replace(/ Alle oppgaver er vurdert som (?:lette|milde), middels eller utfordrende[^.]*\./gu, "")

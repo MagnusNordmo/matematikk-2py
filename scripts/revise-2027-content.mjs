@@ -2384,11 +2384,11 @@ function workedContext(question) {
     "2py27-075": `Formelen er ${math("A=(a+b)h/2")}. Vi kjenner ${math("a=8")}, ${math("b=14")} og ${math("h=6")}, og skal finne arealet A.`,
     "2py27-076": `Formelen er ${math("F=1{,}8C+32")}, og ${math("C=25")} er kjent. Vi skal finne temperaturen F ved å erstatte C med 25.`,
     "2py27-077": `Formelen er ${math("D=0{,}04m+1{,}2")}, og veggarealet er ${math("m=70")}. Vi skal finne malingsbehovet D ved å erstatte m med 70.`,
-    "2py27-248": `I modellen ${math("K(x)=250+6x")} er 250 leddet uten x. Oppgaven spør hva dette tallet betyr i situasjonen, ikke bare hva det heter.`,
+    "2py27-248": `I modellen ${math("K(x)=250+6x")} er 250 leddet uten x. Vi skal finne ut hva dette tallet betyr i situasjonen, ikke bare hva det heter.`,
     "2py27-249": `Grafen krysser t-aksen når høydeverdien er 0. Her betyr skjæringen ved ${math("t=30")} at vi må tolke hva ${math("V(30)=0")} sier om tanken.`,
     "2py27-250": `Algemengden multipliseres med ${math("0{,}8")} hver uke. Faktoren forteller hvor stor del som er igjen, og forskjellen opp til ${math("1")} forteller nedgangen.`,
     "2py27-251": `Den proporsjonale grafen går gjennom ${math("(4,28)")}. Det betyr at 4 enheter av x svarer til 28 enheter av y. Konstanten forteller hvor mye y øker når x øker med 1.`,
-    "2py27-252": `Modellen er ${math("y=120/x")}. Oppgaven spør etter en egenskap som må gjelde for alle punkter som følger denne modellen.`,
+    "2py27-252": `Modellen er ${math("y=120/x")}. Vi skal finne en egenskap som må gjelde for alle punkter som følger denne modellen.`,
     "2py27-258": `Tallet er skrevet som ${math("3{,}2\\cdot10^5")}. Tierpotensen bestemmer hvor mange plasser kommaet skal flyttes, mens ${math("3{,}2")} skal beholde de samme sifrene.`,
     "2py27-259": `${math("800")} er hele mengden, altså ${math("100\\,\\%")}. Vi skal finne delen som svarer til ${math("45\\,\\%")} av denne mengden.`,
     "2py27-260": `Grunntallet er ${math("2")}, og eksponenten ${math("8")} forteller at 2 skal brukes som faktor åtte ganger.`,
@@ -2414,7 +2414,7 @@ function workedContext(question) {
       return `Den gamle andelen er ${math(`${number(input.gammel)}\\,\\%`)}, og den nye er ${math(`${number(input.ny)}\\,\\%`)}. Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.`;
     }
     if (method === "growth_factor") {
-      return `En vekstfaktor forteller hvilken del av startverdien som er igjen etter endringen. ${math("1")} betyr ${math("100\\,\\%")}; oppgaven gir en endring på ${math(`${number(input.endring)}\\,\\%`)}.`;
+      return `En vekstfaktor forteller hvilken del av startverdien som er igjen etter endringen. ${math("1")} betyr ${math("100\\,\\%")}, og endringen er ${math(`${number(input.endring)}\\,\\%`)}.`;
     }
     if (method === "successive_percent") {
       return `Det skjer to endringer etter hverandre: først ${math(`${number(input.endringer[0])}\\,\\%`)}, deretter ${math(`${number(input.endringer[1])}\\,\\%`)}. Den andre prosenten må regnes av mellomverdien, ikke av startverdien.`;
@@ -2504,7 +2504,7 @@ function workedContext(question) {
       return "Vi skal klassifisere sammenhengen i tabellen. Proporsjonalitet har konstant forhold, omvendt proporsjonalitet har konstant produkt, og en lineær sammenheng har konstant differanse i y for like x-steg.";
     }
     if (/statistikk-valg|kritisk-statistikk|uteliggere/.test(family)) {
-      return "Oppgaven spør hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.";
+      return "Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.";
     }
     if (/modellkritikk|modellvalg|lineaer-modell/.test(family)) {
       return "Sammenlign modellen med situasjonen: Se etter startverdi, endring per enhet, gyldig område og om utviklingen er jevn eller prosentvis.";
@@ -2521,10 +2521,10 @@ function workedContext(question) {
     return "Marker verdiene som skal settes inn, og hvilken størrelse formelen skal beregne. Variablene skal erstattes før regnerekkefølgen brukes.";
   }
   if (family === "d1-prosent-av-tall") {
-    return "Marker totalen og prosentandelen. Oppgaven spør etter hvor mange den oppgitte prosentandelen tilsvarer.";
+    return "Marker totalen og prosentandelen. Finn hvor mange den oppgitte prosentandelen tilsvarer.";
   }
   if (family === "d1-finne-prosent") {
-    return "Marker delen og totalen. Oppgaven spør hvor stor del dette er uttrykt i prosent.";
+    return "Marker delen og totalen. Finn hvor stor del dette er uttrykt i prosent.";
   }
   if (family === "d1-finne-helhet") {
     return "Marker antallet som er oppgitt, og prosenten det tilsvarer. Det totale antallet er ukjent.";
@@ -2537,10 +2537,10 @@ function workedContext(question) {
     return `Marker startpunktet, sluttpunktet og enhetene. Du skal finne hvor mye den målte størrelsen i gjennomsnitt endres ${ratePhrase}.`;
   }
   if (/prosent|vekstfaktor|indeks|tilbud|finne-helhet/.test(family)) {
-    return "Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene oppgaven ber deg finne.";
+    return "Marker startverdien, sluttverdien og prosentendringen. Legg merke til hvilken av størrelsene du skal finne.";
   }
   if (/statistikk|frekvens|gjennomsnitt|median|typetall|uteliggere|gruppert|samfunn/.test(family)) {
-    return "Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning oppgaven spør etter.";
+    return "Finn hvilke observasjoner eller frekvenser som hører med, og marker hvilket statistisk mål eller hvilken sammenligning du skal finne.";
   }
   if (/figur/.test(family)) {
     return "Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.";
@@ -2568,7 +2568,7 @@ function workedCheck(question, workedSteps = []) {
   if (question.fasit.type === "valg") {
     const evidence = [...workedSteps].reverse().find((hint) => hint !== question.svar);
     return evidence
-      ? `Sjekk begrunnelsen, ikke bare svaralternativet: ${evidence} Denne testen støtter konklusjonen: ${question.svar}`
+      ? `${evidence} Derfor passer svaret: ${question.svar}`
       : `Sammenlign det valgte alternativet med alle opplysningene i oppgaven. Ingen opplysning skal motsi valget.`;
   }
   if (method === "percent_of") return `${math(`${number(result[0])}/${number(input.total)}\\cdot100\\,\\%=${number(input.prosent)}\\,\\%`)}. Andelen blir den oppgitte prosenten av totalen.`;
@@ -2686,8 +2686,8 @@ function workedCheck(question, workedSteps = []) {
   }
 
   const calculation = workedCalculation(question);
-  if (calculation) return `Kontroll med originalopplysningene: ${calculation}`;
-  return `Kontroll mot oppgaven: ${question.svar} Enhet, fortegn og størrelsesorden stemmer med opplysningene.`;
+  if (calculation) return `Regn med de oppgitte verdiene: ${calculation}`;
+  return `${question.svar} Enhet, fortegn og størrelsesorden stemmer med opplysningene.`;
 }
 
 function wrapBareDecimalMath(text) {
@@ -2758,7 +2758,7 @@ function percentShortcut(total, percent) {
     expression += sign + number(chunkValues[index]);
     description += (index === 0 ? "" : chunk < 0 ? " minus " : " pluss ") + number(Math.abs(chunk)) + " %";
   });
-  return "Del prosenten i kjente deler: " + description + ". Med disse tallene blir det " + math(expression + "=" + number(value)) + ".";
+  return "Del prosenten i kjente deler: " + description + ". Da får du " + math(expression + "=" + number(value)) + ".";
 }
 
 const simpleStrategyOverrides = {
@@ -2785,7 +2785,7 @@ const simpleStrategyOverrides = {
   "2py27-088": "Regn nær et rundt tall: " + math("4\\cdot15=60") + ", og trekk deretter fra 1.",
   "2py27-089": "Dobling er nok her: " + math("2\\cdot12=24") + ", og så " + math("24+3=27") + ".",
   "2py27-090": "Bruk at 20 tiere er lett å gange: " + math("7\\cdot20=140") + ", og trekk deretter fra 5.",
-  "2py27-091": "Formelen er allerede et hoderegningsstykke: " + math("18+5=23") + ".",
+  "2py27-091": "Sett figurnummeret inn i formelen: " + math("18+5=23") + ".",
   "2py27-092": "Fem ganger 25 er en kjent kvart av 500: " + math("5\\cdot25=125") + ", og så " + math("125-1=124") + ".",
   "2py27-093": "Regn inni parentesen før kvadratet: " + math("8+1=9") + ", så " + math("9^2+1=81+1=82") + ".",
   "2py27-094": "Regn inni parentesen før kvadratet: " + math("7+2=9") + ", så " + math("9^2+1=81+1=82") + ".",
@@ -2875,7 +2875,7 @@ function mentalStrategyHint(question) {
   }
 
   if (method === "direct_constant") {
-    return "Finn én-enhetsverdien først. Divisjonen er valgt for hoderegning: " + math(number(input.y) + "/" + number(input.x) + "=" + number(result[0])) + ".";
+    return "Finn én-enhetsverdien ved å dele totalen på antallet: " + math(number(input.y) + "/" + number(input.x) + "=" + number(result[0])) + ".";
   }
 
   if (method === "direct_scale") {
@@ -3373,6 +3373,30 @@ function normalizeVisibleDecimals(value) {
 normalizeVisibleDecimals(bank.oppgaver);
 normalizeVisibleDecimals(bank.oppgavegrupper);
 
+// Hintene skal bare inneholde forklaringer som hjelper eleven videre. Rydd
+// bort eldre formuleringer som beskriver forfatterens valg eller selve malen.
+function removeInternalHintLanguage(text) {
+  return text
+    .replace(/Sjekk begrunnelsen, ikke bare svaralternativet:\s*/gu, "")
+    .replace(/\s*Denne testen støtter konklusjonen:\s*/gu, " Derfor passer svaret: ")
+    .replace(/Kontroll med originalopplysningene:\s*/gu, "Regn med de oppgitte verdiene: ")
+    .replace(/Kontroll mot oppgaven:\s*/gu, "")
+    .replace(/Divisjonen er valgt for hoderegning:\s*/gu, "")
+    .replace(/Formelen er allerede et hoderegningsstykke:\s*/gu, "Sett figurnummeret inn i formelen: ")
+    .replace(/Med disse tallene blir det\s*/gu, "Da får du ")
+    .replace(/, akkurat som i oppgaven\./gu, ", som er den oppgitte verdien.")
+    .replace(/som stemmer med oppgaven/gu, "som stemmer med opplysningene")
+    .replace(/Andelen stemmer med opplysningen i oppgaven\./gu, "Andelen er den oppgitte prosentdelen.")
+    .replace(/som er antallet oppgaven ga\./gu, "som er det oppgitte antallet.");
+}
+
+for (const question of bank.oppgaver) {
+  question.hint = question.hint.map(removeInternalHintLanguage);
+  for (const route of question.losningsveier ?? []) {
+    route.hint = route.hint.map(removeInternalHintLanguage);
+  }
+}
+
 // Verifiser at de provoserende standardformuleringene ikke står igjen i de reviderte familiene.
 const forbiddenExactHints = new Set([
   "Bruk regelen som passer operasjonen.",
@@ -3386,6 +3410,16 @@ const forbiddenExactHints = new Set([
 for (const question of bank.oppgaver) {
   for (const hint of question.hint) {
     if (forbiddenExactHints.has(hint)) throw new Error(`${question.id} har fortsatt et ikke-hjelpende hint: ${hint}`);
+  }
+}
+
+const internalHintLanguage = /Divisjonen er valgt|hoderegningsstykke|Denne testen støtter konklusjonen|Sjekk begrunnelsen, ikke bare svaralternativet|Kontroll (?:mot oppgaven|med originalopplysningene)|Med disse tallene blir det|akkurat som i oppgaven|antallet oppgaven ga|opplysningen i oppgaven/iu;
+for (const question of bank.oppgaver) {
+  const hintCollections = [question.hint, ...(question.losningsveier ?? []).map((route) => route.hint)];
+  for (const hint of hintCollections.flat()) {
+    if (internalHintLanguage.test(hint)) {
+      throw new Error(`${question.id} har fortsatt en intern kommentar i hintet: ${hint}`);
+    }
   }
 }
 
@@ -3405,7 +3439,7 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.13";
+bank.samling.versjon = "2027.14";
 bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
