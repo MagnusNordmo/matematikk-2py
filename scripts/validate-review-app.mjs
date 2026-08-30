@@ -19,7 +19,7 @@ assert(embedded.oppgaver.length === 500, "HTML-filen må inneholde 500 oppgaver.
 assert(embedded.groups === 50, "HTML-filen må inneholde 50 Del 2-case.");
 assert(embedded.temaer.length === 11, "HTML-filen må inneholde 11 temaer.");
 assert(new Set(embedded.oppgaver.map((question) => question.id)).size === 500, "Oppgave-ID-ene må være unike.");
-assert(["lett", "middels", "vanskelig"].every((level) => embedded.oppgaver.some((question) => question.vanskelighetsgrad === level)), "Alle tre vanskelighetsgrader må være i bruk.");
+assert(["lett", "middels", "utfordrende"].every((level) => embedded.oppgaver.some((question) => question.vanskelighetsgrad === level)), "Alle tre vanskelighetsgrader må være i bruk.");
 
 for (const original of source.oppgaver) {
   const copy = embedded.oppgaver.find((question) => question.id === original.id);

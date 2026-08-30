@@ -21,6 +21,7 @@ import {
 import {
   findRetryQuestion,
   selectSessionQuestions,
+  type Difficulty,
   type SessionMode,
 } from "./session-engine";
 
@@ -77,6 +78,17 @@ const EMPTY_PROGRESS_BY_PART: ProgressByPart = {
   1: { ...EMPTY_PROGRESS },
   2: { ...EMPTY_PROGRESS },
 };
+
+const DIFFICULTY_OPTIONS: { value: Difficulty; label: string }[] = [
+  { value: "mixed", label: "Blandet" },
+  { value: 1, label: "Lett" },
+  { value: 2, label: "Middels" },
+  { value: 3, label: "Utfordrende" },
+];
+
+function difficultyLabel(difficulty: 1 | 2 | 3) {
+  return DIFFICULTY_OPTIONS.find((option) => option.value === difficulty)?.label ?? "";
+}
 
 function IconArrow({ direction = "right" }: { direction?: "left" | "right" }) {
   return (
@@ -225,12 +237,42 @@ function GroupContext({ group }: { group: QuestionGroup }) {
   );
 }
 
+function DifficultySelector({
+  value,
+  onChange,
+  compact = false,
+}: {
+  value: Difficulty;
+  onChange: (difficulty: Difficulty) => void;
+  compact?: boolean;
+}) {
+  return (
+    <fieldset className={`difficulty-selector ${compact ? "difficulty-selector-compact" : ""}`}>
+      <legend>{compact ? "Nivå for neste oppgave" : "Velg nivå"}</legend>
+      <div>
+        {DIFFICULTY_OPTIONS.map((option) => (
+          <button
+            className={value === option.value ? "difficulty-option difficulty-option-selected" : "difficulty-option"}
+            type="button"
+            key={String(option.value)}
+            aria-pressed={value === option.value}
+            onClick={() => onChange(option.value)}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
 export default function Home() {
   const [bank, setBank] = useState<QuestionBank | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [screen, setScreen] = useState<Screen>("home");
   const [selectedPart, setSelectedPart] = useState<Part | null>(null);
   const [mode, setMode] = useState<SessionMode>("skill");
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>("mixed");
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [queue, setQueue] = useState<SessionItem[]>([]);
   const [baseCount, setBaseCount] = useState(0);
@@ -324,19 +366,22 @@ export default function Home() {
   function choosePart(part: Part) {
     setSelectedPart(part);
     setSelectedTheme(null);
+    setSelectedDifficulty("mixed");
     setScreen("modes");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function startSession(nextMode: SessionMode, themeId?: string) {
     if (!bank || !selectedPart) return;
-    const selectionKey = `${selectedPart}:${nextMode}:${themeId ?? "blandet"}`;
+    const sessionDifficulty = nextMode === "exam" ? "mixed" : selectedDifficulty;
+    const selectionKey = `${selectedPart}:${nextMode}:${themeId ?? "blandet"}:${sessionDifficulty}`;
     const questions = selectSessionQuestions(
       bank,
       selectedPart,
       nextMode,
       themeId,
       new Set(recentSelections[selectionKey] ?? []),
+      sessionDifficulty,
     );
     const nextRecentSelections = {
       ...recentSelections,
@@ -373,6 +418,57 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function changeDifficulty(nextDifficulty: Difficulty) {
+    if (nextDifficulty === selectedDifficulty) return;
+    setSelectedDifficulty(nextDifficulty);
+    if (!bank || !selectedPart || screen !== "session" || mode !== "skill") return;
+
+    const prefix = queue.slice(0, currentIndex + 1);
+    const baseBeforeNext = prefix.filter((item) => !item.isExtra).length;
+    const remainingCount = Math.max(0, baseCount - baseBeforeNext);
+    const selectionKey = `${selectedPart}:skill:${selectedTheme ?? "blandet"}:${nextDifficulty}`;
+    const blockedIds = new Set([
+      ...(recentSelections[selectionKey] ?? []),
+      ...prefix.map((item) => item.question.id),
+    ]);
+    const replacements = selectSessionQuestions(
+      bank,
+      selectedPart,
+      "skill",
+      selectedTheme ?? undefined,
+      blockedIds,
+      nextDifficulty,
+    )
+      .filter((question) => !prefix.some((item) => item.question.id === question.id))
+      .slice(0, remainingCount);
+    const replacementItems = replacements.map((question, index) =>
+      makeSessionItem(question, baseBeforeNext + index + 1),
+    );
+    const nextQueue = [...prefix, ...replacementItems];
+    const nextBaseCount = baseBeforeNext + replacementItems.length;
+    const nextRecentSelections = {
+      ...recentSelections,
+      [selectionKey]: replacements.map((question) => question.id),
+    };
+
+    setQueue(nextQueue);
+    setBaseCount(nextBaseCount);
+    setMaxPoints(
+      nextQueue
+        .filter((item) => !item.isExtra)
+        .reduce((sum, item) => sum + answerPartCount(item.question), 0),
+    );
+    setRecentSelections(nextRecentSelections);
+    try {
+      window.localStorage.setItem(
+        "matematikk2py-recent-selections-v1",
+        JSON.stringify(nextRecentSelections),
+      );
+    } catch {
+      // Nivåbyttet virker fortsatt når lokal lagring er blokkert.
+    }
+  }
+
   function revealHint() {
     if (!currentQuestion || resolved || needsSolutionPath || hintIndex >= activeHints.length) return;
     setHintIndex((value) => value + 1);
@@ -387,7 +483,7 @@ export default function Home() {
 
   function insertRetryAfterGroup(question: Question) {
     if (!bank) return;
-    const retry = makeSessionItem(findRetryQuestion(bank, question), null, true);
+    const retry = makeSessionItem(findRetryQuestion(bank, question, selectedDifficulty), null, true);
     setQueue((items) => {
       const updated = [...items];
       const groupId = question.oppgavegruppe?.id;
@@ -577,6 +673,14 @@ export default function Home() {
             <h1>Velg et tema</h1>
             <p>Prøv selv først, og bruk forklaringene når du trenger dem.</p>
           </section>
+          <section className="difficulty-panel" aria-labelledby="difficulty-heading">
+            <div>
+              <p className="eyebrow">Eksamensrealistiske oppgaver</p>
+              <h2 id="difficulty-heading">Velg hvor krevende oppgavene skal være</h2>
+              <p>Alle oppgavene er laget for å ligne det du kan møte på eksamen. Nivået sier hvor mange steg, hvor krevende regningen er, og hvor mye du må oppdage selv.</p>
+            </div>
+            <DifficultySelector value={selectedDifficulty} onChange={changeDifficulty} />
+          </section>
           <section className="topic-grid" aria-label="Matematikktemaer">
             {availableThemes.map((theme) => (
               <button className="topic-card" key={theme.id} onClick={() => startSession("skill", theme.id)}>
@@ -604,9 +708,19 @@ export default function Home() {
             <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={baseCount} aria-valuenow={stats.baseSolved}><span style={{ width: `${progressPercent}%` }} /></div>
           </section>
 
+          {mode === "skill" && (
+            <section className="session-difficulty" aria-label="Velg nivå underveis">
+              <DifficultySelector value={selectedDifficulty} onChange={changeDifficulty} compact />
+              <p>Du beholder oppgaven du arbeider med. Valget gjelder fra neste oppgave.</p>
+            </section>
+          )}
+
           <section className="question-wrap">
             <div className="question-meta">
-              <span>{currentItem.isExtra ? "Samme ferdighet – prøv uten hint" : themeById.get(currentQuestion.tema)?.kortnavn}</span>
+              <span className="question-meta-primary">
+                <span>{currentItem.isExtra ? "Samme ferdighet – prøv uten hint" : themeById.get(currentQuestion.tema)?.kortnavn}</span>
+                <span className={`difficulty-badge difficulty-${currentQuestion.niva}`}>{difficultyLabel(currentQuestion.niva)}</span>
+              </span>
               <span>Del {selectedPart}{currentQuestion.oppgavegruppe ? ` · ${currentQuestion.oppgavegruppe.deloppgave})` : ""}</span>
             </div>
             {mode === "exam" && !currentItem.isExtra && <div className="exam-banner"><IconExam />Ett forsøk. Hint gir 0 poeng på denne oppgaven.</div>}

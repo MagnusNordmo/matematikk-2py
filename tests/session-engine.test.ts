@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import type { QuestionBank } from "../app/question-bank.ts";
-import { selectSessionQuestions } from "../app/session-engine.ts";
+import { findRetryQuestion, selectSessionQuestions } from "../app/session-engine.ts";
 
 const bank = JSON.parse(
   await readFile(new URL("../public/oppgaver-2027.json", import.meta.url), "utf8"),
@@ -52,5 +52,30 @@ test("temaøkt i Del 2 bruker hele case", () => {
   assert.ok(questions.every((question) => question.tema === "lineaere_funksjoner"));
   for (let index = 0; index < 8; index += 4) {
     assert.equal(new Set(questions.slice(index, index + 4).map((question) => question.oppgavegruppe?.id)).size, 1);
+  }
+});
+
+test("temaøkter kan avgrenses til lett, middels eller utfordrende", () => {
+  const partThemes = new Set(bank.oppgaver.map((question) => `${question.del}:${question.tema}`));
+
+  for (const partTheme of partThemes) {
+    const [partText, theme] = partTheme.split(":");
+    const part = Number(partText) as 1 | 2;
+    for (const level of [1, 2, 3] as const) {
+      const available = bank.oppgaver.filter(
+        (question) => question.del === part && question.tema === theme && question.niva === level,
+      );
+      const selected = selectSessionQuestions(bank, part, "skill", theme, new Set(), level);
+      assert.equal(selected.length, Math.min(10, available.length), `${partTheme} nivå ${level}`);
+      assert.ok(selected.every((question) => question.niva === level), `${partTheme} blander nivå ${level}`);
+    }
+  }
+});
+
+test("ekstra mestringsoppgave holder valgt nivå", () => {
+  for (const level of [1, 2, 3] as const) {
+    const question = bank.oppgaver.find((item) => item.del === 1 && item.tema === "prosent" && item.niva === level);
+    assert.ok(question);
+    assert.equal(findRetryQuestion(bank, question, level).niva, level);
   }
 });

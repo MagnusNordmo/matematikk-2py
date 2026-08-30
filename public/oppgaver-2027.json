@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.11"
+    "versjon": "2027.12"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -26,7 +26,7 @@
     "direkte_avskrift": false,
     "generator_seed": 20270823,
     "generert_dato": "2026-08-23",
-    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
+    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som lette, middels eller utfordrende i forhold til den aktuelle eksamensdelen. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
   },
   "eksamensprofil": {
     "mål": "Trene ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
@@ -59,7 +59,7 @@
     "hint": "Vis hint gradvis. Hint er læringsstøtte og skal være skjult ved første visning."
   },
   "nivaaer": {
-    "1": "grunnleggende",
+    "1": "lett",
     "2": "middels",
     "3": "utfordrende"
   },
@@ -70,9 +70,9 @@
       "2": 238
     },
     "fordeling_niva": {
-      "1": 88,
-      "2": 312,
-      "3": 100
+      "1": 138,
+      "2": 236,
+      "3": 126
     },
     "fordeling_tema": {
       "funksjoner_og_modeller": 95,
@@ -2506,7 +2506,7 @@
       "ferdighet": [
         "finne_prosent"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Et teater solgte \\(275\\) av \\(625\\) billetter på nett. Hvor mange prosent av billettene ble solgt på nett?",
       "hint": [
@@ -5021,7 +5021,7 @@
         "standardform",
         "produkt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Regn ut \\((3\\cdot10^{5}) \\cdot (2\\cdot10^{3})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
@@ -5077,7 +5077,7 @@
         "standardform",
         "kvotient"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Regn ut \\((8{,}4\\cdot10^{7}) \\div (2{,}1\\cdot10^{2})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
@@ -5133,7 +5133,7 @@
         "standardform",
         "produkt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Regn ut \\((6\\cdot10^{-4}) \\cdot (5\\cdot10^{6})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
@@ -5189,7 +5189,7 @@
         "standardform",
         "kvotient"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Regn ut \\((9{,}6\\cdot10^{-3}) \\div (3{,}2\\cdot10^{-5})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
@@ -5245,7 +5245,7 @@
         "standardform",
         "produkt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Regn ut \\((4{,}5\\cdot10^{8}) \\cdot (2\\cdot10^{-3})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
@@ -7744,7 +7744,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å pakke en forsendelse modelleres med \\(T(x)=240/x+5\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(8)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7798,7 +7798,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å rigge et arrangement modelleres med \\(T(x)=360/x+12\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(18)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7852,7 +7852,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å sortere en bunke skjemaer modelleres med \\(T(x)=150/x+4\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(10)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7906,7 +7906,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å kontrollere en vareleveranse modelleres med \\(T(x)=480/x+7\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(16)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7960,7 +7960,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for en varetelling modelleres med \\(T(x)=900/x+15\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(30)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -10008,7 +10008,7 @@
       "ferdighet": [
         "veid_gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
@@ -10078,7 +10078,7 @@
       "ferdighet": [
         "veid_gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
@@ -10148,7 +10148,7 @@
       "ferdighet": [
         "veid_gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
@@ -10218,7 +10218,7 @@
       "ferdighet": [
         "veid_gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
@@ -10288,7 +10288,7 @@
       "ferdighet": [
         "veid_gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet fra frekvenstabellen.",
       "hint": [
@@ -11514,7 +11514,7 @@
         "lose_to_modeller",
         "sammenligne_priser"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "To mobilabonnement har kostnadsmodellene \\(A(x)=120+4x\\) og \\(B(x)=60+7x\\). Her er \\(x\\) antall GB, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
@@ -11570,7 +11570,7 @@
         "lose_to_modeller",
         "sammenligne_priser"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "To trykkerier har kostnadsmodellene \\(A(x)=250+2x\\) og \\(B(x)=100+5x\\). Her er \\(x\\) antall plakater, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
@@ -11626,7 +11626,7 @@
         "lose_to_modeller",
         "sammenligne_priser"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "To bildelingstjenester har kostnadsmodellene \\(A(x)=80+6x\\) og \\(B(x)=200+3x\\). Her er \\(x\\) antall kjørte kilometer, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
@@ -11682,7 +11682,7 @@
         "lose_to_modeller",
         "sammenligne_priser"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "To ladeavtaler har kostnadsmodellene \\(A(x)=300+1{,}5x\\) og \\(B(x)=150+4x\\). Her er \\(x\\) antall kWh, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
@@ -11738,7 +11738,7 @@
         "lose_to_modeller",
         "sammenligne_priser"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "To vaskeritjenester har kostnadsmodellene \\(A(x)=95+8x\\) og \\(B(x)=215+5x\\). Her er \\(x\\) antall plagg, og kostnadene måles i kroner. Når koster tjenestene det samme, og hva er kostnaden da?",
       "hint": [
@@ -15598,7 +15598,7 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «Gjennomsnittet steg fra 50 til 55, derfor steg alle observasjonene.»",
       "hint": [
@@ -15641,7 +15641,7 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «Medianen er 12, derfor er minst halvparten av observasjonene minst 12.»",
       "hint": [
@@ -15683,7 +15683,7 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.»",
       "hint": [
@@ -15726,7 +15726,7 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.»",
       "hint": [
@@ -15768,7 +15768,7 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Velg den beste vurderingen av påstanden: «En graf med avkuttet y-akse kan få en liten forskjell til å se stor ut.»",
       "hint": [
@@ -18085,7 +18085,7 @@
       "ferdighet": [
         "vekstfaktor"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen etter den første prosentendringen.",
       "hint": [
@@ -18280,7 +18280,7 @@
       "ferdighet": [
         "vekstfaktor"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn medlemstallet etter den første prosentendringen.",
       "hint": [
@@ -18476,7 +18476,7 @@
       "ferdighet": [
         "vekstfaktor"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn energibruken etter den første prosentendringen.",
       "hint": [
@@ -18671,7 +18671,7 @@
       "ferdighet": [
         "vekstfaktor"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn omsetningen etter den første prosentendringen.",
       "hint": [
@@ -18866,7 +18866,7 @@
       "ferdighet": [
         "vekstfaktor"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn utslippet etter den første prosentendringen.",
       "hint": [
@@ -19061,7 +19061,7 @@
       "ferdighet": [
         "tolke_parametere"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per måned.",
       "hint": [
@@ -19261,7 +19261,7 @@
       "ferdighet": [
         "tolke_parametere"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per time.",
       "hint": [
@@ -19461,7 +19461,7 @@
       "ferdighet": [
         "tolke_parametere"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -19661,7 +19661,7 @@
       "ferdighet": [
         "tolke_parametere"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -19861,7 +19861,7 @@
       "ferdighet": [
         "tolke_parametere"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -20061,7 +20061,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=40\\) km.",
       "hint": [
@@ -20277,7 +20277,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=120\\) GB.",
       "hint": [
@@ -20493,7 +20493,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=8\\) besøk.",
       "hint": [
@@ -20709,7 +20709,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=5\\) døgn.",
       "hint": [
@@ -20925,7 +20925,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=100\\) kWh.",
       "hint": [
@@ -21141,7 +21141,7 @@
       "ferdighet": [
         "velge_regresjon"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
       "hint": [
@@ -21365,7 +21365,7 @@
       "ferdighet": [
         "velge_regresjon"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
       "hint": [
@@ -21593,7 +21593,7 @@
       "ferdighet": [
         "velge_regresjon"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
       "hint": [
@@ -21817,7 +21817,7 @@
       "ferdighet": [
         "velge_regresjon"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
       "hint": [
@@ -22052,7 +22052,7 @@
       "ferdighet": [
         "velge_regresjon"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
       "hint": [
@@ -22276,7 +22276,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
@@ -22481,7 +22481,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
@@ -22684,7 +22684,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
@@ -22888,7 +22888,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
@@ -23092,7 +23092,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn gjennomsnittet i gruppe A.",
       "hint": [
@@ -23297,7 +23297,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23506,7 +23506,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23715,7 +23715,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23924,7 +23924,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -24133,7 +24133,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -24342,7 +24342,7 @@
       "ferdighet": [
         "bestemme_konstant"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
@@ -24533,7 +24533,7 @@
       "ferdighet": [
         "bestemme_konstant"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
@@ -24724,7 +24724,7 @@
       "ferdighet": [
         "bestemme_konstant"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
@@ -24915,7 +24915,7 @@
       "ferdighet": [
         "bestemme_konstant"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
@@ -25106,7 +25106,7 @@
       "ferdighet": [
         "bestemme_konstant"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
@@ -25297,7 +25297,7 @@
       "ferdighet": [
         "finne_utskrift"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
@@ -25491,7 +25491,7 @@
       "ferdighet": [
         "finne_utskrift"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
@@ -25685,7 +25685,7 @@
       "ferdighet": [
         "finne_utskrift"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
@@ -25880,7 +25880,7 @@
       "ferdighet": [
         "finne_utskrift"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
@@ -26072,7 +26072,7 @@
       "ferdighet": [
         "finne_utskrift"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hva er den første numeriske utskriften fra programmet?",
       "hint": [
@@ -26271,7 +26271,7 @@
       "ferdighet": [
         "fortsette_monster"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange benker har figur 5?",
       "hint": [
@@ -26461,7 +26461,7 @@
       "ferdighet": [
         "fortsette_monster"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange fliser har figur 5?",
       "hint": [
@@ -26651,7 +26651,7 @@
       "ferdighet": [
         "fortsette_monster"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange stoler har figur 5?",
       "hint": [
@@ -26841,7 +26841,7 @@
       "ferdighet": [
         "fortsette_monster"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange prikker har figur 5?",
       "hint": [
@@ -27031,7 +27031,7 @@
       "ferdighet": [
         "fortsette_monster"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvor mange ruter har figur 5?",
       "hint": [
@@ -27221,7 +27221,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27427,7 +27427,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27633,7 +27633,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27839,7 +27839,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -28045,7 +28045,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [

@@ -394,6 +394,88 @@ input:focus-visible {
   line-height: 1.6;
 }
 
+.difficulty-panel {
+  display: grid;
+  margin: -8px 0 24px;
+  padding: 24px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(330px, 0.7fr);
+  align-items: center;
+  gap: 28px;
+  border: 1px solid #cbded8;
+  border-radius: 19px;
+  background: #f1f8f5;
+}
+
+.difficulty-panel .eyebrow {
+  margin-bottom: 8px;
+  font-size: 0.67rem;
+}
+
+.difficulty-panel h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.difficulty-panel p:last-child {
+  max-width: 610px;
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.difficulty-selector {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.difficulty-selector legend {
+  margin-bottom: 9px;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.difficulty-selector > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.difficulty-option {
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.difficulty-option:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.difficulty-option-selected {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: white;
+}
+
+.difficulty-option-selected:hover {
+  color: white;
+}
+
 .topic-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -475,6 +557,46 @@ input:focus-visible {
   margin: 18px auto 0;
 }
 
+.session-difficulty {
+  display: flex;
+  width: min(920px, calc(100% - 48px));
+  margin: 16px auto 0;
+  padding: 13px 15px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(255, 254, 250, 0.72);
+}
+
+.difficulty-selector-compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.difficulty-selector-compact legend {
+  float: left;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.difficulty-selector-compact .difficulty-option {
+  min-height: 34px;
+  padding: 6px 11px;
+  font-size: 0.72rem;
+}
+
+.session-difficulty > p {
+  max-width: 280px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.71rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
 .progress-copy {
   display: flex;
   margin-bottom: 11px;
@@ -526,6 +648,36 @@ input:focus-visible {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.question-meta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.difficulty-badge {
+  display: inline-flex;
+  padding: 5px 8px;
+  align-items: center;
+  border-radius: 999px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.difficulty-1 {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.difficulty-2 {
+  background: #f4eee0;
+  color: #755c25;
+}
+
+.difficulty-3 {
+  background: var(--wrong-soft);
+  color: #8f3531;
 }
 
 .exam-banner {
@@ -1519,6 +1671,22 @@ input:focus-visible {
     margin-top: 28px;
   }
 
+  .difficulty-panel {
+    margin-top: -4px;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .difficulty-selector > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .difficulty-option {
+    width: 100%;
+  }
+
   .topic-card {
     min-height: 105px;
     padding: 17px;
@@ -1532,6 +1700,27 @@ input:focus-visible {
 
   .session-status {
     margin-top: 20px;
+  }
+
+  .session-difficulty {
+    width: min(100% - 30px, 100%);
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .difficulty-selector-compact {
+    display: block;
+  }
+
+  .difficulty-selector-compact legend {
+    float: none;
+    margin-bottom: 8px;
+  }
+
+  .session-difficulty > p {
+    max-width: none;
+    text-align: left;
   }
 
   .progress-copy {
