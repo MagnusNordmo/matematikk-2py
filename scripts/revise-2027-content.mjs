@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { calibrateDifficulty } from "./calibrate-difficulty.mjs";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const bankPath = join(scriptDir, "..", "public", "oppgaver-2027.json");
@@ -3310,47 +3311,9 @@ for (const [id, config] of Object.entries(percentageSolutionPaths).filter(([id])
   });
 }
 
-// Nivåene vurderes i forhold til den aktuelle eksamensdelen. Lett betyr en
-// direkte anvendelse eller avlesning, middels krever flere sammenhengende steg,
-// og utfordrende krever at eleven velger strategi, kombinerer ideer eller gjør
-// en mer selvstendig vurdering. Familiene under er øvre nivå i hvert Del 1-tema.
-const challengingDelOneFamilies = new Set([
-  "d1-standardform-regning",
-  "d1-kvadratisk-figurmonster",
-  "d1-omvendt-fast-ledd",
-  "d1-veid-gjennomsnitt",
-  "d1-lineaert-skjaeringspunkt",
-  "d1-kode-terskel",
-  "d1-kritisk-statistikk",
-]);
-
-for (const question of bank.oppgaver) {
-  if (question.del === 1 && challengingDelOneFamilies.has(question.variantfamilie)) {
-    question.niva = 3;
-  }
-  // Denne oppgaven krever at eleven oppdager en lite åpenbar oppdeling eller
-  // felles faktor i 275 av 625, og er derfor utfordrende uten kalkulator.
-  if (question.id === "2py27-010") question.niva = 3;
-
-  // Første deloppgave i et Del 2-case er en direkte inngang til verktøyet,
-  // modellen eller datasettet. Senere deler beholder middels/utfordrende nivå.
-  if (question.del === 2 && question.oppgavegruppe?.rekkefolge === 1) {
-    question.niva = 1;
-  }
-
-  if (![1, 2, 3].includes(question.niva)) {
-    throw new Error(`${question.id} mangler gyldig nivåmerking.`);
-  }
-}
-
-bank.nivaaer = {
-  "1": "lett",
-  "2": "middels",
-  "3": "utfordrende",
-};
-bank.statistikk.fordeling_niva = Object.fromEntries(
-  [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
-);
+// Den felles kalibreringen vurderer alle 500 oppgaver og sørger for at senere
+// innholds- og hintrevisjoner ikke kan gjeninnføre den gamle nivåfordelingen.
+calibrateDifficulty(bank);
 
 // Rydd også i eldre, statiske tekster og kontrollverdier. Dette fjerner både
 // binær flyttallsstøy og meningsløse slutt-null­er, men beholder små tall som
@@ -3442,8 +3405,8 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.12";
-bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som lette, middels eller utfordrende i forhold til den aktuelle eksamensdelen. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
+bank.samling.versjon = "2027.13";
+bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
 console.log(`Reviderte ${revisedIds.size} oppgaver til worked examples i ${bank.oppgaver.length}-oppgavebanken.`);

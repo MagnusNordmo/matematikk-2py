@@ -55,7 +55,7 @@ test("temaøkt i Del 2 bruker hele case", () => {
   }
 });
 
-test("temaøkter kan avgrenses til lett, middels eller utfordrende", () => {
+test("temaøkter kan avgrenses til mild, middels eller utfordrende", () => {
   const partThemes = new Set(bank.oppgaver.map((question) => `${question.del}:${question.tema}`));
 
   for (const partTheme of partThemes) {

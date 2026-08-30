@@ -35,7 +35,7 @@ test("fordelingen mellom deler og svarformater er bevart", () => {
 
 test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   assert.deepEqual(bank.nivaaer, {
-    "1": "lett",
+    "1": "mild",
     "2": "middels",
     "3": "utfordrende",
   });
@@ -43,7 +43,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 138, "2": 236, "3": 126 });
+  assert.deepEqual(distribution, { "1": 103, "2": 266, "3": 131 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {
@@ -184,8 +184,8 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
   assert.match(quarterQuestion.hint.join(" "), /360\/4=90/u);
   assert.doesNotMatch(quarterQuestion.svar, /0\{,\}25/u);
 
-  assert.match(byId("2py27-001").hint.join(" "), /10 % og 5 %/u);
-  assert.match(byId("2py27-004").hint.join(" "), /12,5 % er en åttedel/u);
+  assert.match(byId("2py27-001").hint.join(" "), /10 % betyr én av ti/u);
+  assert.match(byId("2py27-004").hint.join(" "), /25 % er det samme som en firedel/u);
   assert.match(byId("2py27-128").hint.join(" "), /balansering rundt/u);
   assert.match(byId("2py27-213").hint.join(" "), /Grupper til to like summer/u);
   assert.match(byId("2py27-043").hint.join(" "), /\(-3\)\^2=9/u);
@@ -199,7 +199,7 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
     question.del === 1 && numericTypes.has(question.fasit.type));
 
   const shortenedFractions = numericDel1.filter((question) => /Forkort/u.test(question.hint.join(" ")));
-  assert.equal(shortenedFractions.length, 19);
+  assert.equal(shortenedFractions.length, 17);
   for (const question of shortenedFractions) {
     const hints = question.hint.join(" ");
     assert.match(hints, /tallet over brøkstreken/u, `${question.id} forklarer ikke telleren`);
@@ -286,12 +286,12 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.12");
+  assert.equal(bank.samling.versjon, "2027.13");
   assert.equal(percentQuestions.length, 42);
-  assert.equal(withPaths.length, 8);
+  assert.equal(withPaths.length, 7);
   assert.deepEqual(
     withPaths.map((question) => question.id),
-    ["2py27-002", "2py27-006", "2py27-009", "2py27-010", "2py27-012", "2py27-026", "2py27-027", "2py27-038"],
+    ["2py27-002", "2py27-009", "2py27-010", "2py27-012", "2py27-026", "2py27-027", "2py27-038"],
   );
 
   for (const question of withPaths) {
@@ -472,7 +472,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.12");
+  assert.equal(bank.samling.versjon, "2027.13");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

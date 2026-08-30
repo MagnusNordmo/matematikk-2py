@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.12"
+    "versjon": "2027.13"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -26,7 +26,7 @@
     "direkte_avskrift": false,
     "generator_seed": 20270823,
     "generert_dato": "2026-08-23",
-    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som lette, middels eller utfordrende i forhold til den aktuelle eksamensdelen. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
+    "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene er revidert til konkrete, gradvise worked examples med forståelse, enkle hoderegningsstrategier når tallene inviterer til det, utførte mellomregninger, konklusjon og kontroll med oppgavens egne tall. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk. Alle oppgaver er vurdert på nytt etter en streng nivåregel: Mild betyr en direkte avlesning, gjenkjenning eller kort beregning med vennlige tall; middels krever flere sammenhengende steg; utfordrende krever strategivalg, kombinasjon av ideer eller selvstendig vurdering."
   },
   "eksamensprofil": {
     "mål": "Trene ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
@@ -59,7 +59,7 @@
     "hint": "Vis hint gradvis. Hint er læringsstøtte og skal være skjult ved første visning."
   },
   "nivaaer": {
-    "1": "lett",
+    "1": "mild",
     "2": "middels",
     "3": "utfordrende"
   },
@@ -70,9 +70,9 @@
       "2": 238
     },
     "fordeling_niva": {
-      "1": 138,
-      "2": 236,
-      "3": 126
+      "1": 103,
+      "2": 266,
+      "3": 131
     },
     "fordeling_tema": {
       "funksjoner_og_modeller": 95,
@@ -2021,22 +2021,21 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "På en aktivitetsdag deltar \\(240\\) elever. \\(15\\,\\%\\) av elevene velger klatring. Hvor mange elever velger klatring?",
+      "sporsmal": "På en aktivitetsdag deltar \\(240\\) elever. \\(10\\,\\%\\) av elevene velger klatring. Hvor mange elever velger klatring?",
       "hint": [
-        "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(15\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-        "Velg en enkel regnevei: Du trenger ikke gange med et desimaltall. Del 15 % i 10 % og 5 %, der 5 % er halvparten av 10 %.",
-        "Lag en plan: Finn først 10 %: \\(240/10=24\\).",
-        "Gjør første del: Fem prosent er halvparten av 10 %: \\(24/2=12\\).",
-        "Gjør neste del: Legg sammen delene: \\(24+12=36\\). Dermed er 15 % av 240 lik 36.",
-        "Svar på spørsmålet: Siden 15 % er 10 % og 5 %, får vi \\(240/10+(240/10)/2=24+12=36\\). Det er \\(36\\) elever som velger klatring.",
-        "Sjekk svaret: \\(36/240\\cdot100\\,\\%=15\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
+        "Hva vet vi? Hele gruppen er 240 elever, og vi skal finne 10 % av denne gruppen.",
+        "Velg en enkel regnevei: 10 % betyr én av ti like store deler, så vi kan dele hele tallet på 10.",
+        "Lag en plan: Skriv regnestykket som \\(240/10\\). Da flyttes vi direkte fra 100 % til 10 %.",
+        "Gjør regningen: \\(240/10=24\\). Én tidel av 240 elever er derfor 24 elever.",
+        "Svar på spørsmålet: \\(10\\,\\%\\) av \\(240\\) er \\(24\\), så 24 elever velger klatring.",
+        "Sjekk svaret: Ti grupper med 24 elever gir \\(10\\cdot24=240\\). Dermed er 24 akkurat 10 % av hele gruppen."
       ],
-      "svar": "Siden 15 % er 10 % og 5 %, får vi \\(240/10+(240/10)/2=24+12=36\\). Det er \\(36\\) elever som velger klatring.",
+      "svar": "Ti prosent er en tidel: \\(240/10=24\\). Det er \\(24\\) elever som velger klatring.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 36,
+            "verdi": 24,
             "enhet": "elever",
             "toleranse": 0
           }
@@ -2047,10 +2046,10 @@
         "metode": "percent_of",
         "inndata": {
           "total": 240,
-          "prosent": 15
+          "prosent": 10
         },
         "resultat": [
-          36
+          24
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
@@ -2138,22 +2137,21 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "En arbeidsplass har \\(450\\) ansatte. \\(32\\,\\%\\) sykler til jobb. Hvor mange ansatte sykler til jobb?",
+      "sporsmal": "En arbeidsplass har \\(200\\) ansatte. \\(30\\,\\%\\) sykler til jobb. Hvor mange ansatte sykler til jobb?",
       "hint": [
-        "Hva vet vi? \\(450\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(32\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-        "Velg en enkel regnevei: Du kan unngå tung desimalregning ved å dele 32 % i 30 % og 2 %.",
-        "Lag en plan: Finn 30 % som tre 10 %-deler: \\(450/10=45\\) og \\(3\\cdot45=135\\).",
-        "Gjør første del: Finn 2 % som to 1 %-deler: \\(450/100=4{,}5\\) og \\(2\\cdot4{,}5=9\\).",
-        "Gjør neste del: Legg sammen 30 % og 2 %: \\(135+9=144\\).",
-        "Svar på spørsmålet: Del 32 % i 30 % og 2 %: \\(135+9=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
-        "Sjekk svaret: \\(144/450\\cdot100\\,\\%=32\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
+        "Hva vet vi? 200 ansatte er hele gruppen, og vi skal finne den delen som svarer til 30 %.",
+        "Velg en enkel regnevei: Finn først 10 %. Tre slike deler blir 30 %, så tallene holder seg små.",
+        "Lag en plan: Del 200 på 10 for å finne 10 %, og gang deretter dette svaret med 3.",
+        "Gjør regningen: \\(200/10=20\\), og deretter \\(3\\cdot20=60\\).",
+        "Svar på spørsmålet: \\(30\\,\\%\\) av \\(200\\) er \\(60\\), så 60 ansatte sykler til jobb.",
+        "Sjekk svaret: \\(60/200=0{,}3=30\\,\\%\\). Andelen stemmer med opplysningen i oppgaven."
       ],
-      "svar": "Del 32 % i 30 % og 2 %: \\(135+9=144\\). Det er \\(144\\) ansatte som sykler til jobb.",
+      "svar": "Ti prosent av 200 er 20. Da er \\(30\\,\\%=3\\cdot10\\,\\%\\), så \\(3\\cdot20=60\\) ansatte sykler til jobb.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 144,
+            "verdi": 60,
             "enhet": "ansatte",
             "toleranse": 0
           }
@@ -2163,11 +2161,11 @@
         "operasjon": "beregning",
         "metode": "percent_of",
         "inndata": {
-          "total": 450,
-          "prosent": 32
+          "total": 200,
+          "prosent": 30
         },
         "resultat": [
-          144
+          60
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
@@ -2182,22 +2180,21 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Et idrettslag har \\(640\\) medlemmer. \\(12{,}5\\,\\%\\) av medlemmene er trenere. Hvor mange trenere har idrettslaget?",
+      "sporsmal": "Et idrettslag har \\(160\\) medlemmer. \\(25\\,\\%\\) av medlemmene er trenere. Hvor mange trenere har idrettslaget?",
       "hint": [
-        "Hva vet vi? \\(640\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(12{,}5\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-        "Velg en enkel regnevei: Dette kan gjøres i hodet: 12,5 % er en åttedel. Del 640 i åtte like deler.",
-        "Lag en plan: Tenk på 640 medlemmer som åtte like store deler.",
-        "Gjør første del: Finn størrelsen på én del: \\(640/8=80\\).",
-        "Gjør neste del: Én av åtte like deler er 12,5 %, så det er 80 trenere.",
-        "Svar på spørsmålet: Siden 12,5 % er en åttedel, får vi \\(640/8=80\\). Idrettslaget har \\(80\\) trenere.",
-        "Sjekk svaret: \\(80/640\\cdot100\\,\\%=12{,}5\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
+        "Hva vet vi? 160 medlemmer er hele gruppen, og vi skal finne den delen som er 25 %.",
+        "Velg en enkel regnevei: 25 % er det samme som en firedel. Derfor kan vi dele medlemstallet på 4.",
+        "Lag en plan: Tenk at de 160 medlemmene deles i fire like store grupper.",
+        "Gjør regningen: \\(160/4=40\\). Hver firedel inneholder 40 medlemmer.",
+        "Svar på spørsmålet: \\(25\\,\\%\\) av \\(160\\) er \\(40\\), så laget har 40 trenere.",
+        "Sjekk svaret: Fire like grupper med 40 medlemmer gir \\(4\\cdot40=160\\). Én gruppe er derfor 25 %."
       ],
-      "svar": "Siden 12,5 % er en åttedel, får vi \\(640/8=80\\). Idrettslaget har \\(80\\) trenere.",
+      "svar": "Siden 25 % er en firedel, får vi \\(160/4=40\\). Idrettslaget har \\(40\\) trenere.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 80,
+            "verdi": 40,
             "enhet": "trenere",
             "toleranse": 0
           }
@@ -2207,11 +2204,11 @@
         "operasjon": "beregning",
         "metode": "percent_of",
         "inndata": {
-          "total": 640,
-          "prosent": 12.5
+          "total": 160,
+          "prosent": 25
         },
         "resultat": [
-          80
+          40
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
@@ -2226,22 +2223,21 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "I en spørreundersøkelse kom det inn \\(875\\) svar. \\(8\\,\\%\\) svarte «vet ikke». Hvor mange svarte «vet ikke»?",
+      "sporsmal": "I en spørreundersøkelse kom det inn \\(350\\) svar. \\(10\\,\\%\\) svarte «vet ikke». Hvor mange svarte «vet ikke»?",
       "hint": [
-        "Hva vet vi? \\(875\\) er hele mengden, altså \\(100\\,\\%\\). Vi kjenner prosentdelen \\(8\\,\\%\\), og skal finne hvor mange den delen inneholder.",
-        "Velg en enkel regnevei: Se etter et rundt mellomresultat: \\(875\\cdot8=7\\,000\\), som er lett å dele på 100.",
-        "Lag en plan: Gang først med 8 ved å dele opp 875: \\(8\\cdot875=8\\cdot800+8\\cdot75=6\\,400+600=7\\,000\\).",
-        "Gjør første del: Åtte prosent betyr 8 per 100, så del deretter på 100: \\(7\\,000/100=70\\).",
-        "Gjør neste del: Dermed er 8 % av 875 lik 70.",
-        "Svar på spørsmålet: \\(875\\cdot8/100=7\\,000/100=70\\). Det var \\(70\\) slike svar.",
-        "Sjekk svaret: \\(70/875\\cdot100\\,\\%=8\\,\\%\\). Andelen blir den oppgitte prosenten av totalen."
+        "Hva vet vi? 350 er hele antallet svar, og vi skal finne 10 % av svarene.",
+        "Velg en enkel regnevei: 10 % betyr en tidel, så vi trenger bare å dele 350 på 10.",
+        "Lag en plan: Skriv regnestykket \\(350/10\\). Dette går direkte fra 100 % til 10 %.",
+        "Gjør regningen: \\(350/10=35\\). En tidel av alle svarene er 35 svar.",
+        "Svar på spørsmålet: \\(10\\,\\%\\) av \\(350\\) er \\(35\\). Det var 35 «vet ikke»-svar.",
+        "Sjekk svaret: \\(10\\cdot35=350\\). Ti like deler på 35 svar gir hele undersøkelsen."
       ],
-      "svar": "\\(875\\cdot8/100=7\\,000/100=70\\). Det var \\(70\\) slike svar.",
+      "svar": "Ti prosent er en tidel: \\(350/10=35\\). Det var \\(35\\) slike svar.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 70,
+            "verdi": 35,
             "enhet": "svar",
             "toleranse": 0
           }
@@ -2251,11 +2247,11 @@
         "operasjon": "beregning",
         "metode": "percent_of",
         "inndata": {
-          "total": 875,
-          "prosent": 8
+          "total": 350,
+          "prosent": 10
         },
         "resultat": [
-          70
+          35
         ]
       },
       "variantfamilie": "d1-prosent-av-tall",
@@ -2270,24 +2266,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "På en skole reiser \\(18\\) av \\(80\\) elever med tog. Hvor mange prosent av elevene reiser med tog?",
+      "sporsmal": "På en skole reiser \\(20\\) av \\(100\\) elever med tog. Hvor mange prosent av elevene reiser med tog?",
       "hint": [
-        "Hva vet vi? \\(80\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(18\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-        "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Lag en plan: Skriv delen over totalen: \\(\\frac{18}{80}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-        "Gjør første del: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\).",
-        "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{9}{40}\\cdot100\\,\\%=22{,}5\\,\\%\\).",
-        "Svar på spørsmålet: Andelen er \\(22{,}5\\,\\%\\).",
-        "Sjekk svaret: \\(80\\cdot0{,}225=18\\). Vi får tilbake den oppgitte delen."
+        "Hva vet vi? Hele gruppen er 100 elever, og 20 av dem reiser med tog.",
+        "Velg en enkel regnevei: Prosent betyr «av hundre». Her er totalen allerede 100, så vi kan lese prosenten direkte.",
+        "Lag en plan: Skriv andelen som \\(20/100\\) og sammenlign med definisjonen av prosent.",
+        "Gjør regningen: \\(20/100=0{,}2\\), og \\(0{,}2\\cdot100\\,\\%=20\\,\\%\\).",
+        "Svar på spørsmålet: \\(20\\) av \\(100\\) elever er \\(20\\,\\%\\).",
+        "Sjekk svaret: \\(20\\,\\%\\) av 100 er \\(0{,}2\\cdot100=20\\) elever, som er den oppgitte delen."
       ],
-      "svar": "Andelen er \\(22{,}5\\,\\%\\).",
+      "svar": "Når hele gruppen er 100, viser antallet delen direkte i prosent. Derfor er andelen \\(20\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 22.5,
+            "verdi": 20,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0
           }
         ]
       },
@@ -2295,45 +2290,17 @@
         "operasjon": "beregning",
         "metode": "part_as_percent",
         "inndata": {
-          "del": 18,
-          "hel": 80
+          "del": 20,
+          "hel": 80,
+          "total": 100
         },
         "resultat": [
-          22.5
+          20
         ],
         "avrunding": 1
       },
       "variantfamilie": "d1-finne-prosent",
-      "id": "2py27-006",
-      "losningsveier": [
-        {
-          "id": "forkort-brok",
-          "navn": "Forkort brøken",
-          "forklaring": "Skriv delen over helheten og gjør brøken enklere.",
-          "hint": [
-            "Hva vet vi? \\(80\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(18\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-            "Lag en plan: Skriv delen over totalen: \\(\\frac{18}{80}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-            "Gjør første del: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(2\\): \\(\\frac{18\\div2}{80\\div2}=\\frac{9}{40}\\).",
-            "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{9}{40}\\cdot100\\,\\%=22{,}5\\,\\%\\).",
-            "Svar på spørsmålet: Andelen er \\(22{,}5\\,\\%\\).",
-            "Sjekk svaret: \\(80\\cdot0{,}225=18\\). Vi får tilbake den oppgitte delen."
-          ]
-        },
-        {
-          "id": "skalering",
-          "navn": "Skaler helheten til 100",
-          "forklaring": "Gjør 80 om til 100 og gjør nøyaktig det samme med 18.",
-          "hint": [
-            "Hva vet vi? \\(80\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(18\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg denne veien: Fra 80 til 100 legger vi til en firedel av 80.",
-            "Lag en plan: Gjør det samme med delen: En firedel av 18 er \\(18/4=4{,}5\\).",
-            "Gjør første del: Legg til firedelen: \\(18+4{,}5=22{,}5\\). Når helheten er 100, er delen 22,5, altså 22,5 %.",
-            "Svar på spørsmålet: Andelen er \\(22{,}5\\,\\%\\).",
-            "Sjekk svaret: \\(80\\cdot0{,}225=18\\). Vi får tilbake den oppgitte delen."
-          ]
-        }
-      ]
+      "id": "2py27-006"
     },
     {
       "del": 1,
@@ -2344,24 +2311,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "I en kantine velger \\(35\\) av \\(125\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",
+      "sporsmal": "I en kantine velger \\(25\\) av \\(100\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",
       "hint": [
-        "Hva vet vi? \\(125\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(35\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-        "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Lag en plan: Skriv delen over totalen: \\(\\frac{35}{125}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-        "Gjør første del: Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(5\\): \\(\\frac{35\\div5}{125\\div5}=\\frac{7}{25}\\).",
-        "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{7}{25}\\cdot100\\,\\%=28\\,\\%\\).",
-        "Svar på spørsmålet: Andelen er \\(28\\,\\%\\).",
-        "Sjekk svaret: \\(125\\cdot0{,}28=35\\). Vi får tilbake den oppgitte delen."
+        "Hva vet vi? Hele gruppen er 100 kunder, og 25 av dem velger vegetarretten.",
+        "Velg en enkel regnevei: Prosent betyr «av hundre». Totalen er allerede 100, så antallet kan leses direkte som prosent.",
+        "Lag en plan: Skriv andelen som \\(25/100\\) og gjør brøken om til prosent.",
+        "Gjør regningen: \\(25/100=0{,}25\\), og \\(0{,}25\\cdot100\\,\\%=25\\,\\%\\).",
+        "Svar på spørsmålet: \\(25\\) av \\(100\\) kunder er \\(25\\,\\%\\).",
+        "Sjekk svaret: \\(25\\,\\%\\) av 100 er \\(0{,}25\\cdot100=25\\) kunder, som stemmer med oppgaven."
       ],
-      "svar": "Andelen er \\(28\\,\\%\\).",
+      "svar": "Når hele gruppen er 100, er 25 av kundene det samme som \\(25\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 28,
+            "verdi": 25,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0
           }
         ]
       },
@@ -2369,11 +2335,12 @@
         "operasjon": "beregning",
         "metode": "part_as_percent",
         "inndata": {
-          "del": 35,
-          "hel": 125
+          "del": 25,
+          "hel": 125,
+          "total": 100
         },
         "resultat": [
-          28
+          25
         ],
         "avrunding": 1
       },
@@ -2582,22 +2549,21 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "\\(48\\) frivillige utgjør \\(12\\,\\%\\) av alle som deltar på en festival. Hvor mange deltakere er det totalt?",
+      "sporsmal": "\\(20\\) frivillige utgjør \\(10\\,\\%\\) av alle som deltar på en festival. Hvor mange deltakere er det totalt?",
       "hint": [
-        "Hva vet vi? Vi vet at \\(48\\) tilsvarer \\(12\\,\\%\\). Det vi mangler, er hele mengden, altså \\(100\\,\\%\\).",
-        "Velg en enkel regnevei: Tallene passer godt til prosent via 1 %: del 48 og 12 med 12, så ser du direkte at 1 % er 4.",
-        "Lag en plan: 12 % tilsvarer \\(48\\). Del begge tallene på 3, slik at 4 % tilsvarer \\(16\\).",
-        "Gjør første del: Del én gang til på 4: 1 % tilsvarer \\(4\\).",
-        "Gjør neste del: Gang med 100: \\(4\\cdot100=400\\). Hele gruppen har 400 personer.",
-        "Svar på spørsmålet: Det er \\(400\\) deltakere på festivalen.",
-        "Sjekk svaret: \\(400\\cdot0{,}12=48\\). Den beregnede helheten gir riktig del."
+        "Hva vet vi? 20 frivillige tilsvarer 10 %, og vi skal finne hele gruppen på 100 %.",
+        "Velg en enkel regnevei: Fra 10 % til 100 % ganger vi med 10. Det samme må vi gjøre med antallet personer.",
+        "Lag en plan: Skriv en enkel prosentstripe: 10 % er 20 personer, mens 100 % er ti slike deler.",
+        "Gjør regningen: \\(20\\cdot10=200\\). Hele gruppen består av ti grupper med 20 personer.",
+        "Svar på spørsmålet: Det er \\(200\\) deltakere på festivalen.",
+        "Sjekk svaret: \\(10\\,\\%\\) av \\(200\\) er \\(200/10=20\\), som er antallet oppgaven ga."
       ],
-      "svar": "Det er \\(400\\) deltakere på festivalen.",
+      "svar": "Ti prosent er en tidel av hele gruppen. Derfor er hele gruppen \\(10\\cdot20=200\\) personer.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 400,
+            "verdi": 200,
             "enhet": "deltakere",
             "toleranse": 0
           }
@@ -2607,11 +2573,11 @@
         "operasjon": "beregning",
         "metode": "whole_from_part",
         "inndata": {
-          "del": 48,
-          "prosent": 12
+          "del": 20,
+          "prosent": 10
         },
         "resultat": [
-          400
+          200
         ]
       },
       "variantfamilie": "d1-finne-helhet",
@@ -3484,7 +3450,7 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "En årsavgift ble økt med \\(20\\,\\%\\) til \\(816\\) kr. Hva var årsavgiften før økningen?",
       "hint": [
@@ -3529,7 +3495,7 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "En jakke ble satt ned med \\(10\\,\\%\\) og kostet da \\(630\\) kr. Hva kostet jakken før rabatten?",
       "hint": [
@@ -3574,7 +3540,7 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Prisen på en sykkel ble økt med \\(25\\,\\%\\) til \\(1\\,500\\) kr. Hva kostet sykkelen før prisøkningen?",
       "hint": [
@@ -3619,7 +3585,7 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Et årskort ble satt ned med \\(5\\,\\%\\) og kostet da \\(760\\) kr. Hva kostet årskortet før rabatten?",
       "hint": [
@@ -3664,7 +3630,7 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 2,
+      "niva": 3,
       "hjelpemidler": "uten",
       "sporsmal": "Medlemstallet i en organisasjon økte med \\(50\\,\\%\\) til \\(1\\,950\\). Hvor mange medlemmer hadde organisasjonen før økningen?",
       "hint": [
@@ -4810,7 +4776,7 @@
       "ferdighet": [
         "standardform"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser \\(0{,}000072\\) på standardform?",
       "hint": [
@@ -4852,7 +4818,7 @@
       "ferdighet": [
         "standardform"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser tallet \\(4{,}85\\cdot10^6\\) som vanlig tall?",
       "hint": [
@@ -4894,7 +4860,7 @@
       "ferdighet": [
         "standardform"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser \\(0{,}0314\\) på standardform?",
       "hint": [
@@ -4936,7 +4902,7 @@
       "ferdighet": [
         "standardform"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser tallet \\(9{,}2\\cdot10^{10}\\) som vanlig tall?",
       "hint": [
@@ -4978,7 +4944,7 @@
       "ferdighet": [
         "standardform"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket alternativ viser \\(0{,}000000605\\) på standardform?",
       "hint": [
@@ -5542,24 +5508,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Reiseutgiften er gitt ved \\(K=420+3{,}8x\\), der \\(x\\) er antall kilometer. Finn \\(K\\) når \\(x=75\\).",
+      "sporsmal": "Reiseutgiften er gitt ved \\(K=100+5x\\), der \\(x\\) er antall kilometer. Finn \\(K\\) når \\(x=20\\).",
       "hint": [
-        "Hva vet vi? Formelen er \\(K=420+3{,}8x\\), og \\(x=75\\) kilometer er kjent. Vi skal finne K, altså reiseutgiften, ved å erstatte x med 75.",
-        "Velg en enkel regnevei: Gjør 3,8 om til \\(4-0{,}2\\): \\(75\\cdot4-75\\cdot0{,}2=300-15=285\\).",
-        "Lag en plan: Erstatt \\(x\\) med 75 i formelen. Da får du \\(K=420+3{,}8\\cdot75\\).",
-        "Gjør første del: Regn multiplikasjonen først: \\(3{,}8\\cdot75=285\\).",
-        "Gjør neste del: Legg deretter 285 til fastbeløpet 420.",
-        "Svar på spørsmålet: \\(K=420+3{,}8\\cdot75=420+285=705\\) kr.",
-        "Sjekk svaret: \\(705-420=285=3{,}8\\cdot75\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
+        "Hva vet vi? Formelen er \\(K=100+5x\\), og \\(x=20\\). Vi skal finne K ved å sette 20 inn for x.",
+        "Velg en enkel regnevei: Erstatt bokstaven med tallet først. Deretter følger vi regnerekkefølgen ett trinn om gangen.",
+        "Lag en plan: Sett inn 20: \\(K=100+5\\cdot20\\). Regn multiplikasjonen før addisjonen.",
+        "Gjør regningen: \\(5\\cdot20=100\\), og deretter \\(100+100=200\\).",
+        "Svar på spørsmålet: \\(K=100+5\\cdot20=100+100=200\\) kr.",
+        "Sjekk svaret: \\(200-100=100=5\\cdot20\\). Den variable delen stemmer med formelen."
       ],
-      "svar": "\\(K=420+3{,}8\\cdot75=420+285=705\\) kr.",
+      "svar": "\\(K=100+5\\cdot20=100+100=200\\) kr.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 705,
+            "verdi": 200,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -5570,7 +5535,7 @@
           "prompt_id": 0
         },
         "resultat": [
-          705
+          200
         ]
       },
       "variantfamilie": "d1-formel-innsetting",
@@ -5585,24 +5550,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Energien er gitt ved \\(E=0{,}5mv^2\\). Finn \\(E\\) når \\(m=12\\) kg og \\(v=5\\) m/s.",
+      "sporsmal": "Strekningen er gitt ved \\(s=vt\\), der \\(v\\) er farten og \\(t\\) er tiden. Finn \\(s\\) når \\(v=4\\) m/s og \\(t=3\\) s.",
       "hint": [
-        "Hva vet vi? Formelen er \\(E=0{,}5mv^2\\). Vi kjenner \\(m=12\\) og \\(v=5\\), og skal finne energien E ved å sette begge tallene inn på riktig plass.",
-        "Velg en enkel regnevei: Halver 12 før du ganger: \\(0{,}5\\cdot12=6\\). Da gjenstår bare \\(6\\cdot25=150\\).",
-        "Lag en plan: Erstatt \\(m\\) med 12 og \\(v\\) med 5: \\(E=0{,}5\\cdot12\\cdot5^2\\).",
-        "Gjør første del: Regn potensen først: \\(5^2=25\\).",
-        "Gjør neste del: Regn deretter \\(0{,}5\\cdot12\\cdot25\\).",
-        "Svar på spørsmålet: \\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\) J.",
-        "Sjekk svaret: \\(150/25=6=0{,}5\\cdot12\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
+        "Hva vet vi? Formelen er \\(s=vt\\), med \\(v=4\\) og \\(t=3\\). Begge tallene skal settes inn.",
+        "Velg en enkel regnevei: Erstatt bokstaven med tallet først. Deretter følger vi regnerekkefølgen ett trinn om gangen.",
+        "Lag en plan: Sett inn verdiene: \\(s=4\\cdot3\\). Nå gjenstår én multiplikasjon.",
+        "Gjør regningen: \\(4\\cdot3=12\\). Strekningen er derfor 12 meter.",
+        "Svar på spørsmålet: \\(s=4\\cdot3=12\\) m.",
+        "Sjekk svaret: \\(12/3=4\\). Når strekningen deles på tiden, får vi den oppgitte farten tilbake."
       ],
-      "svar": "\\(E=0{,}5\\cdot12\\cdot5^2=0{,}5\\cdot12\\cdot25=150\\) J.",
+      "svar": "\\(s=4\\cdot3=12\\) m.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 150,
-            "enhet": "J",
-            "toleranse": 0.01
+            "verdi": 12,
+            "enhet": "m",
+            "toleranse": 0
           }
         ]
       },
@@ -5613,7 +5577,7 @@
           "prompt_id": 1
         },
         "resultat": [
-          150
+          12
         ]
       },
       "variantfamilie": "d1-formel-innsetting",
@@ -5628,24 +5592,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Arealet av et trapes er \\(A=(a+b)h/2\\). Finn \\(A\\) når \\(a=8\\), \\(b=14\\) og \\(h=6\\).",
+      "sporsmal": "Arealet av et rektangel er \\(A=lb\\). Finn \\(A\\) når lengden er \\(l=5\\) m og bredden er \\(b=4\\) m.",
       "hint": [
-        "Hva vet vi? Formelen er \\(A=(a+b)h/2\\). Vi kjenner \\(a=8\\), \\(b=14\\) og \\(h=6\\), og skal finne arealet A.",
-        "Velg en enkel regnevei: Halver før du ganger: \\(6/2=3\\), slik at \\(22\\cdot3=66\\).",
-        "Lag en plan: Sett inn alle tre verdiene: \\(A=(8+14)\\cdot6/2\\).",
-        "Gjør første del: Regn parentesen først: \\(8+14=22\\).",
-        "Gjør neste del: Regn deretter \\(22\\cdot6/2\\).",
-        "Svar på spørsmålet: \\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\) m².",
-        "Sjekk svaret: \\(66\\cdot2/6=22=8+14\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
+        "Hva vet vi? Formelen er \\(A=lb\\), og vi kjenner \\(l=5\\) og \\(b=4\\).",
+        "Velg en enkel regnevei: Erstatt bokstaven med tallet først. Deretter følger vi regnerekkefølgen ett trinn om gangen.",
+        "Lag en plan: Sett inn begge målene: \\(A=5\\cdot4\\). Nå gjenstår én multiplikasjon.",
+        "Gjør regningen: \\(5\\cdot4=20\\). Arealet er derfor 20 kvadratmeter.",
+        "Svar på spørsmålet: \\(A=5\\cdot4=20\\) m².",
+        "Sjekk svaret: \\(20/5=4\\). Når arealet deles på lengden, får vi den oppgitte bredden tilbake."
       ],
-      "svar": "\\(A=(8+14)\\cdot6/2=22\\cdot6/2=66\\) m².",
+      "svar": "\\(A=5\\cdot4=20\\) m².",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 66,
+            "verdi": 20,
             "enhet": "m²",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -5656,7 +5619,7 @@
           "prompt_id": 2
         },
         "resultat": [
-          66
+          20
         ]
       },
       "variantfamilie": "d1-formel-innsetting",
@@ -5671,24 +5634,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "Temperaturen i fahrenheit er \\(F=1{,}8C+32\\). Finn \\(F\\) når \\(C=25\\).",
+      "sporsmal": "Temperaturen i fahrenheit er \\(F=1{,}8C+32\\). Finn \\(F\\) når \\(C=10\\).",
       "hint": [
-        "Hva vet vi? Formelen er \\(F=1{,}8C+32\\), og \\(C=25\\) er kjent. Vi skal finne temperaturen F ved å erstatte C med 25.",
-        "Velg en enkel regnevei: Tenk \\(1{,}8=2-0{,}2\\): \\(25\\cdot2-25\\cdot0{,}2=50-5=45\\).",
-        "Lag en plan: Erstatt \\(C\\) med 25: \\(F=1{,}8\\cdot25+32\\).",
-        "Gjør første del: Regn multiplikasjonen først: \\(1{,}8\\cdot25=45\\).",
-        "Gjør neste del: Legg deretter til 32.",
-        "Svar på spørsmålet: \\(F=1{,}8\\cdot25+32=45+32=77\\) °F.",
-        "Sjekk svaret: \\(77-32=45=1{,}8\\cdot25\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
+        "Hva vet vi? Formelen er \\(F=1{,}8C+32\\), og temperaturen er \\(C=10\\). Vi skal finne F.",
+        "Velg en enkel regnevei: Erstatt bokstaven med tallet først. Deretter følger vi regnerekkefølgen ett trinn om gangen.",
+        "Lag en plan: Sett inn 10 for C: \\(F=1{,}8\\cdot10+32\\). Regn multiplikasjonen først.",
+        "Gjør regningen: \\(1{,}8\\cdot10=18\\), og \\(18+32=50\\).",
+        "Svar på spørsmålet: \\(F=1{,}8\\cdot10+32=18+32=50\\) °F.",
+        "Sjekk svaret: \\(50-32=18=1{,}8\\cdot10\\). Vi får tilbake temperaturdelen i formelen."
       ],
-      "svar": "\\(F=1{,}8\\cdot25+32=45+32=77\\) °F.",
+      "svar": "\\(F=1{,}8\\cdot10+32=18+32=50\\) °F.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 77,
+            "verdi": 50,
             "enhet": "°F",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -5699,7 +5661,7 @@
           "prompt_id": 3
         },
         "resultat": [
-          77
+          50
         ]
       },
       "variantfamilie": "d1-formel-innsetting",
@@ -5714,24 +5676,23 @@
       ],
       "niva": 1,
       "hjelpemidler": "uten",
-      "sporsmal": "En modell for malingsbehov er \\(D=0{,}04m+1{,}2\\), der \\(m\\) er veggarealet i m² og \\(D\\) er antall liter maling. Finn \\(D\\) når \\(m=70\\).",
+      "sporsmal": "En modell for malingsbehov er \\(D=0{,}05m+1\\), der \\(m\\) er veggarealet i m². Finn \\(D\\) når \\(m=20\\).",
       "hint": [
-        "Hva vet vi? Formelen er \\(D=0{,}04m+1{,}2\\), og veggarealet er \\(m=70\\). Vi skal finne malingsbehovet D ved å erstatte m med 70.",
-        "Velg en enkel regnevei: Regn de to delene slik at de møtes i et helt tall: \\(0{,}04\\cdot70=2{,}8\\) og \\(2{,}8+1{,}2=4\\).",
-        "Lag en plan: Erstatt \\(m\\) med 70: \\(D=0{,}04\\cdot70+1{,}2\\).",
-        "Gjør første del: Regn multiplikasjonen først: \\(0{,}04\\cdot70=2{,}8\\).",
-        "Gjør neste del: Legg deretter \\(1{,}2\\) til \\(2{,}8\\).",
-        "Svar på spørsmålet: \\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4\\) liter.",
-        "Sjekk svaret: \\(4-1{,}2=2{,}8=0{,}04\\cdot70\\). Den motsatte operasjonen gir den variable delen av formelen tilbake."
+        "Hva vet vi? Formelen er \\(D=0{,}05m+1\\), og veggarealet er \\(m=20\\). Vi skal finne D.",
+        "Velg en enkel regnevei: Erstatt bokstaven med tallet først. Deretter følger vi regnerekkefølgen ett trinn om gangen.",
+        "Lag en plan: Sett inn 20 for m: \\(D=0{,}05\\cdot20+1\\). Regn multiplikasjonen først.",
+        "Gjør regningen: \\(0{,}05\\cdot20=1\\), og deretter \\(1+1=2\\).",
+        "Svar på spørsmålet: \\(D=0{,}05\\cdot20+1=1+1=2\\) liter.",
+        "Sjekk svaret: \\(2-1=1=0{,}05\\cdot20\\). Den variable delen stemmer med formelen."
       ],
-      "svar": "\\(D=0{,}04\\cdot70+1{,}2=2{,}8+1{,}2=4\\) liter.",
+      "svar": "\\(D=0{,}05\\cdot20+1=1+1=2\\) liter.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 4,
+            "verdi": 2,
             "enhet": "liter",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -5742,7 +5703,7 @@
           "prompt_id": 4
         },
         "resultat": [
-          4
+          2
         ]
       },
       "variantfamilie": "d1-formel-innsetting",
@@ -7068,7 +7029,7 @@
       "ferdighet": [
         "proporsjonalitetskonstant"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Fire penner koster \\(74\\) kr. Prisen \\(K\\) er proporsjonal med antall penner \\(x\\), slik at \\(K=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
@@ -7112,7 +7073,7 @@
       "ferdighet": [
         "proporsjonalitetskonstant"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Seks rundstykker koster \\(51\\) kr. Prisen \\(K\\) er proporsjonal med antall rundstykker \\(x\\), slik at \\(K=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
@@ -7244,7 +7205,7 @@
       "ferdighet": [
         "proporsjonalitetskonstant"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En bil kjører \\(210\\) km på \\(12\\) liter drivstoff. Kjørelengden \\(y\\) regnes som proporsjonal med drivstoffmengden \\(x\\), slik at \\(y=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
@@ -7289,7 +7250,7 @@
         "enhetsverdi",
         "proporsjonal_beregning"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "\\(3\\) kg poteter koster \\(84\\) kr. Hva koster \\(7\\) kg når prisen er proporsjonal med vekten?",
       "hint": [
@@ -7335,7 +7296,7 @@
         "enhetsverdi",
         "proporsjonal_beregning"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "\\(5\\) meter gavebånd koster \\(42{,}5\\) kr. Hva koster \\(12\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
@@ -7381,7 +7342,7 @@
         "enhetsverdi",
         "proporsjonal_beregning"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "\\(8\\) bussbilletter koster \\(260\\) kr. Hva koster \\(14\\) billetter når alle billettene har samme pris?",
       "hint": [
@@ -7427,7 +7388,7 @@
         "enhetsverdi",
         "proporsjonal_beregning"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "\\(6\\) meter kabel koster \\(450\\) kr. Hva koster \\(9\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
@@ -7473,7 +7434,7 @@
         "enhetsverdi",
         "proporsjonal_beregning"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En oppskrift til \\(4\\) porsjoner bruker \\(18\\) dl suppe. Hvor mye suppe trengs til \\(15\\) porsjoner når mengden er proporsjonal med antall porsjoner?",
       "hint": [
@@ -8014,7 +7975,7 @@
         "tabelltolkning",
         "modellvalg"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken type sammenheng viser tabellen?",
       "hint": [
@@ -8487,7 +8448,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet av tallene \\(12, 15, 15, 18, 20, 22\\).",
       "hint": [
@@ -8605,7 +8566,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet av tallene \\(24, 28, 31, 34, 38\\).",
       "hint": [
@@ -8663,7 +8624,7 @@
       "ferdighet": [
         "gjennomsnitt"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn gjennomsnittet av tallene \\(7, 8, 8, 9, 13, 15, 17\\).",
       "hint": [
@@ -8785,7 +8746,7 @@
         "median",
         "sortere_data"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn medianen i datasettet \\(14, 8, 20, 12, 10, 16\\).",
       "hint": [
@@ -8909,7 +8870,7 @@
         "median",
         "sortere_data"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn medianen i datasettet \\(25, 18, 22, 31, 27, 19\\).",
       "hint": [
@@ -8970,7 +8931,7 @@
         "median",
         "sortere_data"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn medianen i datasettet \\(6, 15, 10, 8, 12, 20, 7, 9\\).",
       "hint": [
@@ -9035,7 +8996,7 @@
         "typetall",
         "variasjonsbredde"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(2, 4, 4, 5, 7, 9\\).",
       "hint": [
@@ -9104,7 +9065,7 @@
         "typetall",
         "variasjonsbredde"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(12, 15, 15, 15, 18, 21\\).",
       "hint": [
@@ -9173,7 +9134,7 @@
         "typetall",
         "variasjonsbredde"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(3, 6, 6, 8, 10, 11, 11, 11\\).",
       "hint": [
@@ -9246,7 +9207,7 @@
         "typetall",
         "variasjonsbredde"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(24, 24, 27, 30, 31, 35\\).",
       "hint": [
@@ -9315,7 +9276,7 @@
         "typetall",
         "variasjonsbredde"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn typetallet og variasjonsbredden i \\(5, 7, 9, 9, 10, 12, 14\\).",
       "hint": [
@@ -10614,7 +10575,7 @@
         "velge_sentralmal",
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "I en liten bedrift tjener direktøren langt mer enn de andre ansatte. Hvilket sentralmål gir best bilde av en typisk lønn?",
       "hint": [
@@ -10656,7 +10617,7 @@
         "velge_sentralmal",
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken framstilling passer best for å vise hvordan strømforbruket utvikler seg fra måned til måned?",
       "hint": [
@@ -10740,7 +10701,7 @@
         "velge_sentralmal",
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "En butikk vil finne den skostørrelsen som selges oftest. Hvilket sentralmål skal butikken bruke?",
       "hint": [
@@ -10824,7 +10785,7 @@
         "stigningstall",
         "to_punkter"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En rett linje går gjennom punktene \\((2,11)\\) og \\((6,23)\\). Finn stigningstallet.",
       "hint": [
@@ -10875,7 +10836,7 @@
         "stigningstall",
         "to_punkter"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En rett linje går gjennom punktene \\((4,38)\\) og \\((10,65)\\). Finn stigningstallet.",
       "hint": [
@@ -10926,7 +10887,7 @@
         "stigningstall",
         "to_punkter"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En rett linje går gjennom punktene \\((0,18)\\) og \\((5,8)\\). Finn stigningstallet.",
       "hint": [
@@ -10977,7 +10938,7 @@
         "stigningstall",
         "to_punkter"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En rett linje går gjennom punktene \\((3,7)\\) og \\((9,31)\\). Finn stigningstallet.",
       "hint": [
@@ -11028,7 +10989,7 @@
         "stigningstall",
         "to_punkter"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "En rett linje går gjennom punktene \\((12,120)\\) og \\((20,168)\\). Finn stigningstallet.",
       "hint": [
@@ -12235,7 +12196,7 @@
         "tolke_vekstfaktor",
         "startverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Antall abonnenter modelleres med \\(f(x)=840\\cdot1{,}06^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -12287,7 +12248,7 @@
         "tolke_vekstfaktor",
         "startverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Stoffmengden i gram modelleres med \\(f(x)=1\\,250\\cdot0{,}92^x\\), der \\(x\\) er antall timer etter start. Oppgi startverdien og den prosentvise endringen per time.",
       "hint": [
@@ -12339,7 +12300,7 @@
         "tolke_vekstfaktor",
         "startverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Antall bakterier i en prøve modelleres med \\(f(x)=75\\cdot1{,}18^x\\), der \\(x\\) er antall timer etter start. Oppgi startverdien og den prosentvise endringen per time.",
       "hint": [
@@ -12391,7 +12352,7 @@
         "tolke_vekstfaktor",
         "startverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Et årlig utslipp i tonn modelleres med \\(f(x)=9\\,000\\cdot0{,}965^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -12443,7 +12404,7 @@
         "tolke_vekstfaktor",
         "startverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Medlemstallet i en organisasjon modelleres med \\(f(x)=320\\cdot1{,}125^x\\), der \\(x\\) er antall år etter start. Oppgi startverdien og den prosentvise endringen per år.",
       "hint": [
@@ -12940,7 +12901,7 @@
         "gjenkjenne_monster",
         "velge_modell"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
@@ -13018,7 +12979,7 @@
         "gjenkjenne_monster",
         "velge_modell"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
       "hint": [
@@ -13331,7 +13292,7 @@
         "lokke",
         "akkumulator"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
@@ -13390,7 +13351,7 @@
         "lokke",
         "akkumulator"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
@@ -13450,7 +13411,7 @@
         "lokke",
         "akkumulator"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
@@ -13509,7 +13470,7 @@
         "lokke",
         "akkumulator"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
@@ -13568,7 +13529,7 @@
         "lokke",
         "akkumulator"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
@@ -13908,7 +13869,7 @@
         "if_setning",
         "grenseverdier"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket ord skriver programmet ut?",
       "hint": [
@@ -13958,7 +13919,7 @@
         "if_setning",
         "grenseverdier"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket ord skriver programmet ut?",
       "hint": [
@@ -14008,7 +13969,7 @@
         "if_setning",
         "grenseverdier"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket ord skriver programmet ut?",
       "hint": [
@@ -14058,7 +14019,7 @@
         "if_setning",
         "grenseverdier"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket ord skriver programmet ut?",
       "hint": [
@@ -14108,7 +14069,7 @@
         "if_setning",
         "grenseverdier"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "uten",
       "sporsmal": "Hvilket ord skriver programmet ut?",
       "hint": [
@@ -15853,7 +15814,7 @@
       "ferdighet": [
         "oversette_representasjon"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av \\(45\\,\\%\\) av 800.",
       "hint": [
@@ -15897,7 +15858,7 @@
       "ferdighet": [
         "oversette_representasjon"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Finn tallet som beskrives av \\(2^8\\).",
       "hint": [
@@ -20061,7 +20022,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=40\\) km.",
       "hint": [
@@ -20232,7 +20193,7 @@
         "tolke_stigningstall",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Velg riktig tolkning av A-modellen.",
       "hint": [
@@ -20277,7 +20238,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=120\\) GB.",
       "hint": [
@@ -20448,7 +20409,7 @@
         "tolke_stigningstall",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Velg riktig tolkning av A-modellen.",
       "hint": [
@@ -20493,7 +20454,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=8\\) besøk.",
       "hint": [
@@ -20664,7 +20625,7 @@
         "tolke_stigningstall",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Velg riktig tolkning av A-modellen.",
       "hint": [
@@ -20709,7 +20670,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=5\\) døgn.",
       "hint": [
@@ -20880,7 +20841,7 @@
         "tolke_stigningstall",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Velg riktig tolkning av A-modellen.",
       "hint": [
@@ -20925,7 +20886,7 @@
       "ferdighet": [
         "beregne_funksjonsverdi"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Beregn prisen hos begge tilbydere ved \\(x=100\\) kWh.",
       "hint": [
@@ -21096,7 +21057,7 @@
         "tolke_stigningstall",
         "tolke_konstantledd"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Velg riktig tolkning av A-modellen.",
       "hint": [
@@ -23297,7 +23258,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23506,7 +23467,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23715,7 +23676,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -23924,7 +23885,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -24133,7 +24094,7 @@
       "ferdighet": [
         "kumulativ_frekvens"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn totalt antall observasjoner og kumulativ frekvens til og med den andre klassen.",
       "hint": [
@@ -27221,7 +27182,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27333,7 +27294,7 @@
       "ferdighet": [
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken framstilling egner seg best til å sammenligne hver kategori mellom de to årene?",
       "hint": [
@@ -27427,7 +27388,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27539,7 +27500,7 @@
       "ferdighet": [
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken framstilling egner seg best til å sammenligne hver kategori mellom de to årene?",
       "hint": [
@@ -27633,7 +27594,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27745,7 +27706,7 @@
       "ferdighet": [
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken framstilling egner seg best til å sammenligne hver kategori mellom de to årene?",
       "hint": [
@@ -27839,7 +27800,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -27951,7 +27912,7 @@
       "ferdighet": [
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken framstilling egner seg best til å sammenligne hver kategori mellom de to årene?",
       "hint": [
@@ -28045,7 +28006,7 @@
       "ferdighet": [
         "prosentvis_endring"
       ],
-      "niva": 1,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Finn den prosentvise endringen i totalen fra år 1 til år 2. Rund til én desimal.",
       "hint": [
@@ -28157,7 +28118,7 @@
       "ferdighet": [
         "velge_diagram"
       ],
-      "niva": 2,
+      "niva": 1,
       "hjelpemidler": "med",
       "sporsmal": "Hvilken framstilling egner seg best til å sammenligne hver kategori mellom de to årene?",
       "hint": [

@@ -81,7 +81,7 @@ const EMPTY_PROGRESS_BY_PART: ProgressByPart = {
 
 const DIFFICULTY_OPTIONS: { value: Difficulty; label: string }[] = [
   { value: "mixed", label: "Blandet" },
-  { value: 1, label: "Lett" },
+  { value: 1, label: "Mild" },
   { value: 2, label: "Middels" },
   { value: 3, label: "Utfordrende" },
 ];
