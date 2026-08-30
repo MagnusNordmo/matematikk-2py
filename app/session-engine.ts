@@ -1,6 +1,7 @@
 import type { Part, Question, QuestionBank } from "./question-bank";
 
 export type SessionMode = "skill" | "exam";
+export type Difficulty = "mixed" | 1 | 2 | 3;
 
 function withoutRecent<T extends { id: string }>(items: T[], recentIds: Set<string>) {
   const fresh = items.filter((item) => !recentIds.has(item.id));
@@ -60,11 +61,17 @@ export function selectSessionQuestions(
   mode: SessionMode,
   themeId?: string,
   recentIds = new Set<string>(),
+  difficulty: Difficulty = "mixed",
 ) {
+  const matchesDifficulty = (question: Question) =>
+    difficulty === "mixed" || question.niva === difficulty;
+
   if (part === 1) {
     const candidates = bank.oppgaver.filter(
       (question) =>
-        question.del === 1 && (!themeId || question.tema === themeId),
+        question.del === 1 &&
+        (!themeId || question.tema === themeId) &&
+        matchesDifficulty(question),
     );
     const preferredCandidates = withoutRecent(candidates, recentIds);
     if (mode === "skill") return shuffle(preferredCandidates).slice(0, 10);
@@ -83,6 +90,16 @@ export function selectSessionQuestions(
         Math.max(0, 10 - spread.length),
       ),
     ]).slice(0, 10);
+  }
+
+  if (mode === "skill" && difficulty !== "mixed") {
+    const candidates = bank.oppgaver.filter(
+      (question) =>
+        question.del === 2 &&
+        (!themeId || question.tema === themeId) &&
+        matchesDifficulty(question),
+    );
+    return shuffle(withoutRecent(candidates, recentIds)).slice(0, 10);
   }
 
   const groups = completeGroups(bank, themeId);
@@ -130,11 +147,16 @@ export function selectSessionQuestions(
   ]).flat();
 }
 
-export function findRetryQuestion(bank: QuestionBank, question: Question) {
+export function findRetryQuestion(
+  bank: QuestionBank,
+  question: Question,
+  difficulty: Difficulty = "mixed",
+) {
   const candidates = bank.oppgaver.filter(
     (candidate) =>
       candidate.del === question.del &&
       candidate.id !== question.id &&
+      (difficulty === "mixed" || candidate.niva === difficulty) &&
       (candidate.variantfamilie === question.variantfamilie ||
         candidate.tema === question.tema),
   );

@@ -33,6 +33,35 @@ test("fordelingen mellom deler og svarformater er bevart", () => {
   }
 });
 
+test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
+  assert.deepEqual(bank.nivaaer, {
+    "1": "lett",
+    "2": "middels",
+    "3": "utfordrende",
+  });
+
+  const distribution = Object.fromEntries(
+    [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
+  );
+  assert.deepEqual(distribution, { "1": 138, "2": 236, "3": 126 });
+  assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
+
+  for (const question of bank.oppgaver) {
+    assert.ok([1, 2, 3].includes(question.niva), `${question.id} mangler gyldig nivå`);
+  }
+
+  const partThemes = new Set(bank.oppgaver.map((question) => `${question.del}:${question.tema}`));
+  for (const partTheme of partThemes) {
+    const [part, theme] = partTheme.split(":");
+    const questions = bank.oppgaver.filter((question) => String(question.del) === part && question.tema === theme);
+    for (const level of [1, 2, 3]) {
+      assert.ok(questions.some((question) => question.niva === level), `${partTheme} mangler nivå ${level}`);
+    }
+  }
+
+  assert.equal(bank.oppgaver.find((question) => question.id === "2py27-010").niva, 3);
+});
+
 test("alle oppgaver med flere svarbestanddeler har tydelige feltetiketter", () => {
   const multipartQuestions = bank.oppgaver.filter((question) =>
     ["flere_tall", "valg_og_tall"].includes(question.fasit.type),
@@ -257,7 +286,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.11");
+  assert.equal(bank.samling.versjon, "2027.12");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 8);
   assert.deepEqual(
@@ -443,7 +472,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.11");
+  assert.equal(bank.samling.versjon, "2027.12");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
