@@ -163,7 +163,7 @@ function reviseMildPercentQuestions(byId) {
       "Sjekk svaret: \\(20\\,\\%\\) av 100 er \\(0{,}2\\cdot100=20\\) elever, som er den oppgitte delen.",
     ],
   });
-  Object.assign(byId.get("2py27-006").kontroll.inndata, { del: 20, total: 100 });
+  Object.assign(byId.get("2py27-006").kontroll.inndata, { del: 20, hel: 100, total: 100 });
 
   updateSingleNumericQuestion(byId.get("2py27-007"), {
     sporsmal: "I en kantine velger \\(25\\) av \\(100\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",

@@ -18,8 +18,9 @@ test("oppgavebanken har 500 komplette og unike oppgaver", () => {
     assert.equal(question.hjelpemidler, question.del === 1 ? "uten" : "med");
     assert.ok(question.sporsmal?.trim(), `${question.id} mangler spørsmål`);
     assert.ok(question.svar?.trim(), `${question.id} mangler løsning`);
-    const minimumHintCount = question.del === 1 ? 4 : 2;
+    const minimumHintCount = question.del === 1 ? 3 : 2;
     assert.ok(Array.isArray(question.hint) && question.hint.length >= minimumHintCount, `${question.id} har for få hint`);
+    assert.ok(question.hint.length <= (question.del === 1 ? 5 : 4), `${question.id} har for mange hint`);
     assert.ok(question.hint.every((hint) => typeof hint === "string" && hint.trim().length >= 20), `${question.id} har et kort eller tomt hint`);
     assert.ok(["tall", "flere_tall", "valg", "valg_og_tall"].includes(question.fasit?.type), `${question.id} har ugyldig svarformat`);
   }
@@ -117,15 +118,6 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
     "Oversett uttrykket til en beregning.",
     "Kjør den samme algoritmen med den nye inndataen eller parameteren.",
   ]);
-  const obsoleteGenericChecks = new Set([
-    "Kontroller og konkluder: Spor programmet én gang til med de opprinnelige startverdiene. Variablene og stoppvilkåret skal ende på verdiene i løsningen.",
-    "Kontroller og konkluder: Gå motsatt vei med prosentregningen, eller sammenlign med startverdien. Da skal du få tilbake den oppgitte verdien og riktig retning på endringen.",
-    "Kontroller og konkluder: Kontroller antall observasjoner, samlet frekvens og eventuell sortering. Svaret skal ligge på en rimelig plass i datamaterialet.",
-    "Kontroller og konkluder: Prøv regelen på en av de oppgitte figurene og på figuren rett før eller etter. Begge kontrollene skal passe mønsteret.",
-    "Kontroller og konkluder: Sett resultatet inn i modellen eller sammenlign det med tabellen og grafen. Fortegn, enhet og størrelsesorden skal passe situasjonen.",
-    "Kontroller og konkluder: Regn uttrykket tilbake som et vanlig tall eller bruk en omvendt potensoperasjon. Fortegn og størrelsesorden skal stemme.",
-    "Kontroller og konkluder: Sett den funne verdien inn i den opprinnelige ligningen eller formelen. Venstre og høyre side skal bli like.",
-  ]);
   const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
 
   for (const question of bank.oppgaver) {
@@ -134,20 +126,20 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
       `${question.id} har fortsatt et hint som bare gjentar arbeidsordren`,
     );
     if (question.del === 1) {
-      assert.ok(question.hint.length >= 4, `${question.id} mangler gradvis hintprogresjon`);
-      assert.ok(question.hint.join(" ").length >= 300, `${question.id} har for lite forklaring til å være et worked example`);
-      assert.ok(question.hint.some((hint) => /Svar på spørsmålet:|Fullfør regningen:/.test(hint)), `${question.id} mangler fullført utregning`);
-      assert.match(question.hint.at(-1), /^Svar på spørsmålet:/u, `${question.id} avslutter ikke med fasiten`);
-      assert.match(question.hint.at(-1), /Sjekk svaret:/u, `${question.id} mangler kontroll i det siste hintet`);
-      assert.ok(!obsoleteGenericChecks.has(question.hint.at(-1)), `${question.id} har et generisk kontrollsteg uten konkret kontroll`);
+      assert.ok(question.hint.length >= 3 && question.hint.length <= 5, `${question.id} skal ha 3–5 meningsfulle hint`);
+      assert.ok(question.hint.join(" ").length >= 250, `${question.id} har for lite konkret forklaring`);
+      assert.equal(new Set(question.hint).size, question.hint.length, `${question.id} gjentar et Del 1-hint`);
+      assert.ok(
+        question.hint.every((hint) => !/^(?:Svar på spørsmålet|Sjekk svaret|Kontroller og konkluder):/u.test(hint)),
+        `${question.id} blander fasit eller kontroll inn i hintrekken`,
+      );
 
       if (numericTypes.has(question.fasit.type)) {
-        const solutionIndex = question.hint.findIndex((hint) => hint.startsWith("Svar på spørsmålet:"));
-        const workedSteps = question.hint.slice(1, solutionIndex >= 0 ? solutionIndex : -1).join(" ");
+        const workedSteps = question.hint.slice(1).join(" ");
         assert.match(
           workedSteps,
-          /=|\\(?:approx|le|ge)|[≤≥]/u,
-          `${question.id} mangler en utført matematisk relasjon før konklusjonen`,
+          /=|\\(?:approx|le|ge|cdot|frac|div)|[+*/≤≥]/u,
+          `${question.id} mangler et konkret matematisk oppsett`,
         );
       }
     } else {
@@ -162,11 +154,12 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
   }
 
   const del1 = bank.oppgaver.filter((question) => question.del === 1);
-  assert.ok(del1.reduce((total, question) => total + question.hint.length, 0) >= 1500);
-  assert.ok(new Set(del1.map((question) => question.hint.at(-1))).size >= 240, "Kontrollstegene i Del 1 er fortsatt for generiske");
+  const del1HintCount = del1.reduce((total, question) => total + question.hint.length, 0);
+  assert.ok(del1HintCount >= 1000, "Del 1 har for få trinn til å støtte framgangsmåten");
+  assert.ok(del1HintCount <= 1150, "Del 1 har igjen fått unødvendig lange hintrekker");
 });
 
-test("fasiten vises bare i det siste hintet i Del 1", () => {
+test("fasiten holdes utenfor hintrekken og vises separat", () => {
   const groups = new Map(bank.oppgavegrupper.map((group) => [group.id, group]));
   const normalize = (text) => String(text)
     .replace(/\\,/gu, "")
@@ -174,7 +167,6 @@ test("fasiten vises bare i det siste hintet i Del 1", () => {
     .replace(/\\(?:,|;|!|quad|qquad)/gu, "")
     .replace(/\\%/gu, "%")
     .replace(/\s+/gu, "");
-  const normalizeMath = (text) => normalize(text).replace(/\\\(|\\\)/gu, "");
   const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
   const containsNumber = (text, value) => {
     const marker = escapeRegex(normalize(value));
@@ -185,14 +177,25 @@ test("fasiten vises bare i det siste hintet i Del 1", () => {
     "omvendt proporsjonal": ["omvendt proporsjonalitet"],
     "lineær, men ikke proporsjonal": ["lineær, men ikke proporsjonalitet"],
     "lineær modell": ["lineær"],
+    "lineær": ["lineær modell"],
     "eksponentialmodell": ["eksponentiell"],
+    "eksponential": ["eksponentialmodell", "eksponentiell modell"],
+    "potens": ["potensmodell"],
+    "andregrad": ["andregradsmodell"],
     "omvendt proporsjonal modell": ["omvendt proporsjonalitet", "omvendt proporsjonal"],
   }[choice] ?? [])];
 
-  for (const question of bank.oppgaver.filter((item) => item.del === 1)) {
+  const containsChoice = (text, choice) => choiceAliases(choice).some((alias) => {
+    const escaped = escapeRegex(normalize(alias).toLocaleLowerCase("nb-NO"));
+    return new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, "u")
+      .test(normalize(text).toLocaleLowerCase("nb-NO"));
+  });
+
+  for (const question of bank.oppgaver) {
     const group = question.oppgavegruppe ? groups.get(question.oppgavegruppe.id) : null;
     const givenText = [
       question.sporsmal,
+      question.data ? JSON.stringify(question.data) : "",
       group?.innledning,
       group?.data ? JSON.stringify(group.data) : "",
       question.visualisering ? JSON.stringify(question.visualisering) : "",
@@ -203,46 +206,55 @@ test("fasiten vises bare i det siste hintet i Del 1", () => {
     ];
 
     for (const [name, hints] of collections) {
-      const earlyHints = hints.slice(0, -1);
-      const finalHint = hints.at(-1);
-      assert.match(finalHint, /^Svar på spørsmålet:/u, `${question.id}/${name} har ikke fasiten sist`);
-      assert.match(finalHint, /Sjekk svaret:/u, `${question.id}/${name} mangler kontroll i siste hint`);
       assert.ok(
-        earlyHints.every((hint) => !/^(?:Svar på spørsmålet|Sjekk svaret):/u.test(hint)),
-        `${question.id}/${name} viser svar eller kontroll for tidlig`,
+        hints.every((hint) => !/(?:Svar på spørsmålet:|Sjekk svaret:|Derfor passer svaret|det riktige alternativet)/u.test(hint)),
+        `${question.id}/${name} inneholder fasittekst eller redaksjonell plassholder`,
       );
-      assert.doesNotMatch(earlyHints.join(" "), /\\square\{,\}|□\{,\}/u, `${question.id}/${name} har en ødelagt svarrute`);
+      assert.doesNotMatch(hints.join(" "), /\\square\{,\}|□\{,\}/u, `${question.id}/${name} har en ødelagt svarrute`);
 
       for (const value of question.fasit.verdier?.map((answer) => answer.verdi) ?? []) {
-        assert.ok(containsNumber(finalHint, value), `${question.id}/${name} mangler svarverdien i siste hint`);
         if (!containsNumber(givenText, value)) {
           assert.ok(
-            earlyHints.every((hint) => !containsNumber(hint, value)),
-            `${question.id}/${name} viser svarverdien ${value} før siste hint`,
+            hints.every((hint) => !containsNumber(hint, value)),
+            `${question.id}/${name} viser svarverdien ${value} i hintrekken`,
           );
         }
       }
 
       const correctChoices = question.fasit.riktige ?? question.fasit.valg?.riktige ?? [];
-      if (correctChoices.length > 0) {
-        assert.ok(
-          normalizeMath(finalHint).toLocaleLowerCase("nb-NO").includes(normalizeMath(question.svar).toLocaleLowerCase("nb-NO")),
-          `${question.id}/${name} mangler den fullstendige konklusjonen i siste hint`,
-        );
-        for (const choice of correctChoices) {
-          for (const alias of choiceAliases(choice)) {
-            const comparable = (text) => alias.startsWith("\\(")
-              ? normalizeMath(text)
-              : normalizeMath(text).toLocaleLowerCase("nb-NO");
-            assert.ok(
-              earlyHints.every((hint) => !comparable(hint).includes(comparable(alias))),
-              `${question.id}/${name} viser riktig alternativ før siste hint`,
-            );
-          }
+      const alternatives = question.fasit.alternativer ?? question.fasit.valg?.alternativer ?? [];
+      for (const hint of hints) {
+        for (const choice of correctChoices.filter((choice) => !/^-?\d+(?:[.,]\d+)?$/u.test(choice))) {
+          if (!containsChoice(hint, choice)) continue;
+          assert.ok(
+            alternatives.some((alternative) => !correctChoices.includes(alternative) && containsChoice(hint, alternative)),
+            `${question.id}/${name} viser riktig alternativ alene i et hint`,
+          );
         }
       }
     }
   }
+});
+
+test("hintrekken starter med oppgitte verdier og ender uten skjult fasit", () => {
+  const byId = (id) => bank.oppgaver.find((question) => question.id === id);
+
+  for (const question of bank.oppgaver) {
+    assert.doesNotMatch(question.hint[0], /\\square|□/u, `${question.id} starter med et tomt svarfelt i stedet for kjente opplysninger`);
+    assert.doesNotMatch(
+      question.hint.join(" "),
+      /\\square\d|\d\\square|□\d|\d□|\\square\{,\}|□\{,\}/u,
+      `${question.id} har et ødelagt eller delvis maskert tall`,
+    );
+  }
+
+  assert.match(byId("2py27-150").hint[0], /Målgjennomsnittet er .*9/u);
+  assert.match(byId("2py27-193").hint[0], /840.*startverdien/u);
+  assert.doesNotMatch(byId("2py27-133").hint.join(" "), /Verdien på denne plassen er .*7/u);
+  assert.doesNotMatch(byId("2py27-138").hint.join(" "), /4.*er typetallet/u);
+  assert.doesNotMatch(byId("2py27-386").hint.join(" "), /Verdien på denne plassen er .*140/u);
+  assert.doesNotMatch(byId("2py27-462").hint.join(" "), /4n\+2/u);
+  assert.doesNotMatch(byId("2py27-444").hint.join(" "), /begge.*riktige|Dermed er/u);
 });
 
 test("elevhint inneholder ikke interne redaksjonelle kommentarer", () => {
@@ -258,40 +270,33 @@ test("elevhint inneholder ikke interne redaksjonelle kommentarer", () => {
 
 test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til det", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
-  const numericTypes = new Set(["tall", "flere_tall", "valg_og_tall"]);
-  const numericDel1 = bank.oppgaver.filter((question) =>
-    question.del === 1 && numericTypes.has(question.fasit.type));
-
-  for (const question of numericDel1) {
-    if (question.variantfamilie === "d1-omvendt-prosent") {
-      assert.match(question.hint.join(" "), /Del prosenten etter endringen i .* like deler/u, question.id + " mangler én sammenhengende håndregningsstrategi");
-    } else {
-      assert.ok(
-        question.hint.some((hint) => hint.startsWith("Velg en enkel regnevei:")),
-        question.id + " signaliserer ikke den enkle regneveien",
-      );
-    }
-  }
-
   const strategies = bank.oppgaver
     .filter((question) => question.del === 1)
     .flatMap((question) => question.hint)
     .filter((hint) => hint.startsWith("Velg en enkel regnevei:"));
-  assert.ok(strategies.length >= 175, "For få Del 1-oppgaver har fått et konkret strategihint");
-  assert.ok(new Set(strategies).size >= 165, "Strategihintene er for generiske eller gjentatte");
+  assert.ok(strategies.length >= 110, "For få Del 1-oppgaver har fått et eget strategihint der dette trengs");
+  assert.ok(new Set(strategies).size >= 100, "Strategihintene er for generiske eller gjentatte");
   assert.ok(strategies.every((hint) => hint.length >= 60), "Et strategihint er for kort til å hjelpe");
   assert.doesNotMatch(strategies.join(" "), /--|\+-|skal (?:legg|halver)\b/u, "Et strategihint har uklar matematikk eller språk");
 
   const quarterQuestion = byId("2py27-002");
   assert.match(quarterQuestion.hint.join(" "), /Dette kan gjøres i hodet/u);
   assert.match(quarterQuestion.hint.join(" "), /25 % er en firedel/u);
-  assert.match(quarterQuestion.hint.join(" "), /360\/4=90/u);
+  assert.match(quarterQuestion.hint.join(" "), /360\/2=180/u);
+  assert.match(quarterQuestion.hint.join(" "), /180\/2=\\square/u);
+  assert.doesNotMatch(quarterQuestion.hint.join(" "), /90/u);
   assert.doesNotMatch(quarterQuestion.svar, /0\{,\}25/u);
 
   assert.match(byId("2py27-001").hint.join(" "), /Ti prosent er én tidel/u);
   assert.match(byId("2py27-004").hint.join(" "), /25 % er (?:det samme som )?en firedel/u);
-  assert.match(byId("2py27-128").hint.join(" "), /balansering rundt/u);
-  assert.match(byId("2py27-213").hint.join(" "), /Grupper til to like summer/u);
+  assert.match(byId("2py27-004").hint.join(" "), /160\/2=80.*80\/2=\\square/u);
+  const offerHints = byId("2py27-040").hint.join(" ");
+  assert.match(offerHints, /680\/2=340/u, "2py27-040 viser ikke første halvering");
+  assert.match(offerHints, /340\/2=\\square/u, "2py27-040 støtter ikke den andre halveringen");
+  assert.doesNotMatch(offerHints, /170|kroneavslaget størst/u, "2py27-040 røper svaret i hintrekken");
+  assert.match(byId("2py27-103").hint.join(" "), /74=72\+2.*74\/4=18\+0\{,\}5=\\square/u);
+  assert.match(byId("2py27-128").hint.join(" "), /4\+6\+7\+8\+10=\\square.*\\square\/5=\\square/u);
+  assert.match(byId("2py27-213").hint.join(" "), /20\+12=\\square/u);
   assert.match(byId("2py27-043").hint.join(" "), /\(-3\)\^2=9/u);
   assert.match(byId("2py27-243").hint.join(" "), /\(21\+1\)\/2=11/u);
 });
@@ -303,7 +308,7 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
     question.del === 1 && numericTypes.has(question.fasit.type));
 
   const shortenedFractions = numericDel1.filter((question) => /tallet over brøkstreken/u.test(question.hint.join(" ")));
-  assert.ok(shortenedFractions.length >= 14);
+  assert.ok(shortenedFractions.length >= 9);
   for (const question of shortenedFractions) {
     const hints = question.hint.join(" ");
     assert.match(hints, /tallet over brøkstreken/u, `${question.id} forklarer ikke telleren`);
@@ -322,7 +327,7 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
   }
   for (const question of numericDel1.filter((item) => item.variantfamilie === "d1-grafavlesning")) {
     assert.match(question.hint.join(" "), /Erstatt.*x.*linjens uttrykk/u, question.id);
-    assert.match(question.hint.join(" "), /Legg til konstantleddet/u, question.id);
+    assert.match(question.hint.join(" "), /Legg (?:så )?til konstantleddet/u, question.id);
   }
   for (const question of numericDel1.filter((item) =>
     ["d1-konstantledd", "d1-lineaert-skjaeringspunkt"].includes(item.variantfamilie))) {
@@ -330,7 +335,7 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
   }
 
   const cumulativeMedian = numericDel1.filter((item) => item.variantfamilie === "d1-kumulativ-median");
-  assert.match(byId("2py27-245").hint.join(" "), /to midterste plassene er.*15.*16/u);
+  assert.match(byId("2py27-245").hint.join(" "), /to midtposisjonene.*15.*16/u);
   for (const question of cumulativeMedian) {
     assert.doesNotMatch(question.hint.join(" "), /21\/2=11|35\/2=18|45\/2=23/u, question.id);
   }
@@ -371,11 +376,11 @@ test("ligningshint forklarer mellomresultater og desimaldivisjon i riktig rekkef
 test("formelhint bruker de samme tallene som de nivåjusterte oppgavene", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
   const expected = {
-    "2py27-073": [/K=100\+5x/u, /5\\cdot20/u, /200/u],
-    "2py27-074": [/s=vt/u, /4\\cdot3/u, /12/u],
-    "2py27-075": [/A=lb/u, /5\\cdot4/u, /20/u],
-    "2py27-076": [/F=1\{,\}8C\+32/u, /1\{,\}8\\cdot10/u, /50/u],
-    "2py27-077": [/D=0\{,\}05m\+1/u, /0\{,\}05\\cdot20/u, /2/u],
+    "2py27-073": [/K=100\+5x/u, /5\\cdot20=100/u, /100\+100=\\square/u],
+    "2py27-074": [/s=vt/u, /4\\cdot3=\\square/u],
+    "2py27-075": [/A=lb/u, /5\\cdot4=\\square/u],
+    "2py27-076": [/F=1\{,\}8C\+32/u, /1\{,\}8\\cdot10=18/u, /18\+32=\\square/u],
+    "2py27-077": [/D=0\{,\}05m\+1/u, /0\{,\}05\\cdot20=1/u, /1\+1=\\square/u],
   };
 
   for (const [id, patterns] of Object.entries(expected)) {
@@ -416,12 +421,7 @@ test("hver hovedløsning i Del 1 holder fast ved én tydelig metode", () => {
       /Marker verdiene|Finn nøkkelopplysningene|Skriv opp de gitte størrelsene/u,
       `${question.id} starter fortsatt med en generell arbeidsordre`,
     );
-    assert.ok(
-      question.hint.some((hint) => hint.startsWith("Svar på spørsmålet:")),
-      `${question.id} skiller ikke svaret fra mellomregningen`,
-    );
-    assert.match(question.hint.at(-1), /^Svar på spørsmålet:/u, `${question.id} avslutter ikke med svaret`);
-    assert.match(question.hint.at(-1), /Sjekk svaret:/u, `${question.id} avslutter ikke med en kontroll`);
+    assert.ok(question.hint.every((hint) => !hint.includes(question.svar)), `${question.id} gjentar fasiten i hintrekken`);
   }
 
   for (const question of del1.filter((item) => item.variantfamilie === "d1-omvendt-prosent")) {
@@ -436,11 +436,9 @@ test("hver hovedløsning i Del 1 holder fast ved én tydelig metode", () => {
   assert.match(annualPass, /95\/19=5/u);
   assert.match(annualPass, /760\/19=40/u);
   assert.match(annualPass, /40\\cdot20=\\square/u);
-  assert.match(annualPass, /800-40=760/u);
 
   for (const id of ["2py27-033", "2py27-035", "2py27-036", "2py27-037", "2py27-098", "2py27-123", "2py27-124", "2py27-125", "2py27-126", "2py27-127", "2py27-211", "2py27-253", "2py27-255"]) {
-    const beforeAnswer = byId(id).hint.filter((hint) => !hint.startsWith("Svar på spørsmålet:")).join(" ");
-    assert.match(beforeAnswer, /=/u, `${id} viser ikke den avgjørende testen før svaret`);
+    assert.match(byId(id).hint.join(" "), /=/u, `${id} viser ikke den avgjørende testen før svaret`);
   }
 });
 
@@ -449,7 +447,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.16");
+  assert.equal(bank.samling.versjon, "2027.17");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -463,11 +461,9 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
     assert.ok(question.losningsveier.every((path) => path.navn.length >= 8), `${question.id} har et uklart metodenavn`);
     assert.ok(question.losningsveier.every((path) => path.forklaring.length >= 25), `${question.id} forklarer ikke når metoden passer`);
     for (const path of question.losningsveier) {
-      assert.ok(path.hint.length >= 5, `${question.id}/${path.id} har for få løsningssteg`);
+      assert.ok(path.hint.length >= 3 && path.hint.length <= 5, `${question.id}/${path.id} skal ha 3–5 løsningssteg`);
       assert.match(path.hint[0], /^Hva vet vi\?/u, `${question.id}/${path.id} starter ikke med forståelse`);
-      assert.ok(path.hint.some((hint) => hint.startsWith("Svar på spørsmålet:")), `${question.id}/${path.id} mangler svarsteg`);
-      assert.match(path.hint.at(-1), /^Svar på spørsmålet:/u, `${question.id}/${path.id} avslutter ikke med svaret`);
-      assert.match(path.hint.at(-1), /Sjekk svaret:/u, `${question.id}/${path.id} mangler kontroll`);
+      assert.ok(path.hint.every((hint) => !/Svar på spørsmålet:|Sjekk svaret:/u.test(hint)), `${question.id}/${path.id} inneholder fasittekst`);
     }
     assert.notDeepEqual(
       question.losningsveier[0].hint,
@@ -505,11 +501,11 @@ test("hintene har korrekt mål, avrunding og matematikkvisning", () => {
     assert.doesNotMatch(question.svar, /prosentvise endringen/u, `${id} svarer fortsatt med prosentendring`);
   }
 
-  assert.match(byId("2py27-099").hint.at(-1), /ulike|Påstanden er feil/u);
+  assert.match(byId("2py27-099").hint.join(" "), /ulike|sammenlign/u);
   assert.doesNotMatch(byId("2py27-099").hint.at(-1), /Venstre og høyre side skal bli like/u);
 
   for (const id of ["2py27-198", "2py27-199", "2py27-200", "2py27-201", "2py27-202"]) {
-    assert.match(byId(id).hint.at(-1), /tidsintervallet|verdiendringen/u);
+    assert.match(byId(id).hint.join(" "), /tidsintervallet|verdiendringen/u);
     assert.doesNotMatch(byId(id).hint.join(" "), /samlet frekvens|sortering/u);
   }
 
@@ -636,7 +632,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.16");
+  assert.equal(bank.samling.versjon, "2027.17");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
