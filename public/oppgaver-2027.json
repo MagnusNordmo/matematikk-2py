@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.17"
+    "versjon": "2027.18"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -2694,9 +2694,10 @@
       "sporsmal": "Andelen som reiser kollektivt, økte fra \\(18\\,\\%\\) til \\(27\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Hva vet vi? Den gamle andelen er \\(18\\,\\%\\), og den nye er \\(27\\,\\%\\). Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.",
-        "Lag en plan: Finn først forskjellen mellom prosenttallene: \\(27-18=\\square\\) prosentpoeng.",
-        "Velg en enkel regnevei: Når prosentpoengsdifferansen er funnet, skriver du den relative endringen som differansen delt på den gamle andelen. Forkort brøken ved å dele tallet over og tallet under brøkstreken med samme tall.",
-        "Gjør neste del: Den forkortede brøken er \\(\\frac{1}{2}=\\square\\,\\%\\). Fortegnet viser om andelen økte eller sank."
+        "Finn forskjellen: Trekk først fra 20 og legg tilbake 2, fordi du bare skulle trekke fra 18. \\(27-18=27-20+2=7+2\\). Fullfør den siste regningen. Kall den ferdige endringen i prosentpoeng d.",
+        "Sett opp relativ endring: Vi sammenligner med den gamle andelen, \\(18\\,\\%\\), ikke den nye. Brøken er derfor \\(\\frac{d}{18}\\). Sett inn endringen du nettopp fant som d.",
+        "Forkort brøken: Del tallet over brøkstreken og tallet under brøkstreken på \\(d\\): \\(\\frac{d\\div(d)}{18\\div(d)}\\). Samme divisjon over og under brøkstreken bevarer brøkens verdi. Regn ut de to divisjonene selv.",
+        "Gjør om til prosent: Bruk brøken du fikk. Del 100 på nevneren, og gang deretter med telleren. Behold et eventuelt minustegn. Svar i prosentpoeng i det første feltet og prosent i det andre."
       ],
       "svar": "Endringen er \\(9\\) prosentpoeng og \\(50\\,\\%\\).",
       "fasit": {
@@ -2748,9 +2749,10 @@
       "sporsmal": "Andelen som svarte ja i en undersøkelse, sank fra \\(40\\,\\%\\) til \\(34\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Hva vet vi? Den gamle andelen er \\(40\\,\\%\\), og den nye er \\(34\\,\\%\\). Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.",
-        "Lag en plan: Finn først forskjellen mellom prosenttallene: \\(34-40=\\square\\) prosentpoeng.",
-        "Velg en enkel regnevei: Når prosentpoengsdifferansen er funnet, skriver du den relative endringen som differansen delt på den gamle andelen. Forkort brøken ved å dele tallet over og tallet under brøkstreken med samme tall.",
-        "Gjør neste del: Den forkortede brøken er \\(\\frac{-3}{20}=\\square\\,\\%\\). Fortegnet viser om andelen økte eller sank."
+        "Finn forskjellen: Finn først størrelsen på nedgangen. Endringen d er negativ, så sett minus foran resultatet. \\(40-34=40-30-4=10-4\\). Fullfør den siste regningen. Kall den ferdige endringen i prosentpoeng d.",
+        "Sett opp relativ endring: Vi sammenligner med den gamle andelen, \\(40\\,\\%\\), ikke den nye. Brøken er derfor \\(\\frac{d}{40}\\). Sett inn endringen du nettopp fant som d.",
+        "Forkort brøken: Del tallet over brøkstreken og tallet under brøkstreken på \\(2\\): \\(\\frac{d\\div(2)}{40\\div(2)}\\). Samme divisjon over og under brøkstreken bevarer brøkens verdi. Regn ut de to divisjonene selv.",
+        "Gjør om til prosent: Bruk brøken du fikk. Del 100 på nevneren, og gang deretter med telleren. Behold et eventuelt minustegn. Svar i prosentpoeng i det første feltet og prosent i det andre."
       ],
       "svar": "Endringen er \\(-6\\) prosentpoeng og \\(-15\\,\\%\\).",
       "fasit": {
@@ -2802,9 +2804,10 @@
       "sporsmal": "Renten på et lån økte fra \\(6\\,\\%\\) til \\(9\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Hva vet vi? Den gamle andelen er \\(6\\,\\%\\), og den nye er \\(9\\,\\%\\). Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.",
-        "Lag en plan: Finn først forskjellen mellom prosenttallene: \\(9-6=\\square\\) prosentpoeng.",
-        "Velg en enkel regnevei: Når prosentpoengsdifferansen er funnet, skriver du den relative endringen som differansen delt på den gamle andelen. Forkort brøken ved å dele tallet over og tallet under brøkstreken med samme tall.",
-        "Gjør neste del: Den forkortede brøken er \\(\\frac{1}{2}=\\square\\,\\%\\). Fortegnet viser om andelen økte eller sank."
+        "Finn forskjellen: Regn fra 6 til 10 og trekk fra det ene steget du gikk for langt. \\(9-6=10-6-1=4-1\\). Fullfør den siste regningen. Kall den ferdige endringen i prosentpoeng d.",
+        "Sett opp relativ endring: Vi sammenligner med den gamle andelen, \\(6\\,\\%\\), ikke den nye. Brøken er derfor \\(\\frac{d}{6}\\). Sett inn endringen du nettopp fant som d.",
+        "Forkort brøken: Del tallet over brøkstreken og tallet under brøkstreken på \\(d\\): \\(\\frac{d\\div(d)}{6\\div(d)}\\). Samme divisjon over og under brøkstreken bevarer brøkens verdi. Regn ut de to divisjonene selv.",
+        "Gjør om til prosent: Bruk brøken du fikk. Del 100 på nevneren, og gang deretter med telleren. Behold et eventuelt minustegn. Svar i prosentpoeng i det første feltet og prosent i det andre."
       ],
       "svar": "Endringen er \\(3\\) prosentpoeng og \\(50\\,\\%\\).",
       "fasit": {
@@ -2856,9 +2859,10 @@
       "sporsmal": "Andelen fornybar energi sank fra \\(72\\,\\%\\) til \\(63\\,\\%\\). Oppgi endringen i prosentpoeng og i prosent.",
       "hint": [
         "Hva vet vi? Den gamle andelen er \\(72\\,\\%\\), og den nye er \\(63\\,\\%\\). Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.",
-        "Lag en plan: Finn først forskjellen mellom prosenttallene: \\(63-72=\\square\\) prosentpoeng.",
-        "Velg en enkel regnevei: Når prosentpoengsdifferansen er funnet, skriver du den relative endringen som differansen delt på den gamle andelen. Forkort brøken ved å dele tallet over og tallet under brøkstreken med samme tall.",
-        "Gjør neste del: Den forkortede brøken er \\(\\frac{-1}{8}=\\square\\,\\%\\). Fortegnet viser om andelen økte eller sank."
+        "Finn forskjellen: Finn først størrelsen på nedgangen. Endringen d er negativ, så sett minus foran resultatet. \\(72-63=72-60-3=12-3\\). Fullfør den siste regningen. Kall den ferdige endringen i prosentpoeng d.",
+        "Sett opp relativ endring: Vi sammenligner med den gamle andelen, \\(72\\,\\%\\), ikke den nye. Brøken er derfor \\(\\frac{d}{72}\\). Sett inn endringen du nettopp fant som d.",
+        "Forkort brøken: Del tallet over brøkstreken og tallet under brøkstreken på \\(-d\\): \\(\\frac{d\\div(-d)}{72\\div(-d)}\\). Siden d er negativ, er -d den positive størrelsen på nedgangen. Regn ut de to divisjonene selv.",
+        "Gjør om til prosent: Bruk brøken du fikk. Del 100 på nevneren, og gang deretter med telleren. Behold et eventuelt minustegn. Svar i prosentpoeng i det første feltet og prosent i det andre."
       ],
       "svar": "Endringen er \\(-9\\) prosentpoeng og \\(-12{,}5\\,\\%\\).",
       "fasit": {
@@ -2910,9 +2914,10 @@
       "sporsmal": "Andelen elever med fravær en bestemt dag økte fra \\(12\\,\\%\\) til \\(15\\,\\%\\). Oppgi økningen i prosentpoeng og i prosent.",
       "hint": [
         "Hva vet vi? Den gamle andelen er \\(12\\,\\%\\), og den nye er \\(15\\,\\%\\). Vi skal finne både forskjellen i prosentpoeng og endringen målt i forhold til den gamle andelen.",
-        "Lag en plan: Finn først forskjellen mellom prosenttallene: \\(15-12=\\square\\) prosentpoeng.",
-        "Velg en enkel regnevei: Når prosentpoengsdifferansen er funnet, skriver du den relative endringen som differansen delt på den gamle andelen. Forkort brøken ved å dele tallet over og tallet under brøkstreken med samme tall.",
-        "Gjør neste del: Den forkortede brøken er \\(\\frac{1}{4}=\\square\\,\\%\\). Fortegnet viser om andelen økte eller sank."
+        "Finn forskjellen: Trekk fra 10 først, og trekk deretter fra de siste 2. \\(15-12=15-10-2=5-2\\). Fullfør den siste regningen. Kall den ferdige endringen i prosentpoeng d.",
+        "Sett opp relativ endring: Vi sammenligner med den gamle andelen, \\(12\\,\\%\\), ikke den nye. Brøken er derfor \\(\\frac{d}{12}\\). Sett inn endringen du nettopp fant som d.",
+        "Forkort brøken: Del tallet over brøkstreken og tallet under brøkstreken på \\(d\\): \\(\\frac{d\\div(d)}{12\\div(d)}\\). Samme divisjon over og under brøkstreken bevarer brøkens verdi. Regn ut de to divisjonene selv.",
+        "Gjør om til prosent: Bruk brøken du fikk. Del 100 på nevneren, og gang deretter med telleren. Behold et eventuelt minustegn. Svar i prosentpoeng i det første feltet og prosent i det andre."
       ],
       "svar": "Endringen er \\(3\\) prosentpoeng og \\(25\\,\\%\\).",
       "fasit": {
@@ -4532,9 +4537,9 @@
       "sporsmal": "Hvilket alternativ er lik \\(b^0\\), der \\(b\\neq0\\)?",
       "hint": [
         "Hva vet vi? Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
-        "Lag en plan: For et grunntall som ikke er null, er en potens med eksponent 0 alltid lik □.",
-        "Gjør første del: Du kan se dette fra \\(b^\\square/b^\\square=b^{\\square-\\square}=b^0\\).",
-        "Gjør neste del: Samtidig er \\(b^\\square/b^\\square=\\square\\), siden et tall delt på seg selv er □."
+        "Undersøk \\(b^2/b^2\\) når b ikke er null. Ved divisjon av potenser med samme grunntall trekkes eksponentene fra hverandre.",
+        "Potensregelen gir \\(b^{2-2}=b^0\\). Brøken kan også forstås som et tall delt på det samme tallet.",
+        "Hvilket tall får du når et tall som ikke er null, deles på seg selv? De to regnemåtene må gi samme verdi. Velg alternativet som passer."
       ],
       "svar": "Når \\(b\\neq0\\), er \\(b^0=1\\).",
       "fasit": {
@@ -5133,9 +5138,9 @@
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
         "Hva vet vi? Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
-        "Lag en plan: Skriv \\(10^{1/2}=\\sqrt{10}\\). Du trenger ikke finne en desimalverdi for roten.",
-        "Gjør første del: Sammenlign kvadrater: Siden \\(10<16\\), er \\(\\sqrt{10}<\\sqrt{16}=4\\). Dessuten er \\(2^2=4\\).",
-        "Gjør neste del: Regn ut det siste uttrykket: \\(\\sqrt[3]{125}=\\square\\). Dermed er rekkefølgen rotuttrykket, 4 og □."
+        "Skriv \\(10^{1/2}=\\sqrt{10}\\). Sammenlign 10 med kvadratet av verdien du får fra \\(2^2\\); kvadratroten bevarer rekkefølgen for positive tall.",
+        "Kubikkroten \\(\\sqrt[3]{125}\\) er tallet som ganget med seg selv tre ganger gir 125. Prøv heltall og sammenlign kubene med 125.",
+        "Plasser de tre verdiene på en tallinje. Velg svaralternativet som følger tallinjen fra venstre mot høyre."
       ],
       "svar": "Siden \\(\\sqrt{10}<4\\) og \\(\\sqrt[3]{125}=5\\), er riktig rekkefølge \\(10^{1/2}\\), \\(2^2\\), \\(\\sqrt[3]{125}\\).",
       "fasit": {
@@ -5883,10 +5888,10 @@
       "sporsmal": "Figur 1 har \\(3\\) ruter. Hver ny figur får \\(4\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(15\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn nær et rundt tall: \\(4\\cdot15=60\\), og trekk deretter fra 1.",
-        "Lag en plan: Figur 1 har \\(3\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
-        "Gjør første del: En generell regel er derfor \\(3+4(n-1)\\). Forenkling gir \\(\\square\\).",
-        "Gjør neste del: Sett inn \\(n=15\\) i regelen: \\(4\\cdot15-1=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(3\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(7\\) og \\(11\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=15\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen er \\(4n-1\\). Figur \\(15\\) har \\(59\\) ruter.",
       "fasit": {
@@ -5949,10 +5954,10 @@
       "sporsmal": "Figur 1 har \\(5\\) ruter. Hver ny figur får \\(2\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(12\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Dobling er nok her: \\(2\\cdot12=24\\), og så \\(24+3=\\square\\).",
-        "Lag en plan: Figur 1 har \\(5\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
-        "Gjør første del: En generell regel er derfor \\(5+2(n-1)\\). Forenkling gir \\(\\square\\).",
-        "Gjør neste del: Sett inn \\(n=12\\) i regelen: \\(2\\cdot12+3=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(5\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(7\\) og \\(9\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=12\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen er \\(2n+3\\). Figur \\(12\\) har \\(27\\) ruter.",
       "fasit": {
@@ -6015,10 +6020,10 @@
       "sporsmal": "Figur 1 har \\(2\\) ruter. Hver ny figur får \\(7\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(20\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Bruk at 20 tiere er lett å gange: \\(7\\cdot20=140\\), og trekk deretter fra 5.",
-        "Lag en plan: Figur 1 har \\(2\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
-        "Gjør første del: En generell regel er derfor \\(2+7(n-1)\\). Forenkling gir \\(\\square\\).",
-        "Gjør neste del: Sett inn \\(n=20\\) i regelen: \\(7\\cdot20-5=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(2\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(9\\) og \\(16\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=20\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen er \\(7n-5\\). Figur \\(20\\) har \\(135\\) ruter.",
       "fasit": {
@@ -6081,10 +6086,10 @@
       "sporsmal": "Figur 1 har \\(6\\) ruter. Hver ny figur får \\(1\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(18\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Sett figurnummeret inn i formelen: \\(18+5=\\square\\).",
-        "Lag en plan: Figur 1 har \\(6\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
-        "Gjør første del: En generell regel er derfor \\(6+1(n-1)\\). Forenkling gir \\(\\square\\).",
-        "Gjør neste del: Sett inn \\(n=18\\) i regelen: \\(18+5=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(6\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(7\\) og \\(8\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=18\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen er \\(n+5\\). Figur \\(18\\) har \\(23\\) ruter.",
       "fasit": {
@@ -6147,10 +6152,10 @@
       "sporsmal": "Figur 1 har \\(4\\) ruter. Hver ny figur får \\(5\\) flere ruter enn den forrige. Velg formelen for antall ruter i figur \\(n\\), og finn antallet i figur \\(25\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Fem ganger 25 er en kjent kvart av 500: \\(5\\cdot25=125\\), og så \\(125-1=\\square\\).",
-        "Lag en plan: Figur 1 har \\(4\\), og fra figur 1 til figur \\(n\\) skjer det \\(n-1\\) like økninger.",
-        "Gjør første del: En generell regel er derfor \\(4+5(n-1)\\). Forenkling gir \\(\\square\\).",
-        "Gjør neste del: Sett inn \\(n=25\\) i regelen: \\(5\\cdot25-1=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(4\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(9\\) og \\(14\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=25\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen er \\(5n-1\\). Figur \\(25\\) har \\(124\\) ruter.",
       "fasit": {
@@ -6213,10 +6218,10 @@
       "sporsmal": "De tre første figurene har \\(5\\), \\(10\\) og \\(17\\) brikker. Velg formelen som passer, og finn antallet i figur \\(8\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn inni parentesen før kvadratet: \\(8+1=9\\), så \\(9^2+1=81+1=\\square\\).",
-        "Lag en plan: Test den riktige formelen på figur 1: \\((1+1)^2+1=5\\).",
-        "Gjør første del: Test også figur 2: \\((2+1)^2+1=10\\). Formelen passer dermed de oppgitte startverdiene.",
-        "Gjør neste del: Sett inn \\(n=8\\): \\((8+1)^2+1=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(5\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(10\\) og \\(17\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=8\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen \\((n+1)^2+1\\) passer tallfølgen. Figur \\(8\\) har \\(82\\) brikker.",
       "fasit": {
@@ -6278,10 +6283,10 @@
       "sporsmal": "De tre første figurene har \\(10\\), \\(17\\) og \\(26\\) brikker. Velg formelen som passer, og finn antallet i figur \\(7\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn inni parentesen før kvadratet: \\(7+2=9\\), så \\(9^2+1=81+1=\\square\\).",
-        "Lag en plan: Test den riktige formelen på figur 1: \\((1+2)^2+1=10\\).",
-        "Gjør første del: Test også figur 2: \\((2+2)^2+1=17\\). Formelen passer dermed de oppgitte startverdiene.",
-        "Gjør neste del: Sett inn \\(n=7\\): \\((7+2)^2+1=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(10\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(17\\) og \\(26\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=7\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen \\((n+2)^2+1\\) passer tallfølgen. Figur \\(7\\) har \\(82\\) brikker.",
       "fasit": {
@@ -6343,10 +6348,10 @@
       "sporsmal": "De tre første figurene har \\(6\\), \\(11\\) og \\(18\\) brikker. Velg formelen som passer, og finn antallet i figur \\(6\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn inni parentesen før kvadratet: \\(6+1=7\\), så \\(7^2+2=49+2=\\square\\).",
-        "Lag en plan: Test den riktige formelen på figur 1: \\((1+1)^2+2=6\\).",
-        "Gjør første del: Test også figur 2: \\((2+1)^2+2=11\\). Formelen passer dermed de oppgitte startverdiene.",
-        "Gjør neste del: Sett inn \\(n=6\\): \\((6+1)^2+2=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(6\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(11\\) og \\(18\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=6\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen \\((n+1)^2+2\\) passer tallfølgen. Figur \\(6\\) har \\(51\\) brikker.",
       "fasit": {
@@ -6408,10 +6413,10 @@
       "sporsmal": "De tre første figurene har \\(17\\), \\(26\\) og \\(37\\) brikker. Velg formelen som passer, og finn antallet i figur \\(9\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn inni parentesen før kvadratet: \\(9+3=12\\), så \\(12^2+1=144+1=\\square\\).",
-        "Lag en plan: Test den riktige formelen på figur 1: \\((1+3)^2+1=17\\).",
-        "Gjør første del: Test også figur 2: \\((2+3)^2+1=26\\). Formelen passer dermed de oppgitte startverdiene.",
-        "Gjør neste del: Sett inn \\(n=9\\): \\((9+3)^2+1=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(17\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(26\\) og \\(37\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=9\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen \\((n+3)^2+1\\) passer tallfølgen. Figur \\(9\\) har \\(145\\) brikker.",
       "fasit": {
@@ -6473,10 +6478,10 @@
       "sporsmal": "De tre første figurene har \\(11\\), \\(18\\) og \\(27\\) brikker. Velg formelen som passer, og finn antallet i figur \\(10\\).",
       "hint": [
         "Hva vet vi? Koble hvert figurnummer til antallet objekter i figuren. Målet er å beskrive mønsteret slik at det også virker for figurer som ikke er tegnet.",
-        "Velg en enkel regnevei: Regn inni parentesen før kvadratet: \\(10+2=12\\), så \\(12^2+2=144+2=\\square\\).",
-        "Lag en plan: Test den riktige formelen på figur 1: \\((1+2)^2+2=11\\).",
-        "Gjør første del: Test også figur 2: \\((2+2)^2+2=18\\). Formelen passer dermed de oppgitte startverdiene.",
-        "Gjør neste del: Sett inn \\(n=10\\): \\((10+2)^2+2=\\square\\)."
+        "Test alle svaralternativene med \\(n=1\\). Erstatt hver n med 1 og regn parenteser, potenser og deretter resten. Stryk alternativene som ikke gir \\(11\\).",
+        "Test de gjenværende alternativene med \\(n=2\\) og \\(n=3\\). De må gi henholdsvis \\(18\\) og \\(27\\).",
+        "Bruk formelen som passer alle de oppgitte figurene. Sett inn \\(n=10\\) i denne formelen.",
+        "Regn først inni parentesene. En andre potens betyr at tallet skal ganges med seg selv. Gjør multiplikasjonene før du legger til eller trekker fra de siste leddene."
       ],
       "svar": "Formelen \\((n+2)^2+2\\) passer tallfølgen. Figur \\(10\\) har \\(146\\) brikker.",
       "fasit": {
@@ -8019,9 +8024,9 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(4, 6, 7, 8, 10\\).",
       "hint": [
         "Hva vet vi? Vi har \\(5\\) observasjoner: \\(4, 6, 7, 8, 10\\). Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.",
-        "Lag en plan: Legg sammen alle observasjonene.",
-        "Gjør første del: Del summen på antall observasjoner.",
-        "Gjør neste del: Summer først og del på antallet: \\(4+6+7+8+10=\\square\\) og \\(\\square/5=\\square\\)."
+        "Summer observasjonene: \\(4+6+7+8+10=35\\). Dette er totalsummen, ikke gjennomsnittet.",
+        "Fordel summen likt: Det er \\(5\\) observasjoner. Regnestykket for gjennomsnittet er derfor \\(35/5\\).",
+        "Hjelp med divisjonen: Del opp totalsummen som \\(35=30+5\\). Del begge delene på 5: \\(30/5=6\\) og \\(5/5=1\\). Legg sammen de to kvotientene selv."
       ],
       "svar": "Summen er \\(35\\), og gjennomsnittet er \\(35/5=7\\).",
       "fasit": {
@@ -8074,9 +8079,9 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(12, 15, 15, 18, 20, 22\\).",
       "hint": [
         "Hva vet vi? Vi har \\(6\\) observasjoner: \\(12, 15, 15, 18, 20, 22\\). Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.",
-        "Lag en plan: Legg sammen alle observasjonene.",
-        "Gjør første del: Del summen på antall observasjoner.",
-        "Gjør neste del: Summer først og del på antallet: \\(12+15+15+18+20+22=\\square\\) og \\(\\square/6=\\square\\)."
+        "Summer observasjonene: \\(12+15+15+18+20+22=102\\). Dette er totalsummen, ikke gjennomsnittet.",
+        "Fordel summen likt: Det er \\(6\\) observasjoner. Regnestykket for gjennomsnittet er derfor \\(102/6\\).",
+        "Hjelp med divisjonen: Del opp totalsummen som \\(102=96+6\\). Del begge delene på 6: \\(96/6=16\\) og \\(6/6=1\\). Legg sammen de to kvotientene selv."
       ],
       "svar": "Summen er \\(102\\), og gjennomsnittet er \\(102/6=17\\).",
       "fasit": {
@@ -8131,9 +8136,9 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(3, 5, 9, 11, 12\\).",
       "hint": [
         "Hva vet vi? Vi har \\(5\\) observasjoner: \\(3, 5, 9, 11, 12\\). Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.",
-        "Lag en plan: Legg sammen alle observasjonene.",
-        "Gjør første del: Del summen på antall observasjoner.",
-        "Gjør neste del: Summer først og del på antallet: \\(3+5+9+11+12=\\square\\) og \\(\\square/5=\\square\\)."
+        "Summer observasjonene: \\(3+5+9+11+12=40\\). Dette er totalsummen, ikke gjennomsnittet.",
+        "Fordel summen likt: Det er \\(5\\) observasjoner. Regnestykket for gjennomsnittet er derfor \\(40/5\\).",
+        "Hjelp med divisjonen: Del opp totalsummen som \\(40=35+5\\). Del begge delene på 5: \\(35/5=7\\) og \\(5/5=1\\). Legg sammen de to kvotientene selv."
       ],
       "svar": "Summen er \\(40\\), og gjennomsnittet er \\(40/5=8\\).",
       "fasit": {
@@ -8186,9 +8191,9 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(24, 28, 31, 34, 38\\).",
       "hint": [
         "Hva vet vi? Vi har \\(5\\) observasjoner: \\(24, 28, 31, 34, 38\\). Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.",
-        "Lag en plan: Legg sammen alle observasjonene.",
-        "Gjør første del: Del summen på antall observasjoner.",
-        "Gjør neste del: Summer først og del på antallet: \\(24+28+31+34+38=\\square\\) og \\(\\square/5=\\square\\)."
+        "Summer observasjonene: \\(24+28+31+34+38=155\\). Dette er totalsummen, ikke gjennomsnittet.",
+        "Fordel summen likt: Det er \\(5\\) observasjoner. Regnestykket for gjennomsnittet er derfor \\(155/5\\).",
+        "Hjelp med divisjonen: Del opp totalsummen som \\(155=150+5\\). Del begge delene på 5: \\(150/5=30\\) og \\(5/5=1\\). Legg sammen de to kvotientene selv."
       ],
       "svar": "Summen er \\(155\\), og gjennomsnittet er \\(155/5=31\\).",
       "fasit": {
@@ -8241,9 +8246,9 @@
       "sporsmal": "Finn gjennomsnittet av tallene \\(7, 8, 8, 9, 13, 15, 17\\).",
       "hint": [
         "Hva vet vi? Vi har \\(7\\) observasjoner: \\(7, 8, 8, 9, 13, 15, 17\\). Gjennomsnitt betyr at totalsummen fordeles likt på alle observasjonene.",
-        "Lag en plan: Legg sammen alle observasjonene.",
-        "Gjør første del: Del summen på antall observasjoner.",
-        "Gjør neste del: Summer først og del på antallet: \\(7+8+8+9+13+15+17=\\square\\) og \\(\\square/7=\\square\\)."
+        "Summer observasjonene: \\(7+8+8+9+13+15+17=77\\). Dette er totalsummen, ikke gjennomsnittet.",
+        "Fordel summen likt: Det er \\(7\\) observasjoner. Regnestykket for gjennomsnittet er derfor \\(77/7\\).",
+        "Hjelp med divisjonen: Del opp totalsummen som \\(77=70+7\\). Del begge delene på 7: \\(70/7=10\\) og \\(7/7=1\\). Legg sammen de to kvotientene selv."
       ],
       "svar": "Summen er \\(77\\), og gjennomsnittet er \\(77/7=11\\).",
       "fasit": {
@@ -9291,9 +9296,9 @@
       "sporsmal": "Dagstemperaturene er \\(8, 11, 14, 17\\) °C. Én observasjon mangler. Gjennomsnittet av alle 5 observasjonene er \\(13\\) °C. Finn den manglende observasjonen.",
       "hint": [
         "Hva vet vi? Målgjennomsnittet er \\(13\\), og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.",
-        "Lag en plan: Finn summen alle målingene må ha.",
-        "Gjør første del: Trekk fra summen av de kjente målingene.",
-        "Gjør neste del: Totalsummen må være \\(13\\cdot5=\\square\\). De kjente verdiene summeres til \\(8+11+14+17=50\\), så den manglende er \\(\\square-50=\\square\\)."
+        "Finn nødvendig totalsum: Gjennomsnitt ganger antall observasjoner gir \\(13\\cdot5=65\\).",
+        "Finn summen vi allerede kjenner: \\(8+11+14+17=50\\).",
+        "Finn det som mangler: Trekk den kjente summen fra den nødvendige totalsummen, \\(65-50\\). Du kan telle opp fra 50 til 65 i enkle hopp og legge sammen hoppene."
       ],
       "svar": "Totalsummen må være \\(13\\cdot5=65\\). Den manglende observasjonen er \\(15\\) °C.",
       "fasit": {
@@ -9338,9 +9343,9 @@
       "sporsmal": "Reisetidene er \\(22, 25, 28, 30, 35\\) minutter. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(29\\) minutter. Finn den manglende observasjonen.",
       "hint": [
         "Hva vet vi? Målgjennomsnittet er \\(29\\), og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.",
-        "Lag en plan: Finn summen alle målingene må ha.",
-        "Gjør første del: Trekk fra summen av de kjente målingene.",
-        "Gjør neste del: Totalsummen må være \\(29\\cdot6=\\square\\). De kjente verdiene summeres til \\(22+25+28+30+35=140\\), så den manglende er \\(\\square-140=\\square\\)."
+        "Finn nødvendig totalsum: Gjennomsnitt ganger antall observasjoner gir \\(29\\cdot6=174\\).",
+        "Finn summen vi allerede kjenner: \\(22+25+28+30+35=140\\).",
+        "Finn det som mangler: Trekk den kjente summen fra den nødvendige totalsummen, \\(174-140\\). Du kan telle opp fra 140 til 174 i enkle hopp og legge sammen hoppene."
       ],
       "svar": "Totalsummen må være \\(29\\cdot6=174\\). Den manglende observasjonen er \\(34\\) minutter.",
       "fasit": {
@@ -9386,9 +9391,9 @@
       "sporsmal": "Poengsummene er \\(4, 7, 9, 10, 15\\) poeng. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(9\\) poeng. Finn den manglende observasjonen.",
       "hint": [
         "Hva vet vi? Målgjennomsnittet er \\(9\\), og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.",
-        "Lag en plan: Finn summen alle målingene må ha.",
-        "Gjør første del: Trekk fra summen av de kjente målingene.",
-        "Gjør neste del: Totalsummen må være \\(9\\cdot6=\\square\\). De kjente verdiene summeres til \\(4+7+9+10+15=45\\), så den manglende er \\(\\square-45=\\square\\)."
+        "Finn nødvendig totalsum: Gjennomsnitt ganger antall observasjoner gir \\(9\\cdot6=54\\).",
+        "Finn summen vi allerede kjenner: \\(4+7+9+10+15=45\\).",
+        "Finn det som mangler: Trekk den kjente summen fra den nødvendige totalsummen, \\(54-45\\). Du kan telle opp fra 45 til 54 i enkle hopp og legge sammen hoppene."
       ],
       "svar": "Totalsummen må være \\(9\\cdot6=54\\). Den manglende observasjonen er \\(9\\) poeng.",
       "fasit": {
@@ -9434,9 +9439,9 @@
       "sporsmal": "Testresultatene er \\(60, 72, 75, 81\\) poeng. Én observasjon mangler. Gjennomsnittet av alle 5 observasjonene er \\(74\\) poeng. Finn den manglende observasjonen.",
       "hint": [
         "Hva vet vi? Målgjennomsnittet er \\(74\\), og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.",
-        "Lag en plan: Finn summen alle målingene må ha.",
-        "Gjør første del: Trekk fra summen av de kjente målingene.",
-        "Gjør neste del: Totalsummen må være \\(74\\cdot5=\\square\\). De kjente verdiene summeres til \\(60+72+75+81=288\\), så den manglende er \\(\\square-288=\\square\\)."
+        "Finn nødvendig totalsum: Gjennomsnitt ganger antall observasjoner gir \\(74\\cdot5=370\\).",
+        "Finn summen vi allerede kjenner: \\(60+72+75+81=288\\).",
+        "Finn det som mangler: Trekk den kjente summen fra den nødvendige totalsummen, \\(370-288\\). Du kan telle opp fra 288 til 370 i enkle hopp og legge sammen hoppene."
       ],
       "svar": "Totalsummen må være \\(74\\cdot5=370\\). Den manglende observasjonen er \\(82\\) poeng.",
       "fasit": {
@@ -9481,9 +9486,9 @@
       "sporsmal": "Ventetidene er \\(12, 18, 21, 24, 27\\) minutter. Én observasjon mangler. Gjennomsnittet av alle 6 observasjonene er \\(20\\) minutter. Finn den manglende observasjonen.",
       "hint": [
         "Hva vet vi? Målgjennomsnittet er \\(20\\), og én observasjon mangler. Først finner vi totalsummen som alle observasjonene må ha til sammen.",
-        "Lag en plan: Finn summen alle målingene må ha.",
-        "Gjør første del: Trekk fra summen av de kjente målingene.",
-        "Gjør neste del: Totalsummen må være \\(20\\cdot6=\\square\\). De kjente verdiene summeres til \\(12+18+21+24+27=102\\), så den manglende er \\(\\square-102=\\square\\)."
+        "Finn nødvendig totalsum: Gjennomsnitt ganger antall observasjoner gir \\(20\\cdot6=120\\).",
+        "Finn summen vi allerede kjenner: \\(12+18+21+24+27=102\\).",
+        "Finn det som mangler: Trekk den kjente summen fra den nødvendige totalsummen, \\(120-102\\). Du kan telle opp fra 102 til 120 i enkle hopp og legge sammen hoppene."
       ],
       "svar": "Totalsummen må være \\(20\\cdot6=120\\). Den manglende observasjonen er \\(18\\) minutter.",
       "fasit": {
@@ -10309,8 +10314,9 @@
       "sporsmal": "En rett linje går gjennom punktene \\((2,11)\\) og \\((6,23)\\). Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Linjen går gjennom \\((2,11)\\) og \\((6,23)\\). Stigningstallet er endringen opp eller ned delt på endringen mot høyre.",
-        "Lag en plan: Finn endringen i y og endringen i x.",
-        "Velg en enkel regnevei: Finn de to endringene først. Da står bare den korte divisjonen \\(12/4=\\square\\) igjen."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=23-11\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=6-2=4\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{23-11}{6-2}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Stigningstallet er \\((23-11)/(6-2)=3\\).",
       "fasit": {
@@ -10356,8 +10362,9 @@
       "sporsmal": "En rett linje går gjennom punktene \\((4,38)\\) og \\((10,65)\\). Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Linjen går gjennom \\((4,38)\\) og \\((10,65)\\). Stigningstallet er endringen opp eller ned delt på endringen mot høyre.",
-        "Lag en plan: Finn endringen i y og endringen i x.",
-        "Velg en enkel regnevei: Finn de to endringene først. Da står bare den korte divisjonen \\(27/6=\\square\\) igjen."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=65-38\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=10-4=6\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{65-38}{10-4}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Stigningstallet er \\((65-38)/(10-4)=4{,}5\\).",
       "fasit": {
@@ -10403,8 +10410,9 @@
       "sporsmal": "En rett linje går gjennom punktene \\((0,18)\\) og \\((5,8)\\). Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Linjen går gjennom \\((0,18)\\) og \\((5,8)\\). Stigningstallet er endringen opp eller ned delt på endringen mot høyre.",
-        "Lag en plan: Finn endringen i y og endringen i x.",
-        "Velg en enkel regnevei: Finn de to endringene først. Da står bare den korte divisjonen \\(-10/5=\\square\\) igjen."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=8-18\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=5-0=5\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{8-18}{5-0}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Stigningstallet er \\((8-18)/(5-0)=-2\\).",
       "fasit": {
@@ -10450,8 +10458,9 @@
       "sporsmal": "En rett linje går gjennom punktene \\((3,7)\\) og \\((9,31)\\). Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Linjen går gjennom \\((3,7)\\) og \\((9,31)\\). Stigningstallet er endringen opp eller ned delt på endringen mot høyre.",
-        "Lag en plan: Finn endringen i y og endringen i x.",
-        "Velg en enkel regnevei: Finn de to endringene først. Da står bare den korte divisjonen \\(24/6=\\square\\) igjen."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=31-7\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=9-3=6\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{31-7}{9-3}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Stigningstallet er \\((31-7)/(9-3)=4\\).",
       "fasit": {
@@ -10497,8 +10506,9 @@
       "sporsmal": "En rett linje går gjennom punktene \\((12,120)\\) og \\((20,168)\\). Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Linjen går gjennom \\((12,120)\\) og \\((20,168)\\). Stigningstallet er endringen opp eller ned delt på endringen mot høyre.",
-        "Lag en plan: Finn endringen i y og endringen i x.",
-        "Velg en enkel regnevei: Finn de to endringene først. Da står bare den korte divisjonen \\(48/8=\\square\\) igjen."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=168-120\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=20-12=8\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{168-120}{20-12}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Stigningstallet er \\((168-120)/(20-12)=6\\).",
       "fasit": {
@@ -11214,8 +11224,9 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.",
-        "Lag en plan: Velg to rader i tabellen.",
-        "Velg en enkel regnevei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=1\\) og \\(\\Delta y=3\\), så \\(3/1=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=8-5\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=1-0=1\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{8-5}{1-0}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Forholdet mellom endringene er konstant og gir stigningstall \\(3\\).",
       "fasit": {
@@ -11303,8 +11314,9 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.",
-        "Lag en plan: Velg to rader i tabellen.",
-        "Velg en enkel regnevei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=2\\) og \\(\\Delta y=-4\\), så \\(-4/2=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=26-30\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=4-2=2\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{26-30}{4-2}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Forholdet mellom endringene er konstant og gir stigningstall \\(-2\\).",
       "fasit": {
@@ -11386,8 +11398,9 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.",
-        "Lag en plan: Velg to rader i tabellen.",
-        "Velg en enkel regnevei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=5\\) og \\(\\Delta y=15\\), så \\(15/5=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=27-12\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=5-0=5\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{27-12}{5-0}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Forholdet mellom endringene er konstant og gir stigningstall \\(3\\).",
       "fasit": {
@@ -11469,8 +11482,9 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.",
-        "Lag en plan: Velg to rader i tabellen.",
-        "Velg en enkel regnevei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=2\\) og \\(\\Delta y=-6\\), så \\(-6/2=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=44-50\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=3-1=2\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{44-50}{3-1}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Forholdet mellom endringene er konstant og gir stigningstall \\(-3\\).",
       "fasit": {
@@ -11552,8 +11566,9 @@
       "sporsmal": "Tabellen viser en lineær sammenheng. Finn stigningstallet.",
       "hint": [
         "Hva vet vi? Tabellen viser flere punkter på samme rette linje. Vi trenger bare to punkter for å finne hvor mye y endres når x øker.",
-        "Lag en plan: Velg to rader i tabellen.",
-        "Velg en enkel regnevei: Bruk to nabokolonner i stedet for hele tabellen. Endringene er \\(\\Delta x=10\\) og \\(\\Delta y=5\\), så \\(5/10=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=12-7\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=20-10=10\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{12-7}{20-10}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Forholdet mellom endringene er konstant og gir stigningstall \\(0{,}5\\).",
       "fasit": {
@@ -11885,8 +11900,9 @@
       "sporsmal": "Vannmengden i en tank øker fra \\(15\\) liter ved \\(t=0\\) minutter til \\(45\\) liter ved \\(t=10\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Hva vet vi? Startpunktet er \\((0,15)\\), og sluttpunktet er \\((10,45)\\). Vi skal fordele hele verdiendringen på hele tidsintervallet.",
-        "Lag en plan: Finn endringen i størrelsen.",
-        "Velg en enkel regnevei: Regn endringene før du deler: \\(\\Delta y=30\\) og \\(\\Delta x=10\\). Da blir vekstfarten \\(30/10=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=45-15\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=10-0=10\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{45-15}{10-0}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Den gjennomsnittlige vekstfarten er \\((45-15)/(10-0)=3\\) liter per minutt.",
       "fasit": {
@@ -11928,8 +11944,9 @@
       "sporsmal": "Temperaturen i en ovn øker fra \\(30\\) °C ved \\(t=2\\) minutter til \\(78\\) °C ved \\(t=18\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Hva vet vi? Startpunktet er \\((2,30)\\), og sluttpunktet er \\((18,78)\\). Vi skal fordele hele verdiendringen på hele tidsintervallet.",
-        "Lag en plan: Finn endringen i størrelsen.",
-        "Velg en enkel regnevei: Regn endringene før du deler: \\(\\Delta y=48\\) og \\(\\Delta x=16\\). Da blir vekstfarten \\(48/16=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=78-30\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=18-2=16\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{78-30}{18-2}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Den gjennomsnittlige vekstfarten er \\((78-30)/(18-2)=3\\) °C per minutt.",
       "fasit": {
@@ -11971,8 +11988,9 @@
       "sporsmal": "Vannmengden i et basseng øker fra \\(12\\) m³ ved \\(t=5\\) minutter til \\(61\\) m³ ved \\(t=25\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Hva vet vi? Startpunktet er \\((5,12)\\), og sluttpunktet er \\((25,61)\\). Vi skal fordele hele verdiendringen på hele tidsintervallet.",
-        "Lag en plan: Finn endringen i størrelsen.",
-        "Velg en enkel regnevei: Regn endringene før du deler: \\(\\Delta y=49\\) og \\(\\Delta x=20\\). Da blir vekstfarten \\(49/20=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=61-12\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=25-5=20\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{61-12}{25-5}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Den gjennomsnittlige vekstfarten er \\((61-12)/(25-5)=2{,}45\\) m³ per minutt.",
       "fasit": {
@@ -12014,8 +12032,9 @@
       "sporsmal": "Temperaturen i en væske synker fra \\(120\\) °C ved \\(t=0\\) minutter til \\(72\\) °C ved \\(t=8\\) minutter. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Hva vet vi? Startpunktet er \\((0,120)\\), og sluttpunktet er \\((8,72)\\). Vi skal fordele hele verdiendringen på hele tidsintervallet.",
-        "Lag en plan: Finn endringen i størrelsen.",
-        "Velg en enkel regnevei: Regn endringene før du deler: \\(\\Delta y=-48\\) og \\(\\Delta x=8\\). Da blir vekstfarten \\(-48/8=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=72-120\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=8-0=8\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{72-120}{8-0}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Den gjennomsnittlige vekstfarten er \\((72-120)/(8-0)=-6\\) °C per minutt.",
       "fasit": {
@@ -12057,8 +12076,9 @@
       "sporsmal": "En produksjonslinje har produsert \\(250\\) enheter etter \\(10\\) timer og \\(610\\) enheter etter \\(40\\) timer. Finn den gjennomsnittlige vekstfarten.",
       "hint": [
         "Hva vet vi? Startpunktet er \\((10,250)\\), og sluttpunktet er \\((40,610)\\). Vi skal fordele hele verdiendringen på hele tidsintervallet.",
-        "Lag en plan: Finn endringen i størrelsen.",
-        "Velg en enkel regnevei: Regn endringene før du deler: \\(\\Delta y=360\\) og \\(\\Delta x=30\\). Da blir vekstfarten \\(360/30=\\square\\)."
+        "Finn endringen i y: Bruk sluttverdi minus startverdi, \\(\\Delta y=610-250\\). Behold minustegnet hvis verdien synker.",
+        "Finn endringen i x i samme retning: \\(\\Delta x=40-10=30\\).",
+        "Del y-endringen på x-endringen: \\(\\frac{610-250}{40-10}\\). Regn ut telleren først. Ved divisjonen kan du finne hvilket tall som, ganget med nevneren, gir telleren."
       ],
       "svar": "Den gjennomsnittlige vekstfarten er \\((610-250)/(40-10)=12\\) enheter per time.",
       "fasit": {
@@ -15822,9 +15842,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Et nettsted har \\(1\\,000\\) daglige besøk. Antallet øker med \\(10\\,\\%\\) per år. Etter hvor mange hele år er antallet for første gang minst \\(1\\,300\\)?",
       "hint": [
-        "Beregn verdien periode for periode eller bruk en potens.",
-        "Kontroller både perioden du velger og perioden rett før.",
-        "Sammenlign to naboperioder: \\(1\\,000\\cdot1{,}1^{2}\\approx1\\,210\\) og \\(1\\,000\\cdot1{,}1^{\\square}\\approx\\square\\). Bare den siste har passert grensen \\(1\\,300\\)."
+        "Bruk vekstmodellen med antall perioder som eksponent. Antall hele perioder må være et ikke-negativt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Første gang grensen passeres er etter \\(3\\) år. Da gir modellen omtrent \\(1\\,331\\) daglige besøk.",
       "fasit": {
@@ -15864,9 +15884,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Et årlig utslipp er \\(2\\,500\\) tonn og reduseres med \\(8\\,\\%\\) per år. Etter hvor mange hele år er utslippet for første gang høyst \\(1\\,900\\) tonn?",
       "hint": [
-        "Beregn verdien periode for periode eller bruk en potens.",
-        "Kontroller både perioden du velger og perioden rett før.",
-        "Sammenlign to naboperioder: \\(2\\,500\\cdot0{,}92^{3}\\approx1\\,946{,}72\\) og \\(2\\,500\\cdot0{,}92^{\\square}\\approx1\\,790{,}98\\). Bare den siste har passert grensen \\(1\\,900\\)."
+        "Bruk vekstmodellen med antall perioder som eksponent. Antall hele perioder må være et ikke-negativt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Første gang grensen passeres er etter \\(4\\) år. Da gir modellen et utslipp på omtrent \\(1\\,791\\) tonn.",
       "fasit": {
@@ -15906,9 +15926,9 @@
       "hjelpemidler": "med",
       "sporsmal": "En organisasjon har \\(800\\) medlemmer. Medlemstallet øker med \\(15\\,\\%\\) per år. Etter hvor mange hele år er medlemstallet for første gang minst \\(1\\,200\\)?",
       "hint": [
-        "Beregn verdien periode for periode eller bruk en potens.",
-        "Kontroller både perioden du velger og perioden rett før.",
-        "Sammenlign to naboperioder: \\(800\\cdot1{,}15^{2}\\approx1\\,058\\) og \\(800\\cdot1{,}15^{\\square}\\approx1\\,216{,}7\\). Bare den siste har passert grensen \\(1\\,200\\)."
+        "Bruk vekstmodellen med antall perioder som eksponent. Antall hele perioder må være et ikke-negativt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Første gang grensen passeres er etter \\(3\\) år. Da gir modellen omtrent \\(1\\,217\\) medlemmer.",
       "fasit": {
@@ -15948,9 +15968,9 @@
       "hjelpemidler": "med",
       "sporsmal": "En maskin er verdt \\(5\\,000\\) kr og synker i verdi med \\(12\\,\\%\\) per år. Etter hvor mange hele år er verdien for første gang høyst \\(3\\,000\\) kr?",
       "hint": [
-        "Beregn verdien periode for periode eller bruk en potens.",
-        "Kontroller både perioden du velger og perioden rett før.",
-        "Sammenlign to naboperioder: \\(5\\,000\\cdot0{,}88^{3}\\approx3\\,407{,}36\\) og \\(5\\,000\\cdot0{,}88^{\\square}\\approx2\\,998{,}48\\). Bare den siste har passert grensen \\(3\\,000\\)."
+        "Bruk vekstmodellen med antall perioder som eksponent. Antall hele perioder må være et ikke-negativt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Første gang grensen passeres er etter \\(4\\) år. Da er modellverdien omtrent \\(2\\,998{,}5\\) kr.",
       "fasit": {
@@ -15990,9 +16010,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Et arrangement har \\(1\\,200\\) deltakere. Deltakertallet øker med \\(6\\,\\%\\) per år. Etter hvor mange hele år er deltakertallet for første gang minst \\(1\\,500\\)?",
       "hint": [
-        "Beregn verdien periode for periode eller bruk en potens.",
-        "Kontroller både perioden du velger og perioden rett før.",
-        "Sammenlign to naboperioder: \\(1\\,200\\cdot1{,}06^{3}\\approx1\\,429{,}22\\) og \\(1\\,200\\cdot1{,}06^{\\square}\\approx1\\,514{,}97\\). Bare den siste har passert grensen \\(1\\,500\\)."
+        "Bruk vekstmodellen med antall perioder som eksponent. Antall hele perioder må være et ikke-negativt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Første gang grensen passeres er etter \\(4\\) år. Da gir modellen omtrent \\(1\\,515\\) deltakere.",
       "fasit": {
@@ -23017,9 +23037,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
-        "Sett observasjonen inn i T(x)=k/x+fast tid.",
-        "Trekk fra fast tid og multipliser med x.",
-        "Regn uttrykket helt ut: \\(22=\\square/6+2\\)."
+        "Sett observasjonen inn i modellen med k som ukjent: \\(22=k/6+2\\).",
+        "Trekk den faste tiden fra begge sider: \\(22-2=k/6\\), altså \\(20=k/6\\).",
+        "Gang begge sider med 6 for å oppheve divisjonen: \\(k=20\\cdot6\\). Regn ut produktet selv."
       ],
       "svar": "\\(22=120/6+2\\), så \\(k=120\\).",
       "fasit": {
@@ -23197,9 +23217,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
-        "Sett observasjonen inn i T(x)=k/x+fast tid.",
-        "Trekk fra fast tid og multipliser med x.",
-        "Regn uttrykket helt ut: \\(46=\\square/8+1\\)."
+        "Sett observasjonen inn i modellen med k som ukjent: \\(46=k/8+1\\).",
+        "Trekk den faste tiden fra begge sider: \\(46-1=k/8\\), altså \\(45=k/8\\).",
+        "Gang begge sider med 8 for å oppheve divisjonen: \\(k=45\\cdot8\\). Regn ut produktet selv."
       ],
       "svar": "\\(46=360/8+1\\), så \\(k=360\\).",
       "fasit": {
@@ -23377,9 +23397,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
-        "Sett observasjonen inn i T(x)=k/x+fast tid.",
-        "Trekk fra fast tid og multipliser med x.",
-        "Regn uttrykket helt ut: \\(65=\\square/15+5\\)."
+        "Sett observasjonen inn i modellen med k som ukjent: \\(65=k/15+5\\).",
+        "Trekk den faste tiden fra begge sider: \\(65-5=k/15\\), altså \\(60=k/15\\).",
+        "Gang begge sider med 15 for å oppheve divisjonen: \\(k=60\\cdot15\\). Regn ut produktet selv."
       ],
       "svar": "\\(65=900/15+5\\), så \\(k=900\\).",
       "fasit": {
@@ -23557,9 +23577,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
-        "Sett observasjonen inn i T(x)=k/x+fast tid.",
-        "Trekk fra fast tid og multipliser med x.",
-        "Regn uttrykket helt ut: \\(27=\\square/10+3\\)."
+        "Sett observasjonen inn i modellen med k som ukjent: \\(27=k/10+3\\).",
+        "Trekk den faste tiden fra begge sider: \\(27-3=k/10\\), altså \\(24=k/10\\).",
+        "Gang begge sider med 10 for å oppheve divisjonen: \\(k=24\\cdot10\\). Regn ut produktet selv."
       ],
       "svar": "\\(27=240/10+3\\), så \\(k=240\\).",
       "fasit": {
@@ -23737,9 +23757,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Bruk observasjonen til å bestemme konstanten k.",
       "hint": [
-        "Sett observasjonen inn i T(x)=k/x+fast tid.",
-        "Trekk fra fast tid og multipliser med x.",
-        "Regn uttrykket helt ut: \\(44=\\square/12+4\\)."
+        "Sett observasjonen inn i modellen med k som ukjent: \\(44=k/12+4\\).",
+        "Trekk den faste tiden fra begge sider: \\(44-4=k/12\\), altså \\(40=k/12\\).",
+        "Gang begge sider med 12 for å oppheve divisjonen: \\(k=40\\cdot12\\). Regn ut produktet selv."
       ],
       "svar": "\\(44=480/12+4\\), så \\(k=480\\).",
       "fasit": {
@@ -24006,9 +24026,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Grensen endres fra 50 til 60. Hvor mange verdier teller programmet etter denne endringen?",
       "hint": [
-        "Med ny grense 60 tas bare verdier som er minst 60 med.",
-        "Gå gjennom listen og marker 61, 73 og 66.",
-        "Variabelen antall øker én gang for hver av de tre markerte verdiene."
+        "Med ny grense 60 tas bare verdier som er minst 60 med. Likhet med grensen teller også.",
+        "Gå gjennom den opprinnelige listen ett tall om gangen. Skriv ja eller nei ved hvert tall ut fra det nye vilkåret.",
+        "Start antall på null. Legg til én for hver ja-markering, og les av antall når hele listen er gjennomgått."
       ],
       "svar": "Etter endringen teller programmet 3 verdier.",
       "fasit": {
@@ -24954,9 +24974,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er det minste figurnummeret som har minst \\(100\\) benker?",
       "hint": [
-        "Bruk regelen \\(4n+2\\) og sammenlign den med grensen \\(100\\).",
-        "Kontroller figuren før kandidaten: \\(4\\cdot24+2=98\\). Den når ikke grensen.",
-        "Kontroller kandidaten: \\(4\\cdot\\square+2=102\\). Denne figuren når grensen."
+        "Finn fram formelen du valgte i deloppgave b. Bruk n som figurnummer; n må være et positivt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Det minste figurnummeret som oppfyller kravet, er \\(25\\).",
       "fasit": {
@@ -25131,9 +25151,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er det minste figurnummeret som har minst \\(200\\) fliser?",
       "hint": [
-        "Bruk regelen \\(n^2+4n\\) og sammenlign den med grensen \\(200\\).",
-        "Kontroller figuren før kandidaten: \\(12^2+4\\cdot12=192\\). Den når ikke grensen.",
-        "Kontroller kandidaten: \\(\\square^2+4\\cdot\\square=221\\). Denne figuren når grensen."
+        "Finn fram formelen du valgte i deloppgave b. Bruk n som figurnummer; n må være et positivt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Det minste figurnummeret som oppfyller kravet, er \\(13\\).",
       "fasit": {
@@ -25308,9 +25328,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er det minste figurnummeret som har minst \\(75\\) stoler?",
       "hint": [
-        "Bruk regelen \\(2n+4\\) og sammenlign den med grensen \\(75\\).",
-        "Kontroller figuren før kandidaten: \\(2\\cdot35+4=74\\). Den når ikke grensen.",
-        "Kontroller kandidaten: \\(2\\cdot\\square+4=76\\). Denne figuren når grensen."
+        "Finn fram formelen du valgte i deloppgave b. Bruk n som figurnummer; n må være et positivt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Det minste figurnummeret som oppfyller kravet, er \\(36\\).",
       "fasit": {
@@ -25485,9 +25505,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er det minste figurnummeret som har minst \\(120\\) prikker?",
       "hint": [
-        "Bruk regelen \\(n(n+1)/2\\) og sammenlign den med grensen \\(120\\).",
-        "Kontroller figuren før kandidaten: \\(14\\cdot(14+1)/2=105\\). Den når ikke grensen.",
-        "Kontroller kandidaten: \\(\\square\\cdot(\\square+1)/2=120\\). Denne figuren når grensen."
+        "Finn fram formelen du valgte i deloppgave b. Bruk n som figurnummer; n må være et positivt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Det minste figurnummeret som oppfyller kravet, er \\(15\\).",
       "fasit": {
@@ -25662,9 +25682,9 @@
       "hjelpemidler": "med",
       "sporsmal": "Hva er det minste figurnummeret som har minst \\(100\\) ruter?",
       "hint": [
-        "Bruk regelen \\((n+2)^2-n^2\\) og sammenlign den med grensen \\(100\\).",
-        "Kontroller figuren før kandidaten: \\((23+2)^2-23^2=96\\). Den når ikke grensen.",
-        "Kontroller kandidaten: \\((\\square+2)^2-\\square^2=100\\). Denne figuren når grensen."
+        "Finn fram formelen du valgte i deloppgave b. Bruk n som figurnummer; n må være et positivt heltall.",
+        "Lag en tabell med heltall i den første kolonnen og tilhørende modellverdier i den andre. Regn fra de tidlige verdiene og fortsett til kravet i oppgaven er oppfylt.",
+        "Velg det første heltallet som oppfyller kravet. Kontroller også heltallet rett før: verdien der må ennå ikke oppfylle kravet. Bruk «minst» eller «større enn» slik det står i oppgaven."
       ],
       "svar": "Det minste figurnummeret som oppfyller kravet, er \\(24\\).",
       "fasit": {
@@ -25857,8 +25877,9 @@
       "sporsmal": "Velg de to riktige påstandene om kategorien «Kollektiv» og om hva dataene kan vise.",
       "hint": [
         "Kategorien «Kollektiv» går fra \\(180\\) til \\(225\\).",
-        "Den absolutte endringen er \\(225-180=\\square\\).",
-        "Den relative endringen er \\(\\square/180\\cdot100\\,\\%\\approx\\square\\,\\%\\). Tallene beskriver endringen, men beviser ikke hva som forårsaket den."
+        "Absolutt endring er ny verdi minus gammel verdi: \\(225-180\\). Regn ut forskjellen og behold fortegnet.",
+        "Relativ endring sammenligner forskjellen med den gamle verdien: \\(\\frac{225-180}{180}\\cdot100\\,\\%\\). Regn telleren først, del på nevneren og gang med 100.",
+        "Sammenlign beregningene med påstandene. Skill også mellom det å beskrive en endring og det å bevise hva som forårsaket den."
       ],
       "svar": "Riktige påstander er: Kategorien «Kollektiv» økte med \\(45\\) personer. Den relative endringen for «Kollektiv» var omtrent \\(25\\,\\%\\).",
       "fasit": {
@@ -26051,8 +26072,9 @@
       "sporsmal": "Velg de to riktige påstandene om kategorien «Sol» og om hva dataene kan vise.",
       "hint": [
         "Kategorien «Sol» går fra \\(45\\) til \\(75\\).",
-        "Den absolutte endringen er \\(75-45=\\square\\).",
-        "Den relative endringen er \\(\\square/45\\cdot100\\,\\%\\approx\\square\\,\\%\\). Tallene beskriver endringen, men beviser ikke hva som forårsaket den."
+        "Absolutt endring er ny verdi minus gammel verdi: \\(75-45\\). Regn ut forskjellen og behold fortegnet.",
+        "Relativ endring sammenligner forskjellen med den gamle verdien: \\(\\frac{75-45}{45}\\cdot100\\,\\%\\). Regn telleren først, del på nevneren og gang med 100.",
+        "Sammenlign beregningene med påstandene. Skill også mellom det å beskrive en endring og det å bevise hva som forårsaket den."
       ],
       "svar": "Riktige påstander er: Kategorien «Sol» økte med \\(30\\) GWh. Den relative endringen for «Sol» var omtrent \\(66{,}7\\,\\%\\).",
       "fasit": {
@@ -26245,8 +26267,9 @@
       "sporsmal": "Velg de to riktige påstandene om kategorien «Andre» og om hva dataene kan vise.",
       "hint": [
         "Kategorien «Andre» går fra \\(130\\) til \\(160\\).",
-        "Den absolutte endringen er \\(160-130=\\square\\).",
-        "Den relative endringen er \\(\\square/130\\cdot100\\,\\%\\approx\\square\\,\\%\\). Tallene beskriver endringen, men beviser ikke hva som forårsaket den."
+        "Absolutt endring er ny verdi minus gammel verdi: \\(160-130\\). Regn ut forskjellen og behold fortegnet.",
+        "Relativ endring sammenligner forskjellen med den gamle verdien: \\(\\frac{160-130}{130}\\cdot100\\,\\%\\). Regn telleren først, del på nevneren og gang med 100.",
+        "Sammenlign beregningene med påstandene. Skill også mellom det å beskrive en endring og det å bevise hva som forårsaket den."
       ],
       "svar": "Riktige påstander er: Kategorien «Andre» økte med \\(30\\) søkere. Den relative endringen for «Andre» var omtrent \\(23{,}1\\,\\%\\).",
       "fasit": {
@@ -26439,8 +26462,9 @@
       "sporsmal": "Velg de to riktige påstandene om kategorien «Rest» og om hva dataene kan vise.",
       "hint": [
         "Kategorien «Rest» går fra \\(510\\) til \\(450\\).",
-        "Den absolutte endringen er \\(450-510=-\\square\\).",
-        "Den relative endringen er \\(-\\square/510\\cdot100\\,\\%\\approx\\square\\,\\%\\). Tallene beskriver endringen, men beviser ikke hva som forårsaket den."
+        "Absolutt endring er ny verdi minus gammel verdi: \\(450-510\\). Regn ut forskjellen og behold fortegnet.",
+        "Relativ endring sammenligner forskjellen med den gamle verdien: \\(\\frac{450-510}{510}\\cdot100\\,\\%\\). Regn telleren først, del på nevneren og gang med 100.",
+        "Sammenlign beregningene med påstandene. Skill også mellom det å beskrive en endring og det å bevise hva som forårsaket den."
       ],
       "svar": "Riktige påstander er: Kategorien «Rest» ble redusert med \\(60\\) tonn. Den relative endringen for «Rest» var omtrent \\(-11{,}8\\,\\%\\).",
       "fasit": {
@@ -26633,8 +26657,9 @@
       "sporsmal": "Velg de to riktige påstandene om kategorien «Konsert» og om hva dataene kan vise.",
       "hint": [
         "Kategorien «Konsert» går fra \\(220\\) til \\(260\\).",
-        "Den absolutte endringen er \\(260-220=\\square\\).",
-        "Den relative endringen er \\(\\square/220\\cdot100\\,\\%\\approx\\square\\,\\%\\). Tallene beskriver endringen, men beviser ikke hva som forårsaket den."
+        "Absolutt endring er ny verdi minus gammel verdi: \\(260-220\\). Regn ut forskjellen og behold fortegnet.",
+        "Relativ endring sammenligner forskjellen med den gamle verdien: \\(\\frac{260-220}{220}\\cdot100\\,\\%\\). Regn telleren først, del på nevneren og gang med 100.",
+        "Sammenlign beregningene med påstandene. Skill også mellom det å beskrive en endring og det å bevise hva som forårsaket den."
       ],
       "svar": "Riktige påstander er: Kategorien «Konsert» økte med \\(40\\) tusen besøk. Den relative endringen for «Konsert» var omtrent \\(18{,}2\\,\\%\\).",
       "fasit": {

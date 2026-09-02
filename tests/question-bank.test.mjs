@@ -273,8 +273,10 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
   const strategies = bank.oppgaver
     .filter((question) => question.del === 1)
     .flatMap((question) => question.hint)
-    .filter((hint) => hint.startsWith("Velg en enkel regnevei:"));
-  assert.ok(strategies.length >= 110, "For få Del 1-oppgaver har fått et eget strategihint der dette trengs");
+    .filter((hint) => /^(?:Velg en enkel regnevei|Hjelp med divisjonen|Forkort brøken|Del y-endringen|Finn det som mangler):/u.test(hint));
+  // The repaired figure tasks now test alternatives instead of front-loading
+  // the correct formula as a so-called mental-arithmetic strategy.
+  assert.ok(strategies.length >= 100, "For få Del 1-oppgaver har fått et eget strategihint der dette trengs");
   assert.ok(new Set(strategies).size >= 100, "Strategihintene er for generiske eller gjentatte");
   assert.ok(strategies.every((hint) => hint.length >= 60), "Et strategihint er for kort til å hjelpe");
   assert.doesNotMatch(strategies.join(" "), /--|\+-|skal (?:legg|halver)\b/u, "Et strategihint har uklar matematikk eller språk");
@@ -295,7 +297,7 @@ test("regneoppgavene viser smarte hoderegningsveier når tallene inviterer til d
   assert.match(offerHints, /340\/2=\\square/u, "2py27-040 støtter ikke den andre halveringen");
   assert.doesNotMatch(offerHints, /170|kroneavslaget størst/u, "2py27-040 røper svaret i hintrekken");
   assert.match(byId("2py27-103").hint.join(" "), /74=72\+2.*74\/4=18\+0\{,\}5=\\square/u);
-  assert.match(byId("2py27-128").hint.join(" "), /4\+6\+7\+8\+10=\\square.*\\square\/5=\\square/u);
+  assert.match(byId("2py27-128").hint.join(" "), /4\+6\+7\+8\+10=35.*35\/5.*35=30\+5.*30\/5=6.*5\/5=1/u);
   assert.match(byId("2py27-213").hint.join(" "), /20\+12=\\square/u);
   assert.match(byId("2py27-043").hint.join(" "), /\(-3\)\^2=9/u);
   assert.match(byId("2py27-243").hint.join(" "), /\(21\+1\)\/2=11/u);
@@ -394,14 +396,21 @@ test("formelhint bruker de samme tallene som de nivåjusterte oppgavene", () => 
   );
 });
 
-test("prosentpoenghint regner differansen før den brukes i relativ endring", () => {
+test("prosentpoenghint forklarer subtraksjon og forkorting uten å hoppe til ferdig brøk", () => {
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
   for (const id of ["2py27-016", "2py27-017", "2py27-018", "2py27-019", "2py27-020"]) {
     const question = byId(id);
-    const differenceIndex = question.hint.findIndex((hint) => hint.startsWith("Lag en plan:"));
-    const strategyIndex = question.hint.findIndex((hint) => hint.startsWith("Velg en enkel regnevei:"));
+    const differenceIndex = question.hint.findIndex((hint) => hint.startsWith("Finn forskjellen:"));
+    const strategyIndex = question.hint.findIndex((hint) => hint.startsWith("Forkort brøken:"));
+    assert.equal(differenceIndex, 1);
     assert.ok(strategyIndex > differenceIndex, `${id} bruker prosentpoengsdifferansen før den er regnet ut`);
+    assert.match(question.hint[differenceIndex], /=.*=/u, `${id} mangler hjelp med selve subtraksjonen`);
+    assert.match(question.hint[2], /Sett inn endringen.*d/u);
+    assert.ok(question.hint[2].includes(`\\frac{d}{${question.kontroll.inndata.gammel}}`));
+    assert.match(question.hint[strategyIndex], /\\frac\{d\\div.*\}\{\d+\\div/u);
+    assert.match(question.hint.at(-1), /Del 100 på nevneren.*gang.*telleren/u);
+    assert.doesNotMatch(question.hint.join(" "), /\\square|□|Den forkortede brøken er|\\frac\{1\}\{2\}/u);
     assert.equal(
       question.hint.filter((hint) => /tallet over.*tallet under brøkstreken/u.test(hint)).length,
       1,
@@ -447,7 +456,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.17");
+  assert.equal(bank.samling.versjon, "2027.18");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -632,7 +641,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.17");
+  assert.equal(bank.samling.versjon, "2027.18");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { calibrateDifficulty } from "./calibrate-difficulty.mjs";
+import { reviseHintScaffolding } from "./hint-scaffolding.mjs";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const bankPath = join(scriptDir, "..", "public", "oppgaver-2027.json");
@@ -4012,6 +4013,10 @@ for (const question of bank.oppgaver) {
   }
 }
 
+// Faglig gjennomgåtte forløp bygges fra data etter det eldre maskeringspasset.
+// Ellers kan en ny kjøring skjule nødvendige mellomresultater igjen.
+reviseHintScaffolding(bank, { math, number });
+
 // Rydd også i eldre, statiske tekster og kontrollverdier. Dette fjerner både
 // binær flyttallsstøy og meningsløse slutt-null­er, men beholder små tall som
 // 0,000000605 når nullene faktisk angir desimalplasseringen.
@@ -4150,7 +4155,7 @@ if (revisedIds.size !== bank.oppgaver.length) {
   throw new Error(`Alle oppgaver skal revideres. Revidert: ${revisedIds.size} av ${bank.oppgaver.length}.`);
 }
 
-bank.samling.versjon = "2027.17";
+bank.samling.versjon = "2027.18";
 bank.opphav.merknad = `${bank.opphav.merknad.replace(/\s*Hintene.*$/u, "")} Hintene i Del 1 gir konkrete og gradvise håndregningssteg uten å vise svarverdien. Hintene i Del 2 prioriterer metode, oppsett, digital verktøybruk og tolkning. Fasit og ferdige konklusjoner vises separat etter hintrekken, slik at hvert hint bevarer en reell oppgave for eleven. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk.`;
 
 await writeFile(bankPath, `${JSON.stringify(bank, null, 2)}\n`, "utf8");
