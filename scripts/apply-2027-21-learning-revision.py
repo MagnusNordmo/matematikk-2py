@@ -38,6 +38,44 @@ q(7)["hint"] = [
 q(7)["kontroll"]["inndata"] = {"del": 25, "hel": 100}
 q(7)["kontroll"]["resultat"] = [25]
 
+# Preserve the concurrently reviewed medium percent tasks in the same complete
+# recipe. Their totals make the intended percentage pieces visible by hand.
+q(8).update({
+    "sporsmal": r"I en undersøkelse svarer \(110\) av \(400\) personer at de bruker kollektivtransport daglig. Hvor mange prosent er dette?",
+    "hint": [
+        r"Hva vet vi? \(400\) er hele mengden, altså \(100\,\%\), mens \(110\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
+        r"Velg en enkel regnevei: Bygg de 110 personene av prosentdeler som er lette å finne av 400.",
+        r"Lag en plan: Finn først 25 % ved å dele på 4: \(400/4=100\). Da mangler det \(110-100=10\) personer.",
+        r"Gjør neste del: Ti prosent av 400 er \(400/10=40\). En firedel av dette er 2,5 %: \(40/4=10\). Legg sammen prosentdelene: \(25\,\%+2{,}5\,\%=\square\,\%\).",
+    ],
+    "kontroll": {"operasjon": "beregning", "metode": "part_as_percent", "inndata": {"del": 110, "hel": 400}, "resultat": [27.5], "avrunding": 1},
+})
+
+q(9).update({
+    "sporsmal": r"I en medlemsundersøkelse svarer \(130\) av \(400\) medlemmer ja. Hvor mange prosent svarer ja?",
+    "hint": [
+        r"Hva vet vi? \(400\) er hele mengden, altså \(100\,\%\), mens \(130\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
+        r"Velg en enkel regnevei: Bygg de 130 medlemmene av prosentdeler som er lette å finne av 400.",
+        r"Lag en plan: 25 % er en firedel: \(400/4=100\). Da mangler det \(130-100=30\) medlemmer.",
+        r"Gjør neste del: Fem prosent er \(400/20=20\), og 2,5 % er halvparten av dette: \(20/2=10\). Tallene gir \(100+20+10=130\). Legg sammen prosentene: \(25\,\%+5\,\%+2{,}5\,\%=\square\,\%\).",
+    ],
+    "kontroll": {"operasjon": "beregning", "metode": "part_as_percent", "inndata": {"del": 130, "hel": 400}, "resultat": [32.5], "avrunding": 1},
+    "losningsveier": [
+        {"id": "del-opp-i-prosentbiter", "navn": "Del opp i kjente deler", "forklaring": "Bygg 130 av en firedel, fem prosent og 2,5 prosent.", "hint": [
+            r"Hva vet vi? \(400\) er hele mengden, altså \(100\,\%\), mens \(130\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
+            r"Velg en enkel regnevei: 25 % av 400 er en firedel, altså \(400/4=100\). Da mangler 30 medlemmer.",
+            r"Lag en plan: Del de siste 30 i 20 og 10. Fem prosent av 400 er \(400/20=20\), og 2,5 % er halvparten: \(20/2=10\).",
+            r"Gjør neste del: Tallene gir \(100+20+10=130\). Legg sammen prosentdelene som hører til: \(25\,\%+5\,\%+2{,}5\,\%=\square\,\%\).",
+        ]},
+        {"id": "prosentbiter", "navn": "25 % + 5 % + 2,5 %", "forklaring": "Bygg delen 130 av tre enkle prosentbiter.", "hint": [
+            r"Hva vet vi? \(400\) er hele mengden, altså \(100\,\%\), mens \(130\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
+            r"Velg denne veien: Finn først 25 % av 400 ved å dele på 4.",
+            r"Lag en plan: Regn \(400/4=100\). Fem prosent er \(400/20=20\), og 2,5 % er halvparten: \(20/2=10\).",
+            r"Gjør første del: Tallene gir \(100+20+10=130\). Prosentene gir \(25\,\%+5\,\%+2{,}5\,\%=\square\,\%\).",
+        ]},
+    ],
+})
+
 q(406)["hint"][-1] = (
     r"Klassemidtpunktene er \(2{,}5, 7{,}5, 15, 30\). Den veide summen er "
     r"\(20+127{,}5+300+450=897{,}5\), så anslaget blir \(897{,}5/60=\square\)."

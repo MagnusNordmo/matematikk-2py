@@ -37,7 +37,7 @@ test("skalering bruker korte regneveier i den lille gangetabellen", () => {
   assert.match(visible("109"), /40\/5=8.*8\\cdot8=\\square/u);
   assert.match(visible("110"), /8\\cdot30=240.*30\\cdot10=\\square/u);
   assert.match(visible("112"), /dobbelt.*20\+20=\\square/iu);
-  for (const id of ["008", "009", "145"]) {
+  for (const id of ["145"]) {
     assert.match(visible(id), /100\/40=10\/4=2\{,\}5/u);
     assert.match(visible(id), /halv/u);
   }

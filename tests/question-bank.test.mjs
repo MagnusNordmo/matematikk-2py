@@ -319,9 +319,9 @@ test("Del 1 viser alle avgjørende operasjoner for en nybegynner", () => {
   }
 
   const percentExample = byId("2py27-008").hint.join(" ");
-  assert.match(percentExample, /66\\div6/u);
-  assert.match(percentExample, /240\\div6/u);
-  assert.match(percentExample, /11.*40/u);
+  assert.match(percentExample, /400\/4=100/u);
+  assert.match(percentExample, /110-100=10/u);
+  assert.match(percentExample, /40\/4=10/u);
 
   for (const question of numericDel1.filter((item) => item.variantfamilie === "d1-veid-gjennomsnitt")) {
     assert.match(question.hint.join(" "), /Multipliser hver verdi med frekvensen/u, question.id);
