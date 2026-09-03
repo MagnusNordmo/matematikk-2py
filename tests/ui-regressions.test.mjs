@@ -27,6 +27,15 @@ const bank = JSON.parse(await readFile(new URL("../public/oppgaver-2027.json", i
 const { DataPanel } = await componentModule("presentation.tsx");
 const { NumberAnswerField } = await componentModule("number-answer-field.tsx");
 
+test("inaktive knapper bruker vanlig musepil, ikke ventemarkør", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const disabledRule = css.match(/button:disabled\s*\{([^}]+)\}/u)?.[1];
+  assert.ok(disabledRule);
+  assert.match(disabledRule, /cursor:\s*default\s*;/u);
+  assert.match(disabledRule, /opacity:\s*0\.58\s*;/u);
+  assert.doesNotMatch(css, /cursor:\s*(?:wait|progress)\s*[;}]/u);
+});
+
 test("rekkefølgeoppgavene gjengir uttrykkene som matematikk i selve oppgavedataene", () => {
   const questions = bank.oppgaver.filter((q) => q.variantfamilie === "d1-rot-rekkefolge");
   assert.equal(questions.length, 5);
