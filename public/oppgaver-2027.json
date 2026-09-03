@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.18"
+    "versjon": "2027.19"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -2292,7 +2292,7 @@
         "Hva vet vi? \\(240\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(66\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
         "Lag en plan: Skriv delen over totalen: \\(\\frac{66}{240}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
         "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(6\\): \\(\\frac{66\\div6}{240\\div6}=\\frac{11}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{40}\\cdot100\\,\\%=\\square\\,\\%\\)."
+        "Gjør brøken om til prosent uten lang multiplikasjon: \\(100/40=10/4=2{,}5\\). Regn \\(11\\cdot2\\) og halvparten \\(11/2\\) hver for seg. Legg dem sammen; dette er \\(11\\cdot2{,}5\\) prosent."
       ],
       "svar": "Andelen er \\(27{,}5\\,\\%\\).",
       "fasit": {
@@ -2334,7 +2334,7 @@
         "Hva vet vi? \\(360\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(117\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
         "Lag en plan: Skriv delen over totalen: \\(\\frac{117}{360}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
         "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{117\\div9}{360\\div9}=\\frac{13}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{13}{40}\\cdot100\\,\\%=\\square\\,\\%\\)."
+        "Gjør brøken om til prosent uten lang multiplikasjon: \\(100/40=10/4=2{,}5\\). Regn \\(13\\cdot2\\) og halvparten \\(13/2\\) hver for seg. Legg dem sammen; dette er \\(13\\cdot2{,}5\\) prosent."
       ],
       "svar": "Andelen er \\(32{,}5\\,\\%\\).",
       "fasit": {
@@ -2370,7 +2370,7 @@
             "Hva vet vi? \\(360\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(117\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
             "Lag en plan: Skriv delen over totalen: \\(\\frac{117}{360}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
             "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(9\\): \\(\\frac{117\\div9}{360\\div9}=\\frac{13}{40}\\). Siden \\(1/40=2{,}5\\,\\%\\), kan prosenten bygges av kjente deler.",
-            "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{13}{40}\\cdot100\\,\\%=\\square\\,\\%\\)."
+            "Gjør brøken om til prosent uten lang multiplikasjon: \\(100/40=10/4=2{,}5\\). Regn \\(13\\cdot2\\) og halvparten \\(13/2\\) hver for seg. Legg dem sammen; dette er \\(13\\cdot2{,}5\\) prosent."
           ]
         },
         {
@@ -3173,10 +3173,10 @@
       "sporsmal": "Prisen på en sykkel økes først med \\(20\\,\\%\\) og settes senere ned med \\(20\\,\\%\\). Hva er den samlede prosentvise endringen i prisen?",
       "hint": [
         "Hva vet vi? Det skjer to endringer etter hverandre: først \\(20\\,\\%\\), deretter \\(-20\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-        "Velg en enkel regnevei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
-        "Lag en plan: Bruk 100 som tenkt startverdi. Etter den første endringen får du \\(100\\cdot1{,}2=120\\).",
-        "Gjør første del: Den andre prosenten regnes av mellomverdien: \\(120\\cdot0{,}8=96\\).",
-        "Gjør neste del: Finn samlet relativ endring fra start til slutt: \\((96-100)/100\\cdot100\\,\\%=\\square\\,\\%\\). Fortegnet viser økning eller nedgang."
+        "Velg en enkel regnevei: Start med 100 kr. Da er 20 % lik 20 kr. Etter økningen er prisen \\(100+20=120\\) kr.",
+        "Finn rabatten av den nye prisen: 10 % er \\(120/10=12\\) kr. Doble dette for å finne 20 %: \\(12+12=24\\) kr.",
+        "Trekk rabatten fra den nye prisen: \\(120-24=120-20-4=96\\) kr.",
+        "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 96 % av startprisen. Regn \\(96-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
       ],
       "svar": "Sluttprisen er \\(96\\,\\%\\) av den opprinnelige prisen. Den samlede endringen er derfor \\(-4\\,\\%\\).",
       "fasit": {
@@ -3212,21 +3212,22 @@
           "forklaring": "Gjør prosentene om til konkrete tall og følg endringene.",
           "hint": [
             "Hva vet vi? Det skjer to endringer etter hverandre: først \\(20\\,\\%\\), deretter \\(-20\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-            "Velg en enkel regnevei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
-            "Lag en plan: Bruk 100 som tenkt startverdi. Etter den første endringen får du \\(100\\cdot1{,}2=120\\).",
-            "Gjør første del: Den andre prosenten regnes av mellomverdien: \\(120\\cdot0{,}8=96\\).",
-            "Gjør neste del: Finn samlet relativ endring fra start til slutt: \\((96-100)/100\\cdot100\\,\\%=\\square\\,\\%\\). Fortegnet viser økning eller nedgang."
+            "Velg en enkel regnevei: Start med 100 kr. Da er 20 % lik 20 kr. Etter økningen er prisen \\(100+20=120\\) kr.",
+            "Finn rabatten av den nye prisen: 10 % er \\(120/10=12\\) kr. Doble dette for å finne 20 %: \\(12+12=24\\) kr.",
+            "Trekk rabatten fra den nye prisen: \\(120-24=120-20-4=96\\) kr.",
+            "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 96 % av startprisen. Regn \\(96-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
           ]
         },
         {
           "id": "vekstfaktorer",
           "navn": "Bruk vekstfaktorer",
-          "forklaring": "En kortere, mer formell vei som viser begge endringene samlet.",
+          "forklaring": "Øv på vekstfaktorer med forklart heltallsregning og plassering av komma.",
           "hint": [
             "Hva vet vi? Det skjer to endringer etter hverandre: først \\(20\\,\\%\\), deretter \\(-20\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-            "Velg denne veien: En økning på 20 % gir faktor 1,20. En nedgang på 20 % gir faktor 0,80.",
-            "Lag en plan: Gang faktorene: \\(1{,}2\\cdot0{,}8=0{,}96\\).",
-            "Gjør første del: Faktoren 0,96 betyr at 96 % er igjen. Fra 100 % til 96 % er endringen \\(96-100=\\square\\,\\%\\)."
+            "Lag faktorene: 20 % opp gir faktor 1,2, mens 20 % ned gir faktor 0,8. Gang dem for å finne den samlede faktoren.",
+            "Regn uten komma først: \\(12\\cdot8=10\\cdot8+2\\cdot8=80+16=96\\). Produktet regnes ved å dele opp ett av heltallene.",
+            "Sett kommaet tilbake: Hver opprinnelig faktor har én desimal. Heltallene var derfor ti ganger så store hver, og produktet må deles på hundre: \\(96/100=0{,}96\\).",
+            "Tolk faktoren: \\(0{,}96\\) betyr at 96 % av startprisen er igjen. Regn \\(96-100\\) for å finne den samlede prosentendringen."
           ]
         }
       ]
@@ -3243,10 +3244,10 @@
       "sporsmal": "Medlemstallet i en forening synker først med \\(10\\,\\%\\) og øker deretter med \\(10\\,\\%\\). Hva er den samlede prosentvise endringen?",
       "hint": [
         "Hva vet vi? Det skjer to endringer etter hverandre: først \\(-10\\,\\%\\), deretter \\(10\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-        "Velg en enkel regnevei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
-        "Lag en plan: Bruk 100 som tenkt startverdi. Etter den første endringen får du \\(100\\cdot0{,}9=90\\).",
-        "Gjør første del: Den andre prosenten regnes av mellomverdien: \\(90\\cdot1{,}1=99\\).",
-        "Gjør neste del: Finn samlet relativ endring fra start til slutt: \\((99-100)/100\\cdot100\\,\\%=\\square\\,\\%\\). Fortegnet viser økning eller nedgang."
+        "Velg en enkel regnevei: Start med 100 kr. Ti prosent er 10 kr, så etter nedgangen er prisen \\(100-10=90\\) kr.",
+        "Den neste økningen regnes av 90 kr. Finn en tidel: \\(90/10=9\\) kr.",
+        "Legg økningen til den nye prisen: \\(90+9=99\\) kr.",
+        "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 99 % av startprisen. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
       ],
       "svar": "Det nye medlemstallet er \\(99\\,\\%\\) av det opprinnelige. Den samlede endringen er derfor \\(-1\\,\\%\\).",
       "fasit": {
@@ -3282,21 +3283,22 @@
           "forklaring": "Gjør prosentene om til konkrete tall og følg endringene.",
           "hint": [
             "Hva vet vi? Det skjer to endringer etter hverandre: først \\(-10\\,\\%\\), deretter \\(10\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-            "Velg en enkel regnevei: Velg 100 som tenkt startverdi. Da blir hver prosentendring til hele, oversiktlige deler, og du ser samtidig hvorfor prosentene ikke bare kan legges sammen.",
-            "Lag en plan: Bruk 100 som tenkt startverdi. Etter den første endringen får du \\(100\\cdot0{,}9=90\\).",
-            "Gjør første del: Den andre prosenten regnes av mellomverdien: \\(90\\cdot1{,}1=99\\).",
-            "Gjør neste del: Finn samlet relativ endring fra start til slutt: \\((99-100)/100\\cdot100\\,\\%=\\square\\,\\%\\). Fortegnet viser økning eller nedgang."
+            "Velg en enkel regnevei: Start med 100 kr. Ti prosent er 10 kr, så etter nedgangen er prisen \\(100-10=90\\) kr.",
+            "Den neste økningen regnes av 90 kr. Finn en tidel: \\(90/10=9\\) kr.",
+            "Legg økningen til den nye prisen: \\(90+9=99\\) kr.",
+            "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 99 % av startprisen. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
           ]
         },
         {
           "id": "vekstfaktorer",
           "navn": "Bruk vekstfaktorer",
-          "forklaring": "En kortere, mer formell vei som samler de to endringene.",
+          "forklaring": "Øv på vekstfaktorer med forklart heltallsregning og plassering av komma.",
           "hint": [
             "Hva vet vi? Det skjer to endringer etter hverandre: først \\(-10\\,\\%\\), deretter \\(10\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-            "Velg denne veien: En nedgang på 10 % gir faktor 0,90. En økning på 10 % gir faktor 1,10.",
-            "Lag en plan: Gang faktorene: \\(0{,}9\\cdot1{,}1=0{,}99\\).",
-            "Gjør første del: Faktoren 0,99 betyr at 99 % er igjen. Fra 100 % til 99 % er endringen \\(99-100=\\square\\,\\%\\)."
+            "Lag faktorene: 10 % ned gir faktor 0,9, mens 10 % opp gir faktor 1,1. Gang dem for å finne den samlede faktoren.",
+            "Regn uten komma først: \\(9\\cdot11=9\\cdot10+9=90+9=99\\). Produktet regnes ved å dele opp ett av heltallene.",
+            "Sett kommaet tilbake: Hver opprinnelig faktor har én desimal. Heltallene var derfor ti ganger så store hver, og produktet må deles på hundre: \\(99/100=0{,}99\\).",
+            "Tolk faktoren: \\(0{,}99\\) betyr at 99 % av startprisen er igjen. Regn \\(99-100\\) for å finne den samlede prosentendringen."
           ]
         }
       ]
@@ -3642,9 +3644,10 @@
       "sporsmal": "Vurder påstanden: «To økninger på 5 % gir en samlet økning på mer enn 10 %.»",
       "hint": [
         "Hva vet vi? Påstanden bruker ord som «alltid» eller beskriver en generell regel. Derfor må hvert steg enten bevise regelen generelt eller vise ett konkret moteksempel som avkrefter den.",
-        "Lag en plan: Sjekk hvilket grunnlag prosenten regnes av.",
-        "Gjør første del: Test gjerne påstanden med startverdien 100.",
-        "Gjør neste del: Bruk 100 kr som start: \\(100\\cdot1{,}05=105\\) og deretter \\(105\\cdot1{,}05=110{,}25\\). Økningen er dermed \\(10{,}25\\,\\%\\), som er mer enn 10 %."
+        "Lag en plan: Test påstanden med en startpris på 100 kr. Den andre økningen må regnes av prisen etter den første.",
+        "Fem prosent av 100 kr er 5 kr, så første pris er \\(100+5=105\\) kr.",
+        "Finn 5 % av 105 kr ved først å finne 10 %: \\(105/10=10{,}5\\). Halvparten er \\(10/2+0{,}5/2=5+0{,}25=5{,}25\\) kr.",
+        "Ny sluttpris finnes med \\(105+5{,}25\\). Sammenlign den med prisen etter én økning på 10 %, \\(100+10=110\\) kr. Avgjør selv om påstanden stemmer."
       ],
       "svar": "Påstanden er riktig. Faktoren 1,05 ganger 1,05 er 1,1025.",
       "fasit": {
@@ -3785,7 +3788,7 @@
       "hint": [
         "Hva vet vi? Tilbudene er oppgitt på to ulike måter: ett som prosent og ett som kroner. Før de kan sammenlignes, må prosentavslaget også gjøres om til kroner.",
         "Lag en plan: Gjør rabatten som er oppgitt i prosent, om til kroner. Del 15 % i 10 % og 5 %.",
-        "Gjør første del: Finn 10 %: \\(1\\,250/10=125\\). Fem prosent er halvparten: \\(125/2=62{,}5\\).",
+        "Finn 10 %: \\(1\\,250/10=125\\). For 5 % halverer du ved å dele opp: \\(125/2=120/2+5/2=60+2{,}5=62{,}5\\).",
         "Gjør neste del: Legg sammen prosentdelene: \\(125+62{,}5=\\square\\).",
         "Fullfør regningen: Sammenlign beløpet du fant med \\(220\\) kr. Det største kronebeløpet gir størst avslag."
       ],
@@ -4831,10 +4834,10 @@
       "sporsmal": "Regn ut \\((8{,}4\\cdot10^{7}) \\div (2{,}1\\cdot10^{2})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Hva vet vi? Hvert tall har en faktor foran tierpotensen og en eksponent. Regn med faktorene og eksponentene hver for seg, og samle dem først etterpå.",
-        "Velg en enkel regnevei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(8{,}4/2{,}1\\), mens tierpotensen bruker \\(7-2\\).",
-        "Lag en plan: Regn med faktorene foran tierpotensene: \\(8{,}4/2{,}1=\\square\\).",
-        "Gjør første del: Regn med eksponentene: \\(7-2=\\square\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
-        "Gjør neste del: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(\\square\\cdot10^\\square\\)."
+        "Velg en enkel regnevei: Gjør nevneren til et heltall. Gang både teller og nevner med 10; brøkens verdi er uendret: \\(8{,}4/2{,}1=84/21\\).",
+        "Regn heltallsdivisjonen. Tell hvor mange ganger 21 går opp i 84, for eksempel ved gjentatt addisjon. Dette gir faktoren foran tierpotensen.",
+        "Ved divisjon av tierpotenser trekkes eksponentene fra hverandre: \\(7-2\\). Å trekke fra et negativt tall betyr å legge til det tilsvarende positive tallet.",
+        "Sett faktoren du regnet ut, foran tierpotensen med eksponenten du fant. På standardform skal faktoren være minst 1 og mindre enn 10."
       ],
       "svar": "Resultatet er \\(4\\cdot10^5\\).",
       "fasit": {
@@ -4939,10 +4942,10 @@
       "sporsmal": "Regn ut \\((9{,}6\\cdot10^{-3}) \\div (3{,}2\\cdot10^{-5})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Hva vet vi? Hvert tall har en faktor foran tierpotensen og en eksponent. Regn med faktorene og eksponentene hver for seg, og samle dem først etterpå.",
-        "Velg en enkel regnevei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(9{,}6/3{,}2\\), mens tierpotensen bruker \\(-3+5\\).",
-        "Lag en plan: Regn med faktorene foran tierpotensene: \\(9{,}6/3{,}2=\\square\\).",
-        "Gjør første del: Regn med eksponentene: \\(-3-(-5)=\\square\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
-        "Gjør neste del: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(3\\cdot10^\\square\\)."
+        "Velg en enkel regnevei: Gjør nevneren til et heltall. Gang både teller og nevner med 10; brøkens verdi er uendret: \\(9{,}6/3{,}2=96/32\\).",
+        "Regn heltallsdivisjonen. Tell hvor mange ganger 32 går opp i 96, for eksempel ved gjentatt addisjon. Dette gir faktoren foran tierpotensen.",
+        "Ved divisjon av tierpotenser trekkes eksponentene fra hverandre: \\(-3-(-5)\\). Å trekke fra et negativt tall betyr å legge til det tilsvarende positive tallet.",
+        "Sett faktoren du regnet ut, foran tierpotensen med eksponenten du fant. På standardform skal faktoren være minst 1 og mindre enn 10."
       ],
       "svar": "Resultatet er \\(3\\cdot10^2\\).",
       "fasit": {
@@ -4993,10 +4996,10 @@
       "sporsmal": "Regn ut \\((4{,}5\\cdot10^{8}) \\cdot (2\\cdot10^{-3})\\). Oppgi svaret på standardform som to separate verdier: faktor og eksponent.",
       "hint": [
         "Hva vet vi? Hvert tall har en faktor foran tierpotensen og en eksponent. Regn med faktorene og eksponentene hver for seg, og samle dem først etterpå.",
-        "Velg en enkel regnevei: Hold de to små regnestykkene fra hverandre: koeffisienten blir \\(4{,}5\\cdot2\\), mens tierpotensen bruker \\(8-3\\).",
-        "Lag en plan: Regn med faktorene foran tierpotensene: \\(4{,}5\\cdot2=\\square\\).",
-        "Gjør første del: Regn med eksponentene: \\(8+(-3)=\\square\\). Ved produkt legges de sammen; ved divisjon trekkes de fra.",
-        "Gjør neste del: Sett delene sammen og pass på at faktoren er minst 1 og mindre enn 10: \\(\\square\\cdot10^\\square\\)."
+        "Velg en enkel regnevei: Å gange med 2 betyr å doble. Del \\(4{,}5\\) i en heltallsdel og en desimaldel.",
+        "Doble delene hver for seg: \\(4\\cdot2=8\\) og \\(0{,}5\\cdot2=1\\). Legg sammen disse resultatene selv for å finne faktoren.",
+        "Ved produkt av tierpotenser legges eksponentene sammen: \\(8+(-3)=8-3\\). Regn dette ut selv.",
+        "Sett faktoren og tierpotensen sammen. Kontroller at faktoren er minst 1 og mindre enn 10."
       ],
       "svar": "Resultatet er \\(9\\cdot10^5\\).",
       "fasit": {
@@ -6982,9 +6985,10 @@
       "sporsmal": "\\(5\\) meter gavebånd koster \\(42{,}5\\) kr. Hva koster \\(12\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
         "Hva vet vi? \\(5\\) enheter svarer til \\(42{,}5\\), og vi skal finne verdien for \\(12\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Lag en plan: Finn først verdien for én enhet: \\(42{,}5/5=8{,}5\\).",
-        "Gjør første del: Skaler enhetsverdien til \\(12\\) enheter: \\(8{,}5\\cdot12=\\square\\).",
-        "Gjør neste del: Kontroller at svaret endrer seg i samme retning som antallet når sammenhengen er proporsjonal."
+        "Finn verdien for én enhet ved å dele opp totalen: \\(42{,}5/5=40/5+2{,}5/5=8+0{,}5=8{,}5\\).",
+        "Gang heltallsdelen med det nye antallet: \\(8\\cdot12=8\\cdot10+8\\cdot2=80+16=96\\).",
+        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot12=12/2=6\\).",
+        "Legg de to bidragene sammen: \\(96+6\\). Dette gir verdien for det nye antallet enheter."
       ],
       "svar": "Meterprisen er \\(42{,}5/5=8{,}5\\) kr. Da koster \\(12\\) meter \\(12\\cdot8{,}5=102\\) kr.",
       "fasit": {
@@ -7025,9 +7029,10 @@
       "sporsmal": "\\(8\\) bussbilletter koster \\(260\\) kr. Hva koster \\(14\\) billetter når alle billettene har samme pris?",
       "hint": [
         "Hva vet vi? \\(8\\) enheter svarer til \\(260\\), og vi skal finne verdien for \\(14\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Lag en plan: Finn først verdien for én enhet: \\(260/8=32{,}5\\).",
-        "Gjør første del: Skaler enhetsverdien til \\(14\\) enheter: \\(32{,}5\\cdot14=\\square\\).",
-        "Gjør neste del: Kontroller at svaret endrer seg i samme retning som antallet når sammenhengen er proporsjonal."
+        "Finn verdien for én enhet ved å dele opp totalen: \\(260/8=240/8+20/8=30+2{,}5=32{,}5\\).",
+        "Gang heltallsdelen med det nye antallet: \\(32\\cdot14=32\\cdot10+32\\cdot4=320+128=448\\).",
+        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot14=14/2=7\\).",
+        "Legg de to bidragene sammen: \\(448+7\\). Dette gir verdien for det nye antallet enheter."
       ],
       "svar": "Én billett koster \\(260/8=32{,}5\\) kr. Da koster \\(14\\) billetter \\(14\\cdot32{,}5=455\\) kr.",
       "fasit": {
@@ -7111,9 +7116,10 @@
       "sporsmal": "En oppskrift til \\(4\\) porsjoner bruker \\(18\\) dl suppe. Hvor mye suppe trengs til \\(15\\) porsjoner når mengden er proporsjonal med antall porsjoner?",
       "hint": [
         "Hva vet vi? \\(4\\) enheter svarer til \\(18\\), og vi skal finne verdien for \\(15\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Lag en plan: Finn først verdien for én enhet: \\(18/4=4{,}5\\).",
-        "Gjør første del: Skaler enhetsverdien til \\(15\\) enheter: \\(4{,}5\\cdot15=\\square\\).",
-        "Gjør neste del: Kontroller at svaret endrer seg i samme retning som antallet når sammenhengen er proporsjonal."
+        "Finn verdien for én enhet ved å dele opp totalen: \\(18/4=16/4+2/4=4+0{,}5=4{,}5\\).",
+        "Gang heltallsdelen med det nye antallet: \\(4\\cdot15=4\\cdot10+4\\cdot5=40+20=60\\).",
+        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot15=15/2=7{,}5\\).",
+        "Legg de to bidragene sammen: \\(60+7{,}5\\). Dette gir verdien for det nye antallet enheter."
       ],
       "svar": "Per porsjon trengs \\(18/4=4{,}5\\) dl. Til \\(15\\) porsjoner trengs \\(15\\cdot4{,}5=67{,}5\\) dl.",
       "fasit": {
@@ -9080,10 +9086,10 @@
       "sporsmal": "Deltakerne i en kursvurdering ga en vurdering fra 1 til 4. Tabellen viser frekvensene. Finn relativ frekvens i prosent for vurdering 3, og kumulativ frekvens til og med denne vurderingen.",
       "hint": [
         "Hva vet vi? Frekvensene er \\(5, 11, 17, 7\\). Relativ frekvens sammenligner én frekvens med totalen, mens kumulativ frekvens legger sammen fra starten til den aktuelle kategorien.",
-        "Lag en plan: Finn total frekvens først: \\(5+11+17+7=40\\).",
-        "Velg en enkel regnevei: Når totalen er 40, er hver observasjon \\(100/40=2{,}5\\,\\%\\). Gang derfor \\(17\\cdot2{,}5\\,\\%=\\square\\,\\%\\).",
-        "Gjør første del: Relativ frekvens settes opp som \\(17/40\\cdot100\\,\\%=\\square\\).",
-        "Gjør neste del: Legg sammen frekvensene til og med den aktuelle kategorien: \\(5+11+17=\\square\\)."
+        "Finn total frekvens: \\(5+11+17+7=40\\). Den aktuelle kategorien har frekvens 17.",
+        "Én observasjon utgjør \\(100/40=10/4=2{,}5\\) %. For 17 observasjoner skal du regne \\(17\\cdot2{,}5\\).",
+        "Del 2,5 i 2 og en halv: \\(17\\cdot2=34\\) og \\(17/2=8{,}5\\). Legg disse bidragene sammen selv for å finne prosenten.",
+        "Kumulativ frekvens betyr at du legger sammen fra første kategori til og med den aktuelle: \\(5+11+17\\). Dette er et antall, ikke en prosent."
       ],
       "svar": "Det er \\(40\\) svar. Relativ frekvens er \\(17/40\\cdot100\\,\\%=42{,}5\\,\\%\\), og kumulativ frekvens til og med vurdering 3 er \\(33\\).",
       "fasit": {
@@ -11121,7 +11127,7 @@
         "Velg en enkel regnevei: Start med å trekke \\(1{,}5x\\) fra begge sider. Da forsvinner det minste x-leddet før du arbeider videre med fastbeløpene.",
         "Gjør første del: Trekk \\(1{,}5x\\) fra begge sider. Da får du \\(300=150+2{,}5x\\).",
         "Gjør neste del: Trekk deretter \\(150\\) fra begge sider: \\(2{,}5x=300-150=150\\).",
-        "Fullfør regningen: Del begge sider på \\(2{,}5\\): \\(x=150/2{,}5=\\square\\). Sett så x inn i én av modellene."
+        "Del begge sider på 2,5. Fjern desimalen ved å gange teller og nevner med 2: \\(x=150/2{,}5=300/5\\). Del så 300 på 10 og doble kvotienten for å få divisjon på 5. Sett din x-verdi inn i én av prismodellene for å finne felles pris."
       ],
       "svar": "\\(300+1{,}5x=150+4x\\) gir \\(x=60\\). Tjenestene koster det samme ved \\(60\\) kWh, og kostnaden er da \\(390\\) kr.",
       "fasit": {
@@ -12975,9 +12981,9 @@
       "hint": [
         "Hva vet vi? Programmet starter med \\(1\\,000\\) og bruker faktoren \\(1{,}1\\) i \\(2\\) runder. Hver runde begynner med verdien fra runden før.",
         "Velg en enkel regnevei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}1\\) betyr at du skal legge til en tidel i hver runde.",
-        "Gjør første del: Spor verdi etter hver runde: \\(1\\,000 → 1\\,100 → \\square\\).",
-        "Gjør neste del: Etter siste runde er verdi \\(\\square\\). round uten antall desimaler beholder dette heltallet.",
-        "Fullfør regningen: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,000\\cdot1{,}1^{2}=\\square\\)."
+        "Regn de første stegene: \\(1\\,000/10=100\\), og deretter \\(1\\,000+100=1\\,100\\).",
+        "Bruk den nye verdien i neste runde. Finn først delen: \\(1\\,100/10=110\\). Fullfør deretter \\(1\\,100+110\\) selv.",
+        "Utskriften kommer etter alle 2 rundene. Den samme beregningen kan skrives \\(1\\,000\\cdot1{,}1^{2}=\\square\\). Her blir resultatet et heltall, så round endrer det ikke."
       ],
       "svar": "Programmet skriver ut \\(1\\,210\\).",
       "fasit": {
@@ -13028,9 +13034,9 @@
       "hint": [
         "Hva vet vi? Programmet starter med \\(800\\) og bruker faktoren \\(0{,}5\\) i \\(3\\) runder. Hver runde begynner med verdien fra runden før.",
         "Velg en enkel regnevei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}5\\) betyr at du skal halvere verdien i hver runde.",
-        "Gjør første del: Spor verdi etter hver runde: \\(800 → 400 → 200 → \\square\\).",
-        "Gjør neste del: Etter siste runde er verdi \\(\\square\\). round uten antall desimaler beholder dette heltallet.",
-        "Fullfør regningen: Løkken utfører samme multiplikasjon \\(3\\) ganger: \\(800\\cdot0{,}5^{3}=\\square\\)."
+        "Regn de første stegene: \\(800/2=400\\), og deretter \\(400/2=200\\).",
+        "Bruk den nye verdien i neste runde. Fullfør deretter \\(200/2\\) selv.",
+        "Utskriften kommer etter alle 3 rundene. Den samme beregningen kan skrives \\(800\\cdot0{,}5^{3}=\\square\\). Her blir resultatet et heltall, så round endrer det ikke."
       ],
       "svar": "Programmet skriver ut \\(100\\).",
       "fasit": {
@@ -13081,9 +13087,9 @@
       "hint": [
         "Hva vet vi? Programmet starter med \\(2\\,500\\) og bruker faktoren \\(1{,}2\\) i \\(2\\) runder. Hver runde begynner med verdien fra runden før.",
         "Velg en enkel regnevei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}2\\) betyr at du skal legge til en femdel i hver runde.",
-        "Gjør første del: Spor verdi etter hver runde: \\(2\\,500 → 3\\,000 → \\square\\).",
-        "Gjør neste del: Etter siste runde er verdi \\(\\square\\). round uten antall desimaler beholder dette heltallet.",
-        "Fullfør regningen: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(2\\,500\\cdot1{,}2^{2}=\\square\\)."
+        "Regn de første stegene: \\(2\\,500/5=500\\), og deretter \\(2\\,500+500=3\\,000\\).",
+        "Bruk den nye verdien i neste runde. Finn først delen: \\(3\\,000/5=600\\). Fullfør deretter \\(3\\,000+600\\) selv.",
+        "Utskriften kommer etter alle 2 rundene. Den samme beregningen kan skrives \\(2\\,500\\cdot1{,}2^{2}=\\square\\). Her blir resultatet et heltall, så round endrer det ikke."
       ],
       "svar": "Programmet skriver ut \\(3\\,600\\).",
       "fasit": {
@@ -13134,9 +13140,9 @@
       "hint": [
         "Hva vet vi? Programmet starter med \\(600\\) og bruker faktoren \\(1{,}5\\) i \\(2\\) runder. Hver runde begynner med verdien fra runden før.",
         "Velg en enkel regnevei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(1{,}5\\) betyr at du skal legge til halvparten i hver runde.",
-        "Gjør første del: Spor verdi etter hver runde: \\(600 → 900 → \\square\\).",
-        "Gjør neste del: Etter siste runde er verdi \\(\\square\\). round uten antall desimaler beholder dette heltallet.",
-        "Fullfør regningen: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(600\\cdot1{,}5^{2}=\\square\\)."
+        "Regn de første stegene: \\(600/2=300\\), og deretter \\(600+300=900\\).",
+        "Bruk den nye verdien i neste runde. Finn først delen: \\(900/2=450\\). Fullfør deretter \\(900+450\\) selv.",
+        "Utskriften kommer etter alle 2 rundene. Den samme beregningen kan skrives \\(600\\cdot1{,}5^{2}=\\square\\). Her blir resultatet et heltall, så round endrer det ikke."
       ],
       "svar": "Programmet skriver ut \\(1\\,350\\).",
       "fasit": {
@@ -13186,10 +13192,10 @@
       "sporsmal": "Hva skriver programmet ut?",
       "hint": [
         "Hva vet vi? Programmet starter med \\(1\\,200\\) og bruker faktoren \\(0{,}75\\) i \\(2\\) runder. Hver runde begynner med verdien fra runden før.",
-        "Velg en enkel regnevei: Oversett faktoren til hoderegning før du sporer programmet: faktor \\(0{,}75\\) betyr at du skal ta tre firedeler av verdien i hver runde.",
-        "Gjør første del: Spor verdi etter hver runde: \\(1\\,200 → 900 → \\square\\).",
-        "Gjør neste del: Etter siste runde er verdi \\(\\square\\). round uten antall desimaler beholder dette heltallet.",
-        "Fullfør regningen: Løkken utfører samme multiplikasjon \\(2\\) ganger: \\(1\\,200\\cdot0{,}75^{2}=\\square\\)."
+        "Faktor 0,75 betyr at en firedel trekkes fra i hver runde.",
+        "Regn de første stegene: \\(1\\,200/4=300\\), og deretter \\(1\\,200-300=900\\).",
+        "Bruk den nye verdien i neste runde. Finn først delen: \\(900/4=800/4+100/4=200+25=225\\). Fullfør deretter \\(900-225\\) selv.",
+        "Utskriften kommer etter alle 2 rundene. Den samme beregningen kan skrives \\(1\\,200\\cdot0{,}75^{2}=\\square\\). Her blir resultatet et heltall, så round endrer det ikke."
       ],
       "svar": "Programmet skriver ut \\(675\\).",
       "fasit": {
@@ -15084,10 +15090,10 @@
       "sporsmal": "Finn tallet som beskrives av \\(45\\,\\%\\) av 800.",
       "hint": [
         "Hva vet vi? \\(800\\) er hele mengden, altså \\(100\\,\\%\\). Vi skal finne delen som svarer til \\(45\\,\\%\\) av denne mengden.",
-        "Velg en enkel regnevei: Del 45 % i 40 % og 5 %. Av 800 er dette \\(320+40=\\square\\).",
-        "Lag en plan: Skriv 45 % som desimaltallet \\(0{,}45\\).",
-        "Gjør første del: Regnestykket blir \\(0{,}45\\cdot800\\).",
-        "Gjør neste del: Du kan dele opp 45 % i 40 % og 5 % av 800."
+        "Velg en enkel regnevei: Del 45 % i 40 % og 5 %. Finn først en tidel av 800.",
+        "Ti prosent er \\(800/10=80\\). Fire slike deler gir 40 %: \\(80\\cdot4=320\\).",
+        "Fem prosent er halvparten av 10 %: \\(80/2=40\\).",
+        "Legg sammen de to prosentdelene: \\(320+40\\). Summen er 45 % av den opprinnelige mengden."
       ],
       "svar": "\\(0{,}45\\cdot800=360\\).",
       "fasit": {
