@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.19"
+    "versjon": "2027.20"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -3244,10 +3244,10 @@
       "sporsmal": "Medlemstallet i en forening synker først med \\(10\\,\\%\\) og øker deretter med \\(10\\,\\%\\). Hva er den samlede prosentvise endringen?",
       "hint": [
         "Hva vet vi? Det skjer to endringer etter hverandre: først \\(-10\\,\\%\\), deretter \\(10\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-        "Velg en enkel regnevei: Start med 100 kr. Ti prosent er 10 kr, så etter nedgangen er prisen \\(100-10=90\\) kr.",
-        "Den neste økningen regnes av 90 kr. Finn en tidel: \\(90/10=9\\) kr.",
-        "Legg økningen til den nye prisen: \\(90+9=99\\) kr.",
-        "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 99 % av startprisen. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
+        "Velg en enkel regnevei: Tenk at foreningen starter med 100 medlemmer. Ti prosent er 10 medlemmer, så etter nedgangen er det \\(100-10=90\\) medlemmer.",
+        "Den neste økningen regnes av 90 medlemmer. Finn en tidel: \\(90/10=9\\) medlemmer.",
+        "Legg økningen til medlemstallet etter nedgangen: \\(90+9=99\\) medlemmer.",
+        "Sammenlign med de opprinnelige 100 medlemmene. Det nye medlemstallet er 99 % av det opprinnelige. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
       ],
       "svar": "Det nye medlemstallet er \\(99\\,\\%\\) av det opprinnelige. Den samlede endringen er derfor \\(-1\\,\\%\\).",
       "fasit": {
@@ -3283,10 +3283,10 @@
           "forklaring": "Gjør prosentene om til konkrete tall og følg endringene.",
           "hint": [
             "Hva vet vi? Det skjer to endringer etter hverandre: først \\(-10\\,\\%\\), deretter \\(10\\,\\%\\). Den andre prosenten må regnes av mellomverdien, ikke av startverdien.",
-            "Velg en enkel regnevei: Start med 100 kr. Ti prosent er 10 kr, så etter nedgangen er prisen \\(100-10=90\\) kr.",
-            "Den neste økningen regnes av 90 kr. Finn en tidel: \\(90/10=9\\) kr.",
-            "Legg økningen til den nye prisen: \\(90+9=99\\) kr.",
-            "Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 99 % av startprisen. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
+            "Velg en enkel regnevei: Tenk at foreningen starter med 100 medlemmer. Ti prosent er 10 medlemmer, så etter nedgangen er det \\(100-10=90\\) medlemmer.",
+            "Den neste økningen regnes av 90 medlemmer. Finn en tidel: \\(90/10=9\\) medlemmer.",
+            "Legg økningen til medlemstallet etter nedgangen: \\(90+9=99\\) medlemmer.",
+            "Sammenlign med de opprinnelige 100 medlemmene. Det nye medlemstallet er 99 % av det opprinnelige. Regn \\(99-100\\) for å finne endringen i prosent; et negativt svar betyr nedgang."
           ]
         },
         {
@@ -3298,7 +3298,7 @@
             "Lag faktorene: 10 % ned gir faktor 0,9, mens 10 % opp gir faktor 1,1. Gang dem for å finne den samlede faktoren.",
             "Regn uten komma først: \\(9\\cdot11=9\\cdot10+9=90+9=99\\). Produktet regnes ved å dele opp ett av heltallene.",
             "Sett kommaet tilbake: Hver opprinnelig faktor har én desimal. Heltallene var derfor ti ganger så store hver, og produktet må deles på hundre: \\(99/100=0{,}99\\).",
-            "Tolk faktoren: \\(0{,}99\\) betyr at 99 % av startprisen er igjen. Regn \\(99-100\\) for å finne den samlede prosentendringen."
+            "Tolk faktoren: \\(0{,}99\\) betyr at medlemstallet er 99 % av det opprinnelige. Regn \\(99-100\\) for å finne den samlede prosentendringen."
           ]
         }
       ]

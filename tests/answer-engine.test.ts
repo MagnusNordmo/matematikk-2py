@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { evaluateAnswer, isAnswerComplete, parseNorwegianNumber } from "../app/answer-engine.ts";
+import { evaluateAnswer, isAnswerComplete, parseNorwegianNumber, toggleAnswerSign } from "../app/answer-engine.ts";
 import type { AnswerKey } from "../app/question-bank.ts";
 
 test("tolker norske desimaltall, enheter og brøk", () => {
@@ -8,6 +8,17 @@ test("tolker norske desimaltall, enheter og brøk", () => {
   assert.equal(parseNorwegianNumber(" 1 250,75 kr "), 1250.75);
   assert.equal(parseNorwegianNumber("3/4"), 0.75);
   assert.ok(Number.isNaN(parseNorwegianNumber("et tall")));
+});
+
+test("fortegnsknappen støtter tomme felt, negative tall, norske desimaler og brøker", () => {
+  for (const [before, after] of [["", "-"], ["-", ""], ["1", "-1"], ["-1", "1"], ["−1", "1"], ["+1", "-1"], [" 2,5 ", "-2,5"], ["3/4", "-3/4"], ["0", "-0"]]) {
+    assert.equal(toggleAnswerSign(before), after);
+  }
+  assert.equal(parseNorwegianNumber(toggleAnswerSign("2,5")), -2.5);
+  assert.equal(parseNorwegianNumber(toggleAnswerSign("3/4")), -0.75);
+  assert.equal(evaluateAnswer({ numbers: [toggleAnswerSign("1")], choices: [] }, {
+    type: "tall", verdier: [{ verdi: -1, enhet: "%", toleranse: 0 }],
+  }).correct, true);
 });
 
 test("gir delpoeng for flere numeriske svar", () => {

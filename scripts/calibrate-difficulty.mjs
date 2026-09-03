@@ -292,5 +292,8 @@ async function run(bankPath = defaultBankPath) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  await run(process.argv[2] ?? defaultBankPath);
+  if (!process.argv.includes("--allow-full-bank-rewrite")) {
+    throw new Error("Full omskriving er sperret. Se CONTENT_MAINTENANCE.md. Krever --allow-full-bank-rewrite.");
+  }
+  await run(process.argv.slice(2).find((argument) => argument !== "--allow-full-bank-rewrite") ?? defaultBankPath);
 }

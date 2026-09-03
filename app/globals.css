@@ -801,6 +801,18 @@ input:focus-visible {
   font-weight: 700;
 }
 
+.answer-sign-button {
+  flex: 0 0 44px;
+  min-height: 44px;
+  margin-right: 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
 .feedback {
   min-height: 26px;
   margin: 10px 0 0;
@@ -1540,7 +1552,7 @@ input:focus-visible {
 }
 
 .choice-options legend,
-.numeric-answer > span:first-child {
+.numeric-answer > label:first-child {
   margin-bottom: 9px;
   color: var(--ink);
   font-size: 0.8rem;

@@ -116,7 +116,7 @@ function DataTable({
           {entries[0][1].map((_, rowIndex) => (
             <tr key={rowIndex}>
               {entries.map(([key, values]) => (
-                <td key={key}>{formatValue(values[rowIndex])}</td>
+                <td key={key}><MathText>{formatValue(values[rowIndex])}</MathText></td>
               ))}
             </tr>
           ))}
@@ -147,7 +147,7 @@ export function DataPanel({ data }: { data?: Record<string, unknown> }) {
           .map(([key, value]) => (
             <div key={key}>
               <dt>{labelFor(key)}</dt>
-              <dd>{formatValue(value)}</dd>
+              <dd><MathText>{formatValue(value)}</MathText></dd>
             </div>
           ))}
       </dl>

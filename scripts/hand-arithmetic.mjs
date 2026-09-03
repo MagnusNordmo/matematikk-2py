@@ -15,10 +15,10 @@ export function reviseHandArithmetic(bank, { math: m, number: n }) {
     `Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 96 % av startprisen. Regn ${m("96-100")} for å finne endringen i prosent; et negativt svar betyr nedgang.`,
   ]);
   set("027", [
-    `Velg en enkel regnevei: Start med 100 kr. Ti prosent er 10 kr, så etter nedgangen er prisen ${m("100-10=90")} kr.`,
-    `Den neste økningen regnes av 90 kr. Finn en tidel: ${m("90/10=9")} kr.`,
-    `Legg økningen til den nye prisen: ${m("90+9=99")} kr.`,
-    `Sammenlign med de opprinnelige 100 kronene. Sluttprisen er 99 % av startprisen. Regn ${m("99-100")} for å finne endringen i prosent; et negativt svar betyr nedgang.`,
+    `Velg en enkel regnevei: Tenk at foreningen starter med 100 medlemmer. Ti prosent er 10 medlemmer, så etter nedgangen er det ${m("100-10=90")} medlemmer.`,
+    `Den neste økningen regnes av 90 medlemmer. Finn en tidel: ${m("90/10=9")} medlemmer.`,
+    `Legg økningen til medlemstallet etter nedgangen: ${m("90+9=99")} medlemmer.`,
+    `Sammenlign med de opprinnelige 100 medlemmene. Det nye medlemstallet er 99 % av det opprinnelige. Regn ${m("99-100")} for å finne endringen i prosent; et negativt svar betyr nedgang.`,
   ]);
   for (const [id, factorText, multiplication, product, decimal] of [
     ["026", "20 % opp gir faktor 1,2, mens 20 % ned gir faktor 0,8.", "12\\cdot8=10\\cdot8+2\\cdot8=80+16=96", 96, "0{,}96"],
@@ -32,7 +32,7 @@ export function reviseHandArithmetic(bank, { math: m, number: n }) {
       `Lag faktorene: ${factorText} Gang dem for å finne den samlede faktoren.`,
       `Regn uten komma først: ${m(multiplication)}. Produktet regnes ved å dele opp ett av heltallene.`,
       `Sett kommaet tilbake: Hver opprinnelig faktor har én desimal. Heltallene var derfor ti ganger så store hver, og produktet må deles på hundre: ${m(`${product}/100=${decimal}`)}.`,
-      `Tolk faktoren: ${m(decimal)} betyr at ${product} % av startprisen er igjen. Regn ${m(`${product}-100`)} for å finne den samlede prosentendringen.`,
+      `Tolk faktoren: ${m(decimal)} betyr at ${id === "027" ? `medlemstallet er ${product} % av det opprinnelige` : `${product} % av startprisen er igjen`}. Regn ${m(`${product}-100`)} for å finne den samlede prosentendringen.`,
     ];
   }
 

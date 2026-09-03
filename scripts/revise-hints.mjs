@@ -1,5 +1,9 @@
 import fs from "node:fs";
 
+if (!process.argv.includes("--allow-full-bank-rewrite")) {
+  throw new Error("Full omskriving er sperret. Se CONTENT_MAINTENANCE.md. Krever --allow-full-bank-rewrite.");
+}
+
 const file = new URL("../public/oppgaver.json", import.meta.url);
 const bank = JSON.parse(fs.readFileSync(file, "utf8"));
 const h = String.raw;

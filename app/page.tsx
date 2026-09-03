@@ -9,6 +9,7 @@ import {
   type AnswerInput,
 } from "./answer-engine";
 import { DataPanel, MathText, VisualizationPanel } from "./presentation";
+import { NumberAnswerField } from "./number-answer-field";
 import {
   THEMES,
   answerPartCount,
@@ -196,26 +197,22 @@ function AnswerFields({
               number.etikett ??
               (numbers.length === 1 ? "Svaret ditt" : `Svar ${index + 1}`);
             return (
-              <label key={index} className="numeric-answer">
-                <span>{fieldLabel}</span>
-                <span className={`answer-field ${feedback === "wrong" || feedback === "partial" ? "answer-field-wrong" : ""} ${feedback === "correct" ? "answer-field-correct" : ""}`}>
-                  <input
-                    ref={index === 0 ? firstInputRef : undefined}
-                    value={value.numbers[index] ?? ""}
-                    onChange={(event) => {
-                      const nextNumbers = [...value.numbers];
-                      nextNumbers[index] = event.target.value;
-                      onChange({ ...value, numbers: nextNumbers });
-                    }}
-                    inputMode="decimal"
-                    autoComplete="off"
-                    spellCheck={false}
-                    placeholder={number.etikett ? `Skriv ${number.etikett.toLocaleLowerCase("nb-NO")}` : "Skriv tallet"}
-                    disabled={disabled}
-                  />
-                  {number.enhet && <span className="answer-unit">{number.enhet}</span>}
-                </span>
-              </label>
+              <NumberAnswerField
+                key={index}
+                id={`number-answer-${index}`}
+                label={fieldLabel}
+                className={`answer-field ${feedback === "wrong" || feedback === "partial" ? "answer-field-wrong" : ""} ${feedback === "correct" ? "answer-field-correct" : ""}`}
+                inputRef={index === 0 ? firstInputRef : undefined}
+                value={value.numbers[index] ?? ""}
+                onChange={(nextValue) => {
+                  const nextNumbers = [...value.numbers];
+                  nextNumbers[index] = nextValue;
+                  onChange({ ...value, numbers: nextNumbers });
+                }}
+                placeholder={number.etikett ? `Skriv ${number.etikett.toLocaleLowerCase("nb-NO")}` : "Skriv tallet"}
+                disabled={disabled}
+                unit={number.enhet}
+              />
             );
           })}
         </div>
@@ -294,7 +291,7 @@ export default function Home() {
   const continueRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    fetch("/oppgaver-2027.json")
+    fetch("/oppgaver-2027.json", { cache: "no-store" })
       .then((response) => {
         if (!response.ok) throw new Error("Oppgavebanken kunne ikke lastes");
         return response.json();

@@ -14,6 +14,14 @@ export type AnswerEvaluation = {
 
 export const EMPTY_ANSWER: AnswerInput = { numbers: [], choices: [] };
 
+// Available for every number field, regardless of the expected answer. This
+// avoids relying on a phone keyboard having a minus key or revealing a sign.
+export function toggleAnswerSign(value: string) {
+  const trimmed = value.trim();
+  if (/^[-−–—]/u.test(trimmed)) return trimmed.slice(1);
+  return `-${trimmed.replace(/^\+/u, "")}`;
+}
+
 export function parseNorwegianNumber(value: string) {
   const normalized = value
     .normalize("NFKC")
