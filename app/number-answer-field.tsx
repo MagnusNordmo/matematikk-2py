@@ -34,6 +34,10 @@ export function NumberAnswerField({
           placeholder={placeholder}
           disabled={disabled}
         />
+        {unit && <span className="answer-unit">{unit}</span>}
+      </div>
+      <details className="answer-sign-help">
+        <summary>Mangler minustegn?</summary>
         <button
           type="button"
           className="answer-sign-button"
@@ -45,8 +49,7 @@ export function NumberAnswerField({
             ref.current?.focus();
           }}
         >±</button>
-        {unit && <span className="answer-unit">{unit}</span>}
-      </div>
+      </details>
     </div>
   );
 }

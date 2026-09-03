@@ -801,10 +801,35 @@ input:focus-visible {
   font-weight: 700;
 }
 
-.answer-sign-button {
-  flex: 0 0 44px;
+.answer-sign-help {
+  display: none;
+}
+
+.answer-sign-help > summary {
   min-height: 44px;
-  margin-right: 8px;
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.answer-sign-help > summary:focus-visible {
+  outline: 3px solid rgba(25, 118, 110, 0.26);
+  outline-offset: 3px;
+}
+
+/* Phone-sized touch screens, including landscape. This does not attempt to
+   detect keyboard keys: the student explicitly opens the native disclosure. */
+@media (hover: none) and (pointer: coarse) and (max-width: 767px),
+  (hover: none) and (pointer: coarse) and (max-height: 500px) {
+  .answer-sign-help {
+    display: block;
+  }
+}
+
+.answer-sign-button {
+  min-width: 44px;
+  min-height: 44px;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
   background: var(--accent-soft);

@@ -21,6 +21,6 @@ De gamle fullrevisjonene krever nå det eksplisitte flagget `--allow-full-bank-r
 ## Denne rettingen
 
 - Oppgavedata bruker samme matematikkgjengivelse som spørsmål og hint, også i tabellceller.
-- Alle numeriske svarfelt får en tilgjengelig fortegnsknapp, uavhengig av fasiten.
+- Numeriske svarfelt har valgfri fortegnshjelp, uavhengig av fasiten. På små berøringsskjermer vises «Mangler minustegn?»; eleven må åpne denne før ±-knappen vises. Hjelpen er skjult på datamaskiner. Vi forsøker ikke å utlede hvilke taster skjermtastaturet har. Dette endrer ingen oppgaver eller hint.
 - Kun oppgave `2py27-027` får endret hinttekst: medlemmer i stedet for kroner/priser. Begge løsningsveier er låst med tester mot tomme svarruter i siste hint.
 - Ny sideinnlasting henter oppgavebanken uten gjenbruk av nettleserens HTTP-cache. En allerede åpen økt avbrytes ikke automatisk.

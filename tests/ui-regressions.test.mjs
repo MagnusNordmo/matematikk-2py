@@ -47,7 +47,7 @@ test("matematikk i tabellceller og vanlige data bevares", () => {
   assert.doesNotMatch(html, /\\\(|\\\)/u);
 });
 
-test("tallfelt har tilgjengelig fortegnsknapp, teksttype og desimaltastatur", () => {
+test("tallfelt har valgfri fortegnshjelp, teksttype og desimaltastatur", () => {
   for (const disabled of [false, true]) {
     const html = renderToStaticMarkup(createElement(NumberAnswerField, {
       id: "answer-test", label: "Endring", value: "-1", onChange() {}, disabled,
@@ -57,9 +57,22 @@ test("tallfelt har tilgjengelig fortegnsknapp, teksttype og desimaltastatur", ()
     assert.match(html, /type="text"/u);
     assert.match(html, /inputMode="decimal"/u);
     assert.match(html, /value="-1"/u);
+    assert.match(html, /<details class="answer-sign-help"><summary>Mangler minustegn\?<\/summary><button/u);
+    assert.doesNotMatch(html, /<details[^>]*\bopen(?:\s|=|>)/u);
+    const inputRow = html.match(/<div class="answer-field">(.*?)<\/div>/u)?.[1];
+    assert.ok(inputRow);
+    assert.doesNotMatch(inputRow, /<button/u);
     assert.match(html, /<button[^>]*type="button"[^>]*aria-label="Bytt fortegn for endring"[^>]*>±<\/button>/u);
     assert.equal((html.match(/disabled=""/gu) ?? []).length, disabled ? 2 : 0);
   }
+});
+
+test("fortegnshjelpen er skjult på datamaskin og tilgjengelig i begge mobilretninger", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.answer-sign-help\s*\{\s*display:\s*none;\s*\}/u);
+  assert.match(css, /@media\s*\(hover: none\) and \(pointer: coarse\) and \(max-width: 767px\),\s*\(hover: none\) and \(pointer: coarse\) and \(max-height: 500px\)\s*\{\s*\.answer-sign-help\s*\{\s*display:\s*block;\s*\}\s*\}/u);
+  // All display overrides for the disclosure must stay inside that mobile rule.
+  assert.equal((css.match(/\.answer-sign-help\s*\{/gu) ?? []).length, 2);
 });
 
 test("medlemsoppgaven bruker medlemmer og ingen tom svarrute i femte hint", () => {
