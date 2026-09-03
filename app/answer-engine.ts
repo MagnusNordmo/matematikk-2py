@@ -3,6 +3,7 @@ import type { AnswerKey, NumericAnswer } from "./question-bank";
 export type AnswerInput = {
   numbers: string[];
   choices: string[];
+  explanation?: string;
 };
 
 export type AnswerEvaluation = {
@@ -12,7 +13,7 @@ export type AnswerEvaluation = {
   fraction: number;
 };
 
-export const EMPTY_ANSWER: AnswerInput = { numbers: [], choices: [] };
+export const EMPTY_ANSWER: AnswerInput = { numbers: [], choices: [], explanation: "" };
 
 // Available for every number field, regardless of the expected answer. This
 // avoids relying on a phone keyboard having a minus key or revealing a sign.
@@ -101,9 +102,13 @@ export function isAnswerComplete(input: AnswerInput, key: AnswerKey) {
   if (key.type === "tall" || key.type === "flere_tall") {
     return key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()));
   }
-  if (key.type === "valg") return input.choices.length > 0;
+  if (key.type === "valg") {
+    return input.choices.length > 0 &&
+      (!key.krever_begrunnelse || Boolean(input.explanation?.trim()));
+  }
   return (
     input.choices.length > 0 &&
+    (!key.valg.krever_begrunnelse || Boolean(input.explanation?.trim())) &&
     key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()))
   );
 }

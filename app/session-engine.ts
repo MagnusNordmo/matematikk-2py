@@ -92,17 +92,9 @@ export function selectSessionQuestions(
     ]).slice(0, 10);
   }
 
-  if (mode === "skill" && difficulty !== "mixed") {
-    const candidates = bank.oppgaver.filter(
-      (question) =>
-        question.del === 2 &&
-        (!themeId || question.tema === themeId) &&
-        matchesDifficulty(question),
-    );
-    return shuffle(withoutRecent(candidates, recentIds)).slice(0, 10);
-  }
-
-  const groups = completeGroups(bank, themeId);
+  const groups = completeGroups(bank, themeId).filter(
+    (group) => difficulty === "mixed" || group.some(matchesDifficulty),
+  );
   if (mode === "exam") {
     const freshGroups = groups.filter((group) =>
       group.every((question) => !recentIds.has(question.id)),
@@ -135,7 +127,8 @@ export function selectSessionQuestions(
         (question) =>
           question.del === 2 &&
           !question.oppgavegruppe &&
-          (!themeId || question.tema === themeId),
+          (!themeId || question.tema === themeId) &&
+          matchesDifficulty(question),
       ),
       recentIds,
     ),

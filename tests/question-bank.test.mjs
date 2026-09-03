@@ -29,7 +29,7 @@ test("oppgavebanken har 500 komplette og unike oppgaver", () => {
 test("fordelingen mellom deler og svarformater er bevart", () => {
   assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 262);
   assert.equal(bank.oppgaver.filter((question) => question.del === 2).length, 238);
-  const expected = { tall: 260, flere_tall: 70, valg: 160, valg_og_tall: 10 };
+  const expected = { tall: 260, flere_tall: 69, valg: 160, valg_og_tall: 11 };
   for (const [type, count] of Object.entries(expected)) {
     assert.equal(bank.oppgaver.filter((question) => question.fasit.type === type).length, count, type);
   }
@@ -45,7 +45,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 103, "2": 266, "3": 131 });
+  assert.deepEqual(distribution, { "1": 103, "2": 292, "3": 105 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {
@@ -61,7 +61,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
     }
   }
 
-  assert.equal(bank.oppgaver.find((question) => question.id === "2py27-010").niva, 3);
+  assert.equal(bank.oppgaver.find((question) => question.id === "2py27-010").niva, 2);
 });
 
 test("alle oppgaver med flere svarbestanddeler har tydelige feltetiketter", () => {
@@ -442,9 +442,8 @@ test("hver hovedløsning i Del 1 holder fast ved én tydelig metode", () => {
   }
 
   const annualPass = byId("2py27-031").hint.join(" ");
-  assert.match(annualPass, /95\/19=5/u);
-  assert.match(annualPass, /760\/19=40/u);
-  assert.match(annualPass, /40\\cdot20=\\square/u);
+  assert.match(annualPass, /640\/8=80/u);
+  assert.match(annualPass, /80\\cdot10=\\square/u);
 
   for (const id of ["2py27-033", "2py27-035", "2py27-036", "2py27-037", "2py27-098", "2py27-123", "2py27-124", "2py27-125", "2py27-126", "2py27-127", "2py27-211", "2py27-253", "2py27-255"]) {
     assert.match(byId(id).hint.join(" "), /=/u, `${id} viser ikke den avgjørende testen før svaret`);
@@ -456,7 +455,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.20");
+  assert.equal(bank.samling.versjon, "2027.21");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -625,7 +624,7 @@ test("Del 1 er konstruert for håndregning uten kalkulator", () => {
     assert.equal(question.data.programkode, question.visualisering.kode);
   }
 
-  assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /760/);
+  assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /640/);
   assert.doesNotMatch(bank.oppgaver.find((question) => question.id === "2py27-070").svar, /3\{,\}16|\\\\approx/);
   assert.equal(bank.oppgaver.find((question) => question.id === "2py27-091").fasit.valg.riktige[0], "\\(n+5\\)");
 });
@@ -641,7 +640,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.20");
+  assert.equal(bank.samling.versjon, "2027.21");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

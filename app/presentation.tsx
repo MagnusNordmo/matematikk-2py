@@ -279,7 +279,7 @@ function Plot({
   );
 }
 
-function BarChart({ labels, series, description }: { labels: string[]; series: { name: string; values: number[] }[]; description: string }) {
+function BarChart({ labels, series, description, hideValues = false }: { labels: string[]; series: { name: string; values: number[] }[]; description: string; hideValues?: boolean }) {
   const max = Math.max(1, ...series.flatMap((item) => item.values));
   return (
     <figure className="visual-card" role="img" aria-label={description}>
@@ -288,7 +288,12 @@ function BarChart({ labels, series, description }: { labels: string[]; series: {
           <div className="bar-group" key={label}>
             <div className="bars">
               {series.map((item, seriesIndex) => (
-                <span key={item.name} style={{ height: `${Math.max(4, ((item.values[labelIndex] ?? 0) / max) * 150)}px` }} data-series={seriesIndex} title={`${item.name}: ${item.values[labelIndex]}`} />
+                <span
+                  key={item.name}
+                  style={{ height: `${Math.max(4, ((item.values[labelIndex] ?? 0) / max) * 150)}px` }}
+                  data-series={seriesIndex}
+                  title={hideValues ? undefined : `${item.name}: ${item.values[labelIndex]}`}
+                />
               ))}
             </div>
             <small>{label}</small>
@@ -299,6 +304,75 @@ function BarChart({ labels, series, description }: { labels: string[]; series: {
         {series.map((item, index) => <span key={item.name}><i data-series={index} />{item.name}</span>)}
       </figcaption>
     </figure>
+  );
+}
+
+function PatternCells({ count, className = "" }: { count: number; className?: string }) {
+  return <>{Array.from({ length: count }, (_, index) => <i className={`pattern-cell ${className}`.trim()} key={index} />)}</>;
+}
+
+function PatternDiagram({
+  pattern,
+  figureNumber,
+  value,
+  visualization,
+}: {
+  pattern: string;
+  figureNumber: number;
+  value: number;
+  visualization: Visualization;
+}) {
+  if (pattern === "kvadrat_med_tillegg") {
+    const side = figureNumber + Number(visualization.sideforskyvning ?? 0);
+    const extra = Number(visualization.tillegg ?? Math.max(0, value - side ** 2));
+    return (
+      <div className="pattern-construction pattern-square-extra">
+        <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${side}, 11px)` }}><PatternCells count={side ** 2} /></span>
+        {extra > 0 && <span className="pattern-extra"><PatternCells count={extra} /></span>}
+      </div>
+    );
+  }
+
+  if (pattern === "flisramme_uten_hjorner" || pattern === "ramme") {
+    const side = figureNumber + 2;
+    const cells = Array.from({ length: side ** 2 }, (_, index) => {
+      const row = Math.floor(index / side);
+      const column = index % side;
+      const perimeter = row === 0 || column === 0 || row === side - 1 || column === side - 1;
+      const corner = (row === 0 || row === side - 1) && (column === 0 || column === side - 1);
+      const visible = pattern === "ramme" ? perimeter : !corner;
+      return visible ? <i className="pattern-cell pattern-tile" key={index} /> : <i className="pattern-space" key={index} />;
+    });
+    return <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${side}, 11px)` }}>{cells}</span>;
+  }
+
+  if (pattern === "trekant") {
+    return (
+      <span className="pattern-triangle">
+        {Array.from({ length: figureNumber }, (_, row) => <span key={row}><PatternCells count={row + 1} /></span>)}
+      </span>
+    );
+  }
+
+  if (pattern === "bord_og_stoler") {
+    return (
+      <span className="pattern-tables-and-chairs">
+        <span className="pattern-chair-row"><PatternCells count={figureNumber} className="pattern-chair" /></span>
+        <span className="pattern-table-row">{Array.from({ length: figureNumber }, (_, index) => <i className="pattern-table" key={index} />)}</span>
+        <span className="pattern-chair-row"><PatternCells count={figureNumber} className="pattern-chair" /></span>
+        <span className="pattern-end-chairs"><span><PatternCells count={2} className="pattern-chair" /></span><span><PatternCells count={2} className="pattern-chair" /></span></span>
+      </span>
+    );
+  }
+
+  if (pattern === "benker") {
+    return <span className="pattern-benches"><PatternCells count={value} className="pattern-bench" /></span>;
+  }
+
+  return (
+    <span className="pattern-linear" style={{ gridTemplateColumns: `repeat(${Math.min(10, Math.max(1, value))}, 11px)` }}>
+      <PatternCells count={value} />
+    </span>
   );
 }
 
@@ -386,9 +460,13 @@ export function VisualizationPanel({ visualization, data }: { visualization?: Vi
   if (type === "figurmønster") {
     const figures = (visualization.figurer as { n: number; antall: number }[] | undefined) ?? [];
     const values = (visualization.verdier as number[] | undefined) ?? figures.map((figure) => figure.antall);
+    const pattern = String(visualization.monster ?? "lineaer_tilvekst");
     return (
       <figure className="visual-card pattern-card" aria-label={visualization.tekstalternativ ?? "Figurmønster"}>
-        {values.map((value, index) => <div key={index}><div className="pattern-dots">{Array.from({ length: Math.min(value, 30) }, (_, dot) => <i key={dot} />)}</div><small>Figur {figures[index]?.n ?? index + 1}: {value}</small></div>)}
+        {values.map((value, index) => {
+          const figureNumber = figures[index]?.n ?? index + 1;
+          return <div key={index}><PatternDiagram pattern={pattern} figureNumber={figureNumber} value={value} visualization={visualization} /><small>Figur {figureNumber}: {value}</small></div>;
+        })}
       </figure>
     );
   }
@@ -401,7 +479,11 @@ export function VisualizationPanel({ visualization, data }: { visualization?: Vi
     return <Histogram limits={limits} frequencies={values} useDensity={Boolean(visualization.bruk_frekvenstetthet)} />;
   }
   if (type === "prosentforløp") {
-    return <BarChart labels={(visualization.etiketter as string[]) ?? []} series={[{ name: "Verdi", values: (visualization.verdier as number[]) ?? [] }]} description="Verdier gjennom to prosentendringer" />;
+    const hideValues = Boolean(visualization.skjul_verdier);
+    const labels = hideValues
+      ? ["Start", "Endringstrinn 1", "Endringstrinn 2"]
+      : (visualization.etiketter as string[]) ?? [];
+    return <BarChart labels={labels} series={[{ name: "Verdi", values: (visualization.verdier as number[]) ?? [] }]} description="Verdier gjennom to prosentendringer" hideValues={hideValues} />;
   }
   if (type === "sammenlignende_punktdiagram") {
     const series = ((visualization.serier as { navn: string; verdier: number[] }[]) ?? []).map((item) => ({ name: item.navn, points: item.verdier.map((y, index) => ({ x: index + 1, y })), connect: false }));

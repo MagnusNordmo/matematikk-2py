@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.20"
+    "versjon": "2027.21"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -71,8 +71,8 @@
     },
     "fordeling_niva": {
       "1": 103,
-      "2": 266,
-      "3": 131
+      "2": 292,
+      "3": 105
     },
     "fordeling_tema": {
       "funksjoner_og_modeller": 95,
@@ -127,7 +127,8 @@
           28500,
           23370,
           29212.5
-        ]
+        ],
+        "skjul_verdier": true
       }
     },
     {
@@ -153,7 +154,8 @@
           4200,
           4704,
           4327.68
-        ]
+        ],
+        "skjul_verdier": true
       }
     },
     {
@@ -179,7 +181,8 @@
           185000,
           157250,
           147815
-        ]
+        ],
+        "skjul_verdier": true
       }
     },
     {
@@ -205,7 +208,8 @@
           760000,
           912000,
           1003200
-        ]
+        ],
+        "skjul_verdier": true
       }
     },
     {
@@ -231,7 +235,8 @@
           1280,
           998.4,
           1048.32
-        ]
+        ],
+        "skjul_verdier": true
       }
     },
     {
@@ -625,7 +630,7 @@
       "id": "d2-regresjon-03",
       "del": 2,
       "tittel": "Bremselengde og fart",
-      "innledning": "Tabellen viser bremselengde som funksjon av fart. Bruk et digitalt regresjonsverktøy der det er hensiktsmessig.",
+      "innledning": "Tabellen viser bremselengde som funksjon av fart. Bruk potensregresjon til å beskrive sammenhengen.",
       "data": {
         "x": [
           20,
@@ -1229,8 +1234,8 @@
         ],
         "frekvenser": [
           10,
-          15,
-          17,
+          14,
+          18,
           8
         ],
         "enhet": "timer"
@@ -1246,8 +1251,8 @@
         ],
         "frekvenser": [
           10,
-          15,
-          17,
+          14,
+          18,
           8
         ],
         "bruk_frekvenstetthet": true
@@ -1501,7 +1506,8 @@
             "antall": 18
           }
         ],
-        "tekstalternativ": "Antall benker er 6, 10, 14, 18."
+        "tekstalternativ": "Antall benker er 6, 10, 14, 18.",
+        "monster": "benker"
       }
     },
     {
@@ -1545,7 +1551,8 @@
             "antall": 32
           }
         ],
-        "tekstalternativ": "Antall fliser er 5, 12, 21, 32."
+        "tekstalternativ": "Antall fliser er 5, 12, 21, 32.",
+        "monster": "flisramme_uten_hjorner"
       }
     },
     {
@@ -1589,7 +1596,8 @@
             "antall": 12
           }
         ],
-        "tekstalternativ": "Antall stoler er 6, 8, 10, 12."
+        "tekstalternativ": "Antall stoler er 6, 8, 10, 12.",
+        "monster": "bord_og_stoler"
       }
     },
     {
@@ -1633,7 +1641,8 @@
             "antall": 10
           }
         ],
-        "tekstalternativ": "Antall prikker er 1, 3, 6, 10."
+        "tekstalternativ": "Antall prikker er 1, 3, 6, 10.",
+        "monster": "trekant"
       }
     },
     {
@@ -1677,7 +1686,8 @@
             "antall": 20
           }
         ],
-        "tekstalternativ": "Antall ruter er 8, 12, 16, 20."
+        "tekstalternativ": "Antall ruter er 8, 12, 16, 20.",
+        "monster": "ramme"
       }
     },
     {
@@ -2247,9 +2257,10 @@
       "hjelpemidler": "uten",
       "sporsmal": "I en kantine velger \\(25\\) av \\(100\\) kunder vegetarretten. Hvor mange prosent velger vegetarretten?",
       "hint": [
-        "Hva vet vi? \\(125\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(25\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-        "Lag en plan: Skriv andelen som \\(25/100\\) og gjør brøken om til prosent.",
-        "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(25\\): \\(\\frac{25\\div25}{125\\div25}=\\frac{1}{5}\\). Siden \\(1/5=20\\,\\%\\), kan prosenten bygges av kjente deler."
+        "Hva vet vi? \\(100\\) kunder er hele mengden, altså \\(100\\,\\%\\), mens \\(25\\) kunder er delen vi skal beskrive med prosent.",
+        "Lag en plan: Skriv delen over helheten som \\(25/100\\). En brøk med nevner 100 kan leses direkte som prosent.",
+        "Velg en enkel regnevei: Du kan også forkorte brøken ved å dele både teller og nevner med \\(25\\): \\(\\frac{25\\div25}{100\\div25}=\\frac{1}{4}\\).",
+        "Gjør neste del: Gjør firedelen om til prosent ved å regne \\(\\frac{1}{4}\\cdot100\\,\\%=\\square\\,\\%\\)."
       ],
       "svar": "Når hele gruppen er 100, er 25 av kundene det samme som \\(25\\,\\%\\).",
       "fasit": {
@@ -2267,8 +2278,7 @@
         "metode": "part_as_percent",
         "inndata": {
           "del": 25,
-          "hel": 125,
-          "total": 100
+          "hel": 100
         },
         "resultat": [
           25
@@ -2393,23 +2403,23 @@
       "ferdighet": [
         "finne_prosent"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Et teater solgte \\(275\\) av \\(625\\) billetter på nett. Hvor mange prosent av billettene ble solgt på nett?",
+      "sporsmal": "Et teater solgte \\(220\\) av \\(500\\) billetter på nett. Hvor mange prosent av billettene ble solgt på nett?",
       "hint": [
-        "Hva vet vi? \\(625\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(275\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-        "Lag en plan: Skriv delen over totalen: \\(\\frac{275}{625}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-        "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(25\\): \\(\\frac{275\\div25}{625\\div25}=\\frac{11}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-        "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{25}\\cdot100\\,\\%=\\square\\,\\%\\)."
+        "Hva vet vi? \\(500\\) billetter er hele mengden, altså \\(100\\,\\%\\), og \\(220\\) billetter er delen vi skal skrive som prosent.",
+        "Lag en plan: Skriv delen over helheten som \\(220/500\\), der tallet under brøkstreken er helheten som skal gjøres om til 100 uten lang divisjon.",
+        "Velg en enkel regnevei: Del teller og nevner med \\(5\\). Regn \\(220\\div5=\\square\\), og legg merke til at \\(500\\div5=100\\).",
+        "Gjør neste del: Det første resultatet blir tallet over brøkstreken når nevneren er 100, og viser derfor prosenten."
       ],
-      "svar": "Andelen er \\(44\\,\\%\\).",
+      "svar": "\\(220/500=44/100\\), så andelen er \\(44\\,\\%\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
             "verdi": 44,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0
           }
         ]
       },
@@ -2417,13 +2427,13 @@
         "operasjon": "beregning",
         "metode": "part_as_percent",
         "inndata": {
-          "del": 275,
-          "hel": 625
+          "del": 220,
+          "hel": 500
         },
         "resultat": [
           44
         ],
-        "avrunding": 1
+        "avrunding": 0
       },
       "variantfamilie": "d1-finne-prosent",
       "id": "2py27-010",
@@ -2431,23 +2441,23 @@
         {
           "id": "forkort-brok",
           "navn": "Forkort brøken",
-          "forklaring": "Reduser 275 av 625 til 11 av 25.",
+          "forklaring": "Gjør nevneren om til 100.",
           "hint": [
-            "Hva vet vi? \\(625\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(275\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Lag en plan: Skriv delen over totalen: \\(\\frac{275}{625}\\). Tallet over brøkstreken er delen, og tallet under er totalen.",
-            "Velg en enkel regnevei: Unngå lang divisjon. Forkort ved å dele tallet over brøkstreken og tallet under brøkstreken med \\(25\\): \\(\\frac{275\\div25}{625\\div25}=\\frac{11}{25}\\). Siden \\(1/25=4\\,\\%\\), kan prosenten bygges av kjente deler.",
-            "Gjør neste del: Gjør den forkortede brøken om til prosent: \\(\\frac{11}{25}\\cdot100\\,\\%=\\square\\,\\%\\)."
+            "Hva vet vi? \\(500\\) billetter er hele mengden, og \\(220\\) billetter er delen som skal skrives som prosent.",
+            "Lag en plan: Skriv delen over totalen som \\(\\frac{220}{500}\\), der tallet under brøkstreken er helheten som skal gjøres om til 100.",
+            "Velg en enkel regnevei: Del både teller og nevner med \\(5\\). Regn \\(220\\div5=\\square\\), mens \\(500\\div5=100\\).",
+            "Gjør neste del: Det første resultatet blir tallet over brøkstreken og viser prosenten når nevneren er 100."
           ]
         },
         {
           "id": "prosentbiter",
           "navn": "40 % og 4 %",
-          "forklaring": "Bygg 275 billetter av to oversiktlige prosentbiter.",
+          "forklaring": "Bygg delen av kjente prosentbiter.",
           "hint": [
-            "Hva vet vi? \\(625\\) er hele mengden, altså \\(100\\,\\%\\), mens \\(275\\) er delen. Vi skal finne hvor mange prosent denne delen utgjør.",
-            "Velg denne veien: Finn 40 % av 625 som to femdeler.",
-            "Lag en plan: En femdel er \\(625/5=125\\), så 40 % er \\(2\\cdot125=250\\).",
-            "Gjør første del: Fire prosent er \\(625/25=25\\). Da er \\(250+25=275\\), som svarer til \\(40\\,\\%+4\\,\\%=\\square\\,\\%\\)."
+            "Hva vet vi? \\(500\\) billetter er hele mengden, og vi vil bygge \\(220\\) av oversiktlige prosentbiter.",
+            "Velg denne veien: Ti prosent av \\(500\\) er \\(50\\), så \\(40\\,\\%\\) er \\(4\\cdot50=200\\) billetter.",
+            "Finn resten: Det mangler \\(220-200=20\\) billetter. Én prosent er \\(500/100=5\\) billetter.",
+            "Gjør neste del: Regn \\(20/5=\\square\\,\\%\\), og legg denne prosenten til \\(40\\,\\%\\)."
           ]
         }
       ]
@@ -3310,24 +3320,23 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "En årsavgift ble økt med \\(20\\,\\%\\) til \\(816\\) kr. Hva var årsavgiften før økningen?",
+      "sporsmal": "En årsavgift ble økt med \\(20\\,\\%\\) til \\(720\\) kr. Hva var årsavgiften før økningen?",
       "hint": [
-        "Hva vet vi? Etter en økning på \\(20\\,\\%\\) er årsavgiften \\(816\\) kr. Vi skal finne årsavgiften før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-        "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100+20=120\\,\\%\\). Dermed vet vi at \\(120\\,\\%\\) tilsvarer \\(816\\) kr.",
-        "Del prosenten etter endringen i \\(12\\) like deler: \\(120/12=10\\,\\%\\).",
-        "Finn verdien av én del: De \\(12\\) like delene er til sammen \\(816\\) kr. Derfor deler vi \\(816\\) på \\(12\\): \\(816/12=68\\). Én del, altså \\(10\\,\\%\\), er \\(68\\) kr.",
-        "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/10=10\\), så hele verdien består av \\(10\\) slike deler. Regn \\(68\\cdot10=\\square\\)."
+        "Hva vet vi? Etter en økning på \\(20\\,\\%\\) er årsavgiften \\(720\\) kr. Vi skal finne den gamle avgiften som svarer til \\(100\\,\\%\\).",
+        "Finn prosenten etter endringen: \\(100+20=120\\,\\%\\). Del prosenten etter endringen i seks like deler, slik at hver del er \\(20\\,\\%\\).",
+        "Finn verdien av én del: De seks like delene er til sammen \\(720\\) kr. Derfor deler vi \\(720/6=120\\) kr.",
+        "Bygg opp \\(100\\,\\%\\): Hele den gamle avgiften består av fem slike deler. Regn \\(5\\cdot120=\\square\\)."
       ],
-      "svar": "Årsavgiften var \\(680\\) kr.",
+      "svar": "Den gamle avgiften var \\(600\\) kr. En økning på \\(20\\,\\%\\) er \\(120\\) kr, og \\(600+120=720\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 680,
+            "verdi": 600,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -3335,13 +3344,13 @@
         "operasjon": "beregning",
         "metode": "reverse_percent",
         "inndata": {
-          "ny": 816,
+          "ny": 720,
           "endring": 20
         },
         "resultat": [
-          680
+          600
         ],
-        "avrunding": 2
+        "avrunding": 0
       },
       "variantfamilie": "d1-omvendt-prosent",
       "id": "2py27-028"
@@ -3439,17 +3448,16 @@
       "ferdighet": [
         "finne_opprinnelig_verdi"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Et årskort ble satt ned med \\(5\\,\\%\\) og kostet da \\(760\\) kr. Hva kostet årskortet før rabatten?",
+      "sporsmal": "Et årskort ble satt ned med \\(20\\,\\%\\) og kostet da \\(640\\) kr. Hva kostet årskortet før rabatten?",
       "hint": [
-        "Hva vet vi? Etter en rabatt på \\(5\\,\\%\\) er prisen på årskortet \\(760\\) kr. Vi skal finne prisen på årskortet før endringen, altså verdien som tilsvarer \\(100\\,\\%\\).",
-        "Finn prosenten etter endringen: Start med \\(100\\,\\%\\). Regn \\(100-5=95\\,\\%\\). Dermed vet vi at \\(95\\,\\%\\) tilsvarer \\(760\\) kr.",
-        "Del prosenten etter endringen i \\(19\\) like deler: \\(95/19=5\\,\\%\\).",
-        "Finn verdien av én del: De \\(19\\) like delene er til sammen \\(760\\) kr. Derfor deler vi \\(760\\) på \\(19\\): \\(760/19=40\\). Én del, altså \\(5\\,\\%\\), er \\(40\\) kr.",
-        "Bygg opp \\(100\\,\\%\\) med samme deler: \\(100/5=20\\), så hele verdien består av \\(20\\) slike deler. Regn \\(40\\cdot20=\\square\\)."
+        "Hva vet vi? Etter en rabatt på \\(20\\,\\%\\) er prisen \\(640\\) kr. Vi skal finne den gamle prisen som svarer til \\(100\\,\\%\\).",
+        "Finn prosenten etter endringen: \\(100-20=80\\,\\%\\). Del prosenten etter endringen i åtte like deler, slik at hver del er \\(10\\,\\%\\).",
+        "Finn verdien av én del: De åtte like delene er til sammen \\(640\\) kr. Derfor deler vi \\(640/8=80\\) kr.",
+        "Bygg opp \\(100\\,\\%\\): Hele den gamle prisen består av ti slike deler. Regn \\(80\\cdot10=\\square\\)."
       ],
-      "svar": "Prisen på årskortet var \\(800\\) kr.",
+      "svar": "Årskortet kostet \\(800\\) kr. Rabatten er \\(160\\) kr, og \\(800-160=640\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
@@ -3464,13 +3472,13 @@
         "operasjon": "beregning",
         "metode": "reverse_percent",
         "inndata": {
-          "ny": 760,
-          "endring": -5
+          "ny": 640,
+          "endring": -20
         },
         "resultat": [
           800
         ],
-        "avrunding": 2
+        "avrunding": 0
       },
       "variantfamilie": "d1-omvendt-prosent",
       "id": "2py27-031"
@@ -4173,7 +4181,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-7
+            "toleranse": 1e-07
           }
         ]
       },
@@ -4216,7 +4224,7 @@
           {
             "verdi": 0.008,
             "enhet": null,
-            "toleranse": 1e-7
+            "toleranse": 1e-07
           }
         ]
       },
@@ -4257,9 +4265,9 @@
         "type": "tall",
         "verdier": [
           {
-            "verdi": 0.00001,
+            "verdi": 1e-05,
             "enhet": null,
-            "toleranse": 1e-7
+            "toleranse": 1e-07
           }
         ]
       },
@@ -4271,7 +4279,7 @@
           "eksponent": -5
         },
         "resultat": [
-          0.00001
+          1e-05
         ],
         "avrunding": 7
       },
@@ -4302,7 +4310,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-7
+            "toleranse": 1e-07
           }
         ]
       },
@@ -4345,7 +4353,7 @@
           {
             "verdi": 0.0025,
             "enhet": null,
-            "toleranse": 1e-7
+            "toleranse": 1e-07
           }
         ]
       },
@@ -5094,37 +5102,37 @@
       "hjelpemidler": "uten",
       "sporsmal": "Velg rekkefølgen fra minst til størst.",
       "hint": [
-        "Hva vet vi? Identifiser grunntall, eksponent og regneoperasjon før du bruker en potensregel eller flytter et desimalkomma.",
-        "Lag en plan: Gjør hvert av de tre uttrykkene om til et vanlig tall før du sammenligner dem.",
-        "Gjør første del: Regn ut de to første: \\(2^4=\\square\\) og \\(\\sqrt{625}=\\square\\).",
-        "Gjør neste del: Regn ut det siste uttrykket, \\(3^3=\\square\\), og sorter de tre tallverdiene fra minst til størst."
+        "Hva vet vi? Vi skal sammenligne to potenser og en kvadratrot og ordne uttrykkene etter tallverdien.",
+        "Lag en plan: Gjør hvert uttrykk om til et vanlig tall før du sammenligner dem.",
+        "Velg en enkel regnevei: Regn \\(2^4=2\\cdot2\\cdot2\\cdot2\\), finn tallet som ganget med seg selv blir \\(400\\), og regn \\(3^3=3\\cdot3\\cdot3\\).",
+        "Gjør neste del: Skriv uttrykkene i stigende rekkefølge etter de tre tallverdiene du fant."
       ],
-      "svar": "Tallverdiene er \\(2^4=16\\), \\(\\sqrt{625}=25\\), \\(3^3=27\\). Riktig rekkefølge er derfor \\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\).",
+      "svar": "Tallverdiene er \\(2^4=16\\), \\(\\sqrt{400}=20\\), \\(3^3=27\\). Riktig rekkefølge er derfor \\(2^4\\), \\(\\sqrt{400}\\), \\(3^3\\).",
       "fasit": {
         "type": "valg",
         "flervalg": false,
         "riktige": [
-          "\\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\)"
+          "\\(2^4\\), \\(\\sqrt{400}\\), \\(3^3\\)"
         ],
         "alternativer": [
-          "\\(3^3\\), \\(\\sqrt{625}\\), \\(2^4\\)",
-          "\\(\\sqrt{625}\\), \\(2^4\\), \\(3^3\\)",
-          "\\(\\sqrt{625}\\), \\(3^3\\), \\(2^4\\)",
-          "\\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\)"
+          "\\(3^3\\), \\(\\sqrt{400}\\), \\(2^4\\)",
+          "\\(\\sqrt{400}\\), \\(2^4\\), \\(3^3\\)",
+          "\\(\\sqrt{400}\\), \\(3^3\\), \\(2^4\\)",
+          "\\(2^4\\), \\(\\sqrt{400}\\), \\(3^3\\)"
         ]
       },
       "kontroll": {
         "operasjon": "valg",
         "riktige": [
-          "\\(2^4\\), \\(\\sqrt{625}\\), \\(3^3\\)"
+          "\\(2^4\\), \\(\\sqrt{400}\\), \\(3^3\\)"
         ]
       },
       "variantfamilie": "d1-rot-rekkefolge",
       "data": {
         "uttrykk": [
-          "\\(3^3\\)",
-          "\\(\\sqrt{625}\\)",
-          "\\(2^4\\)"
+          "\\(2^4\\)",
+          "\\(\\sqrt{400}\\)",
+          "\\(3^3\\)"
         ]
       },
       "id": "2py27-069"
@@ -5940,7 +5948,8 @@
           7,
           11
         ],
-        "tekstalternativ": "Figurene har 3, 7 og 11 ruter."
+        "tekstalternativ": "Figurene har 3, 7 og 11 ruter.",
+        "monster": "lineaer_tilvekst"
       },
       "id": "2py27-088"
     },
@@ -6006,7 +6015,8 @@
           7,
           9
         ],
-        "tekstalternativ": "Figurene har 5, 7 og 9 ruter."
+        "tekstalternativ": "Figurene har 5, 7 og 9 ruter.",
+        "monster": "lineaer_tilvekst"
       },
       "id": "2py27-089"
     },
@@ -6072,7 +6082,8 @@
           9,
           16
         ],
-        "tekstalternativ": "Figurene har 2, 9 og 16 ruter."
+        "tekstalternativ": "Figurene har 2, 9 og 16 ruter.",
+        "monster": "lineaer_tilvekst"
       },
       "id": "2py27-090"
     },
@@ -6138,7 +6149,8 @@
           7,
           8
         ],
-        "tekstalternativ": "Figurene har 6, 7 og 8 ruter."
+        "tekstalternativ": "Figurene har 6, 7 og 8 ruter.",
+        "monster": "lineaer_tilvekst"
       },
       "id": "2py27-091"
     },
@@ -6204,7 +6216,8 @@
           9,
           14
         ],
-        "tekstalternativ": "Figurene har 4, 9 og 14 ruter."
+        "tekstalternativ": "Figurene har 4, 9 og 14 ruter.",
+        "monster": "lineaer_tilvekst"
       },
       "id": "2py27-092"
     },
@@ -6269,7 +6282,10 @@
           10,
           17
         ],
-        "tekstalternativ": "Figurene har 5, 10 og 17 brikker."
+        "tekstalternativ": "Figurene har 5, 10 og 17 brikker.",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 1,
+        "tillegg": 1
       },
       "id": "2py27-093"
     },
@@ -6334,7 +6350,10 @@
           17,
           26
         ],
-        "tekstalternativ": "Figurene har 10, 17 og 26 brikker."
+        "tekstalternativ": "Figurene har 10, 17 og 26 brikker.",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 2,
+        "tillegg": 1
       },
       "id": "2py27-094"
     },
@@ -6399,7 +6418,10 @@
           11,
           18
         ],
-        "tekstalternativ": "Figurene har 6, 11 og 18 brikker."
+        "tekstalternativ": "Figurene har 6, 11 og 18 brikker.",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 1,
+        "tillegg": 2
       },
       "id": "2py27-095"
     },
@@ -6464,7 +6486,10 @@
           26,
           37
         ],
-        "tekstalternativ": "Figurene har 17, 26 og 37 brikker."
+        "tekstalternativ": "Figurene har 17, 26 og 37 brikker.",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 3,
+        "tillegg": 1
       },
       "id": "2py27-096"
     },
@@ -6529,7 +6554,10 @@
           18,
           27
         ],
-        "tekstalternativ": "Figurene har 11, 18 og 27 brikker."
+        "tekstalternativ": "Figurene har 11, 18 og 27 brikker.",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 2,
+        "tillegg": 2
       },
       "id": "2py27-097"
     },
@@ -6897,21 +6925,21 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "En bil kjører \\(210\\) km på \\(12\\) liter drivstoff. Kjørelengden \\(y\\) regnes som proporsjonal med drivstoffmengden \\(x\\), slik at \\(y=kx\\). Finn \\(k\\), og tolk svaret.",
+      "sporsmal": "En bil kjører \\(180\\) km på \\(10\\) liter drivstoff. Kjørelengden \\(y\\) regnes som proporsjonal med drivstoffmengden \\(x\\), slik at \\(y=kx\\). Finn \\(k\\), og tolk svaret.",
       "hint": [
-        "Hva vet vi? \\(12\\) enheter svarer til \\(210\\). Konstanten er verdien for én enhet, så totalen skal deles på antallet enheter.",
-        "Lag en plan: Bruk \\(k=y/x\\): én-enhetsverdien er totalen delt på antallet, altså \\(210/12\\).",
-        "Gjør første del: Del opp tallet for å gjøre divisjonen synlig: \\(210=180+30\\), så \\(210/12=15+2{,}5=\\square\\).",
-        "Gjør neste del: Tolk k med enheten km per liter; den forteller verdien for én enhet."
+        "Hva vet vi? \\(10\\) liter svarer til \\(180\\) km, og konstanten \\(k\\) viser kjørelengden for én liter.",
+        "Lag en plan: Bruk \\(k=y/x\\), altså total kjørelengde delt på antall liter.",
+        "Velg en enkel regnevei: Del på ti ved å flytte desimalkommaet én plass: \\(180/10=\\square\\).",
+        "Gjør neste del: Tolk tallet med enheten kilometer per liter; det beskriver verdien for én liter."
       ],
-      "svar": "\\(k=210/12=17{,}5\\). Modellen tilsvarer \\(17{,}5\\) km per liter.",
+      "svar": "\\(k=180/10=18\\). Modellen tilsvarer \\(18\\) km per liter.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 17.5,
+            "verdi": 18,
             "enhet": "km per liter",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -6919,11 +6947,11 @@
         "operasjon": "beregning",
         "metode": "direct_constant",
         "inndata": {
-          "x": 12,
-          "y": 210
+          "x": 10,
+          "y": 180
         },
         "resultat": [
-          17.5
+          18
         ]
       },
       "variantfamilie": "d1-proporsjonal-konstant",
@@ -6982,22 +7010,21 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "\\(5\\) meter gavebånd koster \\(42{,}5\\) kr. Hva koster \\(12\\) meter når prisen er proporsjonal med lengden?",
+      "sporsmal": "\\(5\\) meter gavebånd koster \\(40\\) kr. Hva koster \\(8\\) meter når prisen er proporsjonal med lengden?",
       "hint": [
-        "Hva vet vi? \\(5\\) enheter svarer til \\(42{,}5\\), og vi skal finne verdien for \\(12\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Finn verdien for én enhet ved å dele opp totalen: \\(42{,}5/5=40/5+2{,}5/5=8+0{,}5=8{,}5\\).",
-        "Gang heltallsdelen med det nye antallet: \\(8\\cdot12=8\\cdot10+8\\cdot2=80+16=96\\).",
-        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot12=12/2=6\\).",
-        "Legg de to bidragene sammen: \\(96+6\\). Dette gir verdien for det nye antallet enheter."
+        "Hva vet vi? \\(5\\) meter koster \\(40\\) kr, og samme pris per meter skal brukes for \\(8\\) meter.",
+        "Lag en plan: Finn først prisen for én meter ved å dele totalprisen på antall meter.",
+        "Velg en enkel regnevei: \\(40/5=8\\) kr per meter er et regnestykke i den lille gangetabellen.",
+        "Gjør neste del: Gang meterprisen med den nye lengden: \\(8\\cdot8=\\square\\)."
       ],
-      "svar": "Meterprisen er \\(42{,}5/5=8{,}5\\) kr. Da koster \\(12\\) meter \\(12\\cdot8{,}5=102\\) kr.",
+      "svar": "Meterprisen er \\(40/5=8\\) kr. Da koster \\(8\\) meter \\(64\\) kr.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 102,
+            "verdi": 64,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -7006,11 +7033,11 @@
         "metode": "direct_scale",
         "inndata": {
           "x1": 5,
-          "y1": 42.5,
-          "x2": 12
+          "y1": 40,
+          "x2": 8
         },
         "resultat": [
-          102
+          64
         ]
       },
       "variantfamilie": "d1-proporsjonal-skalering",
@@ -7026,22 +7053,21 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "\\(8\\) bussbilletter koster \\(260\\) kr. Hva koster \\(14\\) billetter når alle billettene har samme pris?",
+      "sporsmal": "\\(8\\) bussbilletter koster \\(240\\) kr. Hva koster \\(10\\) billetter når alle billettene har samme pris?",
       "hint": [
-        "Hva vet vi? \\(8\\) enheter svarer til \\(260\\), og vi skal finne verdien for \\(14\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Finn verdien for én enhet ved å dele opp totalen: \\(260/8=240/8+20/8=30+2{,}5=32{,}5\\).",
-        "Gang heltallsdelen med det nye antallet: \\(32\\cdot14=32\\cdot10+32\\cdot4=320+128=448\\).",
-        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot14=14/2=7\\).",
-        "Legg de to bidragene sammen: \\(448+7\\). Dette gir verdien for det nye antallet enheter."
+        "Hva vet vi? \\(8\\) billetter koster \\(240\\) kr, og alle billettene har samme pris.",
+        "Lag en plan: Finn først prisen per billett ved å dele totalprisen på åtte.",
+        "Velg en enkel regnevei: Siden \\(8\\cdot30=240\\), er prisen per billett \\(30\\) kr.",
+        "Gjør neste del: Gang prisen per billett med \\(10\\): \\(30\\cdot10=\\square\\)."
       ],
-      "svar": "Én billett koster \\(260/8=32{,}5\\) kr. Da koster \\(14\\) billetter \\(14\\cdot32{,}5=455\\) kr.",
+      "svar": "Én billett koster \\(30\\) kr. Da koster \\(10\\) billetter \\(300\\) kr.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 455,
+            "verdi": 300,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -7050,11 +7076,11 @@
         "metode": "direct_scale",
         "inndata": {
           "x1": 8,
-          "y1": 260,
-          "x2": 14
+          "y1": 240,
+          "x2": 10
         },
         "resultat": [
-          455
+          300
         ]
       },
       "variantfamilie": "d1-proporsjonal-skalering",
@@ -7113,22 +7139,20 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "En oppskrift til \\(4\\) porsjoner bruker \\(18\\) dl suppe. Hvor mye suppe trengs til \\(15\\) porsjoner når mengden er proporsjonal med antall porsjoner?",
+      "sporsmal": "En oppskrift til \\(4\\) porsjoner bruker \\(20\\) dl suppe. Hvor mye suppe trengs til \\(8\\) porsjoner når mengden er proporsjonal med antall porsjoner?",
       "hint": [
-        "Hva vet vi? \\(4\\) enheter svarer til \\(18\\), og vi skal finne verdien for \\(15\\) enheter. Ved proporsjonalitet er verdien per enhet den samme.",
-        "Finn verdien for én enhet ved å dele opp totalen: \\(18/4=16/4+2/4=4+0{,}5=4{,}5\\).",
-        "Gang heltallsdelen med det nye antallet: \\(4\\cdot15=4\\cdot10+4\\cdot5=40+20=60\\).",
-        "Gang deretter den halve enheten med antallet. En halv gang et tall er halvparten av tallet: \\(0{,}5\\cdot15=15/2=7{,}5\\).",
-        "Legg de to bidragene sammen: \\(60+7{,}5\\). Dette gir verdien for det nye antallet enheter."
+        "Hva vet vi? \\(4\\) porsjoner bruker \\(20\\) dl, og suppemengden øker i samme forhold som antall porsjoner.",
+        "Lag en plan: \\(8\\) porsjoner er dobbelt så mange som \\(4\\) porsjoner, så mengden skal dobles.",
+        "Velg en enkel regnevei: Doble ved å legge mengden til seg selv: \\(20+20=\\square\\) dl."
       ],
-      "svar": "Per porsjon trengs \\(18/4=4{,}5\\) dl. Til \\(15\\) porsjoner trengs \\(15\\cdot4{,}5=67{,}5\\) dl.",
+      "svar": "Til \\(8\\) porsjoner trengs \\(40\\) dl suppe.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 67.5,
+            "verdi": 40,
             "enhet": "dl",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -7137,11 +7161,11 @@
         "metode": "direct_scale",
         "inndata": {
           "x1": 4,
-          "y1": 18,
-          "x2": 15
+          "y1": 20,
+          "x2": 8
         },
         "resultat": [
-          67.5
+          40
         ]
       },
       "variantfamilie": "d1-proporsjonal-skalering",
@@ -7282,21 +7306,21 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Tolv like maskiner bruker \\(30\\) dager på en produksjonsordre. Hvor lang tid bruker \\(20\\) slike maskiner på den samme ordren?",
+      "sporsmal": "\\(6\\) like maskiner bruker \\(30\\) dager på en produksjonsordre. Hvor lang tid bruker \\(10\\) slike maskiner på den samme ordren?",
       "hint": [
-        "Hva vet vi? \\(12\\) av den første størrelsen hører sammen med \\(30\\) av den andre. Ved omvendt proporsjonalitet er produktet konstant når den ene størrelsen endres.",
-        "Lag en plan: Ved omvendt proporsjonalitet er produktet konstant. Finn det fra det kjente paret: \\(12\\cdot30=360\\).",
-        "Gjør første del: Del konstanten på den nye x-verdien: \\(360/20=\\square\\).",
-        "Gjør neste del: Kontroller retningen: Når den ene størrelsen øker i en omvendt proporsjonal sammenheng, skal den andre minke, og omvendt."
+        "Hva vet vi? \\(6\\) maskiner bruker \\(30\\) dager på den samme arbeidsmengden, og flere like maskiner gir kortere tid.",
+        "Lag en plan: Ved omvendt proporsjonalitet er produktet av antall maskiner og dager konstant.",
+        "Gjør første del: Finn konstanten med det kjente paret: \\(6\\cdot30=180\\).",
+        "Gjør neste del: Del konstanten på \\(10\\) maskiner: \\(180/10=\\square\\) dager."
       ],
-      "svar": "Konstanten er \\(12\\cdot 30=360\\). Dermed blir tiden \\(360/20=18\\) dager.",
+      "svar": "Tiden blir \\(180/10=18\\) dager.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
             "verdi": 18,
             "enhet": "dager",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -7304,9 +7328,9 @@
         "operasjon": "beregning",
         "metode": "inverse_scale",
         "inndata": {
-          "x1": 12,
+          "x1": 6,
           "y1": 30,
-          "x2": 20
+          "x2": 10
         },
         "resultat": [
           18
@@ -7324,21 +7348,20 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Fem like kraner flytter en bestemt last på \\(24\\) timer. Hvor lang tid bruker \\(16\\) kraner på den samme lasten?",
+      "sporsmal": "\\(4\\) like kraner flytter en bestemt last på \\(24\\) timer. Hvor lang tid bruker \\(8\\) kraner på den samme lasten?",
       "hint": [
-        "Hva vet vi? \\(5\\) av den første størrelsen hører sammen med \\(24\\) av den andre. Ved omvendt proporsjonalitet er produktet konstant når den ene størrelsen endres.",
-        "Lag en plan: Ved omvendt proporsjonalitet er produktet konstant. Finn det fra det kjente paret: \\(5\\cdot24=120\\).",
-        "Gjør første del: Del konstanten på den nye x-verdien: \\(120/16=\\square\\).",
-        "Gjør neste del: Kontroller retningen: Når den ene størrelsen øker i en omvendt proporsjonal sammenheng, skal den andre minke, og omvendt."
+        "Hva vet vi? \\(4\\) kraner bruker \\(24\\) timer på den samme lasten, og vi øker til \\(8\\) kraner.",
+        "Lag en plan: Antall kraner dobles fra \\(4\\) til \\(8\\). Ved omvendt proporsjonalitet skal tiden da halveres.",
+        "Velg en enkel regnevei: Halver \\(24\\) timer ved å regne \\(24/2=\\square\\) timer."
       ],
-      "svar": "Konstanten er \\(5\\cdot 24=120\\). Dermed blir tiden \\(120/16=7{,}5\\) timer.",
+      "svar": "Åtte kraner bruker \\(12\\) timer.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 7.5,
+            "verdi": 12,
             "enhet": "timer",
-            "toleranse": 0.01
+            "toleranse": 0
           }
         ]
       },
@@ -7346,12 +7369,12 @@
         "operasjon": "beregning",
         "metode": "inverse_scale",
         "inndata": {
-          "x1": 5,
+          "x1": 4,
           "y1": 24,
-          "x2": 16
+          "x2": 8
         },
         "resultat": [
-          7.5
+          12
         ]
       },
       "variantfamilie": "d1-omvendt-proporsjonal",
@@ -7365,7 +7388,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å pakke en forsendelse modelleres med \\(T(x)=240/x+5\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(8)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7416,7 +7439,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å rigge et arrangement modelleres med \\(T(x)=360/x+12\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(18)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7467,7 +7490,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å sortere en bunke skjemaer modelleres med \\(T(x)=150/x+4\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(10)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7518,7 +7541,7 @@
         "omvendt_proporsjonalitet",
         "tolke_konstantledd"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
       "sporsmal": "Tiden for å kontrollere en vareleveranse modelleres med \\(T(x)=480/x+7\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(16)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
       "hint": [
@@ -7571,42 +7594,57 @@
       ],
       "niva": 3,
       "hjelpemidler": "uten",
-      "sporsmal": "Tiden for en varetelling modelleres med \\(T(x)=900/x+15\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Finn \\(T(30)\\). Hvor mange minutter i modellen er uavhengige av antall arbeidere?",
+      "sporsmal": "Tiden for en varetelling modelleres med \\(T(x)=900/x+15\\), der \\(x\\) er antall arbeidere og \\(T(x)\\) måles i minutter. Bestem \\(T(30)\\) og \\(T(60)\\). Velg deretter riktig vurdering av påstanden «Når antall arbeidere dobles, blir den samlede tiden halvert».",
       "hint": [
-        "Hva vet vi? Modellen består av en omvendt proporsjonal del, \\(900/x\\), og et fastledd på \\(15\\). Disse to delene må regnes hver for seg.",
-        "Lag en plan: Sett x-verdien inn i modellen.",
-        "Velg en enkel regnevei: Del før du legger til fastleddet. Her er \\(900/30=30\\), så bare den korte addisjonen \\(30+15\\) gjenstår.",
-        "Gjør første del: Det faste tillegget er delen som ikke avhenger av x."
+        "Hva vet vi? Modellen består av den variable delen \\(900/x\\) og et fast tillegg på \\(15\\) minutter som ikke endres med antall arbeidere.",
+        "Lag en plan: Sett først \\(x=30\\) og deretter \\(x=60\\) inn i den samme modellen, og regn divisjonen før du legger til fastleddet.",
+        "Velg en enkel regnevei: Regn \\(T(30)=900/30+15=\\square\\) og \\(T(60)=900/60+15=\\square\\). Begge divisjonene kan sees fra den lille gangetabellen og tiermultipler.",
+        "Gjør neste del: Sammenlign den andre tiden med halvparten av den første. Legg merke til at bare brøkdelen halveres når x dobles, mens fastleddet er uendret."
       ],
-      "svar": "\\(T(30)=900/30+15=45\\) minutter. Konstantleddet viser at \\(15\\) minutter ikke avhenger av antall arbeidere.",
+      "svar": "\\(T(30)=45\\) minutter og \\(T(60)=30\\) minutter. Påstanden er feil: Den variable delen halveres, men fastleddet på \\(15\\) minutter gjør at den samlede tiden ikke halveres.",
       "fasit": {
-        "type": "flere_tall",
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Påstanden er feil fordi fastleddet på 15 minutter ikke halveres."
+          ],
+          "alternativer": [
+            "Påstanden er riktig fordi antall arbeidere dobles.",
+            "Påstanden er feil fordi fastleddet på 15 minutter ikke halveres.",
+            "Påstanden er riktig fordi produktet av x og hele T(x) alltid er 900."
+          ]
+        },
         "verdier": [
           {
             "verdi": 45,
             "enhet": "minutter",
-            "toleranse": 0.01,
-            "etikett": "Samlet tid"
+            "toleranse": 0,
+            "etikett": "T(30)"
           },
           {
-            "verdi": 15,
+            "verdi": 30,
             "enhet": "minutter",
             "toleranse": 0,
-            "etikett": "Fast tid"
+            "etikett": "T(60)"
           }
         ]
       },
       "kontroll": {
-        "operasjon": "beregning",
-        "metode": "inverse_plus_constant",
+        "operasjon": "beregning_og_valg",
+        "metode": "inverse_plus_constant_compare",
         "inndata": {
           "k": 900,
           "fast": 15,
-          "x": 30
+          "x": [
+            30,
+            60
+          ]
         },
         "resultat": [
           45,
-          15
+          30
         ]
       },
       "variantfamilie": "d1-omvendt-fast-ledd",
@@ -12473,32 +12511,31 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
+      "sporsmal": "Hvilket uttrykk passer nøyaktig til tabellen?",
       "hint": [
-        "Hva vet vi? Sammenlign modellen med situasjonen: Se etter startverdi, endring per enhet, gyldig område og om utviklingen er jevn eller prosentvis.",
-        "Lag en plan: Sammenlign y med kvadratet av x.",
-        "Gjør første del: Regn ut \\(y/x^2\\): \\(3/1^2=3\\), \\(12/2^2=3\\) og \\(27/3^2=3\\).",
-        "Gjør neste del: Forholdet er konstant, så modellen har formen \\(y=3x^2\\)."
+        "Hva vet vi? Tabellen gir fem par av x- og y-verdier, og ett av uttrykkene skal passe til alle parene.",
+        "Lag en plan: Sammenlign y-verdien med \\(x^2\\) i flere rader før du velger et alternativ.",
+        "Gjør første del: Regn \\(3/1^2=3\\), \\(12/2^2=3\\) og \\(27/3^2=3\\). Det samme forholdet går igjen.",
+        "Gjør neste del: Sett også inn \\(x=4\\) i alternativene, og velg uttrykket som gir tabellverdien \\(48\\)."
       ],
-      "svar": "\\(y=3x^2\\) passer alle radene. Dette er en potensmodell med eksponent 2.",
+      "svar": "Uttrykket \\(y=3x^2\\) passer alle radene.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
         "riktige": [
-          "potensmodell"
+          "\\(y=3x^2\\)"
         ],
         "alternativer": [
-          "lineær modell",
-          "eksponentialmodell",
-          "potensmodell",
-          "andregradsmodell",
-          "omvendt proporsjonal modell"
+          "\\(y=3x^2\\)",
+          "\\(y=3\\cdot2^x\\)",
+          "\\(y=3x+3\\)",
+          "\\(y=3/x\\)"
         ]
       },
       "kontroll": {
         "operasjon": "valg",
         "riktige": [
-          "potensmodell"
+          "\\(y=3x^2\\)"
         ]
       },
       "variantfamilie": "d1-modellvalg",
@@ -12625,31 +12662,31 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Hvilken modelltype passer nøyaktig til tabellen?",
+      "sporsmal": "Hvilken type proporsjonalitet viser tabellen?",
       "hint": [
-        "Hva vet vi? Sammenlign modellen med situasjonen: Se etter startverdi, endring per enhet, gyldig område og om utviklingen er jevn eller prosentvis.",
-        "Lag en plan: Undersøk produktet x·y i hver rad.",
-        "Gjør første del: Produktene er \\(1\\cdot64=\\square\\), \\(2\\cdot32=\\square\\) og \\(4\\cdot16=\\square\\)."
+        "Hva vet vi? Når x dobles i tabellen, blir y halvert. Vi skal knytte dette mønsteret til riktig type proporsjonalitet.",
+        "Lag en plan: Undersøk både forholdet \\(y/x\\) og produktet \\(x\\cdot y\\) i flere rader.",
+        "Gjør første del: Produktene er \\(1\\cdot64=64\\), \\(2\\cdot32=64\\) og \\(4\\cdot16=64\\), mens forholdet ikke er konstant.",
+        "Gjør neste del: Velg alternativet som kjennetegnes ved at produktet av de to størrelsene er konstant."
       ],
-      "svar": "\\(x\\cdot y=64\\) i alle radene, altså \\(y=64/x\\). Tabellen er omvendt proporsjonal.",
+      "svar": "Tabellen viser omvendt proporsjonalitet fordi \\(x\\cdot y=64\\) i alle radene.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
         "riktige": [
-          "omvendt proporsjonal modell"
+          "omvendt proporsjonal"
         ],
         "alternativer": [
-          "lineær modell",
-          "eksponentialmodell",
-          "potensmodell",
-          "andregradsmodell",
-          "omvendt proporsjonal modell"
+          "proporsjonal",
+          "omvendt proporsjonal",
+          "lineær, men ikke proporsjonal",
+          "ingen av disse"
         ]
       },
       "kontroll": {
         "operasjon": "valg",
         "riktige": [
-          "omvendt proporsjonal modell"
+          "omvendt proporsjonal"
         ]
       },
       "variantfamilie": "d1-modellvalg",
@@ -14843,9 +14880,9 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Velg den beste vurderingen av påstanden: «Gjennomsnittet steg fra 50 til 55, derfor steg alle observasjonene.»",
+      "sporsmal": "Velg den beste vurderingen av påstanden: «Gjennomsnittet steg fra 50 til 55, derfor steg alle observasjonene.» Begrunn valget med én eller to setninger.",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Et gjennomsnitt beskriver summen fordelt på antall observasjoner, ikke hva som skjedde med hver enkelt observasjon.",
@@ -14865,7 +14902,8 @@
           "Påstanden følger ikke; gjennomsnittet kan øke selv om noen observasjoner synker.",
           "Påstanden er alltid feil uansett datagrunnlag.",
           "Det kan bare avgjøres ved å regne ut typetallet."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -14884,9 +14922,9 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Velg den beste vurderingen av påstanden: «Medianen er 12, derfor er minst halvparten av observasjonene minst 12.»",
+      "sporsmal": "Velg den beste vurderingen av påstanden: «Medianen er 12, derfor er minst halvparten av observasjonene minst 12.» Begrunn valget med én eller to setninger.",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Medianen deler de sorterte observasjonene i en nedre og en øvre halvdel.",
@@ -14905,7 +14943,8 @@
           "Påstanden er alltid riktig fordi den bruker tall.",
           "Påstanden er alltid feil uansett datagrunnlag.",
           "Påstanden er riktig etter den vanlige definisjonen av median."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -14924,9 +14963,9 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Velg den beste vurderingen av påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.»",
+      "sporsmal": "Velg den beste vurderingen av påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.» Begrunn valget med én eller to setninger.",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Gjennomsnitt og spredning beskriver to forskjellige egenskaper ved et datasett.",
@@ -14946,7 +14985,8 @@
           "Påstanden er alltid feil uansett datagrunnlag.",
           "Påstanden følger ikke; spredningen kan være svært forskjellig.",
           "Påstanden er alltid riktig fordi den bruker tall."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -14967,7 +15007,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "uten",
-      "sporsmal": "Velg den beste vurderingen av påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.»",
+      "sporsmal": "Velg den beste vurderingen av påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.» Begrunn valget med én eller to setninger.",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Resultatet beskriver dem som valgte å delta i nettavstemningen.",
@@ -14986,7 +15026,8 @@
           "Påstanden er alltid riktig fordi den bruker tall.",
           "Det kan bare avgjøres ved å regne ut typetallet.",
           "Påstanden er alltid feil uansett datagrunnlag."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -15005,9 +15046,9 @@
         "vurdere_pastand",
         "kildekritikk"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Velg den beste vurderingen av påstanden: «En graf med avkuttet y-akse kan få en liten forskjell til å se stor ut.»",
+      "sporsmal": "Velg den beste vurderingen av påstanden: «En graf med avkuttet y-akse kan få en liten forskjell til å se stor ut.» Begrunn valget med én eller to setninger.",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Sammenlign den viste høydeforskjellen når y-aksen starter på 0 og når den starter nær datapunktene.",
@@ -15026,7 +15067,8 @@
           "Påstanden er riktig; akseskalaen påvirker det visuelle inntrykket.",
           "Påstanden er alltid feil uansett datagrunnlag.",
           "Det kan bare avgjøres ved å regne ut typetallet."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -15128,20 +15170,19 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Finn tallet som beskrives av \\(2^8\\).",
+      "sporsmal": "Finn tallet som beskrives av \\(2^6\\).",
       "hint": [
-        "Hva vet vi? Grunntallet er \\(2\\), og eksponenten \\(8\\) forteller at 2 skal brukes som faktor åtte ganger.",
-        "Velg en enkel regnevei: Bruk gjentatt kvadrering: \\(2^4=16\\) og \\(2^8=16^2=\\square\\).",
-        "Lag en plan: Eksponenten 8 betyr at tallet 2 skal være faktor åtte ganger.",
-        "Gjør første del: Du kan bygge videre ved å doble: \\(2^4=16\\).",
-        "Gjør neste del: Da er \\(2^8=(2^4)^2=16^2\\)."
+        "Hva vet vi? Grunntallet er \\(2\\), og eksponenten \\(6\\) betyr at tallet 2 skal brukes som faktor seks ganger.",
+        "Lag en plan: Del de seks faktorene i to like grupper med tre faktorer i hver gruppe.",
+        "Velg en enkel regnevei: \\(2^3=2\\cdot2\\cdot2=8\\), så \\(2^6=(2^3)^2=8^2\\).",
+        "Gjør neste del: Regn ut \\(8\\cdot8=\\square\\) ved hjelp av den lille gangetabellen."
       ],
-      "svar": "\\(2^8=256\\).",
+      "svar": "\\(2^6=64\\).",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 256,
+            "verdi": 64,
             "enhet": null,
             "toleranse": 0
           }
@@ -15151,10 +15192,10 @@
         "operasjon": "beregning",
         "metode": "mixed_value",
         "inndata": {
-          "beskrivelse": "\\(2^8\\)"
+          "beskrivelse": "\\(2^6\\)"
         },
         "resultat": [
-          256
+          64
         ]
       },
       "variantfamilie": "d1-blandet-representasjon",
@@ -16400,7 +16441,8 @@
           6,
           10,
           16
-        ]
+        ],
+        "bruk_frekvenstetthet": true
       },
       "id": "2py27-286"
     },
@@ -16486,7 +16528,8 @@
           4,
           12,
           15
-        ]
+        ],
+        "bruk_frekvenstetthet": true
       },
       "id": "2py27-287"
     },
@@ -16572,7 +16615,8 @@
           8,
           14,
           20
-        ]
+        ],
+        "bruk_frekvenstetthet": true
       },
       "id": "2py27-288"
     },
@@ -16658,7 +16702,8 @@
           12,
           9,
           18
-        ]
+        ],
+        "bruk_frekvenstetthet": true
       },
       "id": "2py27-289"
     },
@@ -16744,7 +16789,8 @@
           7,
           11,
           22
-        ]
+        ],
+        "bruk_frekvenstetthet": true
       },
       "id": "2py27-290"
     },
@@ -16757,7 +16803,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Saldoen på en konto modelleres med \\(S(x)=1\\,200\\cdot1{,}08^x\\), der \\(x\\) er antall år. Finn \\(S(4)\\).",
+      "sporsmal": "Saldoen på en konto modelleres med \\(S(x)=1\\,200\\cdot1{,}08^x\\), der \\(x\\) er antall år. Finn \\(S(4)\\). Rund svaret til to desimaler.",
       "hint": [
         "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
         "Sett inn tallene: \\(f(4)=1\\,200\\cdot1{,}08^{4}\\).",
@@ -16770,7 +16816,7 @@
           {
             "verdi": 1632.59,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -16799,7 +16845,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Massen av et stoff modelleres med \\(M(x)=5\\,000\\cdot0{,}93^x\\), der \\(x\\) er antall døgn og massen måles i gram. Finn \\(M(6)\\).",
+      "sporsmal": "Massen av et stoff modelleres med \\(M(x)=5\\,000\\cdot0{,}93^x\\), der \\(x\\) er antall døgn og massen måles i gram. Finn \\(M(6)\\). Rund svaret til to desimaler.",
       "hint": [
         "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
         "Sett inn tallene: \\(f(6)=5\\,000\\cdot0{,}93^{6}\\).",
@@ -16812,7 +16858,7 @@
           {
             "verdi": 3234.95,
             "enhet": "gram",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -16841,7 +16887,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Vannmengden i et magasin modelleres med \\(V(x)=240\\cdot1{,}15^x\\), der \\(x\\) er antall døgn og vannmengden måles i m³. Finn \\(V(3)\\).",
+      "sporsmal": "Vannmengden i et magasin modelleres med \\(V(x)=240\\cdot1{,}15^x\\), der \\(x\\) er antall døgn og vannmengden måles i m³. Finn \\(V(3)\\). Rund svaret til to desimaler.",
       "hint": [
         "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
         "Sett inn tallene: \\(f(3)=240\\cdot1{,}15^{3}\\).",
@@ -16854,7 +16900,7 @@
           {
             "verdi": 365.01,
             "enhet": "m³",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -16883,7 +16929,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Verdien av en maskin modelleres med \\(V(x)=18\\,000\\cdot0{,}88^x\\), der \\(x\\) er antall år og verdien måles i kroner. Finn \\(V(5)\\).",
+      "sporsmal": "Verdien av en maskin modelleres med \\(V(x)=18\\,000\\cdot0{,}88^x\\), der \\(x\\) er antall år og verdien måles i kroner. Finn \\(V(5)\\). Rund svaret til to desimaler.",
       "hint": [
         "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
         "Sett inn tallene: \\(f(5)=18\\,000\\cdot0{,}88^{5}\\).",
@@ -16896,7 +16942,7 @@
           {
             "verdi": 9499.17,
             "enhet": "kr",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -16925,7 +16971,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Omsetningen i en virksomhet modelleres med \\(O(x)=75\\cdot1{,}25^x\\), der \\(x\\) er antall år og omsetningen måles i tusen kroner. Finn \\(O(4)\\).",
+      "sporsmal": "Omsetningen i en virksomhet modelleres med \\(O(x)=75\\cdot1{,}25^x\\), der \\(x\\) er antall år og omsetningen måles i tusen kroner. Finn \\(O(4)\\). Rund svaret til to desimaler.",
       "hint": [
         "I modellen \\(f(x)=a\\cdot b^x\\) skal x-verdien stå som eksponent.",
         "Sett inn tallene: \\(f(4)=75\\cdot1{,}25^{4}\\).",
@@ -16938,7 +16984,7 @@
           {
             "verdi": 183.11,
             "enhet": "tusen kr",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -16967,7 +17013,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Tiden for å teste \\(n\\) komponenter modelleres med \\(T(n)=2{,}5n^{1{,}4}\\), der \\(T(n)\\) måles i minutter. Finn \\(T(8)\\).",
+      "sporsmal": "Tiden for å teste \\(n\\) komponenter modelleres med \\(T(n)=2{,}5n^{1{,}4}\\), der \\(T(n)\\) måles i minutter. Finn \\(T(8)\\). Rund svaret til to desimaler.",
       "hint": [
         "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
         "Sett inn tallene: \\(f(8)=2{,}5\\cdot8^{1{,}4}\\).",
@@ -16980,7 +17026,7 @@
           {
             "verdi": 45.95,
             "enhet": "minutter",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -17008,20 +17054,20 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kabellengden i et anlegg modelleres med \\(L(x)=18x^{0{,}5}\\), der \\(x\\) er antall tilkoblede enheter og \\(L(x)\\) måles i meter. Finn \\(L(16)\\).",
+      "sporsmal": "Kabellengden i et anlegg modelleres med \\(L(x)=18x^{0{,}5}\\), der \\(x\\) er antall tilkoblede enheter og \\(L(x)\\) måles i meter. Finn \\(L(16)\\). Rund svaret til to desimaler.",
       "hint": [
         "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
         "Sett inn tallene: \\(f(16)=18\\cdot16^{0{,}5}\\).",
         "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(L(16)=18\\cdot16^{0{,}5}=72\\) meter.",
+      "svar": "\\(L(16)=18\\cdot16^{0{,}5}=72{,}00\\) meter.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
             "verdi": 72,
             "enhet": "meter",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -17049,20 +17095,20 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Et trekantet område har grunnlinje \\(1{,}5x\\) meter og høyde \\(x\\) meter. Arealet kan da skrives som \\(A(x)=0{,}75x^2\\). Finn arealet når \\(x=12\\).",
+      "sporsmal": "Et trekantet område har grunnlinje \\(1{,}5x\\) meter og høyde \\(x\\) meter. Arealet kan da skrives som \\(A(x)=0{,}75x^2\\). Finn arealet når \\(x=12\\). Rund svaret til to desimaler.",
       "hint": [
         "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
         "Sett inn tallene: \\(f(12)=0{,}75\\cdot12^{2}\\).",
         "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(A(12)=0{,}75\\cdot12^2=108\\) m².",
+      "svar": "\\(A(12)=0{,}75\\cdot12^2=108{,}00\\) m².",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
             "verdi": 108,
             "enhet": "m²",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -17090,20 +17136,20 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Behandlingstiden modelleres med \\(T(x)=120x^{-0{,}5}\\), der \\(x\\) er antall prosessorer og \\(T(x)\\) måles i minutter. Finn \\(T(25)\\).",
+      "sporsmal": "Behandlingstiden modelleres med \\(T(x)=120x^{-0{,}5}\\), der \\(x\\) er antall prosessorer og \\(T(x)\\) måles i minutter. Finn \\(T(25)\\). Rund svaret til to desimaler.",
       "hint": [
         "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
         "Sett inn tallene: \\(f(25)=120\\cdot25^{-0{,}5}\\).",
         "Regn ut potensen før du multipliserer med faktoren a, og rund først til slutt."
       ],
-      "svar": "\\(T(25)=120\\cdot25^{-0{,}5}=24\\) minutter.",
+      "svar": "\\(T(25)=120\\cdot25^{-0{,}5}=24{,}00\\) minutter.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
             "verdi": 24,
             "enhet": "minutter",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -17131,7 +17177,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kostnaden for å pusse opp et bad modelleres med \\(K(x)=4{,}2x^{1{,}2}\\), der \\(x\\) er arealet i m² og \\(K(x)\\) måles i tusen kroner. Finn \\(K(10)\\).",
+      "sporsmal": "Kostnaden for å pusse opp et bad modelleres med \\(K(x)=4{,}2x^{1{,}2}\\), der \\(x\\) er arealet i m² og \\(K(x)\\) måles i tusen kroner. Finn \\(K(10)\\). Rund svaret til to desimaler.",
       "hint": [
         "I potensmodellen \\(f(x)=a\\cdot x^b\\) er x grunntallet i potensen.",
         "Sett inn tallene: \\(f(10)=4{,}2\\cdot10^{1{,}2}\\).",
@@ -17144,7 +17190,7 @@
           {
             "verdi": 66.57,
             "enhet": "tusen kr",
-            "toleranse": 0.01
+            "toleranse": 0.005
           }
         ]
       },
@@ -18221,7 +18267,7 @@
       "ferdighet": [
         "vurdere_gyldighet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Velg den faglig beste vurderingen av å bruke modellen langt fram i tid.",
       "hint": [
@@ -18409,7 +18455,7 @@
       "ferdighet": [
         "vurdere_gyldighet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Velg den faglig beste vurderingen av å bruke modellen langt fram i tid.",
       "hint": [
@@ -18597,7 +18643,7 @@
       "ferdighet": [
         "vurdere_gyldighet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Velg den faglig beste vurderingen av å bruke modellen langt fram i tid.",
       "hint": [
@@ -18785,7 +18831,7 @@
       "ferdighet": [
         "vurdere_gyldighet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Velg den faglig beste vurderingen av å bruke modellen langt fram i tid.",
       "hint": [
@@ -18973,7 +19019,7 @@
       "ferdighet": [
         "vurdere_gyldighet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
       "sporsmal": "Velg den faglig beste vurderingen av å bruke modellen langt fram i tid.",
       "hint": [
@@ -20093,7 +20139,7 @@
           {
             "verdi": 1.25,
             "enhet": "stigningstall a",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "Stigningstall a"
           },
           {
@@ -20159,7 +20205,7 @@
           {
             "verdi": 100.7,
             "enhet": "minutter",
-            "toleranse": 0.6
+            "toleranse": 0.05
           }
         ]
       },
@@ -20303,13 +20349,13 @@
           {
             "verdi": 119.717,
             "enhet": "startverdi a",
-            "toleranse": 0.05,
+            "toleranse": 0.5,
             "etikett": "Startverdi a"
           },
           {
             "verdi": 1.1957,
             "enhet": "vekstfaktor b",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "Vekstfaktor b"
           }
         ]
@@ -20371,7 +20417,7 @@
           {
             "verdi": 418.3,
             "enhet": "tusen besøk",
-            "toleranse": 0.6
+            "toleranse": 0.05
           }
         ]
       },
@@ -20462,12 +20508,12 @@
       ],
       "niva": 1,
       "hjelpemidler": "med",
-      "sporsmal": "Hvilken modelltype passer best til hovedmønsteret i dataene?",
+      "sporsmal": "Hvilken regresjonstype er oppgitt at du skal bruke?",
       "hint": [
-        "Bremselengden vokser krumt. Test et kvadratisk potensmønster med \\(y/x^2\\): \\(0{,}0155, 0{,}0149, 0{,}0149, 0{,}0146, 0{,}0146\\).",
-        "Verdiene av \\(y/x^2\\) er omtrent konstante, så dataene ligger nær formen \\(y=ax^2\\)."
+        "Les den felles oppgaveteksten før du velger regresjonstype.",
+        "En potensmodell har formen \\(y=a\\cdot x^b\\)."
       ],
-      "svar": "En potensmodell passer best.",
+      "svar": "Oppgaven ber om potensregresjon.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
@@ -20517,13 +20563,13 @@
           {
             "verdi": 0.018,
             "enhet": "faktor a",
-            "toleranse": 0.006,
+            "toleranse": 5e-05,
             "etikett": "Faktor a"
           },
           {
             "verdi": 1.948,
             "enhet": "eksponent b",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "Eksponent b"
           }
         ]
@@ -20583,7 +20629,7 @@
           {
             "verdi": 70.7,
             "enhet": "meter",
-            "toleranse": 0.6
+            "toleranse": 0.05
           }
         ]
       },
@@ -20727,19 +20773,19 @@
           {
             "verdi": -1.741,
             "enhet": "a",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "A"
           },
           {
             "verdi": 8.44,
             "enhet": "b",
-            "toleranse": 0.05,
+            "toleranse": 0.005,
             "etikett": "B"
           },
           {
             "verdi": 1.311,
             "enhet": "c",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "C"
           }
         ]
@@ -20802,7 +20848,7 @@
           {
             "verdi": 11.5,
             "enhet": "meter",
-            "toleranse": 0.6
+            "toleranse": 0.05
           }
         ]
       },
@@ -20948,7 +20994,7 @@
           {
             "verdi": -1.13,
             "enhet": "stigningstall a",
-            "toleranse": 0.006,
+            "toleranse": 0.005,
             "etikett": "Stigningstall a"
           },
           {
@@ -21014,7 +21060,7 @@
           {
             "verdi": 27.5,
             "enhet": "minutter",
-            "toleranse": 0.6
+            "toleranse": 0.05
           }
         ]
       },
@@ -21250,9 +21296,9 @@
       "ferdighet": [
         "vurdere_statistisk_konklusjon"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg den mest faglig holdbare konklusjonen.",
+      "sporsmal": "Velg den mest faglig holdbare konklusjonen. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hva hvert sentral- og spredningsmål beskriver.",
         "Unngå å trekke en sterk konklusjon fra ett tall alene."
@@ -21269,7 +21315,8 @@
           "Median og gjennomsnitt er alltid like.",
           "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
           "Standardavvik forteller hvilken enkeltobservasjon som er størst."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -21439,9 +21486,9 @@
       "ferdighet": [
         "vurdere_statistisk_konklusjon"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg den mest faglig holdbare konklusjonen.",
+      "sporsmal": "Velg den mest faglig holdbare konklusjonen. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hva hvert sentral- og spredningsmål beskriver.",
         "Unngå å trekke en sterk konklusjon fra ett tall alene."
@@ -21458,7 +21505,8 @@
           "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
           "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
           "Gruppen med høyest gjennomsnitt er alltid mest homogen."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -21630,9 +21678,9 @@
       "ferdighet": [
         "vurdere_statistisk_konklusjon"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg den mest faglig holdbare konklusjonen.",
+      "sporsmal": "Velg den mest faglig holdbare konklusjonen. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hva hvert sentral- og spredningsmål beskriver.",
         "Unngå å trekke en sterk konklusjon fra ett tall alene."
@@ -21649,7 +21697,8 @@
           "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
           "Median og gjennomsnitt er alltid like.",
           "Gruppen med høyest gjennomsnitt er alltid mest homogen."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -21821,9 +21870,9 @@
       "ferdighet": [
         "vurdere_statistisk_konklusjon"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg den mest faglig holdbare konklusjonen.",
+      "sporsmal": "Velg den mest faglig holdbare konklusjonen. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hva hvert sentral- og spredningsmål beskriver.",
         "Unngå å trekke en sterk konklusjon fra ett tall alene."
@@ -21840,7 +21889,8 @@
           "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
           "Median og gjennomsnitt er alltid like.",
           "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22012,9 +22062,9 @@
       "ferdighet": [
         "vurdere_statistisk_konklusjon"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg den mest faglig holdbare konklusjonen.",
+      "sporsmal": "Velg den mest faglig holdbare konklusjonen. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hva hvert sentral- og spredningsmål beskriver.",
         "Unngå å trekke en sterk konklusjon fra ett tall alene."
@@ -22031,7 +22081,8 @@
           "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
           "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
           "Median og gjennomsnitt er alltid like."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22209,9 +22260,9 @@
       "ferdighet": [
         "vurdere_usikkerhet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet.",
+      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22228,7 +22279,8 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22314,7 +22366,7 @@
       "hint": [
         "Finn midtpunktet i hvert intervall.",
         "Multipliser hvert midtpunkt med frekvensen og del samlet sum på total frekvens.",
-        "Klassemidtpunktene er \\(3, 7{,}5, 15, 30\\). Den veide summen er \\(20+127{,}5+300+450=897{,}5\\), så anslaget blir \\(897{,}5/60=\\square\\)."
+        "Klassemidtpunktene er \\(2{,}5, 7{,}5, 15, 30\\). Den veide summen er \\(20+127{,}5+300+450=897{,}5\\), så anslaget blir \\(897{,}5/60=\\square\\)."
       ],
       "svar": "Med klassemidtpunktene blir anslått gjennomsnitt \\(14{,}96\\) minutter.",
       "fasit": {
@@ -22406,9 +22458,9 @@
       "ferdighet": [
         "vurdere_usikkerhet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet.",
+      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22425,7 +22477,8 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22603,9 +22656,9 @@
       "ferdighet": [
         "vurdere_usikkerhet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet.",
+      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22622,7 +22675,8 @@
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data.",
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22800,9 +22854,9 @@
       "ferdighet": [
         "vurdere_usikkerhet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet.",
+      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22819,7 +22873,8 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -22848,9 +22903,9 @@
       "hint": [
         "Summer alle frekvensene for å finne totalen.",
         "Kumulativ frekvens til og med klasse 2 er summen av de to første frekvensene.",
-        "Totalen er \\(10+15+17+8=\\square\\). Til og med klasse 2 er kumulativ frekvens \\(10+15=\\square\\)."
+        "Totalen er \\(10+14+18+8=\\square\\). Til og med klasse 2 er kumulativ frekvens \\(10+14=\\square\\)."
       ],
-      "svar": "Det er \\(50\\) observasjoner totalt. Kumulativ frekvens etter klasse 2 er \\(25\\).",
+      "svar": "Det er \\(50\\) observasjoner totalt. Kumulativ frekvens etter klasse 2 er \\(24\\).",
       "fasit": {
         "type": "flere_tall",
         "verdier": [
@@ -22861,7 +22916,7 @@
             "etikett": "Totalt antall observasjoner"
           },
           {
-            "verdi": 25,
+            "verdi": 24,
             "enhet": "observasjoner",
             "toleranse": 0,
             "etikett": "Kumulativ frekvens etter andre klasse"
@@ -22874,14 +22929,14 @@
         "inndata": {
           "frekvenser": [
             10,
-            15,
-            17,
+            14,
+            18,
             8
           ]
         },
         "resultat": [
           50,
-          25
+          24
         ]
       },
       "variantfamilie": "d2-gruppert-a",
@@ -22905,14 +22960,14 @@
       "hint": [
         "Finn midtpunktet i hvert intervall.",
         "Multipliser hvert midtpunkt med frekvensen og del samlet sum på total frekvens.",
-        "Klassemidtpunktene er \\(1, 3, 5, 8\\). Den veide summen er \\(10+45+85+64=204\\), så anslaget blir \\(204/50=\\square\\)."
+        "Klassemidtpunktene er \\(1, 3, 5, 8\\). Den veide summen er \\(10+42+90+64=206\\), så anslaget blir \\(206/50=\\square\\)."
       ],
-      "svar": "Med klassemidtpunktene blir anslått gjennomsnitt \\(4{,}08\\) timer.",
+      "svar": "Med klassemidtpunktene blir anslått gjennomsnitt \\(4{,}12\\) timer.",
       "fasit": {
         "type": "tall",
         "verdier": [
           {
-            "verdi": 4.08,
+            "verdi": 4.12,
             "enhet": "timer",
             "toleranse": 0.02
           }
@@ -22931,13 +22986,13 @@
           ],
           "frekvenser": [
             10,
-            15,
-            17,
+            14,
+            18,
             8
           ]
         },
         "resultat": [
-          4.08
+          4.12
         ]
       },
       "variantfamilie": "d2-gruppert-b",
@@ -22959,8 +23014,8 @@
       "hjelpemidler": "med",
       "sporsmal": "I hvilket intervall ligger medianen?",
       "hint": [
-        "Finn medianplasseringen i det samlede materialet.",
-        "Se når kumulativ frekvens når eller passerer denne plasseringen."
+        "Det er \\(50\\) observasjoner, så de to midterste er nummer 25 og 26.",
+        "Kumulativ frekvens er \\(10\\), \\(24\\), \\(42\\), \\(50\\). Både nummer 25 og 26 ligger derfor i den tredje klassen."
       ],
       "svar": "Medianplasseringen passeres i intervallet \\([4, 6)\\).",
       "fasit": {
@@ -22997,9 +23052,9 @@
       "ferdighet": [
         "vurdere_usikkerhet"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet.",
+      "sporsmal": "Velg riktig vurdering av beregningene fra det grupperte materialet. Begrunn valget med én eller to setninger.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -23016,7 +23071,8 @@
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data.",
           "Klassebredde har aldri betydning i et histogram.",
           "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        ],
+        "krever_begrunnelse": true
       },
       "kontroll": {
         "operasjon": "valg",
@@ -25800,7 +25856,7 @@
           {
             "verdi": 26.5,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.05
           }
         ]
       },
@@ -25995,7 +26051,7 @@
           {
             "verdi": 7,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.05
           }
         ]
       },
@@ -26190,7 +26246,7 @@
           {
             "verdi": 20,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.05
           }
         ]
       },
@@ -26385,7 +26441,7 @@
           {
             "verdi": 41.9,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.05
           }
         ]
       },
@@ -26580,7 +26636,7 @@
           {
             "verdi": 19.2,
             "enhet": "%",
-            "toleranse": 0.1
+            "toleranse": 0.05
           }
         ]
       },

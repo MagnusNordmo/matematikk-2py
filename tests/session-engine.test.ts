@@ -55,12 +55,13 @@ test("temaøkt i Del 2 bruker hele case", () => {
   }
 });
 
-test("temaøkter kan avgrenses til mild, middels eller utfordrende", () => {
+test("temaøkter i Del 1 kan avgrenses til mild, middels eller utfordrende", () => {
   const partThemes = new Set(bank.oppgaver.map((question) => `${question.del}:${question.tema}`));
 
   for (const partTheme of partThemes) {
     const [partText, theme] = partTheme.split(":");
     const part = Number(partText) as 1 | 2;
+    if (part !== 1) continue;
     for (const level of [1, 2, 3] as const) {
       const available = bank.oppgaver.filter(
         (question) => question.del === part && question.tema === theme && question.niva === level,
@@ -69,6 +70,20 @@ test("temaøkter kan avgrenses til mild, middels eller utfordrende", () => {
       assert.equal(selected.length, Math.min(10, available.length), `${partTheme} nivå ${level}`);
       assert.ok(selected.every((question) => question.niva === level), `${partTheme} blander nivå ${level}`);
     }
+  }
+});
+
+test("nivåvalg i Del 2 beholder hele case og prioriterer valgt nivå", () => {
+  for (const level of [1, 2, 3] as const) {
+    const selected = selectSessionQuestions(bank, 2, "skill", undefined, new Set(), level);
+    assert.ok(selected.some((question) => question.niva === level));
+    const groupIds = new Set(selected.flatMap((question) => question.oppgavegruppe ? [question.oppgavegruppe.id] : []));
+    for (const groupId of groupIds) {
+      const grouped = selected.filter((question) => question.oppgavegruppe?.id === groupId);
+      assert.deepEqual(grouped.map((question) => question.oppgavegruppe?.rekkefolge), [1, 2, 3, 4]);
+      assert.ok(grouped.some((question) => question.niva === level));
+    }
+    assert.ok(selected.filter((question) => !question.oppgavegruppe).every((question) => question.niva === level));
   }
 });
 

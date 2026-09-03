@@ -12,6 +12,7 @@ export type ChoiceAnswer = {
   flervalg: boolean;
   riktige: string[];
   alternativer: string[];
+  krever_begrunnelse?: boolean;
 };
 
 export type AnswerKey =

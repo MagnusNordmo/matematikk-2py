@@ -33,13 +33,10 @@ test("desimaldivisjon omskrives før eleven forventes å utføre den", () => {
   assert.match(visible("186"), /Del så 300 på 10 og doble/u);
 });
 
-test("skalering med halve enheter deler multiplikasjonen opp i forståelige bidrag", () => {
-  for (const id of ["109", "110", "112"]) {
-    assert.match(get(id).hint[1], /dele opp totalen.*=.*=/u);
-    assert.match(get(id).hint[2], /Gang heltallsdelen.*=.*=/u);
-    assert.match(get(id).hint[3], /halvparten.*\/2=/u);
-    assert.match(get(id).hint[4], /Legg de to bidragene sammen/u);
-  }
+test("skalering bruker korte regneveier i den lille gangetabellen", () => {
+  assert.match(visible("109"), /40\/5=8.*8\\cdot8=\\square/u);
+  assert.match(visible("110"), /8\\cdot30=240.*30\\cdot10=\\square/u);
+  assert.match(visible("112"), /dobbelt.*20\+20=\\square/iu);
   for (const id of ["008", "009", "145"]) {
     assert.match(visible(id), /100\/40=10\/4=2\{,\}5/u);
     assert.match(visible(id), /halv/u);

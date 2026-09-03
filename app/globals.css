@@ -1542,19 +1542,145 @@ input:focus-visible {
   text-align: center;
 }
 
-.pattern-dots {
+.pattern-linear,
+.pattern-grid,
+.pattern-benches {
   display: grid;
   width: min-content;
   margin: auto;
-  grid-template-columns: repeat(5, 11px);
   gap: 4px;
 }
 
-.pattern-dots i {
+.pattern-linear {
+  max-width: 146px;
+}
+
+.pattern-cell {
+  display: inline-block;
   width: 11px;
   height: 11px;
   border-radius: 2px;
   background: var(--accent);
+}
+
+.pattern-construction,
+.pattern-triangle,
+.pattern-tables-and-chairs {
+  display: flex;
+  width: min-content;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.pattern-square-extra {
+  gap: 5px;
+}
+
+.pattern-extra {
+  display: grid;
+  gap: 3px;
+}
+
+.pattern-space {
+  width: 11px;
+  height: 11px;
+}
+
+.pattern-triangle {
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pattern-triangle > span,
+.pattern-chair-row,
+.pattern-table-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.pattern-tables-and-chairs {
+  position: relative;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pattern-table {
+  width: 20px;
+  height: 14px;
+  border: 2px solid var(--accent-dark);
+  border-radius: 2px;
+  background: var(--accent-soft);
+}
+
+.pattern-chair {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pattern-end-chairs {
+  position: absolute;
+  inset: 10px -13px auto;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.pattern-end-chairs > span {
+  display: grid;
+  gap: 3px;
+}
+
+.pattern-benches {
+  grid-template-columns: repeat(2, 18px);
+  gap: 4px 7px;
+}
+
+.pattern-bench {
+  width: 18px;
+  height: 7px;
+  border-radius: 4px;
+}
+
+.reasoning-answer {
+  display: grid;
+  gap: 7px;
+}
+
+.reasoning-answer label {
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.reasoning-answer textarea {
+  width: 100%;
+  min-height: 86px;
+  padding: 12px 13px;
+  resize: vertical;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.reasoning-answer textarea:focus {
+  border-color: var(--accent);
+  outline: 3px solid var(--accent-soft);
+}
+
+.reasoning-answer textarea:disabled {
+  background: var(--canvas);
+}
+
+.reasoning-answer small {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
 }
 
 .structured-answer-form {

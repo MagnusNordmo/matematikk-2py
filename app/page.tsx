@@ -190,6 +190,21 @@ function AnswerFields({
         </fieldset>
       )}
 
+      {choices?.krever_begrunnelse && (
+        <div className="reasoning-answer">
+          <label htmlFor="reasoning-answer">Din begrunnelse</label>
+          <textarea
+            id="reasoning-answer"
+            value={value.explanation ?? ""}
+            onChange={(event) => onChange({ ...value, explanation: event.target.value })}
+            placeholder="Forklar hvorfor du valgte dette svaret"
+            rows={3}
+            disabled={disabled}
+          />
+          <small>Begrunnelsen sammenlignes med løsningsforslaget etter at svaret er sjekket.</small>
+        </div>
+      )}
+
       {numbers.length > 0 && (
         <div className={`numeric-answers numeric-answers-${numbers.length}`}>
           {numbers.map((number, index) => {
