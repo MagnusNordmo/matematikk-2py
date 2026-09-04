@@ -6,12 +6,12 @@
     "id": "2py-eksamen-2027",
     "tittel": "Matematikk 2P-Y - eksamensforberedende oppgavebank",
     "malgruppe": "Matematikk 2P-Y",
-    "antall": 500,
+    "antall": 515,
     "deler": [
       1,
       2
     ],
-    "versjon": "2027.21"
+    "versjon": "2027.22"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -29,9 +29,9 @@
     "merknad": "Oppgavene er originalskrevet. Læreplanen og eksamenssettene fra 2019-2026 er brukt til å kartlegge kompetanser, oppgavetyper og utvikling i eksamensformen. Nyere sett er vektet høyest. Hintene i Del 1 gir konkrete og gradvise håndregningssteg uten å vise svarverdien. Hintene i Del 2 prioriterer metode, oppsett, digital verktøybruk og tolkning. Fasit og ferdige konklusjoner vises separat etter hintrekken, slik at hvert hint bevarer en reell oppgave for eleven. I prosentøvingen i Del 1 kan eleven velge og sammenligne flere naturlige løsningsveier når tallene egner seg for det. Alle oppgaver er vurdert som milde, middels eller utfordrende etter en streng nivåregel. Anvendte oppgaver bruker konkrete situasjoner, forklarte variabler og realistiske enheter i eksamensnært språk."
   },
   "eksamensprofil": {
-    "mål": "Trene ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
+    "mål": "Trene et balansert utvalg av ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
     "del_1": "262 korte oppgaver uten hjelpemidler.",
-    "del_2": "238 oppgaver med hjelpemidler: 38 selvstendige kortoppgaver og 200 deloppgaver organisert i 50 sammenhengende kasus.",
+    "del_2": "253 oppgaver med hjelpemidler: 53 selvstendige kortoppgaver og 200 deloppgaver organisert i 50 sammenhengende kasus.",
     "prioriterte_kompetanser": [
       "prosent og vekstfaktor",
       "potenser, røtter og standardform",
@@ -43,7 +43,8 @@
       "programforståelse",
       "tabell-, figur- og grafavlesning"
     ],
-    "avgrensning": "2027-profilen er en faglig prognose, ikke informasjon om et offentliggjort eksamenssett."
+    "avgrensning": "2027-profilen er en faglig prognose, ikke informasjon om et offentliggjort eksamenssett.",
+    "utvalgsprofil": "Eksamensøkter settes sammen som mini-eksamener med forskjellige temaer, deltemaer, oppgavefamilier og ferdigheter. Separate oppgaveenheter gjentar ikke oppgavefamilie."
   },
   "html_integrasjon": {
     "numerisk_input": "Godta både komma og punktum som desimalskilletegn. Fjern mellomrom og sammenlign med oppgitt toleranse.",
@@ -64,43 +65,43 @@
     "3": "utfordrende"
   },
   "statistikk": {
-    "antall_oppgaver": 500,
+    "antall_oppgaver": 515,
     "fordeling_del": {
       "1": 262,
-      "2": 238
+      "2": 253
     },
     "fordeling_niva": {
-      "1": 103,
-      "2": 292,
-      "3": 105
+      "1": 107,
+      "2": 301,
+      "3": 107
     },
     "fordeling_tema": {
-      "funksjoner_og_modeller": 95,
-      "lineaere_funksjoner": 20,
-      "potenser": 30,
-      "programmering": 45,
-      "proporsjonalitet": 45,
       "prosent": 80,
-      "representasjoner": 25,
-      "statistikk": 90,
-      "statistikk_og_samfunn": 20,
+      "potenser": 30,
       "variabler": 30,
-      "variabler_og_monstre": 20
+      "proporsjonalitet": 48,
+      "statistikk": 90,
+      "funksjoner_og_modeller": 95,
+      "programmering": 48,
+      "representasjoner": 25,
+      "lineaere_funksjoner": 23,
+      "variabler_og_monstre": 23,
+      "statistikk_og_samfunn": 23
     },
     "fordeling_hjelpemidler": {
-      "med": 238,
-      "uten": 262
+      "uten": 262,
+      "med": 253
     },
     "fordeling_svarformat": {
+      "tall": 268,
       "flere_tall": 70,
-      "tall": 260,
-      "valg": 160,
-      "valg_og_tall": 10
+      "valg": 166,
+      "valg_og_tall": 11
     },
     "antall_del2_oppgavegrupper": 50,
-    "antall_variantfamilier": 101,
-    "antall_med_visualisering": 110,
-    "antall_programmeringsoppgaver": 45,
+    "antall_variantfamilier": 116,
+    "antall_med_visualisering": 67,
+    "antall_programmeringsoppgaver": 48,
     "antall_flervalg_med_flere_riktige": 10
   },
   "oppgavegrupper": [
@@ -4181,7 +4182,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4224,7 +4225,7 @@
           {
             "verdi": 0.008,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4265,9 +4266,9 @@
         "type": "tall",
         "verdier": [
           {
-            "verdi": 1e-05,
+            "verdi": 0.00001,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4279,7 +4280,7 @@
           "eksponent": -5
         },
         "resultat": [
-          1e-05
+          0.00001
         ],
         "avrunding": 7
       },
@@ -4310,7 +4311,7 @@
           {
             "verdi": 0.0625,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -4353,7 +4354,7 @@
           {
             "verdi": 0.0025,
             "enhet": null,
-            "toleranse": 1e-07
+            "toleranse": 1e-7
           }
         ]
       },
@@ -20563,7 +20564,7 @@
           {
             "verdi": 0.018,
             "enhet": "faktor a",
-            "toleranse": 5e-05,
+            "toleranse": 0.00005,
             "etikett": "Faktor a"
           },
           {
@@ -26752,6 +26753,712 @@
         "rekkefolge": 4
       },
       "id": "2py27-500"
+    },
+    {
+      "del": 2,
+      "tema": "lineaere_funksjoner",
+      "deltema": "modellverdi",
+      "ferdighet": [
+        "bruke_lineaer_modell"
+      ],
+      "niva": 1,
+      "hjelpemidler": "med",
+      "sporsmal": "En budtjeneste bruker prismodellen \\(K(x)=240+35x\\), der \\(x\\) er antall leveringer og \\(K(x)\\) måles i kroner. Finn kostnaden ved \\(8\\) leveringer.",
+      "hint": [
+        "Sett antall leveringer inn for \\(x\\) i den oppgitte modellen.",
+        "Regn ut produktet \\(35\\cdot8\\) før du legger til den faste kostnaden på \\(240\\) kroner."
+      ],
+      "svar": "\\(K(8)=240+35\\cdot8=520\\). Kostnaden er \\(520\\) kr.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 520,
+            "enhet": "kr",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "lineaer_verdi",
+        "inndata": {
+          "konstantledd": 240,
+          "stigningstall": 35,
+          "x": 8
+        },
+        "resultat": [
+          520
+        ]
+      },
+      "variantfamilie": "d2-kort-lineaer-verdi",
+      "id": "2py27-501"
+    },
+    {
+      "del": 2,
+      "tema": "lineaere_funksjoner",
+      "deltema": "skjaeringspunkt",
+      "ferdighet": [
+        "sammenligne_lineaere_modeller",
+        "lose_ligning"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "To utleiefirmaer bruker prismodellene \\(A(x)=180+45x\\) og \\(B(x)=420+25x\\), der \\(x\\) er antall døgn. Ved hvor mange døgn er prisene like?",
+      "hint": [
+        "Prisene er like når de to modelluttrykkene har samme verdi. Sett derfor \\(A(x)=B(x)\\).",
+        "Samle leddene slik at likningen blir \\(20x=240\\), og løs deretter for \\(x\\)."
+      ],
+      "svar": "\\(180+45x=420+25x\\) gir \\(20x=240\\), altså \\(x=12\\) døgn.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 12,
+            "enhet": "døgn",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "lineaert_skjaeringspunkt",
+        "inndata": {
+          "a": [
+            180,
+            45
+          ],
+          "b": [
+            420,
+            25
+          ]
+        },
+        "resultat": [
+          12
+        ]
+      },
+      "variantfamilie": "d2-kort-lineaert-skjaeringspunkt",
+      "id": "2py27-502"
+    },
+    {
+      "del": 2,
+      "tema": "lineaere_funksjoner",
+      "deltema": "tolke_parametere",
+      "ferdighet": [
+        "tolke_konstantledd",
+        "tolke_stigningstall"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Vannmengden i en tank modelleres med \\(V(t)=850-30t\\), der \\(t\\) er antall minutter og \\(V(t)\\) måles i liter. Hvilken tolkning er riktig? Begrunn valget kort.",
+      "hint": [
+        "Undersøk først hva modellen gir når \\(t=0\\). Det forklarer konstantleddet.",
+        "Sammenlign \\(V(t+1)\\) med \\(V(t)\\) for å tolke tallet som står foran \\(t\\)."
+      ],
+      "svar": "Tanken inneholder \\(850\\) liter ved start, og vannmengden avtar med \\(30\\) liter per minutt.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "Tanken inneholder 850 liter ved start, og vannmengden avtar med 30 liter per minutt."
+        ],
+        "alternativer": [
+          "Tanken inneholder 850 liter ved start, og vannmengden avtar med 30 liter per minutt.",
+          "Tanken inneholder 30 liter ved start, og vannmengden øker med 850 liter per minutt.",
+          "Tanken er tom etter 30 minutter uansett startmengde.",
+          "Vannmengden er konstant fordi modellen har et konstantledd."
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "Tanken inneholder 850 liter ved start, og vannmengden avtar med 30 liter per minutt."
+        ]
+      },
+      "variantfamilie": "d2-kort-lineaer-tolkning",
+      "id": "2py27-503"
+    },
+    {
+      "del": 2,
+      "tema": "proporsjonalitet",
+      "deltema": "direkte_proporsjonalitet",
+      "ferdighet": [
+        "finne_proporsjonalitetskonstant",
+        "skalere"
+      ],
+      "niva": 1,
+      "hjelpemidler": "med",
+      "sporsmal": "Sju like billetter koster \\(245\\) kr. Hva koster \\(12\\) billetter når prisen er proporsjonal med antallet?",
+      "hint": [
+        "Finn først prisen per billett ved å dele totalprisen på antall billetter.",
+        "Gang enhetsprisen \\(245/7\\) med \\(12\\) for å finne den nye totalprisen."
+      ],
+      "svar": "Én billett koster \\(245/7=35\\) kr. Tolv billetter koster \\(12\\cdot35=420\\) kr.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 420,
+            "enhet": "kr",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "direkte_proporsjonalitet",
+        "inndata": {
+          "antall": 7,
+          "pris": 245,
+          "nytt_antall": 12
+        },
+        "resultat": [
+          420
+        ]
+      },
+      "variantfamilie": "d2-kort-direkte-proporsjonalitet",
+      "id": "2py27-504"
+    },
+    {
+      "del": 2,
+      "tema": "proporsjonalitet",
+      "deltema": "omvendt_proporsjonalitet",
+      "ferdighet": [
+        "bruke_omvendt_proporsjonalitet"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Åtte arbeidere bruker \\(15\\) timer på en jobb. Anta at tiden er omvendt proporsjonal med antall arbeidere. Hvor lang tid bruker \\(12\\) arbeidere?",
+      "hint": [
+        "Ved omvendt proporsjonalitet er produktet av antall arbeidere og tid konstant.",
+        "Bruk oppsettet \\(8\\cdot15=12\\cdot t\\), og isoler \\(t\\)."
+      ],
+      "svar": "\\(8\\cdot15=12t\\), så \\(t=120/12=10\\) timer.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 10,
+            "enhet": "timer",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "omvendt_proporsjonalitet",
+        "inndata": {
+          "x1": 8,
+          "y1": 15,
+          "x2": 12
+        },
+        "resultat": [
+          10
+        ]
+      },
+      "variantfamilie": "d2-kort-omvendt-proporsjonalitet",
+      "id": "2py27-505"
+    },
+    {
+      "del": 2,
+      "tema": "proporsjonalitet",
+      "deltema": "gjenkjenne_sammenheng",
+      "ferdighet": [
+        "tabelltolkning",
+        "modellvalg"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "En tabell har punktene \\( (2,24)\\), \\( (4,12)\\) og \\( (8,6)\\). Hvilken type sammenheng viser tabellen? Begrunn valget med en beregning.",
+      "hint": [
+        "Sammenlign både forholdet \\(y/x\\) og produktet \\(x\\cdot y\\) for punktene.",
+        "Se hvilken av de to størrelsene som holder seg konstant når \\(x\\) dobles."
+      ],
+      "svar": "Produktet er \\(48\\) for alle punktene. Tabellen viser en omvendt proporsjonal sammenheng.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "omvendt proporsjonal"
+        ],
+        "alternativer": [
+          "proporsjonal",
+          "omvendt proporsjonal",
+          "lineær, men ikke proporsjonal",
+          "ingen systematisk sammenheng"
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "omvendt proporsjonal"
+        ]
+      },
+      "variantfamilie": "d2-kort-proporsjonalitetsvalg",
+      "id": "2py27-506",
+      "data": {
+        "tabell": {
+          "x": [
+            2,
+            4,
+            8
+          ],
+          "y": [
+            24,
+            12,
+            6
+          ]
+        }
+      },
+      "visualisering": {
+        "type": "tabell",
+        "kolonner": [
+          "x",
+          "y"
+        ],
+        "rader": [
+          [
+            2,
+            24
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            8,
+            6
+          ]
+        ],
+        "tekstalternativ": "Tabell med x-verdiene 2, 4 og 8 og y-verdiene 24, 12 og 6."
+      }
+    },
+    {
+      "del": 2,
+      "tema": "programmering",
+      "deltema": "spore_program",
+      "ferdighet": [
+        "spore_lokke",
+        "bruke_vilkar"
+      ],
+      "niva": 1,
+      "hjelpemidler": "med",
+      "sporsmal": "Hva skriver programmet ut?",
+      "hint": [
+        "Følg løkken én verdi om gangen og undersøk hvilke verdier som oppfyller vilkåret \\(x>5\\).",
+        "Bare verdiene som passerer testen, blir lagt til variabelen `total`. Legg disse sammen."
+      ],
+      "svar": "Programmet legger sammen \\(7\\) og \\(9\\) og skriver ut \\(16\\).",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 16,
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "programspor",
+        "metode": "sum_med_vilkar",
+        "inndata": {
+          "data": [
+            3,
+            5,
+            7,
+            9
+          ],
+          "grense": 5
+        },
+        "resultat": [
+          16
+        ]
+      },
+      "variantfamilie": "d2-kort-kode-sum",
+      "id": "2py27-507",
+      "visualisering": {
+        "type": "programkode",
+        "sprak": "Python",
+        "kode": "total = 0\nfor x in [3, 5, 7, 9]:\n    if x > 5:\n        total += x\nprint(total)",
+        "tekstalternativ": "Python-program: total = 0\nfor x in [3, 5, 7, 9]:\n    if x > 5:\n        total += x\nprint(total)"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "programmering",
+      "deltema": "while_lokke",
+      "ferdighet": [
+        "spore_while_lokke",
+        "telle_runder"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Hva skriver programmet ut?",
+      "hint": [
+        "Lag en liten tabell med verdien etter hver halvering og tell samtidig antall runder.",
+        "Løkken stopper når `verdi > 80` ikke lenger er sant. Kontroller testen etter hver oppdatering."
+      ],
+      "svar": "Verdien blir \\(320\\), \\(160\\) og deretter \\(80\\). Programmet skriver ut \\(3\\).",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 3,
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "programspor",
+        "metode": "while_terskel",
+        "inndata": {
+          "start": 640,
+          "divisor": 2,
+          "grense": 80
+        },
+        "resultat": [
+          3
+        ]
+      },
+      "variantfamilie": "d2-kort-kode-terskel",
+      "id": "2py27-508",
+      "visualisering": {
+        "type": "programkode",
+        "sprak": "Python",
+        "kode": "verdi = 640\nantall = 0\nwhile verdi > 80:\n    verdi = verdi / 2\n    antall += 1\nprint(antall)",
+        "tekstalternativ": "Python-program: verdi = 640\nantall = 0\nwhile verdi > 80:\n    verdi = verdi / 2\n    antall += 1\nprint(antall)"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "programmering",
+      "deltema": "feilsoking",
+      "ferdighet": [
+        "forklare_tilordning",
+        "feilsoke_program"
+      ],
+      "niva": 3,
+      "hjelpemidler": "med",
+      "sporsmal": "Programmet skulle summere tallene i listen, men skriver ut \\(10\\). Hva må endres? Begrunn valget kort.",
+      "hint": [
+        "Følg verdien til variabelen `sum` etter hver runde og legg merke til om en tidligere verdi blir bevart.",
+        "Sammenlign virkningen av en vanlig tilordning med en tilordning som legger den nye verdien til den gamle."
+      ],
+      "svar": "Linjen `sum = x` erstatter den forrige summen. Den må endres til `sum += x`.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "Endre `sum = x` til `sum += x`."
+        ],
+        "alternativer": [
+          "Endre `sum = x` til `sum += x`.",
+          "Endre `sum = 0` til `sum = 1`.",
+          "Flytt `print(sum)` inn i løkken uten andre endringer.",
+          "Endre listen til `[10, 7, 4]`."
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "Endre `sum = x` til `sum += x`."
+        ]
+      },
+      "variantfamilie": "d2-kort-kode-feil",
+      "id": "2py27-509",
+      "visualisering": {
+        "type": "programkode",
+        "sprak": "Python",
+        "kode": "data = [4, 7, 10]\nsum = 0\nfor x in data:\n    sum = x\nprint(sum)",
+        "tekstalternativ": "Python-program: data = [4, 7, 10]\nsum = 0\nfor x in data:\n    sum = x\nprint(sum)"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "variabler_og_monstre",
+      "deltema": "lineaert_monster",
+      "ferdighet": [
+        "generalisere_monster",
+        "velge_formel"
+      ],
+      "niva": 1,
+      "hjelpemidler": "med",
+      "sporsmal": "Et figurmønster har \\(5, 8, 11, 14, \\ldots\\) brikker i figur \\(1,2,3,4,\\ldots\\). Hvilken formel gir antall brikker \\(B(n)\\) i figur \\(n\\)? Begrunn valget.",
+      "hint": [
+        "Finn hvor mye antallet øker når figurnummeret øker med én. Dette bestemmer koeffisienten foran \\(n\\).",
+        "Sett inn \\(n=1\\) i alternativene og kontroller hvilket uttrykk som samtidig gir første figur og riktig økning."
+      ],
+      "svar": "Mønsteret øker med \\(3\\) og har \\(B(1)=5\\). Derfor er \\(B(n)=3n+2\\).",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "B(n)=3n+2"
+        ],
+        "alternativer": [
+          "B(n)=3n+2",
+          "B(n)=5n+3",
+          "B(n)=3n+5",
+          "B(n)=2n+3"
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "B(n)=3n+2"
+        ]
+      },
+      "variantfamilie": "d2-kort-monster-formel",
+      "id": "2py27-510",
+      "visualisering": {
+        "type": "figurmønster",
+        "regel": "lineær",
+        "antall_figurer": 4,
+        "verdier": [
+          5,
+          8,
+          11,
+          14
+        ],
+        "tekstalternativ": "De viste figurene har 5, 8, 11, 14 elementer.",
+        "monster": "lineaer_tilvekst"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "variabler_og_monstre",
+      "deltema": "bruke_monsterformel",
+      "ferdighet": [
+        "sette_inn_i_formel"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Antall fyrstikker i figur \\(n\\) er gitt ved \\(F(n)=4n+4\\). Hvor mange fyrstikker er det i figur \\(12\\)?",
+      "hint": [
+        "Bytt ut \\(n\\) med figurnummeret som er oppgitt i formelen.",
+        "Regn ut multiplikasjonen i \\(4\\cdot12+4\\) før du legger til konstantleddet."
+      ],
+      "svar": "\\(F(12)=4\\cdot12+4=52\\). Figuren har \\(52\\) fyrstikker.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 52,
+            "enhet": "fyrstikker",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "monsterverdi",
+        "inndata": {
+          "a": 4,
+          "b": 4,
+          "n": 12
+        },
+        "resultat": [
+          52
+        ]
+      },
+      "variantfamilie": "d2-kort-monster-verdi",
+      "id": "2py27-511",
+      "visualisering": {
+        "type": "figurmønster",
+        "regel": "lineær",
+        "antall_figurer": 3,
+        "verdier": [
+          8,
+          12,
+          16
+        ],
+        "tekstalternativ": "De viste figurene har 8, 12, 16 elementer.",
+        "monster": "lineaer_tilvekst"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "variabler_og_monstre",
+      "deltema": "finne_figurnummer",
+      "ferdighet": [
+        "lage_ligning_fra_monster",
+        "lose_ligning"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Et mønster følger formelen \\(P(n)=6n-1\\). Hvilket figurnummer har \\(71\\) brikker?",
+      "hint": [
+        "Sett formeluttrykket lik antallet brikker: \\(6n-1=71\\).",
+        "Legg til \\(1\\) på begge sider, og del deretter begge sider på \\(6\\)."
+      ],
+      "svar": "\\(6n-1=71\\) gir \\(6n=72\\), så \\(n=12\\).",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 12,
+            "enhet": "figurnummer",
+            "toleranse": 0
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "monster_invers",
+        "inndata": {
+          "a": 6,
+          "b": -1,
+          "verdi": 71
+        },
+        "resultat": [
+          12
+        ]
+      },
+      "variantfamilie": "d2-kort-monster-invers",
+      "id": "2py27-512",
+      "visualisering": {
+        "type": "figurmønster",
+        "regel": "lineær",
+        "antall_figurer": 3,
+        "verdier": [
+          5,
+          11,
+          17
+        ],
+        "tekstalternativ": "De viste figurene har 5, 11, 17 elementer.",
+        "monster": "lineaer_tilvekst"
+      }
+    },
+    {
+      "del": 2,
+      "tema": "statistikk_og_samfunn",
+      "deltema": "prosentpoeng_og_relativ_endring",
+      "ferdighet": [
+        "skille_prosent_og_prosentpoeng",
+        "beregne_relativ_endring"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Valgdeltakelsen økte fra \\(68\\,\\%\\) til \\(74\\,\\%\\). Finn økningen både i prosentpoeng og i prosent relativt til den gamle valgdeltakelsen. Rund den relative økningen til én desimal.",
+      "hint": [
+        "Prosentpoeng finner du ved å trekke den gamle prosenten fra den nye.",
+        "Relativ prosentvis økning finnes med \\(\\frac{74-68}{68}\\cdot100\\,\\%\\). Regn ut og rund til én desimal."
+      ],
+      "svar": "Økningen er \\(6\\) prosentpoeng. Relativt til den gamle valgdeltakelsen er økningen omtrent \\(8{,}8\\,\\%\\).",
+      "fasit": {
+        "type": "flere_tall",
+        "verdier": [
+          {
+            "verdi": 6,
+            "etikett": "Økning",
+            "enhet": "prosentpoeng",
+            "toleranse": 0
+          },
+          {
+            "verdi": 8.8,
+            "etikett": "Relativ økning",
+            "enhet": "%",
+            "toleranse": 0.1
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "beregning",
+        "metode": "prosentpoeng_og_relativ",
+        "inndata": {
+          "gammel": 68,
+          "ny": 74
+        },
+        "resultat": [
+          6,
+          8.8
+        ],
+        "avrunding": 1
+      },
+      "variantfamilie": "d2-kort-samfunn-prosent",
+      "id": "2py27-513"
+    },
+    {
+      "del": 2,
+      "tema": "statistikk_og_samfunn",
+      "deltema": "kritisk_diagramlesing",
+      "ferdighet": [
+        "vurdere_akse",
+        "avdekke_misvisende_framstilling"
+      ],
+      "niva": 2,
+      "hjelpemidler": "med",
+      "sporsmal": "Et søylediagram sammenligner verdiene \\(100\\) og \\(105\\), men den loddrette aksen starter på \\(99\\). En overskrift hevder at den andre verdien er «mange ganger større». Hvilken vurdering er mest faglig holdbar? Begrunn valget.",
+      "hint": [
+        "Sammenlign den faktiske differansen med størrelsen på den første verdien.",
+        "Vurder hvordan et svært smalt akseintervall påvirker den visuelle forskjellen mellom søylene."
+      ],
+      "svar": "Forskjellen er liten relativt til startverdien, og den avkuttede aksen overdriver den visuelt.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "Forskjellen er liten, og den avkuttede aksen får den til å se mye større ut."
+        ],
+        "alternativer": [
+          "Forskjellen er liten, og den avkuttede aksen får den til å se mye større ut.",
+          "Den andre verdien er fem ganger så stor som den første.",
+          "Alle søylediagrammer må alltid ha en akse som starter på 99.",
+          "Diagrammet beviser at endringen skyldes målemetoden."
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "Forskjellen er liten, og den avkuttede aksen får den til å se mye større ut."
+        ]
+      },
+      "variantfamilie": "d2-kort-samfunn-akse",
+      "id": "2py27-514"
+    },
+    {
+      "del": 2,
+      "tema": "statistikk_og_samfunn",
+      "deltema": "utvalg_og_generalisering",
+      "ferdighet": [
+        "vurdere_utvalg",
+        "kildekritikk"
+      ],
+      "niva": 3,
+      "hjelpemidler": "med",
+      "sporsmal": "En treningsprofil spør følgerne sine om hvor mange dager de trener hver uke. \\(82\\,\\%\\) svarer minst fire dager. Profilen konkluderer med at \\(82\\,\\%\\) av alle voksne trener minst fire dager i uken. Hvilken vurdering er best? Begrunn valget.",
+      "hint": [
+        "Undersøk hvordan deltakerne ble valgt, og om alle voksne hadde omtrent samme mulighet til å delta.",
+        "Vurder om personer som følger en treningsprofil, kan skille seg systematisk fra befolkningen ellers."
+      ],
+      "svar": "Konklusjonen kan ikke generaliseres til alle voksne fordi følgerne er et selvvalgt og skjevt utvalg.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "riktige": [
+          "Konklusjonen kan ikke generaliseres fordi utvalget trolig er skjevt."
+        ],
+        "alternativer": [
+          "Konklusjonen kan ikke generaliseres fordi utvalget trolig er skjevt.",
+          "Konklusjonen er sikker fordi prosenttallet er høyere enn 50 %.",
+          "Konklusjonen gjelder alle voksne dersom minst 100 følgere svarte.",
+          "Utvalget er representativt fordi undersøkelsen ble gjort på internett."
+        ],
+        "krever_begrunnelse": true
+      },
+      "kontroll": {
+        "operasjon": "valg",
+        "riktige": [
+          "Konklusjonen kan ikke generaliseres fordi utvalget trolig er skjevt."
+        ]
+      },
+      "variantfamilie": "d2-kort-samfunn-utvalg",
+      "id": "2py27-515"
     }
   ]
 }

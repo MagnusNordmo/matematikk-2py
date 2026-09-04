@@ -659,7 +659,7 @@ export default function Home() {
           <section className="section-heading">
             <p className="eyebrow">Del {selectedPart} · {selectedPart === 1 ? "uten hjelpemidler" : "med hjelpemidler"}</p>
             <h1>Hvordan vil du øve?</h1>
-            <p>En eksamensøkt består alltid av 10 tilfeldig valgte oppgaver.</p>
+            <p>En eksamensøkt er en balansert mini-eksamen med 10 oppgaver som måler ulike deler av faget.</p>
           </section>
           <section className="choice-grid" aria-label="Velg øvingsmåte">
             <button className="choice-card choice-card-primary" onClick={() => setScreen("topics")}>
@@ -669,7 +669,7 @@ export default function Home() {
             </button>
             <button className="choice-card" onClick={() => startSession("exam")}>
               <span className="choice-icon"><IconExam /></span>
-              <span className="choice-content"><span className="choice-kicker">Blandet trening</span><strong>Øv som på eksamen</strong><span>10 oppgaver fra flere temaer. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint gir 0 poeng på oppgaven.</span></span>
+              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv som på eksamen</strong><span>10 balanserte oppgaver fra forskjellige temaer, oppgavetyper og ferdigheter. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint gir 0 poeng på oppgaven.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
