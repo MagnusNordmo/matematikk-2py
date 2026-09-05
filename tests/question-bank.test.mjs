@@ -45,7 +45,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 107, "2": 301, "3": 107 });
+  assert.deepEqual(distribution, { "1": 102, "2": 397, "3": 16 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {
@@ -56,9 +56,8 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   for (const partTheme of partThemes) {
     const [part, theme] = partTheme.split(":");
     const questions = bank.oppgaver.filter((question) => String(question.del) === part && question.tema === theme);
-    for (const level of [1, 2, 3]) {
-      assert.ok(questions.some((question) => question.niva === level), `${partTheme} mangler nivå ${level}`);
-    }
+    assert.ok(questions.some((question) => question.niva <= 2), `${partTheme} mangler tilgjengelige grunnoppgaver`);
+    // Do not invent difficult routines to fill every theme/level combination.
   }
 
   assert.equal(bank.oppgaver.find((question) => question.id === "2py27-010").niva, 2);
@@ -102,7 +101,7 @@ test("Del 2-case har fire sammenhengende deloppgaver", () => {
 });
 
 test("oppgavebanken dekker digitale representasjoner uten filinnlevering", () => {
-  assert.equal(bank.oppgaver.filter((question) => question.tema === "programmering").length, 48);
+  assert.equal(bank.oppgaver.filter((question) => question.tema === "programmering").length, 49);
   assert.ok(bank.oppgaver.some((question) => question.visualisering?.type === "figurmønster"));
   assert.ok(bank.oppgavegrupper.some((group) => group.visualisering?.type === "spredningsdiagram"));
   assert.ok(bank.oppgaver.every((question) => !/last opp|lever inn|excel-fil/i.test(question.sporsmal)));
@@ -455,7 +454,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.22");
+  assert.equal(bank.samling.versjon, "2027.23");
   assert.equal(percentQuestions.length, 42);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -640,7 +639,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.22");
+  assert.equal(bank.samling.versjon, "2027.23");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

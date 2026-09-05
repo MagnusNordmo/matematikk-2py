@@ -114,7 +114,8 @@ test("Del 1 bruker elevvennlige tall i oppgaver som tester metode", () => {
 test("avrundingskrav og toleranser godtar riktig presisjon uten å godta nabosvar", () => {
   for (let number = 291; number <= 300; number += 1) {
     const question = questions.get(`2py27-${number}`);
-    assert.match(question.sporsmal, /to desimaler/u, question.id);
+    assert.match(question.sporsmal, number === 291 ? /fire desimaler/u : /to desimaler/u, question.id);
+    if (number === 291) assert.equal(question.fasit.verdier[0].toleranse, 0.00005);
     assert.ok(question.fasit.verdier.every((answer) => answer.toleranse <= 0.005), question.id);
   }
   assert.equal(questions.get("2py27-366").fasit.verdier[0].toleranse, 0.5);

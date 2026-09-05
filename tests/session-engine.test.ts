@@ -134,8 +134,20 @@ test("nivåvalg i Del 2 beholder hele case og prioriterer valgt nivå", () => {
 
 test("ekstra mestringsoppgave holder valgt nivå", () => {
   for (const level of [1, 2, 3] as const) {
-    const question = bank.oppgaver.find((item) => item.del === 1 && item.tema === "prosent" && item.niva === level);
+    const question = bank.oppgaver.find((item) => item.niva === level);
     assert.ok(question);
     assert.equal(findRetryQuestion(bank, question, level).niva, level);
+  }
+});
+
+test("begge mini-eksamener krever minst ett selvstendig resonnement", () => {
+  for (const part of [1, 2] as const) {
+    for (let run = 0; run < 200; run++) {
+      const questions = selectSessionQuestions(bank, part, "exam");
+      assert.ok(questions.some(q => {
+        const key = q.fasit.type === 'valg' ? q.fasit : q.fasit.type === 'valg_og_tall' ? q.fasit.valg : null;
+        return key?.aapen;
+      }));
+    }
   }
 });

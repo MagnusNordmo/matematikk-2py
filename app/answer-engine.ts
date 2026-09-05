@@ -4,6 +4,7 @@ export type AnswerInput = {
   numbers: string[];
   choices: string[];
   explanation?: string;
+  assessment?: boolean[];
 };
 
 export type AnswerEvaluation = {
@@ -80,18 +81,24 @@ export function evaluateAnswer(input: AnswerInput, key: AnswerKey): AnswerEvalua
     totalParts = key.verdier.length;
     correctParts = evaluateNumbers(input.numbers, key.verdier);
   } else if (key.type === "valg") {
-    totalParts = key.flervalg ? key.riktige.length : 1;
-    correctParts = evaluateChoices(input.choices, key.riktige, key.flervalg);
+    totalParts = key.aapen ? 0 : key.flervalg ? key.riktige.length : 1;
+    correctParts = key.aapen ? 0 : evaluateChoices(input.choices, key.riktige, key.flervalg);
   } else {
-    const choiceParts = key.valg.flervalg ? key.valg.riktige.length : 1;
+    const choiceParts = key.valg.aapen ? 0 : key.valg.flervalg ? key.valg.riktige.length : 1;
     totalParts = choiceParts + key.verdier.length;
     correctParts =
-      evaluateChoices(input.choices, key.valg.riktige, key.valg.flervalg) +
+      (key.valg.aapen ? 0 : evaluateChoices(input.choices, key.valg.riktige, key.valg.flervalg)) +
       evaluateNumbers(input.numbers, key.verdier);
   }
 
+  const choice = key.type === "valg" ? key : key.type === "valg_og_tall" ? key.valg : null;
+  const criteria = choice?.vurderingskriterier ?? [];
+  totalParts += criteria.length;
+  if (input.explanation?.trim()) correctParts += criteria.filter((_, index) => input.assessment?.[index] === true).length;
+  // A written explanation alone is never evidence of a correct justification.
+  const unassessedReasoning = choice?.krever_begrunnelse && (criteria.length === 0 || input.assessment?.length !== criteria.length);
   return {
-    correct: correctParts === totalParts,
+    correct: correctParts === totalParts && !unassessedReasoning,
     correctParts,
     totalParts,
     fraction: totalParts === 0 ? 0 : correctParts / totalParts,
@@ -103,11 +110,11 @@ export function isAnswerComplete(input: AnswerInput, key: AnswerKey) {
     return key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()));
   }
   if (key.type === "valg") {
-    return input.choices.length > 0 &&
+    return (key.aapen || input.choices.length > 0) &&
       (!key.krever_begrunnelse || Boolean(input.explanation?.trim()));
   }
   return (
-    input.choices.length > 0 &&
+    (key.valg.aapen || input.choices.length > 0) &&
     (!key.valg.krever_begrunnelse || Boolean(input.explanation?.trim())) &&
     key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()))
   );

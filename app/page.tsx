@@ -9,6 +9,7 @@ import {
   type AnswerInput,
 } from "./answer-engine";
 import { DataPanel, MathText, VisualizationPanel } from "./presentation";
+import { WorkedSteps } from "./worked-steps";
 import { NumberAnswerField } from "./number-answer-field";
 import {
   THEMES,
@@ -162,7 +163,7 @@ function AnswerFields({
   const { choices, numbers } = answerKeyParts(answerKey);
   return (
     <div className="answer-controls">
-      {choices && (
+      {choices && !choices.aapen && (
         <fieldset className="choice-options">
           <legend>{choices.flervalg ? "Velg alle påstandene som er riktige" : "Velg ett svar"}</legend>
           {choices.alternativer.map((option) => {
@@ -197,11 +198,11 @@ function AnswerFields({
             id="reasoning-answer"
             value={value.explanation ?? ""}
             onChange={(event) => onChange({ ...value, explanation: event.target.value })}
-            placeholder="Forklar hvorfor du valgte dette svaret"
+            placeholder={choices.aapen ? "Skriv løsningen og begrunnelsen din. Du kan også regne eller tegne på papir og beskrive det du har gjort her." : "Forklar hvorfor du valgte dette svaret"}
             rows={3}
             disabled={disabled}
           />
-          <small>Begrunnelsen sammenlignes med løsningsforslaget etter at svaret er sjekket.</small>
+          <small>Etter innlevering sammenligner du selv med løsningsforslaget. Teksten vurderes ikke automatisk.</small>
         </div>
       )}
 
@@ -252,10 +253,12 @@ function DifficultySelector({
   value,
   onChange,
   compact = false,
+  levels = [1, 2, 3],
 }: {
   value: Difficulty;
   onChange: (difficulty: Difficulty) => void;
   compact?: boolean;
+  levels?: number[];
 }) {
   return (
     <fieldset className={`difficulty-selector ${compact ? "difficulty-selector-compact" : ""}`}>
@@ -266,6 +269,7 @@ function DifficultySelector({
             className={value === option.value ? "difficulty-option difficulty-option-selected" : "difficulty-option"}
             type="button"
             key={String(option.value)}
+            disabled={option.value !== "mixed" && !levels.includes(option.value)}
             aria-pressed={value === option.value}
             onClick={() => onChange(option.value)}
           >
@@ -302,6 +306,8 @@ export default function Home() {
   const [maxPoints, setMaxPoints] = useState(0);
   const [savedProgress, setSavedProgress] = useState<ProgressByPart>(EMPTY_PROGRESS_BY_PART);
   const [recentSelections, setRecentSelections] = useState<RecentSelections>({});
+  const [usedSupport, setUsedSupport] = useState(false);
+  const [reviewing, setReviewing] = useState(false);
   const answerRef = useRef<HTMLInputElement>(null);
   const continueRef = useRef<HTMLButtonElement>(null);
 
@@ -341,7 +347,7 @@ export default function Home() {
 
   useEffect(() => {
     if (screen === "session" && !resolved) answerRef.current?.focus();
-    if (resolved) continueRef.current?.focus();
+    if (resolved) continueRef.current?.focus({ preventScroll: true });
   }, [currentIndex, resolved, screen]);
 
   useEffect(() => {
@@ -369,11 +375,13 @@ export default function Home() {
   const selectedSolutionPath = solutionPaths.find((path) => path.id === selectedSolutionPathId);
   const activeHints = selectedSolutionPath?.hint ?? currentQuestion?.hint ?? [];
   const needsSolutionPath = solutionPaths.length > 0 && !selectedSolutionPath;
+  const reasoningKey = currentQuestion?.fasit.type === "valg" ? currentQuestion.fasit : currentQuestion?.fasit.type === "valg_og_tall" ? currentQuestion.fasit.valg : null;
+  const criteria = reasoningKey?.vurderingskriterier ?? [];
   const availableThemes = useMemo(() => {
     if (!bank || !selectedPart) return [];
-    const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart).map((question) => question.tema));
+    const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart && (selectedDifficulty === "mixed" || question.niva === selectedDifficulty)).map((question) => question.tema));
     return THEMES.filter((theme) => ids.has(theme.id));
-  }, [bank, selectedPart]);
+  }, [bank, selectedPart, selectedDifficulty]);
   function choosePart(part: Part) {
     setSelectedPart(part);
     setSelectedTheme(null);
@@ -414,6 +422,8 @@ export default function Home() {
     setBaseCount(questions.length);
     setCurrentIndex(0);
     setAnswer(EMPTY_ANSWER);
+    setReviewing(false);
+    setUsedSupport(false);
     setHintIndex(0);
     setSelectedSolutionPathId(null);
     setAttempts(0);
@@ -481,8 +491,9 @@ export default function Home() {
   }
 
   function revealHint() {
-    if (!currentQuestion || resolved || needsSolutionPath || hintIndex >= activeHints.length) return;
+    if (!currentQuestion || resolved || reviewing || needsSolutionPath || hintIndex >= activeHints.length) return;
     setHintIndex((value) => value + 1);
+    setUsedSupport(true);
     setStats((value) => ({ ...value, hints: value.hints + 1 }));
   }
 
@@ -510,16 +521,17 @@ export default function Home() {
   function submitAnswer(event: FormEvent) {
     event.preventDefault();
     if (!currentQuestion || resolved || !isAnswerComplete(answer, currentQuestion.fasit)) return;
+    if (criteria.length > 0 && !reviewing) { setReviewing(true); return; }
     const result = evaluateAnswer(answer, currentQuestion.fasit);
     setEvaluation(result);
 
-    if (mode === "skill" && !result.correct) {
+    if (mode === "skill" && !result.correct && !reviewing) {
       setAttempts((value) => value + 1);
       setFeedback(result.correctParts > 0 ? "partial" : "wrong");
       return;
     }
 
-    const usedHint = hintIndex > 0;
+    const usedHint = usedSupport;
     setResolved(true);
     setFeedback(result.correct ? "correct" : result.correctParts > 0 ? "partial" : "wrong");
     setStats((value) => ({
@@ -576,6 +588,8 @@ export default function Home() {
     }
     setCurrentIndex((value) => value + 1);
     setAnswer(EMPTY_ANSWER);
+    setReviewing(false);
+    setUsedSupport(false);
     setHintIndex(0);
     setSelectedSolutionPathId(null);
     setAttempts(0);
@@ -721,7 +735,7 @@ export default function Home() {
 
           {mode === "skill" && (
             <section className="session-difficulty" aria-label="Velg nivå underveis">
-              <DifficultySelector value={selectedDifficulty} onChange={changeDifficulty} compact />
+              <DifficultySelector value={selectedDifficulty} onChange={changeDifficulty} compact levels={[...new Set(bank?.oppgaver.filter(q => q.del === selectedPart && (!selectedTheme || q.tema === selectedTheme)).map(q => q.niva))]} />
               <p>Du beholder oppgaven du arbeider med. Valget gjelder fra neste oppgave.</p>
             </section>
           )}
@@ -735,23 +749,30 @@ export default function Home() {
               <span>Del {selectedPart}{currentQuestion.oppgavegruppe ? ` · ${currentQuestion.oppgavegruppe.deloppgave})` : ""}</span>
             </div>
             {mode === "exam" && !currentItem.isExtra && <div className="exam-banner"><IconExam />Ett forsøk. Hint gir 0 poeng på denne oppgaven.</div>}
-            {currentGroup && <GroupContext group={currentGroup} />}
 
-            <article className="question-card">
+
+            <article className="question-card question-workspace">
+              <div className="problem-column">
+              {currentGroup && <details className="group-disclosure" open={currentQuestion.oppgavegruppe?.rekkefolge === 1}><summary>Felles oppgavetekst og data</summary><GroupContext group={currentGroup} /></details>}
               <div className="question-text">
                 <MathText>{currentQuestion.sporsmal}</MathText>
                 {currentQuestion.visualisering?.type !== "tabell" && <DataPanel data={currentQuestion.data} />}
                 <VisualizationPanel visualization={currentQuestion.visualisering} data={currentQuestion.data} />
               </div>
               <form onSubmit={submitAnswer} className="answer-form structured-answer-form">
-                <AnswerFields answerKey={currentQuestion.fasit} value={answer} onChange={(next) => { setAnswer(next); if (!resolved) setFeedback(null); }} disabled={resolved} feedback={feedback} firstInputRef={answerRef} />
+                <AnswerFields answerKey={currentQuestion.fasit} value={answer} onChange={(next) => { setAnswer(next); if (!resolved) setFeedback(null); }} disabled={resolved || reviewing} feedback={feedback} firstInputRef={answerRef} />
                 <div id="answer-feedback" className={`feedback ${feedback ? `feedback-${feedback}` : ""}`} aria-live="polite">
                   {feedback === "wrong" && (resolved ? <><strong>Ikke riktig denne gangen.</strong> Se løsningsforslaget under.</> : <><strong>Ikke helt ennå.</strong> Prøv en gang til, eller bruk et hint.</>)}
                   {feedback === "partial" && (resolved ? <><strong>Delvis riktig.</strong> Du fikk {evaluation?.correctParts} av {evaluation?.totalParts} mulige poeng.</> : <><strong>Noe er riktig.</strong> Kontroller alle delene og prøv igjen.</>)}
-                  {feedback === "correct" && <><strong>Riktig!</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
+                  {feedback === "correct" && <><strong>{criteria.length ? "Vurdert som riktig av deg." : "Riktig!"}</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
                 </div>
+                {reviewing && !resolved && <section className="self-assessment" aria-label="Vurder løsningen din">
+                  <h3>Sammenlign med løsningsforslaget</h3><p><MathText>{currentQuestion.svar}</MathText></p>
+                  <p>Vurder det du hadde skrevet før du åpnet løsningen. Velg «Ikke ennå» hvis du er usikker. Dette er egenvurdering, ikke automatisk retting.</p>
+                  {criteria.map((criterion, index) => <fieldset key={criterion}><legend><MathText>{criterion}</MathText></legend>{[true, false].map(value => <label key={String(value)}><input type="radio" name={`criterion-${index}`} checked={answer.assessment?.[index] === value} onChange={() => { const next = criteria.map((_, i) => i === index ? value : answer.assessment?.[i]); setAnswer({ ...answer, assessment: next as boolean[] }); }} />{value ? "Ja, dette viste jeg" : "Ikke ennå"}</label>)}</fieldset>)}
+                </section>}
                 {!resolved ? (
-                  <button className="primary-button" type="submit" disabled={!isAnswerComplete(answer, currentQuestion.fasit)}>Sjekk svar<IconArrow /></button>
+                  <button className="primary-button" type="submit" disabled={!isAnswerComplete(answer, currentQuestion.fasit) || (reviewing && (answer.assessment?.length !== criteria.length || answer.assessment.some(value => typeof value !== "boolean")))}>{reviewing ? "Registrer egenvurdering" : criteria.length ? "Lever svar og sammenlign" : "Sjekk svar"}<IconArrow /></button>
                 ) : (
                   <button ref={continueRef} className="primary-button" type="button" onClick={nextQuestion}>{currentIndex + 1 >= queue.length ? "Se resultat" : "Neste oppgave"}<IconArrow /></button>
                 )}
@@ -760,34 +781,8 @@ export default function Home() {
               {resolved && (
                 <div className="solution-panel"><strong>Løsningsforslag</strong><p><MathText>{currentQuestion.svar}</MathText></p></div>
               )}
-              <div className="hint-section">
-                <div className="hint-heading">
-                  <div><strong>{solutionPaths.length > 0 ? "Velg en regnevei" : "Trenger du en forklaring?"}</strong><span>{solutionPaths.length > 0 ? "Samme oppgave kan løses på flere måter. Velg én vei, og åpne løsningen steg for steg. Du kan bytte vei og sammenligne etterpå." : "Åpne ett steg om gangen. Hintene viser framgangsmåten, og fasiten vises til slutt."}</span></div>
-                  {!resolved && !needsSolutionPath && hintIndex < activeHints.length && <button className="hint-button" type="button" onClick={revealHint}><IconSpark />Vis hint {hintIndex + 1} av {activeHints.length}</button>}
-                </div>
-                {solutionPaths.length > 0 && (
-                  <div className="solution-paths" role="group" aria-label="Velg løsningsmetode">
-                    {solutionPaths.map((path) => (
-                      <button
-                        className={`solution-path ${selectedSolutionPathId === path.id ? "solution-path-selected" : ""}`}
-                        type="button"
-                        key={`${currentQuestion.id}-${path.id}`}
-                        aria-pressed={selectedSolutionPathId === path.id}
-                        onClick={() => chooseSolutionPath(path.id)}
-                      >
-                        <strong>{path.navn}</strong>
-                        <span>{path.forklaring}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-                {!needsSolutionPath && (resolved || hintIndex > 0) && (
-                  <ol className="hint-list">
-                    {activeHints.slice(0, resolved ? activeHints.length : hintIndex).map((hint, index) => <li key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}-hint-${index}`}><span>{index + 1}</span><p><MathText>{hint}</MathText></p></li>)}
-                    {(resolved || hintIndex === activeHints.length) && <li className="final-hint"><span>✓</span><p><strong>Fasit:</strong> <MathText>{currentQuestion.svar}</MathText></p></li>}
-                  </ol>
-                )}
               </div>
+              <WorkedSteps key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved || reviewing} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
             </article>
           </section>
         </div>
@@ -807,7 +802,7 @@ export default function Home() {
                   <div><strong>{baseCount - correctQuestionCount}</strong><span>oppgaver å øve mer på</span></div>
                   <div><strong>{resultStats.hints}</strong><span>hint brukt</span></div>
                 </div>
-                <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. På ekte eksamen vurderer sensor også framgangsmåte, begrunnelser og matematisk forståelse.</p>
+                <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. Åpne svar og begrunnelser er egenvurdert. På ekte eksamen vurderer sensor framgangsmåte, begrunnelser og matematisk forståelse.</p>
 
                 <section className="exam-report" aria-labelledby="question-report-heading">
                   <div className="report-heading">

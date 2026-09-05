@@ -3,6 +3,11 @@ import type { Part, Question, QuestionBank } from "./question-bank";
 export type SessionMode = "skill" | "exam";
 export type Difficulty = "mixed" | 1 | 2 | 3;
 
+export function requiresOwnReasoning(question: Question) {
+  const key = question.fasit.type === "valg" ? question.fasit : question.fasit.type === "valg_og_tall" ? question.fasit.valg : null;
+  return Boolean(key?.aapen);
+}
+
 function withoutRecent<T extends { id: string }>(items: T[], recentIds: Set<string>) {
   const fresh = items.filter((item) => !recentIds.has(item.id));
   return fresh.length > 0 ? fresh : items;
@@ -149,10 +154,14 @@ export function selectSessionQuestions(
     const themes = shuffle([
       ...new Set(preferredCandidates.map((question) => question.tema)),
     ]);
-    const levelPlan = shuffle<Question["niva"]>([1, 1, 1, 2, 2, 2, 2, 3, 3, 3]);
+    const levelPlan = shuffle<Question["niva"]>([1, 1, 1, 1, 2, 2, 2, 2, 2, 3]);
     const selected: Question[] = [];
+    const openCandidates = preferUnseenFamilies(preferredCandidates.filter(requiresOwnReasoning), recentFamilies);
+    const opening = chooseDiverseQuestion(openCandidates, selected);
+    if (opening) selected.push(opening);
 
     for (const [index, theme] of themes.entries()) {
+      if (selected.some(question => question.tema === theme)) continue;
       const themeCandidates = preferredCandidates.filter(
         (question) => question.tema === theme,
       );
@@ -247,7 +256,8 @@ export function selectSessionQuestions(
       const candidates = groupPool.filter(
         (group) => !selectedGroupThemes.has(group[0]?.tema),
       );
-      const chosen = chooseDiverseGroup(candidates, selectedQuestions);
+      const reasoningGroups = candidates.filter(group => group.some(requiresOwnReasoning));
+      const chosen = chooseDiverseGroup(!selectedQuestions.some(requiresOwnReasoning) && reasoningGroups.length ? reasoningGroups : candidates, selectedQuestions);
       if (!chosen) break;
       selectedGroups.push(chosen);
       selectedQuestions.push(...chosen);

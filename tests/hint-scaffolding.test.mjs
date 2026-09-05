@@ -72,12 +72,13 @@ test("terskelhint lar eleven finne kandidaten før nabokontrollen", () => {
   }
 });
 
-test("figurformler prøves uten at hintet velger riktig alternativ på forhånd", () => {
+test("åpne figurformler forklares gjennom oppbygning fremfor alternativtesting", () => {
   for (const q of bank.oppgaver.filter((q) => /d1-(?:lineart|kvadratisk)-figurmonster/u.test(q.variantfamilie))) {
-    assert.match(q.hint[1], /alle svaralternativene/u, q.id);
-    assert.match(q.hint[2], /gjenværende alternativene/u, q.id);
-    assert.match(q.hint[3], /Sett inn/u, q.id);
-    assert.doesNotMatch(visible(q), /den riktige formelen|Formelen passer dermed/u, q.id);
+    assert.equal(q.fasit.valg.aapen, true, q.id);
+    assert.match(visible(q), /tilvekst|sidelengde/u, q.id);
+    assert.match(visible(q), /n|figurnummer/u, q.id);
+    assert.doesNotMatch(visible(q), /svaralternativ|gjenværende alternativ/u, q.id);
+    assert.ok(q.fasit.valg.vurderingskriterier.length >= 2);
   }
 });
 

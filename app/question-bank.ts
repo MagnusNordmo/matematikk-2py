@@ -13,6 +13,8 @@ export type ChoiceAnswer = {
   riktige: string[];
   alternativer: string[];
   krever_begrunnelse?: boolean;
+  aapen?: boolean;
+  vurderingskriterier?: string[];
 };
 
 export type AnswerKey =
@@ -167,9 +169,9 @@ export const THEMES: Theme[] = [
 ];
 
 export function answerPartCount(question: Question) {
-  if (question.fasit.type === "valg") return question.fasit.riktige.length;
+  if (question.fasit.type === "valg") return (question.fasit.aapen ? 0 : question.fasit.riktige.length) + (question.fasit.vurderingskriterier?.length ?? 0);
   if (question.fasit.type === "valg_og_tall") {
-    return question.fasit.valg.riktige.length + question.fasit.verdier.length;
+    return (question.fasit.valg.aapen ? 0 : question.fasit.valg.riktige.length) + question.fasit.verdier.length + (question.fasit.valg.vurderingskriterier?.length ?? 0);
   }
   return question.fasit.verdier.length;
 }
