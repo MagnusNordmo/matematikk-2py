@@ -2,14 +2,18 @@ import { useState } from "react";
 import { MathText } from "./presentation";
 import type { SolutionPath } from "./question-bank";
 
-export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, submitted = false, solution, onReveal, onChoose }: {
+export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, submitted = false, autoExpand = false, solution, onReveal, onChoose }: {
   hints: string[]; paths: SolutionPath[]; selectedPath: string | null;
-  revealed: number; resolved: boolean; submitted?: boolean; solution: string;
+  revealed: number; resolved: boolean; submitted?: boolean; autoExpand?: boolean; solution: string;
   onReveal: () => void; onChoose: (id: string) => void;
 }) {
   const [viewed, setViewed] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
-  const needsPath = paths.length > 0 && !selectedPath;
+  const [overview, setOverview] = useState<{ automatic: boolean; expanded: boolean } | null>(null);
+  // Submission changes the default even when the learner viewed one hint earlier.
+  // A later explicit choice can still switch back to a single step.
+  const showAll = overview?.automatic === autoExpand ? overview.expanded : autoExpand;
+  const setShowAll = (expanded: boolean) => setOverview({ automatic: autoExpand, expanded });
+  const needsPath = paths.length > 0 && !selectedPath && !autoExpand;
   const available = resolved ? hints.length : revealed;
   const active = Math.min(viewed ?? Math.max(0, available - 1), Math.max(0, available - 1));
   return <aside className="worked-steps" aria-label="Løsning steg for steg">
@@ -26,7 +30,7 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, su
         {!resolved && revealed < hints.length && <button className="hint-button" type="button" onClick={() => { setViewed(null); setShowAll(false); onReveal(); }}>{revealed ? "Åpne neste steg" : "Åpne første steg"} <span>{revealed + 1}/{hints.length}</span></button>}
         {available > 1 && <button type="button" className="step-overview" onClick={() => setShowAll(!showAll)}>{showAll ? "Vis ett steg" : "Se åpnede steg samlet"}</button>}
       </div>
-      {submitted && <details className="worked-solution"><summary>Se løsningsforslaget</summary><p><MathText>{solution}</MathText></p></details>}
+      {submitted && <details className="worked-solution" open={autoExpand}><summary>Se løsningsforslaget</summary><p><MathText>{solution}</MathText></p></details>}
     </>}
   </aside>;
 }

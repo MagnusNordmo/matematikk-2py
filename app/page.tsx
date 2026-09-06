@@ -350,6 +350,7 @@ export default function Home() {
 
   const currentItem = queue[currentIndex];
   const currentQuestion = currentItem?.question;
+  const expandExamSolution = mode === "exam" && resolved && evaluation !== null && !evaluation.correct;
   const activeTheme = THEMES.find((theme) => theme.id === selectedTheme);
   const themeById = useMemo(() => new Map(THEMES.map((theme) => [theme.id, theme])), []);
   const groupById = useMemo(
@@ -763,9 +764,9 @@ export default function Home() {
                 )}
               </form>
 
-              <LearningSupport question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }} />
+              <LearningSupport autoExpand={expandExamSolution} question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }} />
               </div>
-              <WorkedSteps key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
+              <WorkedSteps autoExpand={expandExamSolution} key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
             </article>
           </section>
         </div>

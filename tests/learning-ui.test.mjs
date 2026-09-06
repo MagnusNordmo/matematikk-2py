@@ -35,3 +35,12 @@ test('alle oppgaver har begrepsstøtte og riktig feedback for gyldige svar',()=>
  assert.equal(answerFeedback(q,input),q.svar,q.id);
  }
 });
+test('eksamensfeil åpner også løsningen i tilbakemeldingspanelet',()=>{
+ assert.match(render({submitted:{numbers:[],choices:['eksponentiell vekst']},autoExpand:true}),/<details class="worked-solution" open="">/);
+});
+test('automatisk utvidelse er avgrenset til ferdig vurderte eksamensfeil',async()=>{
+ const source=await readFile(new URL('../app/page.tsx',import.meta.url),'utf8');
+ assert.match(source,/const expandExamSolution = mode === "exam" && resolved && evaluation !== null && !evaluation.correct/);
+ assert.match(source,/<WorkedSteps autoExpand=\{expandExamSolution\}/);
+ assert.match(source,/<LearningSupport autoExpand=\{expandExamSolution\}/);
+});

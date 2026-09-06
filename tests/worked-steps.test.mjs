@@ -39,3 +39,17 @@ test('løsningssteg har stor brødtekst og sidevisning på brede skjermer',async
  assert.match(css,/@media \(min-width: 1100px\)[\s\S]*\.question-workspace \{ display: grid/);
  assert.match(css,/\.worked-step-body p \{ font-size: 1\.0625rem/);
 });
+
+test('feil eksamenssvar viser alle steg og åpent løsningsforslag',()=>{
+ const html=renderToStaticMarkup(createElement(WorkedSteps,{...base,revealed:0,resolved:true,submitted:true,autoExpand:true}));
+ for(const text of ['Første forklaring','Andre forklaring','Tredje forklaring','Eksempelsvar','Vis ett steg']) assert.ok(html.includes(text),text);
+ assert.match(html,/<details class="worked-solution" open="">/);
+});
+test('automatisk utvidelse virker også uten et tidligere metodevalg',()=>{
+ const html=renderToStaticMarkup(createElement(WorkedSteps,{...base,revealed:0,resolved:true,submitted:true,autoExpand:true,paths:[{id:'a',navn:'Metode A',forklaring:'En metode',hint:base.hints}]}));
+ assert.match(html,/Første forklaring/);assert.match(html,/Tredje forklaring/);assert.match(html,/<details class="worked-solution" open="">/);
+});
+test('riktig svar beholder ett steg og sammenfoldet fasit',()=>{
+ const html=renderToStaticMarkup(createElement(WorkedSteps,{...base,resolved:true,submitted:true}));
+ assert.doesNotMatch(html,/Første forklaring|Andre forklaring/);assert.match(html,/Tredje forklaring/);assert.doesNotMatch(html,/<details[^>]* open/);
+});
