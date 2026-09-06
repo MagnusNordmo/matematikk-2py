@@ -372,6 +372,15 @@ NÅR STØTTEN VISES
 
 Bruk innsending per deloppgave som normalvalg ved øving. Forklaringen skal gjelde det som er sendt inn, og skal ikke automatisk åpne fasit til ubesvarte deloppgaver. Hvis en forklaring nødvendigvis røper et senere svar, omform deloppgavene eller la eleven sende inn den sammenhengende gruppen samlet. Opplys i så fall tydelig hva «Send inn» gjelder. Ikke utsett all læringsstøtte til slutten av et helt sett som standard. Hvis bestillingen uttrykkelig ber om prøvemodus med samlet innlevering, oppgi når forklaringene blir tilgjengelige.
 
+PEDAGOGISK SPRÅK OG SAMLET PRESENTASJON
+Knytt fagord til det eleven faktisk ser. Ikke skriv bare «en løkke gjentar instruksjoner»: Skriv «for-løkke (for loop)», pek på for-linjen i oppgaven og forklar hva variabelen, listen og innrykket gjør. Skill for fra while og if. Forklar også funksjoner og tegn som range, len, print, = og == når de brukes. Kode skal vises som kode, med linjeskift og innrykk der det trengs.
+
+Følg samme mønster i matematikk: navn på begrepet, forklaring med vanlige ord, og et lite eksempel. Forklar hva symbolene i en formel betyr. «Konstant forhold» må knyttes til deling, «produkt» til ganging, og standardavvik må først forklares som spredning før en eventuell beregningsregel gis. Velg støtte ut fra faktisk oppgavetekst og kode; et tegn i Python skal ikke utløse en irrelevant matematisk definisjon.
+
+Løsningen skal ha ett fast sted i oppgaven. Ikke gjenta den samme fasiten i både tilbakemelding, begrepspanel og hintpanel. Tilbakemeldingen skal si hva eleven bør undersøke, begrepshjelpen skal forklare ordene, og løsningen skal vise svaret og begrunnelsen. Samle hjelpen visuelt, med de mest relevante begrepene først og øvrige forklaringer under «Flere ord og begreper». Unngå flere rullefelt inne i den samme oppgaven.
+
+Ved feil eller delvis riktig svar i eksamensøving skal alle hintene og løsningen åpnes automatisk. Riktig svar skal vise løsningens forklaring på det samme stedet. I temaøving kan eleven åpne løsningen etter et feilforsøk. Ingen av disse visningene skal lage en ekstra kopi av fasiten. Forklaringer skal fortsatt være skjult før eleven ber om hjelp eller sender inn et gyldig svar.
+
 HINT I TRINN
 Lag normalt ett eller to hint per deloppgave, etter behov. Et enkelt ordspørsmål trenger ikke flere nesten like hint.
 1) Begrepshjelp eller et kort spørsmål som peker mot hva eleven bør undersøke.

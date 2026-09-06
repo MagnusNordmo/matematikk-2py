@@ -1,17 +1,33 @@
 import type { Question, QuestionGroup } from './question-bank';
 import type { AnswerInput } from './answer-engine';
-import { questionConcepts, answerFeedback } from './learning-content';
+import { questionConcepts, answerFeedback, type ConceptExplanation } from './learning-content';
 import { MathText } from './presentation';
 
-export function LearningSupport({ question, group, submitted, showConcepts, autoExpand = false, onConcepts, onSolution }: {
+function LearningText({text}: {text: string}) {
+ return <>{text.split(/(`[^`]+`)/g).map((part,i) => part.startsWith('`')
+  ? <code key={i}>{part.slice(1,-1)}</code> : <MathText key={i}>{part}</MathText>)}</>;
+}
+function Concept({concept}: {concept: ConceptExplanation}) {
+ return <div className="concept-explanation"><strong>{concept.term}</strong>
+  <p><LearningText text={concept.explanation} /></p>
+  {concept.example && <div className="concept-example"><span>I denne oppgaven</span><pre><code>{concept.example}</code></pre></div>}
+ </div>;
+}
+export function LearningSupport({ question, group, submitted, showConcepts, onConcepts }: {
  question: Question; group?: QuestionGroup; submitted: AnswerInput | null;
- showConcepts: boolean; autoExpand?: boolean; onConcepts: () => void; onSolution: () => void;
+ showConcepts: boolean; onConcepts: () => void;
 }) {
  const visible = showConcepts || submitted !== null;
+ const concepts = questionConcepts(question, group, submitted);
+ const feedback = submitted ? answerFeedback(question, submitted, group) : null;
  return <section className="learning-support" aria-label="Begreper og tilbakemelding">
   {!visible && <button type="button" className="hint-button" onClick={onConcepts}>Forklar ord og begreper</button>}
-  {submitted && <div className="learning-feedback" aria-live="polite"><h3>Dette kan du lære</h3><p><MathText>{answerFeedback(question, submitted)}</MathText></p></div>}
-  {visible && <div className="concept-list"><h3>Ord og begreper i oppgaven</h3>{questionConcepts(question, group).map(({term,explanation}) => <div key={term}><strong>{term}</strong><p>{explanation}</p></div>)}</div>}
-  {submitted && <details className="worked-solution" open={autoExpand} onToggle={e => { if(e.currentTarget.open) onSolution(); }}><summary>Vis løsning</summary><p><MathText>{question.svar}</MathText></p></details>}
+  {feedback && <div className="learning-feedback" aria-live="polite"><p><LearningText text={feedback} /></p></div>}
+  {visible && <div className="concept-list"><h3>Begreper i oppgaven</h3>
+   {concepts.slice(0,2).map(concept => <Concept key={concept.term} concept={concept} />)}
+   {concepts.length > 2 && <details className="more-concepts"><summary>Flere ord og begreper ({concepts.length-2})</summary>
+    {concepts.slice(2).map(concept => <Concept key={concept.term} concept={concept} />)}
+   </details>}
+  </div>}
  </section>;
 }

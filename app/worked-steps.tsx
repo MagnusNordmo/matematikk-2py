@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { MathText } from "./presentation";
 import type { SolutionPath } from "./question-bank";
 
-export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, submitted = false, autoExpand = false, solution, onReveal, onChoose }: {
+export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, submitted = false, autoExpand = false, solutionExpanded = false, solution, onReveal, onChoose, onSolution, children }: {
   hints: string[]; paths: SolutionPath[]; selectedPath: string | null;
-  revealed: number; resolved: boolean; submitted?: boolean; autoExpand?: boolean; solution: string;
-  onReveal: () => void; onChoose: (id: string) => void;
+  revealed: number; resolved: boolean; submitted?: boolean; autoExpand?: boolean; solutionExpanded?: boolean; solution: string;
+  onReveal: () => void; onChoose: (id: string) => void; onSolution?: () => void; children?: ReactNode;
 }) {
   const [viewed, setViewed] = useState<number | null>(null);
   const [overview, setOverview] = useState<{ automatic: boolean; expanded: boolean } | null>(null);
@@ -17,7 +17,8 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, su
   const available = resolved ? hints.length : revealed;
   const active = Math.min(viewed ?? Math.max(0, available - 1), Math.max(0, available - 1));
   return <aside className="worked-steps" aria-label="Løsning steg for steg">
-    <header><h2>Løsning steg for steg</h2><p>Prøv selv først. Åpne så mye hjelp du trenger.</p></header>
+    <header><h2>Hint og forklaring</h2>{!submitted && <p>Prøv selv først. Åpne så mye hjelp du trenger.</p>}</header>
+    {children}
     {paths.length > 0 && <div className="solution-paths" role="group" aria-label="Velg løsningsmetode">
       {paths.map(path => <button key={path.id} type="button" aria-pressed={selectedPath === path.id} className={`solution-path ${selectedPath === path.id ? "solution-path-selected" : ""}`} onClick={() => { onChoose(path.id); setViewed(null); setShowAll(false); }}><strong>{path.navn}</strong><span>{path.forklaring}</span></button>)}
     </div>}
@@ -30,7 +31,7 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, su
         {!resolved && revealed < hints.length && <button className="hint-button" type="button" onClick={() => { setViewed(null); setShowAll(false); onReveal(); }}>{revealed ? "Åpne neste steg" : "Åpne første steg"} <span>{revealed + 1}/{hints.length}</span></button>}
         {available > 1 && <button type="button" className="step-overview" onClick={() => setShowAll(!showAll)}>{showAll ? "Vis ett steg" : "Se åpnede steg samlet"}</button>}
       </div>
-      {submitted && <details className="worked-solution" open={autoExpand}><summary>Se løsningsforslaget</summary><p><MathText>{solution}</MathText></p></details>}
     </>}
+    {submitted && <details className="worked-solution" open={autoExpand || solutionExpanded} onToggle={event => { if (event.currentTarget.open) onSolution?.(); }}><summary>Løsning</summary><p><MathText>{solution}</MathText></p></details>}
   </aside>;
 }

@@ -753,8 +753,8 @@ export default function Home() {
               <form onSubmit={submitAnswer} className="answer-form structured-answer-form">
                 <AnswerFields answerKey={currentQuestion.fasit} value={answer} onChange={(next) => { setAnswer(next); if (!resolved) setFeedback(null); }} disabled={resolved} feedback={feedback} firstInputRef={answerRef} />
                 <div id="answer-feedback" className={`feedback ${feedback ? `feedback-${feedback}` : ""}`} aria-live="polite">
-                  {feedback === "wrong" && (resolved ? <><strong>Ikke riktig denne gangen.</strong> Se løsningsforslaget under.</> : <><strong>Ikke helt ennå.</strong> Prøv en gang til, eller bruk et hint.</>)}
-                  {feedback === "partial" && (resolved ? <><strong>Delvis riktig.</strong> Du fikk {evaluation?.correctParts} av {evaluation?.totalParts} mulige poeng.</> : <><strong>Noe er riktig.</strong> Kontroller alle delene og prøv igjen.</>)}
+                  {feedback === "wrong" && (resolved ? <><strong>Ikke riktig denne gangen.</strong> </> : <><strong>Ikke helt ennå.</strong> </>)}
+                  {feedback === "partial" && (resolved ? <><strong>Delvis riktig.</strong> Du fikk {evaluation?.correctParts} av {evaluation?.totalParts} mulige poeng.</> : <><strong>Noe er riktig.</strong> </>)}
                   {feedback === "correct" && <><strong>Riktig!</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
                 </div>
                 {!resolved ? (
@@ -764,9 +764,10 @@ export default function Home() {
                 )}
               </form>
 
-              <LearningSupport autoExpand={expandExamSolution} question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }} />
               </div>
-              <WorkedSteps autoExpand={expandExamSolution} key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
+              <WorkedSteps autoExpand={expandExamSolution} solutionExpanded={feedback === "correct"} key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }}>
+                <LearningSupport question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} />
+              </WorkedSteps>
             </article>
           </section>
         </div>
