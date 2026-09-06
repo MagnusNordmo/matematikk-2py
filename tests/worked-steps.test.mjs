@@ -26,9 +26,12 @@ test('ingen forklaring eller fasit avsløres før første steg',()=>{
  const html=renderToStaticMarkup(createElement(WorkedSteps,{...base,revealed:0}));
  assert.doesNotMatch(html,/Første forklaring|Andre forklaring|Eksempelsvar/);assert.match(html,/Åpne første steg/);
 });
-test('løsningsforslaget er sammenfoldet etter siste steg',()=>{
+test('løsningsforslaget åpnes først etter innsending',()=>{
  const html=renderToStaticMarkup(createElement(WorkedSteps,{...base,revealed:3}));
- assert.match(html,/<details class="worked-solution">/);assert.doesNotMatch(html,/Åpne neste steg/);
+ assert.doesNotMatch(html,/<details class="worked-solution">/);assert.doesNotMatch(html,/Åpne neste steg/);
+ const submitted=renderToStaticMarkup(createElement(WorkedSteps,{...base,revealed:3,submitted:true}));
+ assert.match(submitted,/<details class="worked-solution">/);
+ assert.doesNotMatch(submitted,/<details[^>]* open/);
 });
 test('løsningssteg har stor brødtekst og sidevisning på brede skjermer',async()=>{
  const css=await readFile(new URL('../app/globals.css',import.meta.url),'utf8');

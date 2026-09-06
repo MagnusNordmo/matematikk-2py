@@ -2,9 +2,9 @@ import { useState } from "react";
 import { MathText } from "./presentation";
 import type { SolutionPath } from "./question-bank";
 
-export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, solution, onReveal, onChoose }: {
+export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, submitted = false, solution, onReveal, onChoose }: {
   hints: string[]; paths: SolutionPath[]; selectedPath: string | null;
-  revealed: number; resolved: boolean; solution: string;
+  revealed: number; resolved: boolean; submitted?: boolean; solution: string;
   onReveal: () => void; onChoose: (id: string) => void;
 }) {
   const [viewed, setViewed] = useState<number | null>(null);
@@ -26,7 +26,7 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, so
         {!resolved && revealed < hints.length && <button className="hint-button" type="button" onClick={() => { setViewed(null); setShowAll(false); onReveal(); }}>{revealed ? "Åpne neste steg" : "Åpne første steg"} <span>{revealed + 1}/{hints.length}</span></button>}
         {available > 1 && <button type="button" className="step-overview" onClick={() => setShowAll(!showAll)}>{showAll ? "Vis ett steg" : "Se åpnede steg samlet"}</button>}
       </div>
-      {(resolved || revealed === hints.length) && <details className="worked-solution"><summary>Se løsningsforslaget</summary><p><MathText>{solution}</MathText></p></details>}
+      {submitted && <details className="worked-solution"><summary>Se løsningsforslaget</summary><p><MathText>{solution}</MathText></p></details>}
     </>}
   </aside>;
 }

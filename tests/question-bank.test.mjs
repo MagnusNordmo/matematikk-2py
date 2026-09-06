@@ -29,7 +29,7 @@ test("oppgavebanken har 515 komplette og unike oppgaver", () => {
 test("fordelingen mellom deler og svarformater er bevart", () => {
   assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 262);
   assert.equal(bank.oppgaver.filter((question) => question.del === 2).length, 253);
-  const expected = { tall: 268, flere_tall: 70, valg: 166, valg_og_tall: 11 };
+  const expected = { tall: 268, flere_tall: 73, valg: 151, valg_og_tall: 23 };
   for (const [type, count] of Object.entries(expected)) {
     assert.equal(bank.oppgaver.filter((question) => question.fasit.type === type).length, count, type);
   }
@@ -45,7 +45,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 102, "2": 397, "3": 16 });
+  assert.deepEqual(distribution, { "1": 102, "2": 402, "3": 11 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {

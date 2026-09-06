@@ -9,3 +9,7 @@ Følg [CONTENT_MAINTENANCE.md](CONTENT_MAINTENANCE.md) ved feilretting.
 - De eldre revisjons- og kalibreringsskriptene kan overskrive hele banken. Ikke bruk `--allow-full-bank-rewrite` uten at brukeren uttrykkelig har bestilt en full innholdsrevisjon.
 - Bygging av den avledede kontrollsiden er tillatt. Det er ikke en hintrevisjon og skal ikke endre JSON-banken.
 - Bevar tidligere rettelser og tester. Ikke senk testkrav for å få en feilretting gjennom.
+
+## Oppgaveutforming og læringsstøtte
+
+Følg [docs/oppgaveinstruks-2py.txt](docs/oppgaveinstruks-2py.txt) ved nye oppgaver og innholdsrevisjoner. Alle svar skal vurderes automatisk. Ingen fritekst eller egenvurdering skal brukes til poeng. Viktige begreper skal forklares etter elevens forespørsel eller innsending, og nye begreper må legges til i `app/learning-content.ts`. Bevar denne atferden og testene ved senere endringer.

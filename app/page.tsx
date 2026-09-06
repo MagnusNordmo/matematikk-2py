@@ -1,4 +1,5 @@
 "use client";
+import { LearningSupport } from "./learning-support";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -191,21 +192,6 @@ function AnswerFields({
         </fieldset>
       )}
 
-      {choices?.krever_begrunnelse && (
-        <div className="reasoning-answer">
-          <label htmlFor="reasoning-answer">Din begrunnelse</label>
-          <textarea
-            id="reasoning-answer"
-            value={value.explanation ?? ""}
-            onChange={(event) => onChange({ ...value, explanation: event.target.value })}
-            placeholder={choices.aapen ? "Skriv løsningen og begrunnelsen din. Du kan også regne eller tegne på papir og beskrive det du har gjort her." : "Forklar hvorfor du valgte dette svaret"}
-            rows={3}
-            disabled={disabled}
-          />
-          <small>Etter innlevering sammenligner du selv med løsningsforslaget. Teksten vurderes ikke automatisk.</small>
-        </div>
-      )}
-
       {numbers.length > 0 && (
         <div className={`numeric-answers numeric-answers-${numbers.length}`}>
           {numbers.map((number, index) => {
@@ -307,7 +293,9 @@ export default function Home() {
   const [savedProgress, setSavedProgress] = useState<ProgressByPart>(EMPTY_PROGRESS_BY_PART);
   const [recentSelections, setRecentSelections] = useState<RecentSelections>({});
   const [usedSupport, setUsedSupport] = useState(false);
-  const [reviewing, setReviewing] = useState(false);
+  const [submittedAnswer, setSubmittedAnswer] = useState<AnswerInput | null>(null);
+  const [showConcepts, setShowConcepts] = useState(false);
+  const [solutionOpened, setSolutionOpened] = useState(false);
   const answerRef = useRef<HTMLInputElement>(null);
   const continueRef = useRef<HTMLButtonElement>(null);
 
@@ -375,8 +363,6 @@ export default function Home() {
   const selectedSolutionPath = solutionPaths.find((path) => path.id === selectedSolutionPathId);
   const activeHints = selectedSolutionPath?.hint ?? currentQuestion?.hint ?? [];
   const needsSolutionPath = solutionPaths.length > 0 && !selectedSolutionPath;
-  const reasoningKey = currentQuestion?.fasit.type === "valg" ? currentQuestion.fasit : currentQuestion?.fasit.type === "valg_og_tall" ? currentQuestion.fasit.valg : null;
-  const criteria = reasoningKey?.vurderingskriterier ?? [];
   const availableThemes = useMemo(() => {
     if (!bank || !selectedPart) return [];
     const ids = new Set(bank.oppgaver.filter((question) => question.del === selectedPart && (selectedDifficulty === "mixed" || question.niva === selectedDifficulty)).map((question) => question.tema));
@@ -422,7 +408,9 @@ export default function Home() {
     setBaseCount(questions.length);
     setCurrentIndex(0);
     setAnswer(EMPTY_ANSWER);
-    setReviewing(false);
+    setSubmittedAnswer(null);
+    setShowConcepts(false);
+    setSolutionOpened(false);
     setUsedSupport(false);
     setHintIndex(0);
     setSelectedSolutionPathId(null);
@@ -491,7 +479,7 @@ export default function Home() {
   }
 
   function revealHint() {
-    if (!currentQuestion || resolved || reviewing || needsSolutionPath || hintIndex >= activeHints.length) return;
+    if (!currentQuestion || resolved || needsSolutionPath || hintIndex >= activeHints.length) return;
     setHintIndex((value) => value + 1);
     setUsedSupport(true);
     setStats((value) => ({ ...value, hints: value.hints + 1 }));
@@ -521,24 +509,24 @@ export default function Home() {
   function submitAnswer(event: FormEvent) {
     event.preventDefault();
     if (!currentQuestion || resolved || !isAnswerComplete(answer, currentQuestion.fasit)) return;
-    if (criteria.length > 0 && !reviewing) { setReviewing(true); return; }
+    setSubmittedAnswer(structuredClone(answer));
     const result = evaluateAnswer(answer, currentQuestion.fasit);
     setEvaluation(result);
 
-    if (mode === "skill" && !result.correct && !reviewing) {
+    if (mode === "skill" && !result.correct) {
       setAttempts((value) => value + 1);
       setFeedback(result.correctParts > 0 ? "partial" : "wrong");
       return;
     }
 
-    const usedHint = usedSupport;
+    const usedHint = usedSupport || solutionOpened || attempts > 0;
     setResolved(true);
     setFeedback(result.correct ? "correct" : result.correctParts > 0 ? "partial" : "wrong");
     setStats((value) => ({
       ...value,
       baseSolved: value.baseSolved + (currentItem.isExtra ? 0 : 1),
       baseWithoutHint: value.baseWithoutHint + (!currentItem.isExtra && !usedHint && result.correct ? 1 : 0),
-      score: value.score + (!currentItem.isExtra && mode === "exam" && !usedHint ? result.correctParts : 0),
+      score: value.score + (!currentItem.isExtra && mode === "exam" ? result.correctParts : 0),
       extraSolved: value.extraSolved + (currentItem.isExtra ? 1 : 0),
     }));
     if (!currentItem.isExtra) {
@@ -588,7 +576,9 @@ export default function Home() {
     }
     setCurrentIndex((value) => value + 1);
     setAnswer(EMPTY_ANSWER);
-    setReviewing(false);
+    setSubmittedAnswer(null);
+    setShowConcepts(false);
+    setSolutionOpened(false);
     setUsedSupport(false);
     setHintIndex(0);
     setSelectedSolutionPathId(null);
@@ -683,7 +673,7 @@ export default function Home() {
             </button>
             <button className="choice-card" onClick={() => startSession("exam")}>
               <span className="choice-icon"><IconExam /></span>
-              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv som på eksamen</strong><span>10 balanserte oppgaver fra forskjellige temaer, oppgavetyper og ferdigheter. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint gir 0 poeng på oppgaven.</span></span>
+              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv som på eksamen</strong><span>10 balanserte oppgaver fra forskjellige temaer, oppgavetyper og ferdigheter. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint er tilgjengelig og registreres uten poengtrekk.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
@@ -728,7 +718,7 @@ export default function Home() {
           <section className="session-status" aria-label="Fremdrift i økten">
             <div className="progress-copy">
               <span>{currentItem.isExtra ? "Ekstra mestringsoppgave" : `Oppgave ${currentItem.baseOrdinal} av ${baseCount}`}</span>
-              <span>{mode === "exam" ? `${stats.score} av ${maxPoints} poeng` : `${stats.baseWithoutHint} uten hint`}<span className="stat-divider">·</span>{stats.hints} hint</span>
+              <span>{mode === "exam" ? `${stats.score} av ${maxPoints} poeng` : `${stats.baseWithoutHint} på første forsøk uten hjelp`}<span className="stat-divider">·</span>{stats.hints} hint</span>
             </div>
             <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={baseCount} aria-valuenow={stats.baseSolved}><span style={{ width: `${progressPercent}%` }} /></div>
           </section>
@@ -748,7 +738,7 @@ export default function Home() {
               </span>
               <span>Del {selectedPart}{currentQuestion.oppgavegruppe ? ` · ${currentQuestion.oppgavegruppe.deloppgave})` : ""}</span>
             </div>
-            {mode === "exam" && !currentItem.isExtra && <div className="exam-banner"><IconExam />Ett forsøk. Hint gir 0 poeng på denne oppgaven.</div>}
+            {mode === "exam" && !currentItem.isExtra && <div className="exam-banner"><IconExam />Ett forsøk. Du kan be om hjelp uten poengtrekk.</div>}
 
 
             <article className="question-card question-workspace">
@@ -760,29 +750,22 @@ export default function Home() {
                 <VisualizationPanel visualization={currentQuestion.visualisering} data={currentQuestion.data} />
               </div>
               <form onSubmit={submitAnswer} className="answer-form structured-answer-form">
-                <AnswerFields answerKey={currentQuestion.fasit} value={answer} onChange={(next) => { setAnswer(next); if (!resolved) setFeedback(null); }} disabled={resolved || reviewing} feedback={feedback} firstInputRef={answerRef} />
+                <AnswerFields answerKey={currentQuestion.fasit} value={answer} onChange={(next) => { setAnswer(next); if (!resolved) setFeedback(null); }} disabled={resolved} feedback={feedback} firstInputRef={answerRef} />
                 <div id="answer-feedback" className={`feedback ${feedback ? `feedback-${feedback}` : ""}`} aria-live="polite">
                   {feedback === "wrong" && (resolved ? <><strong>Ikke riktig denne gangen.</strong> Se løsningsforslaget under.</> : <><strong>Ikke helt ennå.</strong> Prøv en gang til, eller bruk et hint.</>)}
                   {feedback === "partial" && (resolved ? <><strong>Delvis riktig.</strong> Du fikk {evaluation?.correctParts} av {evaluation?.totalParts} mulige poeng.</> : <><strong>Noe er riktig.</strong> Kontroller alle delene og prøv igjen.</>)}
-                  {feedback === "correct" && <><strong>{criteria.length ? "Vurdert som riktig av deg." : "Riktig!"}</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
+                  {feedback === "correct" && <><strong>Riktig!</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
                 </div>
-                {reviewing && !resolved && <section className="self-assessment" aria-label="Vurder løsningen din">
-                  <h3>Sammenlign med løsningsforslaget</h3><p><MathText>{currentQuestion.svar}</MathText></p>
-                  <p>Vurder det du hadde skrevet før du åpnet løsningen. Velg «Ikke ennå» hvis du er usikker. Dette er egenvurdering, ikke automatisk retting.</p>
-                  {criteria.map((criterion, index) => <fieldset key={criterion}><legend><MathText>{criterion}</MathText></legend>{[true, false].map(value => <label key={String(value)}><input type="radio" name={`criterion-${index}`} checked={answer.assessment?.[index] === value} onChange={() => { const next = criteria.map((_, i) => i === index ? value : answer.assessment?.[i]); setAnswer({ ...answer, assessment: next as boolean[] }); }} />{value ? "Ja, dette viste jeg" : "Ikke ennå"}</label>)}</fieldset>)}
-                </section>}
                 {!resolved ? (
-                  <button className="primary-button" type="submit" disabled={!isAnswerComplete(answer, currentQuestion.fasit) || (reviewing && (answer.assessment?.length !== criteria.length || answer.assessment.some(value => typeof value !== "boolean")))}>{reviewing ? "Registrer egenvurdering" : criteria.length ? "Lever svar og sammenlign" : "Sjekk svar"}<IconArrow /></button>
+                  <button className="primary-button" type="submit" disabled={!isAnswerComplete(answer, currentQuestion.fasit)}>Sjekk svar<IconArrow /></button>
                 ) : (
                   <button ref={continueRef} className="primary-button" type="button" onClick={nextQuestion}>{currentIndex + 1 >= queue.length ? "Se resultat" : "Neste oppgave"}<IconArrow /></button>
                 )}
               </form>
 
-              {resolved && (
-                <div className="solution-panel"><strong>Løsningsforslag</strong><p><MathText>{currentQuestion.svar}</MathText></p></div>
-              )}
+              <LearningSupport question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }} />
               </div>
-              <WorkedSteps key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved || reviewing} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
+              <WorkedSteps key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} />
             </article>
           </section>
         </div>
@@ -802,7 +785,7 @@ export default function Home() {
                   <div><strong>{baseCount - correctQuestionCount}</strong><span>oppgaver å øve mer på</span></div>
                   <div><strong>{resultStats.hints}</strong><span>hint brukt</span></div>
                 </div>
-                <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. Åpne svar og begrunnelser er egenvurdert. På ekte eksamen vurderer sensor framgangsmåte, begrunnelser og matematisk forståelse.</p>
+                <p className="grade-disclaimer">Karakteren er bare et øvingsanslag. Svarene vurderes automatisk. Øving med hjelp viser ikke nødvendigvis selvstendig mestring. På ekte eksamen vurderer sensor framgangsmåte, begrunnelser og matematisk forståelse.</p>
 
                 <section className="exam-report" aria-labelledby="question-report-heading">
                   <div className="report-heading">
@@ -832,7 +815,7 @@ export default function Home() {
                 </section>
               </>
             ) : (
-              <><h1>God økt!</h1><p className="result-lead">Du fullførte {baseCount} oppgaver i {activeTheme?.navn.toLowerCase() ?? "temaet"}.</p><div className="result-grid"><div><strong>{resultStats.baseWithoutHint}</strong><span>løst uten hint</span></div><div><strong>{resultStats.hints}</strong><span>hint brukt</span></div><div><strong>{resultStats.extraSolved}</strong><span>ekstraoppgaver</span></div></div></>
+              <><h1>God økt!</h1><p className="result-lead">Du fullførte {baseCount} oppgaver i {activeTheme?.navn.toLowerCase() ?? "temaet"}.</p><div className="result-grid"><div><strong>{resultStats.baseWithoutHint}</strong><span>på første forsøk uten hjelp</span></div><div><strong>{resultStats.hints}</strong><span>hint brukt</span></div><div><strong>{resultStats.extraSolved}</strong><span>ekstraoppgaver</span></div></div></>
             )}
             <div className="result-actions"><button className="primary-button" onClick={() => mode === "exam" ? startSession("exam") : startSession("skill", selectedTheme ?? undefined)}>{mode === "exam" ? "Prøv igjen" : "Øv en gang til"}<IconArrow /></button><button className="secondary-button" onClick={() => leaveSession(mode === "exam" ? "modes" : "topics", true)}>{mode === "exam" ? "Velg øvingsmåte" : "Velg tema"}</button></div>
           </section>

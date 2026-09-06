@@ -73,7 +73,7 @@ test("krever både valg og tall i kombinasjonssvar", () => {
   assert.equal(evaluateAnswer({ numbers: ["59"], choices: ["4n-1"] }, key).correct, true);
 });
 
-test("vurderingsoppgaver krever en skrevet begrunnelse før innsending", () => {
+test("gamle manuelle svar kan ikke sendes inn eller godkjennes", () => {
   const key: AnswerKey = {
     type: "valg",
     flervalg: false,
@@ -82,5 +82,5 @@ test("vurderingsoppgaver krever en skrevet begrunnelse før innsending", () => {
     krever_begrunnelse: true,
   };
   assert.equal(isAnswerComplete({ numbers: [], choices: ["riktig"], explanation: "" }, key), false);
-  assert.equal(isAnswerComplete({ numbers: [], choices: ["riktig"], explanation: "Fordi dataene bare viser samvariasjon." }, key), true);
+  assert.equal(isAnswerComplete({ numbers: [], choices: ["riktig"], explanation: "Fordi dataene bare viser samvariasjon." }, key), false);
 });

@@ -19,7 +19,7 @@ export type ChoiceAnswer = {
 
 export type AnswerKey =
   | { type: "tall"; verdier: NumericAnswer[] }
-  | { type: "flere_tall"; verdier: NumericAnswer[] }
+  | { type: "flere_tall"; verdier: NumericAnswer[]; konstruksjon?: "datasett" | "moteksempel" }
   | ChoiceAnswer
   | { type: "valg_og_tall"; valg: ChoiceAnswer; verdier: NumericAnswer[] };
 
@@ -169,6 +169,7 @@ export const THEMES: Theme[] = [
 ];
 
 export function answerPartCount(question: Question) {
+  if (question.fasit.type === "flere_tall" && question.fasit.konstruksjon) return 2;
   if (question.fasit.type === "valg") return (question.fasit.aapen ? 0 : question.fasit.riktige.length) + (question.fasit.vurderingskriterier?.length ?? 0);
   if (question.fasit.type === "valg_og_tall") {
     return (question.fasit.valg.aapen ? 0 : question.fasit.valg.riktige.length) + question.fasit.verdier.length + (question.fasit.valg.vurderingskriterier?.length ?? 0);

@@ -125,12 +125,13 @@ test("avrundingskrav og toleranser godtar riktig presisjon uten å godta nabosva
   }
 });
 
-test("faglig vurdering krever at eleven skriver en begrunnelse", () => {
-  const reasoningQuestions = bank.oppgaver.filter((question) =>
-    question.fasit.type === "valg" && question.fasit.krever_begrunnelse,
-  );
+test("faglig vurdering bruker strukturerte svar", () => {
+  const reasoningQuestions = bank.oppgaver.filter(q => q.ferdighet.includes("begrunne"));
   assert.ok(reasoningQuestions.length >= 15);
-  assert.ok(reasoningQuestions.every((question) => /begrunn/iu.test(question.sporsmal)));
+  for (const q of reasoningQuestions) {
+    assert.doesNotMatch(JSON.stringify(q.fasit), /krever_begrunnelse|vurderingskriterier|aapen/);
+    assert.doesNotMatch(q.sporsmal, /begrunnelsesfelt|Begrunn valget/);
+  }
 });
 
 test("rutineoppgaver er ikke merket utfordrende", () => {

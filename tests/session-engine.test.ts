@@ -145,8 +145,7 @@ test("begge mini-eksamener krever minst ett selvstendig resonnement", () => {
     for (let run = 0; run < 200; run++) {
       const questions = selectSessionQuestions(bank, part, "exam");
       assert.ok(questions.some(q => {
-        const key = q.fasit.type === 'valg' ? q.fasit : q.fasit.type === 'valg_og_tall' ? q.fasit.valg : null;
-        return key?.aapen;
+        return (q.fasit.type === "flere_tall" && Boolean(q.fasit.konstruksjon)) || q.ferdighet.includes("begrunne") || q.ferdighet.includes("generalisere");
       }));
     }
   }

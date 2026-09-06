@@ -34,8 +34,7 @@ export function parseNorwegianNumber(value: string) {
     .replace(
       /(?:kr|kroner|prosentpoeng|prosent|elever|år|kg|g|km|m|cm|timer|minutter|%)+$/g,
       "",
-    )
-    .replace(/[^0-9./+-]/g, "");
+    );
 
   const fraction = normalized.match(
     /^([+-]?\d+(?:\.\d+)?)\/([+-]?\d+(?:\.\d+)?)$/,
@@ -70,7 +69,7 @@ function evaluateChoices(inputs: string[], correct: string[], multiple: boolean)
   const correctSelections = correct.filter((answer) => selected.has(answer)).length;
   const incorrectSelections = inputs.filter((answer) => !expected.has(answer)).length;
   const parts = multiple ? correct.length : 1;
-  return Math.max(0, Math.min(parts, correctSelections - incorrectSelections));
+  return incorrectSelections > 0 ? 0 : Math.min(parts, correctSelections);
 }
 
 export function evaluateAnswer(input: AnswerInput, key: AnswerKey): AnswerEvaluation {
@@ -91,31 +90,32 @@ export function evaluateAnswer(input: AnswerInput, key: AnswerKey): AnswerEvalua
       evaluateNumbers(input.numbers, key.verdier);
   }
 
+  if (key.type === "flere_tall" && key.konstruksjon) {
+    const values = input.numbers.map(parseNorwegianNumber);
+    totalParts = 2;
+    correctParts = 0;
+    if (values.length === key.verdier.length && values.every(Number.isFinite)) {
+      if (key.konstruksjon === "datasett" && values.every(v => Number.isInteger(v) && v >= 0)) {
+        correctParts += Number(values.reduce((a,b) => a+b,0) === 50);
+        correctParts += Number([...values].sort((a,b) => a-b)[2] === 8);
+      } else if (key.konstruksjon === "moteksempel") {
+        const [a,b,c,d] = values;
+        correctParts += Number(Math.abs(a+b-100) < 1e-9 && Math.abs(c+d-110) < 1e-9);
+        correctParts += Number(c < a || d < b);
+      }
+    }
+  }
+  // Legacy manual keys cannot award points through a client self-assessment.
   const choice = key.type === "valg" ? key : key.type === "valg_og_tall" ? key.valg : null;
-  const criteria = choice?.vurderingskriterier ?? [];
-  totalParts += criteria.length;
-  if (input.explanation?.trim()) correctParts += criteria.filter((_, index) => input.assessment?.[index] === true).length;
-  // A written explanation alone is never evidence of a correct justification.
-  const unassessedReasoning = choice?.krever_begrunnelse && (criteria.length === 0 || input.assessment?.length !== criteria.length);
-  return {
-    correct: correctParts === totalParts && !unassessedReasoning,
-    correctParts,
-    totalParts,
-    fraction: totalParts === 0 ? 0 : correctParts / totalParts,
-  };
+  if (choice?.aapen || choice?.krever_begrunnelse) correctParts = 0;
+  return { correct: totalParts > 0 && correctParts === totalParts,
+    correctParts, totalParts, fraction: totalParts ? correctParts / totalParts : 0 };
 }
 
 export function isAnswerComplete(input: AnswerInput, key: AnswerKey) {
-  if (key.type === "tall" || key.type === "flere_tall") {
-    return key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()));
-  }
-  if (key.type === "valg") {
-    return (key.aapen || input.choices.length > 0) &&
-      (!key.krever_begrunnelse || Boolean(input.explanation?.trim()));
-  }
-  return (
-    (key.valg.aapen || input.choices.length > 0) &&
-    (!key.valg.krever_begrunnelse || Boolean(input.explanation?.trim())) &&
-    key.verdier.every((_, index) => Boolean(input.numbers[index]?.trim()))
-  );
+  const choice = key.type === "valg" ? key : key.type === "valg_og_tall" ? key.valg : null;
+  if (choice?.aapen || choice?.krever_begrunnelse) return false;
+  const numbers = "verdier" in key ? key.verdier : [];
+  return numbers.every((_, i) => Number.isFinite(parseNorwegianNumber(input.numbers[i] ?? ""))) &&
+    (!choice || (input.choices.length > 0 && (choice.flervalg || input.choices.length === 1) && input.choices.every(v => choice.alternativer.includes(v))));
 }

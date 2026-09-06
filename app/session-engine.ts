@@ -4,8 +4,7 @@ export type SessionMode = "skill" | "exam";
 export type Difficulty = "mixed" | 1 | 2 | 3;
 
 export function requiresOwnReasoning(question: Question) {
-  const key = question.fasit.type === "valg" ? question.fasit : question.fasit.type === "valg_og_tall" ? question.fasit.valg : null;
-  return Boolean(key?.aapen);
+  return (question.fasit.type === "flere_tall" && Boolean(question.fasit.konstruksjon)) || question.ferdighet.includes("begrunne") || question.ferdighet.includes("generalisere");
 }
 
 function withoutRecent<T extends { id: string }>(items: T[], recentIds: Set<string>) {

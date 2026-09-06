@@ -72,8 +72,8 @@
     },
     "fordeling_niva": {
       "1": 102,
-      "2": 397,
-      "3": 16
+      "2": 402,
+      "3": 11
     },
     "fordeling_tema": {
       "prosent": 80,
@@ -5754,7 +5754,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(3\\) ruter. Hver ny figur får \\(4\\) flere ruter enn den forrige. Lag en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(15\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Figur 1 har \\(3\\) ruter. Hver ny figur får \\(4\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(15\\).",
       "hint": [
         "Hva vet vi? Første figur har 3 elementer. Fra første til andre figur øker antallet fra 3 til 7, altså med 4. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 4 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(4(n-1)\\).",
@@ -5774,12 +5774,6 @@
             "\\(4n+3\\)",
             "\\(4n-1\\)",
             "\\(3n+4\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -5792,13 +5786,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\(4n-1\\)"
-        ],
-        "resultat": [
-          59
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
@@ -5827,7 +5816,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(5\\) ruter. Hver ny figur får \\(2\\) flere ruter enn den forrige. Lag en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(12\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Figur 1 har \\(5\\) ruter. Hver ny figur får \\(2\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(12\\).",
       "hint": [
         "Hva vet vi? Første figur har 5 elementer. Fra første til andre figur øker antallet fra 5 til 7, altså med 2. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 2 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(2(n-1)\\).",
@@ -5847,12 +5836,6 @@
             "\\(2n+5\\)",
             "\\(7n\\)",
             "\\(5n+2\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -5865,13 +5848,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\(2n+3\\)"
-        ],
-        "resultat": [
-          27
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
@@ -5900,7 +5878,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(2\\) ruter. Hver ny figur får \\(7\\) flere ruter enn den forrige. Lag en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(20\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Figur 1 har \\(2\\) ruter. Hver ny figur får \\(7\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(20\\).",
       "hint": [
         "Hva vet vi? Første figur har 2 elementer. Fra første til andre figur øker antallet fra 2 til 9, altså med 7. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 7 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(7(n-1)\\).",
@@ -5920,12 +5898,6 @@
             "\\(7n-5\\)",
             "\\(7n+2\\)",
             "\\(2n+7\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -5938,13 +5910,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\(7n-5\\)"
-        ],
-        "resultat": [
-          135
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
@@ -5973,7 +5940,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(6\\) ruter. Hver ny figur får \\(1\\) flere ruter enn den forrige. Lag en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(18\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Figur 1 har \\(6\\) ruter. Hver ny figur får \\(1\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(18\\).",
       "hint": [
         "Hva vet vi? Første figur har 6 elementer. Fra første til andre figur øker antallet fra 6 til 7, altså med 1. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 1 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(1(n-1)\\).",
@@ -5993,12 +5960,6 @@
             "\\(6n+1\\)",
             "\\(7n\\)",
             "\\(n+5\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6011,13 +5972,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\(n+5\\)"
-        ],
-        "resultat": [
-          23
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
@@ -6046,7 +6002,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(4\\) ruter. Hver ny figur får \\(5\\) flere ruter enn den forrige. Lag en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(25\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Figur 1 har \\(4\\) ruter. Hver ny figur får \\(5\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(25\\).",
       "hint": [
         "Hva vet vi? Første figur har 4 elementer. Fra første til andre figur øker antallet fra 4 til 9, altså med 5. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 5 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(5(n-1)\\).",
@@ -6066,12 +6022,6 @@
             "\\(9n\\)",
             "\\(5n-1\\)",
             "\\(5n+4\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6084,13 +6034,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\(5n-1\\)"
-        ],
-        "resultat": [
-          124
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
@@ -6119,7 +6064,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(5\\), \\(10\\) og \\(17\\) brikker. Lag en formel som passer, og finn antallet i figur \\(8\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "De tre første figurene har \\(5\\), \\(10\\) og \\(17\\) brikker. Velg en formel som passer, og finn antallet i figur \\(8\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 1.",
@@ -6140,12 +6085,6 @@
             "\\((n+1)^2+1\\)",
             "\\((n+1)^2-1\\)",
             "\\(n^2+2\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6158,13 +6097,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\((n+1)^2+1\\)"
-        ],
-        "resultat": [
-          82
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kvadratisk-figurmonster",
       "visualisering": {
@@ -6194,7 +6128,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(10\\), \\(17\\) og \\(26\\) brikker. Lag en formel som passer, og finn antallet i figur \\(7\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "De tre første figurene har \\(10\\), \\(17\\) og \\(26\\) brikker. Velg en formel som passer, og finn antallet i figur \\(7\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 2.",
@@ -6215,12 +6149,6 @@
             "\\(n^2+3\\)",
             "\\((n+2)^2+1\\)",
             "\\((n+2)^2-1\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6233,13 +6161,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\((n+2)^2+1\\)"
-        ],
-        "resultat": [
-          82
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kvadratisk-figurmonster",
       "visualisering": {
@@ -6269,7 +6192,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(6\\), \\(11\\) og \\(18\\) brikker. Lag en formel som passer, og finn antallet i figur \\(6\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "De tre første figurene har \\(6\\), \\(11\\) og \\(18\\) brikker. Velg en formel som passer, og finn antallet i figur \\(6\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 1.",
@@ -6290,12 +6213,6 @@
             "\\((1n+1)^2\\)",
             "\\(n^2+3\\)",
             "\\((n+1)^2+2\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6308,13 +6225,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\((n+1)^2+2\\)"
-        ],
-        "resultat": [
-          51
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kvadratisk-figurmonster",
       "visualisering": {
@@ -6344,7 +6256,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(17\\), \\(26\\) og \\(37\\) brikker. Lag en formel som passer, og finn antallet i figur \\(9\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "De tre første figurene har \\(17\\), \\(26\\) og \\(37\\) brikker. Velg en formel som passer, og finn antallet i figur \\(9\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 3.",
@@ -6365,12 +6277,6 @@
             "\\((n+3)^2+1\\)",
             "\\((3n+1)^2\\)",
             "\\((n+3)^2-1\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6383,13 +6289,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\((n+3)^2+1\\)"
-        ],
-        "resultat": [
-          145
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kvadratisk-figurmonster",
       "visualisering": {
@@ -6419,7 +6320,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(11\\), \\(18\\) og \\(27\\) brikker. Lag en formel som passer, og finn antallet i figur \\(10\\). Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "De tre første figurene har \\(11\\), \\(18\\) og \\(27\\) brikker. Velg en formel som passer, og finn antallet i figur \\(10\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 2.",
@@ -6440,12 +6341,6 @@
             "\\((n+2)^2-2\\)",
             "\\((2n+1)^2\\)",
             "\\(n^2+4\\)"
-          ],
-          "aapen": true,
-          "krever_begrunnelse": true,
-          "vurderingskriterier": [
-            "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-            "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
           ]
         },
         "verdier": [
@@ -6458,13 +6353,8 @@
         ]
       },
       "kontroll": {
-        "operasjon": "valg_og_beregning",
-        "riktige": [
-          "\\((n+2)^2+2\\)"
-        ],
-        "resultat": [
-          146
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kvadratisk-figurmonster",
       "visualisering": {
@@ -14805,38 +14695,43 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Gjennomsnittet av to observasjoner øker fra 50 til 55. En elev påstår at begge observasjonene må ha økt. Vurder påstanden og begrunn svaret med et konkret moteksempel.",
+      "sporsmal": "To observasjoner har gjennomsnitt 50 før en endring og 55 etterpå. Skriv verdier før og etter som viser at minst én av de samme observasjonene kan synke. Felt 1 og 3 gjelder samme observasjon; felt 2 og 4 gjelder den andre.",
       "hint": [
         "Hva vet vi? Et moteksempel skal oppfylle opplysningene i oppgaven, men vise at konklusjonen kan være feil. Her må du holde orden på både gjennomsnitt og enkeltobservasjoner.",
         "To tall med gjennomsnitt 50 må ha sum 100. Etter endringen må summen være \\(2\\cdot55=110\\). Velg først to tall som summerer til 100.",
         "La det ene tallet synke. Finn deretter hvor mye det andre må øke for at den nye summen likevel skal være 110.",
-        "Regn ut begge gjennomsnittene i eksemplet ditt og pek på tallet som sank. Forklar hva dette sier om påstanden."
+        "Regn ut begge gjennomsnittene i eksemplet ditt og pek på tallet som sank. Tenk gjennom hva dette sier om påstanden."
       ],
       "svar": "Påstanden følger ikke. For eksempel kan tallene 40 og 60 endres til 30 og 80. Gjennomsnittene er 50 og 55, selv om én observasjon synker fra 40 til 30.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Påstanden følger ikke; gjennomsnittet kan øke selv om noen observasjoner synker."
+        "type": "flere_tall",
+        "verdier": [
+          {
+            "verdi": 40,
+            "etikett": "Før: observasjon A",
+            "toleranse": 0
+          },
+          {
+            "verdi": 60,
+            "etikett": "Før: observasjon B",
+            "toleranse": 0
+          },
+          {
+            "verdi": 30,
+            "etikett": "Etter: observasjon A",
+            "toleranse": 0
+          },
+          {
+            "verdi": 80,
+            "etikett": "Etter: observasjon B",
+            "toleranse": 0
+          }
         ],
-        "alternativer": [
-          "Påstanden er alltid riktig fordi den bruker tall.",
-          "Påstanden følger ikke; gjennomsnittet kan øke selv om noen observasjoner synker.",
-          "Påstanden er alltid feil uansett datagrunnlag.",
-          "Det kan bare avgjøres ved å regne ut typetallet."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste to datasett med gjennomsnitt henholdsvis 50 og 55.",
-          "Jeg viste at minst én observasjon synker, og forklarte hvorfor dette motsier påstanden."
-        ],
-        "aapen": true
+        "konstruksjon": "moteksempel"
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Påstanden følger ikke; gjennomsnittet kan øke selv om noen observasjoner synker."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kritisk-statistikk",
       "id": "2py27-253"
@@ -14853,31 +14748,28 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Programmet nedenfor skriver ut 6. Forklar hva tallet 6 forteller om verdiene i listen, og begrunn svaret ved å forklare hva løkken og divisjonen gjør.",
+      "sporsmal": "Programmet skriver ut 6. Velg forklaringen som beskriver både løkken og resultatet.",
       "hint": [
         "Hva vet vi? Variabelen total starter på null. For hvert tall i listen legges tallet til totalen. Følg derfor hva som akkumuleres, ikke bare hva som skrives ut.",
         "Listen inneholder fire observasjoner. Etter løkken deles summen av observasjonene på antallet observasjoner.",
-        "Knytt denne beregningen til et sentralmål. Forklar med egne ord hva resultatet sier om listen som helhet."
+        "Knytt denne beregningen til et sentralmål. Tenk gjennom hva resultatet sier om listen som helhet."
       ],
       "svar": "Programmet beregner gjennomsnittet. Løkken summerer 2 + 4 + 8 + 10 = 24, og divisjonen gir 24/4 = 6. Tallet er gjennomsnittet av observasjonene, ikke en påstand om at en av dem må være 6.",
       "fasit": {
         "type": "valg",
         "flervalg": false,
-        "riktige": [],
-        "alternativer": [],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at løkken summerer observasjonene.",
-          "Jeg forklarte at summen deles på antallet, slik at 6 er gjennomsnittet."
+        "alternativer": [
+          "Løkken summerer verdiene; summen deles på antallet og gir gjennomsnittet.",
+          "Løkken teller verdiene; 6 er antall observasjoner.",
+          "Løkken finner største verdi; 6 er maksimum."
         ],
-        "aapen": true
+        "riktige": [
+          "Løkken summerer verdiene; summen deles på antallet og gir gjennomsnittet."
+        ]
       },
       "kontroll": {
-        "operasjon": "egenvurdering",
-        "kriterier": [
-          "Jeg forklarte at løkken summerer observasjonene.",
-          "Jeg forklarte at summen deles på antallet, slik at 6 er gjennomsnittet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kode-betydning",
       "id": "2py27-254",
@@ -14902,7 +14794,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Vurder påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.» Begrunn svaret med én eller to setninger.",
+      "sporsmal": "Vurder påstanden: «To datasett har samme gjennomsnitt, derfor har de samme spredning.»",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Gjennomsnitt og spredning beskriver to forskjellige egenskaper ved et datasett.",
@@ -14922,19 +14814,11 @@
           "Påstanden er alltid feil uansett datagrunnlag.",
           "Påstanden følger ikke; spredningen kan være svært forskjellig.",
           "Påstanden er alltid riktig fordi den bruker tall."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Påstanden følger ikke. To datasett kan ha samme gjennomsnitt og svært forskjellig spredning.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Påstanden følger ikke; spredningen kan være svært forskjellig."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kritisk-statistikk",
       "id": "2py27-255"
@@ -14951,7 +14835,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "uten",
-      "sporsmal": "Vurder påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.» Begrunn svaret med én eller to setninger.",
+      "sporsmal": "Vurder påstanden: «90 % svarte ja i en nettavstemning, derfor mener 90 % av hele befolkningen det samme.»",
       "hint": [
         "Hva vet vi? Vi skal vurdere hva dataene faktisk gir grunnlag for å si. Skill mellom en beregning for datasettet og en påstand om enkeltobservasjoner, årsaker eller en større befolkning.",
         "Lag en plan: Resultatet beskriver dem som valgte å delta i nettavstemningen.",
@@ -14970,19 +14854,11 @@
           "Påstanden er alltid riktig fordi den bruker tall.",
           "Det kan bare avgjøres ved å regne ut typetallet.",
           "Påstanden er alltid feil uansett datagrunnlag."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Påstanden kan ikke konkluderes direkte. En nettavstemning må ha et representativt utvalg før resultatet kan generaliseres til hele befolkningen.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Påstanden krever et representativt utvalg og kan ikke konkluderes direkte."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kritisk-statistikk",
       "id": "2py27-256"
@@ -14999,7 +14875,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Et kumulativt prosentdiagram for reisetid går gjennom punktene (0, 0), (10, 20), (20, 60) og (30, 100). Første koordinat er minutter, andre koordinat er prosent med reisetid under denne grensen. Anslå medianen og begrunn antakelsen du bruker mellom 10 og 20 minutter.",
+      "sporsmal": "Et kumulativt prosentdiagram går gjennom (0, 0), (10, 20), (20, 60) og (30, 100). Første koordinat er minutter, andre er prosent med reisetid under grensen. Anslå medianen ved å forbinde punktene med rette linjer, og velg antakelsen bak anslaget.",
       "hint": [
         "Hva vet vi? Medianen deler observasjonene i to like store deler. I et kumulativt prosentdiagram ser du derfor etter reisetiden som svarer til 50 prosent.",
         "Mellom 10 og 20 minutter øker den kumulative andelen fra 20 til 60 prosent, en økning på 40 prosentpoeng. Fra 20 til 50 prosent er det 30 prosentpoeng.",
@@ -15007,23 +14883,31 @@
       ],
       "svar": "Med jevn fordeling mellom 10 og 20 minutter blir anslaget 10 + (30/40) · 10 = 17,5 minutter. Medianen er ikke bestemt nøyaktig av disse grenseverdiene alene.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [],
-        "alternativer": [],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg fant 50 prosent mellom grensene 10 og 20 minutter og anslo medianen til 17,5 minutter.",
-          "Jeg oppga antakelsen om jevn fordeling/rett linje og forklarte at svaret er et anslag."
+        "type": "valg_og_tall",
+        "verdier": [
+          {
+            "verdi": 17.5,
+            "etikett": "Mediananslag",
+            "enhet": "minutter",
+            "toleranse": 0
+          }
         ],
-        "aapen": true
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "alternativer": [
+            "Jevn fordeling av reisetidene innenfor hvert intervall.",
+            "Alle elevene har samme reisetid.",
+            "Medianen er alltid gjennomsnittet av intervallgrensene."
+          ],
+          "riktige": [
+            "Jevn fordeling av reisetidene innenfor hvert intervall."
+          ]
+        }
       },
       "kontroll": {
-        "operasjon": "egenvurdering",
-        "kriterier": [
-          "Jeg fant 50 prosent mellom grensene 10 og 20 minutter og anslo medianen til 17,5 minutter.",
-          "Jeg oppga antakelsen om jevn fordeling/rett linje og forklarte at svaret er et anslag."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d1-kumulativ-prosent-antakelse",
       "id": "2py27-257",
@@ -16080,7 +15964,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "med",
-      "sporsmal": "Lag et datasett med fem ikke-negative heltall som har gjennomsnitt 10 og median 8. Begrunn at begge kravene er oppfylt.",
+      "sporsmal": "Skriv fem ikke-negative heltall med gjennomsnitt 10 og median 8. Flere forskjellige datasett er riktige, og rekkefølgen i feltene er valgfri.",
       "hint": [
         "Fem tall med gjennomsnitt 10 må ha sum \\(5\\cdot10=50\\). Skriv tallene i stigende rekkefølge, slik at du kan plassere medianen.",
         "Det tredje tallet må være 8. Velg de to første tallene høyst 8, og la de to siste være minst 8. Finn de siste tallene slik at totalsummen blir 50.",
@@ -16088,23 +15972,39 @@
       ],
       "svar": "Ett mulig datasett er 4, 6, 8, 12, 20. Summen er 50, gjennomsnittet er 10 og den midterste verdien er 8. Andre datasett som oppfyller begge krav, er også riktige.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [],
-        "alternativer": [],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget fem ikke-negative heltall med sum 50 og viste at gjennomsnittet er 10.",
-          "Jeg sorterte tallene og viste at det tredje tallet er 8."
-        ]
+        "type": "flere_tall",
+        "verdier": [
+          {
+            "verdi": 4,
+            "etikett": "Tall 1",
+            "toleranse": 0
+          },
+          {
+            "verdi": 6,
+            "etikett": "Tall 2",
+            "toleranse": 0
+          },
+          {
+            "verdi": 8,
+            "etikett": "Tall 3",
+            "toleranse": 0
+          },
+          {
+            "verdi": 12,
+            "etikett": "Tall 4",
+            "toleranse": 0
+          },
+          {
+            "verdi": 20,
+            "etikett": "Tall 5",
+            "toleranse": 0
+          }
+        ],
+        "konstruksjon": "datasett"
       },
       "kontroll": {
-        "operasjon": "egenvurdering",
-        "kriterier": [
-          "Jeg laget fem ikke-negative heltall med sum 50 og viste at gjennomsnittet er 10.",
-          "Jeg sorterte tallene og viste at det tredje tallet er 8."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-konstruere-datasett",
       "id": "2py27-281"
@@ -21266,37 +21166,54 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Sammenlign en typisk verdi og spredningen i de to gruppene. Begrunn sammenligningen med tall fra materialet, og forklar hvorfor gjennomsnittet alene ikke gir hele bildet.",
+      "sporsmal": "Angi gjennomsnitt og populasjonsstandardavvik for begge gruppene, avrundet til to desimaler. Velg begrunnelsen for å bruke både sentralmål og spredningsmål.",
       "hint": [
         "Bruk samme sentralmål i begge grupper, slik at sammenligningen blir meningsfull. Regn for eksempel gjennomsnitt i begge gruppene.",
         "Sammenlign også standardavvikene eller variasjonsbreddene. Pek på hva de konkrete tallene sier om forskjellene innad i hver gruppe.",
-        "Skriv en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
+        "Finn en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
       ],
       "svar": "Gjennomsnittene er omtrent 25.00 i A og 27.00 i B. Populasjonsstandardavvikene er omtrent 5.05 og 10.42. Gruppe B har størst spredning. Gjennomsnitt beskriver nivået, men sier ikke hvor samlet observasjonene ligger.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "alternativer": [
-          "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
-          "Median og gjennomsnitt er alltid like.",
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
-          "Standardavvik forteller hvilken enkeltobservasjon som er størst."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg sammenlignet gruppene med tallfestede sentralmål.",
-          "Jeg brukte et spredningsmål og forklarte hva det tilfører sammenligningen."
-        ],
-        "aapen": true
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ],
+          "alternativer": [
+            "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
+            "Median og gjennomsnitt er alltid like.",
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
+            "Standardavvik forteller hvilken enkeltobservasjon som er størst."
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 25,
+            "etikett": "Gjennomsnitt A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 27,
+            "etikett": "Gjennomsnitt B",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 5.049752,
+            "etikett": "Standardavvik A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 10.416333,
+            "etikett": "Standardavvik B",
+            "toleranse": 0.0051
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-statistikk-d",
       "oppgavegruppe": {
@@ -21464,37 +21381,54 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Sammenlign en typisk verdi og spredningen i de to gruppene. Begrunn sammenligningen med tall fra materialet, og forklar hvorfor gjennomsnittet alene ikke gir hele bildet.",
+      "sporsmal": "Angi gjennomsnitt og populasjonsstandardavvik for begge gruppene, avrundet til to desimaler. Velg begrunnelsen for å bruke både sentralmål og spredningsmål.",
       "hint": [
         "Bruk samme sentralmål i begge grupper, slik at sammenligningen blir meningsfull. Regn for eksempel gjennomsnitt i begge gruppene.",
         "Sammenlign også standardavvikene eller variasjonsbreddene. Pek på hva de konkrete tallene sier om forskjellene innad i hver gruppe.",
-        "Skriv en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
+        "Finn en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
       ],
       "svar": "Gjennomsnittene er omtrent 135.00 i A og 140.00 i B. Populasjonsstandardavvikene er omtrent 26.99 og 40.00. Gruppe B har størst spredning. Gjennomsnitt beskriver nivået, men sier ikke hvor samlet observasjonene ligger.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "alternativer": [
-          "Median og gjennomsnitt er alltid like.",
-          "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
-          "Gruppen med høyest gjennomsnitt er alltid mest homogen."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg sammenlignet gruppene med tallfestede sentralmål.",
-          "Jeg brukte et spredningsmål og forklarte hva det tilfører sammenligningen."
-        ],
-        "aapen": true
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ],
+          "alternativer": [
+            "Median og gjennomsnitt er alltid like.",
+            "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
+            "Gruppen med høyest gjennomsnitt er alltid mest homogen."
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 135,
+            "etikett": "Gjennomsnitt A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 140,
+            "etikett": "Gjennomsnitt B",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 26.992062,
+            "etikett": "Standardavvik A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 40.0,
+            "etikett": "Standardavvik B",
+            "toleranse": 0.0051
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-statistikk-d",
       "oppgavegruppe": {
@@ -21664,37 +21598,54 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Sammenlign en typisk verdi og spredningen i de to gruppene. Begrunn sammenligningen med tall fra materialet, og forklar hvorfor gjennomsnittet alene ikke gir hele bildet.",
+      "sporsmal": "Angi gjennomsnitt og populasjonsstandardavvik for begge gruppene, avrundet til to desimaler. Velg begrunnelsen for å bruke både sentralmål og spredningsmål.",
       "hint": [
         "Bruk samme sentralmål i begge grupper, slik at sammenligningen blir meningsfull. Regn for eksempel gjennomsnitt i begge gruppene.",
         "Sammenlign også standardavvikene eller variasjonsbreddene. Pek på hva de konkrete tallene sier om forskjellene innad i hver gruppe.",
-        "Skriv en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
+        "Finn en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
       ],
       "svar": "Gjennomsnittene er omtrent 48.38 i A og 52.50 i B. Populasjonsstandardavvikene er omtrent 3.84 og 11.46. Gruppe B har størst spredning. Gjennomsnitt beskriver nivået, men sier ikke hvor samlet observasjonene ligger.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "alternativer": [
-          "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
-          "Median og gjennomsnitt er alltid like.",
-          "Gruppen med høyest gjennomsnitt er alltid mest homogen."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg sammenlignet gruppene med tallfestede sentralmål.",
-          "Jeg brukte et spredningsmål og forklarte hva det tilfører sammenligningen."
-        ],
-        "aapen": true
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ],
+          "alternativer": [
+            "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
+            "Median og gjennomsnitt er alltid like.",
+            "Gruppen med høyest gjennomsnitt er alltid mest homogen."
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 48.375,
+            "etikett": "Gjennomsnitt A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 52.5,
+            "etikett": "Gjennomsnitt B",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 3.838538,
+            "etikett": "Standardavvik A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 11.456439,
+            "etikett": "Standardavvik B",
+            "toleranse": 0.0051
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-statistikk-d",
       "oppgavegruppe": {
@@ -21864,37 +21815,54 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Sammenlign en typisk verdi og spredningen i de to gruppene. Begrunn sammenligningen med tall fra materialet, og forklar hvorfor gjennomsnittet alene ikke gir hele bildet.",
+      "sporsmal": "Angi gjennomsnitt og populasjonsstandardavvik for begge gruppene, avrundet til to desimaler. Velg begrunnelsen for å bruke både sentralmål og spredningsmål.",
       "hint": [
         "Bruk samme sentralmål i begge grupper, slik at sammenligningen blir meningsfull. Regn for eksempel gjennomsnitt i begge gruppene.",
         "Sammenlign også standardavvikene eller variasjonsbreddene. Pek på hva de konkrete tallene sier om forskjellene innad i hver gruppe.",
-        "Skriv en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
+        "Finn en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
       ],
       "svar": "Gjennomsnittene er omtrent 8.88 i A og 10.00 i B. Populasjonsstandardavvikene er omtrent 1.90 og 4.58. Gruppe B har størst spredning. Gjennomsnitt beskriver nivået, men sier ikke hvor samlet observasjonene ligger.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "alternativer": [
-          "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
-          "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
-          "Median og gjennomsnitt er alltid like.",
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg sammenlignet gruppene med tallfestede sentralmål.",
-          "Jeg brukte et spredningsmål og forklarte hva det tilfører sammenligningen."
-        ],
-        "aapen": true
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ],
+          "alternativer": [
+            "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
+            "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
+            "Median og gjennomsnitt er alltid like.",
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 8.875,
+            "etikett": "Gjennomsnitt A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 10,
+            "etikett": "Gjennomsnitt B",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 1.899836,
+            "etikett": "Standardavvik A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 4.582576,
+            "etikett": "Standardavvik B",
+            "toleranse": 0.0051
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-statistikk-d",
       "oppgavegruppe": {
@@ -22064,37 +22032,54 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Sammenlign en typisk verdi og spredningen i de to gruppene. Begrunn sammenligningen med tall fra materialet, og forklar hvorfor gjennomsnittet alene ikke gir hele bildet.",
+      "sporsmal": "Angi gjennomsnitt og populasjonsstandardavvik for begge gruppene, avrundet til to desimaler. Velg begrunnelsen for å bruke både sentralmål og spredningsmål.",
       "hint": [
         "Bruk samme sentralmål i begge grupper, slik at sammenligningen blir meningsfull. Regn for eksempel gjennomsnitt i begge gruppene.",
         "Sammenlign også standardavvikene eller variasjonsbreddene. Pek på hva de konkrete tallene sier om forskjellene innad i hver gruppe.",
-        "Skriv en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
+        "Finn en konklusjon som bruker minst ett sentralmål og ett spredningsmål. Skill mellom en typisk verdi og hvor mye observasjonene varierer."
       ],
       "svar": "Gjennomsnittene er omtrent 4.00 i A og 4.50 i B. Populasjonsstandardavvikene er omtrent 1.22 og 2.29. Gruppe B har størst spredning. Gjennomsnitt beskriver nivået, men sier ikke hvor samlet observasjonene ligger.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ],
-        "alternativer": [
-          "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
-          "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
-          "Median og gjennomsnitt er alltid like."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg sammenlignet gruppene med tallfestede sentralmål.",
-          "Jeg brukte et spredningsmål og forklarte hva det tilfører sammenligningen."
-        ],
-        "aapen": true
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
+          ],
+          "alternativer": [
+            "Gruppen med høyest gjennomsnitt er alltid mest homogen.",
+            "Standardavvik forteller hvilken enkeltobservasjon som er størst.",
+            "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen.",
+            "Median og gjennomsnitt er alltid like."
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 4,
+            "etikett": "Gjennomsnitt A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 4.5,
+            "etikett": "Gjennomsnitt B",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 1.224745,
+            "etikett": "Standardavvik A",
+            "toleranse": 0.0051
+          },
+          {
+            "verdi": 2.291288,
+            "etikett": "Standardavvik B",
+            "toleranse": 0.0051
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Sentralmål og spredningsmål bør vurderes sammen; ett enkelt mål beskriver ikke hele fordelingen."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-statistikk-d",
       "oppgavegruppe": {
@@ -22270,7 +22255,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kan beregning med klassemidtpunktene gi det nøyaktige gjennomsnittet? Begrunn svaret og forklar hvilken antakelse beregningen bygger på.",
+      "sporsmal": "Hvorfor er gjennomsnitt beregnet med klassemidtpunkter et anslag når enkeltobservasjonene ikke er kjent? Velg riktig forklaring.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22287,19 +22272,11 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at de enkelte observasjonene ikke er kjent innenfor intervallene.",
-          "Jeg forklarte at klassemidtpunktet brukes som representativ verdi, slik at resultatet er et anslag."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-gruppert-d",
       "oppgavegruppe": {
@@ -22475,7 +22452,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kan beregning med klassemidtpunktene gi det nøyaktige gjennomsnittet? Begrunn svaret og forklar hvilken antakelse beregningen bygger på.",
+      "sporsmal": "Hvorfor er gjennomsnitt beregnet med klassemidtpunkter et anslag når enkeltobservasjonene ikke er kjent? Velg riktig forklaring.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22492,19 +22469,11 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at de enkelte observasjonene ikke er kjent innenfor intervallene.",
-          "Jeg forklarte at klassemidtpunktet brukes som representativ verdi, slik at resultatet er et anslag."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-gruppert-d",
       "oppgavegruppe": {
@@ -22680,7 +22649,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kan beregning med klassemidtpunktene gi det nøyaktige gjennomsnittet? Begrunn svaret og forklar hvilken antakelse beregningen bygger på.",
+      "sporsmal": "Hvorfor er gjennomsnitt beregnet med klassemidtpunkter et anslag når enkeltobservasjonene ikke er kjent? Velg riktig forklaring.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22697,19 +22666,11 @@
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data.",
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at de enkelte observasjonene ikke er kjent innenfor intervallene.",
-          "Jeg forklarte at klassemidtpunktet brukes som representativ verdi, slik at resultatet er et anslag."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-gruppert-d",
       "oppgavegruppe": {
@@ -22885,7 +22846,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kan beregning med klassemidtpunktene gi det nøyaktige gjennomsnittet? Begrunn svaret og forklar hvilken antakelse beregningen bygger på.",
+      "sporsmal": "Hvorfor er gjennomsnitt beregnet med klassemidtpunkter et anslag når enkeltobservasjonene ikke er kjent? Velg riktig forklaring.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -22902,19 +22863,11 @@
           "Gjennomsnittet er eksakt fordi frekvensene er hele tall.",
           "Klassebredde har aldri betydning i et histogram.",
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at de enkelte observasjonene ikke er kjent innenfor intervallene.",
-          "Jeg forklarte at klassemidtpunktet brukes som representativ verdi, slik at resultatet er et anslag."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-gruppert-d",
       "oppgavegruppe": {
@@ -23090,7 +23043,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Kan beregning med klassemidtpunktene gi det nøyaktige gjennomsnittet? Begrunn svaret og forklar hvilken antakelse beregningen bygger på.",
+      "sporsmal": "Hvorfor er gjennomsnitt beregnet med klassemidtpunkter et anslag når enkeltobservasjonene ikke er kjent? Velg riktig forklaring.",
       "hint": [
         "Tenk på hvilken informasjon som forsvinner når observasjoner samles i intervaller.",
         "Skill mellom eksakte frekvenser og anslåtte verdier inni klassene."
@@ -23107,19 +23060,11 @@
           "Medianen kan alltid bestemmes nøyaktig fra grupperte data.",
           "Klassebredde har aldri betydning i et histogram.",
           "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg forklarte at de enkelte observasjonene ikke er kjent innenfor intervallene.",
-          "Jeg forklarte at klassemidtpunktet brukes som representativ verdi, slik at resultatet er et anslag."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Gjennomsnittet er et anslag fordi alle verdiene i en klasse erstattes med klassemidtpunktet."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-gruppert-d",
       "oppgavegruppe": {
@@ -24989,7 +24934,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en formel som beskriver antall benker i figur n. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Velg en formel som beskriver antall benker i figur n.",
       "hint": [
         "Første figur har 6 elementer. Fra første til andre figur øker antallet fra 6 til 10, altså med 4. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 4 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(4(n-1)\\).",
@@ -25007,19 +24952,11 @@
           "\\(2^n\\)",
           "\\(4n+2\\)",
           "\\(4n^2\\)"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "\\(4n+2\\)"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-figur-b",
       "oppgavegruppe": {
@@ -25174,7 +25111,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en formel som beskriver antall fliser i figur n. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Velg en formel som beskriver antall fliser i figur n.",
       "hint": [
         "Første figur har 5 elementer. Fra første til andre figur øker antallet fra 5 til 12, altså med 7. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 7 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(7(n-1)\\).",
@@ -25192,19 +25129,11 @@
           "\\(4n^2\\)",
           "\\(n+4\\)",
           "\\(n^2+4n\\)"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "\\(n^2+4n\\)"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-figur-b",
       "oppgavegruppe": {
@@ -25359,7 +25288,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en formel som beskriver antall stoler i figur n. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Velg en formel som beskriver antall stoler i figur n.",
       "hint": [
         "Første figur har 6 elementer. Fra første til andre figur øker antallet fra 6 til 8, altså med 2. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 2 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(2(n-1)\\).",
@@ -25377,19 +25306,11 @@
           "\\(2n+4\\)",
           "\\(2^n\\)",
           "\\(4n^2\\)"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "\\(2n+4\\)"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-figur-b",
       "oppgavegruppe": {
@@ -25544,7 +25465,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en formel som beskriver antall prikker i figur n. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Velg en formel som beskriver antall prikker i figur n.",
       "hint": [
         "Første figur har 1 elementer. Fra første til andre figur øker antallet fra 1 til 3, altså med 2. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 2 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(2(n-1)\\).",
@@ -25562,19 +25483,11 @@
           "\\(n(n+1)/2\\)",
           "\\(4n^2\\)",
           "\\(n+4\\)"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "\\(n(n+1)/2\\)"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-figur-b",
       "oppgavegruppe": {
@@ -25729,7 +25642,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en formel som beskriver antall ruter i figur n. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Velg en formel som beskriver antall ruter i figur n.",
       "hint": [
         "Første figur har 8 elementer. Fra første til andre figur øker antallet fra 8 til 12, altså med 4. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 4 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(4(n-1)\\).",
@@ -25747,19 +25660,11 @@
           "\\((n+2)^2-n^2\\)",
           "\\(n+4\\)",
           "\\(2^n\\)"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "\\((n+2)^2-n^2\\)"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-figur-b",
       "oppgavegruppe": {
@@ -25974,40 +25879,47 @@
         "begrunne",
         "egen_losning"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en kort presentasjon av endringene mellom de to årene. Velg minst to relevante beregninger og lag et diagram på papir eller i et digitalt verktøy. Beskriv diagramvalget her og begrunn hva tallene viser. Du trenger ikke levere noen fil.",
+      "sporsmal": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
       "hint": [
-        "Velg hva du vil belyse: totalen, endring i en kategori eller forskjeller i andeler. To beregninger bør bidra med forskjellig informasjon.",
-        "Bruk kroner eller antall for absolutte endringer, og prosent for relative endringer når det passer enheten i tabellen. Et gruppert søylediagram kan sammenligne kategorier mellom år.",
-        "Gi diagrammet navn på akser, enheter og tydelig skille mellom år. Avslutt med en tallfestet konklusjon og en begrensning ved hva undersøkelsene kan fortelle."
+        "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+        "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
       ],
-      "svar": "Et mulig valg er å vise at totalen endres fra 800 til 850, altså 6.2 prosent, og at Kollektiv endres med 45 personer. Et gruppert søylediagram med begge år, enheter og akse fra null kan vise kategoriene. Andre relevante beregninger og diagrammer er også gyldige. Endring i utvalgene viser ikke alene årsaken til endringene.",
+      "svar": "Totalen endres med 6,3 %. Endringen i den andre kategorien er 45 personer. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "gruppert søylediagram"
-        ],
-        "alternativer": [
-          "gruppert søylediagram",
-          "sektordiagram med bare år 1",
-          "histogram med kategorinavn som intervaller",
-          "graf uten aksetitler"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste minst to korrekte og relevante beregninger med forklaring av hva de betyr.",
-          "Jeg laget et lesbart diagram med passende skala, navn og enheter, og beskrev valget.",
-          "Jeg skrev en konkret konklusjon og skilte mellom det dataene viser og en mulig forklaring."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "gruppert søylediagram"
+          ],
+          "alternativer": [
+            "gruppert søylediagram",
+            "sektordiagram med bare år 1",
+            "histogram med kategorinavn som intervaller",
+            "graf uten aksetitler"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 6.25,
+            "etikett": "Endring i totalen",
+            "enhet": "%",
+            "toleranse": 0.05001
+          },
+          {
+            "verdi": 45,
+            "etikett": "Endring i andre kategori",
+            "enhet": "personer",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "gruppert søylediagram"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-samfunn-c",
       "oppgavegruppe": {
@@ -26179,40 +26091,47 @@
         "begrunne",
         "egen_losning"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en kort presentasjon av endringene mellom de to årene. Velg minst to relevante beregninger og lag et diagram på papir eller i et digitalt verktøy. Beskriv diagramvalget her og begrunn hva tallene viser. Du trenger ikke levere noen fil.",
+      "sporsmal": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
       "hint": [
-        "Velg hva du vil belyse: totalen, endring i en kategori eller forskjeller i andeler. To beregninger bør bidra med forskjellig informasjon.",
-        "Bruk kroner eller antall for absolutte endringer, og prosent for relative endringer når det passer enheten i tabellen. Et gruppert søylediagram kan sammenligne kategorier mellom år.",
-        "Gi diagrammet navn på akser, enheter og tydelig skille mellom år. Avslutt med en tallfestet konklusjon og en begrensning ved hva undersøkelsene kan fortelle."
+        "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+        "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
       ],
-      "svar": "Et mulig valg er å vise at totalen endres fra 1000 til 1075, altså 7.5 prosent, og at Vind endres med 50 GWh. Et gruppert søylediagram med begge år, enheter og akse fra null kan vise kategoriene. Andre relevante beregninger og diagrammer er også gyldige. Endring i utvalgene viser ikke alene årsaken til endringene.",
+      "svar": "Totalen endres med 7,5 %. Endringen i den andre kategorien er 50 GWh. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "gruppert søylediagram"
-        ],
-        "alternativer": [
-          "gruppert søylediagram",
-          "sektordiagram med bare år 1",
-          "histogram med kategorinavn som intervaller",
-          "graf uten aksetitler"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste minst to korrekte og relevante beregninger med forklaring av hva de betyr.",
-          "Jeg laget et lesbart diagram med passende skala, navn og enheter, og beskrev valget.",
-          "Jeg skrev en konkret konklusjon og skilte mellom det dataene viser og en mulig forklaring."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "gruppert søylediagram"
+          ],
+          "alternativer": [
+            "gruppert søylediagram",
+            "sektordiagram med bare år 1",
+            "histogram med kategorinavn som intervaller",
+            "graf uten aksetitler"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 7.5,
+            "etikett": "Endring i totalen",
+            "enhet": "%",
+            "toleranse": 0.05001
+          },
+          {
+            "verdi": 50,
+            "etikett": "Endring i andre kategori",
+            "enhet": "GWh",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "gruppert søylediagram"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-samfunn-c",
       "oppgavegruppe": {
@@ -26384,40 +26303,47 @@
         "begrunne",
         "egen_losning"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en kort presentasjon av endringene mellom de to årene. Velg minst to relevante beregninger og lag et diagram på papir eller i et digitalt verktøy. Beskriv diagramvalget her og begrunn hva tallene viser. Du trenger ikke levere noen fil.",
+      "sporsmal": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
       "hint": [
-        "Velg hva du vil belyse: totalen, endring i en kategori eller forskjeller i andeler. To beregninger bør bidra med forskjellig informasjon.",
-        "Bruk kroner eller antall for absolutte endringer, og prosent for relative endringer når det passer enheten i tabellen. Et gruppert søylediagram kan sammenligne kategorier mellom år.",
-        "Gi diagrammet navn på akser, enheter og tydelig skille mellom år. Avslutt med en tallfestet konklusjon og en begrensning ved hva undersøkelsene kan fortelle."
+        "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+        "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
       ],
-      "svar": "Et mulig valg er å vise at totalen endres fra 700 til 800, altså 14.3 prosent, og at Teknologi endres med 40 søkere. Et gruppert søylediagram med begge år, enheter og akse fra null kan vise kategoriene. Andre relevante beregninger og diagrammer er også gyldige. Endring i utvalgene viser ikke alene årsaken til endringene.",
+      "svar": "Totalen endres med 14,3 %. Endringen i den andre kategorien er 40 søkere. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "gruppert søylediagram"
-        ],
-        "alternativer": [
-          "gruppert søylediagram",
-          "sektordiagram med bare år 1",
-          "histogram med kategorinavn som intervaller",
-          "graf uten aksetitler"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste minst to korrekte og relevante beregninger med forklaring av hva de betyr.",
-          "Jeg laget et lesbart diagram med passende skala, navn og enheter, og beskrev valget.",
-          "Jeg skrev en konkret konklusjon og skilte mellom det dataene viser og en mulig forklaring."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "gruppert søylediagram"
+          ],
+          "alternativer": [
+            "gruppert søylediagram",
+            "sektordiagram med bare år 1",
+            "histogram med kategorinavn som intervaller",
+            "graf uten aksetitler"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 14.285714,
+            "etikett": "Endring i totalen",
+            "enhet": "%",
+            "toleranse": 0.05001
+          },
+          {
+            "verdi": 40,
+            "etikett": "Endring i andre kategori",
+            "enhet": "søkere",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "gruppert søylediagram"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-samfunn-c",
       "oppgavegruppe": {
@@ -26589,40 +26515,47 @@
         "begrunne",
         "egen_losning"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en kort presentasjon av endringene mellom de to årene. Velg minst to relevante beregninger og lag et diagram på papir eller i et digitalt verktøy. Beskriv diagramvalget her og begrunn hva tallene viser. Du trenger ikke levere noen fil.",
+      "sporsmal": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
       "hint": [
-        "Velg hva du vil belyse: totalen, endring i en kategori eller forskjeller i andeler. To beregninger bør bidra med forskjellig informasjon.",
-        "Bruk kroner eller antall for absolutte endringer, og prosent for relative endringer når det passer enheten i tabellen. Et gruppert søylediagram kan sammenligne kategorier mellom år.",
-        "Gi diagrammet navn på akser, enheter og tydelig skille mellom år. Avslutt med en tallfestet konklusjon og en begrensning ved hva undersøkelsene kan fortelle."
+        "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+        "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
       ],
-      "svar": "Et mulig valg er å vise at totalen endres fra 1050 til 1075, altså 2.4 prosent, og at Mat endres med 40 tonn. Et gruppert søylediagram med begge år, enheter og akse fra null kan vise kategoriene. Andre relevante beregninger og diagrammer er også gyldige. Endring i utvalgene viser ikke alene årsaken til endringene.",
+      "svar": "Totalen endres med 2,4 %. Endringen i den andre kategorien er 40 tonn. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "gruppert søylediagram"
-        ],
-        "alternativer": [
-          "gruppert søylediagram",
-          "sektordiagram med bare år 1",
-          "histogram med kategorinavn som intervaller",
-          "graf uten aksetitler"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste minst to korrekte og relevante beregninger med forklaring av hva de betyr.",
-          "Jeg laget et lesbart diagram med passende skala, navn og enheter, og beskrev valget.",
-          "Jeg skrev en konkret konklusjon og skilte mellom det dataene viser og en mulig forklaring."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "gruppert søylediagram"
+          ],
+          "alternativer": [
+            "gruppert søylediagram",
+            "sektordiagram med bare år 1",
+            "histogram med kategorinavn som intervaller",
+            "graf uten aksetitler"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 2.380952,
+            "etikett": "Endring i totalen",
+            "enhet": "%",
+            "toleranse": 0.05001
+          },
+          {
+            "verdi": 40,
+            "etikett": "Endring i andre kategori",
+            "enhet": "tonn",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "gruppert søylediagram"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-samfunn-c",
       "oppgavegruppe": {
@@ -26794,40 +26727,47 @@
         "begrunne",
         "egen_losning"
       ],
-      "niva": 3,
+      "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Lag en kort presentasjon av endringene mellom de to årene. Velg minst to relevante beregninger og lag et diagram på papir eller i et digitalt verktøy. Beskriv diagramvalget her og begrunn hva tallene viser. Du trenger ikke levere noen fil.",
+      "sporsmal": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
       "hint": [
-        "Velg hva du vil belyse: totalen, endring i en kategori eller forskjeller i andeler. To beregninger bør bidra med forskjellig informasjon.",
-        "Bruk kroner eller antall for absolutte endringer, og prosent for relative endringer når det passer enheten i tabellen. Et gruppert søylediagram kan sammenligne kategorier mellom år.",
-        "Gi diagrammet navn på akser, enheter og tydelig skille mellom år. Avslutt med en tallfestet konklusjon og en begrensning ved hva undersøkelsene kan fortelle."
+        "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+        "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
       ],
-      "svar": "Et mulig valg er å vise at totalen endres fra 1200 til 1355, altså 12.9 prosent, og at Konsert endres med 40 tusen besøk. Et gruppert søylediagram med begge år, enheter og akse fra null kan vise kategoriene. Andre relevante beregninger og diagrammer er også gyldige. Endring i utvalgene viser ikke alene årsaken til endringene.",
+      "svar": "Totalen endres med 12,9 %. Endringen i den andre kategorien er 40 tusen besøk. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "gruppert søylediagram"
-        ],
-        "alternativer": [
-          "gruppert søylediagram",
-          "sektordiagram med bare år 1",
-          "histogram med kategorinavn som intervaller",
-          "graf uten aksetitler"
-        ],
-        "aapen": true,
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg viste minst to korrekte og relevante beregninger med forklaring av hva de betyr.",
-          "Jeg laget et lesbart diagram med passende skala, navn og enheter, og beskrev valget.",
-          "Jeg skrev en konkret konklusjon og skilte mellom det dataene viser og en mulig forklaring."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "gruppert søylediagram"
+          ],
+          "alternativer": [
+            "gruppert søylediagram",
+            "sektordiagram med bare år 1",
+            "histogram med kategorinavn som intervaller",
+            "graf uten aksetitler"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 12.916667,
+            "etikett": "Endring i totalen",
+            "enhet": "%",
+            "toleranse": 0.05001
+          },
+          {
+            "verdi": 40,
+            "etikett": "Endring i andre kategori",
+            "enhet": "tusen besøk",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "gruppert søylediagram"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-samfunn-c",
       "oppgavegruppe": {
@@ -26982,7 +26922,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "med",
-      "sporsmal": "Tre utleiefirmaer tar betalt per døgn: A tar 60 kr per døgn uten fastbeløp, B tar 180 kr pluss 30 kr per døgn, og C tar 420 kr pluss 10 kr per døgn. Lag prismodellene og finn hvilke hele antall døgn B er strengt billigst. Begrunn svaret.",
+      "sporsmal": "A tar 60 kr per døgn uten fastbeløp, B tar 180 kr pluss 30 kr per døgn, og C tar 420 kr pluss 10 kr per døgn. Fyll inn a og b for hver modell K(x)=ax+b. Angi minste og største hele antall døgn der B er strengt billigere enn både A og C.",
       "hint": [
         "La x være antall døgn. Hver prismodell består av fastbeløpet pluss døgnprisen ganger x.",
         "B må være billigere enn både A og C. Sett opp de to ulikhetene \\(180+30x<60x\\) og \\(180+30x<420+10x\\).",
@@ -26990,25 +26930,53 @@
       ],
       "svar": "\\(A(x)=60x,\\ B(x)=180+30x,\\ C(x)=420+10x\\). B er billigere enn A når x > 6, og billigere enn C når x < 12. Derfor er B strengt billigst i 7–11 hele døgn. Ved 6 og 12 døgn er det delt laveste pris.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [],
-        "alternativer": [],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget alle tre prismodellene fra teksten.",
-          "Jeg sammenlignet B med begge de andre og fant 6 < x < 12.",
-          "Jeg oppga 7–11 hele døgn og skilte mellom strengt billigst og lik pris på grensene."
-        ],
-        "aapen": true
+        "type": "flere_tall",
+        "verdier": [
+          {
+            "verdi": 60,
+            "etikett": "A: a",
+            "toleranse": 0
+          },
+          {
+            "verdi": 0,
+            "etikett": "A: b",
+            "toleranse": 0
+          },
+          {
+            "verdi": 30,
+            "etikett": "B: a",
+            "toleranse": 0
+          },
+          {
+            "verdi": 180,
+            "etikett": "B: b",
+            "toleranse": 0
+          },
+          {
+            "verdi": 10,
+            "etikett": "C: a",
+            "toleranse": 0
+          },
+          {
+            "verdi": 420,
+            "etikett": "C: b",
+            "toleranse": 0
+          },
+          {
+            "verdi": 7,
+            "etikett": "Minste antall døgn",
+            "toleranse": 0
+          },
+          {
+            "verdi": 11,
+            "etikett": "Største antall døgn",
+            "toleranse": 0
+          }
+        ]
       },
       "kontroll": {
-        "operasjon": "egenvurdering",
-        "kriterier": [
-          "Jeg laget alle tre prismodellene fra teksten.",
-          "Jeg sammenlignet B med begge de andre og fant 6 < x < 12.",
-          "Jeg oppga 7–11 hele døgn og skilte mellom strengt billigst og lik pris på grensene."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-tre-prismodeller",
       "id": "2py27-503"
@@ -27104,35 +27072,38 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "En tabell har punktene \\( (2,24)\\), \\( (4,12)\\) og \\( (8,6)\\). Hvilken type sammenheng viser tabellen? Begrunn valget med en beregning.",
+      "sporsmal": "Tabellen har punktene (2,24), (4,12) og (8,6). Velg sammenhengstypen og angi det konstante produktet x · y.",
       "hint": [
         "Sammenlign både forholdet \\(y/x\\) og produktet \\(x\\cdot y\\) for punktene.",
         "Se hvilken av de to størrelsene som holder seg konstant når \\(x\\) dobles."
       ],
       "svar": "Produktet er \\(48\\) for alle punktene. Tabellen viser en omvendt proporsjonal sammenheng.",
       "fasit": {
-        "type": "valg",
-        "flervalg": false,
-        "riktige": [
-          "omvendt proporsjonal"
-        ],
-        "alternativer": [
-          "proporsjonal",
-          "omvendt proporsjonal",
-          "lineær, men ikke proporsjonal",
-          "ingen systematisk sammenheng"
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Produktet er \\(48\\) for alle punktene. Tabellen viser en omvendt proporsjonal sammenheng.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "omvendt proporsjonal"
+          ],
+          "alternativer": [
+            "proporsjonal",
+            "omvendt proporsjonal",
+            "lineær, men ikke proporsjonal",
+            "ingen systematisk sammenheng"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 48,
+            "etikett": "Produktet x · y",
+            "toleranse": 0
+          }
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "omvendt proporsjonal"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-kort-proporsjonalitetsvalg",
       "id": "2py27-506",
@@ -27279,7 +27250,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "med",
-      "sporsmal": "Programmet skulle summere tallene i listen, men skriver ut \\(10\\). Hva må endres? Begrunn valget kort.",
+      "sporsmal": "Programmet skulle summere tallene i listen, men skriver ut \\(10\\). Hva må endres?",
       "hint": [
         "Følg verdien til variabelen `sum` etter hver runde og legg merke til om en tidligere verdi blir bevart.",
         "Sammenlign virkningen av en vanlig tilordning med en tilordning som legger den nye verdien til den gamle."
@@ -27296,18 +27267,11 @@
           "Endre `sum = 0` til `sum = 1`.",
           "Flytt `print(sum)` inn i løkken uten andre endringer.",
           "Endre listen til `[10, 7, 4]`."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Linjen `sum = x` erstatter den forrige summen. Den må endres til `sum += x`.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Endre `sum = x` til `sum += x`."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-kort-kode-feil",
       "id": "2py27-509",
@@ -27330,7 +27294,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Et figurmønster har \\(5, 8, 11, 14, \\ldots\\) brikker i figur \\(1,2,3,4,\\ldots\\). Lag en formel som gir antall brikker \\(B(n)\\) i figur \\(n\\)? Begrunn valget. Begrunn hvordan formelen henger sammen med mønsteret. Skriv formelen i begrunnelsesfeltet.",
+      "sporsmal": "Mønsteret starter med 5 brikker i figur 1 og øker med 3 brikker for hver ny figur. Velg formelen for antall brikker B(n) i figur n.",
       "hint": [
         "Første figur har 5 elementer. Fra første til andre figur øker antallet fra 5 til 8, altså med 3. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
         "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 3 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(3(n-1)\\).",
@@ -27348,19 +27312,11 @@
           "B(n)=5n+3",
           "B(n)=3n+5",
           "B(n)=2n+3"
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg laget en formel som gir antallet i alle de viste figurene, også om uttrykket mitt er skrevet annerledes enn eksempelsvaret.",
-          "Jeg forklarte hva leddene i formelen teller, eller hvordan startverdien og tilveksten gir uttrykket."
-        ],
-        "aapen": true
+        ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "B(n)=3n+2"
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-kort-monster-formel",
       "id": "2py27-510",
@@ -27542,7 +27498,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "med",
-      "sporsmal": "Et søylediagram sammenligner verdiene \\(100\\) og \\(105\\), men den loddrette aksen starter på \\(99\\). En overskrift hevder at den andre verdien er «mange ganger større». Hvilken vurdering er mest faglig holdbar? Begrunn valget.",
+      "sporsmal": "Et søylediagram sammenligner verdiene \\(100\\) og \\(105\\), men den loddrette aksen starter på \\(99\\). En overskrift hevder at den andre verdien er «mange ganger større». Hvilken vurdering er mest faglig holdbar?",
       "hint": [
         "Sammenlign den faktiske differansen med størrelsen på den første verdien.",
         "Vurder hvordan et svært smalt akseintervall påvirker den visuelle forskjellen mellom søylene."
@@ -27559,18 +27515,11 @@
           "Den andre verdien er fem ganger så stor som den første.",
           "Alle søylediagrammer må alltid ha en akse som starter på 99.",
           "Diagrammet beviser at endringen skyldes målemetoden."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Forskjellen er liten relativt til startverdien, og den avkuttede aksen overdriver den visuelt.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Forskjellen er liten, og den avkuttede aksen får den til å se mye større ut."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-kort-samfunn-akse",
       "id": "2py27-514"
@@ -27585,7 +27534,7 @@
       ],
       "niva": 3,
       "hjelpemidler": "med",
-      "sporsmal": "En treningsprofil spør følgerne sine om hvor mange dager de trener hver uke. \\(82\\,\\%\\) svarer minst fire dager. Profilen konkluderer med at \\(82\\,\\%\\) av alle voksne trener minst fire dager i uken. Hvilken vurdering er best? Begrunn valget.",
+      "sporsmal": "En treningsprofil spør følgerne sine om hvor mange dager de trener hver uke. \\(82\\,\\%\\) svarer minst fire dager. Profilen konkluderer med at \\(82\\,\\%\\) av alle voksne trener minst fire dager i uken. Hvilken vurdering er best?",
       "hint": [
         "Undersøk hvordan deltakerne ble valgt, og om alle voksne hadde omtrent samme mulighet til å delta.",
         "Vurder om personer som følger en treningsprofil, kan skille seg systematisk fra befolkningen ellers."
@@ -27602,18 +27551,11 @@
           "Konklusjonen er sikker fordi prosenttallet er høyere enn 50 %.",
           "Konklusjonen gjelder alle voksne dersom minst 100 følgere svarte.",
           "Utvalget er representativt fordi undersøkelsen ble gjort på internett."
-        ],
-        "krever_begrunnelse": true,
-        "vurderingskriterier": [
-          "Jeg kom fram til og forklarte denne faglige konklusjonen: Konklusjonen kan ikke generaliseres til alle voksne fordi følgerne er et selvvalgt og skjevt utvalg.",
-          "Jeg støttet konklusjonen med en relevant beregning, egenskap ved dataene eller konkret forklaring fra situasjonen."
         ]
       },
       "kontroll": {
-        "operasjon": "valg",
-        "riktige": [
-          "Konklusjonen kan ikke generaliseres fordi utvalget trolig er skjevt."
-        ]
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
       },
       "variantfamilie": "d2-kort-samfunn-utvalg",
       "id": "2py27-515"
