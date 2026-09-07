@@ -339,7 +339,7 @@ Nødvendige figurer, tabeller og kodeutskrifter skal være med. Kontroller antal
 
 Hvis en nødvendig figur ikke kan leveres, omskriv oppgaven slik at den er selvstendig gjennom tekst eller tabell. Ikke skriv «se figuren» når figuren mangler. Ikke erstatt en nødvendig figur med en ufullstendig instruks om at noen andre må tegne den senere.
 
-Oppdiktede data skal ikke tilskrives SSB, en avis eller andre virkelige kilder. Merk dem som konstruerte øvingsdata. Hvis reelle data brukes, oppgi kilde og relevant tidspunkt. Oppgaven skal inneholde opplysningene eleven trenger og kunne løses uten nettsøk.
+Oppdiktede data skal ikke tilskrives SSB, en avis eller andre virkelige kilder. Vanlige øvingsoppgaver skal ikke merkes med at dataene er konstruerte. Hvis oppdiktede tall knyttes til et konkret sted og år eller lett kan oppfattes som en virkelig publisert statistikk, beskriv situasjonen som et tenkt eksempel. Hvis reelle data brukes, oppgi kilde og relevant tidspunkt. Oppgaven skal inneholde opplysningene eleven trenger og kunne løses uten nettsøk.
 
 AUTOMATISK RETTING OG POENG
 For hvert svarfelt skal retteoppsettet angi en stabil ID, svarform, tillatte verdier, fasit eller fullstendig kontrollregel, avrunding eller toleranse, enhet, maksimal poengsum og eventuell delpoengregel. Unngå regler som «godta rimelige svar» og «KI vurderer begrunnelsen».
@@ -476,3 +476,6 @@ Fyll inn etter behov:
 - Andre ønsker om kontekst, variasjon og tilbakemelding.
 
 Uansett bestilling skal alle elevsvar kunne vurderes automatisk med eksplisitte kontrollregler. Viktige ord og konsepter skal ha forklaringer som åpnes ved elevens forespørsel om hjelp eller etter innsending, etter reglene i del 9. Hvis plattformen er ukjent, bruk vanlige tallfelt, valg, nummerert sortering og tabellfelt som standard, og beskriv nødvendig validering. Ikke forutsett at en funksjon er implementert bare fordi retteoppsettet beskriver den.
+
+VARIASJON I APPENS OPPGAVEBANK
+Velg først forskjellige matematiske problemstillinger, deretter tallvarianter. En ny kontekst eller andre tall er ikke en ny oppgavetype. Unngå at riktig konklusjon eller prosentendring er den samme i alle varianter. Temaøkter og eksamener skal prioritere ulike løsningsmønstre, også på tvers av temaetiketter. Gjentatte tallvarianter hører først og fremst hjemme i målrettet repetisjon. Hver deloppgave i en gruppe skal kreve nytt arbeid uten å spørre etter samme resultat igjen.

@@ -85,3 +85,19 @@ test('ekstra begreper er sammenfoldet og kode er gjengitt som kode',()=>{
  assert.doesNotMatch(html,/<details class="more-concepts" open/);
  assert.match(html,/<code>range\(2\)<\/code>/);
 });
+
+test('mobilens leserekkefølge har steg og løsning før begrepene',()=>{
+ const program=bank.oppgaver.find(q=>q.id==='2py27-213');
+ const help=createElement(LearningSupport,{question:program,submitted:{numbers:['30'],choices:[]},showConcepts:true,onConcepts(){}});
+ const html=renderToStaticMarkup(createElement(WorkedSteps,{hints:program.hint,paths:[],selectedPath:null,revealed:1,resolved:true,submitted:true,autoExpand:true,solution:program.svar,onReveal(){},onChoose(){}},help));
+ assert.ok(html.indexOf('worked-step-body') < html.indexOf('concept-list'));
+ assert.ok(html.indexOf('worked-solution') < html.indexOf('concept-list'));
+});
+
+test('tilbakemelding ved svaret og begrepene nederst har separate innhold',()=>{
+ const props={question:q,submitted:{numbers:[],choices:['eksponentiell vekst']},showConcepts:false,onConcepts(){}};
+ const feedback=renderToStaticMarkup(createElement(LearningSupport,{...props,section:'feedback'}));
+ const concepts=renderToStaticMarkup(createElement(LearningSupport,{...props,section:'concepts'}));
+ assert.match(feedback,/learning-feedback/);assert.doesNotMatch(feedback,/concept-list/);
+ assert.match(concepts,/concept-list/);assert.doesNotMatch(concepts,/learning-feedback/);
+});

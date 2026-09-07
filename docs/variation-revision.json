@@ -1,0 +1,3808 @@
+{
+  "oppgaver": [
+    {
+      "id": "2py27-483",
+      "felter": {
+        "sporsmal": {
+          "før": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
+          "etter": "Angi endringen for den andre kategorien i tabellen fra år 1 til år 2, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?"
+        },
+        "hint": {
+          "før": [
+            "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ],
+          "etter": [
+            "Finn den andre kategorien i tabellen og les av begge årsverdiene. Her spørres det etter endring i antall, ikke en prosentandel.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ]
+        },
+        "svar": {
+          "før": "Totalen endres med 6,3 %. Endringen i den andre kategorien er 45 personer. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
+          "etter": "Endringen i den andre kategorien er 45 personer. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde."
+        },
+        "fasit": {
+          "før": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 6.25,
+                "etikett": "Endring i totalen",
+                "enhet": "%",
+                "toleranse": 0.05001
+              },
+              {
+                "verdi": 45,
+                "etikett": "Endring i andre kategori",
+                "enhet": "personer",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 45,
+                "etikett": "Endring i andre kategori",
+                "enhet": "personer",
+                "toleranse": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "2py27-487",
+      "felter": {
+        "sporsmal": {
+          "før": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
+          "etter": "Angi endringen for den andre kategorien i tabellen fra år 1 til år 2, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?"
+        },
+        "hint": {
+          "før": [
+            "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ],
+          "etter": [
+            "Finn den andre kategorien i tabellen og les av begge årsverdiene. Her spørres det etter endring i antall, ikke en prosentandel.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ]
+        },
+        "svar": {
+          "før": "Totalen endres med 7,5 %. Endringen i den andre kategorien er 50 GWh. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
+          "etter": "Endringen i den andre kategorien er 50 GWh. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde."
+        },
+        "fasit": {
+          "før": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 7.5,
+                "etikett": "Endring i totalen",
+                "enhet": "%",
+                "toleranse": 0.05001
+              },
+              {
+                "verdi": 50,
+                "etikett": "Endring i andre kategori",
+                "enhet": "GWh",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 50,
+                "etikett": "Endring i andre kategori",
+                "enhet": "GWh",
+                "toleranse": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "2py27-491",
+      "felter": {
+        "sporsmal": {
+          "før": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
+          "etter": "Angi endringen for den andre kategorien i tabellen fra år 1 til år 2, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?"
+        },
+        "hint": {
+          "før": [
+            "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ],
+          "etter": [
+            "Finn den andre kategorien i tabellen og les av begge årsverdiene. Her spørres det etter endring i antall, ikke en prosentandel.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ]
+        },
+        "svar": {
+          "før": "Totalen endres med 14,3 %. Endringen i den andre kategorien er 40 søkere. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
+          "etter": "Endringen i den andre kategorien er 40 søkere. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde."
+        },
+        "fasit": {
+          "før": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 14.285714,
+                "etikett": "Endring i totalen",
+                "enhet": "%",
+                "toleranse": 0.05001
+              },
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "søkere",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "søkere",
+                "toleranse": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "2py27-495",
+      "felter": {
+        "sporsmal": {
+          "før": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
+          "etter": "Angi endringen for den andre kategorien i tabellen fra år 1 til år 2, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?"
+        },
+        "hint": {
+          "før": [
+            "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ],
+          "etter": [
+            "Finn den andre kategorien i tabellen og les av begge årsverdiene. Her spørres det etter endring i antall, ikke en prosentandel.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ]
+        },
+        "svar": {
+          "før": "Totalen endres med 2,4 %. Endringen i den andre kategorien er 40 tonn. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
+          "etter": "Endringen i den andre kategorien er 40 tonn. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde."
+        },
+        "fasit": {
+          "før": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 2.380952,
+                "etikett": "Endring i totalen",
+                "enhet": "%",
+                "toleranse": 0.05001
+              },
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "tonn",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "tonn",
+                "toleranse": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "2py27-499",
+      "felter": {
+        "sporsmal": {
+          "før": "Angi prosentvis endring i totalen fra år 1 til år 2, avrundet til én desimal. Angi også endringen for den andre kategorien i tabellen, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?",
+          "etter": "Angi endringen for den andre kategorien i tabellen fra år 1 til år 2, i tabellens enhet. Hvilken av framstillingene viser kategorienes verdier i begge år side om side?"
+        },
+        "hint": {
+          "før": [
+            "Summer verdiene for hvert år. Prosentvis endring regnes i forhold til totalen i år 1.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ],
+          "etter": [
+            "Finn den andre kategorien i tabellen og les av begge årsverdiene. Her spørres det etter endring i antall, ikke en prosentandel.",
+            "For den andre kategorien: trekk verdien i år 1 fra verdien i år 2. Sammenlikningen i diagrammet skal vise begge år for hver kategori."
+          ]
+        },
+        "svar": {
+          "før": "Totalen endres med 12,9 %. Endringen i den andre kategorien er 40 tusen besøk. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde.",
+          "etter": "Endringen i den andre kategorien er 40 tusen besøk. Et gruppert søylediagram viser verdiene fra begge år side om side for hver kategori. Tallene alene viser ikke hvorfor endringene skjedde."
+        },
+        "fasit": {
+          "før": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 12.916667,
+                "etikett": "Endring i totalen",
+                "enhet": "%",
+                "toleranse": 0.05001
+              },
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "tusen besøk",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "valg_og_tall",
+            "valg": {
+              "type": "valg",
+              "flervalg": false,
+              "riktige": [
+                "gruppert søylediagram"
+              ],
+              "alternativer": [
+                "gruppert søylediagram",
+                "sektordiagram med bare år 1",
+                "histogram med kategorinavn som intervaller",
+                "graf uten aksetitler"
+              ]
+            },
+            "verdier": [
+              {
+                "verdi": 40,
+                "etikett": "Endring i andre kategori",
+                "enhet": "tusen besøk",
+                "toleranse": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "2py27-519",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 10 % til 12 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 10 % til 11 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 10 % og ender på 12 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=12-10\\) i første felt. I andre felt bruker du \\(d\\) delt på 10 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 10 % og ender på 11 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (11 − 10)/10 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 10,
+              "b": 12
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-519-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-519-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 10,
+              "b": 11
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-519-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-519-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 2,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 1,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 10,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 2 prosentpoeng. Prosentvis økning er 2/10 · 100 = 20 %.",
+          "etter": "Økningen er 11 − 10 = 1 prosentpoeng. Prosentvis økning er 1/10 · 100 = 10 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-529",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 8 sider. Fire av sidetallene er 4, 6, 9, 10. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 8 sider. Fire av sidetallene er 4, 6, 9, 10. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-530",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 2, 4, 5, 6, 8. Den største målingen korrigeres til 18. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 2, 4, 5, 6, 8. Den største målingen korrigeres til 18. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-531",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-532",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-533",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-535",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 4. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 4. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-539",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 15 % til 18 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 15 % til 21 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 15 % og ender på 18 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=18-15\\) i første felt. I andre felt bruker du \\(d\\) delt på 15 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 15 % og ender på 21 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (21 − 15)/15 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 15,
+              "b": 18
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-539-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-539-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 15,
+              "b": 21
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-539-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-539-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 3,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 6,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 40,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 3 prosentpoeng. Prosentvis økning er 3/15 · 100 = 20 %.",
+          "etter": "Økningen er 21 − 15 = 6 prosentpoeng. Prosentvis økning er 6/15 · 100 = 40 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-549",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 9 sider. Fire av sidetallene er 5, 7, 10, 11. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 9 sider. Fire av sidetallene er 5, 7, 10, 11. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-550",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 3, 5, 6, 7, 9. Den største målingen korrigeres til 19. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 3, 5, 6, 7, 9. Den største målingen korrigeres til 19. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-551",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-552",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-553",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-555",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 5. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 5. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-559",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 20 % til 24 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 20 % til 25 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 20 % og ender på 24 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=24-20\\) i første felt. I andre felt bruker du \\(d\\) delt på 20 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 20 % og ender på 25 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (25 − 20)/20 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 20,
+              "b": 24
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-559-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-559-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 20,
+              "b": 25
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-559-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-559-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 4,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 5,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 25,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 4 prosentpoeng. Prosentvis økning er 4/20 · 100 = 20 %.",
+          "etter": "Økningen er 25 − 20 = 5 prosentpoeng. Prosentvis økning er 5/20 · 100 = 25 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-569",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 10 sider. Fire av sidetallene er 6, 8, 11, 12. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 10 sider. Fire av sidetallene er 6, 8, 11, 12. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-570",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 4, 6, 7, 8, 10. Den største målingen korrigeres til 20. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 4, 6, 7, 8, 10. Den største målingen korrigeres til 20. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-571",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-572",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-573",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-575",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 6. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 6. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-579",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 25 % til 30 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 25 % til 30 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 25 % og ender på 30 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=30-25\\) i første felt. I andre felt bruker du \\(d\\) delt på 25 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 25 % og ender på 30 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (30 − 25)/25 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "svar": {
+          "før": "Forskjellen er 5 prosentpoeng. Prosentvis økning er 5/25 · 100 = 20 %.",
+          "etter": "Økningen er 30 − 25 = 5 prosentpoeng. Prosentvis økning er 5/25 · 100 = 20 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-589",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 11 sider. Fire av sidetallene er 7, 9, 12, 13. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 11 sider. Fire av sidetallene er 7, 9, 12, 13. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-590",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 5, 7, 8, 9, 11. Den største målingen korrigeres til 21. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 5, 7, 8, 9, 11. Den største målingen korrigeres til 21. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-591",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-592",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-593",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-595",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 7. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 7. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-599",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 30 % til 36 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 30 % til 45 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 30 % og ender på 36 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=36-30\\) i første felt. I andre felt bruker du \\(d\\) delt på 30 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 30 % og ender på 45 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (45 − 30)/30 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 30,
+              "b": 36
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-599-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-599-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 30,
+              "b": 45
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-599-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-599-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 6,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 15,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 50,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 6 prosentpoeng. Prosentvis økning er 6/30 · 100 = 20 %.",
+          "etter": "Økningen er 45 − 30 = 15 prosentpoeng. Prosentvis økning er 15/30 · 100 = 50 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-609",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 12 sider. Fire av sidetallene er 8, 10, 13, 14. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 12 sider. Fire av sidetallene er 8, 10, 13, 14. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-610",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 6, 8, 9, 10, 12. Den største målingen korrigeres til 22. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 6, 8, 9, 10, 12. Den største målingen korrigeres til 22. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-611",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-612",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-613",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-615",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 8. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 8. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-619",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 35 % til 42 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 35 % til 49 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 35 % og ender på 42 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=42-35\\) i første felt. I andre felt bruker du \\(d\\) delt på 35 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 35 % og ender på 49 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (49 − 35)/35 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 35,
+              "b": 42
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-619-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-619-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 35,
+              "b": 49
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-619-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-619-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 7,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 14,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 40,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 7 prosentpoeng. Prosentvis økning er 7/35 · 100 = 20 %.",
+          "etter": "Økningen er 49 − 35 = 14 prosentpoeng. Prosentvis økning er 14/35 · 100 = 40 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-629",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 13 sider. Fire av sidetallene er 9, 11, 14, 15. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 13 sider. Fire av sidetallene er 9, 11, 14, 15. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-630",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 7, 9, 10, 11, 13. Den største målingen korrigeres til 23. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 7, 9, 10, 11, 13. Den største målingen korrigeres til 23. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-631",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-632",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-633",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-635",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 9. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 9. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-639",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 40 % til 48 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 40 % til 50 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 40 % og ender på 48 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=48-40\\) i første felt. I andre felt bruker du \\(d\\) delt på 40 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 40 % og ender på 50 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (50 − 40)/40 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 40,
+              "b": 48
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-639-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-639-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 40,
+              "b": 50
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-639-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-639-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 8,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 10,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 25,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 8 prosentpoeng. Prosentvis økning er 8/40 · 100 = 20 %.",
+          "etter": "Økningen er 50 − 40 = 10 prosentpoeng. Prosentvis økning er 10/40 · 100 = 25 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-649",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 14 sider. Fire av sidetallene er 10, 12, 15, 16. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 14 sider. Fire av sidetallene er 10, 12, 15, 16. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-650",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 8, 10, 11, 12, 14. Den største målingen korrigeres til 24. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 8, 10, 11, 12, 14. Den største målingen korrigeres til 24. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-651",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-652",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-653",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-655",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 10. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 10. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-659",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 45 % til 54 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 45 % til 54 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 45 % og ender på 54 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=54-45\\) i første felt. I andre felt bruker du \\(d\\) delt på 45 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 45 % og ender på 54 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (54 − 45)/45 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "svar": {
+          "før": "Forskjellen er 9 prosentpoeng. Prosentvis økning er 9/45 · 100 = 20 %.",
+          "etter": "Økningen er 54 − 45 = 9 prosentpoeng. Prosentvis økning er 9/45 · 100 = 20 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-669",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 15 sider. Fire av sidetallene er 11, 13, 16, 17. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 15 sider. Fire av sidetallene er 11, 13, 16, 17. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-670",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 9, 11, 12, 13, 15. Den største målingen korrigeres til 25. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 9, 11, 12, 13, 15. Den største målingen korrigeres til 25. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-671",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-672",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-673",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-675",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 11. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 11. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-679",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 50 % til 60 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 50 % til 55 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 50 % og ender på 60 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=60-50\\) i første felt. I andre felt bruker du \\(d\\) delt på 50 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 50 % og ender på 55 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (55 − 50)/50 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 50,
+              "b": 60
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-679-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-679-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 50,
+              "b": 55
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-679-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-679-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 10,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 5,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 10,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 10 prosentpoeng. Prosentvis økning er 10/50 · 100 = 20 %.",
+          "etter": "Økningen er 55 − 50 = 5 prosentpoeng. Prosentvis økning er 5/50 · 100 = 10 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-689",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 16 sider. Fire av sidetallene er 12, 14, 17, 18. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 16 sider. Fire av sidetallene er 12, 14, 17, 18. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-690",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 10, 12, 13, 14, 16. Den største målingen korrigeres til 26. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 10, 12, 13, 14, 16. Den største målingen korrigeres til 26. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-691",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-692",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-693",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-695",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 12. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 12. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-699",
+      "felter": {
+        "sporsmal": {
+          "før": "I konstruerte øvingsdata øker andelen som sykler til skolen fra 55 % til 66 %. Angi økningen i prosentpoeng og den prosentvise økningen.",
+          "etter": "Andelen som sykler til skolen øker fra 55 % til 77 %. Angi økningen i prosentpoeng og den prosentvise økningen."
+        },
+        "hint": {
+          "før": [
+            "Hva vet vi? Andelen starter på 55 % og ender på 66 %. Vi skal beskrive endringen på to ulike måter, og må holde de to svarfeltene fra hverandre.",
+            "Prosentpoeng finner du ved å trekke prosenttallene fra hverandre. Prosentvis økning sammenlikner denne forskjellen med den opprinnelige andelen.",
+            "Bruk \\(d=66-55\\) i første felt. I andre felt bruker du \\(d\\) delt på 55 og ganger med 100. Samme differanse inngår i begge."
+          ],
+          "etter": [
+            "Hva vet vi? Andelen starter på 55 % og ender på 77 %. Vi skal beskrive endringen på to ulike måter. Prosentpoeng og prosentvis endring bruker ikke samme beregning.",
+            "Finn først forskjellen mellom de to prosentandelene. Denne differansen er økningen i prosentpoeng; den skal ikke deles på startandelen.",
+            "I prosentfeltet bruker du (77 − 55)/55 · 100. Forkort brøken før du ganger med hundre. Startandelen er grunnlaget for den relative økningen."
+          ]
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 55,
+              "b": 66
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-699-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-699-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "andel-og-prosentpoeng",
+            "inndata": {
+              "a": 55,
+              "b": 77
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-699-felt-1",
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0,
+                "maks_poeng": 1
+              },
+              {
+                "id": "2py27-699-felt-2",
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0,
+                "maks_poeng": 1
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 11,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 20,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          },
+          "etter": {
+            "type": "flere_tall",
+            "verdier": [
+              {
+                "verdi": 22,
+                "etikett": "Økning i prosentpoeng",
+                "enhet": "prosentpoeng",
+                "toleranse": 0
+              },
+              {
+                "verdi": 40,
+                "etikett": "Prosentvis økning",
+                "enhet": "%",
+                "toleranse": 0
+              }
+            ]
+          }
+        },
+        "svar": {
+          "før": "Forskjellen er 11 prosentpoeng. Prosentvis økning er 11/55 · 100 = 20 %.",
+          "etter": "Økningen er 77 − 55 = 22 prosentpoeng. Prosentvis økning er 22/55 · 100 = 40 %."
+        }
+      }
+    },
+    {
+      "id": "2py27-709",
+      "felter": {
+        "sporsmal": {
+          "før": "Fem elever leste i gjennomsnitt 17 sider. Fire av sidetallene er 13, 15, 18, 19. Hvor mange sider leste den siste eleven? Dette er konstruerte øvingsdata.",
+          "etter": "Fem elever leste i gjennomsnitt 17 sider. Fire av sidetallene er 13, 15, 18, 19. Hvor mange sider leste den siste eleven?"
+        }
+      }
+    },
+    {
+      "id": "2py27-710",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte målinger i minutter er 11, 13, 14, 15, 17. Den største målingen korrigeres til 27. Finn nytt gjennomsnitt og ny median.",
+          "etter": "Målinger i minutter er 11, 13, 14, 15, 17. Den største målingen korrigeres til 27. Finn nytt gjennomsnitt og ny median."
+        }
+      }
+    },
+    {
+      "id": "2py27-711",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte øvingsdata for antall bøker lest. Hvor mange elever leste høyst to bøker?",
+          "etter": "Tabellen viser data for antall bøker lest. Hvor mange elever leste høyst to bøker?"
+        }
+      }
+    },
+    {
+      "id": "2py27-712",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter.",
+          "etter": "Tabellen viser reisetider. Anslå gjennomsnittet i minutter ved å bruke klassemidtpunkter."
+        }
+      }
+    },
+    {
+      "id": "2py27-713",
+      "felter": {
+        "sporsmal": {
+          "før": "Hva skriver programmet ut? Tallene er konstruerte målinger. Lever tallet som vises etter løkken.",
+          "etter": "Hva skriver programmet ut? Lever tallet som vises etter løkken."
+        }
+      }
+    },
+    {
+      "id": "2py27-715",
+      "felter": {
+        "sporsmal": {
+          "før": "Tre lag har målinger med samme gjennomsnitt, 13. Velg datasettet som har variasjonsbredde null. Dataene er konstruerte.",
+          "etter": "Tre lag har målinger med samme gjennomsnitt, 13. Velg datasettet som har variasjonsbredde null."
+        }
+      }
+    },
+    {
+      "id": "2py27-759",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-760",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-762",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 12 elever og gjennomsnittlig reisetid 18 minutter. Gruppe B har 20 elever og gjennomsnitt 24 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 12 elever og gjennomsnittlig reisetid 18 minutter. Gruppe B har 20 elever og gjennomsnitt 24 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-763",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 2, 4, 5, 5, 8, 12. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 2, 4, 5, 5, 8, 12. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-764",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-765",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-767",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 180 liter vann per dag med 40 brukere. Forbruket faller med 15 %, mens antall brukere øker til 48. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 180 liter vann per dag med 40 brukere. Forbruket faller med 15 %, mens antall brukere øker til 48. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-769",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 1000 til 1200 og utlån fra 2000 til 2200. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 1000 til 1100, og antall utlån fra 2000 til 2400. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1000,
+                1200.0
+              ],
+              "loans": [
+                2000,
+                2200.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-769-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1000,
+                1100
+              ],
+              "loans": [
+                2000,
+                2400
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-769-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 10 %, og utlån med 20 %. Den prosentvise endringen i besøk var mindre enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-775",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-776",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-778",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 13 elever og gjennomsnittlig reisetid 19 minutter. Gruppe B har 22 elever og gjennomsnitt 25 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 13 elever og gjennomsnittlig reisetid 19 minutter. Gruppe B har 22 elever og gjennomsnitt 25 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-779",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 3, 5, 6, 6, 9, 14. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 3, 5, 6, 6, 9, 14. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-780",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-781",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-783",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 190 liter vann per dag med 41 brukere. Forbruket faller med 15 %, mens antall brukere øker til 49. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 190 liter vann per dag med 41 brukere. Forbruket faller med 15 %, mens antall brukere øker til 49. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-785",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 1200 til 1440 og utlån fra 2400 til 2640. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 1200 til 1560, og antall utlån fra 2400 til 2640. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1200,
+                1440.0
+              ],
+              "loans": [
+                2400,
+                2640.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-785-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1200,
+                1560
+              ],
+              "loans": [
+                2400,
+                2640
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-785-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 30 %, og utlån med 10 %. Den prosentvise endringen i besøk var større enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-791",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-792",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-794",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 14 elever og gjennomsnittlig reisetid 20 minutter. Gruppe B har 24 elever og gjennomsnitt 26 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 14 elever og gjennomsnittlig reisetid 20 minutter. Gruppe B har 24 elever og gjennomsnitt 26 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-795",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 4, 6, 7, 7, 10, 16. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 4, 6, 7, 7, 10, 16. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-796",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-797",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-799",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 200 liter vann per dag med 42 brukere. Forbruket faller med 15 %, mens antall brukere øker til 50. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 200 liter vann per dag med 42 brukere. Forbruket faller med 15 %, mens antall brukere øker til 50. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-801",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 1400 til 1680 og utlån fra 2800 til 3080. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 1400 til 1470, og antall utlån fra 2800 til 2940. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen.",
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1400,
+                1680.0
+              ],
+              "loans": [
+                2800,
+                3080.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-801-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1400,
+                1470
+              ],
+              "loans": [
+                2800,
+                2940
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-801-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ],
+            "riktige": [
+              "Besøk og utlån hadde samme prosentvise endring."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 5 %, og utlån med 5 %. Besøk og utlån hadde samme prosentvise endring. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-807",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-808",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-810",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 15 elever og gjennomsnittlig reisetid 21 minutter. Gruppe B har 26 elever og gjennomsnitt 27 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 15 elever og gjennomsnittlig reisetid 21 minutter. Gruppe B har 26 elever og gjennomsnitt 27 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-811",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 5, 7, 8, 8, 11, 18. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 5, 7, 8, 8, 11, 18. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-812",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-813",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-815",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 210 liter vann per dag med 43 brukere. Forbruket faller med 15 %, mens antall brukere øker til 51. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 210 liter vann per dag med 43 brukere. Forbruket faller med 15 %, mens antall brukere øker til 51. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-817",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 1600 til 1920 og utlån fra 3200 til 3520. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 1600 til 2240, og antall utlån fra 3200 til 3840. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen.",
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1600,
+                1920.0
+              ],
+              "loans": [
+                3200,
+                3520.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-817-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1600,
+                2240
+              ],
+              "loans": [
+                3200,
+                3840
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-817-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 40 %, og utlån med 20 %. Den prosentvise endringen i besøk var større enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-823",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-824",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-826",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 16 elever og gjennomsnittlig reisetid 22 minutter. Gruppe B har 28 elever og gjennomsnitt 28 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 16 elever og gjennomsnittlig reisetid 22 minutter. Gruppe B har 28 elever og gjennomsnitt 28 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-827",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 6, 8, 9, 9, 12, 20. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 6, 8, 9, 9, 12, 20. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-828",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-829",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-831",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 220 liter vann per dag med 44 brukere. Forbruket faller med 15 %, mens antall brukere øker til 52. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 220 liter vann per dag med 44 brukere. Forbruket faller med 15 %, mens antall brukere øker til 52. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-833",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 1800 til 2160 og utlån fra 3600 til 3960. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 1800 til 2070, og antall utlån fra 3600 til 3600. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1800,
+                2160.0
+              ],
+              "loans": [
+                3600,
+                3960.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-833-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                1800,
+                2070
+              ],
+              "loans": [
+                3600,
+                3600
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-833-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 15 %, og utlån med 0 %. Den prosentvise endringen i besøk var større enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-839",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-840",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-842",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 17 elever og gjennomsnittlig reisetid 23 minutter. Gruppe B har 30 elever og gjennomsnitt 29 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 17 elever og gjennomsnittlig reisetid 23 minutter. Gruppe B har 30 elever og gjennomsnitt 29 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-843",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 7, 9, 10, 10, 13, 22. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 7, 9, 10, 10, 13, 22. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-844",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-845",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-847",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 230 liter vann per dag med 45 brukere. Forbruket faller med 15 %, mens antall brukere øker til 53. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 230 liter vann per dag med 45 brukere. Forbruket faller med 15 %, mens antall brukere øker til 53. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-849",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 2000 til 2400 og utlån fra 4000 til 4400. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 2000 til 2000, og antall utlån fra 4000 til 4400. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2000,
+                2400.0
+              ],
+              "loans": [
+                4000,
+                4400.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-849-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2000,
+                2000
+              ],
+              "loans": [
+                4000,
+                4400
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-849-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 0 %, og utlån med 10 %. Den prosentvise endringen i besøk var mindre enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-855",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-856",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-858",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 18 elever og gjennomsnittlig reisetid 24 minutter. Gruppe B har 32 elever og gjennomsnitt 30 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 18 elever og gjennomsnittlig reisetid 24 minutter. Gruppe B har 32 elever og gjennomsnitt 30 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-859",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 8, 10, 11, 11, 14, 24. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 8, 10, 11, 11, 14, 24. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-860",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-861",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-863",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 240 liter vann per dag med 46 brukere. Forbruket faller med 15 %, mens antall brukere øker til 54. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 240 liter vann per dag med 46 brukere. Forbruket faller med 15 %, mens antall brukere øker til 54. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-865",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 2200 til 2640 og utlån fra 4400 til 4840. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 2200 til 1980, og antall utlån fra 4400 til 4180. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen.",
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2200,
+                2640.0
+              ],
+              "loans": [
+                4400,
+                4840.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-865-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2200,
+                1980
+              ],
+              "loans": [
+                4400,
+                4180
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-865-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med -10 %, og utlån med -5 %. Den prosentvise endringen i besøk var mindre enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-871",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-872",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-874",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 19 elever og gjennomsnittlig reisetid 25 minutter. Gruppe B har 34 elever og gjennomsnitt 31 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 19 elever og gjennomsnittlig reisetid 25 minutter. Gruppe B har 34 elever og gjennomsnitt 31 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-875",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 9, 11, 12, 12, 15, 26. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 9, 11, 12, 12, 15, 26. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-876",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-877",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-879",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 250 liter vann per dag med 47 brukere. Forbruket faller med 15 %, mens antall brukere øker til 55. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 250 liter vann per dag med 47 brukere. Forbruket faller med 15 %, mens antall brukere øker til 55. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-881",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 2400 til 2880 og utlån fra 4800 til 5280. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 2400 til 2880, og antall utlån fra 4800 til 6240. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen.",
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2400,
+                2880.0
+              ],
+              "loans": [
+                4800,
+                5280.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-881-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2400,
+                2880
+              ],
+              "loans": [
+                4800,
+                6240
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-881-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 20 %, og utlån med 30 %. Den prosentvise endringen i besøk var mindre enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-887",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-888",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-890",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 20 elever og gjennomsnittlig reisetid 26 minutter. Gruppe B har 36 elever og gjennomsnitt 32 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 20 elever og gjennomsnittlig reisetid 26 minutter. Gruppe B har 36 elever og gjennomsnitt 32 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-891",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 10, 12, 13, 13, 16, 28. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 10, 12, 13, 13, 16, 28. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-892",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-893",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-895",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 260 liter vann per dag med 48 brukere. Forbruket faller med 15 %, mens antall brukere øker til 56. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 260 liter vann per dag med 48 brukere. Forbruket faller med 15 %, mens antall brukere øker til 56. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-897",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 2600 til 3120 og utlån fra 5200 til 5720. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 2600 til 2080, og antall utlån fra 5200 til 4680. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2600,
+                3120.0
+              ],
+              "loans": [
+                5200,
+                5720.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-897-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2600,
+                2080
+              ],
+              "loans": [
+                5200,
+                4680
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-897-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Besøk økte mer i prosent enn utlån.",
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var større enn i utlån.",
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med -20 %, og utlån med -10 %. Den prosentvise endringen i besøk var mindre enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    },
+    {
+      "id": "2py27-903",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal.",
+          "etter": "Tabellen viser data for tidsbruk ved pakking. Finn modellen T(x) = ax + b med lineær minste kvadraters regresjon. x er antall pakker og T er sekunder. Oppgi a og b med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-904",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler.",
+          "etter": "Tabellen viser medlemstall. x er år etter start. Finn M(x) = a · b opphøyd i x ved lineær minste kvadraters regresjon av ln(M) mot x. Oppgi a med én desimal og b med tre desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-906",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Gruppe A har 21 elever og gjennomsnittlig reisetid 27 minutter. Gruppe B har 38 elever og gjennomsnitt 33 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal.",
+          "etter": "Gruppe A har 21 elever og gjennomsnittlig reisetid 27 minutter. Gruppe B har 38 elever og gjennomsnitt 33 minutter. Finn gjennomsnittet for alle elevene samlet, avrundet til én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-907",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte ventetider i minutter: 11, 13, 14, 14, 17, 30. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler.",
+          "etter": "Ventetider i minutter: 11, 13, 14, 14, 17, 30. Finn populasjonsstandardavviket for hele dette datasettet. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-908",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler.",
+          "etter": "Tabellen viser ventetider. Et histogram skal ha søyleareal lik antall observasjoner. Angi høyden for hvert intervall, i observasjoner per minutt. Avrund til to desimaler."
+        }
+      }
+    },
+    {
+      "id": "2py27-909",
+      "felter": {
+        "sporsmal": {
+          "før": "Tabellen viser konstruerte reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter.",
+          "etter": "Tabellen viser reisetider. Anslå medianen ved lineær interpolasjon ved 50 % av observasjonene. Anta jevn fordeling innenfor hvert intervall. Avrund til én desimal i minutter."
+        }
+      }
+    },
+    {
+      "id": "2py27-911",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte øvingsdata: Et bygg bruker først 270 liter vann per dag med 49 brukere. Forbruket faller med 15 %, mens antall brukere øker til 57. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal.",
+          "etter": "Et bygg bruker først 270 liter vann per dag med 49 brukere. Forbruket faller med 15 %, mens antall brukere øker til 57. Hvor mange prosent avtar vannforbruket per bruker? Oppgi et positivt tall med én desimal."
+        }
+      }
+    },
+    {
+      "id": "2py27-913",
+      "felter": {
+        "sporsmal": {
+          "før": "Konstruerte bibliotekdata: Besøk økte fra 2800 til 3360 og utlån fra 5600 til 6160. Velg den ene påstanden som følger av disse opplysningene.",
+          "etter": "På et bibliotek endret antall besøk seg fra 2800 til 4200, og antall utlån fra 5600 til 7000. Velg den ene påstanden som følger av opplysningene."
+        },
+        "hint": {
+          "før": [
+            "Sammenlikn prosentendringene med hvert sitt starttall. Skill mellom antall besøk og antall ulike personer som har vært innom.",
+            "Regn også utlån per besøk før og etter. Opplysningene viser endringer i registrerte antall, men inneholder ingen undersøkelse av årsakene."
+          ],
+          "etter": [
+            "Sammenlikn den relative endringen i hvert av de to tallparene. Besøk og utlån har forskjellige startverdier.",
+            "Bruk (nytt − gammelt)/gammelt · 100 for hvert tallpar. Ta med fortegnet. Tallene alene forteller ikke hva som er årsaken til endringen."
+          ]
+        },
+        "laeringsstotte": {
+          "før": {
+            "feil": "Et besøk er ikke nødvendigvis en ny person. Tallene beskriver utvikling, men dokumenterer ikke årsak.",
+            "feilvalg": {
+              "Utlån per besøk økte.": "Når besøk øker raskere i prosent enn utlån, faller forholdet utlån per besøk.",
+              "Antall forskjellige besøkende økte nødvendigvis.": "Én person kan stå for flere besøk. Besøkstallene bestemmer derfor ikke antall ulike personer.",
+              "Lengre åpningstid var årsaken til økningen.": "Tallene viser antall besøk og utlån. De inneholder ingen sammenlikning som fastslår hva som forårsaket endringen."
+            }
+          },
+          "etter": {
+            "feil": "Bruk hvert tallpars egen startverdi som prosentgrunnlag. En negativ endring er en nedgang, og en årsak krever mer informasjon enn to totaler."
+          }
+        },
+        "kontroll": {
+          "før": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2800,
+                3360.0
+              ],
+              "loans": [
+                5600,
+                6160.0
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-913-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          },
+          "etter": {
+            "operasjon": "utvidelse_2026_09",
+            "metode": "data-konklusjon",
+            "inndata": {
+              "visits": [
+                2800,
+                4200
+              ],
+              "loans": [
+                5600,
+                7000
+              ]
+            },
+            "svarfelt": [
+              {
+                "id": "2py27-913-valg",
+                "svarform": "enkeltvalg",
+                "maks_poeng": 1,
+                "riktig_alternativ": "Besøk økte mer i prosent enn utlån."
+              }
+            ],
+            "poengregel": "Ett poeng per korrekt tallfelt. Enkeltvalg: ett poeng for riktig alternativ, ellers null. Konstruksjon: ett poeng for riktig gjennomsnitt og ett for riktig median; antall, heltall og nedre grense må være oppfylt. Ingen minuspoeng.",
+            "visning": "Hint og begreper åpnes på forespørsel. Tilbakemelding etter gyldig innsending gjelder bare denne oppgaven. Full løsning åpnes etter innsending; ved riktig svar vises løsningen automatisk."
+          }
+        },
+        "fasit": {
+          "før": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Utlån per besøk økte.",
+              "Antall forskjellige besøkende økte nødvendigvis.",
+              "Lengre åpningstid var årsaken til økningen.",
+              "Besøk økte mer i prosent enn utlån."
+            ],
+            "riktige": [
+              "Besøk økte mer i prosent enn utlån."
+            ]
+          },
+          "etter": {
+            "type": "valg",
+            "flervalg": false,
+            "alternativer": [
+              "Den prosentvise endringen i besøk var mindre enn i utlån.",
+              "Besøk og utlån hadde samme prosentvise endring.",
+              "Endringen skyldes nødvendigvis nye åpningstider.",
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ],
+            "riktige": [
+              "Den prosentvise endringen i besøk var større enn i utlån."
+            ]
+          }
+        },
+        "svar": {
+          "før": "Besøk økte med 20 %, utlån med 10 %. Dermed økte besøk mest i prosent. Utlån per besøk falt, og personantall og årsak kan ikke bestemmes.",
+          "etter": "Besøk endret seg med 50 %, og utlån med 25 %. Den prosentvise endringen i besøk var større enn i utlån. Årsaken kan ikke bestemmes ut fra disse tallene."
+        }
+      }
+    }
+  ],
+  "oppgavegrupper": [
+    {
+      "id": "d2-utvidelse-energi-01",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=6000\\cdot0,88^t+1200\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=6000\\cdot0,88^t+1200\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-02",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=6500\\cdot0,885^t+1300\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=6500\\cdot0,885^t+1300\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-03",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=7000\\cdot0,89^t+1400\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=7000\\cdot0,89^t+1400\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-04",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=7500\\cdot0,895^t+1500\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=7500\\cdot0,895^t+1500\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-05",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=8000\\cdot0,9^t+1600\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=8000\\cdot0,9^t+1600\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-06",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=8500\\cdot0,905^t+1700\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=8500\\cdot0,905^t+1700\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-07",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=9000\\cdot0,91^t+1800\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=9000\\cdot0,91^t+1800\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-08",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=9500\\cdot0,915^t+1900\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=9500\\cdot0,915^t+1900\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-09",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=10000\\cdot0,92^t+2000\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=10000\\cdot0,92^t+2000\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    },
+    {
+      "id": "d2-utvidelse-energi-10",
+      "felter": {
+        "innledning": {
+          "før": "Konstruerte øvingsdata: Årlig energibruk i et bygg beskrives av \\(E(t)=10500\\cdot0,925^t+2100\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før.",
+          "etter": "Årlig energibruk i et bygg beskrives av \\(E(t)=10500\\cdot0,925^t+2100\\) kWh per år. t er antall år etter tiltaket, med t = 0 ved start. Modellen brukes for 0 ≤ t ≤ 15, og t kan være et desimaltall. Den konstante delen beskriver utstyr som skal brukes som før."
+        }
+      }
+    }
+  ],
+  "nye_ider": [
+    "2py27-916",
+    "2py27-917",
+    "2py27-918",
+    "2py27-919",
+    "2py27-920",
+    "2py27-921",
+    "2py27-922",
+    "2py27-923",
+    "2py27-924",
+    "2py27-925",
+    "2py27-926",
+    "2py27-927",
+    "2py27-928",
+    "2py27-929",
+    "2py27-930",
+    "2py27-931",
+    "2py27-932",
+    "2py27-933",
+    "2py27-934",
+    "2py27-935",
+    "2py27-936",
+    "2py27-937",
+    "2py27-938",
+    "2py27-939",
+    "2py27-940",
+    "2py27-941",
+    "2py27-942",
+    "2py27-943",
+    "2py27-944",
+    "2py27-945",
+    "2py27-946",
+    "2py27-947",
+    "2py27-948",
+    "2py27-949",
+    "2py27-950"
+  ]
+}

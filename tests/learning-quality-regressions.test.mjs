@@ -139,3 +139,13 @@ test("rutineoppgaver er ikke merket utfordrende", () => {
     assert.ok(questions.get(`2py27-${number}`).niva <= 2, `2py27-${number}`);
   }
 });
+
+test('rektangulært mønster tegner de oppgitte radene og kolonnene',()=>{
+ const html=renderToStaticMarkup(createElement(VisualizationPanel,{visualization:{type:'figurmønster',monster:'rektangel',kolonnetillegg:2,figurer:[{n:4,antall:24}],tekstalternativ:'Fire rader med seks ruter.'}}));
+ assert.match(html,/repeat\(6, 11px\)/);
+ assert.equal((html.match(/class="pattern-cell"/g)??[]).length,24);
+});
+test('fyrstikkraden teller delte sider én gang',()=>{
+ const html=renderToStaticMarkup(createElement(VisualizationPanel,{visualization:{type:'figurmønster',monster:'fyrstikkrad',figurer:[{n:2,antall:7}],tekstalternativ:'To kvadrater med en delt side.'}}));
+ assert.equal((html.match(/<line /g)??[]).length,7);
+});

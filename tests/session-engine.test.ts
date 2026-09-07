@@ -85,12 +85,13 @@ test("nye økter prioriterer andre oppgaver enn forrige økt", () => {
   }
 });
 
-test("temaøkt i Del 2 bruker hele case", () => {
+test("temaøkt i Del 2 bruker ett helt case uten gjentatte varianter", () => {
   const questions = selectSessionQuestions(bank, 2, "skill", "lineaere_funksjoner");
-  assert.equal(questions.length, 10);
+  assert.ok(questions.length >= 5 && questions.length <= 10);
+  assert.equal(new Set(questions.map(q => q.variantfamilie)).size, questions.length);
   assert.ok(questions.every((question) => question.tema === "lineaere_funksjoner"));
   const grouped = questions.filter((question) => question.oppgavegruppe);
-  assert.equal(grouped.length, 8);
+  assert.equal(grouped.length, 4);
   for (const groupId of new Set(grouped.map((question) => question.oppgavegruppe?.id))) {
     assert.deepEqual(
       grouped
@@ -113,7 +114,7 @@ test("temaøkter i Del 1 kan avgrenses til mild, middels eller utfordrende", () 
         (question) => question.del === part && question.tema === theme && question.niva === level,
       );
       const selected = selectSessionQuestions(bank, part, "skill", theme, new Set(), level);
-      assert.equal(selected.length, Math.min(10, available.length), `${partTheme} nivå ${level}`);
+      assert.equal(selected.length, Math.min(10, new Set(available.map(q => q.variantfamilie)).size), `${partTheme} nivå ${level}`);
       assert.ok(selected.every((question) => question.niva === level), `${partTheme} blander nivå ${level}`);
     }
   }

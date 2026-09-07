@@ -24,6 +24,7 @@ import {
 import {
   findRetryQuestion,
   selectSessionQuestions,
+  rememberSelection,
   type Difficulty,
   type SessionMode,
 } from "./session-engine";
@@ -391,7 +392,7 @@ export default function Home() {
     );
     const nextRecentSelections = {
       ...recentSelections,
-      [selectionKey]: questions.map((question) => question.id),
+      [selectionKey]: rememberSelection(recentSelections[selectionKey] ?? [], questions),
     };
     const items = questions.map((question, index) => makeSessionItem(question, index + 1));
     setRecentSelections(nextRecentSelections);
@@ -458,7 +459,7 @@ export default function Home() {
     const nextBaseCount = baseBeforeNext + replacementItems.length;
     const nextRecentSelections = {
       ...recentSelections,
-      [selectionKey]: replacements.map((question) => question.id),
+      [selectionKey]: rememberSelection(recentSelections[selectionKey] ?? [], replacements),
     };
 
     setQueue(nextQueue);
@@ -757,6 +758,7 @@ export default function Home() {
                   {feedback === "partial" && (resolved ? <><strong>Delvis riktig.</strong> Du fikk {evaluation?.correctParts} av {evaluation?.totalParts} mulige poeng.</> : <><strong>Noe er riktig.</strong> </>)}
                   {feedback === "correct" && <><strong>Riktig!</strong> {hintIndex > 0 && mode === "skill" ? "Du får en lignende oppgave, slik at du kan prøve uten hint." : attempts > 0 ? "Du fant fram etter å ha prøvd på nytt." : "Godt jobbet."}</>}
                 </div>
+                <LearningSupport section="feedback" question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={false} onConcepts={() => {}} />
                 {!resolved ? (
                   <button className="primary-button" type="submit" disabled={!isAnswerComplete(answer, currentQuestion.fasit)}>Sjekk svar<IconArrow /></button>
                 ) : (
@@ -766,7 +768,7 @@ export default function Home() {
 
               </div>
               <WorkedSteps autoExpand={expandExamSolution} solutionExpanded={feedback === "correct"} key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }}>
-                <LearningSupport question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} />
+                <LearningSupport section="concepts" question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} />
               </WorkedSteps>
             </article>
           </section>

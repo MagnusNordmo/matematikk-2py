@@ -322,6 +322,20 @@ function PatternDiagram({
   value: number;
   visualization: Visualization;
 }) {
+  if (pattern === "rektangel") {
+    const columns = figureNumber + Number(visualization.kolonnetillegg ?? 0);
+    return <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${columns}, 11px)` }}><PatternCells count={figureNumber * columns} /></span>;
+  }
+  if (pattern === "fyrstikkrad") {
+    const step = 28;
+    return <svg width={figureNumber * step + 8} height="36" viewBox={`0 0 ${figureNumber * step + 8} 36`} aria-hidden="true" style={{maxWidth: "100%"}}>
+      {Array.from({length: figureNumber}, (_, i) => <g key={i} stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+        <line x1={4 + i * step} y1="4" x2={4 + (i + 1) * step} y2="4" />
+        <line x1={4 + i * step} y1="32" x2={4 + (i + 1) * step} y2="32" />
+      </g>)}
+      {Array.from({length: figureNumber + 1}, (_, i) => <line key={i} x1={4 + i * step} y1="4" x2={4 + i * step} y2="32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />)}
+    </svg>;
+  }
   if (pattern === "kvadrat_med_tillegg") {
     const side = figureNumber + Number(visualization.sideforskyvning ?? 0);
     const extra = Number(visualization.tillegg ?? Math.max(0, value - side ** 2));
@@ -334,7 +348,7 @@ function PatternDiagram({
   }
 
   if (pattern === "flisramme_uten_hjorner" || pattern === "ramme") {
-    const side = figureNumber + 2;
+    const side = figureNumber + Number(visualization.sideforskyvning ?? 2);
     const cells = Array.from({ length: side ** 2 }, (_, index) => {
       const row = Math.floor(index / side);
       const column = index % side;

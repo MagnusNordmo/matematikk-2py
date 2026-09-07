@@ -18,7 +18,6 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, su
   const active = Math.min(viewed ?? Math.max(0, available - 1), Math.max(0, available - 1));
   return <aside className="worked-steps" aria-label="Løsning steg for steg">
     <header><h2>Hint og forklaring</h2>{!submitted && <p>Prøv selv først. Åpne så mye hjelp du trenger.</p>}</header>
-    {children}
     {paths.length > 0 && <div className="solution-paths" role="group" aria-label="Velg løsningsmetode">
       {paths.map(path => <button key={path.id} type="button" aria-pressed={selectedPath === path.id} className={`solution-path ${selectedPath === path.id ? "solution-path-selected" : ""}`} onClick={() => { onChoose(path.id); setViewed(null); setShowAll(false); }}><strong>{path.navn}</strong><span>{path.forklaring}</span></button>)}
     </div>}
@@ -33,5 +32,6 @@ export function WorkedSteps({ hints, paths, selectedPath, revealed, resolved, su
       </div>
     </>}
     {submitted && <details className="worked-solution" open={autoExpand || solutionExpanded} onToggle={event => { if (event.currentTarget.open) onSolution?.(); }}><summary>Løsning</summary><p><MathText>{solution}</MathText></p></details>}
+    {children}
   </aside>;
 }

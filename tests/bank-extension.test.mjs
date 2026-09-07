@@ -8,14 +8,20 @@ const learningSource = readFileSync(new URL('../app/learning-content.ts', import
 const compiled = ts.transpileModule(learningSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText.replace("'./answer-engine'", JSON.stringify(new URL('../app/answer-engine.ts', import.meta.url).href));
 const { questionConcepts, answerFeedback } = await import('data:text/javascript;base64,' + Buffer.from(compiled).toString('base64'));
 const b = JSON.parse(readFileSync(new URL('../public/oppgaver-2027.json', import.meta.url), 'utf8'));
-const fresh = b.oppgaver.slice(515);
+const fresh = b.oppgaver.slice(515, 915);
 const sum = (v) => v.reduce((a, c) => a + c, 0);
 const mean = (v) => sum(v) / v.length;
 function canonical(value) { return Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(k => [k, canonical(value[k])])) : value; }
 test('utvidelsen legger til 400 oppgaver og beholder de opprinnelige uendret', () => {
     const hashes = JSON.parse(readFileSync(new URL('../docs/baseline-515-sha256.json', import.meta.url), 'utf8'));
     for (const q of b.oppgaver.slice(0, 515)) {
-        const expected = JSON.stringify(canonical(q));
+        const original = structuredClone(q);
+        const revision = JSON.parse(readFileSync(new URL('../docs/variation-revision.json', import.meta.url), 'utf8'));
+        for (const [field, values] of Object.entries(revision.oppgaver.find(change => change.id === q.id)?.felter ?? {})) {
+            assert.deepEqual(q[field], values.etter, `${q.id}/${field}: autorisert rettelse`);
+            original[field] = values.før;
+        }
+        const expected = JSON.stringify(canonical(original));
         assert.equal(createHash('sha256').update(expected).digest('hex'), hashes[q.id], q.id);
     }
     assert.equal(fresh.length, 400);
@@ -164,8 +170,10 @@ test('alle nye fasiter beregnes uavhengig og gir riktig vurdering', () => {
                 expected = [100 * (d.new - d.old) / d.old];
                 break;
             case 'data-konklusjon':
-                assert.ok(d.visits[1] / d.visits[0] > d.loans[1] / d.loans[0]);
-                assert.match(q.fasit.riktige[0], /^Besøk økte/);
+                { const difference = d.visits[1] * d.loans[0] - d.loans[1] * d.visits[0];
+                  const expected = difference > 0 ? 'Den prosentvise endringen i besøk var større enn i utlån.' : difference < 0 ? 'Den prosentvise endringen i besøk var mindre enn i utlån.' : 'Besøk og utlån hadde samme prosentvise endring.';
+                  assert.deepEqual(q.fasit.riktige, [expected]);
+                }
                 break;
             case 'sparing-innskudd-foer-rente':
                 expected = [sum(Array.from({ length: d.years }, (_, j) => d.deposit * (1 + d.rate) ** (j + 1)))];
@@ -241,7 +249,7 @@ test('halvverdier avrundes riktig uten at flyttallsstøy avviser svaret', () => 
  assert.equal(evaluateAnswer({numbers:['-21,8'],choices:[]},negative).correct,true);
  assert.equal(evaluateAnswer({numbers:['-21,7'],choices:[]},negative).correct,false);
 });
-test('kontrollsiden viser 50 om gangen og gir tilgang til alle 915', async () => {
+test('kontrollsiden viser 50 om gangen og gir tilgang til alle 950', async () => {
  const {runInNewContext}=await import('node:vm');
  const html=readFileSync(new URL('../public/oppgaver-og-hint.html',import.meta.url),'utf8');
  const data=html.match(/<script id="question-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
@@ -255,9 +263,9 @@ test('kontrollsiden viser 50 om gangen og gir tilgang til alle 915', async () =>
  const result=nodes.get('results');const cards=()=>all(result).filter(n=>n.className==='question-card');
  assert.equal(cards().length,50);
  let more;while((more=all(result).find(n=>n.textContent==='Vis flere oppgaver')))more.handlers.click();
- assert.equal(cards().length,915);
+ assert.equal(cards().length,950);
  const del2=all(nodes.get('part-filters')).find(n=>n.textContent==='Del 2');del2.handlers.click();
  assert.equal(cards().length,50);
  while((more=all(result).find(n=>n.textContent==='Vis flere oppgaver')))more.handlers.click();
- assert.equal(cards().length,453);
+ assert.equal(cards().length,462);
 });

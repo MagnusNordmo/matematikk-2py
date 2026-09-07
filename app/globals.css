@@ -2096,7 +2096,7 @@ input:focus-visible {
 .concept-list { padding: .25rem 0; }
 .concept-list > div { margin-bottom: 1rem; }
 
-.worked-steps .learning-support { margin: 1rem 0; padding: 0 0 1rem; border-top: 0; border-bottom: 1px solid var(--line); }
+.worked-steps .learning-support { margin: 1.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line); }
 .learning-support code { font-size: .95em; padding: .1em .25em; border-radius: .2em; background: #e3eae7; overflow-wrap: anywhere; }
 .concept-example { margin: -.25rem 0 1rem; }
 .concept-example > span { font-size: .875rem; color: var(--muted); }

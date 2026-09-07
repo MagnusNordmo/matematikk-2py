@@ -15,10 +15,10 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-assert(embedded.oppgaver.length === 915, "HTML-filen må inneholde 915 oppgaver.");
+assert(embedded.oppgaver.length === 950, "HTML-filen må inneholde 950 oppgaver.");
 assert(embedded.groups === 60, "HTML-filen må inneholde 60 Del 2-case.");
 assert(embedded.temaer.length === 11, "HTML-filen må inneholde 11 temaer.");
-assert(new Set(embedded.oppgaver.map((question) => question.id)).size === 915, "Oppgave-ID-ene må være unike.");
+assert(new Set(embedded.oppgaver.map((question) => question.id)).size === 950, "Oppgave-ID-ene må være unike.");
 assert(["mild", "middels", "utfordrende"].every((level) => embedded.oppgaver.some((question) => question.vanskelighetsgrad === level)), "Alle tre vanskelighetsgrader må være i bruk.");
 
 for (const original of source.oppgaver) {
@@ -31,10 +31,10 @@ for (const original of source.oppgaver) {
   assert(copy.del === original.del, `Eksamensdelen er endret i ${original.id}.`);
 }
 
-assert(embedded.oppgaver.filter((question) => question.del === 1).length === 462, "Del 1 må ha 462 oppgaver.");
-assert(embedded.oppgaver.filter((question) => question.del === 2).length === 453, "Del 2 må ha 453 oppgaver.");
+assert(embedded.oppgaver.filter((question) => question.del === 1).length === 488, "Del 1 må ha 488 oppgaver.");
+assert(embedded.oppgaver.filter((question) => question.del === 2).length === 462, "Del 2 må ha 462 oppgaver.");
 assert(embedded.oppgaver.filter((question) => question.losningsveier?.length === 2).length === 7, "Kontrollsiden må inneholde de 7 oppgavene med et naturlig metodevalg.");
 
 assert(!html.includes("fetch("), "Filen skal ikke hente oppgavebanken eksternt.");
 assert(html.includes("data:font/woff2;base64,"), "Matematikkfontene må være innebygd for bruk uten nett.");
-console.log("Kontroll bestått: 915 oppgaver, 60 Del 2-case, 11 temaer og alle originale tekster er bevart.");
+console.log("Kontroll bestått: 950 oppgaver, 60 Del 2-case, 11 temaer og alle originale tekster er bevart.");

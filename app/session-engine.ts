@@ -1,3 +1,4 @@
+import { taskPattern, workKind } from "./task-profile.ts";
 import type { Part, Question, QuestionBank } from "./question-bank";
 
 export type SessionMode = "skill" | "exam";
@@ -76,6 +77,11 @@ function chooseDiverseQuestion(
   );
   if (pool.length === 0) pool = candidates;
 
+  const unusedPatterns = pool.filter(q => !selected.some(previous => taskPattern(previous) === taskPattern(q)));
+  if (unusedPatterns.length) pool = unusedPatterns;
+  const unusedKinds = pool.filter(q => !selected.some(previous => workKind(previous) === workKind(q)));
+  if (unusedKinds.length) pool = unusedKinds;
+
   const matchingLevel = preferredLevel
     ? pool.filter((question) => question.niva === preferredLevel)
     : [];
@@ -104,7 +110,9 @@ function chooseDiverseGroup(groups: Question[][], selected: Question[]) {
       const newSubthemes = new Set(
         group.map((question) => question.deltema).filter((subtheme) => !usedSubthemes.has(subtheme)),
       ).size;
-      return newSkills * 3 + newSubthemes;
+      const kinds = new Set(group.map(workKind).filter(kind => !selected.some(q => workKind(q) === kind))).size;
+      const repeatedPatterns = group.filter(q => selected.some(previous => taskPattern(previous) === taskPattern(q))).length;
+      return kinds * 30 + newSkills * 3 + newSubthemes - repeatedPatterns * 20;
     };
     return score(b) - score(a);
   })[0];
@@ -128,7 +136,27 @@ function distinctGroupThemes(groups: Question[][], count: number) {
   return result;
 }
 
-export function selectSessionQuestions(
+// Draw families before numerical variants. A short varied session is preferable
+// to filling the remaining slots with copies of a task the learner just saw.
+function practiceSelection(candidates: Question[], context: Question[], recentIds: Set<string>, count: number) {
+  const selected: Question[] = [];
+  while (selected.length < count) {
+    const used = new Set([...context, ...selected].map(q => q.variantfamilie));
+    const pool = candidates.filter(q => !used.has(q.variantfamilie));
+    if (!pool.length) break;
+    const recentFamilies = new Set(candidates.filter(q => recentIds.has(q.id)).map(q => q.variantfamilie));
+    const unseen = pool.filter(q => !recentFamilies.has(q.variantfamilie));
+    const preferred = unseen.length ? unseen : withoutRecent(pool, recentIds);
+    selected.push(chooseDiverseQuestion(preferred, [...context, ...selected]));
+  }
+  return selected;
+}
+
+export function rememberSelection(previous: string[], questions: Question[]) {
+  return [...new Set([...questions.map(q => q.id), ...previous])].slice(0, 30);
+}
+
+function selectSessionQuestionsOnce(
   bank: QuestionBank,
   part: Part,
   mode: SessionMode,
@@ -147,7 +175,7 @@ export function selectSessionQuestions(
         matchesDifficulty(question),
     );
     const preferredCandidates = withoutRecent(candidates, recentIds);
-    if (mode === "skill") return shuffle(preferredCandidates).slice(0, 10);
+    if (mode === "skill") return practiceSelection(candidates, [], recentIds, 10);
 
     const recentFamilies = recentVariantFamilies(bank, recentIds);
     const examCandidates = preferUnseenFamilies(preferredCandidates, recentFamilies);
@@ -277,29 +305,41 @@ export function selectSessionQuestions(
     ]).flat();
   }
 
-  const freshGroups = groups.filter((group) =>
-    group.every((question) => !recentIds.has(question.id)),
-  );
-  const selectedGroups = shuffle(
-    freshGroups.length >= 2 ? freshGroups : groups,
-  ).slice(0, 2);
-  const independent = shuffle(
-    withoutRecent(
-      bank.oppgaver.filter(
-        (question) =>
-          question.del === 2 &&
-          !question.oppgavegruppe &&
-          (!themeId || question.tema === themeId) &&
-          matchesDifficulty(question),
-      ),
-      recentIds,
-    ),
-  ).slice(0, selectedGroups.length === 0 ? 10 : 2);
-  if (selectedGroups.length === 0) return independent;
-  return shuffle([
-    ...selectedGroups,
-    ...independent.map((question) => [question]),
-  ]).flat();
+  // One complete case is enough in a topic practice session. Two numerical
+  // variants of the same case would repeat all four mathematical tasks.
+  const freshGroups = groups.filter(group => group.every(q => !recentIds.has(q.id)));
+  const selectedGroup = chooseDiverseGroup(freshGroups.length ? freshGroups : groups, []);
+  const independent = bank.oppgaver.filter(q => q.del === 2 && !q.oppgavegruppe &&
+    (!themeId || q.tema === themeId) && matchesDifficulty(q));
+  const selected = selectedGroup ? [...selectedGroup] : [];
+  return [...selected, ...practiceSelection(independent, selected, recentIds, 10 - selected.length)];
+}
+
+// Validate the assembled exam as a whole: topic labels alone do not guarantee
+// different work. Bounded retries preserve randomness without an unbounded loop.
+export function selectSessionQuestions(
+  bank: QuestionBank, part: Part, mode: SessionMode, themeId?: string,
+  recentIds = new Set<string>(), difficulty: Difficulty = "mixed",
+) {
+  if (mode === "skill") return selectSessionQuestionsOnce(bank, part, mode, themeId, recentIds, difficulty);
+  const recentFamilies = recentVariantFamilies(bank, recentIds);
+  const score = (questions: Question[]) => {
+    const patterns = new Set(questions.map(taskPattern)).size;
+    const kinds = new Set(questions.map(workKind)).size;
+    const themes = new Set(questions.map(q => q.tema)).size;
+    const repeated = questions.filter(q => recentFamilies.has(q.variantfamilie)).length;
+    return questions.length * 10000 + Math.min(kinds, 3) * 1000 +
+      Math.min(themes, part === 1 ? 8 : 4) * 100 + Math.min(patterns, part === 1 ? 10 : 9) * 20 - repeated;
+  };
+  let best: Question[] = [];
+  for (let attempt = 0; attempt < 24; attempt++) {
+    const candidate = selectSessionQuestionsOnce(bank, part, mode, themeId, recentIds, difficulty);
+    if (score(candidate) > score(best)) best = candidate;
+    if (candidate.length === 10 && new Set(candidate.map(workKind)).size >= 3 &&
+      new Set(candidate.map(taskPattern)).size >= (part === 1 ? 10 : 9) &&
+      !candidate.some(q => recentFamilies.has(q.variantfamilie))) return candidate;
+  }
+  return best;
 }
 
 export function findRetryQuestion(

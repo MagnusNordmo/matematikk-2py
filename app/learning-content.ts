@@ -2,6 +2,16 @@ import type { Question, QuestionGroup } from './question-bank.ts';
 import { evaluateAnswer, parseNorwegianNumber, type AnswerInput } from './answer-engine';
 
 export const CONCEPTS: [string, RegExp, string][] = [
+ ['Svarprosent', /svarprosent|spørreskjema/i, 'Svarprosent er antall som svarte delt på antall som fikk undersøkelsen, ganget med 100. Høy svarprosent fjerner ikke nødvendigvis skjevhet i hvem som ble spurt.'],
+ ['Besøk og personer', /forskjellige (?:besøkende|personer)|besøkstallet/i, 'Besøk teller hendelser, mens forskjellige besøkende teller personer. Én person kan stå bak flere besøk. Flere besøk betyr derfor ikke nødvendigvis flere personer.'],
+ ['Stigningstall og konstantledd', /stigningstall|konstantledd|parallelle|timepris|lineaere_funksjoner/i, 'I en lineær modell y = ax + b er a endringen i y når x øker med én. b er verdien når x er null. Et negativt stigningstall betyr nedgang. Linjer med samme stigningstall har konstant avstand i loddrett retning.'],
+ ['Nullpunkt', /nullpunkt|tanken er tom/i, 'Et nullpunkt er en innverdi som gir funksjonsverdi null. I en modell for vannmengde forteller det når den modellerte vannmengden er null.'],
+ ['Punkt og koordinater', /koordinat|punkt ligger|punkt-paa-graf/i, 'Et punkt skrives (x, y). Første tall angir plasseringen vannrett, og andre tall angir plasseringen loddrett. På grafen til y = f(x) må andre koordinat være lik f av første koordinat.'],
+ ['Sektordiagram', /sektor|sirkel/i, 'Hele sirkelen er 360 grader og representerer hele gruppen. En sektors andel er vinkelen delt på 360. Gang andelen med totalt antall for å finne antallet i sektoren.'],
+ ['Linjediagram', /linjediagram|tidsdiagram/i, 'Et linjediagram kobler målepunkter i rekkefølge. Med tid langs den vannrette aksen viser linjen utviklingen gjennom perioden.'],
+ ['Tallfølge', /tallfølge|tallfoelge/i, 'En tallfølge er tall i en bestemt rekkefølge. Det første tallet er ledd én. Fast tillegg og fast dobling gir ulike følger, så bruk regelen som er oppgitt.'],
+ ['Delt side og dobbeltelling', /delt.*side|deler.*side|ytterkant|hjørne/i, 'Når figurdeler deler en side eller et hjørne, skal den felles delen telles én gang. Teller du hver del separat, må du trekke fra det som ble telt flere ganger.'],
+ ['Partall og oddetall', /partall|oddetall/i, 'Et heltall er et partall når det kan deles på to uten rest. Et oddetall har rest én. Én tillatt verdi som bryter en påstand om alle tall, er nok til å motbevise påstanden.'],
  ['Fast tilvekst i en tallfølge', /tilvekst|radnummer|neste rad/i, 'En tallfølge med fast tilvekst får samme tillegg for hvert nytt ledd. Hvis første ledd er 7 og tilveksten er 3, er de neste 10 og 13. Fra ledd 1 til ledd n er det n − 1 tillegg.'],
  ['Naturlig logaritme og exp', /\bln\(|logaritm|\bexp\(/i, 'Den naturlige logaritmen, ln, gjør gangesteg i en eksponentialmodell om til tillegg. exp gjør den motsatte omregningen. Hvis ln(M) = u + vx, kan modellen skrives M = exp(u) · exp(v) opphøyd i x.'],
  ['Koeffisient', /koeffisient|an\^2\+bn/i, 'En koeffisient er et tall som ganges med en variabel eller en potens. I 3n² + 5n + 2 er koeffisientene foran n² og n henholdsvis 3 og 5; konstantleddet er 2.'],
