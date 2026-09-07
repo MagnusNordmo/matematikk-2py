@@ -13,7 +13,7 @@ test("Del 1-eksamensøkter har ti blandede oppgaver uten hjelpemidler", () => {
     const questions = selectSessionQuestions(bank, 1, "exam");
     assert.equal(questions.length, 10);
     assert.ok(questions.every((question) => question.del === 1 && question.hjelpemidler === "uten"));
-    assert.equal(new Set(questions.map((question) => question.tema)).size, 8);
+    assert.ok(new Set(questions.map((question) => question.tema)).size >= 8);
     assert.equal(new Set(questions.map((question) => question.variantfamilie)).size, 10);
     assert.ok(new Set(questions.flatMap((question) => question.ferdighet)).size >= 14);
     for (const theme of new Set(questions.map((question) => question.tema))) {
@@ -57,7 +57,8 @@ test("selvstendige Del 2-oppgaver dekker alle fagområdene i eksamensprofilen", 
       .filter((question) => question.del === 2 && question.oppgavegruppe)
       .map((question) => question.tema),
   );
-  assert.deepEqual(independentThemes, caseThemes);
+  for (const theme of caseThemes) assert.ok(independentThemes.has(theme));
+  assert.ok(independentThemes.has("representasjoner"));
 });
 
 test("nye økter prioriterer andre oppgaver enn forrige økt", () => {

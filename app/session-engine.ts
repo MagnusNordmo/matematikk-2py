@@ -150,18 +150,20 @@ export function selectSessionQuestions(
     if (mode === "skill") return shuffle(preferredCandidates).slice(0, 10);
 
     const recentFamilies = recentVariantFamilies(bank, recentIds);
+    const examCandidates = preferUnseenFamilies(preferredCandidates, recentFamilies);
     const themes = shuffle([
-      ...new Set(preferredCandidates.map((question) => question.tema)),
+      ...new Set(examCandidates.map((question) => question.tema)),
     ]);
     const levelPlan = shuffle<Question["niva"]>([1, 1, 1, 1, 2, 2, 2, 2, 2, 3]);
     const selected: Question[] = [];
-    const openCandidates = preferUnseenFamilies(preferredCandidates.filter(requiresOwnReasoning), recentFamilies);
+    const openCandidates = examCandidates.filter(requiresOwnReasoning);
     const opening = chooseDiverseQuestion(openCandidates, selected);
     if (opening) selected.push(opening);
 
     for (const [index, theme] of themes.entries()) {
+      if (selected.length >= 10) break;
       if (selected.some(question => question.tema === theme)) continue;
-      const themeCandidates = preferredCandidates.filter(
+      const themeCandidates = examCandidates.filter(
         (question) => question.tema === theme,
       );
       const preferred = preferUnseenFamilies(themeCandidates, recentFamilies);
@@ -178,7 +180,7 @@ export function selectSessionQuestions(
       const usedFamilies = new Set(
         selected.map((question) => question.variantfamilie),
       );
-      const diverseCandidates = preferredCandidates.filter(
+      const diverseCandidates = examCandidates.filter(
         (question) =>
           !usedIds.has(question.id) &&
           !usedFamilies.has(question.variantfamilie) &&
@@ -206,7 +208,7 @@ export function selectSessionQuestions(
       group.every((question) => !recentIds.has(question.id)),
     );
     const recentFamilies = recentVariantFamilies(bank, recentIds);
-    const independentCandidates = withoutRecent(
+    const independentCandidates = preferUnseenFamilies(withoutRecent(
       bank.oppgaver.filter(
         (question) =>
           question.del === 2 &&
@@ -214,7 +216,7 @@ export function selectSessionQuestions(
           matchesDifficulty(question),
       ),
       recentIds,
-    );
+    ), recentFamilies);
     const independentThemes = shuffle([
       ...new Set(independentCandidates.map((question) => question.tema)),
     ]).slice(0, 2);
@@ -292,7 +294,7 @@ export function selectSessionQuestions(
       ),
       recentIds,
     ),
-  ).slice(0, 2);
+  ).slice(0, selectedGroups.length === 0 ? 10 : 2);
   if (selectedGroups.length === 0) return independent;
   return shuffle([
     ...selectedGroups,

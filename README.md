@@ -4,6 +4,10 @@ En norsk nettapp for elever som øver til både Del 1 og Del 2 av matematikk 2PY
 
 Oppgavebanken dekker både oppgaver uten hjelpemidler og digitale oppgaver med hjelpemidler. Del 2 inneholder sammenhengende case med fire deloppgaver, i tillegg til selvstendige digitale oppgaver. Alle svar kan kontrolleres direkte i nettleseren.
 
+## Oppgavebank med 915 oppgaver
+
+Banken inneholder 462 oppgaver i Del 1 og 453 i Del 2, inkludert 60 case. Utvidelsen med 400 oppgaver er dokumentert i [oppgavekartet](docs/EXTENSION_2026-09-07.md). Kontrollsiden viser 50 oppgaver om gangen og har en knapp for å vise flere.
+
 ## Én felles oppgavebank
 
 `public/oppgaver-2027.json` er den autoritative kilden til det nye oppgaveinnholdet. Elevappen leser filen direkte. Kontrollappen og den selvstendige HTML-filen genereres fra nøyaktig samme fil under bygging. Den eldre `public/oppgaver.json` er beholdt som historikk, men brukes ikke av elevappen.

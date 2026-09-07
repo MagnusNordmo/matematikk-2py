@@ -2,6 +2,13 @@ import type { Question, QuestionGroup } from './question-bank.ts';
 import { evaluateAnswer, parseNorwegianNumber, type AnswerInput } from './answer-engine';
 
 export const CONCEPTS: [string, RegExp, string][] = [
+ ['Fast tilvekst i en tallfølge', /tilvekst|radnummer|neste rad/i, 'En tallfølge med fast tilvekst får samme tillegg for hvert nytt ledd. Hvis første ledd er 7 og tilveksten er 3, er de neste 10 og 13. Fra ledd 1 til ledd n er det n − 1 tillegg.'],
+ ['Naturlig logaritme og exp', /\bln\(|logaritm|\bexp\(/i, 'Den naturlige logaritmen, ln, gjør gangesteg i en eksponentialmodell om til tillegg. exp gjør den motsatte omregningen. Hvis ln(M) = u + vx, kan modellen skrives M = exp(u) · exp(v) opphøyd i x.'],
+ ['Koeffisient', /koeffisient|an\^2\+bn/i, 'En koeffisient er et tall som ganges med en variabel eller en potens. I 3n² + 5n + 2 er koeffisientene foran n² og n henholdsvis 3 og 5; konstantleddet er 2.'],
+ ['Minste kvadraters metode', /minste kvadrat/i, 'Metoden velger modellen som gir minst mulig sum av kvadrerte avvik mellom målingene og modellen. Kvadrering betyr å gange hvert avvik med seg selv. I lineær regresjon måles avvikene i loddrett retning.'],
+ ['Ikke-negative heltall', /ikke-negative heltall/i, 'Dette er tallene 0, 1, 2 og så videre. Desimaltall og negative tall er ikke med. Like tall kan brukes flere ganger når oppgaven tillater det.'],
+ ['Strengt billigere og høyst', /strengt|høyst|maksimalt/i, 'Strengt mindre betyr mindre uten at likhet er tillatt. Høyst betyr mindre enn eller lik. Ved hele antall må du kontrollere hvilke heltall som ligger innenfor grensene.'],
+ ['Varians', /varians|kvadrerte avvik/i, 'Populasjonsvariansen er gjennomsnittet av de kvadrerte avvikene fra gjennomsnittet. Standardavviket er kvadratroten av variansen og har samme enhet som målingene.'],
  ['Graf og koordinater', /graf|koordinat|punktdiagram/i, 'Et punkt (2, 30) i en graf betyr at x er 2 og y er 30. Finn 2 på den vannrette x-aksen og 30 på den loddrette y-aksen. Aksetitlene forteller hva tallene måler, for eksempel timer og kroner.'],
  ['Proporsjonal sammenheng', /proporsjonal|kilopris/i, 'To størrelser er proporsjonale når du får samme tall hver gang du deler den ene på den andre. Dette kalles et konstant forhold. Ved 30 kroner per kilo uten fast avgift er pris delt på kilo alltid 30; dobbelt så mange kilo gir dobbelt så høy pris. I y = kx er k dette faste forholdet (y/x, for x ulik null).'],
  ['Omvendt proporsjonal', /omvendt.*proporsjonal/i, 'Omvendt proporsjonal betyr at du får samme tall når størrelsene ganges sammen. Hvis 600 kroner deles likt, blir antall personer ganger pris per person alltid 600. Dobbelt så mange personer gir halv pris. I x · y = k er k det faste produktet, altså resultatet av gangingen.'],
@@ -98,10 +105,23 @@ export function answerFeedback(question: Question, input: AnswerInput, group?: Q
  if (result.correct) return null;
  if (question.fasit.type === 'flere_tall' && question.fasit.konstruksjon === 'datasett') {
   const values=input.numbers.map(parseNorwegianNumber), ordered=[...values].sort((a,b)=>a-b);
+  if (question.fasit.vilkaar) {
+   const rules = question.fasit.vilkaar;
+   if (values.length !== rules.antall || !values.every(v => Number.isFinite(v) && v >= rules.minimum && (!rules.heltall || Number.isInteger(v)))) return `Skriv ${rules.antall} ${rules.heltall ? 'heltall' : 'tall'} som alle er minst ${rules.minimum}. Kontroller formatet og prøv igjen.`;
+   const middle = Math.floor(values.length / 2);
+   const median = values.length % 2 ? ordered[middle] : (ordered[middle-1]+ordered[middle])/2;
+   const mean = values.reduce((a,b)=>a+b,0)/values.length;
+   const format = (value: number) => new Intl.NumberFormat('nb-NO',{maximumFractionDigits:3}).format(value);
+   return `Tallene dine har gjennomsnitt ${format(mean)} (${Math.abs(mean-rules.gjennomsnitt)<1e-9 ? 'riktig' : 'kravet er '+format(rules.gjennomsnitt)}) og median ${format(median)} (${median===rules.median ? 'riktig' : 'kravet er '+format(rules.median)}). Medianen finnes etter sortering; gjennomsnittet er summen delt på antall tall.`;
+  }
   if (!values.every(v=>Number.isInteger(v)&&v>=0)) return 'Alle fem tall må være ikke-negative heltall. Kontroller tallene og prøv igjen.';
   return `Tallene dine har gjennomsnitt ${new Intl.NumberFormat('nb-NO',{maximumFractionDigits:3}).format(values.reduce((a,b)=>a+b,0)/5)} og median ${ordered[2]}. Kravene er gjennomsnitt 10 og median 8. Medianen finnes etter sortering; gjennomsnittet er summen delt på fem.`;
  }
  if (question.fasit.type === 'flere_tall' && question.fasit.konstruksjon === 'moteksempel') return 'Kontroller at tallene før har sum 100 og tallene etter sum 110, og at minst én av de samme observasjonene synker. En høyere sum krever ikke at begge tallene øker.';
+ if (question.laeringsstotte?.feil) {
+  const specific = input.choices.map(choice => question.laeringsstotte?.feilvalg?.[choice]).find(Boolean);
+  return specific ?? question.laeringsstotte.feil;
+ }
  const key=question.fasit.type==='valg'?question.fasit:question.fasit.type==='valg_og_tall'?question.fasit.valg:null;
  const wrong=input.choices.find(c=>!key?.riktige.includes(c));
  if (wrong && /eksponen/i.test(wrong) && key?.riktige.some(c=>/^proporsjonal$/i.test(c))) return 'Du valgte eksponentiell vekst. Sammenlikn om like store steg gir samme prosentvise endring, eller om forholdet mellom størrelsene er konstant. Begrepene forklares nedenfor.';

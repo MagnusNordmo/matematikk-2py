@@ -1,0 +1,444 @@
+# Utvidelse av oppgavebanken – 7. september 2026
+
+400 nye oppgaver (2py27-516–2py27-915): 200 i Del 1 og 200 i Del 2. Banken har nå 915 oppgaver, 462 i Del 1 og 453 i Del 2. Ti nye case med fire deloppgaver gir totalt 60 case. De første 515 oppgavene er innholdsmessig uendret.
+
+## Faglig profil
+
+40 oppgavefamilier med ti varianter hver. Nye tall og situasjoner brukes til å øve ulike kompetanser; varianter innen en familie deler et matematisk hovedgrep. Fordelingen er 60 milde, 320 middels og 20 utfordrende oppgaver. Nivåene er faglige vurderinger, ikke resultater fra elevutprøving. Oppgavene er eksamenslignende øving med utgangspunkt i den vedlagte 2P-Y-instruksen, ikke en prognose med sikker kunnskap om neste eksamen.
+
+| Tema | Nye oppgaver |
+|---|---:|
+| funksjoner_og_modeller | 70 |
+| lineaere_funksjoner | 20 |
+| potenser | 30 |
+| programmering | 40 |
+| proporsjonalitet | 30 |
+| prosent | 60 |
+| representasjoner | 10 |
+| statistikk | 80 |
+| statistikk_og_samfunn | 30 |
+| variabler | 10 |
+| variabler_og_monstre | 20 |
+
+## Rettelogikk og læringsstøtte
+
+Alle nye svar vurderes automatisk. Numeriske felt har referanse, enhet og eksplisitt toleranse. Avrundede felt har også antall desimaler og bruker avrunding av halvverdier bort fra null. Konstruksjonsoppgaver vurderer seks ikke-negative heltall mot den aktuelle oppgavens gjennomsnitt og median, uavhengig av rekkefølge eller likhet med eksempelbesvarelsen. De to matematiske vilkårene gir ett poeng hver; de seks feltene gir ikke seks poeng.
+
+Nye oppgaver har konkrete hint og løsninger, oppgavespesifikk feiltilbakemelding og begreper i den felles læringsstøtten. Alle feilalternativer i de nye enkeltvalgene har egne forklaringer. Innsending i et case åpner bare støtte til den aktuelle deloppgaven.
+
+## Integrasjon og kontroll
+
+Elevappen, temaøkter, eksamensøkter, /kontroll og den selvstendige kontrollfilen bruker samme autoritative bank. Kontrollfilen gjengir nå også tabeller, kode, figurer og svaralternativer med elevappens representasjoner. Den oppretter 50 oppgavekort om gangen og lar brukeren vise flere.
+
+Fasitene er kontrollert med uavhengige beregninger. Alle 40 nye kodeeksempler er kjørt. Tester dekker blant annet fasitsvar, norsk desimalkomma, avrunding og nabosvar, alternative gyldige konstruksjoner, tomme svar, bevarte originaloppgaver, komplette case og oppgaveutvalg. Kontroller for elevstyrt læringsstøtte og eksisterende rettelser er beholdt. Konstruksjonsreglene for eldre oppgaver er uendret.
+
+Oppgavebanken økte fra 864 122 til 1 953 099 byte. Lokal gzip-komprimering ga omtrent 242 kB etter utvidelsen. Dette er en størrelseskontroll, ikke en måling av lastetid på elevutstyr.
+
+## Teknisk validering
+
+Produksjonsbygg, kontrollsidevalidering, alle 106 tester og lint av berørte filer består. En ekstra TypeScript-kontroll rapporterer de samme åtte konfigurasjons-/typingsfeilene som i en ren kopi av versjonen før endringen (Worker-typer og testimporter); det kom ingen nye typerelaterte feil. Denne eksisterende konfigurasjonen er ikke endret.
+
+## Oppgavekart
+
+| ID | Del | Tema og oppgavefamilie | Nivå | Svarform |
+|---|---:|---|---:|---|
+| 2py27-516 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-517 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-518 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-519 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-520 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-521 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-522 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-523 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-524 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-525 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-526 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-527 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-528 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-529 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-530 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-531 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-532 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-533 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-534 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-535 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-536 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-537 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-538 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-539 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-540 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-541 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-542 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-543 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-544 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-545 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-546 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-547 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-548 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-549 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-550 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-551 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-552 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-553 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-554 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-555 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-556 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-557 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-558 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-559 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-560 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-561 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-562 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-563 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-564 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-565 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-566 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-567 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-568 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-569 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-570 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-571 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-572 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-573 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-574 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-575 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-576 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-577 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-578 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-579 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-580 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-581 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-582 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-583 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-584 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-585 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-586 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-587 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-588 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-589 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-590 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-591 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-592 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-593 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-594 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-595 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-596 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-597 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-598 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-599 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-600 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-601 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-602 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-603 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-604 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-605 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-606 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-607 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-608 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-609 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-610 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-611 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-612 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-613 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-614 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-615 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-616 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-617 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-618 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-619 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-620 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-621 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-622 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-623 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-624 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-625 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-626 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-627 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-628 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-629 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-630 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-631 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-632 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-633 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-634 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-635 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-636 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-637 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-638 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-639 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-640 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-641 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-642 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-643 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-644 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-645 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-646 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-647 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-648 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-649 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-650 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-651 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-652 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-653 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-654 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-655 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-656 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-657 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-658 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-659 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-660 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-661 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-662 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-663 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-664 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-665 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-666 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-667 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-668 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-669 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-670 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-671 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-672 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-673 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-674 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-675 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-676 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-677 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-678 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-679 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-680 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-681 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-682 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-683 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-684 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-685 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-686 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-687 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-688 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-689 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-690 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-691 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-692 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-693 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-694 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-695 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-696 | 1 | prosent / fravaerende-andel | 2 | tall |
+| 2py27-697 | 1 | prosent / ulikt-sammenlikningsgrunnlag | 2 | tall |
+| 2py27-698 | 1 | prosent / to-motsatte-endringer | 2 | tall |
+| 2py27-699 | 1 | prosent / andel-og-prosentpoeng | 2 | flere_tall |
+| 2py27-700 | 1 | potenser / standardform-enheter | 2 | tall |
+| 2py27-701 | 1 | potenser / rot-og-potens | 1 | tall |
+| 2py27-702 | 1 | potenser / eksponent-i-kvotient | 2 | tall |
+| 2py27-703 | 1 | proporsjonalitet / proporsjonal-oppskrift | 2 | tall |
+| 2py27-704 | 1 | proporsjonalitet / omvendt-med-fastledd | 2 | flere_tall |
+| 2py27-705 | 1 | lineaere_funksjoner / lineaer-fra-to-priser | 2 | flere_tall |
+| 2py27-706 | 1 | variabler / budsjett-heltall | 2 | tall |
+| 2py27-707 | 1 | variabler_og_monstre / rektangulaert-rutemonster | 2 | flere_tall |
+| 2py27-708 | 1 | variabler_og_monstre / tilvekst-og-startnummer | 2 | tall |
+| 2py27-709 | 1 | statistikk / manglende-observasjon | 2 | tall |
+| 2py27-710 | 1 | statistikk / ekstremverdi-sentralmaal | 2 | flere_tall |
+| 2py27-711 | 1 | statistikk / kumulativ-antall | 1 | tall |
+| 2py27-712 | 1 | statistikk / klassemidtpunkt-anslag | 2 | tall |
+| 2py27-713 | 1 | programmering / kode-betinget-sum | 2 | tall |
+| 2py27-714 | 1 | programmering / kode-tolkning-tillegg | 1 | valg |
+| 2py27-715 | 1 | statistikk_og_samfunn / samme-gjennomsnitt-spredning | 2 | valg |
+| 2py27-716 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-717 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-718 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-719 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-720 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-721 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-722 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-723 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-724 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-725 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-726 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-727 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-728 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-729 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-730 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-731 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-732 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-733 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-734 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-735 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-736 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-737 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-738 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-739 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-740 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-741 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-742 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-743 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-744 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-745 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-746 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-747 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-748 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-749 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-750 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-751 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-752 | 2 | funksjoner_og_modeller / energi-startverdi | 1 | tall |
+| 2py27-753 | 2 | funksjoner_og_modeller / energi-modellverdi | 1 | tall |
+| 2py27-754 | 2 | funksjoner_og_modeller / energi-gjennomsnittlig-vekstfart | 2 | tall |
+| 2py27-755 | 2 | funksjoner_og_modeller / energi-modellbegrensning | 2 | valg |
+| 2py27-756 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-757 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-758 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-759 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-760 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-761 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-762 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-763 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-764 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-765 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-766 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-767 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-768 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-769 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-770 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-771 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-772 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-773 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-774 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-775 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-776 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-777 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-778 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-779 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-780 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-781 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-782 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-783 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-784 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-785 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-786 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-787 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-788 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-789 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-790 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-791 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-792 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-793 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-794 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-795 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-796 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-797 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-798 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-799 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-800 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-801 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-802 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-803 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-804 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-805 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-806 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-807 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-808 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-809 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-810 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-811 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-812 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-813 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-814 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-815 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-816 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-817 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-818 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-819 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-820 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-821 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-822 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-823 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-824 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-825 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-826 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-827 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-828 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-829 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-830 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-831 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-832 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-833 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-834 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-835 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-836 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-837 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-838 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-839 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-840 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-841 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-842 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-843 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-844 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-845 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-846 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-847 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-848 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-849 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-850 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-851 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-852 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-853 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-854 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-855 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-856 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-857 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-858 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-859 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-860 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-861 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-862 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-863 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-864 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-865 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-866 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-867 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-868 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-869 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-870 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-871 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-872 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-873 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-874 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-875 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-876 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-877 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-878 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-879 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-880 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-881 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-882 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-883 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-884 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-885 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-886 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-887 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-888 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-889 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-890 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-891 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-892 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-893 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-894 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-895 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-896 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-897 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-898 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-899 | 2 | programmering / kode-terskel-tolkning | 2 | tall |
+| 2py27-900 | 2 | prosent / foerste-hele-periode | 2 | tall |
+| 2py27-901 | 2 | prosent / finne-aarlig-vekst | 2 | tall |
+| 2py27-902 | 2 | lineaere_funksjoner / tre-avtaler-intervall | 3 | flere_tall |
+| 2py27-903 | 2 | funksjoner_og_modeller / lineaer-regresjon-data | 2 | flere_tall |
+| 2py27-904 | 2 | funksjoner_og_modeller / eksponentialregresjon-data | 2 | flere_tall |
+| 2py27-905 | 2 | funksjoner_og_modeller / potensmodell-relativ-endring | 2 | tall |
+| 2py27-906 | 2 | statistikk / vektet-gjennomsnitt-grupper | 2 | tall |
+| 2py27-907 | 2 | statistikk / populasjonsstandardavvik | 1 | tall |
+| 2py27-908 | 2 | representasjoner / histogram-hoeyder | 2 | flere_tall |
+| 2py27-909 | 2 | statistikk / median-interpolasjon | 2 | tall |
+| 2py27-910 | 2 | statistikk / konstruere-datasett | 3 | flere_tall |
+| 2py27-911 | 2 | proporsjonalitet / forbruk-per-person | 2 | tall |
+| 2py27-912 | 2 | statistikk_og_samfunn / indeks-nytt-grunnlag | 2 | tall |
+| 2py27-913 | 2 | statistikk_og_samfunn / data-konklusjon | 2 | valg |
+| 2py27-914 | 2 | programmering / sparing-innskudd-foer-rente | 2 | tall |
+| 2py27-915 | 2 | programmering / kode-terskel-tolkning | 2 | tall |

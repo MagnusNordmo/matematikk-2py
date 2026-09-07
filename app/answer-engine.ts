@@ -52,6 +52,12 @@ export function parseNorwegianNumber(value: string) {
 function numericMatches(input: string, expected: NumericAnswer) {
   const actual = parseNorwegianNumber(input);
   if (!Number.isFinite(actual)) return false;
+  if (expected.avrunding !== undefined) {
+    const scale = 10 ** expected.avrunding;
+    const rounded = (value: number) => Math.sign(value) * Math.round(Math.abs(value) * scale + Number.EPSILON * Math.max(1, Math.abs(value) * scale) * 4);
+    const epsilon = Number.EPSILON * Math.max(1, Math.abs(actual), Math.abs(expected.verdi)) * 4;
+    return rounded(actual) === rounded(expected.verdi) && Math.abs(actual - expected.verdi) <= (expected.toleranse ?? 0.5 / scale) + epsilon;
+  }
   return Math.abs(actual - expected.verdi) <= (expected.toleranse ?? 0.0001);
 }
 
@@ -95,9 +101,15 @@ export function evaluateAnswer(input: AnswerInput, key: AnswerKey): AnswerEvalua
     totalParts = 2;
     correctParts = 0;
     if (values.length === key.verdier.length && values.every(Number.isFinite)) {
-      if (key.konstruksjon === "datasett" && values.every(v => Number.isInteger(v) && v >= 0)) {
-        correctParts += Number(values.reduce((a,b) => a+b,0) === 50);
-        correctParts += Number([...values].sort((a,b) => a-b)[2] === 8);
+      if (key.konstruksjon === "datasett") {
+        const rules = key.vilkaar ?? { antall: 5, gjennomsnitt: 10, median: 8, minimum: 0, heltall: true };
+        if (values.length === rules.antall && values.every(v => v >= rules.minimum && (!rules.heltall || Number.isInteger(v)))) {
+          const ordered = [...values].sort((a,b) => a-b);
+          const middle = Math.floor(values.length / 2);
+          const median = values.length % 2 ? ordered[middle] : (ordered[middle-1] + ordered[middle]) / 2;
+          correctParts += Number(Math.abs(values.reduce((a,b) => a+b,0) - rules.gjennomsnitt * rules.antall) < 1e-9);
+          correctParts += Number(Math.abs(median - rules.median) < 1e-9);
+        }
       } else if (key.konstruksjon === "moteksempel") {
         const [a,b,c,d] = values;
         correctParts += Number(Math.abs(a+b-100) < 1e-9 && Math.abs(c+d-110) < 1e-9);

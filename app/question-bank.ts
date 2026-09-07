@@ -5,6 +5,7 @@ export type NumericAnswer = {
   etikett?: string;
   enhet?: string;
   toleranse?: number;
+  avrunding?: number;
 };
 
 export type ChoiceAnswer = {
@@ -19,7 +20,7 @@ export type ChoiceAnswer = {
 
 export type AnswerKey =
   | { type: "tall"; verdier: NumericAnswer[] }
-  | { type: "flere_tall"; verdier: NumericAnswer[]; konstruksjon?: "datasett" | "moteksempel" }
+  | { type: "flere_tall"; verdier: NumericAnswer[]; konstruksjon?: "datasett" | "moteksempel"; vilkaar?: { antall: number; gjennomsnitt: number; median: number; minimum: number; heltall: boolean } }
   | ChoiceAnswer
   | { type: "valg_og_tall"; valg: ChoiceAnswer; verdier: NumericAnswer[] };
 
@@ -50,6 +51,7 @@ export type Question = {
   svar: string;
   fasit: AnswerKey;
   variantfamilie: string;
+  laeringsstotte?: { feil: string; feilvalg?: Record<string, string> };
   data?: Record<string, unknown>;
   visualisering?: Visualization;
   oppgavegruppe?: {

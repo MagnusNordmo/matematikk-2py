@@ -6,11 +6,11 @@ const bank = JSON.parse(
   await readFile(new URL("../public/oppgaver-2027.json", import.meta.url), "utf8"),
 );
 
-test("oppgavebanken har 515 komplette og unike oppgaver", () => {
-  assert.equal(bank.samling.antall, 515);
-  assert.equal(bank.oppgaver.length, 515);
-  assert.equal(new Set(bank.oppgaver.map((question) => question.id)).size, 515);
-  assert.equal(bank.oppgavegrupper.length, 50);
+test("oppgavebanken har 915 komplette og unike oppgaver", () => {
+  assert.equal(bank.samling.antall, 915);
+  assert.equal(bank.oppgaver.length, 915);
+  assert.equal(new Set(bank.oppgaver.map((question) => question.id)).size, 915);
+  assert.equal(bank.oppgavegrupper.length, 60);
 
   for (const question of bank.oppgaver) {
     assert.ok(question.id?.trim(), "Alle oppgaver må ha ID");
@@ -27,9 +27,9 @@ test("oppgavebanken har 515 komplette og unike oppgaver", () => {
 });
 
 test("fordelingen mellom deler og svarformater er bevart", () => {
-  assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 262);
-  assert.equal(bank.oppgaver.filter((question) => question.del === 2).length, 253);
-  const expected = { tall: 268, flere_tall: 73, valg: 151, valg_og_tall: 23 };
+  assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 462);
+  assert.equal(bank.oppgaver.filter((question) => question.del === 2).length, 453);
+  const expected = { tall: 528, flere_tall: 173, valg: 191, valg_og_tall: 23 };
   for (const [type, count] of Object.entries(expected)) {
     assert.equal(bank.oppgaver.filter((question) => question.fasit.type === type).length, count, type);
   }
@@ -45,7 +45,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 102, "2": 402, "3": 11 });
+  assert.deepEqual(distribution, { "1": 162, "2": 722, "3": 31 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {
@@ -101,7 +101,7 @@ test("Del 2-case har fire sammenhengende deloppgaver", () => {
 });
 
 test("oppgavebanken dekker digitale representasjoner uten filinnlevering", () => {
-  assert.equal(bank.oppgaver.filter((question) => question.tema === "programmering").length, 49);
+  assert.equal(bank.oppgaver.filter((question) => question.tema === "programmering").length, 89);
   assert.ok(bank.oppgaver.some((question) => question.visualisering?.type === "figurmønster"));
   assert.ok(bank.oppgavegrupper.some((group) => group.visualisering?.type === "spredningsdiagram"));
   assert.ok(bank.oppgaver.every((question) => !/last opp|lever inn|excel-fil/i.test(question.sporsmal)));
@@ -154,8 +154,8 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
 
   const del1 = bank.oppgaver.filter((question) => question.del === 1);
   const del1HintCount = del1.reduce((total, question) => total + question.hint.length, 0);
-  assert.ok(del1HintCount >= 1000, "Del 1 har for få trinn til å støtte framgangsmåten");
-  assert.ok(del1HintCount <= 1150, "Del 1 har igjen fått unødvendig lange hintrekker");
+  assert.ok(del1HintCount >= 1600, "Del 1 har for få trinn til å støtte framgangsmåten");
+  assert.ok(del1HintCount <= 1750, "Del 1 har igjen fått unødvendig lange hintrekker");
 });
 
 test("fasiten holdes utenfor hintrekken og vises separat", () => {
@@ -454,8 +454,8 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.23");
-  assert.equal(percentQuestions.length, 42);
+  assert.equal(bank.samling.versjon, "2027.24");
+  assert.equal(percentQuestions.length, 82);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
     withPaths.map((question) => question.id),
@@ -639,7 +639,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.23");
+  assert.equal(bank.samling.versjon, "2027.24");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);
