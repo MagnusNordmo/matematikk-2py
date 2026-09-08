@@ -16,9 +16,14 @@ test('utvidelsen legger til 400 oppgaver og beholder de opprinnelige uendret', (
     const hashes = JSON.parse(readFileSync(new URL('../docs/baseline-515-sha256.json', import.meta.url), 'utf8'));
     for (const q of b.oppgaver.slice(0, 515)) {
         const original = structuredClone(q);
+        const patternRevision = JSON.parse(readFileSync(new URL('../docs/pattern-revision.json', import.meta.url), 'utf8'));
+        for (const [field, values] of Object.entries(patternRevision.oppgaver.find(change => change.id === q.id)?.felter ?? {})) {
+            assert.deepEqual(original[field] ?? null, values.etter, `${q.id}/${field}: figurrettelse`);
+            if (values.før === null) delete original[field]; else original[field] = values.før;
+        }
         const revision = JSON.parse(readFileSync(new URL('../docs/variation-revision.json', import.meta.url), 'utf8'));
         for (const [field, values] of Object.entries(revision.oppgaver.find(change => change.id === q.id)?.felter ?? {})) {
-            assert.deepEqual(q[field], values.etter, `${q.id}/${field}: autorisert rettelse`);
+            assert.deepEqual(original[field], values.etter, `${q.id}/${field}: autorisert rettelse`);
             original[field] = values.før;
         }
         const expected = JSON.stringify(canonical(original));

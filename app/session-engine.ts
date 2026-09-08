@@ -266,9 +266,15 @@ function selectSessionQuestionsOnce(
         )
         .map((question) => question.tema),
     );
-    const availableGroupPool = (freshGroups.length >= 2 ? freshGroups : groups).filter(
+    const availableGroups = (freshGroups.length >= 2 ? freshGroups : groups).filter(
       (group) => !usedThemes.has(group[0]?.tema),
     );
+    // A different case ID may still repeat the same recently practised family.
+    const unseenGroups = availableGroups.filter(group =>
+      group.every(question => !recentFamilies.has(question.variantfamilie)),
+    );
+    const availableGroupPool = new Set(unseenGroups.map(group => group[0]?.tema)).size >= 2
+      ? unseenGroups : availableGroups;
     const groupsFromNewThemes = availableGroupPool.filter(
       (group) => !recentGroupThemes.has(group[0]?.tema),
     );

@@ -11,7 +11,7 @@
       1,
       2
     ],
-    "versjon": "2027.25"
+    "versjon": "2027.26"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -72,8 +72,8 @@
     },
     "fordeling_niva": {
       "1": 171,
-      "2": 744,
-      "3": 35
+      "2": 743,
+      "3": 36
     },
     "fordeling_tema": {
       "funksjoner_og_modeller": 165,
@@ -1508,7 +1508,7 @@
             "antall": 18
           }
         ],
-        "tekstalternativ": "Antall benker er 6, 10, 14, 18.",
+        "tekstalternativ": "To søyler med benker. Hver søyle får to nye benker for hver figur.",
         "monster": "benker"
       }
     },
@@ -1516,7 +1516,7 @@
       "id": "d2-figur-02",
       "del": 2,
       "tittel": "Fliser rundt et kvadrat",
-      "innledning": "De fire første figurene viser hvor mange fliser som trengs rundt et kvadrat som vokser fra figur til figur.",
+      "innledning": "Figurene viser et kvadrat av fliser med én ekstra rad langs hver side, uten de fire ytterste hjørnene. Hele figuren vokser etter samme mønster.",
       "data": {
         "figurnummer": [
           1,
@@ -1553,7 +1553,7 @@
             "antall": 32
           }
         ],
-        "tekstalternativ": "Antall fliser er 5, 12, 21, 32.",
+        "tekstalternativ": "Et kvadrat av fliser med fliser langs sidene utenfor kvadratet, men ingen fliser i de fire ytterste hjørnene.",
         "monster": "flisramme_uten_hjorner"
       }
     },
@@ -1598,7 +1598,7 @@
             "antall": 12
           }
         ],
-        "tekstalternativ": "Antall stoler er 6, 8, 10, 12.",
+        "tekstalternativ": "En rad med bord. Ett sete på hver langside av hvert bord og to seter ved hver ende av bordrekken.",
         "monster": "bord_og_stoler"
       }
     },
@@ -1643,7 +1643,7 @@
             "antall": 10
           }
         ],
-        "tekstalternativ": "Antall prikker er 1, 3, 6, 10.",
+        "tekstalternativ": "Trekantede figurer av prikker, der hver ny rad har én prikk mer enn raden over.",
         "monster": "trekant"
       }
     },
@@ -1688,7 +1688,7 @@
             "antall": 20
           }
         ],
-        "tekstalternativ": "Antall ruter er 8, 12, 16, 20.",
+        "tekstalternativ": "Et kvadratisk rutenett med grønn ytterkant og hvitt sentrum. Sidelengden vokser med én rute for hver figur.",
         "monster": "ramme"
       }
     },
@@ -5824,34 +5824,106 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(3\\) ruter. Hver ny figur får \\(4\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(15\\).",
+      "sporsmal": "Figurene er kvadrater med en grønn ytterkant og et hvitt sentrum. Fortsett etter samme mønster. Velg en formel for antall grønne ruter i figur \\(n\\), og finn antallet i figur \\(10\\).",
       "hint": [
-        "Hva vet vi? Første figur har 3 elementer. Fra første til andre figur øker antallet fra 3 til 7, altså med 4. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
-        "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 4 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(4(n-1)\\).",
-        "Legg antallet i første figur til de nye elementene: \\(3+4(n-1)\\). Forklar hva de to delene teller. Du kan bruke uttrykket slik det står eller multiplisere ut. Sett inn det etterspurte figurnummeret hvis oppgaven også spør om et bestemt antall."
+        "Hva vet vi? Se på den grønne kanten. Hvordan kan du dele den i deler uten å telle hjørnene to ganger? Med tilvekst mener vi det som kommer til når figuren vokser.",
+        "Tell hele øverste og nederste rad. Tell deretter sidene mellom disse radene. Knytt lengdene til figurnummeret.",
+        "Topp og bunn har hver \\(n+2\\) ruter. Mellom dem har hver side \\(n\\) ruter. Sett opp summen av disse fire delene. Sett så inn \\(n=10\\) i formelen du velger."
       ],
-      "svar": "Formelen er \\(4n-1\\). Figur \\(15\\) har \\(59\\) ruter.",
+      "svar": "Øverst og nederst er det \\(n+2\\) grønne ruter. På hver side mellom disse radene er det \\(n\\). Derfor blir antallet \\(2(n+2)+2n=4n+4\\). Figur 10 har \\(4\\cdot10+4=44\\) grønne ruter.",
       "fasit": {
         "type": "valg_og_tall",
         "valg": {
           "type": "valg",
           "flervalg": false,
           "riktige": [
-            "\\(4n-1\\)"
+            "\\(4n+4\\)"
           ],
           "alternativer": [
-            "\\(7n\\)",
-            "\\(4n+3\\)",
+            "\\(4n\\)",
+            "\\(4n+4\\)",
+            "\\(n^2+4\\)",
+            "\\(4n+8\\)"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 44,
+            "enhet": "grønne ruter",
+            "toleranse": 0,
+            "etikett": "Antall grønne ruter i figur 10"
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
+      },
+      "variantfamilie": "d1-lineart-figurmonster",
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "ramme",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 8
+          },
+          {
+            "n": 2,
+            "antall": 12
+          },
+          {
+            "n": 3,
+            "antall": 16
+          }
+        ],
+        "tekstalternativ": "Figurene er kvadrater med en grønn ytterkant og et hvitt sentrum."
+      },
+      "id": "2py27-088",
+      "laeringsstotte": {
+        "feil": "Undersøk hvilke deler av figuren som vokser. Kontroller formelen mot alle de viste figurene, og sett deretter inn figurnummeret det spørres om."
+      }
+    },
+    {
+      "del": 1,
+      "tema": "variabler",
+      "deltema": "figurmonster",
+      "ferdighet": [
+        "generalisere",
+        "lineart_monster",
+        "begrunne",
+        "egen_losning"
+      ],
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Figurene består av en høy venstre søyle, en vannrett rad mot høyre og en kortere høyre søyle ned fra raden. Fortsett etter samme mønster. Velg en formel for antall sirkler i figur \\(n\\), og finn antallet i figur \\(5\\).",
+      "hint": [
+        "Hva vet vi? Del figuren i venstre søyle, vannrett rad og høyre søyle. Hvilke sirkler tilhører to av delene? Med tilvekst mener vi det som kommer til når figuren vokser.",
+        "Tell hele venstre søyle først. Tell så bare sirklene til høyre for den, og deretter sirklene nedenfor høyre endepunkt. Sammenlign veksten fra figur til figur.",
+        "Venstre søyle har \\(2n+1\\) sirkler. Tell \\(n\\) nye langs den vannrette raden og \\(n\\) nye nedover til høyre. Legg sammen de tre delene, og bruk deretter \\(n=5\\)."
+      ],
+      "svar": "Venstre søyle har \\(2n+1\\) sirkler. Den vannrette raden gir \\(n\\) nye, og høyre søyle gir \\(n\\) nye nedenfor raden. Antallet er \\((2n+1)+n+n=4n+1\\). Figur 5 har \\(4\\cdot5+1=21\\) sirkler.",
+      "fasit": {
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "\\(4n+1\\)"
+          ],
+          "alternativer": [
+            "\\(5n\\)",
             "\\(4n-1\\)",
-            "\\(3n+4\\)"
+            "\\(4n+1\\)",
+            "\\(4n+5\\)"
           ]
         },
         "verdier": [
           {
-            "verdi": 59,
-            "enhet": "ruter",
+            "verdi": 21,
+            "enhet": "sirkler",
             "toleranse": 0,
-            "etikett": "Antall ruter i den etterspurte figuren"
+            "etikett": "Antall sirkler i figur 5"
           }
         ]
       },
@@ -5862,17 +5934,27 @@
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
         "type": "figurmønster",
-        "regel": "lineær",
-        "antall_figurer": 3,
-        "verdier": [
-          3,
-          7,
-          11
+        "monster": "prikk_h",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 5
+          },
+          {
+            "n": 2,
+            "antall": 9
+          },
+          {
+            "n": 3,
+            "antall": 13
+          }
         ],
-        "tekstalternativ": "Figurene har 3, 7 og 11 ruter.",
-        "monster": "lineaer_tilvekst"
+        "tekstalternativ": "Figurene består av en høy venstre søyle, en vannrett rad mot høyre og en kortere høyre søyle ned fra raden."
       },
-      "id": "2py27-088"
+      "id": "2py27-089",
+      "laeringsstotte": {
+        "feil": "Undersøk hvilke deler av figuren som vokser. Kontroller formelen mot alle de viste figurene, og sett deretter inn figurnummeret det spørres om."
+      }
     },
     {
       "del": 1,
@@ -5886,34 +5968,34 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(5\\) ruter. Hver ny figur får \\(2\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(12\\).",
+      "sporsmal": "Figurene har sirkler langs en kvadratisk kant. Fra hvert hjørne går en diagonal arm med to ekstra sirkler utover. Fortsett etter samme mønster. Velg en formel for antall sirkler i figur \\(n\\), og finn antallet i figur \\(10\\).",
       "hint": [
-        "Hva vet vi? Første figur har 5 elementer. Fra første til andre figur øker antallet fra 5 til 7, altså med 2. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
-        "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 2 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(2(n-1)\\).",
-        "Legg antallet i første figur til de nye elementene: \\(5+2(n-1)\\). Forklar hva de to delene teller. Du kan bruke uttrykket slik det står eller multiplisere ut. Sett inn det etterspurte figurnummeret hvis oppgaven også spør om et bestemt antall."
+        "Hva vet vi? Skill mellom den kvadratiske kanten i midten og de fire diagonale armene. Hvilken del vokser? Med tilvekst mener vi det som kommer til når figuren vokser.",
+        "På kanten må hjørnene telles bare én gang. De diagonale armene har samme antall ekstra sirkler i alle figurene.",
+        "Kanten i midten har \\(n+1\\) sirkler langs hver side. Start med \\(4(n+1)\\), trekk fra de dobbeltelte hjørnene, og legg til de åtte sirklene på armene. Bruk deretter \\(n=10\\)."
       ],
-      "svar": "Formelen er \\(2n+3\\). Figur \\(12\\) har \\(27\\) ruter.",
+      "svar": "Kvadratkanten har \\(n+1\\) sirkler langs hver side. Trekker vi fra de fire dobbeltelte hjørnene, får vi \\(4(n+1)-4=4n\\). Armene gir \\(4\\cdot2=8\\) ekstra. Antallet er \\(4n+8\\), så figur 10 har \\(48\\) sirkler.",
       "fasit": {
         "type": "valg_og_tall",
         "valg": {
           "type": "valg",
           "flervalg": false,
           "riktige": [
-            "\\(2n+3\\)"
+            "\\(4n+8\\)"
           ],
           "alternativer": [
-            "\\(2n+3\\)",
-            "\\(2n+5\\)",
-            "\\(7n\\)",
-            "\\(5n+2\\)"
+            "\\(4n+4\\)",
+            "\\(8n+4\\)",
+            "\\(4n+12\\)",
+            "\\(4n+8\\)"
           ]
         },
         "verdier": [
           {
-            "verdi": 27,
-            "enhet": "ruter",
+            "verdi": 48,
+            "enhet": "sirkler",
             "toleranse": 0,
-            "etikett": "Antall ruter i den etterspurte figuren"
+            "etikett": "Antall sirkler i figur 10"
           }
         ]
       },
@@ -5924,17 +6006,99 @@
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
         "type": "figurmønster",
-        "regel": "lineær",
-        "antall_figurer": 3,
-        "verdier": [
-          5,
-          7,
-          9
+        "monster": "prikk_x",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 12
+          },
+          {
+            "n": 2,
+            "antall": 16
+          },
+          {
+            "n": 3,
+            "antall": 20
+          }
         ],
-        "tekstalternativ": "Figurene har 5, 7 og 9 ruter.",
-        "monster": "lineaer_tilvekst"
+        "tekstalternativ": "Figurene har sirkler langs en kvadratisk kant. Fra hvert hjørne går en diagonal arm med to ekstra sirkler utover."
       },
-      "id": "2py27-089"
+      "id": "2py27-090",
+      "laeringsstotte": {
+        "feil": "Undersøk hvilke deler av figuren som vokser. Kontroller formelen mot alle de viste figurene, og sett deretter inn figurnummeret det spørres om."
+      }
+    },
+    {
+      "del": 1,
+      "tema": "variabler",
+      "deltema": "figurmonster",
+      "ferdighet": [
+        "generalisere",
+        "kvadratisk_monster",
+        "begrunne",
+        "egen_losning"
+      ],
+      "niva": 3,
+      "hjelpemidler": "uten",
+      "sporsmal": "Figurene er grønne rektangler med et hvitt felt som ligner en omvendt T. Både rektangelet og det hvite feltet vokser. Fortsett etter samme mønster. Velg en formel for antall grønne ruter i figur \\(n\\), og finn antallet i figur \\(5\\).",
+      "hint": [
+        "Hva vet vi? Finn antall ruter i hele rektangelet, og trekk fra de hvite rutene. Undersøk hvordan bredden og høyden endres. Se på rektangelets sidelengder.",
+        "Knytt bredden og høyden til n. Del det hvite feltet i den vannrette raden og den loddrette delen over raden, uten å telle krysset to ganger.",
+        "Rektangelet har bredde \\(2n+1\\) og høyde \\(n+2\\). De hvite rutene kan telles som \\((2n-1)+(n-1)\\). Trekk dette fra hele rektangelet, og bruk deretter \\(n=5\\)."
+      ],
+      "svar": "Hele rektangelet har \\((2n+1)(n+2)\\) ruter. Det hvite feltet har \\(2n-1\\) ruter vannrett og \\(n-1\\) ekstra over raden, altså \\(3n-2\\). Grønne ruter: \\((2n+1)(n+2)-(3n-2)=2n^2+2n+4\\). I figur 5 er det \\(11\\cdot7-13=64\\) grønne ruter.",
+      "fasit": {
+        "type": "valg_og_tall",
+        "valg": {
+          "type": "valg",
+          "flervalg": false,
+          "riktige": [
+            "\\(2n^2+2n+4\\)"
+          ],
+          "alternativer": [
+            "\\(2n^2+2n+4\\)",
+            "\\(4n+4\\)",
+            "\\(2n^2+5n+2\\)",
+            "\\(n^2+7\\)"
+          ]
+        },
+        "verdier": [
+          {
+            "verdi": 64,
+            "enhet": "grønne ruter",
+            "toleranse": 0,
+            "etikett": "Antall grønne ruter i figur 5"
+          }
+        ]
+      },
+      "kontroll": {
+        "operasjon": "strukturert_svar",
+        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
+      },
+      "variantfamilie": "d1-kvadratisk-figurmonster",
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "ruter_t",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 8
+          },
+          {
+            "n": 2,
+            "antall": 16
+          },
+          {
+            "n": 3,
+            "antall": 28
+          }
+        ],
+        "tekstalternativ": "Figurene er grønne rektangler med et hvitt felt som ligner en omvendt T. Både rektangelet og det hvite feltet vokser."
+      },
+      "id": "2py27-091",
+      "laeringsstotte": {
+        "feil": "Undersøk hvilke deler av figuren som vokser. Kontroller formelen mot alle de viste figurene, og sett deretter inn figurnummeret det spørres om."
+      }
     },
     {
       "del": 1,
@@ -5948,34 +6112,34 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(2\\) ruter. Hver ny figur får \\(7\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(20\\).",
+      "sporsmal": "Figurene har tre vannrette rader med sirkler og en diagonal hale som går opp mot høyre. Fortsett etter samme mønster. Velg en formel for antall sirkler i figur \\(n\\), og finn antallet i figur \\(10\\).",
       "hint": [
-        "Hva vet vi? Første figur har 2 elementer. Fra første til andre figur øker antallet fra 2 til 9, altså med 7. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
-        "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 7 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(7(n-1)\\).",
-        "Legg antallet i første figur til de nye elementene: \\(2+7(n-1)\\). Forklar hva de to delene teller. Du kan bruke uttrykket slik det står eller multiplisere ut. Sett inn det etterspurte figurnummeret hvis oppgaven også spør om et bestemt antall."
+        "Hva vet vi? Tell hver av de tre vannrette radene og halen hver for seg. Hvordan vokser hver del? Med tilvekst mener vi det som kommer til når figuren vokser.",
+        "Sammenlign antallet i hver rad med figurnummeret. Legg sammen de fire delene og samle leddene med n.",
+        "De vannrette radene har \\(n+1\\), \\(n+2\\) og \\(n\\) sirkler, og halen har \\(n\\). Legg sammen disse uttrykkene, og sett deretter inn \\(n=10\\)."
       ],
-      "svar": "Formelen er \\(7n-5\\). Figur \\(20\\) har \\(135\\) ruter.",
+      "svar": "De tre radene har \\(n+1\\), \\(n+2\\) og \\(n\\) sirkler. Halen har \\(n\\). Totalt blir det \\((n+1)+(n+2)+n+n=4n+3\\). Figur 10 har \\(4\\cdot10+3=43\\) sirkler.",
       "fasit": {
         "type": "valg_og_tall",
         "valg": {
           "type": "valg",
           "flervalg": false,
           "riktige": [
-            "\\(7n-5\\)"
+            "\\(4n+3\\)"
           ],
           "alternativer": [
-            "\\(9n\\)",
-            "\\(7n-5\\)",
-            "\\(7n+2\\)",
-            "\\(2n+7\\)"
+            "\\(3n+4\\)",
+            "\\(4n+7\\)",
+            "\\(4n+3\\)",
+            "\\(7n\\)"
           ]
         },
         "verdier": [
           {
-            "verdi": 135,
-            "enhet": "ruter",
+            "verdi": 43,
+            "enhet": "sirkler",
             "toleranse": 0,
-            "etikett": "Antall ruter i den etterspurte figuren"
+            "etikett": "Antall sirkler i figur 10"
           }
         ]
       },
@@ -5986,141 +6150,31 @@
       "variantfamilie": "d1-lineart-figurmonster",
       "visualisering": {
         "type": "figurmønster",
-        "regel": "lineær",
-        "antall_figurer": 3,
-        "verdier": [
-          2,
-          9,
-          16
-        ],
-        "tekstalternativ": "Figurene har 2, 9 og 16 ruter.",
-        "monster": "lineaer_tilvekst"
-      },
-      "id": "2py27-090"
-    },
-    {
-      "del": 1,
-      "tema": "variabler",
-      "deltema": "figurmonster",
-      "ferdighet": [
-        "generalisere",
-        "lineart_monster",
-        "begrunne",
-        "egen_losning"
-      ],
-      "niva": 2,
-      "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(6\\) ruter. Hver ny figur får \\(1\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(18\\).",
-      "hint": [
-        "Hva vet vi? Første figur har 6 elementer. Fra første til andre figur øker antallet fra 6 til 7, altså med 1. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
-        "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 1 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(1(n-1)\\).",
-        "Legg antallet i første figur til de nye elementene: \\(6+1(n-1)\\). Forklar hva de to delene teller. Du kan bruke uttrykket slik det står eller multiplisere ut. Sett inn det etterspurte figurnummeret hvis oppgaven også spør om et bestemt antall."
-      ],
-      "svar": "Formelen er \\(n+5\\). Figur \\(18\\) har \\(23\\) ruter.",
-      "fasit": {
-        "type": "valg_og_tall",
-        "valg": {
-          "type": "valg",
-          "flervalg": false,
-          "riktige": [
-            "\\(n+5\\)"
-          ],
-          "alternativer": [
-            "\\(n+6\\)",
-            "\\(6n+1\\)",
-            "\\(7n\\)",
-            "\\(n+5\\)"
-          ]
-        },
-        "verdier": [
+        "monster": "prikk_hale",
+        "figurer": [
           {
-            "verdi": 23,
-            "enhet": "ruter",
-            "toleranse": 0,
-            "etikett": "Antall ruter i den etterspurte figuren"
-          }
-        ]
-      },
-      "kontroll": {
-        "operasjon": "strukturert_svar",
-        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
-      },
-      "variantfamilie": "d1-lineart-figurmonster",
-      "visualisering": {
-        "type": "figurmønster",
-        "regel": "lineær",
-        "antall_figurer": 3,
-        "verdier": [
-          6,
-          7,
-          8
-        ],
-        "tekstalternativ": "Figurene har 6, 7 og 8 ruter.",
-        "monster": "lineaer_tilvekst"
-      },
-      "id": "2py27-091"
-    },
-    {
-      "del": 1,
-      "tema": "variabler",
-      "deltema": "figurmonster",
-      "ferdighet": [
-        "generalisere",
-        "lineart_monster",
-        "begrunne",
-        "egen_losning"
-      ],
-      "niva": 2,
-      "hjelpemidler": "uten",
-      "sporsmal": "Figur 1 har \\(4\\) ruter. Hver ny figur får \\(5\\) flere ruter enn den forrige. Velg en formel for antall ruter i figur \\(n\\), og finn antallet i figur \\(25\\).",
-      "hint": [
-        "Hva vet vi? Første figur har 4 elementer. Fra første til andre figur øker antallet fra 4 til 9, altså med 5. Dette er den faste tilveksten. Kontroller at den gjelder videre.",
-        "Fra figur 1 til figur n er det \\(n-1\\) økninger. Hver økning gir 5 nye elementer. Antall nye elementer etter den første figuren blir derfor \\(5(n-1)\\).",
-        "Legg antallet i første figur til de nye elementene: \\(4+5(n-1)\\). Forklar hva de to delene teller. Du kan bruke uttrykket slik det står eller multiplisere ut. Sett inn det etterspurte figurnummeret hvis oppgaven også spør om et bestemt antall."
-      ],
-      "svar": "Formelen er \\(5n-1\\). Figur \\(25\\) har \\(124\\) ruter.",
-      "fasit": {
-        "type": "valg_og_tall",
-        "valg": {
-          "type": "valg",
-          "flervalg": false,
-          "riktige": [
-            "\\(5n-1\\)"
-          ],
-          "alternativer": [
-            "\\(4n+5\\)",
-            "\\(9n\\)",
-            "\\(5n-1\\)",
-            "\\(5n+4\\)"
-          ]
-        },
-        "verdier": [
+            "n": 1,
+            "antall": 7
+          },
           {
-            "verdi": 124,
-            "enhet": "ruter",
-            "toleranse": 0,
-            "etikett": "Antall ruter i den etterspurte figuren"
+            "n": 2,
+            "antall": 11
+          },
+          {
+            "n": 3,
+            "antall": 15
+          },
+          {
+            "n": 4,
+            "antall": 19
           }
-        ]
-      },
-      "kontroll": {
-        "operasjon": "strukturert_svar",
-        "regel": "Alle felt vurderes automatisk etter fasit; konstruksjoner kontrolleres mot vilkår."
-      },
-      "variantfamilie": "d1-lineart-figurmonster",
-      "visualisering": {
-        "type": "figurmønster",
-        "regel": "lineær",
-        "antall_figurer": 3,
-        "verdier": [
-          4,
-          9,
-          14
         ],
-        "tekstalternativ": "Figurene har 4, 9 og 14 ruter.",
-        "monster": "lineaer_tilvekst"
+        "tekstalternativ": "Figurene har tre vannrette rader med sirkler og en diagonal hale som går opp mot høyre."
       },
-      "id": "2py27-092"
+      "id": "2py27-092",
+      "laeringsstotte": {
+        "feil": "Undersøk hvilke deler av figuren som vokser. Kontroller formelen mot alle de viste figurene, og sett deretter inn figurnummeret det spørres om."
+      }
     },
     {
       "del": 1,
@@ -6134,7 +6188,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(5\\), \\(10\\) og \\(17\\) brikker. Velg en formel som passer, og finn antallet i figur \\(8\\).",
+      "sporsmal": "Se figurene med et kvadrat av brikker og ekstra brikker ved siden av. Fortsett etter samme mønster. Velg en formel som passer, og finn antallet i figur \\(8\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 1.",
@@ -6179,7 +6233,7 @@
           10,
           17
         ],
-        "tekstalternativ": "Figurene har 5, 10 og 17 brikker.",
+        "tekstalternativ": "Et kvadrat av brikker vokser med én rad og én kolonne for hver figur. De ekstra brikkene ved siden av kvadratet er uendret.",
         "monster": "kvadrat_med_tillegg",
         "sideforskyvning": 1,
         "tillegg": 1
@@ -6198,7 +6252,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(10\\), \\(17\\) og \\(26\\) brikker. Velg en formel som passer, og finn antallet i figur \\(7\\).",
+      "sporsmal": "Se figurene med et kvadrat av brikker og ekstra brikker ved siden av. Fortsett etter samme mønster. Velg en formel som passer, og finn antallet i figur \\(7\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 2.",
@@ -6243,7 +6297,7 @@
           17,
           26
         ],
-        "tekstalternativ": "Figurene har 10, 17 og 26 brikker.",
+        "tekstalternativ": "Et kvadrat av brikker vokser med én rad og én kolonne for hver figur. De ekstra brikkene ved siden av kvadratet er uendret.",
         "monster": "kvadrat_med_tillegg",
         "sideforskyvning": 2,
         "tillegg": 1
@@ -6262,7 +6316,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(6\\), \\(11\\) og \\(18\\) brikker. Velg en formel som passer, og finn antallet i figur \\(6\\).",
+      "sporsmal": "Se figurene med et kvadrat av brikker og ekstra brikker ved siden av. Fortsett etter samme mønster. Velg en formel som passer, og finn antallet i figur \\(6\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 1.",
@@ -6307,7 +6361,7 @@
           11,
           18
         ],
-        "tekstalternativ": "Figurene har 6, 11 og 18 brikker.",
+        "tekstalternativ": "Et kvadrat av brikker vokser med én rad og én kolonne for hver figur. De ekstra brikkene ved siden av kvadratet er uendret.",
         "monster": "kvadrat_med_tillegg",
         "sideforskyvning": 1,
         "tillegg": 2
@@ -6326,7 +6380,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(17\\), \\(26\\) og \\(37\\) brikker. Velg en formel som passer, og finn antallet i figur \\(9\\).",
+      "sporsmal": "Se figurene med et kvadrat av brikker og ekstra brikker ved siden av. Fortsett etter samme mønster. Velg en formel som passer, og finn antallet i figur \\(9\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 3.",
@@ -6371,7 +6425,7 @@
           26,
           37
         ],
-        "tekstalternativ": "Figurene har 17, 26 og 37 brikker.",
+        "tekstalternativ": "Et kvadrat av brikker vokser med én rad og én kolonne for hver figur. De ekstra brikkene ved siden av kvadratet er uendret.",
         "monster": "kvadrat_med_tillegg",
         "sideforskyvning": 3,
         "tillegg": 1
@@ -6390,7 +6444,7 @@
       ],
       "niva": 2,
       "hjelpemidler": "uten",
-      "sporsmal": "De tre første figurene har \\(11\\), \\(18\\) og \\(27\\) brikker. Velg en formel som passer, og finn antallet i figur \\(10\\).",
+      "sporsmal": "Se figurene med et kvadrat av brikker og ekstra brikker ved siden av. Fortsett etter samme mønster. Velg en formel som passer, og finn antallet i figur \\(10\\).",
       "hint": [
         "Hva vet vi? Se på hvordan hver figur er bygd opp. Skill kvadratet fra brikker som ligger utenfor. Tallfølgen alene er mindre forklarende enn selve konstruksjonen.",
         "Finn sidelengden i figur 1, 2 og 3. Sammenlign hver sidelengde med figurnummeret. Her er forskjellen 2.",
@@ -6435,7 +6489,7 @@
           18,
           27
         ],
-        "tekstalternativ": "Figurene har 11, 18 og 27 brikker.",
+        "tekstalternativ": "Et kvadrat av brikker vokser med én rad og én kolonne for hver figur. De ekstra brikkene ved siden av kvadratet er uendret.",
         "monster": "kvadrat_med_tillegg",
         "sideforskyvning": 2,
         "tillegg": 2
@@ -27422,8 +27476,8 @@
           12,
           16
         ],
-        "tekstalternativ": "De viste figurene har 8, 12, 16 elementer.",
-        "monster": "lineaer_tilvekst"
+        "tekstalternativ": "Figurene viser to, tre og fire atskilte kvadrater av fyrstikker. Ingen sider deles.",
+        "monster": "fyrstikk_kvadrater"
       }
     },
     {
@@ -55983,7 +56037,8 @@
         ],
         "tekstalternativ": "Figur 1, 2 og 3 er kvadrater med henholdsvis én, to og tre prikker langs hver side.",
         "sideforskyvning": 0,
-        "tillegg": 0
+        "tillegg": 0,
+        "element": "sirkel"
       }
     },
     {

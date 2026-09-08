@@ -95,6 +95,11 @@ test('alle tidligere oppgaver er identiske utenfor dokumenterte rettelser',()=>{
  const revision=JSON.parse(readFileSync(new URL('../docs/variation-revision.json',import.meta.url),'utf8'));
  for(const q of bank.oppgaver.slice(0,915)){
   const restored=structuredClone(q) as unknown as Record<string,unknown>;
+  const patterns=JSON.parse(readFileSync(new URL('../docs/pattern-revision.json',import.meta.url),'utf8'));
+  for(const [field,values] of Object.entries(patterns.oppgaver.find((x:{id:string})=>x.id===q.id)?.felter??{}) as [string,{før:unknown;etter:unknown}][]){
+   assert.deepEqual(restored[field]??null,values.etter,`${q.id}/${field}: figurrettelse`);
+   if(values.før===null) delete restored[field]; else restored[field]=values.før;
+  }
   const change=revision.oppgaver.find((x:{id:string})=>x.id===q.id);
   for(const [field,values] of Object.entries(change?.felter??{}) as [string,{før:unknown;etter:unknown}][]){
    assert.deepEqual(restored[field],values.etter,`${q.id}/${field}`);restored[field]=values.før;

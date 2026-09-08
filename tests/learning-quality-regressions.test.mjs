@@ -142,7 +142,9 @@ test("rutineoppgaver er ikke merket utfordrende", () => {
 
 test('rektangulært mønster tegner de oppgitte radene og kolonnene',()=>{
  const html=renderToStaticMarkup(createElement(VisualizationPanel,{visualization:{type:'figurmønster',monster:'rektangel',kolonnetillegg:2,figurer:[{n:4,antall:24}],tekstalternativ:'Fire rader med seks ruter.'}}));
- assert.match(html,/repeat\(6, 11px\)/);
+ assert.match(html,/<svg /);
+ assert.equal((html.match(/<rect /g)??[]).length,24);
+ for (let y=0;y<4;y++) for(let x=0;x<6;x++) assert.ok(html.includes(`x="${x}" y="${y}" width="1" height="1"`));
  assert.equal((html.match(/class="pattern-cell"/g)??[]).length,24);
 });
 test('fyrstikkraden teller delte sider én gang',()=>{

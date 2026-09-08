@@ -17,10 +17,21 @@ const presentationSource = await readFile(join(projectDir, "app", "presentation.
 const presentationModule = ts.transpileModule(presentationSource, {
   compilerOptions: { jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
 }).outputText.replace(/from (["'])([^"']+)\1/gu, (_, _quote, specifier) => `from ${JSON.stringify(import.meta.resolve(specifier))}`);
-const { DataPanel, VisualizationPanel } = await import(`data:text/javascript;base64,${Buffer.from(presentationModule).toString("base64")}`);
+const { DataPanel, VisualizationPanel, patternGeometry } = await import(`data:text/javascript;base64,${Buffer.from(presentationModule).toString("base64")}`);
+// Fail publication if a construction and its declared count disagree.
+for (const owner of [...bank.oppgaver, ...bank.oppgavegrupper]) {
+  const v = owner.visualisering;
+  if (v?.type !== "figurmønster") continue;
+  const figures = v.figurer ?? v.verdier?.map((antall, i) => ({ n: i + 1, antall }));
+  if (!figures?.length || figures.length > 6) throw new Error(`${owner.id}: ugyldig figurserie`);
+  for (const f of figures) {
+    try { patternGeometry(v.monster, f.n, f.antall, { ...v, ...(f.punkter ? { punkter: f.punkter } : {}) }); }
+    catch (error) { throw new Error(`${owner.id}: ${error.message}`); }
+  }
+}
 function renderContext(owner) {
   if (!owner) return "";
-  return renderToStaticMarkup(createElement(DataPanel, { data: owner.data })) +
+  return renderToStaticMarkup(createElement(DataPanel, { data: owner.data, visualization: owner.visualisering })) +
     renderToStaticMarkup(createElement(VisualizationPanel, { visualization: owner.visualisering, data: owner.data }));
 }
 
@@ -96,7 +107,7 @@ const reviewBank = {
 };
 const katexCss = await embeddedKatexCss();
 const appCss = await readFile(join(projectDir, "app", "globals.css"), "utf8");
-const representationCss = appCss.slice(appCss.indexOf(".chart-axis {"), appCss.indexOf("}", appCss.indexOf(".pattern-bench {")) + 1);
+const representationCss = appCss.slice(appCss.indexOf(".chart-axis {"), appCss.indexOf("/* pattern styles end */"));
 const serializedBank = JSON.stringify(reviewBank).replaceAll("</script", "<\\/script");
 
 const html = `<!doctype html>

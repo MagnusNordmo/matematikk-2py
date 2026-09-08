@@ -14,6 +14,9 @@ export function reviseHintScaffolding(bank, { math, number }) {
   };
 
   for (const question of bank.oppgaver) {
+    // These constructions have reviewed geometry-specific hints. The legacy
+    // number-sequence recipe must not replace them with answer-option testing.
+    if (["ramme", "prikk_h", "prikk_x", "ruter_t", "prikk_hale"].includes(question.visualisering?.monster)) continue;
     const input = question.kontroll?.inndata ?? {};
     const method = question.kontroll?.metode;
     const introduction = question.hint[0];

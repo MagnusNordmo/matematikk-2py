@@ -126,9 +126,9 @@ function DataTable({
   );
 }
 
-export function DataPanel({ data }: { data?: Record<string, unknown> }) {
+export function DataPanel({ data, visualization }: { data?: Record<string, unknown>; visualization?: Visualization }) {
   if (!data || Object.keys(data).length === 0) return null;
-  const entries = Object.entries(data).filter(([key]) => key !== "programkode");
+  const entries = Object.entries(data).filter(([key]) => key !== "programkode" && !(visualization?.type === "figurmønster" && ["figurnummer", "antall"].includes(key)));
   if (entries.length === 0) return null;
 
   const nestedTable = tableEntries(data.tabell);
@@ -307,87 +307,128 @@ function BarChart({ labels, series, description, hideValues = false }: { labels:
   );
 }
 
-function PatternCells({ count, className = "" }: { count: number; className?: string }) {
-  return <>{Array.from({ length: count }, (_, index) => <i className={`pattern-cell ${className}`.trim()} key={index} />)}</>;
+type PatternShape = {
+  kind: "circle" | "rect" | "line";
+  x: number; y: number; x2?: number; y2?: number;
+  width?: number; height?: number;
+  counted: boolean; white?: boolean;
+};
+
+// Geometry is generated locally from a named construction, never from executable
+// expressions in the question bank. Bounds keep malformed content inexpensive.
+export function patternGeometry(pattern: string, n: number, value: number, config: Record<string, unknown>) {
+  if (!Number.isInteger(n) || n < 1 || n > 50 || !Number.isInteger(value) || value < 0 || value > 2000) throw new Error("Ugyldig figurnummer eller antall");
+  const shapes: PatternShape[] = [];
+  const integer = (key: string, fallback: number) => {
+    const v = Number(config[key] ?? fallback);
+    if (!Number.isInteger(v) || v < 0 || v > 50) throw new Error(`Ugyldig ${key}`);
+    return v;
+  };
+  const dot = (x: number, y: number) => shapes.push({kind:"circle",x,y,counted:true});
+  const tile = (x: number, y: number, white = false) => shapes.push({kind:"rect",x,y,width:1,height:1,counted:!white,white});
+  const line = (x: number,y: number,x2: number,y2: number) => shapes.push({kind:"line",x,y,x2,y2,counted:true});
+  const side = n + integer("sideforskyvning", pattern === "ramme" || pattern === "flisramme_uten_hjorner" ? 2 : 0);
+  if (pattern === "ramme" || pattern === "flisramme_uten_hjorner") {
+    for(let y=0;y<side;y++) for(let x=0;x<side;x++) {
+      const edge = x===0 || y===0 || x===side-1 || y===side-1;
+      const corner = (x===0 || x===side-1) && (y===0 || y===side-1);
+      if(pattern === "ramme") tile(x,y,!edge);
+      else if(!corner) tile(x,y);
+    }
+  } else if(pattern === "ruter_t") {
+    for(let y=0;y<n+2;y++) for(let x=0;x<2*n+1;x++)
+      tile(x,y,(y===n && x>0 && x<2*n) || (x===n && y>0 && y<=n));
+  } else if(pattern === "prikk_h") {
+    for(let y=0;y<=2*n;y++) dot(0,y);
+    for(let x=1;x<=n;x++) dot(x,n);
+    for(let y=n+1;y<=2*n;y++) dot(n,y);
+  } else if(pattern === "prikk_x") {
+    for(let y=0;y<=n;y++) for(let x=0;x<=n;x++)
+      if(x===0 || y===0 || x===n || y===n) dot(x+2,y+2);
+    for(let d=1;d<=2;d++) {
+      dot(2-d,2-d);dot(n+2+d,2-d);dot(2-d,n+2+d);dot(n+2+d,n+2+d);
+    }
+  } else if(pattern === "prikk_hale") {
+    for(let x=1;x<=n+1;x++) dot(x,n);
+    for(let x=0;x<=n+1;x++) dot(x,n+1);
+    for(let x=1;x<=n;x++) dot(x,n+2);
+    for(let d=1;d<=n;d++) dot(n+1+d,n-d);
+  } else if(pattern === "fyrstikkrad") {
+    for(let x=0;x<n;x++) {line(x,0,x+1,0);line(x,1,x+1,1);}
+    for(let x=0;x<=n;x++) line(x,0,x,1);
+  } else if(pattern === "fyrstikk_kvadrater") {
+    for(let i=0;i<n+1;i++) {const x=i*1.4;line(x,0,x+1,0);line(x+1,0,x+1,1);line(x,1,x+1,1);line(x,0,x,1);}
+  } else if(pattern === "rektangel" || pattern === "kvadrat_med_tillegg") {
+    const rows=pattern === "rektangel" ? n : side;
+    const columns=pattern === "rektangel" ? n+integer("kolonnetillegg",0) : side;
+    for(let y=0;y<rows;y++) for(let x=0;x<columns;x++) { if(config.element === "sirkel") dot(x,y); else tile(x,y); }
+    if(pattern === "kvadrat_med_tillegg") for(let y=0;y<integer("tillegg",Math.max(0,value-side**2));y++) { if(config.element === "sirkel") dot(columns+0.5,y); else tile(columns+0.5,y); }
+  } else if(pattern === "trekant") {
+    for(let y=0;y<n;y++) for(let x=0;x<=y;x++) dot(x+(n-1-y)/2,y);
+  } else if(pattern === "bord_og_stoler") {
+    for(let x=0;x<n;x++) {
+      shapes.push({kind:"rect",x:x+1,y:1,width:1,height:1.6,counted:false});
+      dot(x+1.5,0.4);dot(x+1.5,3.2);
+    }
+    for(const x of [0.4,n+1.6]) {dot(x,1.3);dot(x,2.3);}
+  } else if(pattern === "benker") {
+    for(let y=0;y<2*n+1;y++) for(let x=0;x<2;x++) shapes.push({kind:"rect",x:x*1.5,y:y*0.7,width:1.1,height:0.3,counted:true});
+  } else if(pattern === "koordinater") {
+    const points=config.punkter as {x:number;y:number;hvit?:boolean}[];
+    if(!Array.isArray(points) || points.length>2000) throw new Error("Ugyldige koordinater");
+    const occupied=new Set<string>();
+    for(const p of points) {
+      if(!Number.isFinite(p.x) || !Number.isFinite(p.y) || Math.abs(p.x)>100 || Math.abs(p.y)>100) throw new Error("Ugyldig koordinat");
+      const key=`${p.x},${p.y}`;
+      if(occupied.has(key)) throw new Error("Duplisert koordinat");
+      occupied.add(key);
+      if(config.element === "rute") tile(p.x,p.y,Boolean(p.hvit)); else dot(p.x,p.y);
+    }
+  } else if(pattern === "lineaer_tilvekst") {
+    // A fixed initial column and one new column per step preserve the growth
+    // structure instead of arbitrarily wrapping a flat list every ten cells.
+    const values=(config.verdier as number[] | undefined) ?? (config.figurer as {antall:number}[] | undefined)?.map(f=>f.antall);
+    const first=integer("start",values?.[0] ?? value);
+    const growth=integer("tilvekst",values && values.length>1 ? values[1]-values[0] : 0);
+    for(let y=0;y<first;y++) tile(0,y);
+    for(let x=1;x<n;x++) for(let y=0;y<growth;y++) tile(x*1.3,y);
+  } else throw new Error(`Ukjent figurmønster: ${pattern}`);
+  if(shapes.length>2000 || shapes.filter(s=>s.counted).length!==value) throw new Error(`Figuren stemmer ikke med antallet: ${pattern}, figur ${n}`);
+  const minX=Math.min(0,...shapes.map(s=>s.x-0.3));
+  const minY=Math.min(0,...shapes.map(s=>s.y-0.3));
+  const maxX=Math.max(1,...shapes.map(s=>s.x2 ?? s.x+(s.width ?? 0.3)));
+  const maxY=Math.max(1,...shapes.map(s=>s.y2 ?? s.y+(s.height ?? 0.3)));
+  return {shapes,minX,minY,width:maxX-minX+1,height:maxY-minY+1};
 }
 
-function PatternDiagram({
-  pattern,
-  figureNumber,
-  value,
-  visualization,
-}: {
-  pattern: string;
-  figureNumber: number;
-  value: number;
-  visualization: Visualization;
-}) {
-  if (pattern === "rektangel") {
-    const columns = figureNumber + Number(visualization.kolonnetillegg ?? 0);
-    return <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${columns}, 11px)` }}><PatternCells count={figureNumber * columns} /></span>;
+function PatternSequence({visualization}: {visualization: Visualization}) {
+  const figures=(visualization.figurer as {n:number;antall:number;punkter?:unknown[]}[] | undefined)
+    ?? ((visualization.verdier as number[] | undefined) ?? []).map((antall,i)=>({n:i+1,antall}));
+  if(figures.length===0 || figures.length>6) return <p>Figuren kunne ikke vises.</p>;
+  let geometries: ReturnType<typeof patternGeometry>[];
+  try {
+    geometries=figures.map(f=>patternGeometry(String(visualization.monster ?? "lineaer_tilvekst"),f.n,f.antall,{...visualization,...("punkter" in f ? {punkter:f.punkter} : {})}));
+  } catch {
+    return <p role="status">Figuren kunne ikke vises. {visualization.tekstalternativ}</p>;
   }
-  if (pattern === "fyrstikkrad") {
-    const step = 28;
-    return <svg width={figureNumber * step + 8} height="36" viewBox={`0 0 ${figureNumber * step + 8} 36`} aria-hidden="true" style={{maxWidth: "100%"}}>
-      {Array.from({length: figureNumber}, (_, i) => <g key={i} stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-        <line x1={4 + i * step} y1="4" x2={4 + (i + 1) * step} y2="4" />
-        <line x1={4 + i * step} y1="32" x2={4 + (i + 1) * step} y2="32" />
-      </g>)}
-      {Array.from({length: figureNumber + 1}, (_, i) => <line key={i} x1={4 + i * step} y1="4" x2={4 + i * step} y2="32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />)}
-    </svg>;
-  }
-  if (pattern === "kvadrat_med_tillegg") {
-    const side = figureNumber + Number(visualization.sideforskyvning ?? 0);
-    const extra = Number(visualization.tillegg ?? Math.max(0, value - side ** 2));
-    return (
-      <div className="pattern-construction pattern-square-extra">
-        <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${side}, 11px)` }}><PatternCells count={side ** 2} /></span>
-        {extra > 0 && <span className="pattern-extra"><PatternCells count={extra} /></span>}
-      </div>
-    );
-  }
-
-  if (pattern === "flisramme_uten_hjorner" || pattern === "ramme") {
-    const side = figureNumber + Number(visualization.sideforskyvning ?? 2);
-    const cells = Array.from({ length: side ** 2 }, (_, index) => {
-      const row = Math.floor(index / side);
-      const column = index % side;
-      const perimeter = row === 0 || column === 0 || row === side - 1 || column === side - 1;
-      const corner = (row === 0 || row === side - 1) && (column === 0 || column === side - 1);
-      const visible = pattern === "ramme" ? perimeter : !corner;
-      return visible ? <i className="pattern-cell pattern-tile" key={index} /> : <i className="pattern-space" key={index} />;
-    });
-    return <span className="pattern-grid" style={{ gridTemplateColumns: `repeat(${side}, 11px)` }}>{cells}</span>;
-  }
-
-  if (pattern === "trekant") {
-    return (
-      <span className="pattern-triangle">
-        {Array.from({ length: figureNumber }, (_, row) => <span key={row}><PatternCells count={row + 1} /></span>)}
-      </span>
-    );
-  }
-
-  if (pattern === "bord_og_stoler") {
-    return (
-      <span className="pattern-tables-and-chairs">
-        <span className="pattern-chair-row"><PatternCells count={figureNumber} className="pattern-chair" /></span>
-        <span className="pattern-table-row">{Array.from({ length: figureNumber }, (_, index) => <i className="pattern-table" key={index} />)}</span>
-        <span className="pattern-chair-row"><PatternCells count={figureNumber} className="pattern-chair" /></span>
-        <span className="pattern-end-chairs"><span><PatternCells count={2} className="pattern-chair" /></span><span><PatternCells count={2} className="pattern-chair" /></span></span>
-      </span>
-    );
-  }
-
-  if (pattern === "benker") {
-    return <span className="pattern-benches"><PatternCells count={value} className="pattern-bench" /></span>;
-  }
-
-  return (
-    <span className="pattern-linear" style={{ gridTemplateColumns: `repeat(${Math.min(10, Math.max(1, value))}, 11px)` }}>
-      <PatternCells count={value} />
-    </span>
-  );
+  const width=Math.max(...geometries.map(g=>g.width));
+  const height=Math.max(...geometries.map(g=>g.height));
+  return <figure className="visual-card pattern-card" aria-label={visualization.tekstalternativ ?? "Figurmønster"}>
+    {geometries.map((g,i)=><div key={figures[i].n}>
+      <svg className="pattern-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Figur ${figures[i].n}`}>
+        <g transform={`translate(${(width-g.width)/2-g.minX+0.5} ${height-g.height-g.minY+0.5})`}>
+          {g.shapes.map((s,j)=>{
+            const common={className:s.counted ? "pattern-cell" : "pattern-background", "data-counted":s.counted,
+              fill:s.white ? "#ffffff" : s.counted ? "#24bf91" : "#e5edf4",stroke:"#243b43",strokeWidth:0.045};
+            return s.kind==="circle" ? <circle key={j} {...common} cx={s.x} cy={s.y} r={0.21}/>
+              : s.kind==="line" ? <line key={j} {...common} x1={s.x} y1={s.y} x2={s.x2} y2={s.y2} strokeWidth={0.075} strokeLinecap="round"/>
+              : <rect key={j} {...common} x={s.x} y={s.y} width={s.width} height={s.height}/>;
+          })}
+        </g>
+      </svg>
+      <small>Figur {figures[i].n}</small>
+    </div>)}
+  </figure>;
 }
 
 function Histogram({
@@ -471,19 +512,7 @@ export function VisualizationPanel({ visualization, data }: { visualization?: Vi
       </div>
     );
   }
-  if (type === "figurmønster") {
-    const figures = (visualization.figurer as { n: number; antall: number }[] | undefined) ?? [];
-    const values = (visualization.verdier as number[] | undefined) ?? figures.map((figure) => figure.antall);
-    const pattern = String(visualization.monster ?? "lineaer_tilvekst");
-    return (
-      <figure className="visual-card pattern-card" aria-label={visualization.tekstalternativ ?? "Figurmønster"}>
-        {values.map((value, index) => {
-          const figureNumber = figures[index]?.n ?? index + 1;
-          return <div key={index}><PatternDiagram pattern={pattern} figureNumber={figureNumber} value={value} visualization={visualization} /><small>Figur {figureNumber}: {value}</small></div>;
-        })}
-      </figure>
-    );
-  }
+  if (type === "figurmønster") return <PatternSequence visualization={visualization} />;
   if (type === "gruppert_søylediagram") {
     return <BarChart labels={(visualization.kategorier as string[]) ?? []} series={((visualization.serier as { navn: string; verdier: number[] }[]) ?? []).map((item) => ({ name: item.navn, values: item.verdier }))} description="Gruppert søylediagram" />;
   }
