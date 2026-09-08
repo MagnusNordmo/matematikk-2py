@@ -768,7 +768,7 @@ export default function Home() {
 
               </div>
               <WorkedSteps autoExpand={expandExamSolution} solutionExpanded={feedback === "correct"} key={`${currentQuestion.id}-${selectedSolutionPathId ?? "standard"}`} hints={activeHints} paths={solutionPaths} selectedPath={selectedSolutionPathId} revealed={hintIndex} resolved={resolved} submitted={submittedAnswer !== null} solution={currentQuestion.svar} onReveal={revealHint} onChoose={chooseSolutionPath} onSolution={() => { setSolutionOpened(true); setUsedSupport(true); }}>
-                <LearningSupport section="concepts" question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts || hintIndex > 0} onConcepts={() => { setShowConcepts(true); setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); }} />
+                <LearningSupport section="concepts" question={currentQuestion} group={currentGroup} submitted={submittedAnswer} showConcepts={showConcepts} onConcepts={() => { setShowConcepts(!showConcepts); if (!showConcepts) { setUsedSupport(true); setStats(v => ({ ...v, hints: v.hints + 1 })); } }} />
               </WorkedSteps>
             </article>
           </section>

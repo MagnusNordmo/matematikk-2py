@@ -20,15 +20,15 @@ const bank=JSON.parse(await readFile(new URL('../public/oppgaver-2027.json',impo
 const q={id:'test',sporsmal:'Hvilken sammenheng beskriver y = 30x?',deltema:'modellvalg',svar:'Forholdet y/x er konstant og lik 30, så sammenhengen er proporsjonal.',fasit:{type:'valg',flervalg:false,riktige:['proporsjonal'],alternativer:['proporsjonal','eksponentiell vekst']}};
 const render=(props={})=>renderToStaticMarkup(createElement(LearningSupport,{question:q,submitted:null,showConcepts:false,onConcepts(){},onSolution(){},...props}));
 test('begreper og fasit er ikke gjengitt før en elevhandling',()=>{
- const html=render();assert.match(html,/Forklar ord og begreper/);assert.doesNotMatch(html,/To størrelser|Forholdet y\/x|Vis løsning/);
+ const html=render();assert.match(html,/Begreper i oppgaven/);assert.doesNotMatch(html,/To størrelser|Forholdet y\/x|Vis løsning/);
 });
 test('aktiv hjelp åpner definisjoner, men ikke løsningen',()=>{
  const html=render({showConcepts:true});assert.match(html,/To størrelser/);assert.doesNotMatch(html,/Forholdet y\/x er konstant og lik 30|Vis løsning/);
 });
-test('innsendt feil forklarer begge begrepene og gir løsning ved forespørsel',()=>{
- const html=render({submitted:{numbers:[],choices:['eksponentiell vekst']}});assert.match(html,/samme prosentvise/);assert.match(html,/Proporsjonal sammenheng/);assert.doesNotMatch(html,/<summary>Vis løsning<\/summary>/);assert.doesNotMatch(html,/<details[^>]* open/);
+test('innsendt feil forklarer begge begrepene når eleven åpner panelet',()=>{
+ const html=render({showConcepts:true,submitted:{numbers:[],choices:['eksponentiell vekst']}});assert.match(html,/samme prosentvise/);assert.match(html,/Proporsjonal sammenheng/);assert.doesNotMatch(html,/<summary>Vis løsning<\/summary>/);assert.doesNotMatch(html,/<details[^>]* open/);
 });
-test('riktig svar gir begrepsforklaring uten en ekstra fasit',()=>{const html=render({submitted:{numbers:[],choices:['proporsjonal']}});assert.match(html,/Proporsjonal sammenheng/);assert.match(html,/konstant forhold/);assert.ok(!html.includes(q.svar));});
+test('åpnet begrepspanel etter riktig svar gir forklaring uten en ekstra fasit',()=>{const html=render({showConcepts:true,submitted:{numbers:[],choices:['proporsjonal']}});assert.match(html,/Proporsjonal sammenheng/);assert.match(html,/konstant forhold/);assert.ok(!html.includes(q.svar));});
 test('alle oppgaver har begrepsstøtte og riktig feedback for gyldige svar',()=>{
  for(const q of bank.oppgaver){assert.ok(questionConcepts(q,bank.oppgavegrupper.find(g=>g.id===q.oppgavegruppe?.id)).length,q.id);
  const key=q.fasit, choice=key.type==='valg'?key:key.valg;
@@ -97,7 +97,24 @@ test('mobilens leserekkefølge har steg og løsning før begrepene',()=>{
 test('tilbakemelding ved svaret og begrepene nederst har separate innhold',()=>{
  const props={question:q,submitted:{numbers:[],choices:['eksponentiell vekst']},showConcepts:false,onConcepts(){}};
  const feedback=renderToStaticMarkup(createElement(LearningSupport,{...props,section:'feedback'}));
- const concepts=renderToStaticMarkup(createElement(LearningSupport,{...props,section:'concepts'}));
+ const concepts=renderToStaticMarkup(createElement(LearningSupport,{...props,showConcepts:true,section:'concepts'}));
  assert.match(feedback,/learning-feedback/);assert.doesNotMatch(feedback,/concept-list/);
  assert.match(concepts,/concept-list/);assert.doesNotMatch(concepts,/learning-feedback/);
 });
+
+ test('begrepene forblir lukket etter innsending til eleven åpner dem',()=>{
+  for(const submitted of [null,{numbers:[],choices:['proporsjonal']},{numbers:[],choices:['eksponentiell vekst']}]) {
+   const html=render({section:'concepts',submitted});
+   assert.match(html,/aria-expanded="false"/);
+   assert.match(html,/Begreper i oppgaven/);
+   assert.doesNotMatch(html,/class="concept-list"/);
+   assert.match(render({section:'concepts',submitted,showConcepts:true}),/aria-expanded="true"/);
+  }
+ });
+ test('gjengitt tilbakemelding og handlingsknapp får egne rader',async()=>{
+  const html=render({section:'feedback',submitted:{numbers:[],choices:['eksponentiell vekst']}});
+  assert.match(html,/class="learning-feedback"/);
+  const css=await readFile(new URL('../app/globals.css',import.meta.url),'utf8');
+  assert.match(css,/\.structured-answer-form > \.learning-feedback\s*\{[^}]*grid-column: 1 \/ -1;/);
+  assert.match(css,/\.structured-answer-form > \.primary-button\s*\{[^}]*grid-column: 1 \/ -1;[^}]*justify-self: end;/);
+ });
