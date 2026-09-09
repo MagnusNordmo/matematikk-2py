@@ -1,0 +1,15 @@
+{
+  "bank_gzip_bytes": {
+    "before": 259028,
+    "after": 262302
+  },
+  "control_gzip_bytes": {
+    "before": 1383506,
+    "after": 1390326
+  },
+  "median_svg_render_ms": 0.1919667000000004,
+  "p95_svg_render_ms": 0.5288874999999991,
+  "new_tasks": 20,
+  "old_tasks_unchanged": 950,
+  "groups_unchanged": 60
+}

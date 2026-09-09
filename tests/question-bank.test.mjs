@@ -6,10 +6,10 @@ const bank = JSON.parse(
   await readFile(new URL("../public/oppgaver-2027.json", import.meta.url), "utf8"),
 );
 
-test("oppgavebanken har 950 komplette og unike oppgaver", () => {
-  assert.equal(bank.samling.antall, 950);
-  assert.equal(bank.oppgaver.length, 950);
-  assert.equal(new Set(bank.oppgaver.map((question) => question.id)).size, 950);
+test("oppgavebanken har 970 komplette og unike oppgaver", () => {
+  assert.equal(bank.samling.antall, 970);
+  assert.equal(bank.oppgaver.length, 970);
+  assert.equal(new Set(bank.oppgaver.map((question) => question.id)).size, 970);
   assert.equal(bank.oppgavegrupper.length, 60);
 
   for (const question of bank.oppgaver) {
@@ -27,9 +27,9 @@ test("oppgavebanken har 950 komplette og unike oppgaver", () => {
 });
 
 test("fordelingen mellom deler og svarformater er bevart", () => {
-  assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 488);
+  assert.equal(bank.oppgaver.filter((question) => question.del === 1).length, 508);
   assert.equal(bank.oppgaver.filter((question) => question.del === 2).length, 462);
-  const expected = { tall: 544, flere_tall: 175, valg: 208, valg_og_tall: 23 };
+  const expected = { tall: 561, flere_tall: 175, valg: 211, valg_og_tall: 23 };
   for (const [type, count] of Object.entries(expected)) {
     assert.equal(bank.oppgaver.filter((question) => question.fasit.type === type).length, count, type);
   }
@@ -45,7 +45,7 @@ test("alle oppgaver har et gjennomgått og tilgjengelig nivå", () => {
   const distribution = Object.fromEntries(
     [1, 2, 3].map((level) => [String(level), bank.oppgaver.filter((question) => question.niva === level).length]),
   );
-  assert.deepEqual(distribution, { "1": 171, "2": 743, "3": 36 });
+  assert.deepEqual(distribution, { "1": 177, "2": 756, "3": 37 });
   assert.deepEqual(bank.statistikk.fordeling_niva, distribution);
 
   for (const question of bank.oppgaver) {
@@ -155,7 +155,7 @@ test("hintforløpene er tilpasset hjelpemidlene i hver eksamensdel", () => {
   const del1 = bank.oppgaver.filter((question) => question.del === 1);
   const del1HintCount = del1.reduce((total, question) => total + question.hint.length, 0);
   assert.ok(del1HintCount >= 1600, "Del 1 har for få trinn til å støtte framgangsmåten");
-  assert.ok(del1HintCount <= 1750 + 26 * 3, "Del 1 har igjen fått unødvendig lange hintrekker");
+  assert.ok(del1HintCount <= 1750 + (26 + 20) * 3, "Del 1 har igjen fått unødvendig lange hintrekker");
 });
 
 test("fasiten holdes utenfor hintrekken og vises separat", () => {
@@ -454,7 +454,7 @@ test("prosentøvingen lar eleven sammenligne naturlige løsningsveier", () => {
   const withPaths = percentQuestions.filter((question) => question.losningsveier);
   const byId = (id) => bank.oppgaver.find((question) => question.id === id);
 
-  assert.equal(bank.samling.versjon, "2027.26");
+  assert.equal(bank.samling.versjon, "2027.27");
   assert.equal(percentQuestions.length, 82);
   assert.equal(withPaths.length, 7);
   assert.deepEqual(
@@ -639,7 +639,7 @@ test("anvendte oppgaver bruker eksamensnært språk og forklarte størrelser", (
     assert.doesNotMatch(group.innledning, forbiddenTemplateLanguage, `${group.id} har abstrakt eller intern maltekst`);
   }
 
-  assert.equal(bank.samling.versjon, "2027.26");
+  assert.equal(bank.samling.versjon, "2027.27");
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-026").sporsmal, /sykkel/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-031").sporsmal, /årskort/);
   assert.match(bank.oppgaver.find((question) => question.id === "2py27-187").sporsmal, /vaskeritjenester/);

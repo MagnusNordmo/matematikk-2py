@@ -6,12 +6,12 @@
     "id": "2py-eksamen-2027",
     "tittel": "Matematikk 2P-Y - eksamensforberedende oppgavebank",
     "malgruppe": "Matematikk 2P-Y",
-    "antall": 950,
+    "antall": 970,
     "deler": [
       1,
       2
     ],
-    "versjon": "2027.26"
+    "versjon": "2027.27"
   },
   "matematikk": {
     "syntaks": "LaTeX",
@@ -30,7 +30,7 @@
   },
   "eksamensprofil": {
     "mål": "Trene et balansert utvalg av ferdigheter og vurderinger som med rimelighet kan bli aktuelle på en framtidig 2P-Y-eksamen.",
-    "del_1": "462 oppgaver uten hjelpemidler.",
+    "del_1": "508 oppgaver uten hjelpemidler.",
     "del_2": "453 oppgaver med hjelpemidler: 213 selvstendige oppgaver og 240 deloppgaver i 60 sammenhengende kasus.",
     "prioriterte_kompetanser": [
       "prosent og vekstfaktor",
@@ -65,15 +65,15 @@
     "3": "utfordrende"
   },
   "statistikk": {
-    "antall_oppgaver": 950,
+    "antall_oppgaver": 970,
     "fordeling_del": {
-      "1": 488,
+      "1": 508,
       "2": 462
     },
     "fordeling_niva": {
-      "1": 171,
-      "2": 743,
-      "3": 36
+      "1": 177,
+      "2": 756,
+      "3": 37
     },
     "fordeling_tema": {
       "funksjoner_og_modeller": 165,
@@ -86,21 +86,21 @@
       "statistikk": 170,
       "statistikk_og_samfunn": 62,
       "variabler": 40,
-      "variabler_og_monstre": 51
+      "variabler_og_monstre": 71
     },
     "fordeling_hjelpemidler": {
       "med": 462,
-      "uten": 488
+      "uten": 508
     },
     "fordeling_svarformat": {
-      "tall": 544,
+      "tall": 561,
       "flere_tall": 175,
-      "valg": 208,
+      "valg": 211,
       "valg_og_tall": 23
     },
     "antall_del2_oppgavegrupper": 60,
-    "antall_variantfamilier": 196,
-    "antall_med_visualisering": 180,
+    "antall_variantfamilier": 203,
+    "antall_med_visualisering": 200,
     "antall_programmeringsoppgaver": 89,
     "antall_flervalg_med_flere_riktige": 10,
     "antall_aapne_svar": 0
@@ -56420,6 +56420,1334 @@
         "resultat": []
       },
       "nivabegrunnelse": "Oppgaven prøver moteksempel tallregel."
+    },
+    {
+      "id": "2py27-951",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et kors består av én rute i midten og fire armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur. Hvor mange grønne ruter er det i figur 6?",
+      "hint": [
+        "Hva vet vi? Tell midtruten én gang, og tell deretter de fire like armene.",
+        "Bygg videre med den samme regelen helt til figur 6. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 1 + fire ganger armlengden. Midtruten er allerede med i 1. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Tell midtruten én gang, og tell deretter de fire like armene. 4 · 6 + 1 = 25. Figur 6 har 25 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 25,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "kors",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 5
+          },
+          {
+            "n": 2,
+            "antall": 9
+          },
+          {
+            "n": 3,
+            "antall": 13
+          }
+        ],
+        "tekstalternativ": "Et kors består av én rute i midten og fire armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            1
+          ],
+          "target": 6
+        }
+      }
+    },
+    {
+      "id": "2py27-952",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-figurnummer",
+      "variantfamilie": "svg-figurnummer-lineart",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et kors består av én rute i midten og fire armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur. En figur har 37 grønne ruter. Hvilket figurnummer har den?",
+      "hint": [
+        "Hva vet vi? Tell midtruten én gang, og tell deretter de fire like armene.",
+        "Trekk først fra den faste delen av antallet. Del deretter på det som hører til hvert trinn i figurnummeret.",
+        "Skriv antall = 1 + fire ganger armlengden. Midtruten er allerede med i 1. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Antallet øker med 4 for hvert figurnummer. Vi løser 4n + 1 = 37: n = (37 − 1)/4 = 9.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 9,
+            "toleranse": 0,
+            "enhet": "",
+            "etikett": "Figurnummer"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "kors",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 5
+          },
+          {
+            "n": 2,
+            "antall": 9
+          },
+          {
+            "n": 3,
+            "antall": 13
+          }
+        ],
+        "tekstalternativ": "Et kors består av én rute i midten og fire armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "figurnummer",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            1
+          ],
+          "total": 37
+        }
+      }
+    },
+    {
+      "id": "2py27-953",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "En L-form består av én hjørnerute og to armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur. Hvor mange grønne ruter er det i figur 8?",
+      "hint": [
+        "Hva vet vi? Del L-formen i hjørneruten og to like armer.",
+        "Bygg videre med den samme regelen helt til figur 8. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 1 + to ganger armlengden. Begge armene har samme lengde. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Del L-formen i hjørneruten og to like armer. 2 · 8 + 1 = 17. Figur 8 har 17 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 17,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "vinkel",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 5
+          },
+          {
+            "n": 3,
+            "antall": 7
+          }
+        ],
+        "tekstalternativ": "En L-form består av én hjørnerute og to armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            2,
+            1
+          ],
+          "target": 8
+        }
+      }
+    },
+    {
+      "id": "2py27-954",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-figurnummer",
+      "variantfamilie": "svg-figurnummer-lineart",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En L-form består av én hjørnerute og to armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur. En figur har 25 grønne ruter. Hvilket figurnummer har den?",
+      "hint": [
+        "Hva vet vi? Del L-formen i hjørneruten og to like armer.",
+        "Trekk først fra den faste delen av antallet. Del deretter på det som hører til hvert trinn i figurnummeret.",
+        "Skriv antall = 1 + to ganger armlengden. Begge armene har samme lengde. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Antallet øker med 2 for hvert figurnummer. Vi løser 2n + 1 = 25: n = (25 − 1)/2 = 12.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 12,
+            "toleranse": 0,
+            "enhet": "",
+            "etikett": "Figurnummer"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "vinkel",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 5
+          },
+          {
+            "n": 3,
+            "antall": 7
+          }
+        ],
+        "tekstalternativ": "En L-form består av én hjørnerute og to armer. Hver arm er én rute lang i figur 1 og forlenges med én rute for hver ny figur."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "figurnummer",
+        "inndata": {
+          "polynom": [
+            0,
+            2,
+            1
+          ],
+          "total": 25
+        }
+      }
+    },
+    {
+      "id": "2py27-955",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "En U-form har to ruter langs bunnen i figur 1 og én rute oppover over hvert endepunkt. For hver ny figur blir bunnen én rute lengre og hver side én rute høyere. Hvor mange grønne ruter er det i figur 7?",
+      "hint": [
+        "Hva vet vi? Tell bunnen først. Tell bare rutene over bunnen når du teller sidene.",
+        "Bygg videre med den samme regelen helt til figur 7. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = ruter i bunnen + ruter over bunnen på venstre side + ruter over bunnen på høyre side. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Tell bunnen først. Tell bare rutene over bunnen når du teller sidene. 3 · 7 + 1 = 22. Figur 7 har 22 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 22,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "u_form",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 4
+          },
+          {
+            "n": 2,
+            "antall": 7
+          },
+          {
+            "n": 3,
+            "antall": 10
+          }
+        ],
+        "tekstalternativ": "En U-form har to ruter langs bunnen i figur 1 og én rute oppover over hvert endepunkt. For hver ny figur blir bunnen én rute lengre og hver side én rute høyere."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            3,
+            1
+          ],
+          "target": 7
+        }
+      }
+    },
+    {
+      "id": "2py27-956",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-tilvekst",
+      "variantfamilie": "svg-tilvekst-lineart",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En U-form har to ruter langs bunnen i figur 1 og én rute oppover over hvert endepunkt. For hver ny figur blir bunnen én rute lengre og hver side én rute høyere. Hvor mange nye grønne ruter kommer til fra figur 8 til figur 9?",
+      "hint": [
+        "Hva vet vi? Tell bunnen først. Tell bare rutene over bunnen når du teller sidene.",
+        "Se bare på det som legges til i neste figur. Skill dette fra antallet i hele den nye figuren.",
+        "Skriv antall = ruter i bunnen + ruter over bunnen på venstre side + ruter over bunnen på høyre side. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Bunnen og begge sidene får én ny rute. Det kommer til 3 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 3,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Nye grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "u_form",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 4
+          },
+          {
+            "n": 2,
+            "antall": 7
+          },
+          {
+            "n": 3,
+            "antall": 10
+          }
+        ],
+        "tekstalternativ": "En U-form har to ruter langs bunnen i figur 1 og én rute oppover over hvert endepunkt. For hver ny figur blir bunnen én rute lengre og hver side én rute høyere."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "tilvekst",
+        "inndata": {
+          "polynom": [
+            0,
+            3,
+            1
+          ],
+          "target": 8
+        }
+      }
+    },
+    {
+      "id": "2py27-957",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En trapp av ruter har én rad med to ruter i figur 1. Hver ny figur får en ny rad nederst med to flere ruter enn raden over. Hvor mange grønne ruter er det i figur 5?",
+      "hint": [
+        "Hva vet vi? Se på radlengdene 2, 4, 6 og videre. Legg sammen radene som hører til figuren.",
+        "Bygg videre med den samme regelen helt til figur 5. Du trenger ikke tegne alle mellomfigurene.",
+        "Radlengdene er 2, 4, 6 og videre. Skriv antall = summen av radlengdene. Neste nye rad er to ruter lengre enn den forrige. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Se på radlengdene 2, 4, 6 og videre. Legg sammen radene som hører til figuren. 5 · (5 + 1) = 30. Figur 5 har 30 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 30,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "dobbeltrapp",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 2
+          },
+          {
+            "n": 2,
+            "antall": 6
+          },
+          {
+            "n": 3,
+            "antall": 12
+          }
+        ],
+        "tekstalternativ": "En trapp av ruter har én rad med to ruter i figur 1. Hver ny figur får en ny rad nederst med to flere ruter enn raden over."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            1,
+            1,
+            0
+          ],
+          "target": 5
+        }
+      }
+    },
+    {
+      "id": "2py27-958",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-tilvekst",
+      "variantfamilie": "svg-tilvekst-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En trapp av ruter har én rad med to ruter i figur 1. Hver ny figur får en ny rad nederst med to flere ruter enn raden over. Hvor mange nye grønne ruter kommer til fra figur 6 til figur 7?",
+      "hint": [
+        "Hva vet vi? Se på radlengdene 2, 4, 6 og videre. Legg sammen radene som hører til figuren.",
+        "Se bare på det som legges til i neste figur. Skill dette fra antallet i hele den nye figuren.",
+        "Radlengdene er 2, 4, 6 og videre. Skriv antall = summen av radlengdene. Neste nye rad er to ruter lengre enn den forrige. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Den nye nederste raden i figur 7 har 14 grønne ruter. Derfor øker antallet med 14.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 14,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Nye grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "dobbeltrapp",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 2
+          },
+          {
+            "n": 2,
+            "antall": 6
+          },
+          {
+            "n": 3,
+            "antall": 12
+          }
+        ],
+        "tekstalternativ": "En trapp av ruter har én rad med to ruter i figur 1. Hver ny figur får en ny rad nederst med to flere ruter enn raden over."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "tilvekst",
+        "inndata": {
+          "polynom": [
+            1,
+            1,
+            0
+          ],
+          "target": 6
+        }
+      }
+    },
+    {
+      "id": "2py27-959",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "En grønn ramme er fire ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker både bredden og høyden med én rute. Hvor mange grønne ruter er det i figur 8?",
+      "hint": [
+        "Hva vet vi? Tell hele topp- og bunnraden, og deretter sidene uten hjørnene.",
+        "Bygg videre med den samme regelen helt til figur 8. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 2 · bredde + 2 · (høyde − 2). De to hjørnene på hver side er allerede med i topp og bunn. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Tell hele topp- og bunnraden, og deretter sidene uten hjørnene. 4 · 8 + 6 = 38. Figur 8 har 38 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 38,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "rektangelramme",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 10
+          },
+          {
+            "n": 2,
+            "antall": 14
+          },
+          {
+            "n": 3,
+            "antall": 18
+          }
+        ],
+        "tekstalternativ": "En grønn ramme er fire ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker både bredden og høyden med én rute."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            6
+          ],
+          "target": 8
+        }
+      }
+    },
+    {
+      "id": "2py27-960",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-figurnummer",
+      "variantfamilie": "svg-figurnummer-lineart",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En grønn ramme er fire ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker både bredden og høyden med én rute. En figur har 50 grønne ruter. Hvilket figurnummer har den?",
+      "hint": [
+        "Hva vet vi? Tell hele topp- og bunnraden, og deretter sidene uten hjørnene.",
+        "Trekk først fra den faste delen av antallet. Del deretter på det som hører til hvert trinn i figurnummeret.",
+        "Skriv antall = 2 · bredde + 2 · (høyde − 2). De to hjørnene på hver side er allerede med i topp og bunn. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Antallet øker med 4 for hvert figurnummer. Vi løser 4n + 6 = 50: n = (50 − 6)/4 = 11.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 11,
+            "toleranse": 0,
+            "enhet": "",
+            "etikett": "Figurnummer"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "rektangelramme",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 10
+          },
+          {
+            "n": 2,
+            "antall": 14
+          },
+          {
+            "n": 3,
+            "antall": 18
+          }
+        ],
+        "tekstalternativ": "En grønn ramme er fire ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker både bredden og høyden med én rute."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "figurnummer",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            6
+          ],
+          "total": 50
+        }
+      }
+    },
+    {
+      "id": "2py27-961",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et rektangel har én rad og tre kolonner i figur 1. Hver ny figur får én ekstra rad og én ekstra kolonne. Hvor mange grønne ruter er det i figur 6?",
+      "hint": [
+        "Hva vet vi? Finn antall rader og kolonner fra figurnummeret. Multipliser dem.",
+        "Bygg videre med den samme regelen helt til figur 6. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = rader · kolonner. Sammenlign begge lengdene med figurnummeret før du setter inn et tall. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Finn antall rader og kolonner fra figurnummeret. Multipliser dem. 6 · (6 + 2) = 48. Figur 6 har 48 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 48,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "rektangel",
+        "kolonnetillegg": 2,
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 8
+          },
+          {
+            "n": 3,
+            "antall": 15
+          }
+        ],
+        "tekstalternativ": "Et rektangel har én rad og tre kolonner i figur 1. Hver ny figur får én ekstra rad og én ekstra kolonne."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            1,
+            2,
+            0
+          ],
+          "target": 6
+        }
+      }
+    },
+    {
+      "id": "2py27-962",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-formel",
+      "variantfamilie": "svg-formel-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et rektangel har én rad og tre kolonner i figur 1. Hver ny figur får én ekstra rad og én ekstra kolonne. Hvilken formel gir antallet grønne ruter i figur n?",
+      "hint": [
+        "Hva vet vi? Finn antall rader og kolonner fra figurnummeret. Multipliser dem.",
+        "Skriv lengdene ved hjelp av n. Skill mellom ekstra kolonner og ruter som står utenfor kvadratet.",
+        "Skriv antall = rader · kolonner. Sammenlign begge lengdene med figurnummeret før du setter inn et tall. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Det er n rader og n + 2 kolonner, så antallet er n(n + 2).",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "alternativer": [
+          "2n + 2",
+          "(n + 2)²",
+          "n(n + 2)",
+          "n² + 2"
+        ],
+        "riktige": [
+          "n(n + 2)"
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "rektangel",
+        "kolonnetillegg": 2,
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 8
+          },
+          {
+            "n": 3,
+            "antall": 15
+          }
+        ],
+        "tekstalternativ": "Et rektangel har én rad og tre kolonner i figur 1. Hver ny figur får én ekstra rad og én ekstra kolonne."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "formel",
+        "inndata": {
+          "polynom": [
+            1,
+            2,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "2py27-963",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En trekant har én prikk i figur 1. Hver ny figur får en ny rad nederst med én prikk mer enn raden over. Hvor mange prikker er det i figur 7?",
+      "hint": [
+        "Hva vet vi? Antall prikker er summen av radlengdene 1, 2, 3 og videre.",
+        "Bygg videre med den samme regelen helt til figur 7. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 1 + 2 + 3 + … fram til siste rad. Ved vekst til neste figur er det bare den nye raden som legges til. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Antall prikker er summen av radlengdene 1, 2, 3 og videre. 7 · (7 + 1)/2 = 28. Figur 7 har 28 prikker.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 28,
+            "toleranse": 0,
+            "enhet": "prikker",
+            "etikett": "Antall prikker"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "trekant",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 1
+          },
+          {
+            "n": 2,
+            "antall": 3
+          },
+          {
+            "n": 3,
+            "antall": 6
+          }
+        ],
+        "tekstalternativ": "En trekant har én prikk i figur 1. Hver ny figur får en ny rad nederst med én prikk mer enn raden over."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0.5,
+            0.5,
+            0
+          ],
+          "target": 7
+        }
+      }
+    },
+    {
+      "id": "2py27-964",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-tilvekst",
+      "variantfamilie": "svg-tilvekst-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "En trekant har én prikk i figur 1. Hver ny figur får en ny rad nederst med én prikk mer enn raden over. Hvor mange nye prikker kommer til fra figur 9 til figur 10?",
+      "hint": [
+        "Hva vet vi? Antall prikker er summen av radlengdene 1, 2, 3 og videre.",
+        "Se bare på det som legges til i neste figur. Skill dette fra antallet i hele den nye figuren.",
+        "Skriv antall = 1 + 2 + 3 + … fram til siste rad. Ved vekst til neste figur er det bare den nye raden som legges til. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Den nye nederste raden i figur 10 har 10 prikker. Derfor øker antallet med 10.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 10,
+            "toleranse": 0,
+            "enhet": "prikker",
+            "etikett": "Nye prikker"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "trekant",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 1
+          },
+          {
+            "n": 2,
+            "antall": 3
+          },
+          {
+            "n": 3,
+            "antall": 6
+          }
+        ],
+        "tekstalternativ": "En trekant har én prikk i figur 1. Hver ny figur får en ny rad nederst med én prikk mer enn raden over."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "tilvekst",
+        "inndata": {
+          "polynom": [
+            0.5,
+            0.5,
+            0
+          ],
+          "target": 9
+        }
+      }
+    },
+    {
+      "id": "2py27-965",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et kvadrat har én grønn rute i figur 1 og øker med én rad og én kolonne for hver ny figur. To ekstra grønne ruter står ved siden av kvadratet i alle figurene. Hvor mange grønne ruter er det i figur 5?",
+      "hint": [
+        "Hva vet vi? Tell kvadratet for seg, og legg til de to faste rutene.",
+        "Bygg videre med den samme regelen helt til figur 5. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = side · side + rutene utenfor kvadratet. De faste rutene øker ikke sidelengden. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Tell kvadratet for seg, og legg til de to faste rutene. 5² + 2 = 27. Figur 5 har 27 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 27,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 0,
+        "tillegg": 2,
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 6
+          },
+          {
+            "n": 3,
+            "antall": 11
+          }
+        ],
+        "tekstalternativ": "Et kvadrat har én grønn rute i figur 1 og øker med én rad og én kolonne for hver ny figur. To ekstra grønne ruter står ved siden av kvadratet i alle figurene."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            1,
+            0,
+            2
+          ],
+          "target": 5
+        }
+      }
+    },
+    {
+      "id": "2py27-966",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-formel",
+      "variantfamilie": "svg-formel-kvadratisk",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Et kvadrat har én grønn rute i figur 1 og øker med én rad og én kolonne for hver ny figur. To ekstra grønne ruter står ved siden av kvadratet i alle figurene. Hvilken formel gir antallet grønne ruter i figur n?",
+      "hint": [
+        "Hva vet vi? Tell kvadratet for seg, og legg til de to faste rutene.",
+        "Skriv lengdene ved hjelp av n. Skill mellom ekstra kolonner og ruter som står utenfor kvadratet.",
+        "Skriv antall = side · side + rutene utenfor kvadratet. De faste rutene øker ikke sidelengden. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Kvadratet har n² ruter. De to rutene utenfor gir n² + 2.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "alternativer": [
+          "n² + 2",
+          "(n + 2)²",
+          "2n + 2",
+          "n² + 2n"
+        ],
+        "riktige": [
+          "n² + 2"
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "kvadrat_med_tillegg",
+        "sideforskyvning": 0,
+        "tillegg": 2,
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 3
+          },
+          {
+            "n": 2,
+            "antall": 6
+          },
+          {
+            "n": 3,
+            "antall": 11
+          }
+        ],
+        "tekstalternativ": "Et kvadrat har én grønn rute i figur 1 og øker med én rad og én kolonne for hver ny figur. To ekstra grønne ruter står ved siden av kvadratet i alle figurene."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "formel",
+        "inndata": {
+          "polynom": [
+            1,
+            0,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "2py27-967",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "Fyrstikker med røde hoder danner en sammenhengende rad av kvadrater. Figur 1 har ett kvadrat. Hver ny figur får ett nytt kvadrat, og nabokvadrater deler én fyrstikk. Hvor mange fyrstikker er det i figur 9?",
+      "hint": [
+        "Hva vet vi? Start med det første kvadratet. Finn hvor mange nye fyrstikker som trengs når en side allerede ligger der.",
+        "Bygg videre med den samme regelen helt til figur 9. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 4 + nye fyrstikker per kvadrat · (antall kvadrater − 1). Den delte siden skal ikke legges til en gang til. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Start med det første kvadratet. Finn hvor mange nye fyrstikker som trengs når en side allerede ligger der. 3 · 9 + 1 = 28. Figur 9 har 28 fyrstikker.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 28,
+            "toleranse": 0,
+            "enhet": "fyrstikker",
+            "etikett": "Antall fyrstikker"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "fyrstikkrad",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 4
+          },
+          {
+            "n": 2,
+            "antall": 7
+          },
+          {
+            "n": 3,
+            "antall": 10
+          }
+        ],
+        "tekstalternativ": "Fyrstikker med røde hoder danner en sammenhengende rad av kvadrater. Figur 1 har ett kvadrat. Hver ny figur får ett nytt kvadrat, og nabokvadrater deler én fyrstikk."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            3,
+            1
+          ],
+          "target": 9
+        }
+      }
+    },
+    {
+      "id": "2py27-968",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-figurnummer",
+      "variantfamilie": "svg-figurnummer-lineart",
+      "niva": 2,
+      "hjelpemidler": "uten",
+      "sporsmal": "Fyrstikker med røde hoder danner en sammenhengende rad av kvadrater. Figur 1 har ett kvadrat. Hver ny figur får ett nytt kvadrat, og nabokvadrater deler én fyrstikk. En figur har 31 fyrstikker. Hvilket figurnummer har den?",
+      "hint": [
+        "Hva vet vi? Start med det første kvadratet. Finn hvor mange nye fyrstikker som trengs når en side allerede ligger der.",
+        "Trekk først fra den faste delen av antallet. Del deretter på det som hører til hvert trinn i figurnummeret.",
+        "Skriv antall = 4 + nye fyrstikker per kvadrat · (antall kvadrater − 1). Den delte siden skal ikke legges til en gang til. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Antallet øker med 3 for hvert figurnummer. Vi løser 3n + 1 = 31: n = (31 − 1)/3 = 10.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 10,
+            "toleranse": 0,
+            "enhet": "",
+            "etikett": "Figurnummer"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "fyrstikkrad",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 4
+          },
+          {
+            "n": 2,
+            "antall": 7
+          },
+          {
+            "n": 3,
+            "antall": 10
+          }
+        ],
+        "tekstalternativ": "Fyrstikker med røde hoder danner en sammenhengende rad av kvadrater. Figur 1 har ett kvadrat. Hver ny figur får ett nytt kvadrat, og nabokvadrater deler én fyrstikk."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever å bruke konstruksjonen til en beregning eller generalisering.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "figurnummer",
+        "inndata": {
+          "polynom": [
+            0,
+            3,
+            1
+          ],
+          "total": 31
+        }
+      }
+    },
+    {
+      "id": "2py27-969",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-antall",
+      "variantfamilie": "svg-antall-lineart",
+      "niva": 1,
+      "hjelpemidler": "uten",
+      "sporsmal": "En grønn kvadratramme er tre ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker begge sidelengdene med én rute. Hvor mange grønne ruter er det i figur 7?",
+      "hint": [
+        "Hva vet vi? Tell topp og bunn helt, og tell sidene mellom dem. Hjørnene skal telles én gang.",
+        "Bygg videre med den samme regelen helt til figur 7. Du trenger ikke tegne alle mellomfigurene.",
+        "Skriv antall = 2 · hel sidelengde + 2 · sidelengde uten hjørnene. Kontroller at hvert hjørne bare telles én gang. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Tell topp og bunn helt, og tell sidene mellom dem. Hjørnene skal telles én gang. 4 · 7 + 4 = 32. Figur 7 har 32 grønne ruter.",
+      "fasit": {
+        "type": "tall",
+        "verdier": [
+          {
+            "verdi": 32,
+            "toleranse": 0,
+            "enhet": "grønne ruter",
+            "etikett": "Antall grønne ruter"
+          }
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "ramme",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 8
+          },
+          {
+            "n": 2,
+            "antall": 12
+          },
+          {
+            "n": 3,
+            "antall": 16
+          }
+        ],
+        "tekstalternativ": "En grønn kvadratramme er tre ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker begge sidelengdene med én rute."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever direkte telling eller enkel lineær beregning.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "antall",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            4
+          ],
+          "target": 7
+        }
+      }
+    },
+    {
+      "id": "2py27-970",
+      "del": 1,
+      "tema": "variabler_og_monstre",
+      "deltema": "figur-dobbeltelling",
+      "variantfamilie": "svg-dobbeltelling-lineart",
+      "niva": 3,
+      "hjelpemidler": "uten",
+      "sporsmal": "En grønn kvadratramme er tre ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker begge sidelengdene med én rute. Hvilken forklaring gir riktig antall grønne ruter i figur n uten dobbeltelling?",
+      "hint": [
+        "Hva vet vi? Tell topp og bunn helt, og tell sidene mellom dem. Hjørnene skal telles én gang.",
+        "Undersøk hvor mange ganger hvert hjørne blir med hvis du teller fire hele sider.",
+        "Skriv antall = 2 · hel sidelengde + 2 · sidelengde uten hjørnene. Kontroller at hvert hjørne bare telles én gang. Kontroller framgangsmåten mot figur 1, 2 og 3."
+      ],
+      "svar": "Topp og bunn gir 2(n + 2). De to sidene mellom disse radene gir 2n. Summen er 4n + 4, og hver hjørnerute er telt én gang.",
+      "fasit": {
+        "type": "valg",
+        "flervalg": false,
+        "alternativer": [
+          "Tell fire hele sider og legg til fire hjørner.",
+          "Tell to hele sider med n + 2 ruter og to sider uten hjørnene med n ruter.",
+          "Tell fire sider med n + 2 ruter uten å trekke fra noe."
+        ],
+        "riktige": [
+          "Tell to hele sider med n + 2 ruter og to sider uten hjørnene med n ruter."
+        ]
+      },
+      "visualisering": {
+        "type": "figurmønster",
+        "monster": "ramme",
+        "figurer": [
+          {
+            "n": 1,
+            "antall": 8
+          },
+          {
+            "n": 2,
+            "antall": 12
+          },
+          {
+            "n": 3,
+            "antall": 16
+          }
+        ],
+        "tekstalternativ": "En grønn kvadratramme er tre ruter bred og tre ruter høy i figur 1, med hvitt sentrum. For hver ny figur øker begge sidelengdene med én rute."
+      },
+      "ferdighet": [
+        "tolke",
+        "generalisere"
+      ],
+      "nivabegrunnelse": "Krever vurdering av dobbeltelling i en generell konstruksjon.",
+      "laeringsstotte": {
+        "feil": "Skill mellom figurnummer, antall i hele figuren og det som kommer til. Bruk konstruksjonsregelen og kontroller mot figurene."
+      },
+      "kontroll": {
+        "operasjon": "svg_monster",
+        "metode": "dobbeltelling",
+        "inndata": {
+          "polynom": [
+            0,
+            4,
+            4
+          ]
+        }
+      }
     }
   ]
 }

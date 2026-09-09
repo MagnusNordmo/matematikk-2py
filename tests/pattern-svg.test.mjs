@@ -82,7 +82,7 @@ test('bare dokumenterte figurfelt er endret i de 950 oppgavene og 60 gruppene',a
  const hashes=JSON.parse(readFileSync(new URL('../docs/baseline-patterns-sha256.json',import.meta.url),'utf8'));
  const revision=JSON.parse(readFileSync(new URL('../docs/pattern-revision.json',import.meta.url),'utf8'));
  function canonical(v){return Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;}
- for(const type of ['oppgaver','oppgavegrupper']) for(const owner of bank[type]){
+ for(const type of ['oppgaver','oppgavegrupper']) for(const owner of (type === 'oppgaver' ? bank[type].slice(0,950) : bank[type])){
   const restored=structuredClone(owner);
   for(const [field,values] of Object.entries(revision[type].find(c=>c.id===owner.id)?.felter??{})){
    assert.deepEqual(restored[field]??null,values.etter,`${owner.id}/${field}`);
@@ -99,3 +99,13 @@ test('eldre hintoppskrift bevarer de gjennomgåtte geometriske hintene',async()=
  reviseHintScaffolding(copy,{math:s=>`\\(${s}\\)`,number:String});
  for(const id of ['088','089','090','091','092']) assert.deepEqual(copy.oppgaver.find(q=>q.id===`2py27-${id}`).hint,bank.oppgaver.find(q=>q.id===`2py27-${id}`).hint);
 });
+
+ test('fyrstikker vises som adskilte trepinner med ett rødt hode per telt pinne',()=>{
+ for(const [monster,counts] of [['fyrstikkrad',[4,7,10]],['fyrstikk_kvadrater',[8,12,16]]]){
+ const html=render({type:'figurmønster',monster,verdier:counts});
+ assert.equal((html.match(/data-match-head="true"/g)||[]).length,counts.reduce((a,b)=>a+b,0));
+ assert.equal((html.match(/stroke="#b77935"/g)||[]).length,counts.reduce((a,b)=>a+b,0));
+ assert.match(html,/fill="#c43432"/);
+ assert.match(html,/x1="0.12"/);
+ }
+ });

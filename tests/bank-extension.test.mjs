@@ -254,7 +254,7 @@ test('halvverdier avrundes riktig uten at flyttallsstøy avviser svaret', () => 
  assert.equal(evaluateAnswer({numbers:['-21,8'],choices:[]},negative).correct,true);
  assert.equal(evaluateAnswer({numbers:['-21,7'],choices:[]},negative).correct,false);
 });
-test('kontrollsiden viser 50 om gangen og gir tilgang til alle 950', async () => {
+test('kontrollsiden viser 50 om gangen og gir tilgang til alle 970', async () => {
  const {runInNewContext}=await import('node:vm');
  const html=readFileSync(new URL('../public/oppgaver-og-hint.html',import.meta.url),'utf8');
  const data=html.match(/<script id="question-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
@@ -268,7 +268,7 @@ test('kontrollsiden viser 50 om gangen og gir tilgang til alle 950', async () =>
  const result=nodes.get('results');const cards=()=>all(result).filter(n=>n.className==='question-card');
  assert.equal(cards().length,50);
  let more;while((more=all(result).find(n=>n.textContent==='Vis flere oppgaver')))more.handlers.click();
- assert.equal(cards().length,950);
+ assert.equal(cards().length,970);
  const del2=all(nodes.get('part-filters')).find(n=>n.textContent==='Del 2');del2.handlers.click();
  assert.equal(cards().length,50);
  while((more=all(result).find(n=>n.textContent==='Vis flere oppgaver')))more.handlers.click();

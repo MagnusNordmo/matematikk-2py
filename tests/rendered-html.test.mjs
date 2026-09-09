@@ -27,9 +27,9 @@ test("den selvstendige kontrollsiden inneholder hele banken", async () => {
   const match = html.match(/<script id="question-data" type="application\/json">([\s\S]*?)<\/script>/);
   assert.ok(match, "Mangler innebygd oppgavebank");
   const embedded = JSON.parse(match[1].replaceAll("<\\/script", "</script"));
-  assert.equal(embedded.oppgaver.length, 950);
+  assert.equal(embedded.oppgaver.length, 970);
   assert.equal(embedded.groups, 60);
-  assert.equal(embedded.oppgaver.filter((question) => question.del === 1).length, 488);
+  assert.equal(embedded.oppgaver.filter((question) => question.del === 1).length, 508);
   assert.equal(embedded.oppgaver.filter((question) => question.del === 2).length, 462);
   assert.ok(html.includes("data:font/woff2;base64,"));
   assert.ok(html.includes('id="part-filters"'));

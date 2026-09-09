@@ -71,7 +71,7 @@ test('numeriske svar i de nye oppgavene kontrolleres med egne beregninger',()=>{
    assert.equal(evaluateAnswer({numbers:wrong.map(String),choices:[]},q.fasit).correct,false,q.id);
   }
  }
- assert.equal(bank.oppgaver.slice(915).filter(q=>'verdier' in q.fasit).length,Object.keys(expected).length);
+ assert.equal(bank.oppgaver.slice(915,950).filter(q=>'verdier' in q.fasit).length,Object.keys(expected).length);
 });
 test('alle nye valgalternativer har ett faglig gjennomgått svar',()=>{
  const correct:Record<number,string>={918:'Nord, fordi 30/100 er større enn 50/200.',919:'Tilfeldig trukne elever fra alle klassetrinn.',921:'Søylehøyden over 90 dobles, men besøkstallet øker bare med 10 %.',922:'Temperatur kan påvirke begge, så samvariasjonen beviser ikke årsak.',923:'Gjennomsnittet er 40 000 kroner, mens medianen er 30 000 kroner.',924:'Besøkstallet har økt med 25 %, men endringen i antall forskjellige personer er ukjent.',925:'En fast avgift på 150 kroner kommer i tillegg til timeprisen.',931:'P(x) = 30x + 50',932:'A er alltid 150 kroner billigere enn B.',933:'Heltall fra og med 0 til og med 40.',936:'Linjediagram med måneder langs den vannrette aksen.',940:'Eksponentialmodell med en fast vekstfaktor.',941:'(4, 6)',944:'3n + 1',946:'22 brikker',949:'4n − 4',950:'n = 2 gir 6, som er et partall.'};
@@ -81,7 +81,7 @@ test('alle nye valgalternativer har ett faglig gjennomgått svar',()=>{
   assert.ok(q.fasit.alternativer.includes(answer));
   for(const option of q.fasit.alternativer)assert.equal(evaluateAnswer({numbers:[],choices:[option]},q.fasit).correct,option===answer,q.id);
  }
- assert.equal(bank.oppgaver.slice(915).filter(q=>q.fasit.type==='valg').length,Object.keys(correct).length);
+ assert.equal(bank.oppgaver.slice(915,950).filter(q=>q.fasit.type==='valg').length,Object.keys(correct).length);
 });
 test('varianter har forskjellige prosentendringer og konklusjoner',()=>{
  const cycling=bank.oppgaver.filter(q=>q.variantfamilie==='utvidelse-d1-andel-og-prosentpoeng');
@@ -106,5 +106,5 @@ test('alle tidligere oppgaver er identiske utenfor dokumenterte rettelser',()=>{
   }
   assert.equal(createHash('sha256').update(JSON.stringify(canonical(restored))).digest('hex'),hashes[q.id],q.id);
  }
- assert.deepEqual(bank.oppgaver.slice(915).map(q=>q.id),revision.nye_ider);
+ assert.deepEqual(bank.oppgaver.slice(915,950).map(q=>q.id),revision.nye_ider);
 });

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import katex from "katex";
 import type { Visualization } from "./question-bank";
 
@@ -353,6 +354,17 @@ export function patternGeometry(pattern: string, n: number, value: number, confi
     for(let x=0;x<=n+1;x++) dot(x,n+1);
     for(let x=1;x<=n;x++) dot(x,n+2);
     for(let d=1;d<=n;d++) dot(n+1+d,n-d);
+  } else if(pattern === "kors" || pattern === "vinkel" || pattern === "u_form") {
+    tile(0,0);
+    for(let d=1;d<=n;d++) {
+      tile(d,0); tile(0,d);
+      if(pattern === "kors") {tile(-d,0);tile(0,-d);}
+      if(pattern === "u_form") tile(n,d);
+    }
+  } else if(pattern === "dobbeltrapp") {
+    for(let y=0;y<n;y++) for(let x=0;x<2*(y+1);x++) tile(x,y);
+  } else if(pattern === "rektangelramme") {
+    for(let y=0;y<n+2;y++) for(let x=0;x<n+3;x++) tile(x,y,x>0 && x<n+2 && y>0 && y<n+1);
   } else if(pattern === "fyrstikkrad") {
     for(let x=0;x<n;x++) {line(x,0,x+1,0);line(x,1,x+1,1);}
     for(let x=0;x<=n;x++) line(x,0,x,1);
@@ -401,7 +413,7 @@ export function patternGeometry(pattern: string, n: number, value: number, confi
   return {shapes,minX,minY,width:maxX-minX+1,height:maxY-minY+1};
 }
 
-function PatternSequence({visualization}: {visualization: Visualization}) {
+const PatternSequence = memo(function PatternSequence({visualization}: {visualization: Visualization}) {
   const figures=(visualization.figurer as {n:number;antall:number;punkter?:unknown[]}[] | undefined)
     ?? ((visualization.verdier as number[] | undefined) ?? []).map((antall,i)=>({n:i+1,antall}));
   if(figures.length===0 || figures.length>6) return <p>Figuren kunne ikke vises.</p>;
@@ -421,7 +433,13 @@ function PatternSequence({visualization}: {visualization: Visualization}) {
             const common={className:s.counted ? "pattern-cell" : "pattern-background", "data-counted":s.counted,
               fill:s.white ? "#ffffff" : s.counted ? "#24bf91" : "#e5edf4",stroke:"#243b43",strokeWidth:0.045};
             return s.kind==="circle" ? <circle key={j} {...common} cx={s.x} cy={s.y} r={0.21}/>
-              : s.kind==="line" ? <line key={j} {...common} x1={s.x} y1={s.y} x2={s.x2} y2={s.y2} strokeWidth={0.075} strokeLinecap="round"/>
+              : s.kind==="line" ? <g key={j}>
+                  <line {...common} x1={s.x+((s.x2??s.x)-s.x)*0.12} y1={s.y+((s.y2??s.y)-s.y)*0.12}
+                    x2={s.x+((s.x2??s.x)-s.x)*0.88} y2={s.y+((s.y2??s.y)-s.y)*0.88}
+                    stroke="#b77935" strokeWidth={0.09} strokeLinecap="round"/>
+                  <circle data-match-head="true" cx={s.x+((s.x2??s.x)-s.x)*0.88}
+                    cy={s.y+((s.y2??s.y)-s.y)*0.88} r={0.073} fill="#c43432"/>
+                </g>
               : <rect key={j} {...common} x={s.x} y={s.y} width={s.width} height={s.height}/>;
           })}
         </g>
@@ -429,7 +447,7 @@ function PatternSequence({visualization}: {visualization: Visualization}) {
       <small>Figur {figures[i].n}</small>
     </div>)}
   </figure>;
-}
+});
 
 function Histogram({
   limits,
