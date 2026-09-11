@@ -110,7 +110,7 @@ test('kontroll av figurtall bygger på de synlige konstruksjonene',()=>{
 test('appens kontrollfelt røper ikke løsningen før innsending og påfølgende åpning',()=>{
  const c=checkpoint('2023-var',2,2);
  const initial=renderToStaticMarkup(createElement(ExamCheckCard,{check:c,onChange(){}}));
- assert.match(initial,/appens kontrollpunkt/);assert.ok(!initial.includes(c.solution));assert.ok(!initial.includes(c.hint));
+ assert.match(initial,/Oppgave 2/);assert.doesNotMatch(initial,/appens|kontrollpunkt/);assert.ok(!initial.includes(c.solution));assert.ok(!initial.includes(c.hint));
  assert.match(initial,/type="text"/);assert.match(initial,/inputMode="decimal"/);
  const submitted={answer:numAnswer(3),submitted:numAnswer(3)};
  const checked=renderToStaticMarkup(createElement(ExamCheckCard,{check:c,progress:submitted,onChange(){}}));

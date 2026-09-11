@@ -16,7 +16,7 @@ export function OriginalExamPage({ page, title }: { page: ExamPage; title: strin
     <div className="exam-page-tools"><span>{title} · side {page.printedPage}</span>
       <button className="quiet-button" onClick={() => setExpanded(!expanded)} aria-pressed={expanded}>{expanded ? "Tilpass bredden" : "Forstørr siden"}</button>
     </div>
-    {failed && <p role="alert">Oppgavesiden kunne ikke lastes. Åpne kildedokumentet nedenfor eller last siden på nytt.</p>}
+    {failed && <p role="alert">Oppgavesiden kunne ikke lastes. Åpne eksamensoppgavene som PDF nedenfor eller last siden på nytt.</p>}
     <div className="exam-paper-scroll" tabIndex={0} aria-label="Oppgaveside. Ved forstørring kan du rulle vannrett.">
       {/* A lossless rendering of the complete PDF page; no OCR or reconstructed figures. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -34,7 +34,7 @@ export function ExamCheckCard({ check, progress, onChange }: { check: ExamCheck;
   const choice = check.key.type === "valg" ? check.key : check.key.type === "valg_og_tall" ? check.key.valg : null;
   const changeAnswer = (answer: typeof EMPTY_ANSWER) => onChange({ ...saved, answer, submitted: undefined });
   return <article className="exam-check">
-    <p className="eyebrow">Oppgave {check.task} · appens kontrollpunkt</p>
+    <p className="eyebrow">Oppgave {check.task}</p>
     <h3><MathText>{check.label}</MathText></h3>
     <form onSubmit={event => { event.preventDefault(); if (isAnswerComplete(saved.answer, check.key)) onChange({ ...saved, submitted: structuredClone(saved.answer) }); }}>
       <div className="exam-check-fields">
@@ -58,8 +58,8 @@ export function ExamCheckCard({ check, progress, onChange }: { check: ExamCheck;
     {saved.hint && <p className="exam-hint"><MathText>{check.hint}</MathText></p>}
     {result && <div className={`exam-feedback ${result.correct ? "correct" : "incorrect"}`} role="status">
       <strong>{result.correct ? "Resultatet er riktig." : result.correctParts > 0 ? `${result.correctParts} av ${result.totalParts} svar stemmer. Prøv igjen.` : "Resultatet stemmer ikke ennå. Prøv igjen eller se forklaringen."}</strong>
-      <p>Dette gjelder kontrollpunktet. Begrunnelse, framgangsmåte og tegning er ikke vurdert.</p>
-      {(saved.usedHelp || saved.hint || saved.solution) && <small>Du har brukt hjelp på dette kontrollpunktet.</small>}
+      <p>Begrunnelse, framgangsmåte og tegning er ikke vurdert.</p>
+      {(saved.usedHelp || saved.hint || saved.solution) && <small>Du har brukt hjelp til dette svaret.</small>}
       <button className="quiet-button" onClick={() => onChange({ ...saved, solution: !saved.solution, usedHelp: true })}>{saved.solution ? "Skjul forklaring" : "Vis forklaring"}</button>
       {saved.solution && <p><MathText>{check.solution}</MathText></p>}
     </div>}
@@ -90,8 +90,8 @@ function ExamSession({ exam, onBack }: { exam: PastExam; onBack: () => void }) {
   return <div className="page past-exam-session">
     <button className="back-link" onClick={onBack}>← Til eksamenslisten</button>
     <section className="section-heading"><p className="eyebrow">Tidligere eksamensoppgaver</p><h1>{exam.title}</h1><p>{exam.note}</p></section>
-    <div className="exam-session-meta"><span>Del 1: {exam.minutes[0] / 60} t uten hjelpemidler · Del 2: {exam.minutes[1] / 60} t med hjelpemidler</span><span>{completion.correct} av {completion.total} kontrollpunkter riktige</span></div>
-    <p className="exam-instructions">Løs oppgavene på papir eller med aktuelle hjelpemidler. Her kan du kontrollere utvalgte resultater. Svarfeltene nedenfor er lagt til av appen.</p>
+    <div className="exam-session-meta"><span>Del 1: {exam.minutes[0] / 60} t uten hjelpemidler · Del 2: {exam.minutes[1] / 60} t med hjelpemidler</span><span>{completion.correct} av {completion.total} svar riktige</span></div>
+    <p className="exam-instructions">Løs oppgavene på papir eller med aktuelle hjelpemidler. Sjekk utvalgte svar nedenfor.</p>
     {storageFailed && <p role="status">Nettleseren kunne ikke lagre framdriften. Svarene beholdes så lenge du har denne økten åpen.</p>}
     <nav className="exam-page-nav" aria-label="Oppgavesider">
       {([1,2] as const).map(part => <div key={part}><strong>Del {part}</strong><div className="exam-page-buttons">
@@ -101,9 +101,9 @@ function ExamSession({ exam, onBack }: { exam: PastExam; onBack: () => void }) {
       </div></div>)}
     </nav>
     <OriginalExamPage key={page.image} page={page} title={exam.title} />
-    <p className="exam-source">Kilde: {exam.sourceLabel}. <a href={`${exam.pdf}#page=${page.page}`} target="_blank" rel="noreferrer">Åpne kildedokumentet (PDF)</a>{exam.sourceUrl && <> · <a href={exam.sourceUrl} target="_blank" rel="noreferrer">Om kilden</a></>}</p>
-    <section aria-label="Kontroller resultatene" className="exam-checks">
-      <h2>Kontroller resultatene</h2>
+    <p className="exam-source">Kilde: {exam.sourceLabel}. <a href={`${exam.pdf}#page=${page.page}`} target="_blank" rel="noreferrer">Åpne eksamensoppgavene (PDF)</a>{exam.sourceUrl && <> · <a href={exam.sourceUrl} target="_blank" rel="noreferrer">Om kilden</a></>}</p>
+    <section aria-label="Sjekk svarene" className="exam-checks">
+      <h2>Sjekk svarene</h2>
       {page.checks.map(check => <ExamCheckCard key={check.id} check={check} progress={progress.checks[check.id]} onChange={value => save({ ...progress, checks: { ...progress.checks, [check.id]: value } })} />)}
     </section>
     <div className="exam-actions exam-bottom-nav">

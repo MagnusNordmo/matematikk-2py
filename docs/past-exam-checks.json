@@ -599,7 +599,7 @@
         ]
       },
       "hint": "Skriv prosentregningen som et produkt delt på 100.",
-      "solution": "a % av b = ab/100, og b % av a = ba/100. Produktene er like. Dette kontrollerer konklusjonen, ikke argumentasjonen."
+      "solution": "a % av b = ab/100, og b % av a = ba/100. Produktene er like. Husk å begrunne svaret."
     },
     {
       "id": "2024-host-d2-q4-c10",
@@ -746,7 +746,7 @@
       "id": "2023-var-d1-q2-c2",
       "part": 1,
       "task": 2,
-      "label": "Et kontrollpunkt til din egen graf: Hvor mye deig får hver person når 4 personer baker?",
+      "label": "Hvor mye deig får hver person når 4 personer baker?",
       "key": {
         "type": "tall",
         "verdier": [
@@ -759,7 +759,7 @@
         ]
       },
       "hint": "Del den samlede deigmengden på antall personer.",
-      "solution": "6/4 = 1,5 kg. Grafen skal vise sammenhengen y = 6/x. Dette feltet kontrollerer bare ett punkt på grafen."
+      "solution": "6/4 = 1,5 kg. Grafen skal vise sammenhengen y = 6/x. Tegn også grafen på arket."
     },
     {
       "id": "2023-var-d1-q3-c3",
@@ -1164,7 +1164,7 @@
       "id": "2026-var-d1-q8-c9",
       "part": 1,
       "task": 8,
-      "label": "Et kontrollpunkt i sorteringen: verdien av √64.",
+      "label": "Hva er verdien av √64?",
       "key": {
         "type": "tall",
         "verdier": [
@@ -1405,7 +1405,7 @@
         ]
       },
       "hint": "Tabellen går fra 32 % til 50 %. Skill mellom prosentpoeng og relativ økning.",
-      "solution": "50−32 = 18 prosentpoeng. Relativ økning er 18/32·100 = 56,25 %. Dette kontrollerer ett resultat, ikke hele presentasjonen."
+      "solution": "50−32 = 18 prosentpoeng. Relativ økning er 18/32·100 = 56,25 %. Bruk resultatet i presentasjonen din."
     }
   ]
 }
