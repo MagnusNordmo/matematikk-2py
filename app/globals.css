@@ -2017,3 +2017,55 @@ input:focus-visible {
   justify-self: end;
   max-width: 100%;
 }
+
+/* Original exam documents retain their own typography, colors and geometry. */
+.practice-choices { grid-template-columns: 1fr; max-width: 920px; }
+.practice-choices .choice-card { min-height: 160px; align-items: center; }
+.exam-catalog-group { margin-top: 2.5rem; }
+.exam-catalog-group h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+.exam-catalog { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 1rem; }
+.exam-catalog-card { display: flex; flex-direction: column; gap: .8rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 18px; background: white; text-align: left; color: var(--ink); }
+.exam-catalog-card:hover { border-color: var(--accent, #19766e); }
+.exam-catalog-card strong { font-size: 1.4rem; }
+.exam-catalog-card span { line-height: 1.6; }
+.exam-catalog-card small { font-size: .875rem; color: var(--muted); }
+.exam-catalog-card .exam-open { margin-top: auto; font-weight: 700; color: #19766e; }
+.past-exam-session { max-width: 1080px; }
+.exam-session-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem; margin: 1.4rem 0; font-size: .95rem; }
+.exam-instructions, .exam-save-note { color: var(--muted); line-height: 1.7; margin: 1rem 0 2rem; }
+.exam-page-nav { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 16px; margin-bottom: 1.5rem; }
+.exam-page-buttons { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .6rem; }
+.exam-page-buttons button { padding: .65rem .8rem; border: 1px solid var(--line); background: white; border-radius: 8px; font-size: .9rem; }
+.exam-page-buttons button[aria-current="page"] { color: white; background: #19766e; border-color: #19766e; }
+.original-exam-page { min-width: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: white; }
+.exam-page-tools { padding: .7rem 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem; border-bottom: 1px solid var(--line); font-size: .9rem; color: #314342; }
+.exam-paper-scroll { width: 100%; overflow: auto; background: #fff; }
+.exam-paper { display: block; width: 100%; height: auto; max-width: none; }
+.exam-paper.expanded { width: max(100%, 1400px); }
+.exam-source { color: var(--muted); font-size: .875rem; line-height: 1.7; margin: .8rem 0 2rem; }
+.exam-source a { text-decoration: underline; }
+.exam-checks h2 { font-size: 1.5rem; margin-bottom: 1.3rem; }
+.exam-check { padding: 1.5rem; border: 1px solid var(--line); border-radius: 16px; background: #fff; margin: 1rem 0; }
+.exam-check h3 { font-size: 1.1rem; line-height: 1.6; margin: .5rem 0 1.1rem; }
+.exam-check-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 1rem; }
+.exam-check .answer-field { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.exam-check .answer-field input { min-width: 0; width: 100%; border: 0; padding: .85rem; font-size: 1.1rem; background: transparent; }
+.exam-check .answer-unit { padding-right: .75rem; }
+.exam-check .numeric-answer label { display: block; margin-bottom: .4rem; }
+.exam-choice-fields { border: 0; padding: 0; margin-bottom: 1rem; }
+.exam-choice-fields legend { font-size: .9rem; margin-bottom: .65rem; }
+.exam-choice-fields label { display: flex; align-items: center; gap: .7rem; padding: .75rem; border: 1px solid var(--line); margin: .5rem 0; border-radius: 8px; cursor: pointer; }
+.exam-choice-fields input { width: 1.2rem; height: 1.2rem; flex-shrink: 0; accent-color: #19766e; }
+.exam-actions { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; margin-top: 1rem; }
+.exam-hint, .exam-feedback { padding: 1rem; border-radius: 10px; line-height: 1.7; margin-top: 1rem; background: #eef5f6; }
+.exam-feedback.correct { background: #eaf7ef; }
+.exam-feedback.incorrect { background: #fff4e6; }
+.exam-feedback p { margin: .6rem 0; }
+.exam-feedback small { display: block; font-size: .875rem; }
+.exam-bottom-nav { justify-content: space-between; margin-top: 2rem; }
+@media(max-width: 600px) {
+  .practice-choices .choice-card { padding: 1.2rem; gap: .8rem; }
+  .exam-check { padding: 1rem; }
+  .exam-page-tools { padding: .65rem; }
+  .exam-session-meta { flex-direction: column; }
+}

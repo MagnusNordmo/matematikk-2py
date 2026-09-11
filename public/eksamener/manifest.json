@@ -1,0 +1,1952 @@
+[
+  {
+    "id": "2023-var",
+    "title": "Våren 2023",
+    "kind": "exam",
+    "note": "MAT1151 · Oppgavesett fra NDLA",
+    "sourceLabel": "NDLA / Utdanningsdirektoratet",
+    "pdf": "/eksamener/kilder/2023-var.pdf",
+    "sourceSha256": "df00dd6ca0660b417cc82d780e75bdcfede63f0ab620fa44ecfa7fea17764b05",
+    "minutes": [
+      60,
+      240
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "printedPage": 1,
+        "part": 1,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "image": "/eksamener/2023-var/side-1.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "f7d75b3daf423dde69419b7b2efa507c5545029b0aee5c7dd5c800fd2f3e3abd",
+        "checks": [
+          {
+            "id": "2023-var-d1-q1-c1",
+            "task": 1,
+            "label": "b) Hvilket påstandsnummer er riktig?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "1",
+                "2",
+                "3"
+              ],
+              "riktige": [
+                "2"
+              ]
+            },
+            "hint": "De to kronene sammenliknes hvert år med en større brødpris.",
+            "solution": "En fast økning på 2 kroner blir en mindre prosent av en stadig høyere pris. Påstand 2 er riktig."
+          },
+          {
+            "id": "2023-var-d1-q2-c2",
+            "task": 2,
+            "label": "Et kontrollpunkt til din egen graf: Hvor mye deig får hver person når 4 personer baker?",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Deig per person",
+                  "verdi": 1.5,
+                  "enhet": "kg",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Del den samlede deigmengden på antall personer.",
+            "solution": "6/4 = 1,5 kg. Grafen skal vise sammenhengen y = 6/x. Dette feltet kontrollerer bare ett punkt på grafen."
+          },
+          {
+            "id": "2023-var-d1-q3-c3",
+            "task": 3,
+            "label": "b) Antall elever i klassen",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Antall elever",
+                  "verdi": 30,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Fire elever har ett søsken. Bruk dette sammen med kumulativ og relativ frekvens.",
+            "solution": "16−4 = 12 elever har to søsken. De utgjør 40 %, så klassen har 12/0,4 = 30 elever."
+          }
+        ]
+      },
+      {
+        "page": 2,
+        "printedPage": 2,
+        "part": 1,
+        "tasks": [
+          4
+        ],
+        "image": "/eksamener/2023-var/side-2.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "1d4e2e959983181504d90c1ae382aad292996769ab321ca70c198f4b31d672ae",
+        "checks": [
+          {
+            "id": "2023-var-d1-q4-c4",
+            "task": 4,
+            "label": "a) Antall små sirkler",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Figur 4",
+                  "verdi": 17,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Figur 5",
+                  "verdi": 21,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Tell økningen fra én figur til den neste.",
+            "solution": "Figurene har 5, 9 og 13 sirkler. Det øker med 4 hver gang. Figur 4 har 17 og figur 5 har 21. Uttrykket er 4n+1."
+          }
+        ]
+      },
+      {
+        "page": 3,
+        "printedPage": 3,
+        "part": 2,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "image": "/eksamener/2023-var/side-3.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "cf60de6ea3839ff08c10f9b3409e29fb9835efacd1601c6263d14088fb34c572",
+        "checks": [
+          {
+            "id": "2023-var-d2-q1-c5",
+            "task": 1,
+            "label": "Mengde ris på standardform a · 10ᵇ. Bruk tre gjeldende sifre i a.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "a",
+                  "verdi": 2.6,
+                  "enhet": "",
+                  "toleranse": 0.01
+                },
+                {
+                  "etikett": "b",
+                  "verdi": 12,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Multipliser befolkning, forbruk per år og antall år.",
+            "solution": "2,86·10⁹ · 91 · 10 = 2,6026·10¹² kg, som med tre gjeldende sifre blir 2,60·10¹² kg."
+          },
+          {
+            "id": "2023-var-d2-q2-c6",
+            "task": 2,
+            "label": "Minste hele antall kopper under kaffeflekken som gir gjennomsnitt større enn fire.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Antall kopper",
+                  "verdi": 3,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "De elleve synlige tallene har sum 46. Samlet sum må være større enn 12 · 4.",
+            "solution": "(46+x)/12 > 4 gir x > 2. Minste hele tall er 3. Uten den skjulte verdien kan vi ikke avgjøre om Tores antakelse stemmer."
+          },
+          {
+            "id": "2023-var-d2-q3-c7",
+            "task": 3,
+            "label": "Er Malins påstand riktig?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Nei"
+              ]
+            },
+            "hint": "Sammenlikn faktorene 1,07³ og 1/0,93³ med samme mai-pris som utgangspunkt.",
+            "solution": "1,07³ ≈ 1,225 og 1/0,93³ ≈ 1,243. Faktorene er ulike, så påstanden er feil."
+          }
+        ]
+      },
+      {
+        "page": 4,
+        "printedPage": 4,
+        "part": 2,
+        "tasks": [
+          4,
+          5
+        ],
+        "image": "/eksamener/2023-var/side-4.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "a7b5d6127620ade3c86bca76c21e4a75966438d73bd970025b0017daac606d9a",
+        "checks": [
+          {
+            "id": "2023-var-d2-q4-c8",
+            "task": 4,
+            "label": "Et resultat til presentasjonen: andelen syklister med hjelm i hele uka.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Andel",
+                  "verdi": 65.07936507936508,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Summer begge kolonnene før du beregner prosenten.",
+            "solution": "41 av 63 syklister har hjelm, omtrent 65,1 %. Et uvektet gjennomsnitt av dagsprosentene gir ikke nødvendigvis denne andelen."
+          },
+          {
+            "id": "2023-var-d2-q5-c9",
+            "task": 5,
+            "label": "a) Gjennomsnittslønn med klassemidtpunkter, avrundet til hele kroner.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 575171.2328767123,
+                  "enhet": "kr",
+                  "toleranse": 1
+                }
+              ]
+            },
+            "hint": "Multipliser hvert klassemidtpunkt med frekvensen og divider summen med antall ansatte.",
+            "solution": "De vektede klassemidtpunktene summerer til 83 975 tusen kroner for 146 ansatte. Gjennomsnittet er omtrent 575 171 kroner. Dette er et anslag basert på klassemidtpunkter."
+          }
+        ]
+      },
+      {
+        "page": 5,
+        "printedPage": 5,
+        "part": 2,
+        "tasks": [
+          6
+        ],
+        "image": "/eksamener/2023-var/side-5.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "720d1c9ee13b290ea1ce18865aabb2a275d38ac9dcddfee5633b201f2a9c10b2",
+        "checks": [
+          {
+            "id": "2023-var-d2-q6-c10",
+            "task": 6,
+            "label": "b) og c) Beløpet i mai og samlet beløp etter den opprinnelige planen.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Mai",
+                  "verdi": 2377.7522246628073,
+                  "enhet": "kr",
+                  "toleranse": 1
+                },
+                {
+                  "etikett": "Totalt",
+                  "verdi": 19661.134994947446,
+                  "enhet": "kr",
+                  "toleranse": 1
+                }
+              ]
+            },
+            "hint": "Mai svarer til x = 9. For totalen må du ta med alle månedene fra x = 0 til x = 9.",
+            "solution": "P(9) ≈ 2377,75 kr. Samlet beløp er omtrent 19 661 kr, mindre enn målet på 25 000 kr."
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "printedPage": 6,
+        "part": 2,
+        "tasks": [
+          7
+        ],
+        "image": "/eksamener/2023-var/side-6.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "3ee9e9c3878194e64d29faaeadfcfda7c203e939086868bb2667cf3c440fca06",
+        "checks": [
+          {
+            "id": "2023-var-d2-q7-c11",
+            "task": 7,
+            "label": "a) Potensmodellen P(x) = a · xᵇ",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "a",
+                  "verdi": 2060.226355710322,
+                  "enhet": "",
+                  "toleranse": 1
+                },
+                {
+                  "etikett": "b",
+                  "verdi": 0.6398815126976933,
+                  "enhet": "",
+                  "toleranse": 0.002
+                }
+              ]
+            },
+            "hint": "Bruk potensregresjon med ukenummer som x.",
+            "solution": "Potensregresjon gir omtrent a = 2060,23 og b = 0,6399. Modellen kan avrundes til P(x) = 2060·x^0,64."
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://ndla.no/en/r/matematikk-2p-y/eksamensoppgaver-og-losninger-i-2p-y/e016af8473"
+  },
+  {
+    "id": "2024-host",
+    "title": "Høsten 2024",
+    "kind": "exam",
+    "note": "28. november 2024 · MAT1151",
+    "sourceLabel": "Utdanningsdirektoratet – vedlagt oppgavesett",
+    "pdf": "/eksamener/kilder/2024-host.pdf",
+    "sourceSha256": "0c449deab640057825123633ab819b1ec2b7adbea13490285ef4109e2111ec95",
+    "minutes": [
+      60,
+      240
+    ],
+    "pages": [
+      {
+        "page": 14,
+        "printedPage": 14,
+        "part": 1,
+        "tasks": [
+          1,
+          2
+        ],
+        "image": "/eksamener/2024-host/side-14.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "598d0730fb2cbad20e260235d0d8b6007f7dde18c19489bfb44ea6d7ed68d561",
+        "checks": [
+          {
+            "id": "2024-host-d1-q1-c1",
+            "task": 1,
+            "label": "Pris før økningen",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Pris",
+                  "verdi": 40,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "12 kroner er 30 % av den opprinnelige prisen.",
+            "solution": "12 / 0,30 = 40 kroner."
+          },
+          {
+            "id": "2024-host-d1-q2-c2",
+            "task": 2,
+            "label": "a) Median og gjennomsnitt",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Median",
+                  "verdi": 4.5,
+                  "enhet": "timer",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 4.2,
+                  "enhet": "timer",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sorter observasjonene og summer de ti tallene.",
+            "solution": "Sortert: 0, 3, 3, 3, 4, 5, 5, 5, 6, 8. Median = (4+5)/2 = 4,5. Gjennomsnitt = 42/10 = 4,2."
+          },
+          {
+            "id": "2024-host-d1-q2-c3",
+            "task": 2,
+            "label": "b) Kumulativ frekvens for 5 timer",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Kumulativ frekvens",
+                  "verdi": 8,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Tell dager med høyst fem arbeidstimer.",
+            "solution": "8 dager har arbeidstid på 5 timer eller mindre."
+          }
+        ]
+      },
+      {
+        "page": 15,
+        "printedPage": 15,
+        "part": 1,
+        "tasks": [
+          3
+        ],
+        "image": "/eksamener/2024-host/side-15.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "ff6e75ee8924a325804d78faa2c80149c9c3f4b00d2d30b7194be572f6f8be80",
+        "checks": [
+          {
+            "id": "2024-host-d1-q3-c4",
+            "task": 3,
+            "label": "Hvilke grafer viser henholdsvis proporsjonalitet og omvendt proporsjonalitet?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "f er proporsjonal; p er omvendt proporsjonal",
+                "g er proporsjonal; q er omvendt proporsjonal",
+                "f og g er proporsjonale; p og q er omvendt proporsjonale"
+              ],
+              "riktige": [
+                "f er proporsjonal; p er omvendt proporsjonal"
+              ]
+            },
+            "hint": "En proporsjonal graf er en rett linje gjennom origo. Ved omvendt proporsjonalitet er produktet x·y konstant.",
+            "solution": "f er en rett linje gjennom origo. På p kan vi lese omtrent (2,400) og (4,200), begge med produkt 800. g går ikke gjennom origo, og q avtar ikke som k/x."
+          }
+        ]
+      },
+      {
+        "page": 16,
+        "printedPage": 16,
+        "part": 1,
+        "tasks": [
+          4
+        ],
+        "image": "/eksamener/2024-host/side-16.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "e7dc28da341dcf356b441c5c287efaec8cef22a32a6a10da4f73f2f36b9c5d3d",
+        "checks": [
+          {
+            "id": "2024-host-d1-q4-c5",
+            "task": 4,
+            "label": "a) Antall små sirkler",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Figur 4",
+                  "verdi": 24,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Figur 10",
+                  "verdi": 48,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Rammen får fire nye sirkler hver gang. De fire utstikkerne har til sammen åtte sirkler.",
+            "solution": "Figur n har 4n + 8 sirkler. Figur 4 har 24, og figur 10 har 48."
+          }
+        ]
+      },
+      {
+        "page": 17,
+        "printedPage": 17,
+        "part": 1,
+        "tasks": [
+          5
+        ],
+        "image": "/eksamener/2024-host/side-17.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "ec5a4525f3463a5b1ded5498059581098da3bf5b0a3c8d2e45c4698001e09720",
+        "checks": [
+          {
+            "id": "2024-host-d1-q5-c6",
+            "task": 5,
+            "label": "Kontroll av programmet: Summen som skrives ut, avrundet til hele tonn.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Sum",
+                  "verdi": 951.234453125,
+                  "enhet": "tonn",
+                  "toleranse": 1
+                }
+              ]
+            },
+            "hint": "Løkken bruker x = 0, 1, 2, 3 og 4.",
+            "solution": "Programmet summerer utslippene for fem år, fra 2025 til og med 2029. Summen er omtrent 951 tonn."
+          }
+        ]
+      },
+      {
+        "page": 18,
+        "printedPage": 18,
+        "part": 2,
+        "tasks": [
+          1
+        ],
+        "image": "/eksamener/2024-host/side-18.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "2ef828bda038c616fba99fba6ed51cb18c78e5651a0d5c57ddbf5157c2ea1810",
+        "checks": [
+          {
+            "id": "2024-host-d2-q1-c7",
+            "task": 1,
+            "label": "Kontroller modellens salg og prosentøkning.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Salg i desember 2025",
+                  "verdi": 1051.4464883160765,
+                  "enhet": "flasker",
+                  "toleranse": 1
+                },
+                {
+                  "etikett": "Økning til desember 2026",
+                  "verdi": 187.60138340067886,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Desember 2025 svarer til x = 12 og desember 2026 til x = 24.",
+            "solution": "Sett x = 12 inn i F. Prosentøkningen over 24 måneder er (1,045²⁴−1)·100. Originaloppgaven ber i tillegg om to framgangsmåter."
+          }
+        ]
+      },
+      {
+        "page": 19,
+        "printedPage": 19,
+        "part": 2,
+        "tasks": [
+          2
+        ],
+        "image": "/eksamener/2024-host/side-19.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "86fb171da4fd2cae2691695748a2922fe424106756e81ed8f6b9ac00c794e262",
+        "checks": [
+          {
+            "id": "2024-host-d2-q2-c8",
+            "task": 2,
+            "label": "Nedre og øvre anslag for antall bakterier i svampen, målt i milliarder.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Nedre anslag",
+                  "verdi": 3750,
+                  "enhet": "milliarder",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Øvre anslag",
+                  "verdi": 8100,
+                  "enhet": "milliarder",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Multipliser de to grensene for bakterier per cm³ med volumet.",
+            "solution": "25·150 = 3750 og 54·150 = 8100 milliarder. På standardform er grensene 3,75·10¹² og 8,1·10¹². Egne anslag mellom grensene er mulige i originaloppgaven."
+          }
+        ]
+      },
+      {
+        "page": 20,
+        "printedPage": 20,
+        "part": 2,
+        "tasks": [
+          3,
+          4
+        ],
+        "image": "/eksamener/2024-host/side-20.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "160dce5d39b13912076c915ba3e4c677de6fe888a33aae8eadbda2d085e2ff1f",
+        "checks": [
+          {
+            "id": "2024-host-d2-q3-c9",
+            "task": 3,
+            "label": "Gjelder likheten mellom a % av b og b % av a for alle positive a og b?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Ja"
+              ]
+            },
+            "hint": "Skriv prosentregningen som et produkt delt på 100.",
+            "solution": "a % av b = ab/100, og b % av a = ba/100. Produktene er like. Dette kontrollerer konklusjonen, ikke argumentasjonen."
+          },
+          {
+            "id": "2024-host-d2-q4-c10",
+            "task": 4,
+            "label": "b) Minste og største hele antall parkeringsdager der B er billigst.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Minst",
+                  "verdi": 100,
+                  "enhet": "dager",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Høyst",
+                  "verdi": 249,
+                  "enhet": "dager",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sammenlikn B med både A og C.",
+            "solution": "1995+30x < 50x gir x > 99,75. 1995+30x < 3490+24x gir x < 249,17. For hele dager er intervallet 100–249."
+          }
+        ]
+      },
+      {
+        "page": 21,
+        "printedPage": 21,
+        "part": 2,
+        "tasks": [
+          5
+        ],
+        "image": "/eksamener/2024-host/side-21.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "eba67af557574bb051a69edd6b38b04381fd06fd445454378d9608b45667baa2",
+        "checks": [
+          {
+            "id": "2024-host-d2-q5-c11",
+            "task": 5,
+            "label": "a) Median og gjennomsnitt for lag A",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Median",
+                  "verdi": 34.5,
+                  "enhet": "år",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 40,
+                  "enhet": "år",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sorter de seks aldrene og finn summen.",
+            "solution": "Sortert: 15,18,24,45,60,78. Median = (24+45)/2 = 34,5. Gjennomsnitt = 240/6 = 40. De åpne delene b og c vurderes ikke av disse tallfeltene."
+          }
+        ]
+      },
+      {
+        "page": 22,
+        "printedPage": 22,
+        "part": 2,
+        "tasks": [
+          6
+        ],
+        "image": "/eksamener/2024-host/side-22.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "fd38624f4552a2f296110cec29e54a17ad673702a281e33fe5e59808318ceb92",
+        "checks": [
+          {
+            "id": "2024-host-d2-q6-c12",
+            "task": 6,
+            "label": "a) Koeffisientene i potensmodellen L(x) = a · xᵇ.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "a",
+                  "verdi": 9.995489172385504,
+                  "enhet": "",
+                  "toleranse": 0.1
+                },
+                {
+                  "etikett": "b",
+                  "verdi": 0.3336733260624456,
+                  "enhet": "",
+                  "toleranse": 0.005
+                }
+              ]
+            },
+            "hint": "Bruk potensregresjon på tabellen. x er antall dager.",
+            "solution": "Potensregresjon gir omtrent L(x) = 9,9955 · x^0,33367. Små avrundingsforskjeller godtas."
+          }
+        ]
+      },
+      {
+        "page": 23,
+        "printedPage": 23,
+        "part": 2,
+        "tasks": [
+          7,
+          8
+        ],
+        "image": "/eksamener/2024-host/side-23.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "8763ff15e9829a75b551c95349ce6ecc84c64745a117bf8642abc5cd18ccd1b2",
+        "checks": [
+          {
+            "id": "2024-host-d2-q7-c13",
+            "task": 7,
+            "label": "Et resultat til presentasjonen: prosentvis økning i menns husholdsarbeid fra 1970 til 2010.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Økning",
+                  "verdi": 35.13513513513512,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Bruk 2,22 timer som utgangspunkt.",
+            "solution": "(3,00−2,22)/2,22·100 ≈ 35,1 %. Tabellen bruker desimaltimer, ikke timer og minutter."
+          },
+          {
+            "id": "2024-host-d2-q8-c14",
+            "task": 8,
+            "label": "a) og b) Lengde i uke 50 og samlet lengde.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Uke 50",
+                  "verdi": 436.8533251715695,
+                  "enhet": "km",
+                  "toleranse": 1
+                },
+                {
+                  "etikett": "Til sammen",
+                  "verdi": 8373.919828602953,
+                  "enhet": "km",
+                  "toleranse": 1
+                }
+              ]
+            },
+            "hint": "Uke 1 har ingen veksttrinn. Uke 50 har 49 veksttrinn.",
+            "solution": "Uke 50: 40·1,05⁴⁹. Summen er 40 + 40·1,05 + … + 40·1,05⁴⁹, omtrent 8374 km."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2025-var",
+    "title": "Våren 2025",
+    "kind": "exam",
+    "note": "19. mai 2025 · MAT1151",
+    "sourceLabel": "Utdanningsdirektoratet – vedlagt oppgavesett",
+    "pdf": "/eksamener/kilder/2025-var.pdf",
+    "sourceSha256": "35c57738e1dd2cb6e27f48a83e2340e363ae4d7a7232edf980686f10d9616119",
+    "minutes": [
+      120,
+      180
+    ],
+    "pages": [
+      {
+        "page": 16,
+        "printedPage": 16,
+        "part": 1,
+        "tasks": [
+          1,
+          2
+        ],
+        "image": "/eksamener/2025-var/side-16.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "2eb18ac406ab9a4f9f105a7f36408328d09985b2e662b6874035a193f8632fa0",
+        "checks": [
+          {
+            "id": "2025-var-d1-q1-c1",
+            "task": 1,
+            "label": "Hvor mange elever er det i klassen?",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Antall elever",
+                  "verdi": 25,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Finn prosentandelen som ikke deltar.",
+            "solution": "12 % svarer til 3 elever. Hele klassen har 3 / 0,12 = 25 elever."
+          },
+          {
+            "id": "2025-var-d1-q2-c2",
+            "task": 2,
+            "label": "a) Median og gjennomsnitt",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Median",
+                  "verdi": 5,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 5,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sorter de ti observasjonene. Gjennomsnitt er summen delt på antallet.",
+            "solution": "Sortert: 2, 2, 3, 4, 4, 6, 6, 7, 8, 8. Medianen er (4+6)/2 = 5 og gjennomsnittet er 50/10 = 5."
+          },
+          {
+            "id": "2025-var-d1-q2-c3",
+            "task": 2,
+            "label": "b) Kumulativ frekvens for 6 personer",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Kumulativ frekvens",
+                  "verdi": 7,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Tell alle turene med høyst 6 personer.",
+            "solution": "7 av turene har 6 eller færre personer. Kumulativ frekvens betyr antall til og med den angitte verdien."
+          }
+        ]
+      },
+      {
+        "page": 17,
+        "printedPage": 17,
+        "part": 1,
+        "tasks": [
+          3
+        ],
+        "image": "/eksamener/2025-var/side-17.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "5db80ac8443ba5288aca0a966db00d945238c8210cb79ea2aeb6783d44ebead9",
+        "checks": [
+          {
+            "id": "2025-var-d1-q3-c4",
+            "task": 3,
+            "label": "a) Pris per elev når 20 elever blir med",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Pris",
+                  "verdi": 400,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Finn den samlede prisen fra et av punktene på grafen.",
+            "solution": "2 · 4000 = 8000 kroner totalt. 8000 / 20 = 400 kroner per elev. Funksjonen er f(x) = 8000 / x."
+          }
+        ]
+      },
+      {
+        "page": 18,
+        "printedPage": 18,
+        "part": 1,
+        "tasks": [
+          4,
+          5
+        ],
+        "image": "/eksamener/2025-var/side-18.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "5d5566d4fdc3a2a6cf59f0ce267e3ac3bd77ec9214412f5e6a3c1e62cfde1ea3",
+        "checks": [
+          {
+            "id": "2025-var-d1-q4-c5",
+            "task": 4,
+            "label": "Hvilket parti har størst prosentvis framgang?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Høyre",
+                "Fremskrittspartiet",
+                "Like stor framgang"
+              ],
+              "riktige": [
+                "Fremskrittspartiet"
+              ]
+            },
+            "hint": "Sammenlikn økningen med partiets opprinnelige oppslutning.",
+            "solution": "Høyre: 4 / 24 ≈ 16,7 %. Fremskrittspartiet: 4 / 16 = 25 %. Det siste partiet har størst relativ framgang."
+          },
+          {
+            "id": "2025-var-d1-q5-c6",
+            "task": 5,
+            "label": "Fyll inn de fire tallene fra venstre mot høyre i regnestykket.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Første faktor",
+                  "verdi": 8,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Første eksponent",
+                  "verdi": 9,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Andre faktor",
+                  "verdi": 2,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Andre eksponent",
+                  "verdi": 1,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Gjør leddet før minustegnet så stort som mulig, og leddet etter så lite som mulig.",
+            "solution": "8 · 10⁹ − 2 · 10¹ = 7 999 999 980. Eksponenten 9 gir størst første ledd, med 8 som faktor. Av de gjenværende sifrene gir 2 · 10¹ det minste leddet å trekke fra."
+          }
+        ]
+      },
+      {
+        "page": 19,
+        "printedPage": 19,
+        "part": 1,
+        "tasks": [
+          6
+        ],
+        "image": "/eksamener/2025-var/side-19.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "61926cf1ac846282e74eb5b15a0c0d615765891caaed2105d678cb959cd63f9a",
+        "checks": [
+          {
+            "id": "2025-var-d1-q6-c7",
+            "task": 6,
+            "label": "a) Grønne kvadrater i figur 5",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Antall grønne kvadrater",
+                  "verdi": 64,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Tell rader og kolonner, og trekk fra de hvite rutene.",
+            "solution": "Figur n har (2n + 1)(n + 2) ruter totalt og 3n − 2 hvite ruter. Grønne ruter: 2n² + 2n + 4. Figur 5 har 64 grønne ruter."
+          }
+        ]
+      },
+      {
+        "page": 20,
+        "printedPage": 20,
+        "part": 1,
+        "tasks": [
+          7
+        ],
+        "image": "/eksamener/2025-var/side-20.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "64d7f134468772839d07461293a6128deec0bd18f3454d02feee641151814993",
+        "checks": [
+          {
+            "id": "2025-var-d1-q7-c8",
+            "task": 7,
+            "label": "Kontroller anslagene med klassemidtpunkter og jevn fordeling i medianklassen.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 38.1,
+                  "enhet": "år",
+                  "toleranse": 0.11
+                },
+                {
+                  "etikett": "Median",
+                  "verdi": 35,
+                  "enhet": "år",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Gjennomsnittet beregnes med klassemidtpunkter. Medianen er ved 50 % av observasjonene.",
+            "solution": "Gjennomsnitt: (18·20 + 30·40 + 50·30 + 75·10) / 100 = 38,1. Ved jevn fordeling i [20,40) ligger 50 %-punktet på 20 + (50−20)/40·20 = 35 år. Dette er anslag; antakelsene inngår i originaloppgaven."
+          }
+        ]
+      },
+      {
+        "page": 21,
+        "printedPage": 21,
+        "part": 1,
+        "tasks": [
+          8
+        ],
+        "image": "/eksamener/2025-var/side-21.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "1010fb436bb852f5479cc6380e5873592efbe5ed8c6594ef520bc625d2980400",
+        "checks": [
+          {
+            "id": "2025-var-d1-q8-c9",
+            "task": 8,
+            "label": "Kontroll av programmet: Hvilket år kommer utskriften fram til?",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "År",
+                  "verdi": 2030,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Løkken stopper når matsvinnet ikke lenger er større enn målet.",
+            "solution": "Programmet ganger matsvinnet med 0,87 hvert år. Etter fem år er det omtrent 79,75 kg, under halvparten av 160 kg. Året er 2030."
+          }
+        ]
+      },
+      {
+        "page": 22,
+        "printedPage": 22,
+        "part": 2,
+        "tasks": [
+          1
+        ],
+        "image": "/eksamener/2025-var/side-22.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "de579d4dca4e698cdefb9a2eea9a2a90d945477ea8c8659902274a8fdbc23ce8",
+        "checks": [
+          {
+            "id": "2025-var-d2-q1-c10",
+            "task": 1,
+            "label": "b) og c) Beregn utslippet med modellen som er oppgitt.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Tid til halvert samlet utslipp",
+                  "verdi": 17.863752812425094,
+                  "enhet": "år",
+                  "toleranse": 0.1
+                },
+                {
+                  "etikett": "Prosentvis reduksjon etter 10 år",
+                  "verdi": 33.438588396801784,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Startutslippet er summen fra begge prosessene. Halver dette før du løser likningen.",
+            "solution": "U(0) = 6000, så halvert utslipp er 3000. 5000·0,95ˣ + 1000 = 3000 gir x ≈ 17,86 år. U(10) ≈ 3993,68 tonn. Nedgangen er (6000−3993,68)/6000·100 ≈ 33,44 %."
+          },
+          {
+            "id": "2025-var-d2-q1-c11",
+            "task": 1,
+            "label": "e) Kan modellen oppfylle kravet om 800 tonn per år?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Nei"
+              ]
+            },
+            "hint": "Se på konstantleddet i modellen.",
+            "solution": "U(x) = 5000·0,95ˣ + 1000 er alltid større enn 1000. Modellen kan derfor ikke nå 800 tonn."
+          }
+        ]
+      },
+      {
+        "page": 23,
+        "printedPage": 23,
+        "part": 2,
+        "tasks": [
+          2,
+          3
+        ],
+        "image": "/eksamener/2025-var/side-23.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "1c3138b94f347003a19937d8a9a6ec4e511b4fb2a0b3b2bdbc33f2b7d2fb0ef4",
+        "checks": [
+          {
+            "id": "2025-var-d2-q2-c12",
+            "task": 2,
+            "label": "Antall kronestykker på standardform: a · 10ᵇ. Oppgi a med to desimaler.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "a",
+                  "verdi": 4.85,
+                  "enhet": "",
+                  "toleranse": 0.01
+                },
+                {
+                  "etikett": "b",
+                  "verdi": 5,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Gjør høyden om til millimeter før du deler på tykkelsen.",
+            "solution": "825 m = 825 000 mm. 825 000 / 1,7 ≈ 485 294, altså omtrent 4,85 · 10⁵ kronestykker."
+          },
+          {
+            "id": "2025-var-d2-q3-c13",
+            "task": 3,
+            "label": "a) Må medianen endres når én person kommer inn?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Nei"
+              ]
+            },
+            "hint": "Sorter de ti aldrene. Kan den nye personen ha samme alder som den opprinnelige medianen?",
+            "solution": "De to midterste er 28 og 30, så medianen er 29. Hvis den nye personen er 29 år, blir den midterste verdien blant de elleve 29. Medianen kan altså være uendret."
+          },
+          {
+            "id": "2025-var-d2-q3-c14",
+            "task": 3,
+            "label": "b) Kan gjennomsnittsalderen bli 30 år med én ny person?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Nei"
+              ]
+            },
+            "hint": "Regn ut summen av de ti aldrene og sammenlikn med 11 · 30.",
+            "solution": "Summen er 338. For å få gjennomsnitt 30 med 11 personer måtte den nye personen ha alder 330 − 338 = −8 år. Det er umulig."
+          }
+        ]
+      },
+      {
+        "page": 24,
+        "printedPage": 24,
+        "part": 2,
+        "tasks": [
+          4
+        ],
+        "image": "/eksamener/2025-var/side-24.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "3273f5a1321e1f84a8225d794cae10a6148f4cc541ad499b514ac7090b05a05b",
+        "checks": [
+          {
+            "id": "2025-var-d2-q4-c15",
+            "task": 4,
+            "label": "Prisene ved proporsjonal pris og volum",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "4 liter",
+                  "verdi": 760,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "100 ml",
+                  "verdi": 19,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Finn prisen per milliliter fra flasken på 600 ml.",
+            "solution": "114 / 600 = 0,19 kr per ml. 4000 ml koster 760 kr, og 100 ml koster 19 kr."
+          }
+        ]
+      },
+      {
+        "page": 25,
+        "printedPage": 25,
+        "part": 2,
+        "tasks": [
+          5
+        ],
+        "image": "/eksamener/2025-var/side-25.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "cf840b833bd9366446c3adddd0f0add796173cdefd2a205093b6dfacfa5d5ccd",
+        "checks": [
+          {
+            "id": "2025-var-d2-q5-c16",
+            "task": 5,
+            "label": "Kontroller modellen og tiden fram til 17 meter.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Vekst per uke",
+                  "verdi": 1.28,
+                  "enhet": "m",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Uker til 17 meter",
+                  "verdi": 7.03125,
+                  "enhet": "uker",
+                  "toleranse": 0.05
+                }
+              ]
+            },
+            "hint": "Lengden øker fra 8 til 40 meter i løpet av 25 uker.",
+            "solution": "L(x) = 8 + 1,28x. Stigningstallet er (40−8)/25 = 1,28. 8 + 1,28x = 17 gir x = 7,03125 uker."
+          }
+        ]
+      },
+      {
+        "page": 26,
+        "printedPage": 26,
+        "part": 2,
+        "tasks": [
+          6
+        ],
+        "image": "/eksamener/2025-var/side-26.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "7b92a12fd6c7af1ed84033262a3044317ad1e1eec75ed2bd0eee6cd094a2c8ff",
+        "checks": [
+          {
+            "id": "2025-var-d2-q6-c17",
+            "task": 6,
+            "label": "b) og c) Bruk den oppgitte modellen med vekstfaktor 0,87.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Bestand etter 7 år",
+                  "verdi": 4527.05753853396,
+                  "enhet": "fugler",
+                  "toleranse": 1
+                },
+                {
+                  "etikett": "År til 35 % reduksjon",
+                  "verdi": 3.0933255863623397,
+                  "enhet": "år",
+                  "toleranse": 0.05
+                }
+              ]
+            },
+            "hint": "En reduksjon på 35 % betyr at 65 % står igjen.",
+            "solution": "F(7) = 12000·0,87⁷ ≈ 4527 fugler. 0,87ˣ = 0,65 gir omtrent 3,09 år."
+          }
+        ]
+      },
+      {
+        "page": 27,
+        "printedPage": 27,
+        "part": 2,
+        "tasks": [
+          7
+        ],
+        "image": "/eksamener/2025-var/side-27.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "dd028f3b1552fd7d655710a27f5025bf769ac9ffc523e0a362a093daf583dd8c",
+        "checks": [
+          {
+            "id": "2025-var-d2-q7-c18",
+            "task": 7,
+            "label": "Et resultat til presentasjonen: prosentvis endring i antall fødte fra 1983 til 2023.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Prosentvis endring",
+                  "verdi": 4.091154855117448,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Bruk antall fødte i 1983 som prosentgrunnlag.",
+            "solution": "(51980−49937) / 49937 · 100 ≈ 4,09 %. Dette er ett mulig resultat; diagrammer og øvrige sammenlikninger vurderes ikke her."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2026-var",
+    "title": "Våren 2026",
+    "kind": "exam",
+    "note": "MAT1151",
+    "sourceLabel": "Vedlagt skannet utdrag, trykte sider 13–23",
+    "pdf": "/eksamener/kilder/2026-var.pdf",
+    "sourceSha256": "690283dfa66fd2ad6eefba02cc6428fb5a9817a930aba7b0100c80724d404a23",
+    "minutes": [
+      180,
+      120
+    ],
+    "pages": [
+      {
+        "page": 2,
+        "printedPage": 14,
+        "part": 1,
+        "tasks": [
+          1,
+          2
+        ],
+        "image": "/eksamener/2026-var/side-2.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "26ea361ab1ab411d8ec359190a2301a0f13c7ed0932c7b2fca96990e2ab3e5e3",
+        "checks": [
+          {
+            "id": "2026-var-d1-q1-c1",
+            "task": 1,
+            "label": "Antall brune egg",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Brune egg",
+                  "verdi": 1040,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "20 % er en femtedel.",
+            "solution": "5200 · 0,20 = 1040 brune egg."
+          },
+          {
+            "id": "2026-var-d1-q2-c2",
+            "task": 2,
+            "label": "a) Median, gjennomsnitt, variasjonsbredde og typetall",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Median",
+                  "verdi": 5.5,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 8.3,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Variasjonsbredde",
+                  "verdi": 29,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Typetall",
+                  "verdi": 6,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sorter tallene. Variasjonsbredde er største minus minste verdi.",
+            "solution": "Sortert: 1,1,3,5,5,6,6,6,20,30. Median = 5,5, gjennomsnitt = 83/10 = 8,3, variasjonsbredde = 30−1 = 29, typetall = 6."
+          },
+          {
+            "id": "2026-var-d1-q2-c3",
+            "task": 2,
+            "label": "b) Relativ frekvens for 6 vogner, oppgitt i prosent",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Relativ frekvens",
+                  "verdi": 30,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Tell hvor mange av de ti togene som har akkurat seks vogner.",
+            "solution": "3 av 10 tog har seks vogner. Det er 30 %."
+          }
+        ]
+      },
+      {
+        "page": 3,
+        "printedPage": 15,
+        "part": 1,
+        "tasks": [
+          3,
+          4,
+          5
+        ],
+        "image": "/eksamener/2026-var/side-3.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "90d2c464acf98684b5e6705b3f42b1816b66b557299837073ffb2e9f06b246d3",
+        "checks": [
+          {
+            "id": "2026-var-d1-q3-c4",
+            "task": 3,
+            "label": "Fyll inn de manglende verdiene fra tabellen.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Prosentendring ved faktor 1,4",
+                  "verdi": 40,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Vekstfaktor ved +17,5 %",
+                  "verdi": 1.175,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Vekstfaktor ved −28 %",
+                  "verdi": 0.72,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Prosentendring ved faktor 0,67",
+                  "verdi": -33,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Prosentendring ved faktor 2",
+                  "verdi": 100,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Vekstfaktor er 1 pluss prosentendringen delt på 100.",
+            "solution": "1,4 gir +40 %. +17,5 % gir 1,175. −28 % gir 0,72. 0,67 gir −33 %. 2 gir +100 %."
+          },
+          {
+            "id": "2026-var-d1-q4-c5",
+            "task": 4,
+            "label": "Koster varen mer, mindre eller det samme som før?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Mer",
+                "Mindre",
+                "Det samme"
+              ],
+              "riktige": [
+                "Mindre"
+              ]
+            },
+            "hint": "Multipliser de to vekstfaktorene.",
+            "solution": "0,8·1,2 = 0,96. Prisen er 96 % av den opprinnelige, altså 4 % lavere."
+          },
+          {
+            "id": "2026-var-d1-q5-c6",
+            "task": 5,
+            "label": "Hvilke tre prisendringer beskriver nevneren?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Én økning på 5 % og to nedganger på 15 %",
+                "Én nedgang på 5 % og to økninger på 15 %",
+                "Én økning på 5 % og én nedgang på 30 %"
+              ],
+              "riktige": [
+                "Én økning på 5 % og to nedganger på 15 %"
+              ]
+            },
+            "hint": "Tolk hver vekstfaktor og eksponenten.",
+            "solution": "1,05 er en økning på 5 %. 0,85² er to nedganger på 15 %. Uttrykket finner den gamle prisen ved å dele dagens pris på produktet av faktorene. Rekkefølgen av endringene kan ikke bestemmes fra produktet."
+          }
+        ]
+      },
+      {
+        "page": 4,
+        "printedPage": 16,
+        "part": 1,
+        "tasks": [
+          6,
+          7,
+          8
+        ],
+        "image": "/eksamener/2026-var/side-4.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "70957b9a3b3a1bef1659fc1cdc2fe5bc60b800a345ddf4d0a36c5880f7573a87",
+        "checks": [
+          {
+            "id": "2026-var-d1-q6-c7",
+            "task": 6,
+            "label": "a) Prosentpoeng og b) prosentvis nedgang",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Prosentpoeng",
+                  "verdi": 0.54,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Prosentvis nedgang",
+                  "verdi": 9,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Forskjellen er 6−5,46. Den relative nedgangen beregnes med 6 som grunnlag.",
+            "solution": "Forskjellen er 0,54 prosentpoeng. 0,54/6·100 = 9 %."
+          },
+          {
+            "id": "2026-var-d1-q7-c8",
+            "task": 7,
+            "label": "Resultatet av regnestykket",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Svar",
+                  "verdi": 75,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "3 millioner ganger 0,000025 kan forenkles med tierpotenser.",
+            "solution": "3 000 000 · 0,000025 = 75."
+          },
+          {
+            "id": "2026-var-d1-q8-c9",
+            "task": 8,
+            "label": "Et kontrollpunkt i sorteringen: verdien av √64.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Verdi",
+                  "verdi": 8,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Finn det ikke-negative tallet som ganget med seg selv gir 64.",
+            "solution": "8·8 = 64, så √64 = 8. Den fullstendige sorteringen må du fortsatt gjøre på arket."
+          }
+        ]
+      },
+      {
+        "page": 5,
+        "printedPage": 17,
+        "part": 1,
+        "tasks": [
+          9,
+          10
+        ],
+        "image": "/eksamener/2026-var/side-5.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "75035c31bed85aae1bdc5b4ef908a36880db79b6584dd15173669212d976ebcb",
+        "checks": [
+          {
+            "id": "2026-var-d1-q9-c10",
+            "task": 9,
+            "label": "a) Hvilken sammenheng gjelder når matutgiften også tas med?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Proporsjonal",
+                "Omvendt proporsjonal",
+                "Ingen av delene"
+              ],
+              "riktige": [
+                "Ingen av delene"
+              ]
+            },
+            "hint": "Prisen per elev er 15000/x + 250. Undersøk om produktet x·P(x) er konstant.",
+            "solution": "P(x) = 15000/x + 250. Tillegget på 250 gjør at sammenhengen verken er proporsjonal eller omvendt proporsjonal."
+          },
+          {
+            "id": "2026-var-d1-q10-c11",
+            "task": 10,
+            "label": "Antall grønne sirkler",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Figur 5",
+                  "verdi": 23,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Figur 10",
+                  "verdi": 43,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Hver ny figur får én ny sirkel i hver av tre rader og én i halen.",
+            "solution": "Figurene har 7,11,15,19 sirkler. Antallet er 4n+3. Figur 5 har 23 og figur 10 har 43."
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "printedPage": 18,
+        "part": 1,
+        "tasks": [
+          11,
+          12
+        ],
+        "image": "/eksamener/2026-var/side-6.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "71467ba4be6e0f374616b82cddc889796c247bb854275cd74bcd128b48d185e8",
+        "checks": [
+          {
+            "id": "2026-var-d1-q11-c12",
+            "task": 11,
+            "label": "Pris ved proporsjonal pris og vekt",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "1,4 kg",
+                  "verdi": 168,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "250 g",
+                  "verdi": 30,
+                  "enhet": "kr",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Gjør gram om til kilogram.",
+            "solution": "1,4·120 = 168 kroner. 250 g = 0,25 kg, så prisen blir 30 kroner."
+          },
+          {
+            "id": "2026-var-d1-q12-c13",
+            "task": 12,
+            "label": "Hva forteller verdien programmet skriver ut?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Gjennomsnittet av tallene i listen",
+                "Medianen av tallene i listen",
+                "Summen av tallene i listen"
+              ],
+              "riktige": [
+                "Gjennomsnittet av tallene i listen"
+              ]
+            },
+            "hint": "Programmet deler summen på antall tall.",
+            "solution": "Listen har sum 50 og fem tall. Programmet regner ut 50/5 = 10, gjennomsnittet."
+          }
+        ]
+      },
+      {
+        "page": 7,
+        "printedPage": 19,
+        "part": 1,
+        "tasks": [
+          13
+        ],
+        "image": "/eksamener/2026-var/side-7.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "d195f88a27e50b6dc398d1c510a47917eb6a91b374018fcf35d0ad581f6fdc8f",
+        "checks": [
+          {
+            "id": "2026-var-d1-q13-c14",
+            "task": 13,
+            "label": "b) Anslag for medianalder ved jevn fordeling i intervallet 20–30 år.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Medianalder",
+                  "verdi": 26.6666667,
+                  "enhet": "år",
+                  "toleranse": 0.5
+                }
+              ]
+            },
+            "hint": "Finn hvor grafen når 50 %. Den går fra 30 % til 60 % mellom 20 og 30 år.",
+            "solution": "20 + (50−30)/(60−30)·10 ≈ 26,7 år. Vi antar jevn fordeling i intervallet; grafen gir et anslag, ikke den eksakte medianen."
+          }
+        ]
+      },
+      {
+        "page": 8,
+        "printedPage": 20,
+        "part": 2,
+        "tasks": [
+          1
+        ],
+        "image": "/eksamener/2026-var/side-8.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "761611188df58d5529b2e41e8cecc25286ead536a638afe801ad0f9281db6273",
+        "checks": [
+          {
+            "id": "2026-var-d2-q1-c15",
+            "task": 1,
+            "label": "b) Årlig prosentvis reduksjon i den oppgitte modellen.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Reduksjon",
+                  "verdi": 11,
+                  "enhet": "%",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Vekstfaktoren i den oppgitte modellen er 0,89.",
+            "solution": "1−0,89 = 0,11, altså 11 % per år. Modellen bruker en avrundet vekstfaktor for halvering over seks år."
+          }
+        ]
+      },
+      {
+        "page": 9,
+        "printedPage": 21,
+        "part": 2,
+        "tasks": [
+          2
+        ],
+        "image": "/eksamener/2026-var/side-9.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "2f88c6e4aa805907865cf0e1ced1425e85365d24a75c6f7c4e109690e3248ff4",
+        "checks": [
+          {
+            "id": "2026-var-d2-q2-c16",
+            "task": 2,
+            "label": "b) Åpent intervall der standardmedlemskap er billigst. Oppgi grensene; selve grensene gir lik pris med et annet medlemskap.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Nedre grense",
+                  "verdi": 5,
+                  "enhet": "timer",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Øvre grense",
+                  "verdi": 17.5,
+                  "enhet": "timer",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Sammenlikn 300+40x med både 150+70x og 1000.",
+            "solution": "Standard er billigere enn basis når x > 5, og billigere enn premium når x < 17,5. Intervallet er 5 < x < 17,5."
+          }
+        ]
+      },
+      {
+        "page": 10,
+        "printedPage": 22,
+        "part": 2,
+        "tasks": [
+          3
+        ],
+        "image": "/eksamener/2026-var/side-10.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "4f66c0646190d2d7d6e263adb64a8e717d45468c45bfa88ea6f265b428e8fda8",
+        "checks": [
+          {
+            "id": "2026-var-d2-q3-c17",
+            "task": 3,
+            "label": "a) Gjennomsnitt og median, og b) kumulativ frekvens for 5 fraværsdager.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Gjennomsnitt",
+                  "verdi": 3,
+                  "enhet": "dager",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Median",
+                  "verdi": 1,
+                  "enhet": "dag",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Kumulativ frekvens",
+                  "verdi": 13,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                }
+              ]
+            },
+            "hint": "Summer de femten verdiene, sorter dem, og tell alle verdier som er høyst fem.",
+            "solution": "Summen er 45 og antallet 15, så gjennomsnittet er 3. Den åttende sorterte verdien er 1. Det er 13 verdier på 5 eller mindre."
+          },
+          {
+            "id": "2026-var-d2-q3-c18",
+            "task": 3,
+            "label": "d) Må kumulativ frekvens for 5 fraværsdager være høyere i bedrift B?",
+            "key": {
+              "type": "valg",
+              "flervalg": false,
+              "alternativer": [
+                "Ja",
+                "Nei"
+              ],
+              "riktige": [
+                "Nei"
+              ]
+            },
+            "hint": "Høyere median og lavere standardavvik bestemmer ikke alene denne kumulative frekvensen.",
+            "solution": "Nei. Et moteksempel for B er ni 2-ere, tre 3-ere og tre 6-ere. De har gjennomsnitt 3, median 2 og lavere standardavvik enn A, men bare 12 verdier er høyst 5. A har 13."
+          }
+        ]
+      },
+      {
+        "page": 11,
+        "printedPage": 23,
+        "part": 2,
+        "tasks": [
+          4
+        ],
+        "image": "/eksamener/2026-var/side-11.png",
+        "width": 1556,
+        "height": 2200,
+        "sha256": "edfbd06b478f5d519e866ef6ebb432dea13938be59c048d2e4f56f8421be90fa",
+        "checks": [
+          {
+            "id": "2026-var-d2-q4-c19",
+            "task": 4,
+            "label": "Et resultat til presentasjonen: økningen i andelen som får dagens første nyheter på smarttelefon, fra 2019 til 2025.",
+            "key": {
+              "type": "tall",
+              "verdier": [
+                {
+                  "etikett": "Økning i prosentpoeng",
+                  "verdi": 18,
+                  "enhet": "",
+                  "toleranse": 0.0001
+                },
+                {
+                  "etikett": "Prosentvis økning",
+                  "verdi": 56.25,
+                  "enhet": "%",
+                  "toleranse": 0.1
+                }
+              ]
+            },
+            "hint": "Tabellen går fra 32 % til 50 %. Skill mellom prosentpoeng og relativ økning.",
+            "solution": "50−32 = 18 prosentpoeng. Relativ økning er 18/32·100 = 56,25 %. Dette kontrollerer ett resultat, ikke hele presentasjonen."
+          }
+        ]
+      }
+    ]
+  }
+]

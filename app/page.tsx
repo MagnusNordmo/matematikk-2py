@@ -1,4 +1,5 @@
 "use client";
+import { PastExams } from "./past-exams";
 import { LearningSupport } from "./learning-support";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -29,7 +30,7 @@ import {
   type SessionMode,
 } from "./session-engine";
 
-type Screen = "home" | "modes" | "topics" | "session" | "result";
+type Screen = "parts" | "past-exams" | "home" | "modes" | "topics" | "session" | "result";
 type Feedback = "wrong" | "partial" | "correct" | null;
 
 type SessionItem = {
@@ -374,17 +375,18 @@ export default function Home() {
     setSelectedPart(part);
     setSelectedTheme(null);
     setSelectedDifficulty("mixed");
-    setScreen("modes");
+    if (mode === "exam") startSession("exam", undefined, part);
+    else setScreen("topics");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function startSession(nextMode: SessionMode, themeId?: string) {
-    if (!bank || !selectedPart) return;
+  function startSession(nextMode: SessionMode, themeId?: string, part: Part | null = selectedPart) {
+    if (!bank || !part) return;
     const sessionDifficulty = nextMode === "exam" ? "mixed" : selectedDifficulty;
-    const selectionKey = `${selectedPart}:${nextMode}:${themeId ?? "blandet"}:${sessionDifficulty}`;
+    const selectionKey = `${part}:${nextMode}:${themeId ?? "blandet"}:${sessionDifficulty}`;
     const questions = selectSessionQuestions(
       bank,
-      selectedPart,
+      part,
       nextMode,
       themeId,
       new Set(recentSelections[selectionKey] ?? []),
@@ -637,7 +639,36 @@ export default function Home() {
       {screen === "home" && (
         <div className="page home-page">
           <section className="hero">
+            <p className="eyebrow">Matematikk 2PY</p>
+            <h1>Hvordan vil du øve?</h1>
+          </section>
+          <section className="choice-grid practice-choices" aria-label="Velg øvingsmåte">
+            <button className="choice-card choice-card-primary" onClick={() => { setMode("skill"); setScreen("parts"); }}>
+              <span className="choice-icon"><IconSpark /></span>
+              <span className="choice-content"><span className="choice-kicker">Lær i ditt tempo</span><strong>Øv spesifikke ferdigheter</strong><span>Velg del, tema og nivå. Bruk hint og prøv igjen.</span></span>
+              <span className="choice-arrow"><IconArrow /></span>
+            </button>
+            <button className="choice-card" onClick={() => { setMode("exam"); setScreen("parts"); }}>
+              <span className="choice-icon"><IconExam /></span>
+              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv på en tilfeldig eksamen</strong><span>10 balanserte øvingsoppgaver fra ulike temaer.</span></span>
+              <span className="choice-arrow"><IconArrow /></span>
+            </button>
+            <button className="choice-card" onClick={() => { setSelectedPart(null); setScreen("past-exams"); }}>
+              <span className="choice-icon"><IconExam /></span>
+              <span className="choice-content"><span className="choice-kicker">Velg årgang</span><strong>Øv på tidligere gitt eksamen</strong><span>Arbeid med oppgavene fra tidligere eksamenssett.</span></span>
+              <span className="choice-arrow"><IconArrow /></span>
+            </button>
+          </section>
+          <footer className="privacy-note">Framdrift lagres bare på denne enheten.</footer>
+        </div>
+      )}
+      {screen === "past-exams" && <PastExams onBack={() => goHome(true)} />}
+
+      {screen === "parts" && (
+        <div className="page home-page">
+          <section className="hero">
             <p className="eyebrow">Eksamensnær trening for 2PY</p>
+            <button className="back-link" onClick={() => goHome(true)}>← Tilbake</button>
             <h1>Velg hvilken del du vil øve på</h1>
             <p className="hero-copy">Tren på oppgaver som ligner formatet og nivået du kan møte på eksamen. Velg først om du vil arbeide uten eller med hjelpemidler.</p>
           </section>
@@ -670,12 +701,17 @@ export default function Home() {
           <section className="choice-grid" aria-label="Velg øvingsmåte">
             <button className="choice-card choice-card-primary" onClick={() => setScreen("topics")}>
               <span className="choice-icon"><IconSpark /></span>
-              <span className="choice-content"><span className="choice-kicker">Lær i ditt tempo</span><strong>Øv på et bestemt tema</strong><span>Velg et fagområde. Du kan prøve på nytt og åpne hint trinn for trinn.</span></span>
+              <span className="choice-content"><span className="choice-kicker">Lær i ditt tempo</span><strong>Øv spesifikke ferdigheter</strong><span>Velg et fagområde. Du kan prøve på nytt og åpne hint trinn for trinn.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
             <button className="choice-card" onClick={() => startSession("exam")}>
               <span className="choice-icon"><IconExam /></span>
-              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv som på eksamen</strong><span>10 balanserte oppgaver fra forskjellige temaer, oppgavetyper og ferdigheter. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint er tilgjengelig og registreres uten poengtrekk.</span></span>
+              <span className="choice-content"><span className="choice-kicker">Mini-eksamen</span><strong>Øv på en tilfeldig eksamen</strong><span>10 balanserte oppgaver fra forskjellige temaer, oppgavetyper og ferdigheter. Du får ett forsøk før fasiten vises.</span><span className="exam-note">Hint er tilgjengelig og registreres uten poengtrekk.</span></span>
+              <span className="choice-arrow"><IconArrow /></span>
+            </button>
+            <button className="choice-card" onClick={() => { setSelectedPart(null); setScreen("past-exams"); }}>
+              <span className="choice-icon"><IconExam /></span>
+              <span className="choice-content"><strong>Øv på tidligere gitt eksamen</strong><span>Velg årgang og eksamenssett.</span></span>
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
