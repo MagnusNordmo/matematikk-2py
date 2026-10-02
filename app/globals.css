@@ -2032,13 +2032,17 @@ input:focus-visible {
 .reminder-less, .reminder-card details[open] .reminder-more { display: none; }
 .reminder-card details[open] .reminder-less { display: inline; }
 .reminder-example { border-top: 1px solid var(--line); margin-top: .5rem; padding-top: 1rem; }
-.reminder-example h3 { font-size: 1rem; margin: 0; }
-.reminder-example ol { padding-left: 1.7rem; }
+.reminder-example h3 { font-size: 1rem; font-weight: 700; margin: 0; }
+.reminder-card .reminder-source { color: var(--muted); font-size: .875rem; margin: 0 0 .75rem; }
+.reminder-answer { border-left: 3px solid var(--accent-dark); padding: .3rem 0 .3rem 1rem; margin: 1rem 0; }
+.reminder-answer p { margin: .5rem 0 0; }
+.reminder-variant { border-top: 1px solid var(--line); margin-top: 1.25rem; padding-top: 1.25rem; }
+.reminder-example ol { padding-left: 1.7rem; list-style: decimal; }
 .reminder-example li { padding: .35rem 0 .35rem .3rem; }
 .reminder-takeaway { background: #edf5ef; padding: 1rem; border-radius: 10px; }
 .reminder-check { margin-top: 1.5rem; }
 .reminder-check h2 { font-size: 1.25rem; }
-.reminder-check ul { padding-left: 1.3rem; }
+.reminder-check ul { padding-left: 1.3rem; list-style: disc; }
 .practice-choices { grid-template-columns: 1fr; max-width: 920px; }
 .practice-choices .choice-card { min-height: 160px; align-items: center; }
 .exam-catalog-group { margin-top: 2.5rem; }
