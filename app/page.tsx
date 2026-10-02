@@ -1,5 +1,6 @@
 "use client";
 import { PastExams } from "./past-exams";
+import { ExamReminders } from "./exam-reminders";
 import { LearningSupport } from "./learning-support";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -30,7 +31,7 @@ import {
   type SessionMode,
 } from "./session-engine";
 
-type Screen = "parts" | "past-exams" | "home" | "modes" | "topics" | "session" | "result";
+type Screen = "parts" | "past-exams" | "reminders" | "home" | "modes" | "topics" | "session" | "result";
 type Feedback = "wrong" | "partial" | "correct" | null;
 
 type SessionItem = {
@@ -659,10 +660,16 @@ export default function Home() {
               <span className="choice-arrow"><IconArrow /></span>
             </button>
           </section>
+          <button className="choice-card reminder-entry" onClick={() => { setSelectedPart(null); setScreen("reminders"); }}>
+            <span className="choice-icon"><IconSpark /></span>
+            <span className="choice-content"><span className="choice-kicker">Ett råd om gangen</span><strong>Ting å huske på eksamen</strong><span>Korte råd med enkle eksempler. Se mer når du trenger det.</span></span>
+            <span className="choice-arrow"><IconArrow /></span>
+          </button>
           <footer className="privacy-note">Framdrift lagres bare på denne enheten.</footer>
         </div>
       )}
       {screen === "past-exams" && <PastExams onBack={() => goHome(true)} />}
+      {screen === "reminders" && <ExamReminders onBack={() => goHome(true)} />}
 
       {screen === "parts" && (
         <div className="page home-page">

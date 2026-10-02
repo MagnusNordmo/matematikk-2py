@@ -2019,6 +2019,26 @@ input:focus-visible {
 }
 
 /* Original exam documents retain their own typography, colors and geometry. */
+.reminder-entry { width: 100%; max-width: 920px; margin-top: 1rem; }
+.reminders-page { max-width: 850px; }
+.reminder-list { display: grid; gap: 1rem; }
+.reminder-card, .reminder-check { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.2rem, 4vw, 2rem); }
+.reminder-card h2 { display: flex; align-items: baseline; gap: .75rem; font-size: 1.25rem; margin: 0 0 .75rem; }
+.reminder-number { color: var(--muted); font-size: 1rem; }
+.reminder-card p, .reminder-card li, .reminder-check li { font-size: 1.1rem; line-height: 1.8; }
+.reminder-card > p { margin: 0 0 .7rem; }
+.reminder-card summary { cursor: pointer; color: var(--accent-dark); padding: .65rem 0; min-height: 44px; font-weight: 700; }
+.reminder-card summary:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 4px; border-radius: 4px; }
+.reminder-less, .reminder-card details[open] .reminder-more { display: none; }
+.reminder-card details[open] .reminder-less { display: inline; }
+.reminder-example { border-top: 1px solid var(--line); margin-top: .5rem; padding-top: 1rem; }
+.reminder-example h3 { font-size: 1rem; margin: 0; }
+.reminder-example ol { padding-left: 1.7rem; }
+.reminder-example li { padding: .35rem 0 .35rem .3rem; }
+.reminder-takeaway { background: #edf5ef; padding: 1rem; border-radius: 10px; }
+.reminder-check { margin-top: 1.5rem; }
+.reminder-check h2 { font-size: 1.25rem; }
+.reminder-check ul { padding-left: 1.3rem; }
 .practice-choices { grid-template-columns: 1fr; max-width: 920px; }
 .practice-choices .choice-card { min-height: 160px; align-items: center; }
 .exam-catalog-group { margin-top: 2.5rem; }
